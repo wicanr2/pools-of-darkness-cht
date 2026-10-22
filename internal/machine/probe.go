@@ -142,6 +142,11 @@ func (m *Machine) RunUntil(stop func(*Machine) bool, budget uint64) (Stop, error
 		if err := m.Step(); err != nil {
 			return StopBudget, err
 		}
+		if m.accelCredit > 0 {
+			// TP Delay 快轉（`docs/spec/429` §2.2）：一次 Step 走了 accelCredit 步
+			i += m.accelCredit - 1
+			m.accelCredit = 0
+		}
 	}
 	if stop != nil && stop(m) {
 		return StopPredicate, nil
@@ -175,6 +180,11 @@ func (m *Machine) RunUntilObserved(stop func(*Machine) bool, budget uint64, obse
 		}
 		if err := m.Step(); err != nil {
 			return StopBudget, err
+		}
+		if m.accelCredit > 0 {
+			// TP Delay 快轉（`docs/spec/429` §2.2）：一次 Step 走了 accelCredit 步
+			i += m.accelCredit - 1
+			m.accelCredit = 0
 		}
 	}
 	if stop != nil && stop(m) {

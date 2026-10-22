@@ -590,6 +590,14 @@ type Machine struct {
 	nextKey   uint64
 	// clockPct 是時脈比例（`docs/spec/242`）；0 表示未設定（100）。
 	clockPct int
+	// tpd 是登記的 Turbo Pascal DelayLoop（`docs/spec/429` §2.2）。
+	tpd tpDelay
+	// RunLimit 是本回合可快轉到的最大步數（`docs/spec/429` §2.2）；0 表示不快轉。
+	RunLimit uint64
+	// DelayAccelerated 累計 TP Delay 快轉的步數。
+	DelayAccelerated uint64
+	// accelCredit 是最近一次 Step 快轉的步數，由 RunUntil 計入迴圈計數後歸零。
+	accelCredit uint64
 	// KeyEvery 是兩次鍵盤中斷之間至少隔幾道指令。
 	KeyEvery uint64
 
@@ -1403,6 +1411,12 @@ func (m *Machine) Step() error {
 	if len(m.timedKeys) == 0 || !m.timedKeyTick() {
 		if len(m.keyQueue) > 0 {
 			m.keyTick()
+		}
+	}
+	if m.tpd.loop != 0 {
+		if n := m.accelTPDelay(); n > 0 {
+			m.accelCredit = n
+			return nil
 		}
 	}
 	m.Steps++

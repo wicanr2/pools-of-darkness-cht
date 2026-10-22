@@ -44,11 +44,14 @@ type event struct {
 // 只能在同一個 goroutine 使用。
 type Mixer struct {
 	stepsPerSecond uint64
-	chip           *nukedopl.Chip
-	newm           bool
-	events         []event
-	next           uint64 // 下一個要產生的絕對樣本序號
-	started        bool
+	// baseStep／baseSample 是最近一次換速率的接點（dosgolem `docs/spec/429` §2.4）；
+	// 之後的步數由接點起算，前後的樣本序號連續。
+	baseStep, baseSample uint64
+	chip                 *nukedopl.Chip
+	newm                 bool
+	events               []event
+	next                 uint64 // 下一個要產生的絕對樣本序號
+	started              bool
 
 	gate, data uint8
 	divisor    uint32
@@ -82,7 +85,20 @@ func (m *Mixer) PITChannel2(c machine.PIT2Change) {
 // sampleOf 是步數對應的絕對樣本序號（無條件捨去）。
 func (m *Mixer) sampleOf(step uint64) uint64 {
 	// 步數 × 48000 在 uint64 內可到約 3.8×10^14 步，遠超過實際執行量。
-	return step * SampleRate / m.stepsPerSecond
+	if step <= m.baseStep {
+		return m.baseSample
+	}
+	return m.baseSample + (step-m.baseStep)*SampleRate/m.stepsPerSecond
+}
+
+// SetStepsPerSecond 以 atStep 為接點改推進速率；atStep 之前的事件應已 Render。
+func (m *Mixer) SetStepsPerSecond(rate, atStep uint64) {
+	if rate == 0 || rate == m.stepsPerSecond {
+		return
+	}
+	m.baseSample = m.sampleOf(atStep)
+	m.baseStep = atStep
+	m.stepsPerSecond = rate
 }
 
 // oplAddr 依 DOSBox-X adlib.cpp:379–386 把 machine 的寫入換成 Nuked 位址；

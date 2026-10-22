@@ -173,6 +173,7 @@
 - [238 — Session 逐步觀測器（唯讀視圖）](238-session-step-observer-draft.md)：READY。
 - [241 — buckrogers-play 的輸入：遊戲鍵、滑鼠與前端功能鍵](241-buckrogers-play-input-draft.md)：READY。
 - [242 — 機器時脈比例（較慢的虛擬 CPU）](242-machine-clock-scale-draft.md)：READY。
+- [429 — 執行中改時脈與 Turbo Pascal Delay 快轉](429-runtime-clock-and-idle-skip-draft.md)：CONFORMED（§2.1–§2.4）。時脈 10–1600% 可在回合之間改，DelayCnt 依登記值重算；CRT.Delay 計數迴圈在下一個事件前整圈快轉，與逐條執行等價；服務輪詢跳過（§2.5）未實作。
 - [250 CGA 圖形模式的 INT 10h 視窗捲動與清除、色彩選擇](250-cga-int10-scroll-and-palette.md)：CONFORMED。
 
 ### 武士傳說（Knights of Legend）（3 份）

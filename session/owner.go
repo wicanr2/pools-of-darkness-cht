@@ -68,6 +68,8 @@ type TickReceipt struct {
 	RawError           error
 	Phase              Phase
 	Reason             StopReason
+	// Accelerated 是本回合 TP Delay 快轉的步數（dosgolem `docs/spec/429` §2.3），已含在 Steps 內。
+	Accelerated uint64
 }
 
 // CapturedUpdate is the value-only input captured for one future frontend
@@ -561,6 +563,8 @@ func (o *Owner) Advance(budget InstructionBudget) (TickReceipt, error) {
 	}
 
 	receipt.MachineStepsBefore = o.machine.Steps
+	accelBefore := o.machine.DelayAccelerated
+	o.machine.RunLimit = o.machine.Steps + uint64(budget)
 	var rawStop machine.Stop
 	var rawErr, observerErr error
 	if o.observer != nil {
@@ -568,6 +572,8 @@ func (o *Owner) Advance(budget InstructionBudget) (TickReceipt, error) {
 	} else {
 		rawStop, rawErr = o.machine.RunUntil(nil, uint64(budget))
 	}
+	o.machine.RunLimit = 0
+	receipt.Accelerated = o.machine.DelayAccelerated - accelBefore
 	receipt.HasRawStop = true
 	receipt.RawStop = rawStop
 	receipt.RawError = rawErr

@@ -59,3 +59,42 @@ func (m *Machine) ClockPercent() int {
 func (m *Machine) StepsPerSecondScaled() float64 {
 	return StepsPerSecond() * float64(m.ClockPercent()) / 100
 }
+
+// SetClockPercentLive 在執行中改時脈比例（10–1600，`docs/spec/429` §2.1）。
+// 剩餘到下一次計時中斷、回掃、鍵盤中斷的距離依新舊比例換算；已登記 TP Delay 時
+// 依登記值重算 DelayCnt，讓 Delay 的長度以遊戲時間計仍不變。
+func (m *Machine) SetClockPercentLive(p int) error {
+	if p < 10 || p > 1600 {
+		return fmt.Errorf("machine: 時脈比例須在 10–1600，得 %d", p)
+	}
+	if m.CycleClock {
+		return errors.New("machine: 週期時鐘開啟時不能設定時脈比例")
+	}
+	q := m.ClockPercent()
+	if p == q {
+		return nil
+	}
+	rescale := func(next uint64) uint64 {
+		if next <= m.Steps {
+			return next
+		}
+		d := (next - m.Steps) * uint64(p) / uint64(q)
+		if d < 1 {
+			d = 1
+		}
+		return m.Steps + d
+	}
+	m.clockPct = p
+	m.IRQ0Base = ScaleSteps(DefaultIRQ0Every, p)
+	nextIRQ0 := rescale(m.nextIRQ0)
+	m.recalcIRQ0()
+	m.nextIRQ0 = nextIRQ0
+	m.VGAFrameEvery = ScaleSteps(DefaultVGAFrameEvery, p)
+	m.nextFrame = rescale(m.nextFrame)
+	m.KeyEvery = ScaleSteps(DefaultKeyIRQEvery, p)
+	if m.nextKey != 0 {
+		m.nextKey = rescale(m.nextKey)
+	}
+	m.rescaleTPDelay()
+	return nil
+}
