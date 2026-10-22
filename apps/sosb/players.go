@@ -17,8 +17,8 @@ const (
 )
 
 // Sex 是角色記錄的性別。隊伍欄印名字時字串指標就是角色記錄開頭（名字在 +0x00）。
-// 本作性別在 +0x109：0 男、1 女（本專案 docs/re/006：同名同屬性的男女角色檔只差 +0x109 與 +0x135；
-// 原版預建隊伍唯一的女性 MOLLY 為 1，其餘 0）。幽靈騎士在 +0x55。
+// 本作性別在 +0x11F：0 男、1 女（主專案 docs/re/007：原版 6 個預建角色檔只有 EPONA、MORGAINE 在 +0x11F 為 1，
+// 其餘 0；強推論，待角色畫面的 MALE／FEMALE 對照）。克萊恩英豪在 +0x109，幽靈騎士在 +0x55。
 type Sex int
 
 const (
@@ -27,8 +27,7 @@ const (
 	SexFemale
 )
 
-// 克萊恩英豪值，本作未驗（G6 玩家名音譯前重驗）。
-const recordSexOff = 0x109
+const recordSexOff = 0x11F
 
 func sexOf(b uint8) Sex {
 	switch b {
