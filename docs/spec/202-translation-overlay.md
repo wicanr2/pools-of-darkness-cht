@@ -161,17 +161,20 @@
 
 ### 2.8 保留呈現（`Hold`，HD 換圖用）
 
-狀態：DRAFT。需求來源同 §2.6：HD 模式下不能先顯示原版圖。HD 圖面在整塊原版吻合時才換圖；原版分幾幀畫完一張圖時，
-前幾幀的半張圖會原樣呈現。
+狀態：READY（2026-10-23，sosb 標題流程實測）。需求來源同 §2.6：HD 模式下不能先顯示原版圖。HD 圖面在整塊原版吻合時才換圖；
+原版分幾幀畫完一張圖時，前幾幀的半張圖會原樣呈現。
 
-- `NewHold(w, h, max int) *Hold`；`Apply(indexed, base, out []uint8, scale int, region func(cx, cy int) bool)`：
-  逐 8×8 格，這格原版內容與上一次 `Apply` 不同、有墨跡、out 與 base 相同（沒有被換掉）、`region` 回 true、
-  連續保留未滿 max 次，就把上一次 `Apply` 結束時的 out 複製回這格。否則保留次數歸零。結束時記下這次的 out 與各格內容。
-- 內容停止變化的那一幀就放行；連續變化的格子最多保留 max 幀，原版動畫不會被凍住。
-- `region` 由呼叫端依 HD 主題宣告的範圍給；沒有 HD 主題時不呼叫。
+- `NewHold(w, h, max int) *Hold`；`Apply(indexed, base, out []uint8, scale int, region func(cx, cy int, sum uint64) bool)`：
+  逐 8×8 格，這格有墨跡、out 與 base 相同（沒有被換掉）、`region(cx, cy, 格內色號指紋)` 回 true，而且「內容與上一幀不同」
+  或「上一幀已在保留」，連續保留未滿 max 次，就把上一幀的 out 複製回這格。
+- 已開始保留的格不要求每幀都有變化：原版畫到一半停住時，半張圖也不露出。
+- `Commit()`：新的一幀開始時呼叫，把這一幀最後一次 `Apply` 的結果定為「上一幀」。同一幀可以 `Apply` 多次（畫面、量尺、截圖），結果相同。
+- `CellContent(indexed, w, cx, cy)`：與 `region` 收到的指紋同算法，呼叫端用它預先記下 HD 主題圖各格的指紋。
+- sosb 的 `region`：這格內容等於某張主題圖在同一位置的墨跡格，也就是原版正在畫一張已知的圖；原版動畫與其他內容不受影響。
+  上限 60 幀：sosb 標題背景從開始畫到整張吻合超過 10 幀，8 幀不夠。
 
 驗收（`xlate/hold_test.go`）：合成「一張兩格的圖分兩幀畫完、畫完才換 HD」，`FlashAudit` 0 次、中間那幀沒有原版的半張圖；
-不呼叫 `Apply` 的對照組 `FlashAudit` 記到閃現；`region` 外不保留；連續變化超過 max 幀放行。
+對照組不呼叫 `Apply` 時量到閃現；`region` 外不保留；連續變化超過 max 幀放行；畫到一半停住數幀仍保留；同一幀兩次 `Apply` 結果相同。
 
 ## 3. 驗收
 

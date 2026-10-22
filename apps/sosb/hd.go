@@ -124,8 +124,9 @@ func (it HDItem) Watcher() *xlate.Watcher {
 	for i, s := range rows {
 		keys[i] = s.Key
 	}
+	// Sticky：啟用後只遮被原版改掉的格，不因另一張圖開始畫就整張撤下（xlate spec 204 §6；主專案規格 021 §4.1）
 	return &xlate.Watcher{Key: "hd:" + it.Key, X: it.X, Y: it.Y, W: it.W, H: it.H, Want: it.Reference,
-		Art: true, ArtKeys: keys, Make: func() []*xlate.Stamp { return it.Rows() }}
+		Art: true, ArtKeys: keys, Sticky: true, Make: func() []*xlate.Stamp { return it.Rows() }}
 }
 
 // AddHD 載入主題目錄並登記全部圖面 watcher。
@@ -143,5 +144,44 @@ func (l *Live) AddHD(dir string) error {
 	}
 	l.HDLayers = layers
 	l.HDItems += len(items) + count
+	l.armHDHold(items)
 	return nil
 }
+
+// hdHoldFrames 是 HD 保留呈現的連續上限（幀；主專案規格 021 §4.1）。實測標題背景從開始畫到整張吻合超過 10 幀
+// （冷開機第 487–498 格），8 幀不夠；保留只作用在內容等於主題圖對應格的格子，原版動畫不受影響。
+const hdHoldFrames = 60
+
+// armHDHold 建立 HD 保留呈現（xlate spec 202 §2.8）：記下每張主題圖各墨跡格的色號指紋，
+// 畫面某格內容等於某張圖在同一位置的格，就是原版正在畫這張圖，替換前先保留上一幀的呈現。
+func (l *Live) armHDHold(items []HDItem) {
+	cells := map[int]map[uint64]bool{}
+	for _, it := range items {
+		if it.Scale != hdHoldScale {
+			continue
+		}
+		for cy := 0; cy < it.H/hdCell; cy++ {
+			for cx := 0; cx < it.W/hdCell; cx++ {
+				ink, sum := xlate.CellContent(it.Reference, it.W, cx, cy)
+				if !ink {
+					continue
+				}
+				c := (it.Y/hdCell+cy)*(320/hdCell) + it.X/hdCell + cx
+				if cells[c] == nil {
+					cells[c] = map[uint64]bool{}
+				}
+				cells[c][sum] = true
+			}
+		}
+	}
+	if len(cells) == 0 {
+		return
+	}
+	l.hdCells = cells
+	l.hdHold = xlate.NewHold(320, 200, hdHoldFrames)
+}
+
+// hdHoldScale 是 HD 圖的倍率：保留呈現只在這個倍率作用。
+const hdHoldScale = 3
+
+func (l *Live) hdRegion(cx, cy int, sum uint64) bool { return l.hdCells[cy*(320/hdCell)+cx][sum] }

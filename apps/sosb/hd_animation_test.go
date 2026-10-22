@@ -52,11 +52,16 @@ func TestHDAnimationStatesAndTransition(t *testing.T) {
 			t.Fatal("2 倍有 HD 差異")
 		}
 	}
-	// 半張切到下一相位，任一完整基準都不吻合，整塊立即回退。
+	// 半張切到下一相位，任一完整基準都不吻合：只有被改的格露原版，其餘格維持上一相位的 HD
+	// （Sticky，xlate spec 204 §6；不整張閃回原版，主專案規格 021）。
 	screen[(24+44)*320+24+44] = 9
 	live.Frame(screen, pal)
-	if !bytes.Equal(live.Compose(3, true, nil), live.Compose(3, false, nil)) {
-		t.Fatal("過渡相位留下 HD")
+	hd, orig := live.Compose(3, true, nil), live.Compose(3, false, nil)
+	if hd[(24*3*960+24*3)*4] != 100 {
+		t.Fatal("過渡相位：沒被改的格應維持上一相位 HD")
+	}
+	if o := ((24+44)*3*960 + (24+44)*3) * 4; !bytes.Equal(hd[o:o+4], orig[o:o+4]) {
+		t.Fatal("過渡相位：被改的格應是原版")
 	}
 	put(states[2])
 	live.Frame(screen, pal)

@@ -64,6 +64,9 @@ type Live struct {
 	// Flash 是閃現量尺（主專案規格 021）；nil 時不量。由 AuditFlash 每畫格比對一次。
 	Flash      *xlate.FlashAudit
 	flashFrame int
+	// hdHold、hdCells：HD 保留呈現與主題圖各墨跡格的指紋（主專案規格 021 §4.1；AddHD 時建立）
+	hdHold  *xlate.Hold
+	hdCells map[int]map[uint64]bool
 
 	ui      Lookuper
 	ecl     *Catalog
@@ -254,6 +257,9 @@ func (l *Live) ModeChange() {
 
 // Frame 在每個 retrace 呼叫；palette 須是與 indexed 配對的色盤（machine.FramePalette）。
 func (l *Live) Frame(indexed []byte, palette [256][3]uint8) {
+	if l.hdHold != nil {
+		l.hdHold.Commit() // 上一幀最後一次合成的結果成為保留的依據
+	}
 	l.HDLayers.Frame(indexed, palette)
 	l.indexed = append(l.indexed[:0], indexed...)
 	l.pal = palette
@@ -297,8 +303,15 @@ func (l *Live) Compose(scale int, overlay bool, missing func(rune)) []byte {
 	if overlay {
 		l.HDLayers.Draw(out, l.indexed, scale)
 		l.Layer.Draw(out, scale, missing)
+		var base []byte
+		if l.hdHold != nil && scale == hdHoldScale {
+			base = l.Compose(scale, false, nil)
+			l.hdHold.Apply(l.indexed, base, out, scale, l.hdRegion)
+		}
 		if l.Flash != nil && l.flashFrame != 0 {
-			base := l.Compose(scale, false, nil)
+			if base == nil {
+				base = l.Compose(scale, false, nil)
+			}
 			l.Flash.Observe(l.flashFrame, l.indexed, base, out, scale)
 			l.flashFrame = 0
 		}

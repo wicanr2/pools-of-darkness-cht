@@ -17,6 +17,11 @@ type Watcher struct {
 	// spec 204：圖面每幀比對啟用區，ArtKeys 定義完整列集合。
 	Art     bool
 	ArtKeys []string
+	// Sticky（spec 204 §6，選用）：圖面整張吻合啟用後，之後不必每幀整張吻合；仍有任一墨跡格（8×8、兩種以上色號）
+	// 與 Want 相同就維持啟用，各格照 §2.2 逐格遮。另一個圖面 watcher 本幀整張吻合且矩形重疊時讓位。
+	Sticky bool
+
+	stickyOn, fullNow bool // 執行期狀態，不進快照
 }
 
 // probes 回實際要先比的位置。
@@ -94,6 +99,7 @@ func (w *Watcher) match(indexed []uint8, sw, sh int) bool {
 func (l *Layer) checkWatchers(indexed []uint8) {
 	w, h := l.width(), l.height()
 	l.artOwners = nil
+	defer l.supersedeSticky()
 	for _, wa := range l.watchers {
 		if wa.Art {
 			if l.artOwners == nil {

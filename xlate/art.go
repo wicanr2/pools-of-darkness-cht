@@ -244,14 +244,21 @@ func (l *Layer) artComplete(owner string, keys map[string]bool) bool {
 
 func (l *Layer) checkArtWatcher(wa *Watcher, indexed []uint8, w, h int) {
 	l.artOwners[wa.Key] = false
+	wa.fullNow = false
+	defer func() { wa.stickyOn = wa.Sticky && l.artOwners[wa.Key] }()
 	keys, ok := artKeySet(wa.ArtKeys)
 	if !ok || wa.Key == "" || wa.Make == nil {
 		l.drop(&Stamp{Key: wa.Key, Art: true}, "art")
 		return
 	}
 	if !wa.match(indexed, w, h) {
+		// spec 204 §6：已啟用的 Sticky 圖面只要還有墨跡格吻合就維持，被改的格由 frameArt 逐格遮掉
+		if wa.Sticky && wa.stickyOn && l.artComplete(wa.Key, keys) && wa.inkCellMatches(indexed, w) {
+			l.artOwners[wa.Key] = true
+		}
 		return
 	}
+	wa.fullNow = true
 	if l.artComplete(wa.Key, keys) {
 		l.artOwners[wa.Key] = true
 		return
@@ -308,4 +315,42 @@ type artSnapshot struct {
 	CellH    int    `json:"cell_h"`
 	PixScale int    `json:"pix_scale"`
 	Order    int    `json:"order"`
+}
+
+// inkCellMatches 回 Want 裡任一墨跡格（8×8 格內兩種以上色號）與畫面完全相同（spec 204 §6）。
+func (wa *Watcher) inkCellMatches(indexed []uint8, sw int) bool {
+	for cy := 0; cy+8 <= wa.H; cy += 8 {
+		for cx := 0; cx+8 <= wa.W; cx += 8 {
+			first, ink, same := wa.Want[cy*wa.W+cx], false, true
+			for y := cy; y < cy+8 && same; y++ {
+				for x := cx; x < cx+8; x++ {
+					v := wa.Want[y*wa.W+x]
+					ink = ink || v != first
+					if indexed[(wa.Y+y)*sw+wa.X+x] != v {
+						same = false
+						break
+					}
+				}
+			}
+			if ink && same {
+				return true
+			}
+		}
+	}
+	return false
+}
+
+// supersedeSticky：本幀整張吻合的圖面 watcher 讓矩形重疊、只靠 Sticky 維持的其他圖面停用（spec 204 §6）。
+func (l *Layer) supersedeSticky() {
+	for _, a := range l.watchers {
+		if !a.Art || !a.Sticky || a.fullNow || !l.artOwners[a.Key] {
+			continue
+		}
+		for _, b := range l.watchers {
+			if b != a && b.Art && b.fullNow && a.X < b.X+b.W && b.X < a.X+a.W && a.Y < b.Y+b.H && b.Y < a.Y+a.H {
+				l.artOwners[a.Key], a.stickyOn = false, false
+				break
+			}
+		}
+	}
 }

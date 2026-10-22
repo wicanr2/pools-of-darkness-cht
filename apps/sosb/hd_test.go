@@ -78,11 +78,25 @@ func TestHDTheme(t *testing.T) {
 	if got := at(live.Compose(3, false, nil), 3, 8*3+3, 16*3); got != [3]byte{1, 1, 1} {
 		t.Fatalf("原版檢視 %v", got)
 	}
-	// 整張不吻合：整組停用
+	// 啟用後（Sticky，xlate spec 204 §6）：被改的格露原版，沒被改的格仍是 HD
 	screen[16*320+8] = 15
 	live.Frame(screen, pal)
+	out = live.Compose(3, true, nil)
+	if got := at(out, 3, 8*3, 16*3); got == [3]byte{200, 10, 20} {
+		t.Fatal("被改的格仍畫 HD")
+	}
+	if got := at(out, 3, 23*3, 23*3); got != [3]byte{200, 10, 20} {
+		t.Fatalf("沒被改的格應維持 HD，得到 %v", got)
+	}
+	// 所有墨跡格都被改：整組停用
+	for y := 0; y < 8; y++ {
+		for x := 8; x < 24; x++ {
+			screen[(16+y)*320+x] = 15
+		}
+	}
+	live.Frame(screen, pal)
 	if got := at(live.Compose(3, true, nil), 3, 23*3, 23*3); got == [3]byte{200, 10, 20} {
-		t.Fatal("基準不吻合仍畫 HD")
+		t.Fatal("基準完全不吻合仍畫 HD")
 	}
 }
 

@@ -17,13 +17,14 @@ func holdScene(s *flashScreen, step int) {
 	}
 }
 
-func runHoldScene(t *testing.T, hold *Hold, region func(cx, cy int) bool) (*FlashAudit, [][]uint8) {
+func runHoldScene(t *testing.T, hold *Hold, region func(cx, cy int, sum uint64) bool) (*FlashAudit, [][]uint8) {
 	t.Helper()
 	a, s := NewFlashAudit(16, 8, 8), newFlashScreen()
 	var outs [][]uint8
 	for f, step := range []int{0, 1, 2, 2} {
 		holdScene(s, step)
 		if hold != nil {
+			hold.Commit()
 			hold.Apply(s.idx, s.base, s.out, 2, region)
 		}
 		a.Observe(f+1, s.idx, s.base, s.out, 2)
@@ -33,7 +34,7 @@ func runHoldScene(t *testing.T, hold *Hold, region func(cx, cy int) bool) (*Flas
 }
 
 func TestHoldHidesHalfDrawnPicture(t *testing.T) {
-	all := func(int, int) bool { return true }
+	all := func(int, int, uint64) bool { return true }
 	if a, _ := runHoldScene(t, nil, all); a.Count() == 0 {
 		t.Fatal("對照組：沒有保留時應量到閃現")
 	}
@@ -50,7 +51,7 @@ func TestHoldHidesHalfDrawnPicture(t *testing.T) {
 }
 
 func TestHoldRegionAndLimit(t *testing.T) {
-	none := func(int, int) bool { return false }
+	none := func(int, int, uint64) bool { return false }
 	if a, _ := runHoldScene(t, NewHold(16, 8, 2), none); a.Count() == 0 {
 		t.Fatal("region 外不保留，應量到閃現")
 	}
@@ -60,12 +61,30 @@ func TestHoldRegionAndLimit(t *testing.T) {
 	for f := 0; f < 6; f++ {
 		s.ink(0, uint8(10+f))
 		s.render()
-		h.Apply(s.idx, s.base, s.out, 2, func(int, int) bool { return true })
+		h.Commit()
+		h.Apply(s.idx, s.base, s.out, 2, func(int, int, uint64) bool { return true })
 		if s.out[3*2*4] == uint8(10+f) {
 			shown++
 		}
 	}
 	if shown < 2 {
 		t.Fatalf("連續變化的格子要定期放行，6 幀只顯示 %d 次", shown)
+	}
+}
+
+// 原版畫到一半停住幾幀：已開始保留的格持續保留，不因「這幀沒變」就露出半張圖。
+func TestHoldSurvivesStall(t *testing.T) {
+	a, s, h := NewFlashAudit(16, 8, 8), newFlashScreen(), NewHold(16, 8, 8)
+	all := func(int, int, uint64) bool { return true }
+	for f, step := range []int{0, 1, 1, 1, 2} {
+		holdScene(s, step)
+		h.Commit()
+		h.Apply(s.idx, s.base, s.out, 2, all)
+		holdScene(s, step) // 同一幀再合成一次（新的 out），結果與狀態不變
+		h.Apply(s.idx, s.base, s.out, 2, all)
+		a.Observe(f+1, s.idx, s.base, s.out, 2)
+	}
+	if a.Count() != 0 {
+		t.Fatalf("停住期間露出半張圖：%+v", a.Events())
 	}
 }
