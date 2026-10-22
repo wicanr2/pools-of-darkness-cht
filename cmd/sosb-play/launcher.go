@@ -25,7 +25,7 @@ var version, dosgolemCommit string
 // 原版必要檔（主專案 docs/re/001）。覆繪依賴這兩個檔的位址。
 var requiredOriginals = []struct{ name, sha string }{
 	{"START.EXE", startEXESHA256},
-	{"GAME.OVR", "c3f448c391ea860f97dec99ce88b0b8b0a4a7e807cf3b1f5a8f1515e2a7a0529"},
+	{"GAME.OVR", "9b01e970b87e32fe1de608e5c431a83bd1739b7a7fe4acea1231eebf15ff1703"},
 }
 
 const errorLogName = "sosb-error.log"
@@ -262,13 +262,13 @@ func missingOriginalHelp(data string) string {
 	example := "把原版遊戲資料夾（含 START.EXE、GAME.OVR）複製成本程式旁邊的 original 資料夾"
 	switch runtime.GOOS {
 	case "windows":
-		example += `，或執行 SOSBCHT.exe -original D:\games\CKRYNN`
+		example += `，或執行 SOSBCHT.exe -original D:\games\SECRET`
 	case "darwin":
-		example += "（與 SOSBCHT.app 同一層），或在終端機執行 SOSBCHT.app/Contents/MacOS/sosb-play -original ~/games/CKRYNN"
+		example += "（與 SOSBCHT.app 同一層），或在終端機執行 SOSBCHT.app/Contents/MacOS/sosb-play -original ~/games/SECRET"
 	default:
-		example += "（與 AppImage 同一層），或執行 ./SOSBCHT-x86_64.AppImage -original ~/games/CKRYNN"
+		example += "（與 AppImage 同一層），或執行 ./SOSBCHT-x86_64.AppImage -original ~/games/SECRET"
 	}
-	return fmt.Sprintf("找不到原版《Champions of Krynn》（DOS 英文版 1.2）。\n本程式不附原版遊戲，請自備合法取得的原版：\n%s；\n也可以放在 %s。",
+	return fmt.Sprintf("找不到原版《Secret of the Silver Blades》（DOS 英文版 1.30）。\n本程式不附原版遊戲，請自備合法取得的原版：\n%s；\n也可以放在 %s。",
 		example, filepath.Join(data, "original"))
 }
 

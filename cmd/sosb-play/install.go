@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bytes"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -9,23 +8,15 @@ import (
 )
 
 // installSoSB 讓遊戲樹可以在 dosgolem 開機，可重複呼叫：
-//   - KRYNN.CFG 第 2 行是音效卡。原版附的設定選 R（Roland LAPC），dosgolem 沒有 MPU-401，程式會關中斷輪詢埠 331h
-//     不結束（主專案 docs/re/003）。改成 A（AdLib），等同玩家在安裝選單選 [3] AdLib。
-//   - 原版的預建隊伍放在 SAVE/ 子目錄，安裝程式 COPYSAVE.BAT 會複製到存檔目錄；dosgolem 只在根目錄依檔名找，
-//     所以比照複製到根目錄，已存在的檔不覆寫（主專案 docs/re/004）。
+//   - 原版壓縮檔沒有 blades.cfg，程式第一次執行時在文字模式問顯示卡、音效、輸入裝置與存檔路徑（主專案 docs/re/003）。
+//     缺檔時寫入與玩家回答 EGA、AdLib、MOUSE、預設路徑相同的設定檔（G2 收據產出的檔案，SHA-256 00cbd89e…），
+//     已有就不動。
+//   - 有 SAVE/ 子目錄時，比照安裝程式把預建隊伍複製到根目錄；dosgolem 在存檔路徑對不上目錄時依檔名在根目錄找
+//     （dosgolem 規格 198 §2.2），已存在的檔不覆寫。本作原版的預建隊伍本來就在根目錄。
 func installSoSB(root string) error {
-	if name, err := findFold(root, "KRYNN.CFG"); err == nil {
-		p := filepath.Join(root, name)
-		b, err := os.ReadFile(p)
-		if err != nil {
-			return err
-		}
-		lines := bytes.Split(b, []byte("\r\n"))
-		if len(lines) > 1 && string(lines[1]) == "R" {
-			lines[1] = []byte("A")
-			if err := os.WriteFile(p, bytes.Join(lines, []byte("\r\n")), 0o644); err != nil {
-				return fmt.Errorf("改寫 KRYNN.CFG：%w", err)
-			}
+	if _, err := findFold(root, "BLADES.CFG"); err != nil {
+		if err := os.WriteFile(filepath.Join(root, "blades.cfg"), defaultBladesCfg(), 0o644); err != nil {
+			return fmt.Errorf("寫入 blades.cfg：%w", err)
 		}
 	}
 	saveDir, err := findFold(root, "SAVE")
@@ -52,4 +43,14 @@ func installSoSB(root string) error {
 		}
 	}
 	return nil
+}
+
+// defaultBladesCfg 是首次執行選 [2] EGA、[1] AdLib、[2] MOUSE、存檔路徑按 Enter 的結果
+// （程式目錄 C:\SECRET；主專案 docs/re/003）：四行設定、F、14 行 0，皆以 CRLF 結尾。
+func defaultBladesCfg() []byte {
+	lines := []string{"E", "A", "M", `C:\SECRET\SAVE\`, "F"}
+	for i := 0; i < 14; i++ {
+		lines = append(lines, "0")
+	}
+	return []byte(strings.Join(lines, "\r\n") + "\r\n")
 }
