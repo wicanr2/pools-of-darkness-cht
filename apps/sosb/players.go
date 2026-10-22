@@ -3,6 +3,7 @@ package sosb
 import (
 	"bytes"
 	"regexp"
+	"strings"
 )
 
 // 規格 013：玩家角色名自動音譯。名字從冒險畫面隊伍欄（路徑 A 列 4–9、欄 17）學到，
@@ -39,8 +40,9 @@ func sexOf(b uint8) Sex {
 	return SexUnknown
 }
 
-// playerNameShape 是可學的名字：2–15 字元，只含大寫字母、空白、撇號與連字號。
-var playerNameShape = regexp.MustCompile(`^[A-Z][A-Z' -]{1,14}$`)
+// playerNameShape 是可學的名字：2–15 字元，只含字母、空白、撇號與連字號。
+// 本作原版預建角色名是大小寫混合（`Guy de Valois`，主專案 docs/re/007），自建角色則是全大寫；音譯一律以大寫查。
+var playerNameShape = regexp.MustCompile(`^[A-Za-z][A-Za-z' -]{1,14}$`)
 
 // PlayerNames 記學到的玩家名與音譯。Translit 回音譯結果；ok 為 false 時不學。
 type PlayerNames struct {
@@ -53,7 +55,7 @@ func (p *PlayerNames) learn(s string, sex Sex) bool {
 	if _, ok := p.names[s]; ok || !playerNameShape.MatchString(s) {
 		return false
 	}
-	zh, ok := p.Translit(s, sex)
+	zh, ok := p.Translit(strings.ToUpper(s), sex)
 	if !ok || zh == "" {
 		return false
 	}
