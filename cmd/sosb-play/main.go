@@ -296,6 +296,8 @@ func (g *game) Update() error {
 			acts = append(acts, actLang)
 		} else if a.cheat {
 			acts = append(acts, actCheat)
+		} else if a.act != 0 {
+			acts = append(acts, a.act)
 		} else if a.key != nil {
 			u.BIOSKeys = append(u.BIOSKeys, *a.key)
 		}
