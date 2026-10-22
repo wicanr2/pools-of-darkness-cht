@@ -18,12 +18,12 @@ import (
 // 地圖身分以 0x400 本體雜湊對 text/map-geo.tsv；攻略點取自 text/map-guide.zh-TW.tsv。
 
 const (
-	// 本作 DS:6D7C 是指向目前 GEO 區塊本體的遠指標（off, seg），DS:6D85 起是 x、y、面向（0 北、2 東、4 南、6 西）。
-	// 開場 7,13 面北時 DS:6D85 為 07 0D 00，前 9 bytes 的遠指標 0000:45AC；與幽靈騎士 C06A／C073 相差 9 bytes 的配置相同
-	// （本專案 docs/re/006，強推論，地圖雜湊比對後升級）。
-	// 克萊恩英豪值，本作未驗（G8 地圖疊層前重驗）。
-	geoPtrOff   = 0x6D7C
-	partyXOff   = 0x6D85
+	// 本作 DS:89CE 是指向目前 GEO 區塊本體的遠指標（off, seg），DS:89D7 起是 x、y、面向（0 北、2 東、4 南、6 西）。
+	// 新維地格里城 3,3 面南時 DS:89D7 為 03 03 04，遠指標 4990:000C 處 0x400 bytes 等於 GEO1 區塊 16 的本體；
+	// 按 M 進移動模式、前進兩步再左轉後為 03 05 02，畫面顯示 3,5 E（主專案 docs/re/009，已證實）。
+	// 與克萊恩英豪 6D7C／6D85、幽靈騎士 C06A／C073 同樣相差 9 bytes。
+	geoPtrOff   = 0x89CE
+	partyXOff   = 0x89D7
 	geoBodySize = 0x400
 	// 遊戲狀態區塊指標（幽靈騎士 DS:8484，用來以 ECL 區塊區分重用的 GEO）本作尚未找到，0 表示停用。
 	statePtrOff = 0
