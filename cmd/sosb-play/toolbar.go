@@ -91,7 +91,7 @@ func toolbarItems(text map[string]string, st toolbarState) []toolbarItem {
 		toolbarItem{key: "toolbar.guide", act: actGuide, state: absent(st.noGuide, panel(st.guide))},
 		toolbarItem{key: "toolbar.map", act: actMap, state: panel(st.mapOpen)},
 		toolbarItem{key: "toolbar.answers", act: actAnswers, state: on(st.answers)},
-		toolbarItem{key: "toolbar.cheat", act: actCheat, state: on(st.cheat)},
+		toolbarItem{key: "toolbar.cheat", act: actCheat, state: absent(!sosb.CheatVerified, on(st.cheat))},
 		toolbarItem{key: "toolbar.music", act: actMusic, state: musicState(st)},
 		toolbarItem{key: "toolbar.mute", act: actMute, state: on(st.muted)},
 		toolbarItem{key: "toolbar.shot", act: actShot},

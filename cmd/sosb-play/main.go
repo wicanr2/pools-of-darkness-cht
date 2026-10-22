@@ -215,7 +215,9 @@ func (g *game) apply(acts []hostAction) {
 		case actMusic:
 			g.music.Toggle()
 		case actCheat:
-			g.cheat.On = !g.cheat.On
+			if sosb.CheatVerified { // 位址未驗證前停用（apps/sosb cheat.go）
+				g.cheat.On = !g.cheat.On
+			}
 		case actSpeed:
 			g.bar.speeds, g.bar.sizes = !g.bar.speeds, false
 		case actBarFont:
