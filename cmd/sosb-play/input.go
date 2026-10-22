@@ -180,12 +180,12 @@ type scriptAction struct {
 // 改成主機動作會讓既有收據換畫面。
 var scriptHostActs = map[string]hostAction{
 	"journal": actJournal, "guide": actGuide, "map": actMap,
-	"pgup": actPageUp, "pgdn": actPageDown, "prev": actPrevEntry, "next": actNextEntry,
+	"pgup": actPageUp, "pgdn": actPageDown, "prev": actPrevEntry, "next": actNextEntry, "shot": actShot,
 }
 
 // parseScript 解析 `畫格:動作[,…]`。動作是鍵名（dos.KeyNamed，例 Enter、Down）、
 // 單一可列印字元、toggle（等同 F12）、lang（等同 F8）、cheat（等同 F1）、bar（切換列保持顯示），
-// 或 scriptHostActs 的面板動作（journal、guide、map、pgup、pgdn、prev、next）。
+// 或 scriptHostActs 的面板動作（journal、guide、map、pgup、pgdn、prev、next）與 shot（等同 F10，存到 -shot-dir）。
 func parseScript(s string) (map[int][]scriptAction, error) {
 	out := map[int][]scriptAction{}
 	if s == "" {

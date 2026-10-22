@@ -268,6 +268,9 @@ func (g *game) screenshot() {
 	}
 	img := &image.NRGBA{Pix: rgba, Stride: 4 * 320 * g.scale, Rect: image.Rect(0, 0, 320*g.scale, 200*g.scale)}
 	name := fmt.Sprintf("sosb-%s.png", time.Now().Format("20060102-150405.000"))
+	if g.frames > 0 { // 自動模式：以畫格命名，收據重跑得到同名檔
+		name = fmt.Sprintf("sosb-f%06d.png", g.frame)
+	}
 	err := os.MkdirAll(g.shotDir, 0o755)
 	if err == nil {
 		var f *os.File
