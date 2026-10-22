@@ -393,6 +393,8 @@ func (b *PathB) rebuild(p *bPage) {
 			Key: fmt.Sprintf("%s%d.%d.%d", pathBKey, p.rect.Top, p.rect.Left, row), X: from * 8, Y: row * 8,
 			Cells: len(text), CellW: 8, CellH: 8, Font: b.Font, Text: text, State: xlate.Shown,
 			BG: b.pal[p.bg], FG: b.pal[p.fg],
+			// 顏色來自呼叫參數：第一次 Frame 補指紋時回 Pending 的那一幀照畫，不露原版（主專案規格 021；xlate spec 202 §2.3.1）
+			Early: true,
 		}
 		p.stamps[row] = s
 		b.Layer.Stamps = append(b.Layer.Stamps, s)

@@ -125,6 +125,54 @@
 `type LineTracker struct`：`Hit(lin uint32, remain int, useRemain bool) (newLine bool)`。
 印字常式常以迴圈頭逐字命中；位址等於上一次 ＋1（`useRemain` 時另外要 remain 等於上一次 −1）就是同一行，否則是新的一行。
 
+### 2.6 閃現量尺（`FlashAudit`）
+
+需求來源：secret-of-the-silver-blades-cht 規格 021（使用者 2026-10-22：完全不先露原版字或原版圖）。
+
+量測「原版內容先原樣呈現、之後才被疊字或 HD 圖換掉」。只看呈現結果，不看疊字層內部狀態，所以疊字、HD 與日後任何覆繪機制共用。
+
+- `NewFlashAudit(w, h, window int) *FlashAudit`：原版畫面 w×h（8 的倍數），窗 window 畫格。
+- `Observe(frame int, indexed []uint8, base, out []uint8, scale int)`：indexed 是原版色號；base 是原版放大後的 RGBA，
+  out 是同一畫格疊字、HD 合成後（面板之前）的 RGBA，兩者同為 `w×scale × h×scale`。逐 8×8 格：
+  - 墨跡：格內兩種以上色號。
+  - 原樣呈現：有墨跡，且 out 與 base 在這格的放大像素全部相同。記下畫格與格內色號的 FNV-1a 64 指紋。
+  - 被改：out 與 base 在這格至少一個像素不同。若上次原樣呈現在 `(frame − window, frame)` 之內、指紋與現在相同，記一筆 `FlashEvent{Frame, Shown, CX, CY}`，並清掉這格的紀錄。
+- `Events() []FlashEvent`、`Count() int`。
+
+驗收（`xlate/flash_test.go`）：原樣呈現後下一格被改記一次；指紋不同（內容換了）不記；超過窗不記；沒有墨跡不記；同一次原樣呈現只記一次。
+
+### 2.7 依原版內容重現譯文（殘影疊字）
+
+需求來源同 §2.6。量測（已證實，sosb demo 戰鬥第 4535、5047 格）：原版把右側訊息區整塊重畫，同一段「HITTING FOR 19」英文回到原位；
+呼叫端偵測到呼叫外的顯存寫入就移除疊字，下一則訊息才有新疊字，中間露一格英文（`FlashAudit` 記 55 格）。
+
+原則：某處原版墨跡與一筆疊字定色時完全相同，那筆疊字的譯文就仍然適用，不管呼叫端是否已移除它。
+
+- `Layer` 在每次 `Frame` 結束時記下「已顯示、有指紋、有錨定格」的疊字集合。
+- `Draw`：上一次 `Frame` 之後被移除的這類疊字照常畫（合成用的原版畫面就是上一次 `Frame` 的，它們在那一幀仍有效），畫在現有疊字之前。
+- `Frame`：上述被移除的疊字轉成殘影，最多保留 `GhostKeep` 個（預設 64，先進先出）、`GhostFrames` 次 `Frame`（預設 600）。
+  殘影在這次 `Frame` 的**每一個**未透明錨定格指紋都與定色時相同才算有效；有效的殘影在 `Draw` 時畫（在現有疊字之前），無效就不畫，下次再判斷。
+  沒有錨定格的疊字不轉殘影（整塊純色無從判斷原文是否回來）。
+- `ForgetGhosts()`：清除全部殘影與上一幀集合。呼叫端在換語言、隱藏答案切換、視訊模式改變等「同樣原文應換成不同呈現」的時點呼叫。
+- 殘影不進快照（與 `OnDrop` 相同，是執行期狀態）。
+
+驗收（`xlate/ghost_test.go`）：疊字移除後同一幀照畫；原版同樣墨跡在之後的幀回來時畫出、內容不同時不畫；錨定格以外的格子相同不足以畫；
+`ForgetGhosts` 後不畫；超過 `GhostFrames` 不畫。
+
+### 2.8 保留呈現（`Hold`，HD 換圖用）
+
+狀態：DRAFT。需求來源同 §2.6：HD 模式下不能先顯示原版圖。HD 圖面在整塊原版吻合時才換圖；原版分幾幀畫完一張圖時，
+前幾幀的半張圖會原樣呈現。
+
+- `NewHold(w, h, max int) *Hold`；`Apply(indexed, base, out []uint8, scale int, region func(cx, cy int) bool)`：
+  逐 8×8 格，這格原版內容與上一次 `Apply` 不同、有墨跡、out 與 base 相同（沒有被換掉）、`region` 回 true、
+  連續保留未滿 max 次，就把上一次 `Apply` 結束時的 out 複製回這格。否則保留次數歸零。結束時記下這次的 out 與各格內容。
+- 內容停止變化的那一幀就放行；連續變化的格子最多保留 max 幀，原版動畫不會被凍住。
+- `region` 由呼叫端依 HD 主題宣告的範圍給；沒有 HD 主題時不呼叫。
+
+驗收（`xlate/hold_test.go`）：合成「一張兩格的圖分兩幀畫完、畫完才換 HD」，`FlashAudit` 0 次、中間那幀沒有原版的半張圖；
+不呼叫 `Apply` 的對照組 `FlashAudit` 記到閃現；`region` 外不保留；連續變化超過 max 幀放行。
+
 ## 3. 驗收
 
 1. 從 `psychic_war_cht` 搬來的測試全部通過：排版（7 字、18 字、32 字過長、`\n`）、捲動（右緣超出框的不搬）、重疊（整個蓋住才移除、部分重疊只遮格子）、3 幀逐格失效與恢復計數、定色、重疊移除、畫字與缺字回呼。

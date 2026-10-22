@@ -146,6 +146,7 @@ func (l *Live) SetLang(p *LangPack) {
 	if p == nil || p == l.lang {
 		return
 	}
+	l.Layer.ForgetGhosts() // 殘影是上一種語言的譯文（xlate spec 202 §2.7）
 	if old, ok := l.ui.(*Translator); ok {
 		p.UI.Relearn(old)
 	}

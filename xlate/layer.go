@@ -104,6 +104,10 @@ type Layer struct {
 	// It is runtime wiring and is intentionally not serialized.
 	FontRegistry map[string]*Font
 
+	// spec 202 §2.7 殘影：上一次 Frame 時可轉殘影的疊字、目前的殘影。執行期狀態，不進快照。
+	prevShown []*ghost
+	ghosts    []*ghost
+
 	watchers  []*Watcher      // spec 203：以畫面內容當觸發點
 	artOwners map[string]bool // spec 204：本幀整組的比對結果
 }
@@ -496,6 +500,8 @@ func (l *Layer) Frame(indexed, rgb []uint8) {
 	}
 	l.checkWatchers(indexed)
 	l.frameArt(indexed)
+	l.frameGhosts(indexed, w, h)
+	defer l.rememberShown(indexed, w, h)
 	keep := l.Stamps[:0]
 	for _, s := range l.Stamps {
 		if l.Frozen != nil && l.Frozen(s) {
@@ -711,8 +717,9 @@ func (l *Layer) DrawWithBackground(dst []uint8, scale int, missing func(r rune),
 	}
 	drew := l.drawArt(dst, scale)
 	W := l.width() * scale
-	for _, s := range l.Stamps {
-		if s.State != Shown && !s.Early {
+	ghosts := l.ghostsToDraw() // spec 202 §2.7：畫在現有疊字之前
+	for i, s := range append(ghosts, l.Stamps...) {
+		if i >= len(ghosts) && s.State != Shown && !s.Early {
 			continue
 		}
 		drew = true

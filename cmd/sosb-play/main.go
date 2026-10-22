@@ -419,11 +419,17 @@ func (g *game) Update() error {
 			return err
 		}
 	}
+	if g.frames > 0 && g.chinese {
+		g.live.AuditFlash(g.frame, g.scale)
+	}
 	if g.frames > 0 && g.frame >= g.frames {
 		return g.finish()
 	}
 	return nil
 }
+
+// flashWindow、flashListed：閃現量尺的窗（畫格）與結束時列出的行數（主專案規格 021 §2、§3）。
+const flashWindow, flashListed = 8, 60
 
 func (g *game) finish() error {
 	write := func(path string, overlay bool) error {
@@ -444,6 +450,19 @@ func (g *game) finish() error {
 		return err
 	}
 	g.perf.report(g.speed.base)
+	if a := g.live.Flash; a != nil {
+		fmt.Fprintf(os.Stderr, "sosb-play: 閃現 %d 次\n", a.Count())
+		// 同一對畫格、同一列的格子併成一行：第 a 格原樣呈現、第 b 格被換，列 y 的欄位
+		lines, ev := 0, a.Events()
+		for i := 0; i < len(ev) && lines < flashListed; lines++ {
+			j, cols := i, ""
+			for ; j < len(ev) && ev[j].Shown == ev[i].Shown && ev[j].Frame == ev[i].Frame && ev[j].CY == ev[i].CY; j++ {
+				cols += fmt.Sprintf(" %d", ev[j].CX)
+			}
+			fmt.Fprintf(os.Stderr, "sosb-play: 閃現 第 %d 格原樣呈現、第 %d 格被換 列 %d 欄%s\n", ev[i].Shown, ev[i].Frame, ev[i].CY, cols)
+			i = j
+		}
+	}
 	fmt.Fprintf(os.Stderr, "sosb-play: CPU 速度 設定 %dx、時脈 %d%%、TP Delay 登記 %v、快轉 %d 步\n",
 		g.speed.set, g.owner.ClockPercent(), g.tpRegistered && g.speed.ready, g.accelSteps)
 	if d := g.live.Demo; d != nil {
@@ -548,6 +567,7 @@ func main() {
 	speedFlag := flag.Int("speed", 0, "CPU 模擬速度倍率 1、2、4、8、16、32（主專案規格 019）；0 表示讀取前端偏好，自動模式為 1")
 	delayAccel := flag.Bool("delay-accel", true, "登記 Turbo Pascal Delay 精確快轉（dosgolem 規格 429）；關閉只供等價性對照")
 	perfFlag := flag.Bool("perf", false, "自動模式結束時印每格模擬與繪製耗時、畫出 fps（主專案規格 019 §4）")
+	flashFlag := flag.Bool("flash-audit", false, "自動模式每畫格量測閃現：原版內容先原樣呈現、之後才被疊字或 HD 換掉（主專案規格 021）")
 	adaptiveFlag := flag.Bool("speed-adaptive", false, "自動模式也調節實際倍率（只供量測，結果不可重播）")
 	barFontFlag := flag.Int("barfont", 0, "切換列字級 1 小、2 中、3 大（主專案規格 020）；0 表示讀取前端偏好，自動模式為中")
 	adlib := flag.Bool("adlib", true, "模擬 AdLib")
@@ -661,6 +681,9 @@ func main() {
 	}
 	live.Inventory = *invPath != ""
 	live.ControlDemo = true
+	if *flashFlag && *frames > 0 {
+		live.Flash = xlate.NewFlashAudit(320, 200, flashWindow)
+	}
 	if live.Answers, live.QuizFormat, err = sosb.LoadQuizDir(*textDir); err != nil {
 		fail(err)
 	}

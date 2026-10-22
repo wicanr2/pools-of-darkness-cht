@@ -61,6 +61,9 @@ type Live struct {
 	// 主專案規格 019）；找不到時為 0。
 	TPDelayLoop, TPDelayCount uint32
 	nextMapSample             uint64
+	// Flash 是閃現量尺（主專案規格 021）；nil 時不量。由 AuditFlash 每畫格比對一次。
+	Flash      *xlate.FlashAudit
+	flashFrame int
 
 	ui      Lookuper
 	ecl     *Catalog
@@ -205,6 +208,7 @@ func (l *Live) VideoWrite(offset uint32) {
 // SetHideAnswers 切換查驗題答案顯示（規格 006 §2.2）。
 func (l *Live) SetHideAnswers(hide bool) {
 	l.hideAnswers = hide
+	l.Layer.ForgetGhosts() // 同樣的原文改成另一種呈現（xlate spec 202 §2.7）
 	if l.A != nil {
 		l.A.SetHideAnswers(hide)
 	}
@@ -237,6 +241,7 @@ func (l *Live) journalEntry(text []byte, mem CPUView) {
 // ModeChange 在視訊模式改變時呼叫。
 func (l *Live) ModeChange() {
 	l.Journal.closeAutoSafe()
+	l.Layer.ForgetGhosts()
 	if !l.ready {
 		l.armed = true
 		return
@@ -292,6 +297,11 @@ func (l *Live) Compose(scale int, overlay bool, missing func(rune)) []byte {
 	if overlay {
 		l.HDLayers.Draw(out, l.indexed, scale)
 		l.Layer.Draw(out, scale, missing)
+		if l.Flash != nil && l.flashFrame != 0 {
+			base := l.Compose(scale, false, nil)
+			l.Flash.Observe(l.flashFrame, l.indexed, base, out, scale)
+			l.flashFrame = 0
+		}
 		if l.Journal.Open() {
 			l.Journal.Draw(out, scale, l.Font, missing)
 		}
@@ -303,6 +313,17 @@ func (l *Live) Compose(scale int, overlay bool, missing func(rune)) []byte {
 		}
 	}
 	return out
+}
+
+// AuditFlash 以閃現量尺比對這一畫格的呈現（主專案規格 021；xlate spec 202 §2.6）：疊字與 HD 合成一次，面板不列入。
+// l.Flash 為 nil 時不做事。
+func (l *Live) AuditFlash(frame, scale int) {
+	if l.Flash == nil {
+		return
+	}
+	l.flashFrame = frame
+	l.Compose(scale, true, nil)
+	l.flashFrame = 0
 }
 
 // Indexed 回最後一個畫格的原版色號（收據用）。
