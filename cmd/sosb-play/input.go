@@ -42,6 +42,8 @@ const (
 	actLang                               // F8：循環切換語言（主專案規格 015；載入兩種以上語言時才保留 F8）
 	actLangCycle                          // 切換列語言項：各語言依序，最後一種之後回原版
 	actCheat                              // F1：我方無敵（主專案規格 017）
+	actSpeed                              // 切換列速度項：展開速度選單（主專案規格 019）
+	actBarFont                            // 切換列字級項：展開字級選單（主專案規格 020）
 )
 
 // panelMode 是手札面板的狀態：開啟時部分鍵由前端吃掉（規格 007 §2.4、§2.5）。
@@ -174,6 +176,8 @@ type scriptAction struct {
 	lang   bool // 換下一種語言（等同 F8，主專案規格 015）
 	cheat  bool // 無敵開關（等同 F1，主專案規格 017）
 	act    hostAction
+	speed  int // 切換 CPU 速度倍率（主專案規格 019）
+	size   int // 切換列字級 1 小、2 中、3 大（主專案規格 020）
 }
 
 // scriptHostActs 是腳本可用的面板動作名稱。另取名字而不用 F5、F6 等鍵名：鍵名在腳本裡一律送進 DOS，
@@ -181,11 +185,13 @@ type scriptAction struct {
 var scriptHostActs = map[string]hostAction{
 	"journal": actJournal, "guide": actGuide, "map": actMap,
 	"pgup": actPageUp, "pgdn": actPageDown, "prev": actPrevEntry, "next": actNextEntry, "shot": actShot,
+	"speeds": actSpeed, "barfonts": actBarFont,
 }
 
 // parseScript 解析 `畫格:動作[,…]`。動作是鍵名（dos.KeyNamed，例 Enter、Down）、
 // 單一可列印字元、toggle（等同 F12）、lang（等同 F8）、cheat（等同 F1）、bar（切換列保持顯示），
-// 或 scriptHostActs 的面板動作（journal、guide、map、pgup、pgdn、prev、next）與 shot（等同 F10，存到 -shot-dir）。
+// 或 scriptHostActs 的面板動作（journal、guide、map、pgup、pgdn、prev、next）與 shot（等同 F10，存到 -shot-dir），
+// speeds、barfonts（展開速度、字級選單），speed=m（切換倍率）、barfont=n（1 小、2 中、3 大）。
 func parseScript(s string) (map[int][]scriptAction, error) {
 	out := map[int][]scriptAction{}
 	if s == "" {
@@ -206,6 +212,18 @@ func parseScript(s string) (map[int][]scriptAction, error) {
 			out[frame] = append(out[frame], scriptAction{lang: true})
 		case name == "cheat":
 			out[frame] = append(out[frame], scriptAction{cheat: true})
+		case strings.HasPrefix(name, "speed="):
+			m, err := strconv.Atoi(strings.TrimPrefix(name, "speed="))
+			if err != nil || !validSpeed(m) {
+				return nil, fmt.Errorf("script 速度 %q 須為 1、2、4、8、16、32", name)
+			}
+			out[frame] = append(out[frame], scriptAction{speed: m})
+		case strings.HasPrefix(name, "barfont="):
+			n, err := strconv.Atoi(strings.TrimPrefix(name, "barfont="))
+			if err != nil || n < 1 || n > 3 {
+				return nil, fmt.Errorf("script 字級 %q 須為 1、2、3（小、中、大）", name)
+			}
+			out[frame] = append(out[frame], scriptAction{size: n})
 		case scriptHostActs[name] != 0:
 			out[frame] = append(out[frame], scriptAction{act: scriptHostActs[name]})
 		case len([]rune(name)) == 1:

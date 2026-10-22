@@ -14,7 +14,8 @@ var testBarText = map[string]string{
 	"toolbar.scale2": "2倍", "toolbar.scale3": "3倍", "toolbar.scale3hd": "3倍HD", "toolbar.nohd": "無HD",
 	"toolbar.chinese": "中文", "toolbar.original": "原版", "toolbar.journal": "手札", "toolbar.guide": "攻略",
 	"toolbar.map": "地圖", "toolbar.answers": "答案", "toolbar.cheat": "無敵", "toolbar.mute": "靜音", "toolbar.music": "配樂", "toolbar.shot": "截圖",
-	"toolbar.fullscreen": "全螢幕",
+	"toolbar.fullscreen": "全螢幕", "toolbar.speed": "{speed}", "toolbar.barfont": "字{size}",
+	"barfont.small": "小", "barfont.medium": "中", "barfont.large": "大",
 }
 
 func TestToolbarTextComplete(t *testing.T) {
@@ -26,22 +27,33 @@ func TestToolbarTextComplete(t *testing.T) {
 	}
 }
 
+// TestToolbarLayoutFits：最寬的組合（3倍HD、32x）也放得進 320 邏輯像素（使用者 2026-10-22 定案：合併倍率項、速度只顯示倍率）。
 func TestToolbarLayoutFits(t *testing.T) {
 	for _, hd := range []bool{false, true} {
-		items := toolbarItems(testBarText, toolbarState{scale: 2, hasHD: hd, chinese: true})
-		end := 0
-		for _, it := range items {
-			if it.col < end {
-				t.Fatalf("hd=%v：%s 與前一項重疊", hd, it.key)
+		for _, speed := range []string{"1x", "8x", "32x"} {
+			for _, scale := range []int{2, 3} {
+				items := toolbarItems(testBarText, toolbarState{scale: scale, hasHD: hd, chinese: true, speed: speed, size: "中"})
+				end := 0
+				for _, it := range items {
+					if it.col < end {
+						t.Fatalf("hd=%v %s：%s 與前一項重疊", hd, speed, it.key)
+					}
+					if it.cols == 0 {
+						t.Fatalf("hd=%v %s：%s 寬 0 格", hd, speed, it.key)
+					}
+					end = it.col + it.cols + 1
+				}
+				if last := items[len(items)-1]; (last.col+last.cols)*8 > 320 {
+					t.Fatalf("hd=%v %s %d×：切換列寬 %d 超過 320", hd, speed, scale, (last.col+last.cols)*8)
+				}
 			}
-			if it.cols != len(sosb.PackHalfWidth([]rune(testBarText[it.key]))) || it.cols == 0 {
-				t.Fatalf("hd=%v：%s 寬 %d 格", hd, it.key, it.cols)
-			}
-			end = it.col + it.cols + 1
 		}
-		if last := items[len(items)-1]; (last.col+last.cols)*8 > 320 {
-			t.Fatalf("hd=%v：切換列寬 %d 超過 320", hd, (last.col+last.cols)*8)
-		}
+	}
+	items := toolbarItems(testBarText, toolbarState{scale: 3, hasHD: true, chinese: true, speed: "32x", size: "中"})
+	sp, _ := find(items, "toolbar.speed")
+	fs, _ := find(items, "toolbar.barfont")
+	if string(sp.label) != string(sosb.PackHalfWidthAll([]rune("32x"))) || string(fs.label) != "字中" {
+		t.Fatalf("速度項 %q、字級項 %q", string(sp.label), string(fs.label))
 	}
 }
 
@@ -54,32 +66,37 @@ func find(items []toolbarItem, key string) (toolbarItem, bool) {
 	return toolbarItem{}, false
 }
 
-func TestToolbarHDGate(t *testing.T) {
-	no := toolbarItems(testBarText, toolbarState{scale: 2, chinese: true})
+// TestToolbarScaleItem：倍率合成一項，顯示目前倍率，按下等同 F2；不另列「無HD」（主專案規格 019 §3.3）。
+func TestToolbarScaleItem(t *testing.T) {
+	no := toolbarItems(testBarText, toolbarState{scale: 3, chinese: true})
 	if _, ok := find(no, "toolbar.scale3hd"); ok {
 		t.Fatal("沒有 HD 素材時不得出現 3倍HD")
 	}
-	nohd, ok := find(no, "toolbar.nohd")
-	if !ok || nohd.state != itemDisabled || nohd.act != 0 {
-		t.Fatalf("沒有 HD 素材時應有停用的說明項：%+v", nohd)
+	if _, ok := find(no, "toolbar.nohd"); ok {
+		t.Fatal("不再列出無HD")
 	}
-	if a := toolbarClick(no, nohd.col*8, barTextY); a != 0 {
-		t.Fatalf("停用項按下送出 %v", a)
+	s3, ok := find(no, "toolbar.scale3")
+	if !ok || toolbarClick(no, s3.col*8, barTextY) != actScale {
+		t.Fatal("3 倍時應顯示 3倍並送出 F2 同一動作")
 	}
-	yes := toolbarItems(testBarText, toolbarState{scale: 2, hasHD: true, chinese: true})
-	if _, ok := find(yes, "toolbar.nohd"); ok {
-		t.Fatal("有 HD 素材時不顯示停用說明")
+	yes := toolbarItems(testBarText, toolbarState{scale: 3, hasHD: true, chinese: true})
+	if _, ok := find(yes, "toolbar.scale3hd"); !ok {
+		t.Fatal("有 HD 素材、3 倍時應顯示 3倍HD")
 	}
-	s3, ok := find(yes, "toolbar.scale3hd")
-	if !ok || toolbarClick(yes, s3.col*8, barTextY) != actScale {
-		t.Fatal("有 HD 素材時 3倍HD 應送出 F2 同一動作")
+	two := toolbarItems(testBarText, toolbarState{scale: 2, hasHD: true, chinese: true})
+	s2, ok := find(two, "toolbar.scale2")
+	if !ok || toolbarClick(two, s2.col*8, barTextY) != actScale {
+		t.Fatal("2 倍時應顯示 2倍並送出 F2 同一動作")
+	}
+	if _, ok := find(two, "toolbar.scale3hd"); ok {
+		t.Fatal("2 倍時只列目前倍率")
 	}
 }
 
 func TestToolbarClickSameAsKeys(t *testing.T) {
 	st := toolbarState{scale: 3, hasHD: true, chinese: true}
 	items := toolbarItems(testBarText, st)
-	want := map[string]hostAction{"toolbar.scale2": actScale, "toolbar.chinese": actToggle, "toolbar.journal": actJournal,
+	want := map[string]hostAction{"toolbar.scale3hd": actScale, "toolbar.chinese": actToggle, "toolbar.journal": actJournal,
 		"toolbar.guide": actGuide, "toolbar.map": actMap, "toolbar.answers": actAnswers, "toolbar.mute": actMute,
 		"toolbar.shot": actShot, "toolbar.fullscreen": actFullscreen}
 	for k, a := range want {
@@ -99,13 +116,8 @@ func TestToolbarClickSameAsKeys(t *testing.T) {
 			t.Fatalf("%s 送出 %v，要 %v", k, got, a)
 		}
 	}
-	// 目前倍率按下不動作
-	s3, _ := find(items, "toolbar.scale3hd")
-	if a := toolbarClick(items, s3.col*8, barTextY); a != 0 {
-		t.Fatalf("已在 3× 按 3倍HD 送出 %v", a)
-	}
 	// 切換列以外或項目間空格不命中
-	if toolbarClick(items, 0, barTextY) != 0 || toolbarClick(items, items[1].col*8+1, barH) != 0 {
+	if toolbarClick(items, (items[1].col-1)*8, barTextY) != 0 || toolbarClick(items, items[1].col*8+1, barH) != 0 {
 		t.Fatal("範圍外不得命中")
 	}
 }
@@ -196,10 +208,10 @@ func TestDrawToolbarOnlyTopRows(t *testing.T) {
 }
 
 func TestToolbarHalfWidthPacked(t *testing.T) {
-	items := toolbarItems(testBarText, toolbarState{scale: 2})
-	it, _ := find(items, "toolbar.nohd")
-	if it.cols != 2 { // 無、HD（併一格）
-		t.Fatalf("無HD佔 %d 格，要 2", it.cols)
+	items := toolbarItems(testBarText, toolbarState{scale: 3, hasHD: true})
+	it, _ := find(items, "toolbar.scale3hd")
+	if it.cols != 3 { // 3、倍、HD（併一格）
+		t.Fatalf("3倍HD佔 %d 格，要 3", it.cols)
 	}
 }
 

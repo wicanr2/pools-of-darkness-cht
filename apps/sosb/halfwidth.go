@@ -56,16 +56,17 @@ func PackHalfWidthAll(rs []rune) []rune {
 	return out
 }
 
-// AddHalfWidthPairs 補上全部組合字（規格 005 §2）：半形字墨跡在中間半格（16 格 x=4..11、24 格 x=6..17），
+// AddHalfWidthPairs 補上全部組合字（規格 005 §2）：半形字墨跡在中間半格（16 格 x=4..11、24 格 x=6..17；
+// 切換列的 12、22 格同樣是 w/4 起半格寬，主專案規格 020），
 // 組合字左半取 a、右半取 b。字型的 3 倍字模（Scaled[3]，24×24 外部字模）一併處理。
 func AddHalfWidthPairs(f *xlate.Font) {
-	if f == nil || f.W != f.H || f.W%8 != 0 {
+	if f == nil || f.W != f.H || f.W < 8 {
 		return
 	}
 	if s, ok := f.Scaled[3]; ok && s.Font != f {
 		AddHalfWidthPairs(s.Font)
 	}
-	w, rb := f.W, f.W/8
+	w, rb := f.W, (f.W+7)/8
 	half, quarter := w/2, w/4
 	bit := func(g []byte, x, y int) bool { return g[y*rb+x/8]&(0x80>>(x%8)) != 0 }
 	for a := rune(0x20); a <= 0x7E; a++ {

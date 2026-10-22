@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/wicanr2/dosgolem/runtime/tpcrt"
 	"github.com/wicanr2/dosgolem/xlate"
 )
 
@@ -52,6 +53,14 @@ type Live struct {
 	// Inventory 為 true 時，綁定後建立 Inv 記錄印字路徑盤點（issue #11）。
 	Inventory bool
 	Inv       *Inventory
+	// ControlDemo 為 true 時，綁定後建立 Demo（主專案規格 018）；定位失敗只記在 DemoErr，不影響覆繪。
+	ControlDemo bool
+	Demo        *DemoControl
+	DemoErr     error
+	// TPDelayLoop、TPDelayCount 是綁定時以簽章找到的 CRT.Delay（dosgolem 規格 429 §2.4；本作是 TP5 寫法，
+	// 主專案規格 019）；找不到時為 0。
+	TPDelayLoop, TPDelayCount uint32
+	nextMapSample             uint64
 
 	ui      Lookuper
 	ecl     *Catalog
@@ -119,6 +128,12 @@ func (l *Live) bind(mem CPUView) error {
 	if l.Inventory {
 		l.Inv = newInventory(l)
 	}
+	if l.ControlDemo {
+		l.Demo, l.DemoErr = NewDemoControl(mem)
+	}
+	if loop, count, ok := tpcrt.FindDelay(mem.Read8, defaultDS); ok {
+		l.TPDelayLoop, l.TPDelayCount = loop, count
+	}
 	return nil
 }
 
@@ -138,13 +153,21 @@ func (l *Live) BeforeStep(v StepCPU) error {
 		l.Journal.KeyTaken(v.Read16(bdaKeyHead)) // 規格 007 §2.4 條件 2：先比對再處理進入點
 	}
 	cs, ip, ss, sp := v.CS(), v.IP(), v.SS(), v.SP()
+	if l.Demo != nil {
+		l.Demo.Before(v.Steps(), linear(cs, ip), v)
+	}
 	if l.Map != nil {
 		if linear(cs, ip) == l.A.Entry {
 			l.ds = v.DS()
 		}
-		if l.ds != 0 && v.Steps()%mapSampleEvery == 0 {
-			l.Map.Sample(v, l.ds)
-			l.Music.MapKey(l.Map.Key)
+		// 以門檻取代整除：TP Delay 快轉一次跳過許多步，整除點可能被跳過（主專案規格 019）；
+		// 沒有快轉時每次都在整除點跨過門檻，取樣點與舊版相同。
+		if s := v.Steps(); l.ds != 0 && s >= l.nextMapSample {
+			if l.nextMapSample != 0 || s%mapSampleEvery == 0 {
+				l.Map.Sample(v, l.ds)
+				l.Music.MapKey(l.Map.Key)
+			}
+			l.nextMapSample = s - s%mapSampleEvery + mapSampleEvery
 		}
 	}
 	na, nb := len(l.A.Hits), 0
@@ -234,6 +257,7 @@ func (l *Live) Frame(indexed []byte, palette [256][3]uint8) {
 	}
 	// 綁定前也跑 Layer.Frame：HD 圖面（hd.go）的標題畫面出現在綁定之前，那時還沒有疊字。
 	if l.ready {
+		l.A.Pal = palette
 		l.A.PrepareFrame(indexed, 320, 200)
 		l.C.SetPalette(palette)
 		if l.B != nil {

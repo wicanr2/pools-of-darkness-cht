@@ -47,17 +47,33 @@ func stepsPerHostFrame(clock int) uint64 {
 	return machine.ScaleSteps(machine.DefaultVGAFrameEvery, clock) * 70 / 60
 }
 
-// observer 把 session 的觀測事件轉給 sosb.Live 與音訊混音器，寫入守衛轉給無敵開關（主專案規格 017）。
+// observer 把 session 的觀測事件轉給 sosb.Live 與音訊混音器；寫入守衛同時服務 demo 控制（主專案規格 018）
+// 與無敵開關（主專案規格 017）。
 type observer struct {
 	live  *sosb.Live
 	mix   *mixer.Mixer
 	cheat *sosb.Invincible
 }
 
+// GuardRange 回兩者監看範圍的聯集（session 一回合只收一段範圍）；GuardWrite 依位址分派，任一要求還原就還原。
 func (o observer) GuardRange(mem session.GuardMemory) (uint32, uint32) {
-	return o.cheat.GuardRange(mem)
+	lo, hi := o.cheat.GuardRange(mem)
+	if d := o.live.Demo; d != nil {
+		dl, dh := d.GuardRange(mem)
+		switch {
+		case dl > dh:
+		case lo > hi:
+			lo, hi = dl, dh
+		default:
+			lo, hi = min(lo, dl), max(hi, dh)
+		}
+	}
+	return lo, hi
 }
 func (o observer) GuardWrite(addr uint32, old, new uint8) bool {
+	if d := o.live.Demo; d != nil && d.GuardWrite(addr, old, new) {
+		return true
+	}
 	return o.cheat.GuardWrite(addr, old, new)
 }
 
@@ -121,6 +137,19 @@ type game struct {
 	mainFont *xlate.Font // -font（切換列在英文版用它）
 	cursorX  int         // 游標邏輯位置（切換列懸停用）
 	cursorY  int
+	// 主專案規格 019：CPU 模擬速度。chunk 是 1x 的每格預算；delayAccel 為 false 時不登記 TP Delay（等價性對照用）。
+	speed        speedControl
+	speedPath    string
+	chunk        uint64
+	delayAccel   bool
+	tpRegistered bool
+	lastSteps    uint64
+	accelSteps   uint64
+	perf         perfStats
+	// 主專案規格 020：切換列字級。
+	barSize     barSize
+	barSizePath string
+	barFonts    barFonts
 }
 
 func (g *game) hostInput(u *session.CapturedUpdate) []hostAction {
@@ -131,13 +160,27 @@ func (g *game) hostInput(u *session.CapturedUpdate) []hostAction {
 			in.Held[name] = d
 		}
 	}
+	menuWasOpen := g.bar.menuOpen()
 	keys, acts := mapKeys(in, g.panelMode())
+	if menuWasOpen { // 選單展開時鍵盤只處理 Esc（主專案規格 019 §3.3）
+		keys, acts = nil, nil
+		if in.Held["Escape"] == 1 {
+			g.bar.speeds, g.bar.sizes = false, false
+		}
+	}
 	u.BIOSKeys = append(u.BIOSKeys, keys...)
 	cx, cy := ebiten.CursorPosition()
 	dx, dy := dosPoint(cx, cy, g.scale)
 	g.cursorX, g.cursorY = dx, dy
 	g.bar.track(dx, dy)
-	if inpututil.IsMouseButtonJustPressed(ebiten.MouseButtonLeft) && !g.pressing && g.bar.takesPointer(dx, dy) {
+	if inpututil.IsMouseButtonJustPressed(ebiten.MouseButtonLeft) && !g.pressing && menuWasOpen {
+		if g.bar.speeds {
+			g.clickSpeed(dx, dy)
+		}
+		if g.bar.sizes {
+			g.clickBarFont(dx, dy)
+		}
+	} else if inpututil.IsMouseButtonJustPressed(ebiten.MouseButtonLeft) && !g.pressing && g.bar.takesPointer(dx, dy) {
 		// 切換列範圍內的點擊由前端處理，不送進遊戲（規格 011 §2.3）
 		if a := toolbarClick(g.toolbarItems(), dx, dy); a != 0 {
 			acts = append(acts, a)
@@ -173,6 +216,10 @@ func (g *game) apply(acts []hostAction) {
 			g.music.Toggle()
 		case actCheat:
 			g.cheat.On = !g.cheat.On
+		case actSpeed:
+			g.bar.speeds, g.bar.sizes = !g.bar.speeds, false
+		case actBarFont:
+			g.bar.sizes, g.bar.speeds = !g.bar.sizes, false
 		case actLang:
 			g.nextLang()
 		case actLangCycle:
@@ -299,6 +346,10 @@ func (g *game) Update() error {
 			acts = append(acts, actLang)
 		} else if a.cheat {
 			acts = append(acts, actCheat)
+		} else if a.speed != 0 {
+			g.setSpeed(a.speed)
+		} else if a.size != 0 {
+			g.setBarSize(barSize(a.size - 1))
 		} else if a.act != 0 {
 			acts = append(acts, a.act)
 		} else if a.key != nil {
@@ -309,25 +360,62 @@ func (g *game) Update() error {
 		acts = append(acts, g.hostInput(&u)...)
 	}
 	g.apply(acts)
-	view, err := g.owner.View()
-	if err != nil {
-		return err
+	if len(u.BIOSKeys) > 0 && g.live.Demo.Running() {
+		// demo 中的按鍵不送進遊戲，改為中止 demo 回選單（主專案規格 018 §3.2）
+		g.live.Demo.RequestAbort()
+		u.BIOSKeys = nil
 	}
-	u.StartedPanel, u.Layout, u.SourceGeneration = view.Panel, view.Layout, view.SourceGeneration
-	if _, err := g.owner.Deliver(u); err != nil {
-		return err
+	g.registerDelay()
+	// 1x 一次推進整格；大於 1x 時分段推進，互動模式超過單格上限就不再跑下一段（主專案規格 019 §3.2）
+	start, capped, stopped := time.Now(), false, false
+	for remaining := g.budget; remaining > 0; {
+		n := remaining
+		if g.speed.set > 1 && n > g.chunk {
+			n = g.chunk
+		}
+		view, err := g.owner.View()
+		if err != nil {
+			return err
+		}
+		u.StartedPanel, u.Layout, u.SourceGeneration = view.Panel, view.Layout, view.SourceGeneration
+		if _, err := g.owner.Deliver(u); err != nil {
+			return err
+		}
+		u = session.CapturedUpdate{}
+		tick, err := g.owner.Advance(session.InstructionBudget(n))
+		if err != nil {
+			return err
+		}
+		g.lastSteps, g.accelSteps = tick.MachineStepsAfter, g.accelSteps+tick.Accelerated
+		g.samples = g.mix.Render(g.samples[:0], tick.MachineStepsBefore, tick.MachineStepsAfter)
+		g.music.Mix(g.samples)
+		if g.ring != nil {
+			g.ring.Push(g.samples)
+		}
+		if tick.Phase == session.PhaseStopped {
+			stopped = true
+			break
+		}
+		if tick.Steps < n {
+			break
+		}
+		remaining -= n
+		if remaining > 0 && g.speed.adaptive && time.Since(start) > speedFrameCap {
+			capped = true
+			break
+		}
 	}
-	tick, err := g.owner.Advance(session.InstructionBudget(g.budget))
-	if err != nil {
-		return err
+	if g.perf.on {
+		g.perf.adv = append(g.perf.adv, time.Since(start))
+		g.perf.pctSum, g.perf.pcN = g.perf.pctSum+g.owner.ClockPercent(), g.perf.pcN+1
 	}
-	g.samples = g.mix.Render(g.samples[:0], tick.MachineStepsBefore, tick.MachineStepsAfter)
-	g.music.Mix(g.samples)
-	if g.ring != nil {
-		g.ring.Push(g.samples)
-	}
-	if tick.Phase == session.PhaseStopped {
+	if stopped {
 		return ebiten.Termination
+	}
+	if p := g.speed.observe(time.Since(start), capped); p != g.owner.ClockPercent() {
+		if err := g.applyClock(p); err != nil {
+			return err
+		}
 	}
 	if g.frames > 0 && g.frame >= g.frames {
 		return g.finish()
@@ -352,6 +440,15 @@ func (g *game) finish() error {
 	}
 	if err := write(g.shotOrig, false); err != nil {
 		return err
+	}
+	g.perf.report(g.speed.base)
+	fmt.Fprintf(os.Stderr, "sosb-play: CPU 速度 設定 %dx、時脈 %d%%、TP Delay 登記 %v、快轉 %d 步\n",
+		g.speed.set, g.owner.ClockPercent(), g.tpRegistered && g.speed.ready, g.accelSteps)
+	if d := g.live.Demo; d != nil {
+		fmt.Fprintf(os.Stderr, "sosb-play: demo 控制 逾時寫入擋下 %d 次、中止 %d 次、中止後返回 %d 次（最近 %d 步）、執行中 %v、錯誤 %v\n",
+			d.TimeoutsCleared, d.Aborts, d.AbortReturns, d.LastAbortSteps, d.Running(), d.Err)
+	} else if g.live.DemoErr != nil {
+		fmt.Fprintln(os.Stderr, "sosb-play:", g.live.DemoErr)
 	}
 	if g.live.BindErr != nil {
 		fmt.Fprintln(os.Stderr, "sosb-play:", g.live.BindErr)
@@ -391,7 +488,8 @@ func (g *game) toolbarItems() []toolbarItem {
 		hasMusic: g.music != nil, music: g.music.Enabled(),
 		fullscreen: ebiten.IsFullscreen(), answers: !g.live.HideAnswers(),
 		journal: g.live.Journal.Browsing(), guide: g.live.Guide.Open(), mapOpen: g.live.Map.Open(), langs: len(g.langs),
-		cheat: g.cheat.On, noJournal: g.live.Journal == nil, noGuide: g.live.Guide == nil})
+		cheat: g.cheat.On, noJournal: g.live.Journal == nil, noGuide: g.live.Guide == nil,
+		speed: g.speed.label(), size: g.barText[barSizeKeys[g.barSize]]})
 }
 
 // drawBar 在切換列顯示時把它疊到 rgba 上（截圖 F10 不含切換列）。
@@ -399,13 +497,26 @@ func (g *game) drawBar(rgba []byte) {
 	if rgba == nil || !g.bar.shown {
 		return
 	}
+	if g.perf.on {
+		defer func(t time.Time) { g.perf.draw = append(g.perf.draw, time.Since(t)) }(time.Now())
+	}
 	items := g.toolbarItems()
-	drawToolbar(rgba, g.scale, g.barFont(), items, toolbarHit(items, g.cursorX, g.cursorY), func(r rune) {
+	missing := func(r rune) {
 		if !g.missing[r] {
 			g.missing[r] = true
 			fmt.Fprintf(os.Stderr, "sosb-play: 字型缺字 %q（U+%04X）\n", r, r)
 		}
-	})
+	}
+	glyph, _ := g.barGlyphs()
+	drawToolbar(rgba, g.scale, glyph, items, toolbarHit(items, g.cursorX, g.cursorY), missing)
+	if g.bar.speeds {
+		menu := speedMenu(g.speed.set, g.speed.actual(), items)
+		drawDropMenu(rgba, g.scale, glyph, menu, dropMenuHit(menu, g.cursorX, g.cursorY), missing)
+	}
+	if g.bar.sizes {
+		menu := barFontMenu(g.barText, g.barSize, items)
+		drawDropMenu(rgba, g.scale, glyph, menu, dropMenuHit(menu, g.cursorX, g.cursorY), missing)
+	}
 }
 
 func (g *game) Draw(screen *ebiten.Image) {
@@ -432,6 +543,11 @@ func main() {
 	shotOrig := flag.String("shot-original", "", "自動模式結束時輸出原版合成 RGBA")
 	shotDir := flag.String("shot-dir", "", "F10 截圖目錄（預設存檔目錄旁的 screenshots）")
 	clock := flag.Int("clock", 50, "機器時脈比例 10–100")
+	speedFlag := flag.Int("speed", 0, "CPU 模擬速度倍率 1、2、4、8、16、32（主專案規格 019）；0 表示讀取前端偏好，自動模式為 1")
+	delayAccel := flag.Bool("delay-accel", true, "登記 Turbo Pascal Delay 精確快轉（dosgolem 規格 429）；關閉只供等價性對照")
+	perfFlag := flag.Bool("perf", false, "自動模式結束時印每格模擬與繪製耗時、畫出 fps（主專案規格 019 §4）")
+	adaptiveFlag := flag.Bool("speed-adaptive", false, "自動模式也調節實際倍率（只供量測，結果不可重播）")
+	barFontFlag := flag.Int("barfont", 0, "切換列字級 1 小、2 中、3 大（主專案規格 020）；0 表示讀取前端偏好，自動模式為中")
 	adlib := flag.Bool("adlib", true, "模擬 AdLib")
 	audioOn := flag.Bool("audio", true, "互動模式播放聲音（容器內沒有音訊裝置時關閉）")
 	hideAnswers := flag.Bool("hide-answers", false, "開機時隱藏查驗題答案（F9 切換）")
@@ -446,6 +562,12 @@ func main() {
 	hdDir := flag.String("hd", "", "HD 主題目錄（theme.json；主專案規格 010，只在 3× 顯示）")
 	showVersion := flag.Bool("version", false, "印版號與 dosgolem commit 後結束")
 	flag.Parse()
+	if *speedFlag != 0 && !validSpeed(*speedFlag) {
+		fail(fmt.Errorf("-speed 須為 1、2、4、8、16、32"))
+	}
+	if *barFontFlag < 0 || *barFontFlag > 3 {
+		fail(fmt.Errorf("-barfont 須為 1、2、3"))
+	}
 	if *showVersion {
 		fmt.Print(versionString())
 		return
@@ -536,6 +658,7 @@ func main() {
 		}
 	}
 	live.Inventory = *invPath != ""
+	live.ControlDemo = true
 	if live.Answers, live.QuizFormat, err = sosb.LoadQuizDir(*textDir); err != nil {
 		fail(err)
 	}
@@ -642,7 +765,26 @@ func main() {
 	}
 	g := &game{owner: owner, live: live, scale: *scaleFlag, chinese: !*original0, frames: *frames, script: keys, shot: *shot, shotOrig: *shotOrig,
 		shotDir: dir, budget: budget, mix: mix, focused: true, missing: map[rune]bool{}, barText: barText,
-		langs: langs, lang: langIdx, langDir: stateDir, mainFont: font, cheat: cheat}
+		langs: langs, lang: langIdx, langDir: stateDir, mainFont: font, cheat: cheat,
+		chunk: budget, delayAccel: *delayAccel, speedPath: filepath.Join(stateDir, "sosb-speed.txt"),
+		barSizePath: filepath.Join(stateDir, "sosb-barfont.txt"), barSize: barMedium}
+	g.speed = speedControl{base: *clock, set: 1, pct: *clock, adaptive: *frames == 0 || *adaptiveFlag}
+	g.perf = perfStats{on: *perfFlag, start: time.Now()}
+	switch {
+	case *speedFlag != 0:
+		g.speed.set = *speedFlag
+	case *frames == 0:
+		g.speed.set = readSpeed(g.speedPath)
+	}
+	switch {
+	case *barFontFlag != 0:
+		g.barSize = barSize(*barFontFlag - 1)
+	case *frames == 0:
+		g.barSize = readBarSize(g.barSizePath)
+	}
+	if g.barFonts, err = loadBarFonts(font, *fontPath); err != nil {
+		fail(err)
+	}
 	if *musicDir != "" {
 		if g.music, err = bgm.Load(*musicDir, live.Music); err != nil {
 			fail(err)
