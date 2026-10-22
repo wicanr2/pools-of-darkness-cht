@@ -801,3 +801,19 @@ func TestFontForScaleVariant(t *testing.T) {
 		t.Error("GlyphScale=1 應忽略變體")
 	}
 }
+
+// TestEarlyStampDrawsBeforeShown：Early 疊字在 Printing、Pending 也照呼叫端給的顏色畫（spec 202 §2.3.1）；
+// 不是 Early 的照舊等定色。
+func TestEarlyStampDrawsBeforeShown(t *testing.T) {
+	for _, early := range []bool{false, true} {
+		l := &Layer{}
+		l.Add(&Stamp{X: 8, Y: 8, Cells: 2, CellW: 8, CellH: 8, State: Printing, Early: early, BG: [3]uint8{9, 8, 7}})
+		dst := make([]uint8, 320*200*4)
+		l.Draw(dst, 1, nil)
+		i := 4 * (8*320 + 8)
+		got := [3]uint8{dst[i], dst[i+1], dst[i+2]}
+		if want := map[bool][3]uint8{false: {}, true: {9, 8, 7}}[early]; got != want {
+			t.Fatalf("Early=%v：Printing 時畫出 %v，要 %v", early, got, want)
+		}
+	}
+}

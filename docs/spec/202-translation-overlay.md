@@ -43,6 +43,7 @@
 | `State` | `Printing`（原版還在畫）、`Pending`（等定色）、`Shown` |
 | `Transparent` 會被 `Frame` 與 `Add` 就地改寫 | 被別的東西蓋住的格子自動標成透明 |
 | `FG, BG` | 定色後的 RGB |
+| `Early bool` | 呼叫端加入時已知顏色、已填 `FG`、`BG`：`Draw` 在 `Printing`、`Pending` 也照這組顏色畫，不等定色（§2.3.1） |
 
 `type Layer struct { Stamps []*Stamp; OnDrop func(*Stamp, string); W, H int }`（W、H 是原版畫面大小，0 當 320×200）：
 
@@ -93,6 +94,18 @@
   以相同定色及SwapColors規則重建記憶體色號。未吻合時不猜色號，原失效機制照常運作。
 - 測試涵蓋黑色色盤恢復、SwapColors、失配格拒絕取色、快照及舊快照恢復；
   正常視窗三行中文及語言／HD切換須另驗，不以單元測試冒稱GUI完成。
+
+### 2.3.1 提早顯示（`Early`）
+
+需求來源：secret-of-the-silver-blades-cht #16（使用者 2026-10-22：降低先畫原版文字、再疊譯文的閃爍）。
+
+量測（已證實，sosb-play 逐格截圖 7,501 格）：原版重畫隊員名單時，新疊字整個蓋住舊疊字，`Add` 立刻移除舊的；
+新的要等原版印完、下一次 `Frame` 定色才轉 `Shown`。這中間合成畫面露出一格英文（第 14655 格整份名單、
+「LOADING...PLEASE WAIT」各一格）。
+
+- `Early` 為 true 的疊字，`Draw` 不看狀態：`Printing`、`Pending` 用呼叫端填的 `FG`、`BG` 畫背景與字模。
+- `Frame` 的定色與指紋照常：`Pending` 轉 `Shown` 時以畫面實測的顏色覆寫 `FG`、`BG`。
+- 預設 false，行為與前一版相同；只有呼叫端確知顏色（印字呼叫的參數帶色號）時才設。
 
 ### 2.4 字模放大倍率
 

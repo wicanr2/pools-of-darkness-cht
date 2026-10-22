@@ -90,6 +90,8 @@ type PathA struct {
 
 	// pending 是已加入、等原版印完的 Stamp：返回位址命中且 SP 回到呼叫前加參數時轉 Pending。
 	pending []pendingStamp
+	// Pal 是最近一幀的色盤（Live.Frame 更新），提早顯示用來把呼叫參數的色號換成 RGB。
+	Pal [256][3]uint8
 	// bgOf 記每筆 Stamp 呼叫時給的背景 attribute，PrepareFrame 用它校正定色方向。
 	bgOf map[*xlate.Stamp]uint8
 	// src 記每筆 Stamp 查表用的原文，換語言時重譯（主專案規格 015 §2）。
@@ -227,6 +229,11 @@ func (p *PathA) Before(step uint64, cs, ip, ss, sp uint16, mem CPUView) {
 		Font:  p.Font,
 		Text:  runes,
 		State: xlate.Printing,
+		// 提早顯示（dosgolem 規格 202 §2.3.1；主專案 #16）：呼叫參數已帶背景、前景色號，
+		// 原版還在印英文時就先畫譯文，下一幀再依畫面實測定色。
+		BG:    p.Pal[bg&0xFF],
+		FG:    p.Pal[fg&0xFF],
+		Early: true,
 	}
 	p.Layer.Add(st)
 	if p.bgOf == nil {

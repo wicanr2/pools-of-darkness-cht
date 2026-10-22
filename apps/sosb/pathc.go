@@ -61,6 +61,9 @@ type PathC struct {
 	dirty  map[int]bool
 	stamps map[int][]*xlate.Stamp
 	call   *gCall
+	// blank 記上一幀以背景色暫蓋查不到譯文的詞的列（主專案 #16）：原版逐字印到一半時整句查不到，
+	// 先蓋一幀；下一幀這列沒有再變、仍查不到，才照原版顯示。
+	blank map[int]bool
 }
 
 // MenuWord 記錄一個詞的重組結果。原文只存長度。
@@ -171,7 +174,7 @@ func (c *PathC) relang(cat Lookuper, font *xlate.Font) {
 	c.OnLine = nil
 	c.Words = c.Words[:0]
 	for row := range c.rows {
-		c.rebuild(row)
+		c.rebuild(row, false)
 	}
 	c.dirty = map[int]bool{}
 	c.OnLine = on
@@ -251,11 +254,18 @@ func splitWords(cells *[menuCols]menuCell) []menuWord {
 // SetPalette 更新顏色並在畫格前重組有變動的列。
 func (c *PathC) SetPalette(pal [256][3]uint8) {
 	c.pal = pal
-	if len(c.dirty) > 0 {
+	prev := c.blank
+	c.blank = map[int]bool{}
+	if len(c.dirty) > 0 || len(prev) > 0 {
 		c.Words = c.Words[:0]
 	}
 	for row := range c.dirty {
-		c.rebuild(row)
+		c.rebuild(row, true)
+	}
+	for row := range prev {
+		if !c.dirty[row] {
+			c.rebuild(row, false)
+		}
 	}
 	c.dirty = map[int]bool{}
 }
@@ -265,7 +275,8 @@ type menuWordser interface {
 	MenuWords(words []string) []string
 }
 
-func (c *PathC) rebuild(row int) {
+// rebuild 重組一列。hold 為 true（這一幀剛被改寫）時，查不到譯文的詞先以背景色蓋住（見 PathC.blank）。
+func (c *PathC) rebuild(row int, hold bool) {
 	c.clearStamps(row)
 	cells := c.rows[row]
 	if cells == nil {
@@ -312,6 +323,15 @@ func (c *PathC) rebuild(row int) {
 		}
 		runes := PackHalfWidth([]rune(zh))
 		if zh == "" || len(runes) > len(w.cells) {
+			if hold && zh == "" {
+				bg, _, _ := w.colors()
+				s := &xlate.Stamp{Key: fmt.Sprintf("%s%d.%d.hold", pathCKey, row, w.col), X: w.col * 8, Y: row * 8,
+					Cells: len(w.cells), CellW: 8, CellH: 8, Text: []rune(strings.Repeat(" ", len(w.cells))), State: xlate.Shown,
+					BG: c.pal[bg], FG: c.pal[bg]}
+				c.Layer.Stamps = append(c.Layer.Stamps, s)
+				c.stamps[row] = append(c.stamps[row], s)
+				c.blank[row] = true
+			}
 			c.Words = append(c.Words, mw)
 			continue
 		}

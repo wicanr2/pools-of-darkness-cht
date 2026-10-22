@@ -159,3 +159,26 @@ func TestPathCWholeLinePrompt(t *testing.T) {
 		t.Fatalf("整句提示應畫成一筆：%d 筆 %+v", len(l.Stamps), l.Stamps)
 	}
 }
+
+// TestPathCHoldsHalfPrintedWord：原版逐字印到一半時（「Contin」查不到），這一幀先以背景色蓋住；
+// 下一幀印完查到就換譯文；真的查不到的詞只晚一幀照原版顯示（主專案 #16）。
+func TestPathCHoldsHalfPrintedWord(t *testing.T) {
+	c, m, l := newC(t, catalogOf(t, "Continue", "繼續"))
+	drawWord(c, m, 24, 0, "Contin", -1, false)
+	c.SetPalette(c.pal)
+	if len(l.Stamps) != 1 || l.Stamps[0].Key != pathCKey+"24.0.hold" || l.Stamps[0].BG != c.pal[0] || l.Stamps[0].Font != nil {
+		t.Fatalf("半句應先以背景色蓋住：%+v", l.Stamps)
+	}
+	drawWord(c, m, 24, 6, "ue", -1, false)
+	c.SetPalette(c.pal)
+	if len(l.Stamps) != 1 || string(l.Stamps[0].Text[:2]) != "繼續" {
+		t.Fatalf("印完應換成譯文：%+v", l.Stamps)
+	}
+	c2, m2, l2 := newC(t, catalogOf(t, "Continue", "繼續"))
+	drawWord(c2, m2, 24, 0, "Zzz", -1, false)
+	c2.SetPalette(c2.pal)
+	c2.SetPalette(c2.pal)
+	if len(l2.Stamps) != 0 {
+		t.Fatalf("查不到的詞下一幀應照原版顯示：%+v", l2.Stamps)
+	}
+}

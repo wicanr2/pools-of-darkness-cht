@@ -47,6 +47,8 @@ type Stamp struct {
 	State             State
 	FG                [3]uint8
 	BG                [3]uint8
+	// Early：呼叫端加入時已填 FG、BG，Draw 在 Printing、Pending 也照這組顏色畫（spec 202 §2.3.1）。
+	Early bool
 	fgIndex, bgIndex  uint8 // 顯示顏色追隨原版色盤；只存記憶體，快照格式不變
 	colorIndicesKnown bool
 	// seenFG／seenBG 是上一次在畫面上看到的那兩個色號的 RGB。色盤真的變了才改 FG／BG，
@@ -710,7 +712,7 @@ func (l *Layer) DrawWithBackground(dst []uint8, scale int, missing func(r rune),
 	drew := l.drawArt(dst, scale)
 	W := l.width() * scale
 	for _, s := range l.Stamps {
-		if s.State != Shown {
+		if s.State != Shown && !s.Early {
 			continue
 		}
 		drew = true
@@ -757,7 +759,7 @@ func (l *Layer) DrawChecked(dst []byte, scale int, missing func(rune)) (bool, er
 	}
 	drew := false
 	for _, s := range l.Stamps {
-		if s.State != Shown {
+		if s.State != Shown && !s.Early {
 			continue
 		}
 		drew = true
