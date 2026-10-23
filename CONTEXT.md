@@ -44,7 +44,7 @@
 
 | 項目 | 值 |
 |---|---|
-| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作分支頂端 `99dd521`（規格 430、431、432 CONFORMED，`apps/pod`、`cmd/pod-play`；本作查驗題題型），推到本 repo 的 `dosgolem/pod` |
+| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作分支頂端 `ef89e29`（規格 430、431、432 CONFORMED，`apps/pod`、`cmd/pod-play`；本作查驗題題型），推到本 repo 的 `dosgolem/pod` |
 | Go／image | go1.24.13；`dosgolem-go-ebiten:1.24-r1` `sha256:8ed6bdee2bce…` |
 | 冷啟動 | 0 種缺服務；mode 13h；`START.BAT` 程式鏈；片頭送空白鍵跳過，製作群後送 `p` 進建立隊伍主選單。收據 `tools/g2-startup-receipt.sh`，見 [docs/re/003](docs/re/003-dosgolem-startup.md) |
 | adapter | `apps/pod/`（由 `apps/sosb/` 複製，路徑 A／B／C 換本作常數與 13h 換算）；`cmd/pod-overlay-shot` |

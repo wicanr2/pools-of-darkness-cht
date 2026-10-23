@@ -176,3 +176,7 @@
   `tools/go.sh test ./apps/pod/...`、xvfb 下 `cmd/pod-play` 測試通過。字型重建 2,808 字、缺 0。
 - 收據：`tools/g7-quiz-receipt.sh`（題目表重產相同；答案顯示「答案：LIVES」與隱藏空白兩張，範圍外差異 0），建角與存讀檔收據的查驗題段重跑，範圍外差異 0、作答後進入遊戲。規格 006 升 CONFORMED。
 - 收據第一次失敗：從 JSON 擷取第 6 列時沒處理字串結尾的跳脫引號，空白列被判成非空；改 sed 後通過。
+- 手札引用（docs/re/009）：本作 ECL 文字沒有帶編號的引用句；`GAME.OVR` 0x2643 的 ECL 指令處理把參數 N 接成「This is recorded as journal entry N.」整句經路徑 B 印出。
+  前作的 `JournalRefOf` 整句寫法與組句模板已涵蓋，補單元測試；`TestJournalTableFits` 掛 `text/` 跑過（99 則 3 頁內）。規格 007 升 READY，CONFORMED 要等實機觸發。
+- 找觸發點：碼頭導覽答 Y 走完沒有記手札。導覽結束停在 (3,6) 面西、底列 `EXIT`；遊戲沒掛 int 09h，`-press` 的 IRQ1 鍵送不進去，方向鍵要走 `-bios-key-names`。
+  先送 Enter 再送方向鍵時座標不變，原因未查。手動找路屬 G8 探索範圍，收據留到 G8。
