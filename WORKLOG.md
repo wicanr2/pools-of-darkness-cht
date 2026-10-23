@@ -72,3 +72,17 @@
 - `tools/g3-overlay-receipt.sh`：佔位譯文（`tools/trial_text.py` 取前作 key 相同 824 則）與佔位字型（複製銀色匕首之謎開發字型），
   主選單覆繪 6 筆、範圍外差異 0、原版色號同 G2 收據。見 `docs/re/004`。
 - 清理：容器皆 `--rm`；`find . -user root` 0 筆。
+
+## 2026-10-23 G4 手札轉錄與錯譯校正（#5）
+
+- 珍157 手札頁（冒險者手冊 p.55–106）以黑暗之后的 `dqk-ocr:ppocr5-r1` 與模型快取（唯讀）做 OCR（`tools/ocr-batch.sh`，26 張跨頁，0 錯誤）。
+  先試切單頁，書溝位置不穩、右頁帶到左頁字，改成整張跨頁辨識、組稿時依文字框分布找書溝（`tools/zh_ocr_journal.py`）。
+- 英文手札 PDF 第 15–25 頁以 `pdftotext -bbox-layout` 組稿（`tools/journal_en_ocr.py`）。四等分欄界把第二欄切進第一欄，改用實測欄界；
+  第 38 則標題列被拆成兩行，已併回。頁碼在頁首花邊裡讀不到，以 PDF 頁換算。
+- 查驗題：題目表的標題字串在遊戲檔、DAX 解壓與 6-bit 解碼後都找不到，延到 G7 執行期攔。
+- 校讀與對照分四批派 sonnet 子代理（共用 `workplace/journal/INSTRUCTIONS.md`）。第一批先做，主 session 抽驗第 4、9、12 則與錯譯條目後才放其餘三批（併發 3）。
+  子代理不能寫報告檔，報告改在回報訊息。第 13 則兩本書都沒有，手札共 99 則。
+- `tools/journal_merge.py` 合併檢查；批次間 6 組譯名分歧與 Zhentarim、spirit of fire、第 88 則 Ward 由主 session 裁決，逐則替換譯文與錯譯表 fix 欄
+  （一次性腳本在 session 暫存區）。第 34、72 則的「風暴」是天氣，不動。結果：99 則、錯譯 353 條、術語 194 筆、舊譯 10 筆，兩支檢查都通過。見 `docs/re/005`。
+- 勘誤：本輪曾在主機執行一次與工作無關的 `python3 -c`（空操作）；主機不跑 Python，之後注意。
+- 清理：容器皆 `--rm`；`find . -user root` 0 筆。

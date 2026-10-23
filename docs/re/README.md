@@ -6,3 +6,4 @@
 | [002](002-reference-sources.md) | 珍157 說明書頁序、《軟體世界》攻略掃描、SSI 英文文件來源 | #2 |
 | [003](003-dosgolem-startup.md) | dosgolem 基底、通用層修正（規格 430、431）、`START.BAT` 程式鏈、mode 13h 冷啟動、`SAVE/` 讀取、收據 | #3 |
 | [004](004-output-paths.md) | 輸出路徑 A／B／C／D、EXEPACK 映像、mode 13h 換算、片頭字幕、文字 catalog、主選單覆繪收據 | #4 |
+| [005](005-journal-errata.md) | 珍157 旅行手札 99 則校讀、錯譯表 353 條、譯名裁決；查驗題延到 G7 | #5 |

@@ -33,6 +33,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | 文字 catalog | `python3 -I tools/ui_text_catalog.py --image … --ovr … --events text/ui-text-events.tsv --source workplace/text-src/ui-source.tsv`；`python3 -I tools/ecl_text_catalog.py --orig workplace/input/dos/pod --events text/ecl-text-events.tsv --source workplace/text-src/ecl-source.tsv` | `sosb-tools:bookworm-r1` |
 | G3 主選單覆繪收據（佔位譯文與字型） | `tools/g3-overlay-receipt.sh` | 走 dosgolem |
 | 簽章與記憶體遠呼叫 | `tools/re/sigscan.py`、`tools/re/fn_diff.py`、`tools/re/memcalls.py` | `sosb-tools:bookworm-r1` |
+| 珍157 掃描 OCR（黑暗之后的 PaddleOCR 映像與模型快取，唯讀） | `tools/ocr-batch.sh <輸入目錄> <輸出目錄>` | `dqk-ocr:ppocr5-r1` |
+| 手札草稿組稿 | `python3 -I tools/zh_ocr_journal.py --spreads <左頁碼>=<json> …`；`python3 -I tools/journal_en_ocr.py --bbox workplace/journal/en/bbox/p15.html … p25.html` | `sosb-tools:bookworm-r1` |
+| 手札批次合併、錯譯與術語檢查 | `python3 -I tools/journal_merge.py workplace/journal/fix`；`python3 -I tools/errata_check.py`；`python3 -I tools/term_check.py` | `sosb-tools:bookworm-r1` |
 
 探針註記：`-call-args` 一次只接受一組 `CS:IP`；`-call-length-string` 把前兩個參數當字串遠指標。
 

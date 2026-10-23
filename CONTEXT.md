@@ -28,6 +28,7 @@
 | 2026-10-23 | 入口照 `START.BAT`：`STARTUP.EXE` 設定 → 常駐 `snd.com`（`-root-tsr-shrink`）→ 監督佇列接 `CONTROL.EXE`；不常駐時 DEMO 會當掉 | G2（docs/re/003） |
 | 2026-10-23 | 以 VGA（mode 13h，256 色）為準；dosgolem 可跑，不需退回 EGA | G2（docs/re/003） |
 | 2026-10-23 | zip 的 `SAVE/` 遊戲內讀不到（缺 `savgam?.pty`、`*.pc`），測試存檔自建 | G2（docs/re/003） |
+| 2026-10-23 | 手札譯名裁決：Zhentarim 桑塔林會（字頭隨珍157 桑提爾城）、spirit of fire 保留珍157「火神」、Silk 絲綢、Gothmenes 戈斯梅尼斯、Tanetal 塔內塔爾等，見 docs/re/005 | G4 |
 
 ## 待定
 
@@ -53,7 +54,9 @@
 | 印字程序 | resident 段 `1B2E`：逐字 `01DF`、路徑 A `0354`、路徑 B `0498`、路徑 D `030B`，與幽靈騎士同函式（docs/re/004） |
 | 路徑 A／B／C | DEMO 中呼叫與字串已證實；主選單以佔位譯文覆繪 6 筆、範圍外差異 0（`tools/g3-overlay-receipt.sh`） |
 | catalog | ui 1,357 筆（654 筆與銀色匕首之謎、625 筆與幽靈騎士 key 相同）、ECL 4,725 筆 |
-| 譯文、字型 | 尚未開始；覆繪驗證用的是前作佔位 |
+| 手札譯文 | 99 則修正譯文 `text/journal.zh-TW.tsv`（90 則有修正）；錯譯表 353 條通過 `tools/errata_check.py`；術語表 194 筆、舊譯 10 筆通過 `tools/term_check.py`（docs/re/005） |
+| 介面與劇情譯文、字型 | 尚未開始；覆繪驗證用的是前作佔位 |
+| 查驗題 | 題型已知；題目表靜態找不到，G7 在執行期攔；答案對照珍157 密碼表 |
 | 片頭片尾字幕 | 推定是畫格點陣圖，待 G6／G9 |
 
 ## 原始輸入
@@ -61,9 +64,9 @@
 | 檔案 | 狀態 |
 |---|---|
 | `pools-of-darkness.zip` | 已安裝目錄，v1.10；`START.BAT` → `STARTUP.EXE`（設定 `pool4.cfg`）→ `CONTROL.EXE`（`VACE.EXE` 片頭、`GAME.EXE`、片尾）；`GAME.OVR` 魔數 `FBOV`；查驗題問手札頁碼、標題後第 N 字；`SAVE/` 是 1995 年玩家資料。見 [docs/re/001](docs/re/001-input-baseline.md) |
-| `珍157-黑暗之池.rar` | 107 張 JPG：操作手冊 63 頁、冒險者手冊 110 頁，無缺頁；旅行手札第 1–100 則在冒險者手冊 p.55–106；操作手冊附錄二是查驗題答案表。見 [docs/re/002](docs/re/002-reference-sources.md) |
+| `珍157-黑暗之池.rar` | 107 張 JPG：操作手冊 63 頁、冒險者手冊 110 頁，無缺頁；旅行手札 99 則（第 1–100 則，無第 13 則）在冒險者手冊 p.55–106；操作手冊附錄二是查驗題答案表。見 [docs/re/002](docs/re/002-reference-sources.md) |
 | `walkthrough/` | 《軟體世界》第 43–45 期「完全攻略」三回，第 1–24 章，作者 Steeler；未轉錄。見 [docs/re/002](docs/re/002-reference-sources.md) |
-| 英文手冊與手札 | mocagh.org 的 journal（規則＋手札 100 則）、manual（Rulebook）、refcard、hintbook，OCR 品質中等。見 [docs/re/002](docs/re/002-reference-sources.md) |
+| 英文手冊與手札 | mocagh.org 的 journal（規則＋手札 99 則，無第 13 則）、manual（Rulebook）、refcard、hintbook，OCR 品質中等。見 [docs/re/002](docs/re/002-reference-sources.md) |
 
 ## Glossary
 
