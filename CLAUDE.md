@@ -43,6 +43,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | 開發字型（譯文改了就重建，否則覆繪缺字） | `tools/font-dev.sh` | `sosb-img:r1` |
 | 譯名一致性掃描（原文有術語、譯文沒用對應中文的候選） | `python3 -I tools/term_consistency.py --glossary text/glossary.tsv --source workplace/text-src/ecl-source.tsv --translations text/ecl-text.zh-TW.tsv` | `sosb-tools:bookworm-r1` |
 | G5 譯文收據：正式譯文跑 DEMO 開場到戰鬥 | `tools/g5-text-receipt.sh` | 走 dosgolem |
+| pod-play 冷開機冒煙（建 `workplace/dosgolem/workplace/bin/pod-play`） | `tools/play-smoke.sh [畫格] [送鍵腳本]` | `dosgolem-go-ebiten:1.24-r1`（xvfb） |
+| 名稱 catalog、選單母串 | `python3 -I tools/name_catalog.py --glossary text/glossary.tsv --events text/name-events.tsv --out text/name.zh-TW.tsv`；`python3 -I tools/menu_masters.py --source workplace/text-src/ui-source.tsv --translations text/ui-text.zh-TW.tsv --out text/menu-masters.tsv` | `sosb-tools:bookworm-r1` |
 | 字型覆蓋：譯文表要顯示的字是否都在字型裡 | `python3 -I tools/font_coverage.py --font workplace/font/pod-rounded.golemfnt <譯文 TSV …>` | `sosb-tools:bookworm-r1` |
 
 探針註記：`-call-args` 一次只接受一組 `CS:IP`；`-call-length-string` 把前兩個參數當字串遠指標。

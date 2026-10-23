@@ -18,7 +18,7 @@ for f in journal.zh-TW; do
   test -f "$ROOT/text/$f.tsv" || { echo "缺 text/$f.tsv" >&2; exit 1; }
   cats+=("/text/$f.tsv")
 done
-for f in ecl-text.zh-TW ui-text.zh-TW; do
+for f in ecl-text.zh-TW ui-text.zh-TW name.zh-TW composed-templates host-text.zh-TW menu-masters translit-chars.zh-TW; do
   test -f "$ROOT/text/$f.tsv" && cats+=("/text/$f.tsv")
 done
 # 工作區的譯文批次與覆繪驗證用的試譯表（workplace/text-src/trial，含前作佔位）

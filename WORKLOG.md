@@ -136,3 +136,17 @@
   `tools/g5-text-receipt.sh`：DEMO 開場到戰鬥 5 張截圖範圍外差異 0。戰鬥畫面的怪物名、隊員名、物品名組句仍是英文。
 - 子代理回報的組句與語境疑點（程式插入名字、方位、數字的片段，玩家輸入字，手札引用與查驗題用語）整理在 `workplace/tr/review-notes.tsv`，轉到 #7、#8。
 - 清理：容器皆 `--rm`。
+
+## 2026-10-23 G6 pod-play 開機鏈、名稱 catalog 與共用表（#7）
+
+- `STARTUP.EXE` 在 `pool4.cfg` 已存在時跑 7,520,306 道指令就以離開碼 0 結束，不開檔、不等鍵（`workplace/probe/g6-startup-existing/run.log`）。
+  play 指令因此照前作做法在安裝時寫入設定檔，開機時從 `snd.com` 起。
+- dosgolem 規格 432（CONFORMED）：`session.BootInput` 加 `Format`（EXE／COM）、`Queue`、`RootTSRShrink`，零值等於規格 235。
+  READY 前自審發現 `.COM` 上限寫成 0xFF00，載入器是 0xFEFE，已改。單元測試含開與不開縮回的對照、10 種拒絕。
+- `cmd/pod-play` 由 `cmd/sosb-play` 複製：必要原版檔改為 CONTROL.EXE、GAME.EXE、GAME.OVR、ADLIB.COM；安裝時寫 `pool4.cfg`（G2 收據同內容，SHA-256 `6161a336…`）、
+  把 ADLIB.COM 複製成 `snd.com`；開機 `snd.com` 常駐、佇列 `CONTROL.EXE`、`RootTSRShrink`。測試在 xvfb 下全過。dosgolem `7046489` 推到 `dosgolem/pod`。
+- `tools/play-smoke.sh`：空存檔目錄冷開機到建立隊伍主選單，原版色號雜湊 `fefa0514…` 與 G2 收據相同，主選單覆繪 8 筆。
+- 名稱 catalog：`tools/name_catalog.py`（移植）由術語表產生 `text/name-events.tsv`、`text/name.zh-TW.tsv` 1,400 筆；`tools/menu_masters.py` 產生 `text/menu-masters.tsv` 32 組。
+- 由前作沿用：`text/composed-templates.tsv`（引擎組句）、`text/host-text.zh-TW.tsv`（攻略目錄標題改「黑暗之池攻略」）、音譯資料（`translit-*.tsv`、`cmudict/`、`LICENSE-translit-table.md`）；
+  LICENSE 第 2 條 (d) 照前作列出這兩項第三方資料（條款本身預留「日後收錄時逐項列於此處」）。`text/quiz-answers.tsv` 先放表頭，G7 填。字型 2,808 字。
+- 勘誤：docs/re/003 寫 `pool4.cfg` 其後 13 行 `0`，實際 14 行（85 bytes），已改。

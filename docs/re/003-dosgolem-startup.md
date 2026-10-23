@@ -40,7 +40,7 @@ module cache 由銀色匕首之謎 clone 的 `workplace/gomodcache` 複製，未
 | `control %1 %2 %3 %4` | `-queue CONTROL.EXE` | `CONTROL.EXE` 讀 `pool4.cfg`，EXEC `vace.exe`（片頭，`INTRO.ACF`、`INTRO.BMA`、`P1.SMS`），之後 EXEC `game.exe` |
 | `if exist snd.com snd U` | 未重現 | 遊戲結束後才執行 |
 
-`pool4.cfg`（85 bytes，CRLF 分行）：`2`（音效 Adlib）、`V`（VGA）、`M`（滑鼠）、`C:\POD\SAVE\`、`C:\SECRET\SAVE\`、`F`、其後 13 行 `0`。
+`pool4.cfg`（85 bytes，CRLF 分行）：`2`（音效 Adlib）、`V`（VGA）、`M`（滑鼠）、`C:\POD\SAVE\`、`C:\SECRET\SAVE\`、`F`、其後 14 行 `0`。
 `-program-path` 用安裝預設目錄 `C:\POD`（`pod-refcard.pdf`「CD\POD」），預設存檔路徑才是 `C:\POD\SAVE\`。
 
 ## 冷啟動觀察

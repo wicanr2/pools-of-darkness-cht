@@ -38,17 +38,17 @@
 | 項目 | 何時決定 |
 |---|---|
 | 片頭片尾字幕：推定是畫格點陣圖（docs/re/004），辨識與覆繪方式 | G6／G9 |
-| `pod-play` 要照 `START.BAT` 常駐驅動並開 `RootTSRShrink`；oracle 目前沒有能載 `.COM` 又吃 `Options` 的入口（dosgolem 規格 431 §5） | 做 `pod-play` 前（G6），先補通用層規格 |
 | `pool4.cfg` 第 6 行 `F` 與後續 `0` 欄位語意 | 需要時 |
 
 ## dosgolem 基線
 
 | 項目 | 值 |
 |---|---|
-| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作分支頂端 `ce5974b`（規格 430、431 CONFORMED，`apps/pod`），推到本 repo 的 `dosgolem/pod` |
+| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作分支頂端 `7046489`（規格 430、431、432 CONFORMED，`apps/pod`、`cmd/pod-play`），推到本 repo 的 `dosgolem/pod` |
 | Go／image | go1.24.13；`dosgolem-go-ebiten:1.24-r1` `sha256:8ed6bdee2bce…` |
 | 冷啟動 | 0 種缺服務；mode 13h；`START.BAT` 程式鏈；片頭送空白鍵跳過，製作群後送 `p` 進建立隊伍主選單。收據 `tools/g2-startup-receipt.sh`，見 [docs/re/003](docs/re/003-dosgolem-startup.md) |
 | adapter | `apps/pod/`（由 `apps/sosb/` 複製，路徑 A／B／C 換本作常數與 13h 換算）；`cmd/pod-overlay-shot` |
+| play 指令 | `cmd/pod-play`（由 `cmd/sosb-play` 複製）：照 `START.BAT` 以 `snd.com` 常駐、佇列 `CONTROL.EXE`、`RootTSRShrink`（dosgolem 規格 432）；冷開機收據 `tools/play-smoke.sh` |
 
 ## 中文化進度
 
