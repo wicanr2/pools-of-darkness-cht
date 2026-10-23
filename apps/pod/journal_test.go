@@ -19,6 +19,7 @@ func TestJournalRefOf(t *testing.T) {
 		{"SIR KARL CONTINUES,", "51.", 0, false, false},
 		{"YOU HEAR TAVERN TALE ", "7.", 1007, true, true},
 		{"", "RECORD IT AS JOURNAL ENTRY 29.", 29, false, true},
+		{"", "This is recorded as journal entry 51.", 51, false, true}, // 黑暗之池：引擎組成整句（主專案 docs/re/009）
 		{" AND YOU RECORD IT IN JOURNAL ENTRY ", "THE END.", 0, false, false},
 	}
 	for _, c := range cases {
@@ -160,5 +161,18 @@ func TestJournalTableFits(t *testing.T) {
 		if l := j.Lines()[0]; len(l) > journalCols {
 			t.Errorf("手札 %d 標題 %d 格", n, len(l))
 		}
+	}
+}
+
+// 黑暗之池的手札引用由引擎把編號接進整句、經路徑 B 印出（主專案 docs/re/009）；譯文走組句模板。
+func TestJournalSentenceTemplate(t *testing.T) {
+	tr := &Translator{}
+	if err := tr.LoadTemplates([]byte("template\ttranslation\tnote\n" +
+		"This is recorded as journal entry {n}.\t此事記為旅行手札第 {n} 則。\t\n")); err != nil {
+		t.Fatal(err)
+	}
+	e, ok := tr.Lookup([]byte("This is recorded as journal entry 51."))
+	if !ok || e.Translation != "此事記為旅行手札第 51 則。" {
+		t.Fatalf("%+v %v", e, ok)
 	}
 }
