@@ -101,16 +101,16 @@ func TestPathCRelangDoesNotFireOnLine(t *testing.T) {
 
 func TestQuizRelangRewritesAllRows(t *testing.T) {
 	p, m, l := newQuizA(t)
-	askQuiz(p, m, "4    ")
+	askQuiz(p, m, "4", "7", "ALIGNMENT")
 	host, err := LoadHostText([]byte("key\ttranslation\tnote\n" +
-		"quiz.entry\t旅行手札第 {entry} 则\t\nquiz.word\t（英文手册第 {page} 页）的第 {word} 个字？\t\nquiz.answer\t答案：{answer}\t\n"))
+		"quiz.page\t英文手札第 {page} 页\t\nquiz.word\t下列标题之后的第 {word} 个字？\t\nquiz.answer\t答案：{answer}\t\n"))
 	if err != nil {
 		t.Fatal(err)
 	}
 	f, _ := QuizFormatOf(host)
 	p.relang(p.Catalog, p.Font, f)
 	r := quizRows(l)
-	if r[2] != string(PackHalfWidth([]rune("旅行手札第 60 则"))) || r[4] != string(PackHalfWidth([]rune("（英文手册第 49 页）的第 4 个字？"))) {
+	if r[2] != string(PackHalfWidth([]rune("英文手札第 4 页"))) || r[4] != string(PackHalfWidth([]rune("下列标题之后的第 7 个字？"))) {
 		t.Fatalf("查驗題要以新格式重寫：%v", r)
 	}
 }
@@ -160,7 +160,7 @@ func TestLoadLangPackRealText(t *testing.T) {
 }
 
 const enHost = "key\ttranslation\tnote\n" +
-	"quiz.entry\tJournal entry {entry}\t\nquiz.word\t(page {page}) word {word}?\t\nquiz.answer\tAnswer: {answer}\t\n" +
+	"quiz.page\tJournal, page {page}\t\nquiz.word\tword {word} after the heading\t\nquiz.answer\tAnswer: {answer}\t\n" +
 	"journal.ref\t%d%s\t\njournal.refdot\t.\t\nlang.name\tEN\t\n"
 
 func TestEnglishPackIsIdentityAndHidesMissingPanels(t *testing.T) {
@@ -168,7 +168,7 @@ func TestEnglishPackIsIdentityAndHidesMissingPanels(t *testing.T) {
 	if err := os.WriteFile(filepath.Join(dir, "host-text.en.tsv"), []byte(enHost), 0o644); err != nil {
 		t.Fatal(err)
 	}
-	if err := os.WriteFile(filepath.Join(dir, "quiz-answers.tsv"), []byte("page\tentry\tword\tanswer\n"), 0o644); err != nil {
+	if err := os.WriteFile(filepath.Join(dir, "quiz-answers.tsv"), []byte("page\tword\theading\tanswer\n"), 0o644); err != nil {
 		t.Fatal(err)
 	}
 	en, err := LoadLangPack(dir, EnglishLang, &xlate.Font{W: 16, H: 16, Glyphs: map[rune][]byte{}})

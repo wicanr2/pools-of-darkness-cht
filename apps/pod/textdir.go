@@ -96,7 +96,7 @@ func LoadQuizDirLang(dir, lang string) (map[QuizKey]string, QuizFormat, error) {
 	}
 	f, ok := QuizFormatOf(host)
 	if !ok {
-		return nil, QuizFormat{}, fmt.Errorf("pod: %s 缺 quiz.entry／quiz.word／quiz.answer", langName("host-text", lang))
+		return nil, QuizFormat{}, fmt.Errorf("pod: %s 缺 quiz.page／quiz.word／quiz.answer", langName("host-text", lang))
 	}
 	return ans, f, nil
 }
