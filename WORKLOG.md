@@ -111,3 +111,6 @@
   `font-dev.sh` 補收 `workplace/text-src/trial/`，重建後正常。教訓：譯文改了要重建字型。補 `tools/font_coverage.py`（AGENTS 第 6 節的字型覆蓋）：新字型對手札與試譯缺 0 字；拿前作佔位字型當負對照，列出缺字並結束碼 1。
 - 勘誤：本輪一個主機指令誤帶了 `python3 -c 1`（空操作，殘留在指令列）；主機不跑 Python。
 - 清理：容器皆 `--rm`。
+- 補：名稱表只比對自己的鍵，前作錯拼法另立的列（`Delay Blast Fireball`、`Otto's Irresitable Dance`、`Protection Evil, 10' Radius`）留著舊譯，同一法術兩種譯名；
+  改成與正確拼法同譯，`Cold/Hot Fire Shield` 隨火焰之盾改。名稱表補章節標題「德魯依法術」與「德魯依」（前作作得魯依），共 159 列；術語表由名稱表改 48、增 25。
+  與 apply 前的術語表逐列比對，名稱表以外的改動只有這 12 筆衍生名與拼法列。舊譯 63 筆。

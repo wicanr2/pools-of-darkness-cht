@@ -136,7 +136,7 @@ Cloud Giant	雲巨人	monster	sosb	珍157 作雲霧巨人
 Cloud Kill	死亡之雲	spell	zh157	珍157 冒險者手冊 p.52作「死亡之雲」；採珍157；原「殺人雲」（sosb）
 Club	棍棒	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Cockatrice	雞蛇	monster	zh157	珍157 冒險者手冊 p.30作「雞蛇」；採珍157；內文；前作作雞蛇獸；原「雞蛇獸」（sosb）
-Cold Fire Shield	冷火盾牌	spell	sosb	前作來源 cok；新詞，2026-10-15 收斂；Fire Shield 變體
+Cold Fire Shield	冷火之盾	spell	sosb	前作來源 cok；新詞，2026-10-15 收斂；Fire Shield 變體；隨 Fire Shield 改火焰之盾（珍157），原「冷火盾牌」；本作 UI 沒有此字串
 Composite Long Bow	複合長弓	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Composite Short Bow	複合短弓	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 CON	體質	attribute	sosb	前作來源 cok
@@ -175,7 +175,7 @@ Death	死神	other	自譯	Bane 派往王國的紅衣騎士；珍157 作死亡
 Death Knight	死亡騎士	monster	sosb	前作來源 cok
 Death Spell	致死術	spell	zh157	珍157 冒險者手冊 p.52作「致死術」；採珍157；原「死亡法術」（sosb）
 Delay	延後	ui	sosb	前作來源 cok
-Delay Blast Fireball	延時爆發火球	spell	sosb	前作來源 cok；手冊作 Delayed Blast Fireball；a29 表作 Delayed Blast Fire Ball
+Delay Blast Fireball	延遲爆炸術	spell	sosb	前作來源 cok；手冊作 Delayed Blast Fireball；a29 表作 Delayed Blast Fire Ball；前作拼法，譯名隨 Delayed Blast Fireball（珍157），原「延時爆發火球」
 Delayed Blast Fireball	延遲爆炸術	spell	zh157	珍157 冒險者手冊 p.53作「延遲爆炸術」；採珍157
 Demo	示範	ui	sosb	前作來源 cok；手冊作 [D]EMO
 Dennia	丹妮雅	person	自譯	珍157 留英文
@@ -213,8 +213,8 @@ Drider	半蜘精靈	monster	sosb	珍157 作半蜘蛛人；por 說明書作蜘蛛
 Drop	丟棄	ui	sosb	前作來源 cok；情境：物品與金錢；Alter 選單的 Drop 為「丟棄隊員」（a14）
 Drop Character	放棄人物	ui	sosb	前作來源 cok
 Drow	黑暗精靈	group	sosb	珍157 留 DROW；沿用 b01；與 b01 同
-Druid	得魯依	class	sosb	前作來源 cok；手冊作「得魯依法術（Druidic spells）」，不作獨立職業
-Druid Spells	得魯依法術	spell	sosb	前作來源 cok
+Druid	德魯依	class	zh157	珍157 冒險者手冊 p.44作「德魯依」；採珍157；內文「德魯依教徒」；前作作得魯依；原「得魯依」（sosb）
+Druid Spells	德魯依法術	spell	zh157	珍157 冒險者手冊 p.43作「德魯依法術」；採珍157；章節標題 B.德魯依法術；前作作得魯依法術；原「得魯依法術」（sosb）
 Dwarf	矮人	race	sosb	前作來源 cok；珍056 第 64 則把 Dwarf 作「侏儒」，誤譯（侏儒是 Gnome）
 Dying	垂死	ui	sosb	前作來源 cok
 Earring	耳環	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲譯文
@@ -365,7 +365,7 @@ Holy Water	聖水	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Hoopak	投石杖	item	sosb	前作來源 cok；坎德人專用
 Horn of Doom	毀滅之號角	item	zh157	
 Hornet's Nest	黃蜂巢	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
-Hot Fire Shield	熱火盾牌	spell	sosb	前作來源 cok；新詞，2026-10-15 收斂；Fire Shield 變體
+Hot Fire Shield	熱火之盾	spell	sosb	前作來源 cok；新詞，2026-10-15 收斂；Fire Shield 變體；隨 Fire Shield 改火焰之盾（珍157），原「熱火盾牌」；本作 UI 沒有此字串
 HP	生命力	attribute	sosb	前作來源 cok
 Human	人類	race	sosb	前作來源 cok
 Hydra	九頭蛇	monster	sosb	前作來源 sosb；批次曾作多頭蛇
@@ -517,7 +517,7 @@ Order	排列次序	ui	sosb	前作來源 cok
 Oswulf	奧斯沃夫	person	sosb	前作來源 sosb；珍056 留英文；聖騎士，艾達瑪的兄弟
 Oswulf's Confession	奧斯沃夫的自白書	item	sosb	前作來源 zh056
 Otto's Irr. Dance	狂舞術	spell	zh157	珍157 冒險者手冊 p.54作「狂舞術」；採珍157
-Otto's Irresitable Dance	無法抗拒的舞蹈	spell	sosb	前作來源 cok；遊戲字串拼作 Irresitable；手冊作 Otto's Irresistible Dance
+Otto's Irresitable Dance	狂舞術	spell	sosb	前作來源 cok；遊戲字串拼作 Irresitable；手冊作 Otto's Irresistible Dance；前作拼法，譯名隨 Otto's Irr. Dance（珍157），原「無法抗拒的舞蹈」
 Otyugh	觸手怪	monster	zh157	珍157 冒險者手冊 p.31；採珍157；內文留英文；由巨型觸手怪類推，前作作奧提尤格；原「奧提尤格」（sosb）
 our Lady	我們的女主	other	自譯	神殿總管對 Kalistes 的稱呼；珍157 無對應
 Page	頁數	ui	sosb	前作來源 cok；密碼輸入提示
@@ -568,7 +568,7 @@ Priest's Map	神父留下的地圖	other	zh157	地圖則標題沿用珍157
 Priestess	女祭司	class	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Prime Material	主物質界	other	自譯	珍157 留英文
 Proof vs Poison	抗毒	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
-Protection Evil, 10' Radius	半徑10呎內不受邪惡傷害	spell	sosb	前作來源 cok；牧師第4級；遊戲字串漏 From；b14 作「半徑十呎內不受邪惡侵害」
+Protection Evil, 10' Radius	半徑十呎內免受邪惡侵害	spell	sosb	前作來源 cok；牧師第4級；遊戲字串漏 From；b14 作「半徑十呎內不受邪惡侵害」；前作拼法，譯名隨 Protection From Evil, 10' Radius（珍157），原「半徑10呎內不受邪惡傷害」
 Protection From Evil	免受邪惡侵害	spell	zh157	珍157 冒險者手冊 p.37作「免受邪惡侵害」；採珍157；前作作免受邪惡傷害；原「免受邪惡傷害」（sosb）
 Protection From Evil, 10' Radius	半徑十呎內免受邪惡侵害	spell	自譯	珍157 冒險者手冊 p.40作「半徑十呎內免於邪惡侵害」；珍157不一致；魔法師法術作半徑十呎免受邪惡侵害（p.49）；取「內」與「免受」，與免受邪惡侵害、半徑十呎內免受善良侵害一致；原「半徑10呎內免受邪惡傷害」（sosb）
 Protection from Fire	免受火焰傷害	spell	zh157	珍157 冒險者手冊 p.44作「免受火焰傷害」；採珍157
