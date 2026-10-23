@@ -16,7 +16,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 常用指令
 
-本作工具尚未建立。G1 起移植銀色匕首之謎 `tools/` 的對應腳本後列在這裡；對照用的前作指令表見其 `CLAUDE.md`。
+全部在 Docker 內執行；原始輸入（本目錄）唯讀掛 `/in`，`workplace/` 掛 `/work`。腳本開頭的註解說明參數。
+尚未移植的前作工具，對照銀色匕首之謎 `CLAUDE.md` 的指令表。
+
+| 用途 | 指令 | image |
+|---|---|---|
+| 解壓原版 zip 與珍157、逐檔雜湊（目標目錄已存在就停） | `python3 -I tools/inventory.py /in /work/input` | `sosb-tools:bookworm-r1` |
+| 逐檔雜湊表 `docs/re/001-input-files.tsv` | `python3 -I tools/inventory_tsv.py workplace/input/inventory.json <輸出>` | `sosb-tools:bookworm-r1` |
+| 執行檔 MZ 標頭、overlay 魔數、關鍵字串 | `python3 -I tools/exe_probe.py workplace/input/dos/pod [關鍵字 …]` | `sosb-tools:bookworm-r1` |
+| 掃描縮圖拼版（讀頁序） | `python3 -I tools/contact_sheet.py <輸出目錄> <欄數> <縮圖寬> <檔案 …>` | `sosb-img:r1` |
 
 一次性 Docker 工作的固定旗標（`AGENTS.md` 第 8 節）：
 

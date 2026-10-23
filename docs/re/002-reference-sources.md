@@ -26,7 +26,9 @@ JPG 檔名分 4 個掃描批次。內頁多為 1280×910–1053 的跨頁掃描�
 
 - **旅行手札**：冒險者手冊 p.55–106，第 1–100 則，部分則附地圖（例第 5、23、45、98 則）。p.107 製作群，p.108–110 廣告。
 - **密碼表**：操作手冊附錄二 p.62–63，欄位為頁數、字數、標題、答案，對應英文 Adventurer's Journal 的頁碼與英文標題。
-  這是珍157 直接給出的查驗題答案表；表內容不轉錄進 Git。
+  這是珍157 直接給出的查驗題答案表；表內容不轉錄進 Git。表的頁數與標題對得上 `pod-journal.pdf` 目錄（p.1 Introduction、
+  Characters and Parties、Player Races），推定與查驗題引用同一版英文手札（強推論）。G4、G7 可逐列拿它對 `pod-journal.txt`，
+  一次驗英文手札版本、OCR 品質與「標題後第 N 字」的數法（銀色匕首之謎的字序含標題，本作重驗）；對照輸入放 `workplace/`。
 - 操作手冊 p.19「密碼輸入」說明查驗題畫面：給頁碼與標題，問標題之後第幾個字（`GAME.OVR` 字串見 docs/re/001）。
 - 操作手冊 p.10「六、其他的事項」有「傳送『銀色匕首之謎』中的人物」一節；英文 Rulebook p.1 對應「Transferring Characters from Secret of the Silver Blades」。
 

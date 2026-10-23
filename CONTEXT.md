@@ -32,6 +32,7 @@
 | dosgolem 基底（候選見 AGENTS.md 第 5 節） | G2 |
 | VGA 選項的實際顯示模式；`STARTUP.EXE` 寫 `pool4.cfg` 與 `snd.com` 的方式 | G2 |
 | `SAVE/` 能否從 Load Saved Game 載入（沒有 `SAVGAMx.DAT`） | G2 |
+| dosgolem 入口：`START.BAT` 是三層子程序（`STARTUP.EXE` → `CONTROL.EXE` → `VACE.EXE`／`GAME.EXE`）；直接跑 `GAME.EXE` 配預備的 `pool4.cfg`，或支援 `CONTROL.EXE` 的子程序呼叫。`pool4.cfg` 格式未知 | G2 |
 
 ## dosgolem 基線
 
