@@ -33,22 +33,28 @@
 
 | 項目 | 何時決定 |
 |---|---|
-| 片頭片尾字幕（`VACE.EXE` 畫的）的輸出攔截點 | G3 |
-| `apps/pod` 的 play 指令要照 `START.BAT` 常駐驅動並開 `RootTSRShrink`；oracle 目前沒有能載 `.COM` 又吃 `Options` 的入口（dosgolem 規格 431 §5） | G3，先補通用層規格 |
+| 片頭片尾字幕：推定是畫格點陣圖（docs/re/004），辨識與覆繪方式 | G6／G9 |
+| `pod-play` 要照 `START.BAT` 常駐驅動並開 `RootTSRShrink`；oracle 目前沒有能載 `.COM` 又吃 `Options` 的入口（dosgolem 規格 431 §5） | 做 `pod-play` 前（G6），先補通用層規格 |
 | `pool4.cfg` 第 6 行 `F` 與後續 `0` 欄位語意 | 需要時 |
 
 ## dosgolem 基線
 
 | 項目 | 值 |
 |---|---|
-| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作分支頂端 `2e47f92`（規格 430、431 CONFORMED），推到本 repo 的 `dosgolem/pod` |
+| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作分支頂端 `ce5974b`（規格 430、431 CONFORMED，`apps/pod`），推到本 repo 的 `dosgolem/pod` |
 | Go／image | go1.24.13；`dosgolem-go-ebiten:1.24-r1` `sha256:8ed6bdee2bce…` |
 | 冷啟動 | 0 種缺服務；mode 13h；`START.BAT` 程式鏈；片頭送空白鍵跳過，製作群後送 `p` 進建立隊伍主選單。收據 `tools/g2-startup-receipt.sh`，見 [docs/re/003](docs/re/003-dosgolem-startup.md) |
-| adapter | `apps/pod/` 尚未建立；G3 掛輸出攔截時由 `apps/sosb/` 複製 |
+| adapter | `apps/pod/`（由 `apps/sosb/` 複製，路徑 A／B／C 換本作常數與 13h 換算）；`cmd/pod-overlay-shot` |
 
 ## 中文化進度
 
-尚未開工。
+| 路徑 | 狀態 |
+|---|---|
+| 印字程序 | resident 段 `1B2E`：逐字 `01DF`、路徑 A `0354`、路徑 B `0498`、路徑 D `030B`，與幽靈騎士同函式（docs/re/004） |
+| 路徑 A／B／C | DEMO 中呼叫與字串已證實；主選單以佔位譯文覆繪 6 筆、範圍外差異 0（`tools/g3-overlay-receipt.sh`） |
+| catalog | ui 1,357 筆（654 筆與銀色匕首之謎、625 筆與幽靈騎士 key 相同）、ECL 4,725 筆 |
+| 譯文、字型 | 尚未開始；覆繪驗證用的是前作佔位 |
+| 片頭片尾字幕 | 推定是畫格點陣圖，待 G6／G9 |
 
 ## 原始輸入
 

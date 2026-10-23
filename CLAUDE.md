@@ -29,6 +29,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | G2 冷啟動收據：設定 → 常駐驅動 → 片頭 → 主選單，重播比對 | `tools/g2-startup-receipt.sh` | 同上 |
 | 文字模式畫面（`-dump-mem-at 'N:lin:B8000:4000:/out/x.bin'`）轉文字 | `python3 -I tools/b8000_text.py <x.bin …>` | `sosb-tools:bookworm-r1` |
 | mode 13h 截圖（`-shots 'N:/out/x.raw,…'`；`-dump-at` 只支援 planar）轉 PNG | `python3 -I tools/indexed_png.py 320 200 <x.raw …>` | `sosb-img:r1` |
+| GAME.EXE 解開後的映像（EXEPACK）→ `workplace/text-src/game-image.bin` | `tools/g3-game-image.sh` | 走 dosgolem |
+| 文字 catalog | `python3 -I tools/ui_text_catalog.py --image … --ovr … --events text/ui-text-events.tsv --source workplace/text-src/ui-source.tsv`；`python3 -I tools/ecl_text_catalog.py --orig workplace/input/dos/pod --events text/ecl-text-events.tsv --source workplace/text-src/ecl-source.tsv` | `sosb-tools:bookworm-r1` |
+| G3 主選單覆繪收據（佔位譯文與字型） | `tools/g3-overlay-receipt.sh` | 走 dosgolem |
+| 簽章與記憶體遠呼叫 | `tools/re/sigscan.py`、`tools/re/fn_diff.py`、`tools/re/memcalls.py` | `sosb-tools:bookworm-r1` |
+
+探針註記：`-call-args` 一次只接受一組 `CS:IP`；`-call-length-string` 把前兩個參數當字串遠指標。
 
 一次性 Docker 工作的固定旗標（`AGENTS.md` 第 8 節）：
 
@@ -42,9 +48,9 @@ timeout 600 docker run --rm --network none -u "$(id -u):$(id -g)" \
 
 - 前作已建的 image 可唯讀沿用，例如 `sosb-tools:bookworm-r1`（python3、unzip、unar、poppler-utils、curl）與
   `dosgolem-go-ebiten:1.24-r1`（Go 建置）；沿用時把名稱與 ID 記入 `WORKLOG.md`。
-- dosgolem 的建置與測試走 clone 內的 `tools/go.sh`。`apps/pod/` 在 G3 建立後才能跑
-  `tools/go.sh test ./apps/pod/`；需要 X 的套件加 `DOSGOLEM_GO_CMD=xvfb-run tools/go.sh -a go test …`；
-  自動模式跑 play 指令時 `docker run` 要帶 `--init`（銀色匕首之謎的做法）。
+- dosgolem 的建置與測試走 clone 內的 `tools/go.sh`，例：`tools/go.sh test ./apps/pod/...`；
+  需要 X 的套件加 `DOSGOLEM_GO_CMD=xvfb-run tools/go.sh -a go test …`；
+  自動模式跑 play 指令時 `docker run` 要帶 `--init`（銀色匕首之謎的做法；本作 `pod-play` 尚未建立）。
 
 ## 資料索引
 

@@ -164,18 +164,16 @@
 | `/home/anr2/cht/golden_box/curse_of_the_azure_bonds/`、`golden-box-remake-engine/` | Forgotten Realms Gold Box 的 DAX／ECL 格式、TPOV overlay 逆向、術語 | 只當格式與術語參考，不採用其 remake 引擎 |
 | `/home/anr2/cht/dosgolem/`（`README.md`、`CLAUDE.md`、`docs/spec/006-layering.md`） | 能力矩陣、`cmd/probe`、Docker 入口 `tools/go.sh` | 本作 binary 是否可執行與實際缺服務 |
 
-**待驗假說**（G2、G3 的起點，對到本作 callsite 與 bytes 之前不當成已知）：
+**本作與前作的差異**（G2、G3 的結論，docs/re/003、004）：
 
-1. 本作 `GAME.OVR` 開頭是 `FBOV`，與克萊恩英豪、幽靈騎士相同，不是銀色匕首之謎的 `TPOV`；`GAME.OVR` 內另有
-   `krynn.cfg` 字串（docs/re/001）。輸出路徑可能較接近克萊恩英豪與幽靈騎士的家族。銀色匕首之謎以克萊恩英豪簽章
-   在執行期段 `0650` 找到同函式的路徑 A／B／C（其 `docs/re/004`）；本作 G3 從同一組簽章與幽靈騎士
-   `docs/re/003-output-paths.md` 的 FBOV 容器分析開始。主程式是 `GAME.EXE`，由 `CONTROL.EXE` 呼叫。
-2. 選 VGA 時 `VACE.EXE` 與 `GAME.EXE` 都在 mode 13h（320×200、256 色），會寫 DAC 色盤（已證實，docs/re/003）。
-   克萊恩英豪、銀色匕首之謎、幽靈騎士都在 mode 0Dh 16 色驗證，下列前作結論在本作全部降為假說：
-   輸出路徑簽章、`dax_pics.py` 解碼、覆繪的色號與背景色、HD 色號比對與 `hd_validate.py` 閘門、
-   規格 021 以「兩種以上色號」定義的墨跡格。畫面是否經 `VGA.DRV` 輸出，待 G3。
-3. 片頭片尾是另一支程式 `VACE.EXE` 播 `INTRO`、`FINAL` 的 `.ACF`／`.BMA`，畫面有英文字幕（已證實，docs/re/003）。
-   字幕的輸出攔截、HD 與不露原版的處理方式未知；它不經 `GAME.EXE` 的印字程序。
+1. 輸出路徑與前作同家族，最接近幽靈騎士（`FBOV`、版本同為 1.10、路徑 A 參數與路徑 C 呼叫端同形）。
+   `GAME.EXE` 是 EXEPACK，檔案位移不等於執行期位移；字串與位址以 dosgolem 解開後的映像為準（`tools/g3-game-image.sh`）。
+   resident 段 `1B2E`：逐字 `01DF`、路徑 A `0354`、路徑 B `0498`、路徑 D `030B`。
+2. mode 13h（320×200、256 色）。文字格換算是每列 320 bytes；主選單文字的色號就是路徑 A 的前景、底色參數。
+   前作在 0Dh 驗證的 `dax_pics.py` 解碼、HD 色號比對與 `hd_validate.py` 閘門、規格 021 以「兩種以上色號」定義的墨跡格，
+   在本作仍是假說，G6、G9 重驗。
+3. 片頭片尾由另一支程式 `VACE.EXE` 播放，字幕推定是畫格裡的點陣圖（強推論），不經任何印字程序；
+   以畫面辨識覆繪處理，歸 G6／G9。
 
 | 觸發 | 入口 |
 |---|---|
@@ -327,3 +325,5 @@
 | 本作的圖可能與前作逐位元組相同；HD 盤點先比對前作主題，相同的沿用，不再生圖 | G9，2026-10-23 |
 | 啟動批次檔的每一步都要在 dosgolem 重現，常駐程式不能省；省掉的那支可能在很後面才讓遊戲當掉（本作 DEMO 跳進顯存） | 本作 G2，2026-10-23 |
 | dosgolem 的通用行為若有規格與收據釘住（例 197 §5.1），改它用預設關閉的選項，不改預設 | 本作 G2，2026-10-23 |
+| 壓縮過的執行檔（EXEPACK 等）不以檔案位移推位址或抽字串；用 dosgolem 跑原版解壓後的記憶體 | 本作 G3，2026-10-23 |
+| `cmd/probe -call-args` 一次只接受一組 `CS:IP`，多組用逗號時只有第一組生效；分次跑 | 本作 G3，2026-10-23 |

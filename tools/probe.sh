@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # dosgolem 探針包裝：tools/probe.sh <輸出目錄> <cmd/probe 參數…>
-# 原版唯讀掛 /orig，輸出目錄掛 /out，狀態庫 workplace/probe/states 掛 /st（唯讀）。
+# 原版唯讀掛 /orig，輸出目錄掛 /out；唯讀掛載：狀態庫 workplace/probe/states → /st、text/ → /text、
+# workplace/font → /font、workplace/text-src → /textsrc。
 # 固定 -root /orig；-program-path 預設 C:\POD\<PROBE_EXE>（安裝預設目錄 C:\POD，見 docs/re/003），
 # PROBE_EXE 預設 STARTUP.EXE。scratch 由呼叫端用 -scratch-dir 指定。
 # 換成別的 cmd：PROBE_CMD=./cmd/pod-xxx（此時不帶 -root／-program-path／-exe，由呼叫端給）。
@@ -14,8 +15,9 @@ CMD="${PROBE_CMD:-./cmd/probe}"
 EXE="${PROBE_EXE:-STARTUP.EXE}"
 FIXED=(-root /orig -exe "/orig/$EXE" -program-path "C:\\POD\\$EXE")
 [[ "$CMD" == ./cmd/probe ]] || FIXED=()
+mkdir -p "$ROOT/text" "$ROOT/workplace/font" "$ROOT/workplace/text-src"
 cd "$ROOT/workplace/dosgolem"
 DOSGOLEM_ORIG="$ROOT/workplace/input/dos/pod" \
-DOSGOLEM_EXTRA_MOUNTS="$OUT:/out;$ROOT/workplace/probe/states:/st:ro" \
+DOSGOLEM_EXTRA_MOUNTS="$OUT:/out;$ROOT/workplace/probe/states:/st:ro;$ROOT/text:/text:ro;$ROOT/workplace/font:/font:ro;$ROOT/workplace/text-src:/textsrc:ro" \
 DOSGOLEM_TIMEOUT="${PROBE_TIMEOUT:-20m}" DOSGOLEM_CPUS="${PROBE_CPUS:-2}" DOSGOLEM_MEM="${PROBE_MEM:-2g}" \
   tools/go.sh run "$CMD" "${FIXED[@]}" "$@"
