@@ -156,3 +156,7 @@
 - 查驗題由路徑 A 分段印出（`37F7:01B2`–`029B`）：「(journal, page 2) what is word # 3 after the heading ABILITY SCORES」，查珍157 操作手冊附錄二答 HAS 後進入遊戲。
   收據只收這一題，題目變了就停。
 - 路徑 B 第二組：碼頭對白參數與 DEMO 相同（1、0、14、22、38、17、1），規格 002 升 READY。新增 `docs/spec/000-index.md`（本作規格狀態）。
+- 存讀檔收據 `tools/g6-saveload-receipt.sh`：婉拒導覽、紮營、存檔槽 A；冷開機載入本作槽 A、開始冒險、查驗題（第 4 頁 ALIGNMENT 後第 7 字 LIVES）回到街上。10 段範圍外差異 0。
+  分段函式抽到 `tools/g6-stage.sh`，建角收據改用它（PROBE_ONLY 給只有探針吃的 `-call-args`；第一次把它也傳給 overlay-shot，旗標不認得而失敗）。
+- 譯文修正：讀檔選單 `Pools Secret Exit` 的 Pools 指本作，子代理誤作「光芒之池」，改「本作 銀色匕首之謎 離開」，選單母串重產。見 docs/re/007。
+- 勘誤：本輪又有一個主機指令誤帶 `python3 -c 1`（空操作），是第二次；之後組指令不再附這段。

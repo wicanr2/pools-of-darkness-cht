@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 # G6 正常玩家路徑收據：主選單 → 建角（精靈戰士 ROLAND）→ 存檔 → 加入隊伍（A 加入、E 離開）→ 開始冒險 → 查驗題作答（HAS）。
 # 前置：tools/g2-startup-receipt.sh（製作群狀態 credits-300m.state 與首次設定寫出的 pool4.cfg、snd.com）。
-# 每段以探針（START.BAT 鏈：snd.com 常駐、-root-tsr-shrink）從上一段狀態送鍵、存狀態；再以 pod-overlay-shot 從同一狀態重播同樣的鍵，
-# 用該段開始前的暫存目錄快照（否則重播看到的是探針已寫好的存檔），在段尾截原版與中文圖、寫印字盤點。
+# 分段做法見 tools/g6-stage.sh（探針存狀態，再以 pod-overlay-shot 用該段開始前的暫存目錄快照重播、截圖、寫印字盤點）。
 # 建角：種族、性別、職業、陣營等各 Enter（第一項：精靈、男、戰士、嚴守善良），要重擲屬性嗎？按 N，名字 ROLAND，圖示編輯器 E、Y，存檔 Y。
 # 用法：tools/g6-create-receipt.sh [起始段]；起始段是 menu、create1、create2、create3、create4、create、add1、add、party、begin、answer 之一（從該段續跑）。
 set -euo pipefail
@@ -18,22 +17,7 @@ if [[ "$FROM" == menu ]]; then
   rm -rf "$OUT"; mkdir -p "$OUT/scratch"; cp "$G2/scratch/pool4.cfg" "$G2/scratch/snd.com" "$OUT/scratch/"
   cp "$G2/credits-300m.state" "$ST/g6r-credits.state"
 fi
-PROBE_ONLY=() # 只給探針的參數（例 -call-args），重播的 pod-overlay-shot 不吃
-stage() { # 名稱 上一段 終點步數 其餘參數…
-  local name=$1 from=$2 end=$3; shift 3
-  rm -rf "$OUT/pre-$name"; cp -r "$OUT/scratch" "$OUT/pre-$name"
-  PROBE_EXE=ADLIB.COM "$ROOT/tools/probe.sh" "$OUT" -scratch-dir /out/scratch -root-tsr-shrink -load-state "/st/g6r-$from.state" \
-    -steps $((end + 1000)) -save-state "$end:/out/$name.state" "$@" "${PROBE_ONLY[@]}" > "$OUT/$name.log" 2>&1
-  PROBE_ONLY=()
-  cp "$OUT/$name.state" "$ST/g6r-$name.state"
-  rm -rf "$OUT/shot-scratch"; cp -r "$OUT/pre-$name" "$OUT/shot-scratch"
-  PROBE_CMD=./cmd/pod-overlay-shot "$ROOT/tools/probe.sh" "$OUT" -state "/st/g6r-$from.state" -root /orig -scratch /out/shot-scratch \
-    -font /font/pod-rounded.golemfnt -text-dir /text -shots "$((end - 1000000)):$name" -until "$end" -out /out \
-    -inventory "/out/$name-inv.tsv" "$@" > "$OUT/$name-shot.json" 2> "$OUT/$name-shot.err"
-  grep -q '"diff_outside_stamps": 0,' "$OUT/$name-shot.json" || { echo "$name：疊字矩形外有差異" >&2; exit 1; }
-  printf '%-8s 疊字 %s、未命中 %s\n' "$name" "$(grep -o '"stamps_shown": [0-9]*' "$OUT/$name-shot.json" | grep -o '[0-9]*$')" \
-    "$(awk -F'\t' '$8 ~ /未命中/ && $9 !~ /^[-0-9 \/]*$/' "$OUT/$name-inv.tsv" | wc -l)"
-}
+source "$ROOT/tools/g6-stage.sh"
 go=0
 for s in menu create1 create2 create3 create4 create add1 add party begin answer; do
   [[ "$s" == "$FROM" ]] && go=1
