@@ -13,7 +13,7 @@
 | 003 路徑 C：底列水平選單 | READY | #4、#7 | 逐字程序 `1B2E:01DF`；四種呼叫端（selected `E9 94 00`、hotkey `EB 3B`、normal `FE 46 FF`、pad `C4 7E FC…`）在主選單與建角畫面相同；熱鍵字母接在譯文後 | docs/re/004；`tools/g6-create-receipt.sh` |
 | 004 組句訊息 | DRAFT | #7 | 模板沿用前作 188 條，另加本作建角的存檔、覆蓋確認；DEMO 戰鬥的物品名＋加值（釘頭錘 +3）、施法訊息已命中 | `tools/play-smoke.sh`（DEMO 10,500 畫格） |
 | 005 中文句中的半形英數 | DRAFT | #7 | 數字照原版保留；未單獨驗證 | — |
-| 006 手冊查驗題 | DRAFT | #8 | 題型「(journal, page N) what is word # M after the heading …」，由路徑 A 分段印出（`37F7:01B2`–`029B`）；題目表靜態找不到；答案對照珍157 操作手冊附錄二；正常玩家路徑作答一題（第 2 頁 ABILITY SCORES 後第 3 字 HAS）後進入遊戲 | docs/re/001、005；`tools/g6-create-receipt.sh` |
+| 006 手冊查驗題 | CONFORMED | #8 | 題型「journal, page (P) / what is word # W / after the heading / 標題」，路徑 A 六段（第 2、4、6、8 列）；題目表 GAME.EXE 映像 0x9F32 起 21 筆、54 題，答案加密存在表內；答案表鍵改為頁、字序、標題（`text/quiz-answers.tsv`：`page`、`word`、`heading`、`answer`）；改寫第 2 列「英文手札第 P 頁」（延伸到頁碼結尾 27 格）、第 4 列「下列標題之後的第 W 個字？」（延伸到字序結尾 22 格）、第 6 列「答案：…」或空白，第 8 列標題留英文；前端文字鍵 `quiz.page`、`quiz.word`、`quiz.answer`；沒有酒店傳聞分支 | docs/re/008；`tools/g7-quiz-receipt.sh`、`g6-create-receipt.sh`、`g6-saveload-receipt.sh` |
 | 007 手札面板 | DRAFT | #8 | 99 則珍157 修正譯文（`text/journal.zh-TW.tsv`）；引用與彈出未在本作觀測 | docs/re/005 |
 | 008 攻略面板 | 未開始 | #9 | 來源《軟體世界》第 43–45 期 | docs/re/002 |
 | 009 地圖疊層 | 未開始 | #9 | — | — |

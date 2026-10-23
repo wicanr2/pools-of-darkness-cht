@@ -44,7 +44,7 @@
 
 | 項目 | 值 |
 |---|---|
-| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作分支頂端 `7046489`（規格 430、431、432 CONFORMED，`apps/pod`、`cmd/pod-play`），推到本 repo 的 `dosgolem/pod` |
+| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作分支頂端 `99dd521`（規格 430、431、432 CONFORMED，`apps/pod`、`cmd/pod-play`；本作查驗題題型），推到本 repo 的 `dosgolem/pod` |
 | Go／image | go1.24.13；`dosgolem-go-ebiten:1.24-r1` `sha256:8ed6bdee2bce…` |
 | 冷啟動 | 0 種缺服務；mode 13h；`START.BAT` 程式鏈；片頭送空白鍵跳過，製作群後送 `p` 進建立隊伍主選單。收據 `tools/g2-startup-receipt.sh`，見 [docs/re/003](docs/re/003-dosgolem-startup.md) |
 | adapter | `apps/pod/`（由 `apps/sosb/` 複製，路徑 A／B／C 換本作常數與 13h 換算）；`cmd/pod-overlay-shot` |
@@ -61,8 +61,8 @@
 | 術語 | `text/glossary.tsv` 949 筆：手札 194、併入銀色匕首之謎術語表 579、試譯新詞 23、說明書名稱 25（前作沒有的）、`MON1CHA.DAX` 怪物名 60、全量新詞 64、別名與複數 4；舊譯 `text/term-avoid.tsv` 38 筆；`tools/term_check.py`、`tools/zh157_names.py check` 通過，`tools/term_consistency.py` 只剩語境變化 |
 | 說明書其餘章節 | 名稱 159 列對照與裁定（`text/zh157-names.tsv`）；全冊 OCR 草稿未校讀（docs/re/006） |
 | 介面與劇情譯文 | `text/ecl-text.zh-TW.tsv` 4,634 則（其餘 91 則是雜訊）；`text/ui-text.zh-TW.tsv` 980 則（654 沿用前作、326 新譯；377 則雜訊）；`tools/translation_merge.py` 0 錯誤。翻譯指引 `text/TRANSLATION-GUIDE.md` |
-| 字型 | 源泉圓體開發字型 `workplace/font/pod-rounded.golemfnt`（16）、`-3x`（24），2,712 字，`tools/font_coverage.py` 缺 0。DEMO 以正式譯文覆繪，開場到戰鬥 5 張截圖範圍外差異 0（`tools/g5-text-receipt.sh`）；戰鬥畫面的怪物名、隊員名、物品組句仍是英文，屬 G6 |
-| 查驗題 | 題型已知；題目表靜態找不到，G7 在執行期攔；答案對照珍157 密碼表 |
+| 字型 | 源泉圓體開發字型 `workplace/font/pod-rounded.golemfnt`（16）、`-3x`（24），2,808 字，`tools/font_coverage.py` 缺 0。DEMO 以正式譯文覆繪，開場到戰鬥 5 張截圖範圍外差異 0（`tools/g5-text-receipt.sh`）；DEMO 戰鬥畫面的隊員名、物品名與加值、施法訊息已覆繪（docs/re/007） |
+| 查驗題 | 規格 006 CONFORMED：GAME.EXE 題目表 21 筆 54 題（`tools/quiz_table.py` → `text/quiz-answers.tsv`），改寫第 2、4、6 列並顯示答案（F9 切換），收據 `tools/g7-quiz-receipt.sh`（docs/re/008） |
 | 片頭片尾字幕 | 推定是畫格點陣圖，待 G6／G9 |
 
 ## 原始輸入

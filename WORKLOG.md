@@ -162,3 +162,17 @@
 - 勘誤：本輪又有一個主機指令誤帶 `python3 -c 1`（空操作），是第二次；之後組指令不再附這段。
 - 選單盤點 `tools/g6-menus-receipt.sh`（檢視人物、物品、紮營、魔法、設定、區域地圖，12 段範圍外差異 0）。補底列整列模板三條、術語表 `Arrows`、`Darts`，名稱 catalog 1,404 筆。
   第一次重跑時用 `| head -3` 截輸出，腳本在印第 4 行時被 SIGPIPE 結束，後半段沒跑；改成輸出寫檔再看。
+
+## 2026-10-23 G7 手冊查驗題（#8）
+
+- 紮營底列第 4 格的「…」：有無整列模板各重跑一次（`workplace/probe/g6-ellipsis/`）都沒有，範圍外差異 0；當初截圖已被覆蓋，來源沒查到。docs/re/007 改記在「譯文修正」。
+- 術語表筆數更正為 949（CONTEXT 先前寫 948）。#7 貼 G6 進度留言。
+- 查驗題畫面的記憶體傾印只有當下那題的標題與答案（`DS:7DEE` 的 `05 'LIVES'`）；`-watch` 找到寫入者後反組譯 overlay 段 `5509`：
+  題目表在 `DS:0x60+0x62k`、k＝Random(21)+1，每筆 3 題，答案加密（倒轉、每字加長度），答錯換題、三次為限。細節 docs/re/008。
+- 反組譯沿用既有 image `sc-cht-disasm:capstone5.0.3-r1`（`sha256:3c56874558dc4f0133d8dbbf650d53f5272ce9596f1c2240189dc7cf0e413cfd`），只讀掛載傾印；腳本 `tools/re/dis16.py`。
+- `tools/quiz_table.py`：以「第 4 頁 ALIGNMENT 第 7 字 LIVES」定位，GAME.EXE 映像 0x9F32 起 21 筆、54 題 → `text/quiz-answers.tsv`（鍵改為 page、word、heading）。
+  英文手札 PDF 第 1 頁兩段正文對上 6 題，字序從標題後正文第一個字算起。答案取自原版執行檔，不轉錄珍157 附錄二。
+- adapter `apps/pod/quiz.go` 改認六段題型，改寫第 2、4、6 列，標題留英文；`text/host-text.zh-TW.tsv` 鍵改 `quiz.page`、`quiz.word`、`quiz.answer`。單元測試含標題命中 catalog 仍留英文、前作表頭拒絕。
+  `tools/go.sh test ./apps/pod/...`、xvfb 下 `cmd/pod-play` 測試通過。字型重建 2,808 字、缺 0。
+- 收據：`tools/g7-quiz-receipt.sh`（題目表重產相同；答案顯示「答案：LIVES」與隱藏空白兩張，範圍外差異 0），建角與存讀檔收據的查驗題段重跑，範圍外差異 0、作答後進入遊戲。規格 006 升 CONFORMED。
+- 收據第一次失敗：從 JSON 擷取第 6 列時沒處理字串結尾的跳脫引號，空白列被判成非空；改 sed 後通過。
