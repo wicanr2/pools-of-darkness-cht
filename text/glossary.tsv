@@ -37,6 +37,7 @@ Arm	手臂	ui	sosb	前作來源 cok；情境：造形編輯；手冊以說明句
 Armor	護甲	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Armor Class	防護力	attribute	sosb	前作來源 cok；手冊縮寫 AC
 Arrow	箭	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
+Arrows	箭	item	自譯	Arrow 的複數；物品清單帶加值時（50 Arrows +2）引擎的單數回退查不到
 Arta	阿爾塔	person	自譯	Storm 的妹妹；珍157 留英文
 Ashabenford	愛色班佛	place	sosb	前作來源 zh056
 Asparagus	蘆筍	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
@@ -196,6 +197,7 @@ Dark Warrior	黑暗戰士	monster	自譯	MON1CHA 區塊 89
 darkened plains	黑暗平原	place	zh157	
 Dart	飛鏢	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Dart of the Hornet's Nest	黃蜂巢飛鏢	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲詞素組合
+Darts	飛鏢	item	自譯	Dart 的複數，同上
 Dave	戴夫	person	自譯	珍157 留英文；前作術語表備註有戴夫的挑戰
 Dead	死亡	ui	sosb	前作來源 cok
 Death	死神	other	自譯	Bane 派往王國的紅衣騎士；珍157 作死亡

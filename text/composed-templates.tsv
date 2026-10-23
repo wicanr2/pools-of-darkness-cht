@@ -188,3 +188,6 @@ is Fire Resistant (ring)	抗火（戒指）	本作戰鬥中狀態訊息（is ＋
 is Within Minor Globe of Invulnerability	位於小型魔法防護罩內	本作戰鬥中狀態訊息（is ＋狀態名整串印出；Slowed、Protected 已觀測，其餘同式推測，城鎮外盤點 2026-10-23）
 Save {name}? 	要儲存 {name} 嗎？	建角存檔確認（名字模板；G6 建角路徑 2026-10-23）
 overwrite {name}?	要覆蓋 {name} 嗎？	存檔已存在時的確認（名字模板；G6 建角路徑 2026-10-23）
+Items Trade Drop Exit	物品 交易 丟棄 離開	檢視人物底列（整列逐詞；Drop 單獨查會命中提示片段「要永遠放棄」放不下；G6 選單盤點 2026-10-23）
+Ready Use Trade Drop Halve Join Exit	備妥 使用 交易 丟棄 分半 集合 離開	物品清單底列（母串沒有 Exit，對不上；術語表的「物品數量分半」「集合物品」放不進詞寬）
+Save View Magic Alter Exit	儲存 檢視 魔法 設定 離開	紮營底列（前作母串譯文「儲存遊戲 檢視人物」佔滿詞寬，熱鍵字母放不下）

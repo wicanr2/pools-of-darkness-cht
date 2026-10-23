@@ -9,6 +9,7 @@
 | [`tools/play-smoke.sh`](../../tools/play-smoke.sh) | `pod-play` 空存檔目錄冷開機：照 `START.BAT` 以 `snd.com` 常駐、佇列 `CONTROL.EXE`（dosgolem 規格 432）→ 片頭 → 製作群 → 建立隊伍主選單 | 原版色號雜湊 `fefa0514…` 與 G2 收據相同；主選單覆繪 8 筆 |
 | 同上，`10500 '900: ,1800: '` | 製作群後送空白進 DEMO，演到戰鬥 | 隊員名（辛尼漢爵士、艾爾弗瑞德、克莉絲卡）、物品名＋加值（釘頭錘 +3）、施法訊息、座標時間列都已覆繪；未命中只剩防護與生命力數字、一格空白 |
 | [`tools/g6-create-receipt.sh`](../../tools/g6-create-receipt.sh) | 主選單 → 建角（精靈戰士 ROLAND）→ 存檔 → 加入隊伍 → 開始冒險 → 查驗題 → 菲蘭城碼頭（港務長） | 11 段範圍外差異 0；未命中只剩傷害骰（1d2）與名字輸入回顯 |
+| [`tools/g6-menus-receipt.sh`](../../tools/g6-menus-receipt.sh) | 讀檔後的街上：檢視人物 → 物品 → 離開；紮營 → 魔法 → 離開、設定 → 離開；區域地圖 | 12 段範圍外差異 0；未命中只剩傷害骰與檢視標題的玩家名（重播期間隊伍欄沒重印，音譯表沒學到，實際遊玩先印隊伍欄） |
 | [`tools/g6-saveload-receipt.sh`](../../tools/g6-saveload-receipt.sh) | 婉拒導覽 → 回到街上 → 紮營 → 存檔槽 A；冷開機 → 載入本作槽 A → 開始冒險 → 查驗題 → 街上 | 10 段範圍外差異 0；讀檔後隊伍與底列選單覆繪；未命中只剩作答回顯 |
 
 兩支分段收據共用 [`tools/g6-stage.sh`](../../tools/g6-stage.sh)：每段以探針（`ADLIB.COM` 疊底、`-root-tsr-shrink`）從上一段狀態送鍵並存狀態，
@@ -39,9 +40,12 @@
 
 - `Pools Secret Exit` 子代理譯成「光芒之池 銀色匕首之謎 離開」，依上節改成「本作 銀色匕首之謎 離開」（前作同位置的 `Secret Curse Exit` 作「本作 青色枷 離開」）。
 - 組句模板補「Save {name}? 」「overwrite {name}?」。
+- 底列三條整列模板：`Items Trade Drop Exit`、`Ready Use Trade Drop Halve Join Exit`、`Save View Magic Alter Exit`。單詞 `Drop ` 會命中提示片段「要永遠放棄」放不進詞寬，
+  物品清單底列的母串沒有 Exit 對不上，前作母串譯文「物品數量分半」「集合物品」「儲存遊戲」佔滿詞寬、熱鍵字母放不下。
+- 術語表補 `Arrows`、`Darts`：物品清單帶加值的數量列（`Yes  50 Arrows +2`）引擎的單數回退查不到；現在作「是 箭 +2 50」（數量置後，同前作）。
+- 本作紮營選單沒有 Rest。
 
 ## 待查
 
 - 紮營底列 `Save View Magic Alter Exit` 的第 4 格（Save 與 View 之間的空白）多出綠色「…」：疊字清單裡兩個詞是「儲存」與「檢視人物」，第 4 格不在任何疊字內，原版該格是黑的。
-- 前作把紮營選單母串譯成「儲存遊戲 檢視人物 …」，每詞照原寬度放，四字詞放不下熱鍵字母，View 的熱鍵 V 不顯示。
 - 城鎮服務（商店、神殿、訓練所、旅店）、野外移動、非 DEMO 的戰鬥、升級、多職業尚未盤點；前作的自動探索器要隊伍位置位址，本作未驗（G8）。
