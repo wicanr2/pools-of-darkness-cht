@@ -41,6 +41,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | 併前作術語表、本作新詞表 | `python3 -I tools/glossary_import.py --into text/glossary.tsv --from sosb=<前作 glossary.tsv>`（新詞表用 `--from keep=<TSV>`） | `sosb-tools:bookworm-r1` |
 | 切翻譯批次；批次驗證與合併 | `python3 -I tools/ecl_batches.py --source workplace/text-src/ecl-source.tsv --out workplace/tr/ecl/batches`；`python3 -I tools/translation_merge.py --events text/ecl-text-events.tsv --batches … --done … --out …` | `sosb-tools:bookworm-r1` |
 | 開發字型（譯文改了就重建，否則覆繪缺字） | `tools/font-dev.sh` | `sosb-img:r1` |
+| 譯名一致性掃描（原文有術語、譯文沒用對應中文的候選） | `python3 -I tools/term_consistency.py --glossary text/glossary.tsv --source workplace/text-src/ecl-source.tsv --translations text/ecl-text.zh-TW.tsv` | `sosb-tools:bookworm-r1` |
+| G5 譯文收據：正式譯文跑 DEMO 開場到戰鬥 | `tools/g5-text-receipt.sh` | 走 dosgolem |
 | 字型覆蓋：譯文表要顯示的字是否都在字型裡 | `python3 -I tools/font_coverage.py --font workplace/font/pod-rounded.golemfnt <譯文 TSV …>` | `sosb-tools:bookworm-r1` |
 
 探針註記：`-call-args` 一次只接受一組 `CS:IP`；`-call-length-string` 把前兩個參數當字串遠指標。

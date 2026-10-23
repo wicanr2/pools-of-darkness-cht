@@ -126,3 +126,13 @@
 - `MON1CHA.DAX` 缺譯名的 60 個名字自譯（`workplace/tr/monster-terms.tsv` 併入術語表），124 個名字全有譯名；術語表 881 筆。
 - 介面：與前作 key 相同的 654 筆沿用前作譯文（「裏」改「裡」）寫入 `text/ui-text.zh-TW.tsv`，舊譯 0；其餘 703 筆切 7 批（`workplace/text-src/ui-source-rest.tsv`）。
 - 全量：ECL 59 批分 12 組、介面 7 批分 2 組，sonnet 子代理每組一個，同時 4 個。
+- 全量交回：ECL 59 批、介面 7 批，14 個 sonnet 子代理（同時 4 個），每組 4–9 分鐘。多數子代理用 Write 寫檔後以 awk 補回空 note 的結尾 tab；
+  兩個介面組改用 awk 由對照檔產生 done 檔。合併檢查以 key 與欄數為準，0 錯誤。
+- 指引勘誤：「黑暗之池只用於題名」照搬自前作（前作題名是誤譯才有這條）；本作劇情裡的 Pool of Darkness 也作黑暗之池，第 1 組譯的「黑暗水池」已改。
+- 統一：批次間分歧 11 種 18 處（陸鯊→土鯊、猛獁象→長毛象、Salamander 改火蠑螈以免與 Fire Lizard 火蜥蜴撞名、赫爾伯格→胡爾堡、艾文翠→精靈樹、鷹巢→龍巢、
+  法師之門→魔法師之門、摩安德製造廠→摩安德工坊、油膏→藥膏、泰多姆城堡→泰多姆的城堡、黑暗水池→黑暗之池），替換前的批次留在 `workplace/tr/ecl/done.before-unify/`。
+  新詞 65 筆併入術語表（946 筆）。`tools/term_consistency.py`（新增）剩 254 處未對上，抽看專名類都是語境變化（天氣的風暴、STORM THE GATE、敘述的坑洞）。
+- 結果：`text/ecl-text.zh-TW.tsv` 4,634 則、`text/ui-text.zh-TW.tsv` 980 則；舊譯 0、珍157 舊名 0；字型 2,712 字、缺 0。
+  `tools/g5-text-receipt.sh`：DEMO 開場到戰鬥 5 張截圖範圍外差異 0。戰鬥畫面的怪物名、隊員名、物品名組句仍是英文。
+- 子代理回報的組句與語境疑點（程式插入名字、方位、數字的片段，玩家輸入字，手札引用與查驗題用語）整理在 `workplace/tr/review-notes.tsv`，轉到 #7、#8。
+- 清理：容器皆 `--rm`。

@@ -58,10 +58,10 @@
 | 路徑 A／B／C | DEMO 中呼叫與字串已證實；主選單以佔位譯文覆繪 6 筆、範圍外差異 0（`tools/g3-overlay-receipt.sh`） |
 | catalog | ui 1,357 筆（654 筆與銀色匕首之謎、625 筆與幽靈騎士 key 相同）、ECL 4,725 筆 |
 | 手札譯文 | 99 則修正譯文 `text/journal.zh-TW.tsv`（90 則有修正）；錯譯表 354 條通過 `tools/errata_check.py`（docs/re/005） |
-| 術語 | `text/glossary.tsv` 881 筆：手札 194、併入銀色匕首之謎術語表 579、試譯新詞 23、說明書名稱 25（前作沒有的）、`MON1CHA.DAX` 怪物名 60；舊譯 `text/term-avoid.tsv` 38 筆；`tools/term_check.py`、`tools/zh157_names.py check` 通過 |
+| 術語 | `text/glossary.tsv` 946 筆：手札 194、併入銀色匕首之謎術語表 579、試譯新詞 23、說明書名稱 25（前作沒有的）、`MON1CHA.DAX` 怪物名 60、全量新詞 65；舊譯 `text/term-avoid.tsv` 38 筆；`tools/term_check.py`、`tools/zh157_names.py check` 通過，`tools/term_consistency.py` 只剩語境變化 |
 | 說明書其餘章節 | 名稱 159 列對照與裁定（`text/zh157-names.tsv`）；全冊 OCR 草稿未校讀（docs/re/006） |
-| 介面與劇情譯文 | 翻譯指引 `text/TRANSLATION-GUIDE.md`；介面 654 筆沿用前作譯文（`text/ui-text.zh-TW.tsv`），其餘 703 筆切 7 批；ECL 61 批，試譯第 04、05 批定案，其餘 59 批全量翻譯中（`workplace/tr/`） |
-| 字型 | 源泉圓體開發字型 `workplace/font/pod-rounded.golemfnt`（16）、`-3x`（24），`tools/font-dev.sh` 由譯文重建；DEMO 開場 7 則旁白以試譯覆繪，範圍外差異 0（`workplace/probe/g5-trial/`） |
+| 介面與劇情譯文 | `text/ecl-text.zh-TW.tsv` 4,634 則（其餘 91 則是雜訊）；`text/ui-text.zh-TW.tsv` 980 則（654 沿用前作、326 新譯；377 則雜訊）；`tools/translation_merge.py` 0 錯誤。翻譯指引 `text/TRANSLATION-GUIDE.md` |
+| 字型 | 源泉圓體開發字型 `workplace/font/pod-rounded.golemfnt`（16）、`-3x`（24），2,712 字，`tools/font_coverage.py` 缺 0。DEMO 以正式譯文覆繪，開場到戰鬥 5 張截圖範圍外差異 0（`tools/g5-text-receipt.sh`）；戰鬥畫面的怪物名、隊員名、物品組句仍是英文，屬 G6 |
 | 查驗題 | 題型已知；題目表靜態找不到，G7 在執行期攔；答案對照珍157 密碼表 |
 | 片頭片尾字幕 | 推定是畫格點陣圖，待 G6／G9 |
 
