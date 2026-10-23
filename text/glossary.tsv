@@ -14,6 +14,7 @@ Aerial Servant	風靈僕役	monster	sosb	前作來源 sosb
 Ahdk	阿德克	person	自譯	珍157 留英文
 Aim	瞄準	ui	sosb	前作來源 cok
 Alanor	阿拉諾	person	自譯	珍157 留英文
+Alefraed	艾爾弗瑞德	person	自譯	MON1CHA 區塊 121；音譯
 altar room	祭壇室	place	zh157	
 Alter	設定	ui	sosb	前作來源 cok
 Ambush Made Easy	簡易突擊術	item	sosb	前作來源 cok；書名；手冊作「簡易突擊術（Ambush Made Easy）」
@@ -52,6 +53,7 @@ Banite	班恩教徒	group	coab
 Banite cleric	班恩教牧師	group	sosb	珍157 作 Banite 牧師；Bane clerics 譯班恩的牧師
 Banite cleric / Banite priest	班恩教牧師	group	sosb	沿用 b01 的 Banite cleric；第 68 則 banite priests 同譯
 Banite Priest	班恩教祭司	monster	sosb	前作來源 sosb；怪物資料 MON1CHA.DAX 區塊 71
+Banshee	報喪女妖	monster	自譯	MON1CHA 區塊 108
 Barkskin	硬皮術	spell	sosb	前作來源 cok
 Basilisk	八腳蜥蜴	monster	sosb	前作來源 por；光芒之池說明書；批次曾作蛇怪
 Bastard Sword	手半劍	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
@@ -67,11 +69,13 @@ Beholder	眼魔	monster	sosb	前作來源 zh056
 Beholder Corps	眼魔大隊	group	sosb	前作來源 zh056
 Belt	腰帶	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Berserker	狂戰士	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
-Bestow Curse	散佈詛咒	spell	zh157	珍157 冒險者手冊 p.39作「散佈詛咒」；採珍157；前作作施以詛咒；原「施以詛咒」（sosb）
+Bestow Curse	施以詛咒	spell	sosb	前作來源 cok；「詛咒」為現代通行字（使用者 2026-10-15 定案）；手冊作「施以咀咒」
+Bit O Moander	摩安德碎塊	monster	自譯	MON1CHA 區塊 2–4
 Black Circle	黑圈幫	group	sosb	珍157 同；沿用 b01
 Black Dragon	黑龍	monster	sosb	前作來源 cok；手冊索引寫法 Dragon, Black；ECL 劇情與 UI 字串未見，英文取自手冊
 black elves / dark elves	黑暗精靈	group	sosb	即 Drow；珍157 作黑精靈，與 Drow 並用；本批統一為黑暗精靈
 Black Lord Bane	黑暗大帝班恩	deity	zh157	珍157 作黑暗大帝
+Black Mage	黑魔法師	monster	自譯	MON1CHA 區塊 82；比照前作 Red Mage Scroll 紅魔法師卷軸
 Black Wizard	黑魔法師	monster	sosb	前作來源 cok；遊戲印 BLACK WIZARD；同提示書譯文 black wizards；戰鬥盤點 2026-10-18
 Blackards	惡棍	other	自譯	推定是 blackguards 的拼法（強推論）；G5 試譯 ECL1 區塊 16
 Blade Barrier	飛刃輪	spell	zh157	珍157 冒險者手冊 p.42作「飛刃輪」；採珍157
@@ -93,20 +97,22 @@ Broad Sword	寬刃劍	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Broccoli	青花菜	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Bronze	青銅幣	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Bugbear	熊地精	monster	sosb	前作來源 sosb；怪物資料 MON1CHA.DAX 區塊 49
-Burning Hands	燃燒之手	spell	zh157	珍157 冒險者手冊 p.45作「燃燒之手」；採珍157；原「燃燒的手」（sosb）
+Bulette	土鯊	monster	自譯	MON1CHA 區塊 1；珍157 冒險者手冊 p.23 說別名 landsharks
+Burning Hands	燃燒的手	spell	sosb	前作來源 cok；另見：火掌術（b14 西里恩額外法術）；兩處各 1 次，依法術說明章為準
 Buy	購買裝備	ui	sosb	前作來源 cok
 Cadorna	卡多納	person	por	珍157 留英文；珍157 作卡德納（第 57、62 則）與卡德納（Cadorna）；por 說明書作卡多納，沿用 b01；與 b01 同
 Cadorna Textile House	卡多納紡織行	place	por	珍157 作紡織廠；por 說明書作卡多納紡織行
 Camouflaged	偽裝	ui	sosb	前作來源 cok；新詞，2026-10-15 收斂；狀態
 Capet	卡佩	person	sosb	前作來源 sosb；怪物資料 MON1CHA.DAX 區塊 51
+Carrion Crawler	腐屍爬蟲	monster	自譯	MON1CHA 區塊 21
 Carrion Snake	食腐蛇	monster	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Cast	施法	ui	sosb	前作來源 cok；另見：魔法使用（a17 章標題）
 Castle of the Twins	孿生城堡	place	sosb	前作來源 zh056
-Cause Blindness	引起失明	spell	zh157	珍157 冒險者手冊 p.39作「引起失明」；採珍157；原「引發失明」（sosb）
-Cause Critical Wounds	引起致命傷勢	spell	zh157	珍157 冒險者手冊 p.41作「引起致命傷勢」；採珍157；原「引發致命傷」（sosb）
-Cause Disease	引起疾病	spell	zh157	珍157 冒險者手冊 p.39作「引起疾病」；採珍157；原「引發疾病」（sosb）
-Cause Light Wounds	引起輕傷	spell	zh157	珍157 冒險者手冊 p.37作「引起輕傷」；採珍157；前作作引發輕傷；原「引發輕傷」（sosb）
-Cause Serious Wounds	引起重傷	spell	zh157	珍157 冒險者手冊 p.40作「引起重傷」；採珍157；原「引發重傷」（sosb）
+Cause Blindness	引發失明	spell	sosb	前作來源 cok；新詞，2026-10-15 收斂；取代異譯：造成失明
+Cause Critical Wounds	引發致命傷	spell	sosb	前作來源 cok；新詞，2026-10-19 全量翻譯收斂
+Cause Disease	引發疾病	spell	sosb	前作來源 cok；新詞，2026-10-15 收斂；Cure Disease 的反轉
+Cause Light Wounds	引發輕傷	spell	sosb	前作來源 cok；新詞，2026-10-19 全量翻譯收斂
+Cause Serious Wounds	引發重傷	spell	sosb	前作來源 cok；新詞，2026-10-19 全量翻譯收斂
 Center	移到畫面中央	ui	sosb	前作來源 cok
 Centipede	蜈蚣	monster	sosb	前作來源 sosb；怪物資料 MON1CHA.DAX 區塊 34；Giant Centipede 為巨型蜈蚣
 CHA	魅力	attribute	sosb	前作來源 cok
@@ -121,7 +127,7 @@ Chanting	吟誦聲	other	sosb	前作來源 cok；新詞，2026-10-16 提示書�
 Chaotic Evil	混亂的邪惡	alignment	sosb	前作來源 cok；新詞，2026-10-15 收斂；依 Chaotic Good 類推
 Chaotic Good	混亂的善良	alignment	sosb	前作來源 cok
 Chaotic Neutral	混亂的中立	alignment	sosb	前作來源 cok
-Charm Monsters	迷惑敵人	spell	zh157	珍157 冒險者手冊 p.50作「迷惑敵人」；採珍157；前作作迷惑怪物；原「迷惑怪物」（sosb）
+Charm Monsters	迷惑怪物	spell	sosb	前作來源 cok；手冊拼作 Charm Monster
 Charm Person	迷惑術	spell	sosb	前作來源 cok
 Charm Person Or Mammal	迷惑人類或哺乳動物	spell	zh157	珍157 冒險者手冊 p.44作「迷惑人類或哺乳動物」；同名；前作 Charm Person/Mammal 同譯
 Charm Person/Mammal	迷惑人類或哺乳動物	spell	sosb	前作來源 cok；手冊內文作 Charm Person or Mammal
@@ -133,14 +139,16 @@ Cloak	斗篷	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Cloak of Displacement	位移斗篷	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲詞素組合
 Cloister of Tyr	提爾修院	place	自譯	G5 試譯
 Cloud Giant	雲巨人	monster	sosb	珍157 作雲霧巨人
-Cloud Kill	死亡之雲	spell	zh157	珍157 冒險者手冊 p.52作「死亡之雲」；採珍157；原「殺人雲」（sosb）
+Cloud Gnt Mage	雲巨人魔法師	monster	自譯	MON1CHA 區塊 25
+Cloud Gt Shaman	雲巨人巫師	monster	自譯	MON1CHA 區塊 24（遊戲縮寫）
+Cloud Kill	殺人雲	spell	sosb	前作來源 cok；手冊拼作 Cloudkill
 Club	棍棒	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
-Cockatrice	雞蛇	monster	zh157	珍157 冒險者手冊 p.30作「雞蛇」；採珍157；內文；前作作雞蛇獸；原「雞蛇獸」（sosb）
-Cold Fire Shield	冷火之盾	spell	sosb	前作來源 cok；新詞，2026-10-15 收斂；Fire Shield 變體；隨 Fire Shield 改火焰之盾（珍157），原「冷火盾牌」；本作 UI 沒有此字串
+Cockatrice	雞蛇獸	monster	sosb	前作來源 sosb
+Cold Fire Shield	冷火盾牌	spell	sosb	前作來源 cok；新詞，2026-10-15 收斂；Fire Shield 變體
 Composite Long Bow	複合長弓	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Composite Short Bow	複合短弓	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 CON	體質	attribute	sosb	前作來源 cok
-Cone of Cold	冷凍光束	spell	zh157	珍157 冒險者手冊 p.52作「冷凍光束」；採珍157；原「冰錐術」（sosb）
+Cone of Cold	冰錐術	spell	sosb	前作來源 cok
 Confusion	混淆術	spell	sosb	前作來源 cok
 Copper Dragon	銅龍	monster	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Cormyr	柯米爾	place	sosb	前作來源 zh056
@@ -148,12 +156,13 @@ Council Member	議員	other	zh157	珍157 作議員
 Council of Elves	精靈會議	group	zh157	
 Create New Character	創造新人物	ui	sosb	前作來源 cok；另見：創造人物（a09 初始選單）
 Crucible of Flame	火焰坩堝	item	自譯	珍157 作坩堝
+Cryo Snake	冰蛇	monster	自譯	MON1CHA 區塊 104
 Crystal Ring	水晶戒指	item	zh157	珍157 作水晶戒子
 Cult of Moander	摩安德教派	group	coab	珍157 作祭禮，誤
 Cult of the Dragon	龍之教派	group	自譯	珍157 作龍之祭典，誤；對照 b01 Cult of Moander 摩安德教派
 Cure	治病	ui	sosb	前作來源 cok；遊俠專用命令
 Cure Blindness	醫治失明	spell	sosb	前作來源 cok
-Cure Critical Wounds	治療致命傷勢	spell	zh157	珍157 冒險者手冊 p.41作「治療致命傷勢」；採珍157；原「治療致命傷」（sosb）
+Cure Critical Wounds	治療致命傷	spell	sosb	前作來源 cok
 Cure Disease	醫治疾病	spell	sosb	前作來源 cok；另見：治療疾病（a14）
 Cure Light Wounds	治療輕傷	spell	sosb	前作來源 cok；另見：醫治輕傷（b18 得魯依法術）
 Cure Serious Wounds	治療重傷	spell	sosb	前作來源 cok
@@ -165,7 +174,9 @@ Damage	傷害力	attribute	sosb	前作來源 cok
 Daris	達里斯	person	自譯	珍157 留英文
 Dark Dimension	黑暗次元	place	zh157	
 dark fountains	黑暗之泉	place	zh157	
+Dark Lord	黑暗領主	monster	自譯	MON1CHA 區塊 92
 Dark Phlan	黑暗菲蘭城	place	zh157	珍157 作黑暗菲蘭城（Dark Phlan）
+Dark Warrior	黑暗戰士	monster	自譯	MON1CHA 區塊 89
 darkened plains	黑暗平原	place	zh157	
 Dart	飛鏢	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Dart of the Hornet's Nest	黃蜂巢飛鏢	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲詞素組合
@@ -173,10 +184,11 @@ Dave	戴夫	person	自譯	珍157 留英文；前作術語表備註有戴夫的�
 Dead	死亡	ui	sosb	前作來源 cok
 Death	死神	other	自譯	Bane 派往王國的紅衣騎士；珍157 作死亡
 Death Knight	死亡騎士	monster	sosb	前作來源 cok
-Death Spell	致死術	spell	zh157	珍157 冒險者手冊 p.52作「致死術」；採珍157；原「死亡法術」（sosb）
+Death Spell	死亡法術	spell	sosb	前作來源 cok
+Death Tyrant	死亡暴君	monster	自譯	MON1CHA 區塊 95；珍157 p.24 說像受傷的眼魔
 Delay	延後	ui	sosb	前作來源 cok
-Delay Blast Fireball	延遲爆炸術	spell	sosb	前作來源 cok；手冊作 Delayed Blast Fireball；a29 表作 Delayed Blast Fire Ball；前作拼法，譯名隨 Delayed Blast Fireball（珍157），原「延時爆發火球」
-Delayed Blast Fireball	延遲爆炸術	spell	zh157	珍157 冒險者手冊 p.53作「延遲爆炸術」；採珍157
+Delay Blast Fireball	延遲爆炸火球	spell	sosb	前作來源 cok；手冊作 Delayed Blast Fireball；a29 表作 Delayed Blast Fire Ball；本作與遊戲字串正確拼法同譯（前作 UI 作延遲爆炸火球），原「延時爆發火球」
+Delayed Blast Fireball	延遲爆炸火球	spell	sosb	珍157 冒險者手冊 p.53作「延遲爆炸術」；沿用前作；使用者 2026-10-23：與銀色匕首之謎一致（前作UI）；原「延遲爆炸術」（zh157）
 Demo	示範	ui	sosb	前作來源 cok；手冊作 [D]EMO
 Dennia	丹妮雅	person	自譯	珍157 留英文
 Deposit	存款	ui	sosb	前作來源 cok
@@ -184,15 +196,15 @@ Derf	德夫	person	sosb	前作來源 sosb；珍056 留英文；銀刃最後的�
 Deric	德瑞克	person	sosb	前作來源 sosb；Sir Deric＝德瑞克爵士
 Destruction	毀滅術	spell	zh157	珍157 冒險者手冊 p.42作「毀滅術」；採珍157
 Detect	偵測	ui	sosb	前作來源 cok
-Detect Invisibility	偵測隱形人	spell	zh157	珍157 冒險者手冊 p.46作「偵測隱形人」；採珍157；前作作搜尋隱形物品；原「搜尋隱形物品」（sosb）
-Detect Magic	偵測魔法	spell	自譯	珍157 冒險者手冊 p.37作「偵測魔法物品」；珍157不一致；德魯伊、魔法師法術都作偵測魔法（p.43、45）；原「搜尋魔法物品」（sosb）
+Detect Invisibility	搜尋隱形物品	spell	sosb	前作來源 cok
+Detect Magic	搜尋魔法物品	spell	sosb	前作來源 cok；另見：偵測魔法（a21）
 DEX	敏捷	attribute	sosb	前作來源 cok；a22 表作「敏捷度」，b06 內文多作「敏捷度」
 Dhazheal	達希爾	person	sosb	前作來源 sosb；Imperator Dhazheal＝達希爾大將軍（珍056 大將軍）
 Diamond	鑽石	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Dimension Door	時空之門	spell	sosb	前作來源 cok
-Disentegrate	分解術	spell	sosb	前作來源 cok；遊戲字串拼作 Disentegrate；手冊拼作 Disintegrate
-Disintegrate	分解術	spell	zh157	珍157 冒險者手冊 p.52作「分解術」；同名；前作術語表拼作 Disentegrate
-Dispel Evil	驅邪術	spell	zh157	珍157 冒險者手冊 p.41作「驅邪術」；採珍157；原「解除邪惡」（sosb）
+Disentegrate	崩解術	spell	sosb	前作來源 cok；遊戲字串拼作 Disentegrate；手冊拼作 Disintegrate；本作與遊戲字串正確拼法同譯（前作 UI 作崩解術），原「分解術」
+Disintegrate	崩解術	spell	sosb	珍157 冒險者手冊 p.52作「分解術」；沿用前作；使用者 2026-10-23：與銀色匕首之謎一致（前作UI）；前作術語表拼作 Disentegrate；原「分解術」（zh157）
+Dispel Evil	解除邪惡	spell	sosb	前作來源 cok
 Dispel Magic	解除法術	spell	sosb	前作來源 cok
 Displaced	位移	ui	sosb	前作來源 cok；新詞，2026-10-15 收斂；狀態；取代異譯：移位
 Displacement	位移	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
@@ -200,6 +212,7 @@ Displacer Beast	移位獸	monster	sosb	前作來源 coab；怪物資料 MON1CHA.
 Display	顯示法術	ui	sosb	前作來源 cok
 Disruption	粉碎	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 dracolich	龍巫妖	monster	zh157	珍157 同
+Dracolisk	龍蜥	monster	自譯	MON1CHA 區塊 60；珍157 p.24 說是黑龍與 Basilisk 的混血
 Dragon	龍族	monster	sosb	前作來源 cok
 Dragon Breath	龍息	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Dragonlance	屠龍槍	item	sosb	前作來源 cok
@@ -213,13 +226,21 @@ Drider	半蜘精靈	monster	sosb	珍157 作半蜘蛛人；por 說明書作蜘蛛
 Drop	丟棄	ui	sosb	前作來源 cok；情境：物品與金錢；Alter 選單的 Drop 為「丟棄隊員」（a14）
 Drop Character	放棄人物	ui	sosb	前作來源 cok
 Drow	黑暗精靈	group	sosb	珍157 留 DROW；沿用 b01；與 b01 同
-Druid	德魯依	class	zh157	珍157 冒險者手冊 p.44作「德魯依」；採珍157；內文「德魯依教徒」；前作作得魯依；原「得魯依」（sosb）
-Druid Spells	德魯依法術	spell	zh157	珍157 冒險者手冊 p.43作「德魯依法術」；採珍157；章節標題 B.德魯依法術；前作作得魯依法術；原「得魯依法術」（sosb）
+Drow Champion	黑暗精靈勇士	monster	自譯	MON1CHA 區塊 37
+Drow Priest	黑暗精靈祭司	monster	自譯	MON1CHA 區塊 35
+Drow Priestess	黑暗精靈女祭司	monster	自譯	MON1CHA 區塊 38
+Drow Sorceress	黑暗精靈女術士	monster	自譯	MON1CHA 區塊 39
+Drow Sorceror	黑暗精靈術士	monster	自譯	MON1CHA 區塊 36（遊戲拼法）；Sorcerer 依前作術士
+Drow Wizard	黑暗精靈法師	monster	自譯	MON1CHA 區塊 40；巫師已用於 Shaman
+Druid	得魯依	class	sosb	前作來源 cok；手冊作「得魯依法術（Druidic spells）」，不作獨立職業
+Druid Spells	得魯依法術	spell	sosb	前作來源 cok
 Dwarf	矮人	race	sosb	前作來源 cok；珍056 第 64 則把 Dwarf 作「侏儒」，誤譯（侏儒是 Gnome）
 Dying	垂死	ui	sosb	前作來源 cok
 Earring	耳環	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲譯文
 Earth Elemental	土元素	monster	zh157	珍157 冒險者手冊 p.26作「土元素」；採珍157
 Eldamar	艾達瑪	person	sosb	前作來源 sosb；珍056 留英文
+Elder Orb	長老眼魔	monster	自譯	MON1CHA 區塊 94；眼魔的一種
+Electric Spider	電蜘蛛	monster	自譯	MON1CHA 區塊 102
 Electrum	金銀合金幣	item	sosb	前作來源 por
 Elf	精靈	race	sosb	前作來源 cok；手冊未單獨標英文，取自 Silvanesti Elves 等複合詞
 Elgin	艾爾金	person	自譯	珍157 留英文
@@ -234,9 +255,12 @@ Encumbrance	負重	attribute	sosb	前作來源 cok；a15 為圖示標註；英�
 End	棄權	ui	sosb	前作來源 cok
 Energy Drain	吸取生命力	spell	自譯	珍157 冒險者手冊 p.42；留英文；依珍157 內文「偷走目標的生命力」自譯
 Enlarge	巨大術	spell	sosb	前作來源 cok
-Entangle	牽絆術	spell	zh157	珍157 冒險者手冊 p.43作「牽絆術」；採珍157；原「糾纏」（sosb）
+Enormous Spider	龐大蜘蛛	monster	自譯	MON1CHA 區塊 6；與 Giant Spider 巨蜘蛛區分
+Entangle	糾纏	spell	sosb	前作來源 cok
 Ettin	雙頭巨魔	monster	coab	珍157 作雙頭怪
+Evil Champion	邪惡勇士	monster	自譯	MON1CHA 區塊 91
 Evil Fighter	邪惡鬥士	monster	sosb	前作來源 cok；新詞，跨區盤點蓋加斯 2026-10-19；與 Evil Warrior（邪惡戰士）區分
+Evil Knight	邪惡騎士	monster	自譯	MON1CHA 區塊 88
 Evil Warlord	邪惡軍閥	monster	sosb	前作來源 cok；新詞，2026-10-15 demo 戰鬥
 Evil Warrior	邪惡戰士	monster	sosb	前作來源 cok；遊戲印 EVIL WARRIOR；同提示書譯文 evil warriors；戰鬥盤點 2026-10-18
 Exit	離開	ui	sosb	前作來源 cok；手冊作「[E]XIT：離開這個項目」
@@ -244,11 +268,12 @@ Exit to DOS	離開遊戲	ui	sosb	前作來源 cok
 Experience	經驗	attribute	sosb	前作來源 cok；手冊縮寫 XP；常作「經驗點數」（a11）
 Experience Points	經驗值	other	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲譯文
 Eyes Of Charming	魅惑之眼	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
+F K Assassin	火刀刺客	monster	自譯	MON1CHA 區塊 106（Fire Knife 的縮寫）；Fire Knife 依前作火刀
 Face	臉部	ui	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Faerie	仙子	monster	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲譯文
-Faerie Fire	仙境之火	spell	zh157	珍157 冒險者手冊 p.43作「仙境之火」；採珍157；原「魔光」（sosb）
+Faerie Fire	魔光	spell	sosb	前作來源 cok
 Faeries	仙子	monster	sosb	前作來源 cok；新詞；手冊 b37 作「小仙子」；Fairies 同
-Fear	威嚇術	spell	zh157	珍157 冒險者手冊 p.50作「威嚇術」；採珍157；原「恐懼術」（sosb）
+Fear	恐懼術	spell	sosb	前作來源 cok
 Feeblemind	弱智術	spell	sosb	前作來源 cok
 Female	女	ui	sosb	前作來源 cok
 Fighter	戰士	class	sosb	前作來源 cok
@@ -259,22 +284,24 @@ Fire Elemental	火元素	monster	zh157	珍157 冒險者手冊 p.26作「火元�
 Fire Giant	火巨人	monster	por	珍157 同；沿用 b01
 Fire Giant / Fire Giants	火巨人	monster	por	與 b01 同
 Fire Giant Mage	火巨人魔法師	monster	zh157	珍157 作火巨人的法師
+Fire Gnt Mage	火巨人魔法師	monster	自譯	MON1CHA 區塊 19；同 Fire Giant Mage
+Fire Gnt Shaman	火巨人巫師	monster	自譯	MON1CHA 區塊 18；Shaman 作巫師（珍157）
 Fire Knife	火刀	group	sosb	前作作火刀；珍157 作火匕首，誤
 Fire Knife Commander	火刀指揮官	person	自譯	Javin 的職稱；珍157 作火匕首的首領
 Fire Lizard	火蜥蜴	monster	sosb	前作來源 cok；手冊作「食火獸」；現代通行（使用者 2026-10-15 定案）；ECL 劇情與 UI 字串未見，英文取自手冊
 Fire Minion	火怪	monster	sosb	前作來源 cok
 Fire of Night	黑夜之火	item	zh157	主 session 統一為 黑夜之火（原 夜之聖火）；邪惡液體；珍157 作黑夜之火（Fire of Night）
-Fire Shield	火焰之盾	spell	zh157	珍157 冒險者手冊 p.51作「火焰之盾」；採珍157；前作作防火盾牌；原「防火盾牌」（sosb）
+Fire Shield	防火盾牌	spell	sosb	前作來源 cok
 Fire Touch	火之吻	spell	sosb	前作來源 cok
-Fireball	火球術	spell	zh157	珍157 冒險者手冊 p.48作「火球術」；採珍157；原「火球」（sosb）
+Fireball	火球	spell	sosb	前作來源 cok；另見：火球術（b23 死亡騎士條目）
 Fix	治療	ui	sosb	前作來源 cok；b10 作「恢復 Fix 命令」
 Flail	連枷	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
-Flame Strike	火焰之擊	spell	zh157	珍157 冒險者手冊 p.41作「火焰之擊」；採珍157；原「火焰打擊」（sosb）
+Flame Strike	火焰打擊	spell	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Flaming One	烈焰之主	deity	sosb	前作來源 coab；泰蘭特拉克斯的稱號；珍056 第 34 則作「火神」
 Flaming Sword	火焰劍	item	zh157	珍157 作火焰劍（Flaming Sword）
 Flee	逃跑	ui	sosb	前作來源 cok
 Flesh Golem	血肉魔像	monster	sosb	前作來源 cok；手冊作「肉體異形」；現代通行（使用者 2026-10-15 定案）；手冊索引寫法 Golem, Flesh
-Flesh to Stone	石化術	spell	zh157	珍157 冒險者手冊 p.52作「石化術」；採珍157；原「化石術」（sosb）
+Flesh to Stone	化石術	spell	sosb	前作來源 cok
 Footman's	步兵用	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Friends	友好術	spell	sosb	前作來源 cok
 Frost Brand	寒霜之刃	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
@@ -288,6 +315,7 @@ Gateway to Darkness	通往黑暗的通道	place	自譯	珍157 作通往黑暗的
 Gauntlet of Moander	摩安德的鐵護手	item	sosb	前作來源 sosb；珍056 作「鐵手戰神」
 Gauntlets	護手	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Gauntlets of Ogre Power	食人魔之力護手	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲詞素組合
+Gaze Spider	凝視蜘蛛	monster	自譯	MON1CHA 區塊 101
 Geas	咒縛	other	sosb	前作來源 cok；新詞，2026-10-15 收斂；取代異譯：魔咒
 Gelt	蓋爾特	monster	自譯	珍157 留英文；原文 Meet the Gelt 是塔內寵物，名稱或種類無從確認，音譯
 Gems	寶石	ui	sosb	前作來源 cok；新詞，2026-10-15 收斂
@@ -295,18 +323,21 @@ Ghast	妖鬼	monster	sosb	前作來源 cok；手冊作「腐屍怪」；現代�
 Ghoul	食屍鬼	monster	sosb	前作來源 cok；手冊作「食屍怪」；現代通行（使用者 2026-10-15 定案）；ECL 劇情與 UI 字串未見，英文取自手冊
 Giant	巨人	monster	zh157	珍157 作巨人（Giant）
 Giant Centipede	巨型蜈蚣	monster	sosb	前作來源 cok；新詞，跨區盤點斯拉托 2026-10-19
-Giant Cockatrice	巨雞蛇	monster	zh157	珍157 冒險者手冊 p.30作「巨雞蛇」；採珍157；遊戲內作 GNT COCKATRICE
+Giant Cockatrice	巨雞蛇獸	monster	自譯	珍157 冒險者手冊 p.30作「巨雞蛇」；前作類推；使用者 2026-10-23：與銀色匕首之謎一致；比照前作 Cockatrice 雞蛇獸；原「巨雞蛇」（zh157）
 Giant Crocodile	巨鱷	monster	sosb	前作來源 sosb；怪物資料 MON1CHA.DAX 區塊 2；Crocodile 依青色枷譯「鱷魚」
 Giant Rat	巨鼠	monster	sosb	前作來源 cok；新詞，跨區盤點蓋加斯 2026-10-19
+Giant Skeleton	骷髏巨人	monster	自譯	MON1CHA 區塊 56；依前作 Skeleton Giant
 Giant Slug	巨鼻涕蟲	monster	sosb	前作來源 coab；怪物資料 MON1CHA.DAX 區塊 42
 Giant Snake	巨蛇	monster	sosb	前作來源 sosb；怪物資料 MON1CHA.DAX 區塊 43
 Giant Spider	巨蜘蛛	monster	sosb	前作來源 coab；怪物資料 MON1CHA.DAX 區塊 44
 Giant Strength	巨人之力	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
+Giant Zombie	僵屍巨人	monster	自譯	MON1CHA 區塊 57；依前作 Zombie Giant
 Girdle	束帶	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Girdle of Frost Giant Strength	霜巨人之力束帶	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲詞素組合
 Glabrezu	格拉布雷祖	monster	自譯	珍157 留英文
 Globe Of Invulnerability	魔法防護罩	spell	sosb	前作來源 cok
 Gnome	侏儒	race	sosb	前作來源 por；光芒之池說明書 p.10；克萊恩英豪的「地侏」是克萊恩設定，不沿用
+Gnt Cockatrice	巨雞蛇獸	monster	自譯	MON1CHA 區塊 99（遊戲縮寫）；同 Giant Cockatrice
 Goblin	哥布林	monster	sosb	前作來源 cok；手冊作「妖精」；現代通行（使用者 2026-10-15 定案）
 Gold Dragon	金龍	monster	sosb	前作來源 cok；新詞，2026-10-19 全量翻譯收斂
 Gold Dragon / Gold Dragons	金龍	monster	sosb	珍157 作金龍（Gold Dragons）
@@ -319,9 +350,10 @@ Gragnak Ulfim	葛拉納克・烏弗林	person	sosb	前作表拼 Ulfrim；本書�
 Gragnak Ulfrim	葛拉納克・烏弗林	person	sosb	前作來源 sosb；新菲蘭城議員
 Gramble's Climb	格蘭布爾陡坡	place	自譯	珍157 留英文
 Gramkal	葛蘭卡	person	sosb	前作來源 sosb；珍056 留英文
+Great Basilisk	大八腳蜥蜴	monster	自譯	MON1CHA 區塊 59；Basilisk 依前作八腳蜥蜴
 Great Margoyle	巨石像鬼	monster	zh157	珍157 冒險者手冊 p.31作「巨石像鬼」；採珍157；遊戲內作 GREAT MARGOYLE；Margoyle 沿用前作大石像鬼
 Great Spider	巨蜘蛛	monster	zh157	
-Greater Otyugh	巨型觸手怪	monster	zh157	珍157 冒險者手冊 p.31作「巨型觸手怪」；採珍157
+Greater Otyugh	巨型奧提尤格	monster	自譯	珍157 冒險者手冊 p.31作「巨型觸手怪」；前作類推；使用者 2026-10-23：與銀色匕首之謎一致；比照前作 Otyugh 奧提尤格；原「巨型觸手怪」（zh157）
 Green Dragon	綠龍	monster	zh157	
 Griffon	獅鷲	monster	sosb	前作來源 coab；怪物資料 MON1CHA.DAX 區塊 18
 Grimdra	葛林卓	person	sosb	前作來源 sosb；珍056 留英文
@@ -339,7 +371,7 @@ Hand of Kalistes	卡莉絲提絲的代言人	other	zh157	珍157 作 Kalistes 的
 Harm	傷害術	spell	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Haste	加倍術	spell	sosb	前作來源 cok
 Head	頭部	ui	sosb	前作來源 cok；情境：造形編輯；手冊以說明句「選擇頭部的外形」呈現
-Heal	治療術	ui	zh157	珍157 冒險者手冊 p.42作「治療術」；採珍157；原「治療」（sosb）
+Heal	治療	ui	sosb	前作來源 cok；情境：神廟選單與第六級牧師法術（b18）；遊俠命令作「療傷」（a17）
 Hellhound	地獄獵犬	monster	sosb	前作來源 cok
 hellspawn	地獄之裔	monster	自譯	珍157 作黑夜之卵，與 Night Spawn（夜裔）混同
 Helm	頭盔	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
@@ -352,26 +384,27 @@ Hill Dwarf	丘陵矮人	race	sosb	前作來源 cok；另見：山陵矮人（a23
 Hill Giant	山丘巨人	monster	sosb	珍157 同；沿用 b01
 Hill Giant / hill giants	山丘巨人	monster	sosb	與 b01 同
 Hill Giant Shaman	山丘巨人巫師	monster	zh157	Hill Giant 見 b01
+Hill Gnt Shaman	山丘巨人巫師	monster	自譯	MON1CHA 區塊 16（遊戲縮寫）；同 Hill Giant Shaman
 Hillsfar	海爾斯法	place	por	珍157 留英文；coab 作希爾斯法
 Hippogriff	鷹馬	monster	sosb	前作來源 coab；怪物資料 MON1CHA.DAX 區塊 21
 Hit Points	生命力	attribute	sosb	前作來源 cok；手冊縮寫 HP
 Hobgoblin	大哥布林	monster	sosb	前作來源 cok；手冊作「鬼怪」；現代通行（使用者 2026-10-15 定案）
 Hobgoblin Ldr	大哥布林首領	monster	sosb	前作來源 cok；遊戲印 HOBGOBLIN LDR（Leader 縮寫）；跨區盤點斯拉托 2026-10-19
-Hold Animal	束縛動物	spell	zh157	珍157 冒險者手冊 p.44作「束縛動物」；採珍157
-Hold Monsters	束縛怪物	spell	自譯	珍157 冒險者手冊 p.52作「束縛敵人」；珍157不一致；與 Hold Person 同作束縛敵人；比照束縛動物（Hold Animal）；原「怪物束縛術」（sosb）
-Hold Person	束縛敵人	spell	zh157	珍157 冒險者手冊 p.38作「束縛敵人」；採珍157；前作作束縛術；原「束縛術」（sosb）
+Hold Animal	動物束縛術	spell	自譯	珍157 冒險者手冊 p.44作「束縛動物」；前作類推；使用者 2026-10-23：與銀色匕首之謎一致；比照前作 Hold Monsters 怪物束縛術；原「束縛動物」（zh157）
+Hold Monsters	怪物束縛術	spell	sosb	前作來源 cok；手冊拼作 Hold Monster
+Hold Person	束縛術	spell	sosb	前作來源 cok；牧師可縛 3 名，白魔法師可縛 4 名（b20）
 Holy Symbol	聖徽	item	sosb	前作來源 sosb
 Holy Water	聖水	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Hoopak	投石杖	item	sosb	前作來源 cok；坎德人專用
 Horn of Doom	毀滅之號角	item	zh157	
 Hornet's Nest	黃蜂巢	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
-Hot Fire Shield	熱火之盾	spell	sosb	前作來源 cok；新詞，2026-10-15 收斂；Fire Shield 變體；隨 Fire Shield 改火焰之盾（珍157），原「熱火盾牌」；本作 UI 沒有此字串
+Hot Fire Shield	熱火盾牌	spell	sosb	前作來源 cok；新詞，2026-10-15 收斂；Fire Shield 變體
 HP	生命力	attribute	sosb	前作來源 cok
 Human	人類	race	sosb	前作來源 cok
 Hydra	九頭蛇	monster	sosb	前作來源 sosb；批次曾作多頭蛇
-Ice Storm	冰暴風雪	spell	zh157	珍157 冒險者手冊 p.51作「冰暴風雪」；採珍157；原「冰雪風暴」（sosb）
+Ice Storm	冰雪風暴	spell	sosb	前作來源 cok
 Icon	人物造形	ui	sosb	前作來源 cok
-ID	驗証	ui	sosb	前作來源 cok；另見：辨認物品（a16）；手冊用「驗証」，不是「驗證」
+ID	驗證	ui	sosb	前作來源 cok；另見：辨認物品（a16）；前作術語表作「驗証」，但前作遊戲內譯文與 term-avoid 都用「驗證」，從之
 Ilmater	伊爾梅特	deity	coab	珍157 留英文（拼作 lmater）
 Imposter	冒牌貨	other	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Initialize Mouse/Joystick	啟動滑鼠和搖桿	ui	sosb	前作來源 cok
@@ -380,7 +413,7 @@ inner steading	內部堡寨	place	自譯	b01 把 steading 譯作堡寨
 INT	智慧	attribute	sosb	前作來源 cok
 Invisibility	隱形術	spell	sosb	前作來源 cok
 Invisibility to Animals	對動物隱形	spell	sosb	前作來源 cok
-Invisibility, 10' Radius	半徑十呎的隱形術	spell	zh157	珍157 冒險者手冊 p.48作「半徑十呎的隱形術」；採珍157；原「半徑10呎內隱形」（sosb）
+Invisibility, 10' Radius	半徑10呎內隱形	spell	sosb	前作來源 cok；手冊作 Invisibility 10' Radius
 Iron Golem	鐵魔像	monster	sosb	珍157 作鋼鐵魔像；sosb 術語表收此譯名
 Iron Skin	鐵皮術	spell	sosb	前作來源 cok
 Ironfang Keep	鐵牙堡	place	自譯	珍157 留英文
@@ -400,6 +433,7 @@ Ki-rin	麒麟	monster	自譯	珍157 留英文 KI-RIN；D&D 神獸，通用譯名
 Kimarr	基瑪爾	person	自譯	珍157 留英文
 Knight Change Order	改變騎士等級	ui	sosb	前作來源 cok
 Knock	踢開術	spell	sosb	前作來源 cok
+Kristka	克莉絲卡	person	自譯	MON1CHA 區塊 122；音譯
 Kuo Toa Cleric	庫奧托亞人牧師	monster	sosb	前作來源 cok；遊戲印 KUO TOA CLERIC；手冊沒有，自譯；跨區盤點 2026-10-18
 Kuo-Toa	庫奧托亞人	monster	sosb	前作來源 cok；手冊作「庫塔人」；現代通行（使用者 2026-10-15 定案）；原書拼法不一：b25 作 Kua-Toa，b28 作 Kuo-Toa，b30 作 Kuo-Tao；遊戲劇情作 KUO-TOA
 Kuo-Toa Monitor	庫奧托亞人監督	monster	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲譯文
@@ -421,6 +455,7 @@ Leg	腳部	ui	sosb	前作來源 cok；情境：造形編輯；手冊以說明句
 Legion Wizard	軍團魔法師	monster	sosb	前作來源 sosb；怪物資料 MON1CHA.DAX 區塊 97
 Legionaire	軍團兵	monster	sosb	前作來源 sosb；怪物資料 MON1CHA.DAX 區塊 96；恐怖軍團的士兵，原文拼法如此
 Level	等級	attribute	sosb	前作來源 cok；情境：人物等級。Alter 選單的 Level 為「遊戲困難度」（a14）
+Lg Iron Golem	巨型鐵魔像	monster	自譯	MON1CHA 區塊 48（遊戲縮寫）；同 Large Iron Golem
 Lich	巫妖	monster	sosb	前作來源 cok
 Light Crossbow	輕弩	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Lightning Bolt	閃電術	spell	sosb	前作來源 cok
@@ -452,27 +487,31 @@ Magic-User	魔法師	class	sosb	前作來源 cok；前作作「魔法師法術�
 Maharajah	大君	person	自譯	羅剎之首的稱號；珍157 留英文
 Mail	甲	item	sosb	前作來源 cok；新詞，2026-10-15 收斂；後綴
 Male	男	ui	sosb	前作來源 cok
+Mammoth	長毛象	monster	自譯	MON1CHA 區塊 105
 Manshoon	曼蕭恩	person	自譯	珍157 留英文
 Manual	手動瞄準	ui	sosb	前作來源 cok
 Marcus	馬可斯	person	sosb	珍157 留英文；沿用 b01；與 b01 同
 Margoyle	大石像鬼	monster	sosb	珍157 作石像怪
 Marilith	瑪莉莉斯	monster	自譯	珍157 留英文；Kalistes 的種族
-Mass Charm	群體迷惑	spell	zh157	珍157 冒險者手冊 p.53作「群體迷惑」；採珍157；原「多人迷惑術」（sosb）
-Mass Invisibility	群體隱形術	spell	zh157	珍157 冒險者手冊 p.53作「群體隱形術」；採珍157；原「多人隱形術」（sosb）
+Mass Charm	多人迷惑術	spell	sosb	前作來源 cok
+Mass Invisibility	多人隱形術	spell	sosb	前作來源 cok
 Master Assassin	刺客大師	other	自譯	珍157 作殺神
+Master Thief	盜賊大師	monster	自譯	MON1CHA 區塊 93
 Mastodon	乳齒象	monster	sosb	前作來源 sosb
 Medusa	蛇髮女妖	monster	sosb	前作來源 zh056
 Memorize	記憶法術	ui	sosb	前作來源 cok
 Meteor	隕石	item	sosb	前作來源 cok；新詞，2026-10-15 收斂；Meteorite 同
 Meteor Swarm	魔法隕石團	spell	zh157	珍157 冒險者手冊 p.54作「魔法隕石團」；採珍157
 Military Pick	軍用鎬	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
-Mind Blank	保護心智	spell	zh157	珍157 冒險者手冊 p.53作「保護心智」；採珍157；原「心靈防護術」（sosb）
+Mind Blank	心靈防護術	spell	sosb	前作來源 cok
+Minion of Bane	班恩爪牙	monster	自譯	MON1CHA 區塊 8–10；珍157 作 Bane Minion（黑、藍、紅三色）
 Minor Globe Of Invulnerability	小型魔法防護罩	spell	sosb	前作來源 cok
 Minotaur	牛頭人	monster	sosb	前作來源 cok；新詞，2026-10-19 全量翻譯收斂
 Mirror	鏡	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Mirror Image	幻影術	spell	sosb	前作來源 cok
 Mirror of Kalistes	卡莉絲提絲的鏡子	item	zh157	
 Moander	摩安德	deity	coab	珍157 留英文；沿用 b01；與 b01 同
+Moander Cultist	摩安德教徒	monster	自譯	MON1CHA 區塊 84；Cult of Moander 依前作摩安德教派
 Mobat	魔蝠	monster	sosb	前作來源 cok；新詞，2026-10-19 全量翻譯收斂
 Modify Character	調整人物的屬性	ui	sosb	前作來源 cok
 Modthryth	莫德斯里斯	person	自譯	珍157 留英文；第 61 則珍157 印作 Nodthryth，為錯字
@@ -485,12 +524,13 @@ Move	移動	ui	sosb	前作來源 cok；情境：城內探險選單；戰鬥選�
 Movement	移動力	attribute	sosb	前作來源 cok
 Mulmaster	馬爾瑪斯特	place	por	珍157 留英文；沿用 b01
 Myth Drannor	米斯・德瑞納	place	por	珍157 留英文；沿用 b01
+Myth Knight	米斯騎士	monster	自譯	MON1CHA 區塊 125；Myth Drannor 米斯・德瑞納
 Nacacia	娜卡西亞	person	sosb	前作來源 coab
 Name Character	命名	ui	sosb	前作來源 cok；英文取自手冊 NAME CHARACTER，遊戲字串未核對
 Necklace	項鍊	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Necklace of Missiles	飛彈項鍊	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲詞素組合
 Necklace of Revante	瑞凡特項鍊	item	sosb	前作來源 cok；新詞，2026-10-15 收斂；Revante 音譯
-Neo Otyugh	新觸手怪	monster	sosb	前作來源 coab；怪物資料 MON1CHA.DAX 區塊 37；隨 Otyugh 改觸手怪（text/zh157-names.tsv），原「新奧提尤格」
+Neo Otyugh	新奧提尤格	monster	sosb	前作來源 coab；怪物資料 MON1CHA.DAX 區塊 37
 Neutral Evil	普通邪惡	alignment	sosb	前作來源 cok；新詞，2026-10-15 收斂；依 Neutral Good 類推
 Neutral Good	普通善良	alignment	sosb	前作來源 cok
 Neutralize Poison	中和毒性	spell	sosb	前作來源 cok
@@ -504,7 +544,9 @@ Novice	初學者	ui	sosb	前作來源 cok
 NPC	特殊隊員	other	sosb	前作來源 cok；另見：非玩者人物（a10、a12）；特殊隊員出現 4 次、非玩者人物 3 次；a 系列操作手冊多直接寫 NPC
 Oakroot Staff	橡根法杖	item	自譯	珍157 作橡木手杖；Staff 依前作作法杖
 Ogre	食人魔	monster	sosb	珍157 作食人巨魔；por 說明書作食人鬼；與 b01 同；珍157 作食人巨魔（Ogre）
+Ogre Mage	食人魔法師	monster	自譯	MON1CHA 區塊 34
 Ogre Power	食人魔之力	item	sosb	前作來源 cok；新詞，2026-10-15 收斂；Ogre 改譯食人魔後同步（使用者 2026-10-15 定案）；手冊作「食人族之力」
+Ogre Shaman	食人魔巫師	monster	自譯	MON1CHA 區塊 33；Ogre 依前作食人魔
 Ohlo	歐洛	person	por	光芒之池 glossary 第 474 列；招牌 OHLO'S MYSTIC DEVICES 作「歐洛的神秘裝置」
 Okay	平安無事	ui	sosb	前作來源 cok；手冊作 OK
 Old Guild Armory	舊公會軍械庫	place	自譯	G5 試譯
@@ -516,9 +558,9 @@ Orb	寶珠	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Order	排列次序	ui	sosb	前作來源 cok
 Oswulf	奧斯沃夫	person	sosb	前作來源 sosb；珍056 留英文；聖騎士，艾達瑪的兄弟
 Oswulf's Confession	奧斯沃夫的自白書	item	sosb	前作來源 zh056
-Otto's Irr. Dance	狂舞術	spell	zh157	珍157 冒險者手冊 p.54作「狂舞術」；採珍157
-Otto's Irresitable Dance	狂舞術	spell	sosb	前作來源 cok；遊戲字串拼作 Irresitable；手冊作 Otto's Irresistible Dance；前作拼法，譯名隨 Otto's Irr. Dance（珍157），原「無法抗拒的舞蹈」
-Otyugh	觸手怪	monster	zh157	珍157 冒險者手冊 p.31；採珍157；內文留英文；由巨型觸手怪類推，前作作奧提尤格；原「奧提尤格」（sosb）
+Otto's Irr. Dance	無法抗拒的舞蹈	spell	自譯	珍157 冒險者手冊 p.54作「狂舞術」；前作類推；使用者 2026-10-23：與銀色匕首之謎一致；前作 Otto's Irresitable Dance 作無法抗拒的舞蹈；原「狂舞術」（zh157）
+Otto's Irresitable Dance	無法抗拒的舞蹈	spell	sosb	前作來源 cok；遊戲字串拼作 Irresitable；手冊作 Otto's Irresistible Dance
+Otyugh	奧提尤格	monster	sosb	前作來源 coab；怪物資料 MON1CHA.DAX 區塊 39
 our Lady	我們的女主	other	自譯	神殿總管對 Kalistes 的稱呼；珍157 無對應
 Page	頁數	ui	sosb	前作來源 cok；密碼輸入提示
 Paladin	聖騎士	class	sosb	前作來源 cok；現代通行譯名（使用者 2026-10-15 定案）；手冊作「遊俠」
@@ -536,6 +578,7 @@ Pet of Kalistes	卡莉絲提絲的寵物	monster	zh157	珍157 冒險者手冊 p.
 Petra	佩特拉	person	自譯	珍157 留英文；b01 無詞條
 Phase Spider	相位蜘蛛	monster	sosb	前作來源 coab；怪物資料 MON1CHA.DAX 區塊 45
 Phlan	菲蘭城	place	sosb	沿用 b01；與 b01 同
+Phlanarian War	菲蘭城戰士	monster	自譯	MON1CHA 區塊 127（遊戲拼法、Warrior 的縮寫）
 Phlanerians	菲蘭城人	other	自譯	依 Phlan＝菲蘭城；G5 試譯
 Phylactery	命匣	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Pick Alignment	選擇陣營	ui	sosb	前作來源 cok
@@ -547,7 +590,8 @@ Plate Mail	鎧甲	item	sosb	前作來源 cok
 Platinum	白金幣	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Play	進入遊戲	ui	sosb	前作來源 cok；手冊作 [P]LAY
 Podol Plaza	波多廣場	place	por	光芒之池說明書 p.13；遊戲原文拼作 PODAL PLAZA
-Poison	毒擊術	spell	zh157	珍157 冒險者手冊 p.40作「毒擊術」；採珍157；原「毒術」（sosb）
+Poison	毒術	spell	sosb	前作來源 cok；新詞，2026-10-15 收斂
+Poisonous Snake	毒蛇	monster	自譯	MON1CHA 區塊 75
 Pool	集中財物	ui	sosb	前作來源 cok
 Pool of Radiance	光芒之池	place	sosb	前作來源 por；珍056 誤作「光芒之地」
 Porphrys	普洛菲力	person	por	por 說明書 Porphyrys Cadorna 作普洛菲力・卡多納；珍157 留英文
@@ -557,10 +601,10 @@ Potion of Extra Healing	額外治療藥劑	item	sosb	前作來源 cok；新詞�
 Potion of Healing	治療藥劑	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲詞素組合
 Potion of Invisibility	隱形藥劑	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲詞素組合
 Potion of Speed	速度藥劑	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲譯文
-Power Word Blind	失明之咒	spell	zh157	珍157 冒險者手冊 p.54作「失明之咒」；採珍157；原「失明術」（sosb）
-Power Word Kill	殺人之咒	spell	zh157	珍157 冒險者手冊 p.54作「殺人之咒」；採珍157
-Power Word Stun	牽制之咒	spell	zh157	珍157 冒險者手冊 p.53作「牽制之咒」；採珍157；原「暈迷術」（sosb）
-Prayer	祈禱術	spell	zh157	珍157 冒險者手冊 p.40作「祈禱術」；採珍157；原「祈禱」（sosb）
+Power Word Blind	失明術	spell	sosb	前作來源 cok；手冊作 Power Word, Blind
+Power Word Kill	殺人術	spell	自譯	珍157 冒險者手冊 p.54作「殺人之咒」；前作類推；使用者 2026-10-23：與銀色匕首之謎一致；比照前作 Power Word Blind 失明術、Power Word Stun 暈迷術；原「殺人之咒」（zh157）
+Power Word Stun	暈迷術	spell	sosb	前作來源 cok；手冊作 Power Word, Stun
+Prayer	祈禱	spell	sosb	前作來源 cok
 Prev	前一個	ui	sosb	前作來源 cok
 Priam	普里安	person	sosb	前作來源 sosb；新維地格里城鎮長
 Priest	祭司	class	sosb	前作來源 cok；新詞，2026-10-15 收斂；Cleric 仍為牧師；取代異譯：牧師（TOWN PRIEST）
@@ -568,14 +612,15 @@ Priest's Map	神父留下的地圖	other	zh157	地圖則標題沿用珍157
 Priestess	女祭司	class	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Prime Material	主物質界	other	自譯	珍157 留英文
 Proof vs Poison	抗毒	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
-Protection Evil, 10' Radius	半徑十呎內免受邪惡侵害	spell	sosb	前作來源 cok；牧師第4級；遊戲字串漏 From；b14 作「半徑十呎內不受邪惡侵害」；前作拼法，譯名隨 Protection From Evil, 10' Radius（珍157），原「半徑10呎內不受邪惡傷害」
-Protection From Evil	免受邪惡侵害	spell	zh157	珍157 冒險者手冊 p.37作「免受邪惡侵害」；採珍157；前作作免受邪惡傷害；原「免受邪惡傷害」（sosb）
-Protection From Evil, 10' Radius	半徑十呎內免受邪惡侵害	spell	自譯	珍157 冒險者手冊 p.40作「半徑十呎內免於邪惡侵害」；珍157不一致；魔法師法術作半徑十呎免受邪惡侵害（p.49）；取「內」與「免受」，與免受邪惡侵害、半徑十呎內免受善良侵害一致；原「半徑10呎內免受邪惡傷害」（sosb）
+Protection Evil, 10' Radius	半徑10呎內免受邪惡傷害	spell	sosb	前作來源 cok；牧師第4級；遊戲字串漏 From；b14 作「半徑十呎內不受邪惡侵害」；本作與遊戲字串正確拼法同譯（前作 UI 作半徑10呎內免受邪惡傷害），原「半徑10呎內不受邪惡傷害」
+Protection From Evil	免受邪惡傷害	spell	sosb	前作來源 cok；另見：不受邪惡傷害（b19 魔法師法術、b17、b14）；兩種寫法並見，b16 牧師條目作免受
+Protection From Evil, 10' Radius	半徑10呎內免受邪惡傷害	spell	sosb	前作來源 cok；魔法師第3級（白魔法師）；牧師版見上列
 Protection from Fire	免受火焰傷害	spell	zh157	珍157 冒險者手冊 p.44作「免受火焰傷害」；採珍157
-Protection From Good	免受善良侵害	spell	zh157	珍157 冒險者手冊 p.38作「免受善良侵害」；採珍157；原「免受善良傷害」（sosb）
-Protection From Good, 10' Radius	半徑十呎內免受善良侵害	spell	zh157	珍157 冒險者手冊 p.49作「半徑十呎內免受善良侵害」；採珍157
+Protection From Good	免受善良傷害	spell	sosb	前作來源 cok；新詞，2026-10-15 收斂；比照 Protection From Evil
+Protection From Good, 10' Radius	半徑10呎內免受善良傷害	spell	sosb	珍157 冒險者手冊 p.49作「半徑十呎內免受善良侵害」；沿用前作；使用者 2026-10-23：與銀色匕首之謎一致（前作UI）；原「半徑十呎內免受善良侵害」（zh157）
 Protection From Normal Missiles	免受一般飛彈傷害	spell	sosb	前作來源 cok
 Purple Worm	紫蟲	monster	sosb	前作來源 sosb；手札第 62 則
+Pyro Snake	火蛇	monster	自譯	MON1CHA 區塊 103
 Pyro-Hydra	火焰九頭蛇	monster	sosb	前作來源 sosb
 Quarrel	弩箭	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Quarter Staff	長棍	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
@@ -584,29 +629,34 @@ Quil	奎爾	person	自譯	珍157 留英文
 Raise Dead	復活術	spell	sosb	前作來源 cok
 Raizel	萊澤爾	person	自譯	珍157 留英文
 Rakshasa	羅剎	monster	自譯	珍157 留英文；羅剎為 rakshasa 的通行中譯
+Rakshasa Mah	羅剎大君	monster	自譯	MON1CHA 區塊 73（Maharajah 的縮寫）；Maharajah 依術語表大君
+Rakshasa Rajah	羅剎王	monster	自譯	MON1CHA 區塊 72
+Rakshasa Rukh	羅剎勇士	monster	自譯	MON1CHA 區塊 71
 Ranger	遊俠	class	sosb	前作來源 cok；現代通行譯名（使用者 2026-10-15 定案）；手冊作「流浪漢」，另見流浪者
 Ray of Enfeeblement	衰弱術	spell	sosb	前作來源 cok
 Read Magic	閱讀魔法	spell	sosb	前作來源 cok；另見：展讀法術（a17）
 Ready	備妥	ui	sosb	前作來源 cok；另見：改變狀態（a16 指令標題）
 Realm / Realms	王國	place	zh157	珍157 沿用王國；前作無單獨詞條；沿用 b01；與 b01 同
 Realms	王國	place	zh157	沿用 b01
-Red Dragon	赤龍	monster	zh157	珍157 冒險者手冊 p.25作「赤龍」；採珍157；前作作紅龍；原「紅龍」（sosb）
+Red Dragon	紅龍	monster	sosb	前作來源 cok
 Red Hatchling	紅幼龍	monster	sosb	前作來源 sosb；怪物資料 MON1CHA.DAX 區塊 4；知識之井外圍的幼龍
+Red Mage	紅魔法師	monster	自譯	MON1CHA 區塊 83；同上
 Red Mage Scroll	紅魔法師卷軸	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲譯文
 Red One	赤紅者	person	自譯	珍157 留英文；指涉不明
 Red Plume	紅羽衛	group	sosb	前作來源 coab；希爾斯法的軍隊。珍056 譯「紅巾賊」，誤譯
+Red Plume War	紅羽衛戰士	monster	自譯	MON1CHA 區塊 126（Warrior 的縮寫）；Red Plume 依前作紅羽衛
 Red Rider	紅騎士	person	zh157	珍157 作紅騎士（RED RIDER）
 Red Wizards	紅巫師	group	sosb	前作來源 zh056；青色枷的詛咒作塞爾紅袍法師；本作依珍056
 Reduce	縮小術	spell	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Remorhaz	雷莫哈茲	monster	sosb	前作來源 sosb
 Remove Character from Party	將人物從隊伍中刪除	ui	sosb	前作來源 cok
-Remove Curse	除去詛咒	spell	zh157	珍157 冒險者手冊 p.40作「除去詛咒」；採珍157；前作作解除詛咒；原「解除詛咒」（sosb）
+Remove Curse	解除詛咒	spell	sosb	前作來源 cok；「詛咒」為現代通行字（使用者 2026-10-15 定案）；手冊作「解除咀咒」，另見去除咀咒
 Resist Cold	抗凍術	spell	sosb	前作來源 cok
 Resist Fire	抗火術	spell	sosb	前作來源 cok
-Ressurection	還陽術	spell	sosb	前作來源 cok；遊戲字串拼作 Ressurection；手冊拼作 Resurrection；前作拼法，譯名隨 Resurrection（珍157 還陽術）
+Ressurection	完全復活術	spell	sosb	前作來源 cok；遊戲字串拼作 Ressurection；手冊拼作 Resurrection
 Rest	休息	ui	sosb	前作來源 cok
 Restoration	恢復術	spell	sosb	前作來源 cok
-Resurrection	還陽術	spell	zh157	珍157 冒險者手冊 p.42作「還陽術」；採珍157；前作作完全復活術
+Resurrection	完全復活術	spell	自譯	珍157 冒險者手冊 p.42作「還陽術」；前作類推；使用者 2026-10-23：與銀色匕首之謎一致；前作 Ressurection（遊戲字串拼法）作完全復活術；原「還陽術」（zh157）
 Rhino Beetle	犀牛甲蟲	monster	sosb	前作來源 cok；手冊作「大甲蟲」；現代通行（使用者 2026-10-15 定案）；ECL 劇情與 UI 字串未見，英文取自手冊
 Ring	戒指	item	sosb	前作來源 cok；2026-10-16 改：單獨的 Ring 是戒指；Ring Mail 另收詞組「環甲」（物品名逐詞拼接，貪婪先取詞組）
 Ring Mail	環甲	item	sosb	前作來源 cok；2026-10-16 G3b：物品名詞組，避免前綴詞與 Mail 逐詞拼成重複
@@ -622,6 +672,7 @@ Running	逃跑	ui	sosb	前作來源 cok；手冊狀態為 FLED；對應 Running 
 Ruoln	魯奧恩	person	自譯	珍157 留英文
 Rutabaga	蕪菁甘藍	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Sage	賢者	other	自譯	珍157 作先知
+Salamander	火蜥蜴	monster	自譯	MON1CHA 區塊 74
 Saphire	藍寶石	item	sosb	前作來源 cok；新詞，2026-10-15 收斂；原文拼法
 Sargatha	薩加莎	person	sosb	前作來源 sosb；蛇髮女妖，恐怖魔王的城守
 Sark	薩克	person	自譯	珍157 留英文
@@ -644,7 +695,7 @@ Shal	夏爾	person	自譯	珍157 留英文；沿用 b01；與 b01 同
 Share	均分	ui	sosb	前作來源 cok
 Shest	謝斯特	person	自譯	珍157 留英文；前作 Shestni 譯謝斯特尼，非同一名；黑暗精靈的測試主持者；前作僅有 Shestni 謝斯特尼，不確定是否同一詞
 Shield	盾牌	ui	sosb	前作來源 cok；情境：造形編輯；與法術 Shield 同字，法術見 Shield (spell)
-Shield (spell)	魔盾術	spell	zh157	珍157 冒險者手冊 p.46作「魔盾術」；採珍157；物品 Shield 作盾牌；UI 的 Shield 字串若法術與物品共用，G6 依呼叫位置區分
+Shield (spell)	魔法盾牌	spell	自譯	珍157 冒險者手冊 p.46作「魔盾術」；前作類推；使用者 2026-10-23：與銀色匕首之謎一致；前作術語表 Shield 註明法術作魔法盾牌；物品 Shield 作盾牌，UI 共用字串時 G6 依呼叫位置區分；原「魔盾術」（zh157）
 Shocking Grasp	電擊術	spell	sosb	前作來源 cok
 Short Bow	短弓	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Short Sword	短劍	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
@@ -655,19 +706,21 @@ Silver	銀幣	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依�
 Silver Blades	銀刃	group	sosb	前作來源 sosb；奧斯沃夫召集十二位英雄組成的團體（英文手札第 18 則）。珍056 譯「銀色匕首」，Blade 不是匕首；題名「銀色匕首之謎」依使用者 2026-10-22 決定保留
 Silver Dragon	銀龍	monster	sosb	
 Sir	爵士	other	sosb	前作來源 cok
+Sir Cynehelm	辛尼漢爵士	person	自譯	MON1CHA 區塊 120；音譯
 Sir Deric	德瑞克爵士	person	sosb	前作來源 sosb；怪物資料 MON1CHA.DAX 區塊 78
 Size	大小	ui	sosb	前作來源 cok；情境：造形編輯；手冊作「設定人物造形的大小」
 Skel Warrior	骷髏戰士	monster	sosb	前作來源 cok；遊戲畫面縮寫（Skeleton Warrior），2026-10-15 demo 戰鬥
+Skeletal Animal	骷髏獸	monster	自譯	MON1CHA 區塊 61
 Skeletal Giant	骷髏巨人	monster	sosb	前作來源 cok；新詞，2026-10-16 提示書；提示書譯名
 Skeleton	骷髏	monster	sosb	前作來源 cok
 Skeleton Giant	骷髏巨人	monster	sosb	前作來源 cok；ECL 劇情與 UI 字串未見，英文取自手冊
 Skeleton Warrior	骷髏戰士	monster	sosb	前作來源 cok；ECL 劇情與 UI 字串未見，英文取自手冊
 Skull	骷髏頭	other	zh157	珍157 作骷體頭，錯字
-Slay Living	殺傷術	spell	zh157	珍157 冒險者手冊 p.42作「殺傷術」；採珍157；原「殺生術」（sosb）
+Slay Living	殺生術	spell	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Sleep	催眠術	spell	sosb	前作來源 cok
 Sleepstone	夢之石	item	sosb	前作來源 cok
 Sling	投石索	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
-Slow	減緩術	spell	zh157	珍157 冒險者手冊 p.50作「減緩術」；採珍157；原「緩慢術」（sosb）
+Slow	緩慢術	spell	sosb	前作來源 cok
 Slow Poison	緩毒術	spell	sosb	前作來源 cok
 Smithy's Choice	鐵匠之選	place	自譯	G5 試譯
 Snake Charm	蛇魅術	spell	sosb	前作來源 cok
@@ -684,7 +737,7 @@ Spendthrift Inn	揮霍旅店	place	自譯	G5 試譯
 Sphinx	獅身人面獸	monster	sosb	前作來源 sosb
 Spirit Flame	靈焰	item	自譯	珍157 作火之靈
 spirit of fire	火神	other	zh157	第 57 則，指普洛菲力幼時附身的 Tyranthraxus；光芒之池稱火神泰蘭特拉克斯，保留珍157 的「火神」以接前作
-Spiritual Hammer	心靈之鎚	spell	zh157	珍157 冒險者手冊 p.39作「心靈之鎚」；採珍157；原「心靈之槌」（sosb）
+Spiritual Hammer	心靈之槌	spell	sosb	前作來源 cok
 Sprite	小精靈	monster	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Squire	隨從	ui	sosb	前作來源 cok
 Staff	法杖	item	sosb	前作來源 cok；新詞，2026-10-15 收斂；Wand 魔法杖另列
@@ -699,7 +752,8 @@ Stiffbeard	硬鬚	person	sosb	前作來源 sosb；矮人名
 Stinking Cloud	臭雲術	spell	sosb	前作來源 cok
 Stocks	木枷	item	sosb	前作來源 cok；新詞，2026-10-15 收斂；取代異譯：示眾枷
 Stojanow River	史塔傑諾河	place	por	光芒之池說明書 p.4、p.36
-Stone to Flesh	治療石化	spell	zh157	珍157 冒險者手冊 p.53作「治療石化」；採珍157；原「化石還原術」（sosb）
+Stone Spider	石蜘蛛	monster	自譯	MON1CHA 區塊 100；珍157 p.36 會把對手變成石頭
+Stone to Flesh	化石還原術	spell	sosb	前作來源 cok
 Storm	史托姆	person	自譯	人名，阿爾塔的哥哥；英文提示書列為矮人；珍157 作風暴，誤
 Storm Giant	風暴巨人	monster	sosb	前作來源 zh056；珍056 第 36 則作「狂暴巨人」，不一致
 STR	力量	attribute	sosb	前作來源 cok
@@ -710,6 +764,7 @@ Sunrise Inn	日出旅店	place	自譯	Inn 一律作旅店；G5 試譯
 supplicants	祈願者	group	自譯	珍157 無對應
 Swanmays	天鵝少女團	group	coab	珍157 留英文
 Swashbuckler	劍客	monster	sosb	前作來源 sosb；怪物資料 MON1CHA.DAX 區塊 75
+Swordsman	劍士	monster	自譯	MON1CHA 區塊 87
 Take	拾取	ui	sosb	前作來源 cok
 Taliesen	塔利森	item	自譯	薰香名；珍157 留英文
 Talisman	護符	item	自譯	Bane 的護符；珍157 作護身符，與 Amulets 同詞，本批分開
@@ -764,6 +819,9 @@ Valhegen Park	瓦海登公園	place	自譯	光芒之池 Valhingen Graveyard 作�
 Vampire	吸血鬼	monster	sosb	
 Vampire Cleric	吸血鬼牧師	monster	sosb	前作來源 cok；遊戲印 VAMPIRE CLERIC；手冊沒有，自譯（Vampire 吸血鬼、Cleric 牧師）；戴夫的挑戰強制觸發 2026-10-18
 Vampire Mage	吸血鬼魔法師	monster	sosb	前作來源 cok；遊戲印 VAMPIRE MAGE；手冊沒有，自譯（Vampire 吸血鬼、Mage 魔法師）；小地圖盤點 2026-10-18
+Vampire Thief	吸血鬼盜賊	monster	自譯	MON1CHA 區塊 65
+Vassan Mage	瓦薩魔法師	monster	自譯	MON1CHA 區塊 97
+Vassan Warrior	瓦薩戰士	monster	自譯	MON1CHA 區塊 96（遊戲拼法）；Vaasa 依前作瓦薩
 Verdigris	維地格里城	place	sosb	珍157 留英文
 Vessel of Moander	摩安德的容器	item	自譯	與 b01 第 4 則標題一致；珍157 作血脈，誤；與 b01 手札 4 標題同
 Vessel of Purity	純潔之器	item	自譯	珍157 作純潔之杯
@@ -777,12 +835,12 @@ vs Reptiles	對爬蟲類	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Vulnerability	易傷	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Wait	等待	ui	sosb	前作來源 cok
 Walking Tree	樹妖	monster	zh157	珍157 冒險者手冊 p.36作「樹妖」；採珍157
-Wand	魔杖	item	zh157	珍157 冒險者手冊 p.21作「魔杖」；採珍157；前作作魔法杖；原「魔法杖」（sosb）
-Wand of Fireball	火球魔杖	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲詞素組合；隨 Wand 改魔杖（珍157），原「火球魔法杖」
-Wand of Ice Storm	冰暴風雪魔杖	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲詞素組合；隨 Wand 改魔杖（珍157），原「冰雪風暴魔法杖」
-Wand of Lightning	閃電魔杖	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲詞素組合；隨 Wand 改魔杖（珍157），原「閃電魔法杖」
-Wand of Paralyzation	麻痺魔杖	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲詞素組合；隨 Wand 改魔杖（珍157），原「麻痺魔法杖」
-Wand of Tree Healing	樹木治療魔杖	item	sosb	前作來源 cok；新詞，2026-10-15 收斂；隨 Wand 改魔杖（珍157），原「樹木治療魔法杖」
+Wand	魔法杖	item	sosb	前作來源 cok
+Wand of Fireball	火球魔法杖	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲詞素組合
+Wand of Ice Storm	冰雪風暴魔法杖	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲詞素組合
+Wand of Lightning	閃電魔法杖	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲詞素組合
+Wand of Paralyzation	麻痺魔法杖	item	sosb	前作來源 cok；新詞，2026-10-16 提示書；依遊戲詞素組合
+Wand of Tree Healing	樹木治療魔法杖	item	sosb	前作來源 cok；新詞，2026-10-15 收斂
 Ward	通行證	item	自譯	the Ward 是 Ward of Safe Passage 的簡稱（手札第 44、51、55、88 則；ECL1 區塊 80、82、84 寵物不攻擊的段落）；珍157 作通行証，異體字統一（errata j88-ward）；一般魔法屏障（A MAGICAL WARD）照前作作結界
 Ward of Safe Passage	安全通行證	item	自譯	珍157 作通行證；原文簡稱 the Ward 時正文用「通行證」；前作 Ward 作結界
 Warrior	戰士	monster	sosb	前作來源 cok；遊戲印 WARRIOR（怪物名）；同職業 Fighter 譯法；跨區盤點斯拉托 2026-10-19
@@ -816,6 +874,8 @@ Ymir	伊米爾	person	sosb	前作來源 sosb
 Yulash	尤拉斯	place	sosb	前作來源 por；珍056 作「迦拉敍」，音譯錯誤
 Zhentarim	桑塔林會	group	自譯	珍157 留英文；字頭跟珍157 的桑提爾城一致。前作：銀色匕首之謎漢塔林會、光芒之池漢塔林、青色枷的詛咒散塔林會
 Zhentil Keep	桑提爾城	place	zh157	珍157 多數作桑提爾城（第 73 則作 Zhentil 城）；前作：銀色匕首之謎漢提爾城堡、青色枷的詛咒散提爾堡
+Zhentil Mage	桑提爾魔法師	monster	自譯	MON1CHA 區塊 80
+Zhentil Warrior	桑提爾戰士	monster	自譯	MON1CHA 區塊 79；Zhentil Keep 桑提爾城
 Zombie	僵屍	monster	sosb	前作來源 cok
 Zombie Giant	僵屍巨人	monster	sosb	前作來源 cok；ECL 劇情與 UI 字串未見，英文取自手冊
 Zombie Mastodon	僵屍象	monster	sosb	前作來源 cok；ECL 劇情與 UI 字串未見，英文取自手冊

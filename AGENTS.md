@@ -78,7 +78,7 @@
 | [G1 原始輸入／#2](https://github.com/wicanr2/pools-of-darkness-cht/issues/2) | G0 | 壓縮檔與成員 SHA-256；版本與發行形式、入口與啟動參數、顯示與音效驅動的選擇方式；`SAVE/` 的性質與權利分類；查驗題形式；珍157 頁序與缺頁；攻略掃描頁序；英文手冊與手札的來源網址、取得日期、SHA-256 |
 | [G2 dosgolem 基線／#3](https://github.com/wicanr2/pools-of-darkness-cht/issues/3) | G1 | 選定並固定 dosgolem 基底（第 5 節）；確認實際顯示模式與驅動載入方式；VGA 正常入口到第一個可操作畫面；缺服務與重播收據 |
 | [G3 輸出路徑／#4](https://github.com/wicanr2/pools-of-darkness-cht/issues/4) | G2 | 印字、清除、捲動與選單掛勾的原始定位與證據等級；驗證第 4 節的待驗假說 |
-| [G4 說明書轉錄與錯譯校正／#5](https://github.com/wicanr2/pools-of-darkness-cht/issues/5) | G1 | 珍157 手札逐頁轉錄；與英文原文逐段對照；錯譯表（第 3.2 節）與檢查腳本。說明書其餘章節：使用者 2026-10-23 同意對照，先比照銀色匕首之謎做全冊 OCR 草稿與名稱對照（docs/re/006）；正文逐段對照待使用者決定 |
+| [G4 說明書轉錄與錯譯校正／#5](https://github.com/wicanr2/pools-of-darkness-cht/issues/5) | G1 | 珍157 手札逐頁轉錄；與英文原文逐段對照；錯譯表（第 3.2 節）與檢查腳本。說明書其餘章節：比照銀色匕首之謎做全冊 OCR 草稿與名稱對照（docs/re/006）；正文不對照錯譯（使用者 2026-10-23：加速完成中文化） |
 | [G5 譯文與字型／#6](https://github.com/wicanr2/pools-of-darkness-cht/issues/6) | G3、G4 | 術語表、TSV catalog、字型與檢查工具；先試譯一批給使用者看文風再全量 |
 | [G6 繁中接入／#7](https://github.com/wicanr2/pools-of-darkness-cht/issues/7) | G3、G5 | 每條路徑 READY 規格、覆繪、A/B 收據與正常玩家路徑；含組句、英數半形、玩家名音譯 |
 | [G7 手札與查驗題／#8](https://github.com/wicanr2/pools-of-darkness-cht/issues/8) | G3、G4 | 手札引用與查驗題的輸出證據、修正後譯文、自動彈出與翻閱、答案顯示的收據 |
@@ -144,6 +144,9 @@
 4. 更早的前作：`/home/anr2/cht/golden_box/pool_of_radiance/docs/reference/manual/glossary.md`、
    `/home/anr2/cht/golden_box/curse_of_the_azure_bonds/docs/knowledge/coab-glossary.md`。
 5. 本作自譯，在術語表註明。
+
+法術、怪物、物品名例外（使用者 2026-10-23）：與銀色匕首之謎一致，第 3 項（含前作遊戲內譯文）排在第 2 項之前；前作沒有的才用珍157，
+能依前作命名方式類推的先類推。裁定見 `text/zh157-names.tsv`。
 
 - 文風比照銀色匕首之謎 `text/TRANSLATION-GUIDE.md`：忠實正式、奇幻古典語氣；敘述對隊伍用「你們」；
   玩家須輸入的字寫成「中文（ENGLISH）」；英文雙關謎語附英文原句與答案；物品名加值置後（例「長弓 +3」）。

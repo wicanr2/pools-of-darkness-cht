@@ -8,7 +8,8 @@ check：驗證 text/zh157-names.tsv（逐張對頁面圖轉錄、裁定後的名
   zh157_names.py check --names text/zh157-names.tsv --glossary text/glossary.tsv --monsters <monster-names.tsv> --ui <ui-source.tsv> [--apply] [--report TSV]
   - 比對鍵是 game_en（遊戲內英文，'-' 表示同 en），英文只留字母、不分大小寫；查不到時去掉字尾 s 再試。
   - 同一個鍵在表中出現多次時 adopted 必須相同；adopted 空白（珍157 留英文、尚未裁定）不檢查。
-  - decision 只能是 同名、採珍157、珍157誤譯、珍157不一致、珍157錯字、留英文。
+  - decision 只能是 同名、沿用前作、前作類推、採珍157、珍157誤譯、珍157不一致、珍157錯字、留英文
+    （使用者 2026-10-23：名稱與銀色匕首之謎一致，前作沒有的才用珍157）。
   - --apply：術語表沒有的鍵新增一列，譯名不同的改成 adopted，note 記珍157 頁碼、原書用字、裁定與前作譯名。
   - --report：每列附術語表譯名與遊戲內證據（MON1CHA 區塊或 UI 字串是否有這個英文）。
 不一致時結束碼 1。
@@ -19,7 +20,7 @@ import re
 import sys
 from pathlib import Path
 
-DECISIONS = {'同名', '採珍157', '珍157誤譯', '珍157不一致', '珍157錯字', '留英文'}
+DECISIONS = {'同名', '沿用前作', '前作類推', '採珍157', '珍157誤譯', '珍157不一致', '珍157錯字', '留英文'}
 GLOSSARY_HEAD = ['en', 'zh', 'category', 'source', 'note']
 CJK = r'㐀-鿿'
 LINE = re.compile(rf'^\s*(?:[(（]?\s*\d{{1,2}}\s*[)）.．]?)?\s*([{CJK}·・]{{1,14}})\s*[（(]\s*([A-Za-z][^）)]*?)\s*([)）]|$)')
@@ -114,7 +115,7 @@ def check(a):
             continue
         zh157 = '' if r['zh157'] == '-' else f'作「{r["zh157"]}」'
         note = '；'.join(x for x in (f'珍157 冒險者手冊 p.{page}{zh157}', r['decision'], r['reason']) if x)
-        src = 'zh157' if r['decision'] in ('同名', '採珍157') else '自譯'
+        src = {'同名': 'zh157', '採珍157': 'zh157', '沿用前作': 'sosb'}.get(r['decision'], '自譯')
         if g:
             note += f'；原「{g[1]}」（{g[3]}）'
             g[1], g[3], g[4] = zh, src, note

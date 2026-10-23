@@ -20,6 +20,8 @@
 ## 術語
 
 - 專名一律依 `glossary.tsv`；`term-avoid.tsv` 列的舊譯（黑精靈、半蜘蛛人、黑夜之卵等）不得出現。
+- 法術、怪物、物品名與銀色匕首之謎一致（使用者 2026-10-23）：術語表已是前作譯名，前作沒有的才用珍157 或自譯。
+  珍157 說明書的名稱（例「火球術」「束縛敵人」）不要用，裁定見 [`zh157-names.tsv`](zh157-names.tsv)。
 - 表內沒有的專名，依序參考珍157 修正後的手札（[`journal.zh-TW.tsv`](journal.zh-TW.tsv)）、光芒之池說明書譯名
   （`/home/anr2/cht/golden_box/pool_of_radiance/docs/reference/manual/glossary.md`）、青色枷的詛咒譯名
   （`/home/anr2/cht/golden_box/curse_of_the_azure_bonds/docs/knowledge/coab-glossary.md`）；都沒有就自行音譯或意譯，
@@ -48,6 +50,8 @@
 - 介面字串（選單、狀態、職業、法術名）要短：中文字數不超過英文原文字元數，越短越好。
 - 不加熱鍵標記，熱鍵由程式另外處理。
 - 字串前後的空白補位不譯。
+- 介面來源是從執行檔抽出的字串，不少是位元組雜訊（例 `789:;<=>?@ABCDEG…`、`Z[U`OaP[^`ZU`）、執行環境錯誤訊息或格式表；雜訊寫 `-`。
+  `$` 照原位置保留（推定是 DOS 印字功能的字串結尾）。
 
 ## 輸出格式
 

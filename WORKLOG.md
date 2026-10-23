@@ -114,3 +114,15 @@
 - 補：名稱表只比對自己的鍵，前作錯拼法另立的列（`Delay Blast Fireball`、`Otto's Irresitable Dance`、`Protection Evil, 10' Radius`）留著舊譯，同一法術兩種譯名；
   改成與正確拼法同譯，`Cold/Hot Fire Shield` 隨火焰之盾改。名稱表補章節標題「德魯依法術」與「德魯依」（前作作得魯依），共 159 列；術語表由名稱表改 48、增 25。
   與 apply 前的術語表逐列比對，名稱表以外的改動只有這 12 筆衍生名與拼法列。舊譯 63 筆。
+
+## 2026-10-23 G5 名稱改回前作、介面沿用、全量翻譯（#6）
+
+- 使用者：試譯文風可以；法術與怪物名跟銀色匕首之謎一樣；說明書正文不對照錯譯，加速完成中文化。
+- 名稱表 159 列改依前作：前作術語表 → 前作遊戲內譯文（同一英文字串）→ 依前作命名類推 → 珍157。沿用前作 57、類推 7、採珍157 13（前作沒有的）。
+  術語表由 `workplace/manual-zh/glossary.before-zh157.tsv`（名稱裁定前）還原 57 列再重跑 `zh157_names.py check --apply`。
+  前作術語表本身同一法術有兩種寫法（Protection From Evil 10' Radius 免受／不受；Disintegrate、Delayed Blast Fireball 正確拼法與錯拼法列不同譯），取前作遊戲內譯文。
+  `ID` 前作術語表作「驗証」，前作遊戲內譯文是「驗證」，從之。
+- 禁用表重建 38 筆：先前為擋前作名而加的 53 筆移除（現在就是採用名），留珍157 誤譯與不一致 9 筆，併入前作 term-avoid 19 筆（排除前作題名規則與「火神」）。
+- `MON1CHA.DAX` 缺譯名的 60 個名字自譯（`workplace/tr/monster-terms.tsv` 併入術語表），124 個名字全有譯名；術語表 881 筆。
+- 介面：與前作 key 相同的 654 筆沿用前作譯文（「裏」改「裡」）寫入 `text/ui-text.zh-TW.tsv`，舊譯 0；其餘 703 筆切 7 批（`workplace/text-src/ui-source-rest.tsv`）。
+- 全量：ECL 59 批分 12 組、介面 7 批分 2 組，sonnet 子代理每組一個，同時 4 個。
