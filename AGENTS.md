@@ -93,11 +93,11 @@
 
 ## 3. 原始輸入與資料保護
 
-| 根目錄檔案 | SHA-256 | 成員 | 尚待確認 |
+| 根目錄檔案 | SHA-256 | 成員 | G1 盤點（2026-10-23） |
 |---|---|---|---|
-| `pools-of-darkness.zip` | `a67022ffd89128cc1e35b6fefa79e456fd94ee03ea5ec26c0082f4bebc770483` | 已展開的遊戲目錄 `pools-of-darkness/`：遊戲檔 47 個，`SAVE/` 78 個。入口候選 `START.BAT`、`STARTUP.EXE`、`GAME.EXE`＋`GAME.OVR`；另有 `CONTROL.EXE`、`VACE.EXE`；顯示驅動 `EGA.DRV`、`VGA.DRV`、`TGA.DRV`；音效 `ADLIB.COM`、`SBLASTER.COM`、`SOUND.COM` 等；動畫 `INTRO`、`FINAL` 的 `.BMA`、`.ACF` | 不是安裝器。遊戲檔時間戳 1995-08-04，版本與發行形式待 G1。`SAVE/` 檔名分 A–E 五組（`CHRDATx*.SAV／.THG／.EFX`、`VAULTx.DAT`），時間戳 1995-08-06 至 08-13；是存檔還是預建角色、權利分類待 G1 |
-| `珍157-黑暗之池.rar` | `3d18ec1b0d588705484f53f16921ed90af9343f3246af8b9f00f99677adcf623` | `珍157-黑暗之池/` 下 107 張 JPG（檔名分 4 個掃描批次，各 38、32、28、9 張）、`Thumbs.db`、`軟體世界說明書補完計劃.txt`；沒有 PDF | 頁序、缺頁、上下冊分界、手札所在頁 |
-| `walkthrough/` | 逐檔雜湊於 G1 記入 `docs/re/001` | 《軟體世界》第 43 期 11 張、44 期 12 張、45 期 8 張（`.jpeg`；`65 (1).jpeg`、`67 (1).jpeg` 檔名含空白與括號） | 雜誌頁碼與攻略段落的對應、是否缺頁 |
+| `pools-of-darkness.zip` | `a67022ffd89128cc1e35b6fefa79e456fd94ee03ea5ec26c0082f4bebc770483` | 已展開的遊戲目錄 `pools-of-darkness/`：遊戲檔 47 個，`SAVE/` 78 個。入口候選 `START.BAT`、`STARTUP.EXE`、`GAME.EXE`＋`GAME.OVR`；另有 `CONTROL.EXE`、`VACE.EXE`；顯示驅動 `EGA.DRV`、`VGA.DRV`、`TGA.DRV`；音效 `ADLIB.COM`、`SBLASTER.COM`、`SOUND.COM` 等；動畫 `INTRO`、`FINAL` 的 `.BMA`、`.ACF` | 已安裝目錄，版本 1.10；`SAVE/` 是 1995 年玩家資料，比照原版素材不散布（[docs/re/001](docs/re/001-input-baseline.md)） |
+| `珍157-黑暗之池.rar` | `3d18ec1b0d588705484f53f16921ed90af9343f3246af8b9f00f99677adcf623` | `珍157-黑暗之池/` 下 107 張 JPG（檔名分 4 個掃描批次，各 38、32、28、9 張）、`Thumbs.db`、`軟體世界說明書補完計劃.txt`；沒有 PDF | 操作手冊 63 頁、冒險者手冊 110 頁，無缺頁；手札在冒險者手冊 p.55–106（[docs/re/002](docs/re/002-reference-sources.md)） |
+| `walkthrough/` | 逐檔雜湊見 [docs/re/001-input-files.tsv](docs/re/001-input-files.tsv) | 《軟體世界》第 43 期 11 張、44 期 12 張、45 期 8 張（`.jpeg`；`65 (1).jpeg`、`67 (1).jpeg` 檔名含空白與括號） | 「完全攻略」三回，第 1–24 章連續（[docs/re/002](docs/re/002-reference-sources.md)）；頁內段落對應待 G8 |
 
 - 原始壓縮檔與 `walkthrough/` 保留原位、不覆寫，只在 Docker 內唯讀掛載。解壓、OCR、雜湊與探針產物寫入
   `workplace/`。
@@ -166,9 +166,10 @@
 
 **待驗假說**（G2、G3 的起點，對到本作 callsite 與 bytes 之前不當成已知）：
 
-1. 本作與銀色匕首之謎同為 Forgotten Realms Gold Box，同樣以 `.OVR` 載入 overlay。銀色匕首之謎以克萊恩英豪
-   簽章在執行期段 `0650` 找到同函式的路徑 A／B／C（其 `docs/re/004`），本作可能也屬同一家族。
-   `GAME.OVR` 是否為 TPOV、主程式為何是 `GAME.EXE` 而非 `START.EXE`，都待確認。
+1. 本作 `GAME.OVR` 開頭是 `FBOV`，與克萊恩英豪、幽靈騎士相同，不是銀色匕首之謎的 `TPOV`；`GAME.OVR` 內另有
+   `krynn.cfg` 字串（docs/re/001）。輸出路徑可能較接近克萊恩英豪與幽靈騎士的家族。銀色匕首之謎以克萊恩英豪簽章
+   在執行期段 `0650` 找到同函式的路徑 A／B／C（其 `docs/re/004`）；本作 G3 從同一組簽章與幽靈騎士
+   `docs/re/003-output-paths.md` 的 FBOV 容器分析開始。主程式是 `GAME.EXE`，由 `CONTROL.EXE` 呼叫。
 2. 本作附 `EGA.DRV`、`VGA.DRV`、`TGA.DRV`，畫面可能經顯示驅動輸出，VGA 下可能是 mode 13h 256 色。
    克萊恩英豪、銀色匕首之謎、幽靈騎士都在 mode 0Dh 16 色驗證，下列前作結論在本作全部降為假說：
    輸出路徑簽章、`dax_pics.py` 解碼、覆繪的色號與背景色、HD 色號比對與 `hd_validate.py` 閘門、

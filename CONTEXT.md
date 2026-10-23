@@ -30,8 +30,8 @@
 | 項目 | 何時決定 |
 |---|---|
 | dosgolem 基底（候選見 AGENTS.md 第 5 節） | G2 |
-| 實際顯示模式與驅動選擇方式 | G2 |
-| 版本與發行形式、查驗題形式、`SAVE/` 的性質與權利分類 | G1 |
+| VGA 選項的實際顯示模式；`STARTUP.EXE` 寫 `pool4.cfg` 與 `snd.com` 的方式 | G2 |
+| `SAVE/` 能否從 Load Saved Game 載入（沒有 `SAVGAMx.DAT`） | G2 |
 
 ## dosgolem 基線
 
@@ -45,15 +45,17 @@
 
 | 檔案 | 狀態 |
 |---|---|
-| `pools-of-darkness.zip` | 已展開的遊戲目錄，遊戲檔 47 個、`SAVE/` 78 個；只讀成員清單與 SHA-256，未解壓（AGENTS.md 第 3 節） |
-| `珍157-黑暗之池.rar` | 107 張 JPG 掃描，無 PDF；只讀成員清單與 SHA-256，未解壓 |
-| `walkthrough/` | 《軟體世界》第 43–45 期 31 張 `.jpeg`，未轉錄 |
-| 英文手冊與手札 | 尚未取得 |
+| `pools-of-darkness.zip` | 已安裝目錄，v1.10；`START.BAT` → `STARTUP.EXE`（設定 `pool4.cfg`）→ `CONTROL.EXE`（`VACE.EXE` 片頭、`GAME.EXE`、片尾）；`GAME.OVR` 魔數 `FBOV`；查驗題問手札頁碼、標題後第 N 字；`SAVE/` 是 1995 年玩家資料。見 [docs/re/001](docs/re/001-input-baseline.md) |
+| `珍157-黑暗之池.rar` | 107 張 JPG：操作手冊 63 頁、冒險者手冊 110 頁，無缺頁；旅行手札第 1–100 則在冒險者手冊 p.55–106；操作手冊附錄二是查驗題答案表。見 [docs/re/002](docs/re/002-reference-sources.md) |
+| `walkthrough/` | 《軟體世界》第 43–45 期「完全攻略」三回，第 1–24 章，作者 Steeler；未轉錄。見 [docs/re/002](docs/re/002-reference-sources.md) |
+| 英文手冊與手札 | mocagh.org 的 journal（規則＋手札 100 則）、manual（Rulebook）、refcard、hintbook，OCR 品質中等。見 [docs/re/002](docs/re/002-reference-sources.md) |
 
 ## Glossary
 
 - 黑暗之池：本作中文題名，與珍157 相同，使用者指定。
 - 珍157：軟體世界珍藏版第 157 號，本作的官方繁中說明書，錯譯修正的對象。
+- 操作手冊、冒險者手冊：珍157 的兩冊。操作手冊對應英文 Rulebook 加查驗題答案表；冒險者手冊對應英文 Adventurer's Journal，含旅行手札。
+- 密碼表：珍157 操作手冊附錄二，查驗題的頁數、字數、英文標題與答案對照。_Avoid_：答案表
 - 錯譯表：`text/errata.tsv`，記錄珍157 譯文與修正譯文的對照與證據。
 - 手札：說明書中 Adventurer's Journal 的段落，遊戲內以編號引用。_Avoid_：日誌、日記
 - pod：本作遊戲短名，用於 dosgolem `apps/pod/` 與程式識別。

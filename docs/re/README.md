@@ -1,0 +1,6 @@
+# 研究索引
+
+| 編號 | 主題 | Issue |
+|---|---|---|
+| [001](001-input-baseline.md) | 原始輸入基線：壓縮檔、版本、啟動流程、驅動、`SAVE/`；逐檔雜湊 [001-input-files.tsv](001-input-files.tsv) | #2 |
+| [002](002-reference-sources.md) | 珍157 說明書頁序、《軟體世界》攻略掃描、SSI 英文文件來源 | #2 |
