@@ -150,3 +150,9 @@
 - 由前作沿用：`text/composed-templates.tsv`（引擎組句）、`text/host-text.zh-TW.tsv`（攻略目錄標題改「黑暗之池攻略」）、音譯資料（`translit-*.tsv`、`cmudict/`、`LICENSE-translit-table.md`）；
   LICENSE 第 2 條 (d) 照前作列出這兩項第三方資料（條款本身預留「日後收錄時逐項列於此處」）。`text/quiz-answers.tsv` 先放表頭，G7 填。字型 2,808 字。
 - 勘誤：docs/re/003 寫 `pool4.cfg` 其後 13 行 `0`，實際 14 行（85 bytes），已改。
+- 建角收據 `tools/g6-create-receipt.sh`：主選單 → 建角（精靈戰士 ROLAND）→ 存檔 → 加入隊伍（A 加入、E 離開；只按 Enter 是標記）→ 開始冒險 → 查驗題 → 菲蘭城碼頭。
+  每段探針存狀態，再以 pod-overlay-shot 用該段開始前的暫存目錄快照重播（共用暫存目錄時重播會看到探針已寫好的存檔，出現「overwrite ROLAND?」）。
+  各段範圍外差異 0；未命中只剩傷害骰、名字輸入回顯。補組句模板「Save {name}? 」「overwrite {name}?」。隊伍名單的玩家名音譯成「羅倫德」。
+- 查驗題由路徑 A 分段印出（`37F7:01B2`–`029B`）：「(journal, page 2) what is word # 3 after the heading ABILITY SCORES」，查珍157 操作手冊附錄二答 HAS 後進入遊戲。
+  收據只收這一題，題目變了就停。
+- 路徑 B 第二組：碼頭對白參數與 DEMO 相同（1、0、14、22、38、17、1），規格 002 升 READY。新增 `docs/spec/000-index.md`（本作規格狀態）。

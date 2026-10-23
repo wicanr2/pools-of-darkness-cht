@@ -44,6 +44,8 @@ DEMO 收到的字串是混合大小寫：`Loading...Please Wait`、`Name`、`AC 
 內部經 near 函式 `1B2E:03E3`、`045E` 呼叫逐字程序（逐字呼叫端 `1B2E:042F`）。
 `apps/pod` 的路徑 B 已在 adapter 綁定（簽章唯一、字型檢查通過）：給空的 ECL 譯文表跑 DEMO，第一句在 #336,364,657 被攔下，
 解出列 17、欄 1、前景 14、底色 0，因為沒有譯文而標「未命中」（`workplace/probe/g3-pathb/run.json`）。
+G6 在遊戲內第一個對白（菲蘭城碼頭的港務長，`tools/g6-create-receipt.sh` 的 answer 段，#2,417,437,720）攔到同樣的 7 個參數 1、0、14、22、38、17、1
+（`workplace/probe/g6-pathb/run.log`），覆繪正確。兩個場景都是底部文字視窗；依 adapter 解出的位置與顏色，推定依序是旗標、底色、前景、下、右、上、左（強推論）。
 
 ## 路徑 C：底列水平選單（已證實 bytes）
 

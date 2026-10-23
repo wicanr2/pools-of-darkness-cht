@@ -186,3 +186,5 @@ is Invisible (ring)	隱形（戒指）	本作戰鬥中狀態訊息（is ＋狀�
 is Enveloped in Globe of Invulnerability	被魔法防護罩包覆	本作戰鬥中狀態訊息（is ＋狀態名整串印出；Slowed、Protected 已觀測，其餘同式推測，城鎮外盤點 2026-10-23）
 is Fire Resistant (ring)	抗火（戒指）	本作戰鬥中狀態訊息（is ＋狀態名整串印出；Slowed、Protected 已觀測，其餘同式推測，城鎮外盤點 2026-10-23）
 is Within Minor Globe of Invulnerability	位於小型魔法防護罩內	本作戰鬥中狀態訊息（is ＋狀態名整串印出；Slowed、Protected 已觀測，其餘同式推測，城鎮外盤點 2026-10-23）
+Save {name}? 	要儲存 {name} 嗎？	建角存檔確認（名字模板；G6 建角路徑 2026-10-23）
+overwrite {name}?	要覆蓋 {name} 嗎？	存檔已存在時的確認（名字模板；G6 建角路徑 2026-10-23）
