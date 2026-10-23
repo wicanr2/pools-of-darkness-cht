@@ -49,5 +49,5 @@ DEMO 演到戰鬥、沒有記憶體不足）。只接在 `cmd/probe`；`oracle` 
 
 ## 5. 開放項目
 
-- `oracle.LoadWith` 只載 MZ；能載 `.COM` 的 `oracle.LoadProgram` 不吃 `Options`。要讓 app 的 play 指令以常駐驅動為疊底程式並開這個選項，
+- play 指令走 `session` 的入口已由 [`432-session-boot-com-queue`](432-session-boot-com-queue.md) 補上。`oracle.LoadWith` 只載 MZ；能載 `.COM` 的 `oracle.LoadProgram` 不吃 `Options`；oracle 要以常駐驅動為疊底程式並開這個選項，
   需要新入口（例 `LoadProgramWith(exe, root, args, Options)` 與 `Options.RootTSRShrink`），另立規格。
