@@ -16,5 +16,7 @@
   黑暗之后 clone 的 `san5-mixer` `f79eab6`；dosgolem `main` `81c85be`。
 - 變更：新增 `AGENTS.md`、`CLAUDE.md`、`.gitignore`、`LICENSE`（由銀色匕首之謎 G0 版 RRSAL-1.0 改填本作名稱與網址）、
   `CONTEXT.md`、`WORKLOG.md`、`README.md`。
-- GitHub：`gh auth status` 為 `wicanr2`；同名 repo 不存在。
+- GitHub：`gh auth status` 為 `wicanr2`；同名 repo 不存在；建立 private repo 並推送，回讀 PRIVATE、Issues 啟用；
+  建立 #1–#12（G0–G11）與 #13–#16（規格 018–021，對應銀色匕首之謎後來新增的同號需求），連結回填 AGENTS.md 第 2 節。
+  銀色匕首之謎 #17（無敵位址驗證）併入 #11 的完成條件。
 - 清理：容器皆 `--rm`，未寫入本目錄。

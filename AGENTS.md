@@ -69,26 +69,27 @@
 | 程式與驗證 | 沒有本作程式、執行收據或中文化證據 |
 
 規格編號沿用銀色匕首之謎 `docs/spec/000-index.md` 的 001–021（001–017 對照克萊恩英豪，018–021 是銀色匕首之謎新增），
-同號規格的契約相同，本作狀態另計。下表的 Issue 欄在建立後回填，狀態只在遠端維護。
+同號規格的契約相同，本作狀態另計。初始工作已登錄為
+[#1–#16](https://github.com/wicanr2/pools-of-darkness-cht/issues)，狀態只在遠端維護。之後使用者新增的需求另開 Issue，不改下表。
 
 | 階段 | 依賴 | 完成條件 |
 |---|---|---|
-| G0 協作治理 | 本檔 | `.gitignore`、`LICENSE`、`CONTEXT.md`、`WORKLOG.md`、`CLAUDE.md`、`README.md` 就位；private 與 Issues 回讀 |
-| G1 原始輸入 | G0 | 壓縮檔與成員 SHA-256；版本與發行形式、入口與啟動參數、顯示與音效驅動的選擇方式；`SAVE/` 的性質與權利分類；查驗題形式；珍157 頁序與缺頁；攻略掃描頁序；英文手冊與手札的來源網址、取得日期、SHA-256 |
-| G2 dosgolem 基線 | G1 | 選定並固定 dosgolem 基底（第 5 節）；確認實際顯示模式與驅動載入方式；VGA 正常入口到第一個可操作畫面；缺服務與重播收據 |
-| G3 輸出路徑 | G2 | 印字、清除、捲動與選單掛勾的原始定位與證據等級；驗證第 4 節的待驗假說 |
-| G4 說明書轉錄與錯譯校正 | G1 | 珍157 逐頁轉錄；與英文原文逐段對照；錯譯表（第 3.2 節）與檢查腳本 |
-| G5 譯文與字型 | G3、G4 | 術語表、TSV catalog、字型與檢查工具；先試譯一批給使用者看文風再全量 |
-| G6 繁中接入 | G3、G5 | 每條路徑 READY 規格、覆繪、A/B 收據與正常玩家路徑；含組句、英數半形、玩家名音譯 |
-| G7 手札與查驗題 | G3、G4 | 手札引用與查驗題的輸出證據、修正後譯文、自動彈出與翻閱、答案顯示的收據 |
-| G8 攻略面板與地圖疊層 | G6 | 《軟體世界》第 43–45 期轉錄、術語對齊、面板與地圖疊層收據 |
-| G9 HD 與切換列 | G6、G7 | Claude：來源與遮擋證據、請求包、驗收、接入、F2 與切換列收據、規格 021 不露原版圖；Codex：生圖 |
-| G10 配樂、多語系、作弊、推廣片 | G6、G9 | 各自規格與收據；配樂經使用者試聽；無敵位址在本作重驗 |
-| G11 封包驗收 | G6、G9 | 乾淨目錄啟動、manifest 與 SHA-256、存檔位置；明列未驗平台 |
-| 規格 018 開場 demo 控制 | G3 | 選單逾時、demo 旗標與 demo 進出點的本作位址；中止收據 |
-| 規格 019 CPU 模擬速度 | G2、切換列 | 本作 CRT `Delay` 寫法；1x 快轉開關等價收據；各倍率實測 |
-| 規格 020 切換列字級 | 切換列 | 小、中、大三級收據 |
-| 規格 021 不露原版 | G6、G9 | 閃現量尺 0：文字路徑與 HD 各以抽樣路線量測 |
+| [G0 協作治理／#1](https://github.com/wicanr2/pools-of-darkness-cht/issues/1) | 本檔 | `.gitignore`、`LICENSE`、`CONTEXT.md`、`WORKLOG.md`、`CLAUDE.md`、`README.md` 就位；private 與 Issues 回讀 |
+| [G1 原始輸入／#2](https://github.com/wicanr2/pools-of-darkness-cht/issues/2) | G0 | 壓縮檔與成員 SHA-256；版本與發行形式、入口與啟動參數、顯示與音效驅動的選擇方式；`SAVE/` 的性質與權利分類；查驗題形式；珍157 頁序與缺頁；攻略掃描頁序；英文手冊與手札的來源網址、取得日期、SHA-256 |
+| [G2 dosgolem 基線／#3](https://github.com/wicanr2/pools-of-darkness-cht/issues/3) | G1 | 選定並固定 dosgolem 基底（第 5 節）；確認實際顯示模式與驅動載入方式；VGA 正常入口到第一個可操作畫面；缺服務與重播收據 |
+| [G3 輸出路徑／#4](https://github.com/wicanr2/pools-of-darkness-cht/issues/4) | G2 | 印字、清除、捲動與選單掛勾的原始定位與證據等級；驗證第 4 節的待驗假說 |
+| [G4 說明書轉錄與錯譯校正／#5](https://github.com/wicanr2/pools-of-darkness-cht/issues/5) | G1 | 珍157 逐頁轉錄；與英文原文逐段對照；錯譯表（第 3.2 節）與檢查腳本 |
+| [G5 譯文與字型／#6](https://github.com/wicanr2/pools-of-darkness-cht/issues/6) | G3、G4 | 術語表、TSV catalog、字型與檢查工具；先試譯一批給使用者看文風再全量 |
+| [G6 繁中接入／#7](https://github.com/wicanr2/pools-of-darkness-cht/issues/7) | G3、G5 | 每條路徑 READY 規格、覆繪、A/B 收據與正常玩家路徑；含組句、英數半形、玩家名音譯 |
+| [G7 手札與查驗題／#8](https://github.com/wicanr2/pools-of-darkness-cht/issues/8) | G3、G4 | 手札引用與查驗題的輸出證據、修正後譯文、自動彈出與翻閱、答案顯示的收據 |
+| [G8 攻略面板與地圖疊層／#9](https://github.com/wicanr2/pools-of-darkness-cht/issues/9) | G6 | 《軟體世界》第 43–45 期轉錄、術語對齊、面板與地圖疊層收據 |
+| [G9 HD 與切換列／#10](https://github.com/wicanr2/pools-of-darkness-cht/issues/10) | G6、G7 | Claude：來源與遮擋證據、請求包、驗收、接入、F2 與切換列收據、規格 021 不露原版圖；Codex：生圖 |
+| [G10 配樂、多語系、作弊、推廣片／#11](https://github.com/wicanr2/pools-of-darkness-cht/issues/11) | G6、G9 | 各自規格與收據；配樂經使用者試聽；無敵位址在本作重驗 |
+| [G11 封包驗收／#12](https://github.com/wicanr2/pools-of-darkness-cht/issues/12) | G6、G9 | 乾淨目錄啟動、manifest 與 SHA-256、存檔位置；明列未驗平台 |
+| [規格 018 開場 demo 控制／#13](https://github.com/wicanr2/pools-of-darkness-cht/issues/13) | G3 | 選單逾時、demo 旗標與 demo 進出點的本作位址；中止收據 |
+| [規格 019 CPU 模擬速度／#14](https://github.com/wicanr2/pools-of-darkness-cht/issues/14) | G2、切換列 | 本作 CRT `Delay` 寫法；1x 快轉開關等價收據；各倍率實測 |
+| [規格 020 切換列字級／#15](https://github.com/wicanr2/pools-of-darkness-cht/issues/15) | 切換列 | 小、中、大三級收據 |
+| [規格 021 不露原版／#16](https://github.com/wicanr2/pools-of-darkness-cht/issues/16) | G6、G9 | 閃現量尺 0：文字路徑與 HD 各以抽樣路線量測 |
 
 ## 3. 原始輸入與資料保護
 

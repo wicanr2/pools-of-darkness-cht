@@ -21,6 +21,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 一次性 Docker 工作的固定旗標（`AGENTS.md` 第 8 節）：
 
 ```sh
+mkdir -p workplace   # 掛載來源不存在時 dockerd 會以 root 建空目錄
 timeout 600 docker run --rm --network none -u "$(id -u):$(id -g)" \
   --memory 2g --cpus 2 --pids-limit 128 \
   --log-opt max-size=10m --log-opt max-file=3 \
