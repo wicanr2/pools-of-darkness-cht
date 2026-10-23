@@ -1,6 +1,7 @@
 # 430 — MZ 的 e_minalloc 算進程式佔用的記憶體
 
-狀態：READY（2026-10-23）。需求來源：pools-of-darkness-cht #3（G2）。
+狀態：CONFORMED（2026-10-23；§5 第 1、3 項單元測試與全套測試，第 2 項收據見 pools-of-darkness-cht `docs/re/003`、`tools/g2-startup-receipt.sh`：
+`VACE.EXE` 讀到 `INTRO.ACF` 並播完片頭）。需求來源：pools-of-darkness-cht #3（G2）。
 取代 [`007-exec-ems`](007-exec-ems.md) §6「MZ 的 MINALLOC／MAXALLOC 配置語意：忽略」與「父程式記憶體保護：無」兩列中，
 與 MINALLOC 有關的部分。MAXALLOC 仍不做（§4）。
 

@@ -1,6 +1,7 @@
 # 431 — 疊底程式常駐後縮回保留量（選用）
 
-狀態：READY（2026-10-23）。需求來源：pools-of-darkness-cht #3（G2）。
+狀態：CONFORMED（2026-10-23；§4 第 1、3 項單元測試與全套測試，第 2 項收據見 pools-of-darkness-cht `docs/re/003`：
+DEMO 演到戰鬥、沒有記憶體不足）。只接在 `cmd/probe`；`oracle` 的入口尚未提供（§5）。需求來源：pools-of-darkness-cht #3（G2）。
 前置：[`197-int27-terminate-and-stay-resident`](197-int27-terminate-and-stay-resident.md) §5.1、§8；
 [`008-tsr-resident`](008-tsr-resident.md) §2.1；[`009-exec`](009-exec.md) §4（監督佇列）。
 
@@ -45,3 +46,8 @@
 2. 整合（缺檔 skip）：pools-of-darkness-cht 以 `-exe ADLIB.COM -queue CONTROL.EXE -root-tsr-shrink` 跑 DEMO，
    不出現 `WARNING: INSUFFICIENT MEMORY`。
 3. `tools/go.sh build ./...` 與 `tools/go.sh test ./...` 全綠。
+
+## 5. 開放項目
+
+- `oracle.LoadWith` 只載 MZ；能載 `.COM` 的 `oracle.LoadProgram` 不吃 `Options`。要讓 app 的 play 指令以常駐驅動為疊底程式並開這個選項，
+  需要新入口（例 `LoadProgramWith(exe, root, args, Options)` 與 `Options.RootTSRShrink`），另立規格。
