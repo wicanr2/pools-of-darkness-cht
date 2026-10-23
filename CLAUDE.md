@@ -36,6 +36,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | 記憶體傾印（`-dump-mem-at 'N:lin:0:655360:/out/mem.bin'`）16 位元反組譯 | `python3 -I tools/re/dis16.py <mem.bin> <段> <起> <迄>` | `sc-cht-disasm:capstone5.0.3-r1` |
 | 查驗題題目表（GAME.EXE 映像）→ 答案表 | `python3 -I tools/quiz_table.py workplace/text-src/game-image.bin text/quiz-answers.tsv` | `sosb-tools:bookworm-r1` |
 | G7 查驗題收據：題目表重產比對、答案顯示與隱藏截圖 | `tools/g7-quiz-receipt.sh` | 走 dosgolem |
+| G7 手札引用收據：重播探索送鍵到第 57 則，截觸發前後 | `tools/g7-journal-receipt.sh`（送鍵在 `tools/g7-journal-keys.txt`） | 走 dosgolem |
+| G6 自動探索與服務盤點；彙整未命中 | `tools/g6-explore.sh <名稱> <狀態檔> [pod-explore 參數]`；`tools/g6-service.sh <名稱> "<鍵 …>"`；`tools/g6-misses.sh <inv.tsv …>` | 走 dosgolem |
+| 攻略 OCR 草稿；自寫摘要的照抄檢查；面板資料 | `tools/ocr-batch.sh walkthrough workplace/walkthrough/ocr`；`python3 -I tools/walkthrough_overlap.py reference/walkthrough-zh/softworld-43.md "workplace/walkthrough/ocr/軟體世界43期"`；`python3 -I tools/walkthrough_build.py --src reference/walkthrough-zh --out text/walkthrough.zh-TW.tsv` | `dqk-ocr:ppocr5-r1`；`sosb-tools:bookworm-r1` |
+| G8 攻略面板收據（主選單開 F6） | `tools/g8-guide-receipt.sh` | `dosgolem-go-ebiten:1.24-r1`（xvfb） |
 | 珍157 掃描 OCR（黑暗之后的 PaddleOCR 映像與模型快取，唯讀） | `tools/ocr-batch.sh <輸入目錄> <輸出目錄>` | `dqk-ocr:ppocr5-r1` |
 | 手札草稿組稿 | `python3 -I tools/zh_ocr_journal.py --spreads <左頁碼>=<json> …`；`python3 -I tools/journal_en_ocr.py --bbox workplace/journal/en/bbox/p15.html … p25.html` | `sosb-tools:bookworm-r1` |
 | 手札批次合併、錯譯與術語檢查 | `python3 -I tools/journal_merge.py workplace/journal/fix`；`python3 -I tools/errata_check.py`；`python3 -I tools/term_check.py` | `sosb-tools:bookworm-r1` |
@@ -80,5 +84,6 @@ timeout 600 docker run --rm --network none -u "$(id -u):$(id -g)" \
 | 翻譯指引、術語、說明書名稱裁定 | `text/TRANSLATION-GUIDE.md`、`text/glossary.tsv`、`text/term-avoid.tsv`、`text/zh157-names.tsv` |
 | 翻譯批次 | `workplace/tr/{ecl,ui}/batches/`（含原文）、`done/`（譯文）；子代理原稿 `workplace/tr/ecl/agent-raw/` |
 | 字型來源 | `workplace/fonts-src/`（由銀色匕首之謎複製，雜湊見 WORKLOG） |
+| 攻略摘要 | `reference/walkthrough-zh/softworld-43.md`–`45.md`（讀雜誌掃描後自寫，private；雜誌原文不照抄）；OCR 草稿 `workplace/walkthrough/ocr/` |
 | dosgolem 隔離 clone | `workplace/dosgolem/`，adapter 在 `apps/pod/`，推到本 repo 的 `dosgolem/pod` |
 | 主要參考 | 銀色匕首之謎、克萊恩英豪、幽靈騎士、黑暗之后、光芒之池說明書 corpus（皆只讀，見 `AGENTS.md` 第 4 節） |

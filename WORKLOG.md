@@ -182,3 +182,15 @@
   先送 Enter 再送方向鍵時座標不變，原因未查。手動找路屬 G8 探索範圍，收據留到 G8。
 - 勘誤：規格 007 改回 DRAFT。證據只有靜態反組譯，本作沒量到引用句（索引的狀態只算本作已有的證據）；docs/re/008 的資料段位置、009 的路徑 B 段與整句收到都標成強推論。
   方向鍵四組對照（有無先送 Enter）寫進 docs/re/009，給 G8 當起點。
+
+## 2026-10-24 G8 攻略面板（#9）
+
+- 攻略掃描 31 頁先跑 OCR 草稿（`tools/ocr-batch.sh`，dqk-ocr:ppocr5-r1，`workplace/walkthrough/ocr/`）。多欄排版，行序是亂的，只當輔助。
+- 起初派子代理逐字轉錄，第 44 期子代理以「整篇重製雜誌文章」拒絕，第 43 期子代理改寫摘述；主迴圈停掉其餘兩個並問使用者。
+  使用者決定面板放自寫摘要、雜誌原文不照抄（CONTEXT 決策、AGENTS.md 第 1 節與提交規則已改）。
+- 三期摘要由 sonnet 子代理讀圖起草（依章整理、要點、地圖編號逐條、譯名查術語表），寫在 `reference/walkthrough-zh/`。
+  主迴圈抽驗第 45 期第 21 章地圖 6 條與雜誌 p.70 相符；第 45 期結語補出處註解。
+- `tools/walkthrough_overlap.py` 照抄檢查：三期 10 字窗口命中 1.6%–2.1%，整列照抄 0，命中多為專有名詞。
+- `tools/walkthrough_build.py`（改寫自前作）產生 `text/walkthrough.zh-TW.tsv` 78 段；標題超過 40 格時括號說明移進正文。
+  `tools/font-dev.sh` 收進攻略表，字型 2,842 字、缺 0；`TestGuideTableFits` 掛 `text/` 通過。
+- `tools/g8-guide-receipt.sh`：pod-play 主選單開 F6，目錄、第 1 段、第 55 段三張截圖無缺字。規格 008 升 READY。

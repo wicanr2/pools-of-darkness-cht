@@ -14,8 +14,8 @@
 | 004 組句訊息 | DRAFT | #7 | 模板沿用前作 188 條，另加本作建角的存檔、覆蓋確認；DEMO 戰鬥的物品名＋加值（釘頭錘 +3）、施法訊息已命中 | `tools/play-smoke.sh`（DEMO 10,500 畫格） |
 | 005 中文句中的半形英數 | DRAFT | #7 | 數字照原版保留；未單獨驗證 | — |
 | 006 手冊查驗題 | CONFORMED | #8 | 題型「journal, page (P) / what is word # W / after the heading / 標題」，路徑 A 六段（第 2、4、6、8 列）；題目表 GAME.EXE 映像 0x9F32 起 21 筆、54 題，答案加密存在表內；答案表鍵改為頁、字序、標題（`text/quiz-answers.tsv`：`page`、`word`、`heading`、`answer`）；改寫第 2 列「英文手札第 P 頁」（延伸到頁碼結尾 27 格）、第 4 列「下列標題之後的第 W 個字？」（延伸到字序結尾 22 格）、第 6 列「答案：…」或空白，第 8 列標題留英文；前端文字鍵 `quiz.page`、`quiz.word`、`quiz.answer`；沒有酒店傳聞分支 | docs/re/008；`tools/g7-quiz-receipt.sh`、`g6-create-receipt.sh`、`g6-saveload-receipt.sh` |
-| 007 手札面板 | DRAFT | #8 | 99 則珍157 修正譯文（`text/journal.zh-TW.tsv`），面板排版 3 頁以內；引用句由引擎組成整句「This is recorded as journal entry N.」經路徑 B 印出（`GAME.OVR` 0x2643），`JournalRefOf` 與組句模板有單元測試（靜態證據）；實機未觀測，路徑 B 是否整句一次收到、換行與游標起點都未量，收據待 G8 探索 | docs/re/005、009 |
-| 008 攻略面板 | 未開始 | #9 | 來源《軟體世界》第 43–45 期 | docs/re/002 |
+| 007 手札面板 | DRAFT | #8 | 99 則珍157 修正譯文（`text/journal.zh-TW.tsv`），面板排版 3 頁以內；引用句由引擎組成整句「This is recorded as journal entry N.」經路徑 B 印出（`GAME.OVR` 0x2643），`JournalRefOf` 與組句模板有單元測試（靜態證據）；實機未觀測，路徑 B 是否整句一次收到、換行與游標起點都未量，收據待 G6 自動探索走到觸發點 | docs/re/005、009 |
+| 008 攻略面板 | READY | #9 | 內容是讀《軟體世界》第 43–45 期後自寫的摘要（雜誌原文不照抄），78 段，頁尾「整理自軟體世界 N 期 p.X–Y」；面板程式由前作沿用；主選單開面板三張截圖無缺字；冒險畫面開關與手札互斥未驗 | docs/re/011；`tools/g8-guide-receipt.sh` |
 | 009 地圖疊層 | 未開始 | #9 | — | — |
 | 010 HD 主題 | 未開始 | #10 | — | — |
 | 011 切換列 | 未驗 | #10 | 程式由前作沿用 | — |

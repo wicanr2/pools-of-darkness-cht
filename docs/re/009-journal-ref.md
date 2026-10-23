@@ -26,12 +26,14 @@
   `TestJournalTableFits` 以 `text/journal.zh-TW.tsv` 跑，99 則都在 3 頁以內、標題不超過 38 格。
 - 實機尚未觀測引用句。碼頭港務長的導覽（答 Y）走完 6 段對白沒有記手札（`workplace/probe/g7-journal/tour.log`）。
   導覽結束停在 (3,6) 面西、底列只有 `EXIT`；此時方向鍵可轉向，往東前進會一直觸發「A SIGN OVER THIS DOOR READS 'VALHEGEN PARK'」。
-  先送 Enter 再送方向鍵，座標與方向都沒變，原因未查（見「方向鍵對照」）。
-- 觸發點要靠 G8 的自動探索（隊伍位置位址）或找出 ECL 指令編號後反查事件；收據到時補。
+  移動方式見下節。
+- 觸發點交給 G6 的自動探索（`tools/g6-explore.sh`，從座標列讀位置）或找出 ECL 指令編號後反查事件；收據到時補。
 
-## 方向鍵對照（待查，G8 開工的起點）
+## 移動方式
 
-同一狀態 `workplace/probe/states/g7j-tour.state`（導覽結束，第 5,000,000,000 道指令；可寫層 `workplace/probe/g7-journal/scratch` 複製一份再用），
+事件選單（底列只有 `EXIT`）裡方向鍵直接轉向與前進。Enter 選 EXIT 回到冒險主選單 `Move Area Cast View Encamp Search Look` 後，
+方向鍵不作用，要先按 `M` 進移動模式（前作探索器的做法；`workplace/probe/g6-explore/town1/explore.log` 送 M 後一路走到泰爾修道院）。
+同一狀態 `workplace/probe/states/g7j-tour.state`（導覽結束，第 5,000,000,000 道指令；可寫層 `workplace/probe/g7-journal/scratch` 複製一份再用）的對照，
 共同參數 `PROBE_EXE=ADLIB.COM tools/probe.sh <輸出> -scratch-dir /out/<複本> -root-tsr-shrink -load-state /st/g7j-tour.state`，鍵間隔 `-bios-key-every 100000000`（look 為 150000000）：
 
 | 鍵序（`-bios-key-names`） | `-bios-key-from` | 結果 | log |
@@ -41,4 +43,4 @@
 | `Return,Up×9` | 5001000000 | 一直是 (3,6) W | `walk1.log` |
 | `Return,Left,Left` | 5001000000 | 一直是 (3,6) W | `look.log` |
 
-四組的鍵都被 `int 16h AH=00` 取走（log 的「按鍵去向」）。遊戲沒掛 int 09h，`-press`（IRQ1）送不進去（`press.log`）。
+四組的鍵都被 `int 16h AH=00` 取走；後兩組的 Return 選了 EXIT，之後沒按 M（log 的「按鍵去向」）。遊戲沒掛 int 09h，`-press`（IRQ1）送不進去（`press.log`）。
