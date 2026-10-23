@@ -78,7 +78,7 @@
 | [G1 原始輸入／#2](https://github.com/wicanr2/pools-of-darkness-cht/issues/2) | G0 | 壓縮檔與成員 SHA-256；版本與發行形式、入口與啟動參數、顯示與音效驅動的選擇方式；`SAVE/` 的性質與權利分類；查驗題形式；珍157 頁序與缺頁；攻略掃描頁序；英文手冊與手札的來源網址、取得日期、SHA-256 |
 | [G2 dosgolem 基線／#3](https://github.com/wicanr2/pools-of-darkness-cht/issues/3) | G1 | 選定並固定 dosgolem 基底（第 5 節）；確認實際顯示模式與驅動載入方式；VGA 正常入口到第一個可操作畫面；缺服務與重播收據 |
 | [G3 輸出路徑／#4](https://github.com/wicanr2/pools-of-darkness-cht/issues/4) | G2 | 印字、清除、捲動與選單掛勾的原始定位與證據等級；驗證第 4 節的待驗假說 |
-| [G4 說明書轉錄與錯譯校正／#5](https://github.com/wicanr2/pools-of-darkness-cht/issues/5) | G1 | 珍157 逐頁轉錄；與英文原文逐段對照；錯譯表（第 3.2 節）與檢查腳本 |
+| [G4 說明書轉錄與錯譯校正／#5](https://github.com/wicanr2/pools-of-darkness-cht/issues/5) | G1 | 珍157 手札逐頁轉錄；與英文原文逐段對照；錯譯表（第 3.2 節）與檢查腳本。說明書其餘章節是否對照待使用者決定 |
 | [G5 譯文與字型／#6](https://github.com/wicanr2/pools-of-darkness-cht/issues/6) | G3、G4 | 術語表、TSV catalog、字型與檢查工具；先試譯一批給使用者看文風再全量 |
 | [G6 繁中接入／#7](https://github.com/wicanr2/pools-of-darkness-cht/issues/7) | G3、G5 | 每條路徑 READY 規格、覆繪、A/B 收據與正常玩家路徑；含組句、英數半形、玩家名音譯 |
 | [G7 手札與查驗題／#8](https://github.com/wicanr2/pools-of-darkness-cht/issues/8) | G3、G4 | 手札引用與查驗題的輸出證據、修正後譯文、自動彈出與翻閱、答案顯示的收據 |
@@ -96,7 +96,7 @@
 | 根目錄檔案 | SHA-256 | 成員 | G1 盤點（2026-10-23） |
 |---|---|---|---|
 | `pools-of-darkness.zip` | `a67022ffd89128cc1e35b6fefa79e456fd94ee03ea5ec26c0082f4bebc770483` | 已展開的遊戲目錄 `pools-of-darkness/`：遊戲檔 47 個，`SAVE/` 78 個。入口候選 `START.BAT`、`STARTUP.EXE`、`GAME.EXE`＋`GAME.OVR`；另有 `CONTROL.EXE`、`VACE.EXE`；顯示驅動 `EGA.DRV`、`VGA.DRV`、`TGA.DRV`；音效 `ADLIB.COM`、`SBLASTER.COM`、`SOUND.COM` 等；動畫 `INTRO`、`FINAL` 的 `.BMA`、`.ACF` | 已安裝目錄，版本 1.10；`SAVE/` 是 1995 年玩家資料，比照原版素材不散布（[docs/re/001](docs/re/001-input-baseline.md)） |
-| `珍157-黑暗之池.rar` | `3d18ec1b0d588705484f53f16921ed90af9343f3246af8b9f00f99677adcf623` | `珍157-黑暗之池/` 下 107 張 JPG（檔名分 4 個掃描批次，各 38、32、28、9 張）、`Thumbs.db`、`軟體世界說明書補完計劃.txt`；沒有 PDF | 操作手冊 63 頁、冒險者手冊 110 頁，無缺頁；手札在冒險者手冊 p.55–106（[docs/re/002](docs/re/002-reference-sources.md)） |
+| `珍157-黑暗之池.rar` | `3d18ec1b0d588705484f53f16921ed90af9343f3246af8b9f00f99677adcf623` | `珍157-黑暗之池/` 下 107 張 JPG（檔名分 4 個掃描批次，各 38、32、28、9 張）、`Thumbs.db`、`軟體世界說明書補完計劃.txt`；沒有 PDF | 操作手冊 63 頁、冒險者手冊 110 頁，無缺頁；手札 99 則（無第 13 則）在冒險者手冊 p.55–106（[docs/re/002](docs/re/002-reference-sources.md)、[005](docs/re/005-journal-errata.md)） |
 | `walkthrough/` | 逐檔雜湊見 [docs/re/001-input-files.tsv](docs/re/001-input-files.tsv) | 《軟體世界》第 43 期 11 張、44 期 12 張、45 期 8 張（`.jpeg`；`65 (1).jpeg`、`67 (1).jpeg` 檔名含空白與括號） | 「完全攻略」三回，第 1–24 章連續（[docs/re/002](docs/re/002-reference-sources.md)）；頁內段落對應待 G8 |
 
 - 原始壓縮檔與 `walkthrough/` 保留原位、不覆寫，只在 Docker 內唯讀掛載。解壓、OCR、雜湊與探針產物寫入

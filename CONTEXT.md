@@ -54,7 +54,7 @@
 | 印字程序 | resident 段 `1B2E`：逐字 `01DF`、路徑 A `0354`、路徑 B `0498`、路徑 D `030B`，與幽靈騎士同函式（docs/re/004） |
 | 路徑 A／B／C | DEMO 中呼叫與字串已證實；主選單以佔位譯文覆繪 6 筆、範圍外差異 0（`tools/g3-overlay-receipt.sh`） |
 | catalog | ui 1,357 筆（654 筆與銀色匕首之謎、625 筆與幽靈騎士 key 相同）、ECL 4,725 筆 |
-| 手札譯文 | 99 則修正譯文 `text/journal.zh-TW.tsv`（90 則有修正）；錯譯表 353 條通過 `tools/errata_check.py`；術語表 194 筆、舊譯 10 筆通過 `tools/term_check.py`（docs/re/005） |
+| 手札譯文 | 99 則修正譯文 `text/journal.zh-TW.tsv`（90 則有修正）；錯譯表 354 條通過 `tools/errata_check.py`；術語表 194 筆、舊譯 10 筆通過 `tools/term_check.py`（docs/re/005） |
 | 介面與劇情譯文、字型 | 尚未開始；覆繪驗證用的是前作佔位 |
 | 查驗題 | 題型已知；題目表靜態找不到，G7 在執行期攔；答案對照珍157 密碼表 |
 | 片頭片尾字幕 | 推定是畫格點陣圖，待 G6／G9 |

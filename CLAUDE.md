@@ -62,7 +62,7 @@ timeout 600 docker run --rm --network none -u "$(id -u):$(id -g)" \
 | 原版遊戲（已展開目錄形式） | `pools-of-darkness.zip`（唯讀，不進 Git） |
 | 軟體世界珍藏版 157 說明書（107 張 JPG 掃描） | `珍157-黑暗之池.rar`（唯讀，不進 Git） |
 | 《軟體世界》第 43–45 期攻略掃描 | `walkthrough/`（唯讀，不進 Git） |
-| 英文手冊與手札 | `workplace/input/en-docs/`（G1 下載，不進 Git） |
+| 英文手冊與手札 | `workplace/input/en-docs/`（G1 下載，不進 Git）；校正後的英文手札逐字稿 `workplace/journal/en/journal-en.tsv`、珍157 照原書用字的逐字稿 `workplace/journal/zh157/journal-zh157.tsv` |
 | 研究工作區 | `workplace/`（gitignore） |
 | dosgolem 隔離 clone | `workplace/dosgolem/`，adapter 在 `apps/pod/`，推到本 repo 的 `dosgolem/pod` |
 | 主要參考 | 銀色匕首之謎、克萊恩英豪、幽靈騎士、黑暗之后、光芒之池說明書 corpus（皆只讀，見 `AGENTS.md` 第 4 節） |
