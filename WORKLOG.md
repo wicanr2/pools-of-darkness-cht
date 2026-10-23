@@ -194,3 +194,14 @@
 - `tools/walkthrough_build.py`（改寫自前作）產生 `text/walkthrough.zh-TW.tsv` 78 段；標題超過 40 格時括號說明移進正文。
   `tools/font-dev.sh` 收進攻略表，字型 2,842 字、缺 0；`TestGuideTableFits` 掛 `text/` 通過。
 - `tools/g8-guide-receipt.sh`：pod-play 主選單開 F6，目錄、第 1 段、第 55 段三張截圖無缺字。規格 008 升 READY。
+
+## 2026-10-24 G6 跨畫面盤點收尾、G7 手札收據（#7、#8）
+
+- dosgolem `cmd/pod-explore`（由 `cmd/sosb-explore` 複製，戰鬥選單有 Quick 時按 Q；`e67971e`），腳本 `tools/g6-explore.sh`、`g6-misses.sh`、`g6-service.sh` 由前作移植。
+  起點 `workplace/probe/g6-town/town.state`（存讀檔收據 `lanswer`）。
+- town1：247 鍵、73 格，在叛徒門觸發「This is recorded as journal entry 57.」後停下；town2：410 鍵，進店家門口一帶，在酒館觸發第 9 則，
+  最後卡在酒館門口的 Exit 事件選單，到外層時限 5,400 秒被終止。兩輪未命中只剩數字與引號。使用者指示兩輪為止，G6 收尾（docs/re/010）。
+- 手札引用實機證實：路徑 B 在第 17 列第 1 欄一次收到整句，以組句模板覆繪；`tools/g7-journal-receipt.sh` 重播 247 鍵，觸發後面板自動開出，
+  另以 `-journal-preview 57` 截翻閱模式。規格 007 升 READY；001–003 依建角、存讀檔與探索收據升 CONFORMED。
+- 更正：上一輪把自動探索器寫成 G8、要隊伍位置位址；實際是 G6 工具、讀座標列。方向鍵失效的原因是冒險主選單要先按 M（docs/re/009 已改寫）。
+- 收據腳本第一次插入翻閱步驟時 perl 的比對式沒對上，只改到註解；改用 Edit 加入後重跑。

@@ -2,7 +2,7 @@
 
 日期：2026-10-23。Issue：[#8](https://github.com/wicanr2/pools-of-darkness-cht/issues/8)。前置：[004](004-output-paths.md)、[005](005-journal-errata.md)。
 
-## 引用句（靜態反組譯）
+## 引用句
 
 本作的 ECL 文字沒有前作那種「… JOURNAL ENTRY 51.」句子：`workplace/text-src/ecl-source.tsv` 含 journal 的只有 3 則
 （`JOURNAL`、`JOURNAL NUMBER?`、紅皮書一句），都不帶編號。引用句由引擎組成。
@@ -17,22 +17,24 @@
 | 0x2668–0x26A1 | 字串＝常數 + `IntToStr(N)` + `.` |
 | 0x26A6–0x26C1 | 路徑 B（遠呼叫偏移 `0498` 與路徑 B 進入點相同，段由載入時重定位，強推論是 `1B2E:0498`）：參數依序推入 1、0x11、0x26、0x16、0x0A、0、1 與字串遠指標，讀作旗標 1、底色 0、前景 10、下 22、右 38、上 17、左 1 |
 
-依程式，路徑 B 應一次收到整句「This is recorded as journal entry N.」（強推論，實機未量；換行與游標起點也未量）。adapter 的 `JournalRefOf` 以 `JOURNAL ENTRY ([0-9]{1,3})\.`（不分大小寫）認出編號，
+依程式，路徑 B 一次收到整句「This is recorded as journal entry N.」（實機證實，見「驗證」）。adapter 的 `JournalRefOf` 以 `JOURNAL ENTRY ([0-9]{1,3})\.`（不分大小寫）認出編號，
 開第 N 則手札面板；譯文走組句模板 `This is recorded as journal entry {n}.` →「此事記為旅行手札第 {n} 則。」（`text/composed-templates.tsv`，前作沿用）。
 
 ## 驗證
 
 - 單元測試：`apps/pod/journal_test.go` 的 `TestJournalRefOf`（本作整句）、`TestJournalSentenceTemplate`（組句譯文）；
   `TestJournalTableFits` 以 `text/journal.zh-TW.tsv` 跑，99 則都在 3 頁以內、標題不超過 38 格。
-- 實機尚未觀測引用句。碼頭港務長的導覽（答 Y）走完 6 段對白沒有記手札（`workplace/probe/g7-journal/tour.log`）。
-  導覽結束停在 (3,6) 面西、底列只有 `EXIT`；此時方向鍵可轉向，往東前進會一直觸發「A SIGN OVER THIS DOOR READS 'VALHEGEN PARK'」。
-  移動方式見下節。
-- 觸發點交給 G6 的自動探索（`tools/g6-explore.sh`，從座標列讀位置）或找出 ECL 指令編號後反查事件；收據到時補。
+- 實機：自動探索（`tools/g6-explore.sh town1`，docs/re/010）從菲蘭城街上走到 (0,4) 叛徒門（Traitor's Gate），守衛對白後
+  路徑 B 在第 17 列第 1 欄一次印出整句「This is recorded as journal entry 57.」（`ovr@0x00246`），以組句模板覆繪。靜態推論的游標與整句都對上。
+- 收據 [`tools/g7-journal-receipt.sh`](../../tools/g7-journal-receipt.sh)：從同一街上狀態以 pod-overlay-shot 重播探索紀錄的 247 鍵（`tools/g7-journal-keys.txt`）。
+  觸發前（第 9,098,000,000 道指令）沒有面板；觸發後（第 9,120,000,000 道指令）手札面板開出第 57 則「叛徒之門」，底列「此事記為旅行手札第 57 則。」；
+  兩張範圍外差異 0。同一腳本另以 `-journal-preview 57` 開 F5 翻閱模式，面板開著、範圍外差異 0。
+- 碼頭港務長的導覽（答 Y）走完 6 段對白沒有記手札（`workplace/probe/g7-journal/tour.log`）。導覽結束停在 (3,6) 面西、底列只有 `EXIT`。
 
 ## 移動方式
 
 事件選單（底列只有 `EXIT`）裡方向鍵直接轉向與前進。Enter 選 EXIT 回到冒險主選單 `Move Area Cast View Encamp Search Look` 後，
-方向鍵不作用，要先按 `M` 進移動模式（前作探索器的做法；`workplace/probe/g6-explore/town1/explore.log` 送 M 後一路走到泰爾修道院）。
+方向鍵不作用，要先按 `M` 進移動模式（前作探索器的做法；`workplace/probe/g6-explore/town1/explore.log` 送 M 後一路走到提爾修院）。
 同一狀態 `workplace/probe/states/g7j-tour.state`（導覽結束，第 5,000,000,000 道指令；可寫層 `workplace/probe/g7-journal/scratch` 複製一份再用）的對照，
 共同參數 `PROBE_EXE=ADLIB.COM tools/probe.sh <輸出> -scratch-dir /out/<複本> -root-tsr-shrink -load-state /st/g7j-tour.state`，鍵間隔 `-bios-key-every 100000000`（look 為 150000000）：
 
