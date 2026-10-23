@@ -170,11 +170,12 @@
    `krynn.cfg` 字串（docs/re/001）。輸出路徑可能較接近克萊恩英豪與幽靈騎士的家族。銀色匕首之謎以克萊恩英豪簽章
    在執行期段 `0650` 找到同函式的路徑 A／B／C（其 `docs/re/004`）；本作 G3 從同一組簽章與幽靈騎士
    `docs/re/003-output-paths.md` 的 FBOV 容器分析開始。主程式是 `GAME.EXE`，由 `CONTROL.EXE` 呼叫。
-2. 本作附 `EGA.DRV`、`VGA.DRV`、`TGA.DRV`，畫面可能經顯示驅動輸出，VGA 下可能是 mode 13h 256 色。
+2. 選 VGA 時 `VACE.EXE` 與 `GAME.EXE` 都在 mode 13h（320×200、256 色），會寫 DAC 色盤（已證實，docs/re/003）。
    克萊恩英豪、銀色匕首之謎、幽靈騎士都在 mode 0Dh 16 色驗證，下列前作結論在本作全部降為假說：
    輸出路徑簽章、`dax_pics.py` 解碼、覆繪的色號與背景色、HD 色號比對與 `hd_validate.py` 閘門、
-   規格 021 以「兩種以上色號」定義的墨跡格。
-3. `INTRO`、`FINAL` 的 `.BMA`／`.ACF` 動畫是前作沒有的素材型態，其覆繪、HD 與不露原版的處理方式未知。
+   規格 021 以「兩種以上色號」定義的墨跡格。畫面是否經 `VGA.DRV` 輸出，待 G3。
+3. 片頭片尾是另一支程式 `VACE.EXE` 播 `INTRO`、`FINAL` 的 `.ACF`／`.BMA`，畫面有英文字幕（已證實，docs/re/003）。
+   字幕的輸出攔截、HD 與不露原版的處理方式未知；它不經 `GAME.EXE` 的印字程序。
 
 | 觸發 | 入口 |
 |---|---|
@@ -197,16 +198,13 @@
 - 研究與開發在 `workplace/dosgolem/` 的隔離 clone，分支 `pools-of-darkness-cht`，推到本專案
   private repo 的 `dosgolem/pod` 分支保存。本專案 `main` 只放文件、譯文、字型來源與工具。
 - 不改動 `/home/anr2/cht/dosgolem` 工作樹，不推送 dosgolem 遠端，不推送前作儲存庫。
-- 基底由 G2 選定。2026-10-23 以 `git for-each-ref` 與 `gh api` 回讀的候選：
-  - 銀色匕首之謎 repo 的 `dosgolem/sosb`，`5e9a961`（2026-10-23）。以克萊恩英豪 `dosgolem/cok` `8742fa9` 為底，
-    另含規格 021 的閃現量尺、殘影疊字、固定圖面與保留呈現（dosgolem 規格 202 §2.6–2.8、204 §6），以及 TP5 版
-    CRT `Delay`（dosgolem 規格 429）。只在 mode 0Dh 驗過。
-  - 克萊恩英豪 repo 的 `origin/dosgolem/cok`，`29f7607`（2026-10-21）。
-  - 黑暗之后 clone 所在的 dosgolem `san5-mixer`，`f79eab6`（2026-10-18），在 mode 13h 跑到角色選單。
-  - `/home/anr2/cht/dosgolem` 的 `main`，`81c85be`（2026-10-15）。
-  選定前重新回讀各分支頂端。選定理由、commit、Go 版本與 Docker image ID 記入 `CONTEXT.md`。
+- 基底（G2 選定，docs/re/003）：銀色匕首之謎 repo 的 `dosgolem/sosb` `a6e0254`（2026-10-23）。本作分支另加
+  dosgolem 規格 `430-mz-minalloc-reservation` 與 `431-root-tsr-shrink-option` 兩項通用層修正。
   `apps/sosb/` 只當參考實作，其中位址、座標與字串在本作全部視為假說。從前作分支帶來、
   實屬通用層的程式留在通用層。
+- 入口照 `START.BAT`：`STARTUP.EXE` 設定、常駐 `snd.com`、監督佇列接 `CONTROL.EXE`，並帶 `-root-tsr-shrink`
+  （`tools/g2-startup-receipt.sh`）。不常駐驅動時 DEMO 會跳進顯存當掉；沒有 `-root-tsr-shrink` 時遊戲報記憶體不足。
+  `apps/pod` 的 play 與收據指令也要照這條鏈走並設 `DOS.RootTSRShrink`；oracle 缺對應入口，先補通用層規格（dosgolem 431 §5）。
 - Go 不允許外部 module 引用 dosgolem `internal/`，adapter 必須在 dosgolem module 樹內。
 - dosgolem 是原版行為、畫面與虛擬時間的權威執行器，正式收據由它產生。DOSBox／DOSBox-X
   只作診斷與交叉基準，擷取明標輔助。
@@ -311,7 +309,7 @@
 
 ## 11. 沿用的前作教訓
 
-下列規則由銀色匕首之謎 `WORKLOG.md` 的勘誤與操作紀錄轉成，日期是該專案的紀錄日。
+下列規則由銀色匕首之謎 `WORKLOG.md` 的勘誤與操作紀錄轉成，日期是該專案的紀錄日；出處標「本作」的來自本專案。
 
 | 規則 | 出處 |
 |---|---|
@@ -327,3 +325,5 @@
 | demo 中止後回到選單的按鍵數依本作畫面序列重測 | demo 收據，2026-10-22 |
 | ffmpeg 在 `--pids-limit 32` 下建立執行緒失敗，錯誤顯示成濾鏡設定錯誤；用 `-threads 1`，上限放寬到 128 | G9，2026-10-23 |
 | 本作的圖可能與前作逐位元組相同；HD 盤點先比對前作主題，相同的沿用，不再生圖 | G9，2026-10-23 |
+| 啟動批次檔的每一步都要在 dosgolem 重現，常駐程式不能省；省掉的那支可能在很後面才讓遊戲當掉（本作 DEMO 跳進顯存） | 本作 G2，2026-10-23 |
+| dosgolem 的通用行為若有規格與收據釘住（例 197 §5.1），改它用預設關閉的選項，不改預設 | 本作 G2，2026-10-23 |

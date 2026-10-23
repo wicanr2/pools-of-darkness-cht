@@ -25,6 +25,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | 逐檔雜湊表 `docs/re/001-input-files.tsv` | `python3 -I tools/inventory_tsv.py workplace/input/inventory.json <輸出>` | `sosb-tools:bookworm-r1` |
 | 執行檔 MZ 標頭、overlay 魔數、關鍵字串 | `python3 -I tools/exe_probe.py workplace/input/dos/pod [關鍵字 …]` | `sosb-tools:bookworm-r1` |
 | 掃描縮圖拼版（讀頁序） | `python3 -I tools/contact_sheet.py <輸出目錄> <欄數> <縮圖寬> <檔案 …>` | `sosb-img:r1` |
+| dosgolem 探針（`PROBE_EXE` 選疊底程式，預設 `STARTUP.EXE`） | `PROBE_EXE=ADLIB.COM tools/probe.sh <輸出目錄> -scratch-dir /out/scratch -queue CONTROL.EXE -root-tsr-shrink …` | 走 dosgolem `tools/go.sh` |
+| G2 冷啟動收據：設定 → 常駐驅動 → 片頭 → 主選單，重播比對 | `tools/g2-startup-receipt.sh` | 同上 |
+| 文字模式畫面（`-dump-mem-at 'N:lin:B8000:4000:/out/x.bin'`）轉文字 | `python3 -I tools/b8000_text.py <x.bin …>` | `sosb-tools:bookworm-r1` |
+| mode 13h 截圖（`-shots 'N:/out/x.raw,…'`；`-dump-at` 只支援 planar）轉 PNG | `python3 -I tools/indexed_png.py 320 200 <x.raw …>` | `sosb-img:r1` |
 
 一次性 Docker 工作的固定旗標（`AGENTS.md` 第 8 節）：
 
@@ -38,7 +42,7 @@ timeout 600 docker run --rm --network none -u "$(id -u):$(id -g)" \
 
 - 前作已建的 image 可唯讀沿用，例如 `sosb-tools:bookworm-r1`（python3、unzip、unar、poppler-utils、curl）與
   `dosgolem-go-ebiten:1.24-r1`（Go 建置）；沿用時把名稱與 ID 記入 `WORKLOG.md`。
-- dosgolem 的建置與測試走 clone 內的 `tools/go.sh`。`apps/pod/` 在 G2 建立後才能跑
+- dosgolem 的建置與測試走 clone 內的 `tools/go.sh`。`apps/pod/` 在 G3 建立後才能跑
   `tools/go.sh test ./apps/pod/`；需要 X 的套件加 `DOSGOLEM_GO_CMD=xvfb-run tools/go.sh -a go test …`；
   自動模式跑 play 指令時 `docker run` 要帶 `--init`（銀色匕首之謎的做法）。
 

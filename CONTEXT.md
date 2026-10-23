@@ -24,19 +24,27 @@
 | 2026-10-23 | 本輪做完 G0：文件、Git、private repo、初始 Issue | 使用者回答 |
 | 2026-10-23 | 顯示模式 VGA 優先；dosgolem 跑不起來時回報，不自動改用 EGA | 使用者回答 |
 | 2026-10-23 | 攻略來源：使用者提供《軟體世界》第 43–45 期掃描 31 張，放 `walkthrough/`（不進 Git） | 使用者提供 |
+| 2026-10-23 | dosgolem 基底選銀色匕首之謎 `dosgolem/sosb`（`a6e0254`），理由見 docs/re/003 | G2 |
+| 2026-10-23 | 入口照 `START.BAT`：`STARTUP.EXE` 設定 → 常駐 `snd.com`（`-root-tsr-shrink`）→ 監督佇列接 `CONTROL.EXE`；不常駐時 DEMO 會當掉 | G2（docs/re/003） |
+| 2026-10-23 | 以 VGA（mode 13h，256 色）為準；dosgolem 可跑，不需退回 EGA | G2（docs/re/003） |
+| 2026-10-23 | zip 的 `SAVE/` 遊戲內讀不到（缺 `savgam?.pty`、`*.pc`），測試存檔自建 | G2（docs/re/003） |
 
 ## 待定
 
 | 項目 | 何時決定 |
 |---|---|
-| dosgolem 基底（候選見 AGENTS.md 第 5 節） | G2 |
-| VGA 選項的實際顯示模式；`STARTUP.EXE` 寫 `pool4.cfg` 與 `snd.com` 的方式 | G2 |
-| `SAVE/` 能否從 Load Saved Game 載入（沒有 `SAVGAMx.DAT`） | G2 |
-| dosgolem 入口：`START.BAT` 是三層子程序（`STARTUP.EXE` → `CONTROL.EXE` → `VACE.EXE`／`GAME.EXE`）；直接跑 `GAME.EXE` 配預備的 `pool4.cfg`，或支援 `CONTROL.EXE` 的子程序呼叫。`pool4.cfg` 格式未知 | G2 |
+| 片頭片尾字幕（`VACE.EXE` 畫的）的輸出攔截點 | G3 |
+| `apps/pod` 的 play 指令要照 `START.BAT` 常駐驅動並開 `RootTSRShrink`；oracle 目前沒有能載 `.COM` 又吃 `Options` 的入口（dosgolem 規格 431 §5） | G3，先補通用層規格 |
+| `pool4.cfg` 第 6 行 `F` 與後續 `0` 欄位語意 | 需要時 |
 
 ## dosgolem 基線
 
-尚未選定。
+| 項目 | 值 |
+|---|---|
+| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作分支頂端 `2e47f92`（規格 430、431 CONFORMED），推到本 repo 的 `dosgolem/pod` |
+| Go／image | go1.24.13；`dosgolem-go-ebiten:1.24-r1` `sha256:8ed6bdee2bce…` |
+| 冷啟動 | 0 種缺服務；mode 13h；`START.BAT` 程式鏈；片頭送空白鍵跳過，製作群後送 `p` 進建立隊伍主選單。收據 `tools/g2-startup-receipt.sh`，見 [docs/re/003](docs/re/003-dosgolem-startup.md) |
+| adapter | `apps/pod/` 尚未建立；G3 掛輸出攔截時由 `apps/sosb/` 複製 |
 
 ## 中文化進度
 
