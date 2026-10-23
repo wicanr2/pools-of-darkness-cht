@@ -145,32 +145,53 @@ func (l *Live) AddHD(dir string) error {
 	l.HDLayers = layers
 	l.HDItems += len(items) + count
 	l.armHDHold(items)
+	if count > 0 {
+		l.hdLatch = xlate.NewLatch(320, 200, hdLatchKeep, hdLatchFrames)
+	}
 	return nil
 }
+
+// hdLatchKeep、hdLatchFrames：HD 鎖存每格最多記幾種內容、閒置多少幀（retrace）後移除（xlate spec 202 §2.9）。
+const hdLatchKeep, hdLatchFrames = 4, 600
 
 // hdHoldFrames 是 HD 保留呈現的連續上限（幀；主專案規格 021 §4.1）。實測標題背景從開始畫到整張吻合超過 10 幀
 // （冷開機第 487–498 格），8 幀不夠；保留只作用在內容等於主題圖對應格的格子，原版動畫不受影響。
 const hdHoldFrames = 60
 
-// armHDHold 建立 HD 保留呈現（xlate spec 202 §2.8）：記下每張主題圖各墨跡格的色號指紋，
-// 畫面某格內容等於某張圖在同一位置的格，就是原版正在畫這張圖，替換前先保留上一幀的呈現。
+// hdCell 是某個畫面格、某種原版內容對應的 HD 畫面；同一位置同樣內容對到不同 HD 畫面時 pix 為 nil（有歧義）。
+type hdHoldCell struct{ pix []uint8 }
+
+// armHDHold 建立 HD 保留呈現（xlate spec 202 §2.8）：記下每張主題圖各墨跡格的色號指紋與 HD 畫面。
+// 畫面某格內容等於某張圖在同一位置的格，就是原版正在畫這張圖：換圖前直接畫那一格的 HD；
+// 同一位置同樣內容對到多張不同 HD 時，退回保留上一幀的呈現。
 func (l *Live) armHDHold(items []HDItem) {
-	cells := map[int]map[uint64]bool{}
+	cells := map[int]map[uint64]*hdHoldCell{}
 	for _, it := range items {
 		if it.Scale != hdHoldScale {
 			continue
 		}
+		s, W := it.Scale, it.W*it.Scale
 		for cy := 0; cy < it.H/hdCell; cy++ {
 			for cx := 0; cx < it.W/hdCell; cx++ {
 				ink, sum := xlate.CellContent(it.Reference, it.W, cx, cy)
 				if !ink {
 					continue
 				}
+				pix := make([]uint8, 0, hdCell*s*hdCell*s*4)
+				for y := cy * hdCell * s; y < (cy+1)*hdCell*s; y++ {
+					o := (y*W + cx*hdCell*s) * 4
+					pix = append(pix, it.Pix[o:o+hdCell*s*4]...)
+				}
 				c := (it.Y/hdCell+cy)*(320/hdCell) + it.X/hdCell + cx
 				if cells[c] == nil {
-					cells[c] = map[uint64]bool{}
+					cells[c] = map[uint64]*hdHoldCell{}
 				}
-				cells[c][sum] = true
+				switch old := cells[c][sum]; {
+				case old == nil:
+					cells[c][sum] = &hdHoldCell{pix: pix}
+				case old.pix != nil && !bytes.Equal(old.pix, pix):
+					old.pix = nil
+				}
 			}
 		}
 	}
@@ -184,4 +205,10 @@ func (l *Live) armHDHold(items []HDItem) {
 // hdHoldScale 是 HD 圖的倍率：保留呈現只在這個倍率作用。
 const hdHoldScale = 3
 
-func (l *Live) hdRegion(cx, cy int, sum uint64) bool { return l.hdCells[cy*(320/hdCell)+cx][sum] }
+func (l *Live) hdRegion(cx, cy int, sum uint64) ([]uint8, bool) {
+	c := l.hdCells[cy*(320/hdCell)+cx][sum]
+	if c == nil {
+		return nil, false
+	}
+	return c.pix, true
+}

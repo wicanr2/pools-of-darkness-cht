@@ -29,7 +29,10 @@ func NewHold(w, h, max int) *Hold {
 // region 以格座標與格內色號指紋（cellContent）判斷這格是否可能保留，例如「內容等於某張 HD 圖的對應格」。
 // 一格開始保留後，只要仍未被替換、仍在 region 內，就持續保留到 max 幀，不要求每幀都有變化
 // （原版畫到一半停住時，半張圖也不能露出）。
-func (h *Hold) Apply(indexed, base, out []uint8, scale int, region func(cx, cy int, sum uint64) bool) {
+//
+// region 回 (hd, true) 且 hd 不是 nil 時，這格直接畫 hd（放大後這格的 RGBA，逐列連續），不計保留次數也沒有上限：
+// 呼叫端已確定這格就是某張 HD 圖的這一格。hd 是 nil 時照上述規則保留上一幀。
+func (h *Hold) Apply(indexed, base, out []uint8, scale int, region func(cx, cy int, sum uint64) ([]uint8, bool)) {
 	if scale <= 0 || len(indexed) < h.w*h.h || len(base) != h.w*h.h*scale*scale*4 || len(out) != len(base) {
 		return
 	}
@@ -43,8 +46,18 @@ func (h *Hold) Apply(indexed, base, out []uint8, scale int, region func(cx, cy i
 			ink, sum := cellContent(indexed, h.w, cx, cy)
 			h.curSums[c], h.curHeld[c] = sum, 0
 			changed := sum != h.sums[c]
-			if havePrev && (changed || h.held[c] > 0) && ink && h.held[c] < h.max && region(cx, cy, sum) &&
-				cellSame(base, out, h.w, cx, cy, scale) {
+			if !ink || !cellSame(base, out, h.w, cx, cy, scale) {
+				continue
+			}
+			hd, ok := region(cx, cy, sum)
+			if ok && len(hd) == n*flashCellPx*scale {
+				for y, k := cy*flashCellPx*scale, 0; y < (cy+1)*flashCellPx*scale; y, k = y+1, k+n {
+					o := y*stride + cx*n
+					copy(out[o:o+n], hd[k:k+n])
+				}
+				continue
+			}
+			if havePrev && ok && (changed || h.held[c] > 0) && h.held[c] < h.max {
 				for y := cy * flashCellPx * scale; y < (cy+1)*flashCellPx*scale; y++ {
 					o := y*stride + cx*n
 					copy(out[o:o+n], h.prev[o:o+n])

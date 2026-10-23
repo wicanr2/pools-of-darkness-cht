@@ -17,7 +17,7 @@ func holdScene(s *flashScreen, step int) {
 	}
 }
 
-func runHoldScene(t *testing.T, hold *Hold, region func(cx, cy int, sum uint64) bool) (*FlashAudit, [][]uint8) {
+func runHoldScene(t *testing.T, hold *Hold, region func(cx, cy int, sum uint64) ([]uint8, bool)) (*FlashAudit, [][]uint8) {
 	t.Helper()
 	a, s := NewFlashAudit(16, 8, 8), newFlashScreen()
 	var outs [][]uint8
@@ -34,7 +34,7 @@ func runHoldScene(t *testing.T, hold *Hold, region func(cx, cy int, sum uint64) 
 }
 
 func TestHoldHidesHalfDrawnPicture(t *testing.T) {
-	all := func(int, int, uint64) bool { return true }
+	all := func(int, int, uint64) ([]uint8, bool) { return nil, true }
 	if a, _ := runHoldScene(t, nil, all); a.Count() == 0 {
 		t.Fatal("對照組：沒有保留時應量到閃現")
 	}
@@ -51,7 +51,7 @@ func TestHoldHidesHalfDrawnPicture(t *testing.T) {
 }
 
 func TestHoldRegionAndLimit(t *testing.T) {
-	none := func(int, int, uint64) bool { return false }
+	none := func(int, int, uint64) ([]uint8, bool) { return nil, false }
 	if a, _ := runHoldScene(t, NewHold(16, 8, 2), none); a.Count() == 0 {
 		t.Fatal("region 外不保留，應量到閃現")
 	}
@@ -62,7 +62,7 @@ func TestHoldRegionAndLimit(t *testing.T) {
 		s.ink(0, uint8(10+f))
 		s.render()
 		h.Commit()
-		h.Apply(s.idx, s.base, s.out, 2, func(int, int, uint64) bool { return true })
+		h.Apply(s.idx, s.base, s.out, 2, func(int, int, uint64) ([]uint8, bool) { return nil, true })
 		if s.out[3*2*4] == uint8(10+f) {
 			shown++
 		}
@@ -75,7 +75,7 @@ func TestHoldRegionAndLimit(t *testing.T) {
 // 原版畫到一半停住幾幀：已開始保留的格持續保留，不因「這幀沒變」就露出半張圖。
 func TestHoldSurvivesStall(t *testing.T) {
 	a, s, h := NewFlashAudit(16, 8, 8), newFlashScreen(), NewHold(16, 8, 8)
-	all := func(int, int, uint64) bool { return true }
+	all := func(int, int, uint64) ([]uint8, bool) { return nil, true }
 	for f, step := range []int{0, 1, 1, 1, 2} {
 		holdScene(s, step)
 		h.Commit()
@@ -86,5 +86,24 @@ func TestHoldSurvivesStall(t *testing.T) {
 	}
 	if a.Count() != 0 {
 		t.Fatalf("停住期間露出半張圖：%+v", a.Events())
+	}
+}
+
+// 呼叫端給出確定的 HD 格：直接畫，不受保留上限限制。
+func TestHoldPaintsKnownCellWithoutLimit(t *testing.T) {
+	h, s := NewHold(16, 8, 1), newFlashScreen()
+	hd := make([]uint8, 16*16*4)
+	for i := range hd {
+		hd[i] = 0xAB
+	}
+	known := func(cx, cy int, sum uint64) ([]uint8, bool) { return hd, cx == 0 }
+	s.ink(0, 7)
+	for f := 0; f < 5; f++ { // 遠超過上限 1 幀
+		s.render()
+		h.Commit()
+		h.Apply(s.idx, s.base, s.out, 2, known)
+		if s.out[0] != 0xAB {
+			t.Fatalf("第 %d 幀：確定的 HD 格沒畫", f)
+		}
 	}
 }

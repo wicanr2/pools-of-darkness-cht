@@ -66,7 +66,8 @@ type Live struct {
 	flashFrame int
 	// hdHold、hdCells：HD 保留呈現與主題圖各墨跡格的指紋（主專案規格 021 §4.1；AddHD 時建立）
 	hdHold  *xlate.Hold
-	hdCells map[int]map[uint64]bool
+	hdCells map[int]map[uint64]*hdHoldCell
+	hdLatch *xlate.Latch // 戰鬥等圖層的 HD 鎖存（AddHD 載入圖層時建立）
 
 	ui      Lookuper
 	ecl     *Catalog
@@ -245,6 +246,9 @@ func (l *Live) journalEntry(text []byte, mem CPUView) {
 func (l *Live) ModeChange() {
 	l.Journal.closeAutoSafe()
 	l.Layer.ForgetGhosts()
+	if l.hdLatch != nil {
+		l.hdLatch.Forget()
+	}
 	if !l.ready {
 		l.armed = true
 		return
@@ -259,6 +263,9 @@ func (l *Live) ModeChange() {
 func (l *Live) Frame(indexed []byte, palette [256][3]uint8) {
 	if l.hdHold != nil {
 		l.hdHold.Commit() // 上一幀最後一次合成的結果成為保留的依據
+	}
+	if l.hdLatch != nil {
+		l.hdLatch.Tick()
 	}
 	l.HDLayers.Frame(indexed, palette)
 	l.indexed = append(l.indexed[:0], indexed...)
@@ -302,10 +309,17 @@ func (l *Live) Compose(scale int, overlay bool, missing func(rune)) []byte {
 	}
 	if overlay {
 		l.HDLayers.Draw(out, l.indexed, scale)
-		l.Layer.Draw(out, scale, missing)
 		var base []byte
-		if l.hdHold != nil && scale == hdHoldScale {
+		if l.hdLatch != nil && scale == hdHoldScale {
+			// 戰鬥等圖層整件比對，一件被蓋到一小塊就整件退回；原版沒變的格沿用上次的 HD（xlate spec 202 §2.9）
 			base = l.Compose(scale, false, nil)
+			l.hdLatch.Apply(l.indexed, l.palSig(), base, out, scale)
+		}
+		l.Layer.Draw(out, scale, missing)
+		if l.hdHold != nil && scale == hdHoldScale {
+			if base == nil {
+				base = l.Compose(scale, false, nil)
+			}
 			l.hdHold.Apply(l.indexed, base, out, scale, l.hdRegion)
 		}
 		if l.Flash != nil && l.flashFrame != 0 {
@@ -337,6 +351,17 @@ func (l *Live) AuditFlash(frame, scale int) {
 	l.flashFrame = frame
 	l.Compose(scale, true, nil)
 	l.flashFrame = 0
+}
+
+// palSig 是目前色盤前 16 色的指紋（HD 鎖存判斷色盤沒變）。
+func (l *Live) palSig() uint64 {
+	h := uint64(14695981039346656037)
+	for _, c := range l.pal[:16] {
+		for _, v := range c {
+			h = (h ^ uint64(v)) * 1099511628211
+		}
+	}
+	return h
 }
 
 // Indexed 回最後一個畫格的原版色號（收據用）。
