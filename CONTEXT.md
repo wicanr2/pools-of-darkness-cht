@@ -29,6 +29,9 @@
 | 2026-10-23 | 以 VGA（mode 13h，256 色）為準；dosgolem 可跑，不需退回 EGA | G2（docs/re/003） |
 | 2026-10-23 | zip 的 `SAVE/` 遊戲內讀不到（缺 `savgam?.pty`、`*.pc`），測試存檔自建 | G2（docs/re/003） |
 | 2026-10-23 | 手札譯名裁決：Zhentarim 桑塔林會（字頭隨珍157 桑提爾城）、spirit of fire 保留珍157「火神」、Silk 絲綢、Gothmenes 戈斯梅尼斯、Tanetal 塔內塔爾等，見 docs/re/005 | G4 |
+| 2026-10-23 | 說明書其餘章節要對照；先比照銀色匕首之謎做全冊 OCR 草稿與名稱對照，正文逐段對照另行決定 | 使用者回答（G4 收尾） |
+| 2026-10-23 | 說明書的魔法寶物、怪物、法術名稱依 AGENTS 第 3.3 節採珍157，誤譯、自相矛盾者另裁；法術與怪物名因此與銀色匕首之謎不同（`text/zh157-names.tsv`，docs/re/006） | G5 |
+| 2026-10-23 | 用字「裡」不寫「裏」 | G5 試譯（`text/TRANSLATION-GUIDE.md`） |
 
 ## 待定
 
@@ -54,8 +57,11 @@
 | 印字程序 | resident 段 `1B2E`：逐字 `01DF`、路徑 A `0354`、路徑 B `0498`、路徑 D `030B`，與幽靈騎士同函式（docs/re/004） |
 | 路徑 A／B／C | DEMO 中呼叫與字串已證實；主選單以佔位譯文覆繪 6 筆、範圍外差異 0（`tools/g3-overlay-receipt.sh`） |
 | catalog | ui 1,357 筆（654 筆與銀色匕首之謎、625 筆與幽靈騎士 key 相同）、ECL 4,725 筆 |
-| 手札譯文 | 99 則修正譯文 `text/journal.zh-TW.tsv`（90 則有修正）；錯譯表 354 條通過 `tools/errata_check.py`；術語表 194 筆、舊譯 10 筆通過 `tools/term_check.py`（docs/re/005） |
-| 介面與劇情譯文、字型 | 尚未開始；覆繪驗證用的是前作佔位 |
+| 手札譯文 | 99 則修正譯文 `text/journal.zh-TW.tsv`（90 則有修正）；錯譯表 354 條通過 `tools/errata_check.py`（docs/re/005） |
+| 術語 | `text/glossary.tsv` 821 筆：手札 194 筆、併入銀色匕首之謎術語表 579 筆、試譯新詞 23 筆、說明書名稱新增 25 筆並改 46 筆；舊譯 `text/term-avoid.tsv` 57 筆；`tools/term_check.py`、`tools/zh157_names.py check` 通過 |
+| 說明書其餘章節 | 名稱 157 列對照與裁定（`text/zh157-names.tsv`）；全冊 OCR 草稿未校讀（docs/re/006） |
+| 介面與劇情譯文 | 翻譯指引 `text/TRANSLATION-GUIDE.md`；ECL 切 61 批、介面 5 批（`workplace/tr/`）；試譯 ECL 第 04、05 批 127 則（開場旁白、菲蘭城港務長導覽），待使用者確認文風再全量 |
+| 字型 | 源泉圓體開發字型 `workplace/font/pod-rounded.golemfnt`（16）、`-3x`（24），`tools/font-dev.sh` 由譯文重建；DEMO 開場 7 則旁白以試譯覆繪，範圍外差異 0（`workplace/probe/g5-trial/`） |
 | 查驗題 | 題型已知；題目表靜態找不到，G7 在執行期攔；答案對照珍157 密碼表 |
 | 片頭片尾字幕 | 推定是畫格點陣圖，待 G6／G9 |
 

@@ -89,3 +89,25 @@
 - 補：抽驗後三批各一則整段重寫的（第 44、67、83 則），修正成立。子代理標為沒把握的八處字以 `tools/ocr_crop.py` 裁原解析度局部親看：
   四處成立，「名喚／召喚」（26、74）、「變像／蠻像」（57）、「盛甲／盔甲」（97）分不清，錯譯表註明，第 97 則錯字條目降為假說。
   補 `j88-ward`（異體字統一），錯譯表 354 條；三支檢查通過。AGENTS 的 G4 完成條件註明說明書其餘章節待使用者決定。
+
+## 2026-10-23 G4 說明書其餘章節、G5 試譯（#5、#6）
+
+- 使用者：說明書其餘章節要對照，G5 開工。回報 G4 時說「銀色匕首之謎沒做其餘章節」不成立：前作做了全冊 OCR 草稿與下冊怪物、法術名稱對照
+  （其 docs/re/006、`text/zh056-names.tsv`），本作照這個範圍做，正文逐段對照另行決定。
+- 珍157 冒險者手冊 p.21–54（17 張跨頁）OCR 後，`tools/zh157_names.py draft` 只抽到 115 個候選：20 條怪物名只留英文、部分條目被拆行。
+  改由主 session 逐張看圖轉錄，得 `text/zh157-names.tsv` 157 列；遊戲內英文取 UI 字串與 `MON1CHA.DAX`（`tools/monster_names.py`，124 個名字）。
+  依 AGENTS 第 3.3 節採珍157 69 列、誤譯 5、珍157 自相矛盾 9、錯字 1（docs/re/006）。
+- 術語表：`tools/glossary_import.py` 併入銀色匕首之謎術語表 579 筆（手札合併留下的 note 重複片段 28 筆一併去重）；試譯新詞 23 筆；
+  `zh157_names.py check --apply` 改 46、增 25。`Magic-User` 從前作帶來時是「魔法師法術」（spell），本作 UI 是職業名，改「魔法師」。
+  第一次 `--apply` 把物品 `Shield`（盾牌）改成法術名「魔盾術」，名稱表那列的 Edit 沒套上就先跑了；術語表那列已還原，法術改用 `Shield (spell)` 鍵。
+  換掉的前作譯名 47 筆登入 `text/term-avoid.tsv`；衍生名（Wand of …、Neo Otyugh）同步改。術語表 821 筆，三支檢查通過。
+- 翻譯指引 `text/TRANSLATION-GUIDE.md`（改寫自前作）。`tools/ecl_batches.py` 切 ECL 61 批、介面 5 批（`workplace/tr/`）。`ECL1` 區塊 1–3 是開發用跳關與戰鬥測試選單
+  （含克萊恩的 `DARGAARD` 牆型，強推論）。
+- 試譯：ECL 第 04（開場旁白）、05 批（菲蘭城港務長導覽、班恩現身）127 則，sonnet 子代理一個；主 session 改 8 處（「裏」統一為「裡」、Banite 祭司、Blackards 推定為
+  blackguards 作「惡棍」、DEMURELY、GOOD HUNTING、COMMON ROOM）。子代理原稿留在 `workplace/tr/ecl/agent-raw/`。`tools/translation_merge.py` 0 錯誤，舊譯 0。
+- 字型：源泉圓體與 Unifont 由銀色匕首之謎 `workplace/fonts-src` 複製到本作（GenSenRounded2TW-M `b8286a42…`、-B `050f9ebf…`、unifont_t `16963425…`）；
+  `tools/font-dev.sh` 改寫自前作，加 `rounded_font.py`、`eten_font.py`。
+- 覆繪：DEMO 開場路徑 B 7 則旁白以試譯覆繪，範圍外差異 0（`workplace/probe/g5-trial/`）。第一次截圖缺「齊聚」「姓」「稍」：字型在試譯前建、字集沒收試譯表；
+  `font-dev.sh` 補收 `workplace/text-src/trial/`，重建後正常。教訓：譯文改了要重建字型。補 `tools/font_coverage.py`（AGENTS 第 6 節的字型覆蓋）：新字型對手札與試譯缺 0 字；拿前作佔位字型當負對照，列出缺字並結束碼 1。
+- 勘誤：本輪一個主機指令誤帶了 `python3 -c 1`（空操作，殘留在指令列）；主機不跑 Python。
+- 清理：容器皆 `--rm`。

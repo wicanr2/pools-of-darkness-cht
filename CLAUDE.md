@@ -36,6 +36,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | 珍157 掃描 OCR（黑暗之后的 PaddleOCR 映像與模型快取，唯讀） | `tools/ocr-batch.sh <輸入目錄> <輸出目錄>` | `dqk-ocr:ppocr5-r1` |
 | 手札草稿組稿 | `python3 -I tools/zh_ocr_journal.py --spreads <左頁碼>=<json> …`；`python3 -I tools/journal_en_ocr.py --bbox workplace/journal/en/bbox/p15.html … p25.html` | `sosb-tools:bookworm-r1` |
 | 手札批次合併、錯譯與術語檢查 | `python3 -I tools/journal_merge.py workplace/journal/fix`；`python3 -I tools/errata_check.py`；`python3 -I tools/term_check.py` | `sosb-tools:bookworm-r1` |
+| 說明書逐頁 OCR 草稿；名稱候選與裁定檢查（`--apply` 寫進術語表） | `python3 -I tools/zh_manual_draft.py --book <冊名> --spreads <左頁碼>=<json> … --out <TSV>`；`python3 -I tools/zh157_names.py check --names text/zh157-names.tsv --glossary text/glossary.tsv --monsters workplace/text-src/monster-names.tsv --ui workplace/text-src/ui-source.tsv` | `sosb-tools:bookworm-r1` |
+| 怪物資料檔的名字 | `python3 -I tools/monster_names.py workplace/input/dos/pod/MON1CHA.DAX --out workplace/text-src/monster-names.tsv` | `sosb-tools:bookworm-r1` |
+| 併前作術語表、本作新詞表 | `python3 -I tools/glossary_import.py --into text/glossary.tsv --from sosb=<前作 glossary.tsv>`（新詞表用 `--from keep=<TSV>`） | `sosb-tools:bookworm-r1` |
+| 切翻譯批次；批次驗證與合併 | `python3 -I tools/ecl_batches.py --source workplace/text-src/ecl-source.tsv --out workplace/tr/ecl/batches`；`python3 -I tools/translation_merge.py --events text/ecl-text-events.tsv --batches … --done … --out …` | `sosb-tools:bookworm-r1` |
+| 開發字型（譯文改了就重建，否則覆繪缺字） | `tools/font-dev.sh` | `sosb-img:r1` |
+| 字型覆蓋：譯文表要顯示的字是否都在字型裡 | `python3 -I tools/font_coverage.py --font workplace/font/pod-rounded.golemfnt <譯文 TSV …>` | `sosb-tools:bookworm-r1` |
 
 探針註記：`-call-args` 一次只接受一組 `CS:IP`；`-call-length-string` 把前兩個參數當字串遠指標。
 
@@ -64,5 +70,8 @@ timeout 600 docker run --rm --network none -u "$(id -u):$(id -g)" \
 | 《軟體世界》第 43–45 期攻略掃描 | `walkthrough/`（唯讀，不進 Git） |
 | 英文手冊與手札 | `workplace/input/en-docs/`（G1 下載，不進 Git）；校正後的英文手札逐字稿 `workplace/journal/en/journal-en.tsv`、珍157 照原書用字的逐字稿 `workplace/journal/zh157/journal-zh157.tsv` |
 | 研究工作區 | `workplace/`（gitignore） |
+| 翻譯指引、術語、說明書名稱裁定 | `text/TRANSLATION-GUIDE.md`、`text/glossary.tsv`、`text/term-avoid.tsv`、`text/zh157-names.tsv` |
+| 翻譯批次 | `workplace/tr/{ecl,ui}/batches/`（含原文）、`done/`（譯文）；子代理原稿 `workplace/tr/ecl/agent-raw/` |
+| 字型來源 | `workplace/fonts-src/`（由銀色匕首之謎複製，雜湊見 WORKLOG） |
 | dosgolem 隔離 clone | `workplace/dosgolem/`，adapter 在 `apps/pod/`，推到本 repo 的 `dosgolem/pod` |
 | 主要參考 | 銀色匕首之謎、克萊恩英豪、幽靈騎士、黑暗之后、光芒之池說明書 corpus（皆只讀，見 `AGENTS.md` 第 4 節） |
