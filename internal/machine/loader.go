@@ -20,6 +20,7 @@ type mzHeader struct {
 	Pages     uint16 // 512 byte 的頁數
 	Relocs    uint16 // 重定位項數
 	HeaderPar uint16 // 檔頭佔幾個段
+	MinAlloc  uint16 // e_minalloc：映像之後至少要的段數（未初始化資料、堆疊；`docs/spec/430`）
 	SS, SP    uint16
 	IP, CS    uint16
 	RelocOff  uint16
@@ -44,7 +45,7 @@ func parseMZ(data []byte) (*mzHeader, error) {
 		// `(172−1)×512 + 144` **正好是檔案長度**。同一批 15 個 MZ 檔
 		// 裡只有這一個越界，其餘遮不遮都一樣。
 		LastPage: u(2) & 0x1FF,
-		Pages:    u(4), Relocs: u(6), HeaderPar: u(8),
+		Pages:    u(4), Relocs: u(6), HeaderPar: u(8), MinAlloc: u(10),
 		SS: u(14), SP: u(16), IP: u(20), CS: u(22), RelocOff: u(24),
 	}, nil
 }
@@ -118,6 +119,17 @@ func MZImageParags(data []byte) (int, error) {
 		return 0, err
 	}
 	return (total - hdr + 15) / 16, nil
+}
+
+// MZLoadParags 回 MZ 程式載入後佔幾個段：映像加 e_minalloc（`docs/spec/430`）。
+// EXEC 找落點與切塊用它，與 loadEXEAt 的 EndSeg 一致。
+func MZLoadParags(data []byte) (int, error) {
+	n, err := MZImageParags(data)
+	if err != nil {
+		return 0, err
+	}
+	h, _ := parseMZ(data)
+	return n + int(h.MinAlloc), nil
 }
 
 // Program 是一支載好的程式（`docs/spec/008` §2）。
@@ -211,7 +223,8 @@ func (m *Machine) loadEXEAt(pspSeg uint16, data []byte) (*Program, error) {
 		PSPSeg: pspSeg,
 		CS:     loadSeg + h.CS, IP: h.IP,
 		SS: loadSeg + h.SS, SP: h.SP,
-		EndSeg:   loadSeg + uint16((len(image)+15)/16) + 1,
+		// e_minalloc 是程式自己的未初始化資料與堆疊，不是可配置區（`docs/spec/430`）。
+		EndSeg:   loadSeg + uint16((len(image)+15)/16) + h.MinAlloc + 1,
 		imageLen: len(image),
 	}, nil
 }

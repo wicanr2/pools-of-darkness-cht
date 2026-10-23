@@ -118,8 +118,8 @@
 | EXEC AL=01/03（overlay）等 | 記 unimplemented、CF=1 | 有程式用到 |
 | FCB 格式化（DOS 會解析檔名填 drive 等欄位） | 原樣抄 16 bytes | 子程式讀 PSP+5Ch 判參數 |
 | 子程式進入時 AX（FCB 有效性旗標）等暫存器 | 清 0 | 有程式依賴 |
-| MZ 的 MINALLOC／MAXALLOC 配置語意 | 忽略，配置 = PSP＋映像 | 子程式要額外 heap 卻拿不到 |
-| 父程式記憶體保護 | 無（靠配置器隔離） | 觀測到子程式踩父程式 |
+| MZ 的 MAXALLOC 配置語意 | 忽略；MINALLOC 已由 [`430-mz-minalloc-reservation`](430-mz-minalloc-reservation.md) 算進佔用量 | 子程式要額外 heap 卻拿不到 |
+| 父程式記憶體保護 | 靠配置器隔離；父程式 e_minalloc 內的堆疊不再被子程式落點覆蓋（430） | 觀測到子程式踩父程式 e_minalloc 以外的區域 |
 | EMS 頁框映射（AH=44h 等）與實體頁框 | 未實作 | GIN3PS.EXE 呼叫 |
 | `int 21h AH=63h`、`int 2Fh AX=4F01h` | 不實作（launcher 內無呼叫端，confirmed） | 本體用到 |
 

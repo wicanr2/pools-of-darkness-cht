@@ -117,7 +117,7 @@ type execParams struct {
 // MZ 走檔頭（準確），其他當 .COM 用檔案長度。**在動任何狀態之前算**——
 // 載到一半才發現記憶體不夠會留下半套 PSP。
 func imageParags(data []byte) uint16 {
-	if n, err := machine.MZImageParags(data); err == nil {
+	if n, err := machine.MZLoadParags(data); err == nil { // 映像＋e_minalloc（`docs/spec/430`）
 		return uint16(n) + 0x11
 	}
 	return uint16((len(data)+15)/16) + 0x11
@@ -407,7 +407,10 @@ func (d *DOS) terminate(c *cpu.CPU, code uint8, tsr bool, keep uint16) {
 	// 疊底行程結束。非 TSR 把記憶體回收到它的 PSP 前一格，
 	// 讓監督佇列的下一支從這裡開始。
 	if tsr {
-		if k := d.curPSP + keep; k > d.freeSeg {
+		if d.RootTSRShrink && d.arena == nil && d.freeSeg == d.rootFree {
+			// 沒配過記憶體：縮到保留量，與真 DOS 一致（`docs/spec/431`）。
+			d.freeSeg = d.curPSP + keep
+		} else if k := d.curPSP + keep; k > d.freeSeg {
 			d.freeSeg = k
 		}
 		d.queuedSeg = 0 // 常駐塊照留，只把記帳清掉

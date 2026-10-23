@@ -181,6 +181,8 @@ func main() {
 	args := flag.String("args", "", "命令列尾（寫進 PSP+80h，.COM 的參數走這裡）。"+
 		"靠參數決定要做什麼的程式（例如 ENDING.EXE 要演哪一個結局）沒有它就直接結束")
 	queue := flag.String("queue", "", "主程式結束／常駐後接著跑的程式（監督佇列，`docs/spec/009` §4），逗號分隔")
+	rootTSRShrink := flag.Bool("root-tsr-shrink", false,
+		"疊底程式沒配過記憶體就常駐時，下一支從 PSP＋保留量接著放，不留整段間隙（`docs/spec/431`）")
 	segLog := flag.Bool("seg-log", false, "記錄 CS 的每一次改變，報告裡印出每個段第一次執行的時間與來源")
 	dumpScreen := flag.String("dump-screen", "", "跑完把畫面的色號寫成檔案（planar 模式是 VideoSize() 那個尺寸）")
 	watchDS := flag.String("watch-ds", "", "記下 DS 每一次被設成這個段值的時刻（十六進位）")
@@ -446,6 +448,7 @@ func main() {
 			d.Enqueue(strings.TrimSpace(q), "")
 		}
 	}
+	d.RootTSRShrink = *rootTSRShrink
 	d.CallTrace = []dos.CallRec{}
 	if *memTrace {
 		d.MemTrace = []dos.MemCall{}

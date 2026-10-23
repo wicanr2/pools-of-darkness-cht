@@ -174,6 +174,8 @@
 - [241 — buckrogers-play 的輸入：遊戲鍵、滑鼠與前端功能鍵](241-buckrogers-play-input-draft.md)：READY。
 - [242 — 機器時脈比例（較慢的虛擬 CPU）](242-machine-clock-scale-draft.md)：READY。
 - [429 — 執行中改時脈與 Turbo Pascal Delay 快轉](429-runtime-clock-and-idle-skip-draft.md)：CONFORMED（§2.1–§2.4）。時脈 10–1600% 可在回合之間改，DelayCnt 依登記值重算；CRT.Delay 計數迴圈在下一個事件前整圈快轉，與逐條執行等價；服務輪詢跳過（§2.5）未實作。
+- [430 — MZ 的 e_minalloc 算進程式佔用的記憶體](430-mz-minalloc-reservation.md)：READY。`EndSeg`、`FreeSeg` 與 EXEC 需求量含 e_minalloc；Turbo Pascal 父程式放在堆疊上的 EXEC 命令列不再被子程式蓋掉。e_maxalloc 不做。
+- [431 — 疊底程式常駐後縮回保留量（選用）](431-root-tsr-shrink-option.md)：READY。`RootTSRShrink`／`-root-tsr-shrink`，預設關；疊底程式沒配過記憶體就常駐時，下一支從 PSP＋保留量接著放，不留 197 §5.1 的整段間隙。
 - [250 CGA 圖形模式的 INT 10h 視窗捲動與清除、色彩選擇](250-cga-int10-scroll-and-palette.md)：CONFORMED。
 
 ### 武士傳說（Knights of Legend）（3 份）

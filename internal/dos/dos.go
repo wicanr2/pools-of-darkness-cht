@@ -400,6 +400,12 @@ type DOS struct {
 	// 疊底退出（非 TSR）時釋放它；常駐則留著（欄位歸零，塊照留）。
 	queuedSeg uint16
 
+	// RootTSRShrink：疊底程式沒配過記憶體就常駐時，freeSeg 縮到 PSP＋保留量，
+	// 不照 bump 模型的 max 留下整段間隙（`docs/spec/431`）。預設 false，與 197 的收據一致。
+	RootTSRShrink bool
+	// rootFree 是 Install 時的 freeSeg，用來判斷疊底程式常駐前有沒有配過記憶體。
+	rootFree uint16
+
 	// XMS（`docs/spec/011`）：EMB 的內容放 Go 端。
 	emb     map[uint16][]byte
 	nextEMB uint16
@@ -694,6 +700,7 @@ func fromOwnStub(c *cpu.CPU, n uint8) bool {
 // 它會記下映像後面的第一個可配置段。
 func (d *DOS) Install() {
 	d.freeSeg = d.M.FreeSeg
+	d.rootFree = d.freeSeg
 	d.arena = nil // 第一次配置時用當時的 freeSeg 建起來
 	d.curPSP = machine.PSPSeg
 	d.installFont()
