@@ -368,6 +368,9 @@ func (l *Live) palSig() uint64 {
 // Indexed 回最後一個畫格的原版色號（收據用）。
 func (l *Live) Indexed() []byte { return l.indexed }
 
+// Palette 回與 Indexed 配對的最後呈現畫格色盤副本（原始素材比對收據）。
+func (l *Live) Palette() [256][3]uint8 { return l.pal }
+
 // AddScaledVariants 為 16×16 字型登記 3× 變體：最近鄰放成 22×22，置於 24 像素格內偏移 (1,1)，
 // 比照拯救地球（apps/buckrogers manualThreeXFont、manualGlyphOffset）。
 // 規格見 death-knights-of-krynn-cht docs/spec/010 §2.3；xlate spec 202 §2.4.1。須在半形字對登記之後呼叫。

@@ -157,6 +157,7 @@ type game struct {
 	windowPixels []byte
 	frameShotDir string
 	shotFrame    string
+	shotSource   string
 }
 
 func (g *game) hostInput(u *session.CapturedUpdate) []hostAction {
@@ -457,6 +458,22 @@ func (g *game) finish() error {
 	if err := write(g.shotOrig, false); err != nil {
 		return err
 	}
+	if g.shotSource != "" {
+		if len(g.live.Indexed()) != 64000 {
+			return errors.New("尚無完整原版色號畫格")
+		}
+		if err := os.WriteFile(g.shotSource+".idx", g.live.Indexed(), 0600); err != nil {
+			return err
+		}
+		pal := g.live.Palette()
+		flat := make([]byte, 0, 768)
+		for _, rgb := range pal {
+			flat = append(flat, rgb[:]...)
+		}
+		if err := os.WriteFile(g.shotSource+".pal", flat, 0600); err != nil {
+			return err
+		}
+	}
 	if g.shotFrame != "" {
 		rgba := g.compose()
 		g.drawBar(rgba)
@@ -600,6 +617,7 @@ func main() {
 	hdDir := flag.String("hd", "", "HD 主題目錄（theme.json；主專案規格 010，只在 3× 顯示）")
 	posterDir := flag.String("posters", "", "左右海報目錄；空白時找 HD 主題的 posters/，- 為停用")
 	shotFrame := flag.String("shot-frame", "", "自動模式結束時輸出含海報的完整視窗 PNG")
+	shotSource := flag.String("shot-source", "", "輸出最後呈現的原始色號與配對色盤，路徑前綴加 .idx／.pal（研究收據）")
 	frameShotDir := flag.String("shot-frame-dir", "", "F10 同時輸出完整視窗 PNG 的目錄")
 	showVersion := flag.Bool("version", false, "印版號與 dosgolem commit 後結束")
 	flag.Parse()
@@ -827,6 +845,7 @@ func main() {
 		chunk: budget, delayAccel: *delayAccel, speedPath: filepath.Join(stateDir, "pod-speed.txt"),
 		barSizePath: filepath.Join(stateDir, "pod-barfont.txt"), barSize: barMedium}
 	g.posters, g.shotFrame, g.frameShotDir = posters, *shotFrame, *frameShotDir
+	g.shotSource = *shotSource
 	g.speed = speedControl{base: *clock, set: 1, pct: *clock, adaptive: *frames == 0 || *adaptiveFlag}
 	g.perf = perfStats{on: *perfFlag, start: time.Now()}
 	switch {
