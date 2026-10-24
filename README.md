@@ -47,9 +47,9 @@ HD 製作由 [#10](https://github.com/wicanr2/pools-of-darkness-cht/issues/10) �
 | ![原版 DEMO 歡迎對話](docs/screenshots/demo-welcome-original.png) | ![繁中與 HD 歡迎對話](docs/screenshots/demo-welcome-cht-hd.png) |
 | ![原版 DEMO 異界生物](docs/screenshots/demo-fire-original.png) | ![繁中與 HD 異界生物](docs/screenshots/demo-fire-cht-hd.png) |
 
-以上是 dosgolem 從正常冷開機的既有狀態重播 DEMO 所擷取的 960×600 畫面。
+以上是 dosgolem 執行 DEMO 的 960×600 畫面。右側繁中與 HD 另以正常冷啟動核對，像素完全一致。
 兩張小圖已接入；同狀態比較確認 HD 差異只落在原版圖框，原版記憶體、暫存器、色號與存檔一致。
-目前展示範圍為開場 DEMO，首次繪製的零閃現與其餘圖族仍在驗證。
+目前展示範圍為開場 DEMO，冷啟動到戰鬥的抽樣路線閃現為 0；其餘圖族仍在製作與驗證。
 
 ## 執行與文件
 

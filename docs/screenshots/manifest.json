@@ -89,7 +89,13 @@
       "receipt_sha256": "7eb1bfce1d4dc93382a7c2206571d60c6d4df38fce637274310240d059d0914f",
       "original_indexed_sha256": "086a7f56c3d1f0d53bd67c3a0714cad35da32edfe9155eb2dcd24159c069fa1e",
       "research": "docs/re/014-vga-hd.md",
-      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/19"
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/19",
+      "normal_coldboot_verified": {
+        "frame": 2050,
+        "screenshot_sha256": "d3c730d70820f217022f72a9bbaf744e99825e4165b1c6d18b5a14977a528f41",
+        "run_log_sha256": "bbc02718b4fb7fa3ead0e9fe2a6cd244323ffbe04c14cb8465b5931644571ef2",
+        "pixels_equal": true
+      }
     },
     {
       "file": "demo-fire-original.png",
@@ -123,7 +129,13 @@
       "receipt_sha256": "7eb1bfce1d4dc93382a7c2206571d60c6d4df38fce637274310240d059d0914f",
       "original_indexed_sha256": "b9eef13bff808785a503afcf90609cdebe0c45b20ce48770264ab19444ecbd5d",
       "research": "docs/re/014-vga-hd.md",
-      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/19"
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/19",
+      "normal_coldboot_verified": {
+        "frame": 5600,
+        "screenshot_sha256": "fe777f37cfb79f70b1c4a243c5c42118e161488936fc659ca8502d3255a8a3be",
+        "run_log_sha256": "bbc02718b4fb7fa3ead0e9fe2a6cd244323ffbe04c14cb8465b5931644571ef2",
+        "pixels_equal": true
+      }
     }
   ]
 }

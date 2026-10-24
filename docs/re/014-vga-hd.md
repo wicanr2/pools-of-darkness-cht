@@ -107,3 +107,34 @@ dosgolem binaries 掛 `/app:ro`、正式譯文掛 `/text:ro`、字型掛 `/font:
 保留中途印字掛勾，產生實際繁中與 HD 截圖 `workplace/probe/g9-hd/demo-hd/`；已目視核對。
 README 展示副本與來源雜湊列於 [screenshots/manifest.json](../screenshots/manifest.json)。
 此步不是前端冷啟動或首次繪製閃現驗收，規格維持局部 READY。
+
+後續正常冷啟動抽樣已完成：2050 格觀測 PIC1-131，5600 格觀測 PIC1-043 第 0 幀，兩張 HD 圖框
+與最終素材逐像素一致，整張截圖也與上述重播版完全一致；5900 格與 7400 格兩條 DEMO 路線閃現 0。
+輸入、主題、截圖與同狀態收據雜湊保存於 [014-hd-runtime-receipt.json](014-hd-runtime-receipt.json)。
+可重播入口為 [g9-hd-play-receipt.sh](../../tools/g9-hd-play-receipt.sh)，`demo` 為冷啟動 DEMO、
+`switch` 為 F12／F2 對應動作。實體功能鍵與腳本送入 DOS 的鍵名分開；`scale` 專供前端倍率動作。
+前作 demo 控制簽章在本作命中 0，控制未啟用，歸規格 018，不能據此宣稱逾時或中止功能完成。
+
+切換收據通過：正常冷啟動 2210 格，不切換／切換的最終原版步數、記憶體、色號一致。
+F12 對應的 `toggle` 顯示英文原圖，再切回後整張 HD 畫面相同；`scale` 切 2 倍時圖框為原版，
+回 3 倍後整張 HD 畫面相同。鍵盤對應與 toolbar 共用動作的測試通過，沒有把腳本的 `F2` 鍵名改成主機動作。
+原版英文字的列印進度在不同步數會不同，不將兩個時間點的整張原版圖當成同狀態比較。
+dosgolem 為 `e5c94ff`，只新增收據動作，沒有改呈現與 DOS 行為。
+自動檢查器為 [hd_vga_switch_check.py](../../tools/hd_vga_switch_check.py)，與冷啟動腳本一起使用。
+
+### 其他圖族盤點
+
+同一 VGA 區塊候選格式另讀 CPIC 244、CBODY 128、CHEAD 28、COMSPR 44、DUNGCOM 156、WILDCOM 120、
+SKYGRND 4、BACK 6，雙層 RLE 另讀 SPRIT 87，共 817 個影像狀態。
+清單為 `workplace/hd/inventory/inventory-other.json`，每件保留檔案／色號／色盤 SHA-256 與區塊偏移。
+尺寸與色號去重後 790 種；這是候選盤點，尚未驗執行期位置、動態色盤與透明度，不能直接接入。
+`--archives` 只接受已辨識圖族；牆面定義與 8×8 資料不套用此格式。大量盤點使用 `--no-atlas`，避免巨幅總覽。
+
+### b02 基準圖完成
+
+49 個基準畫面均通過尺寸、RGBA、結構與色相驗收，逐件目視核對，最終 PNG SHA-256 保存於
+`workplace/hd/out/b02/visual-review.json`。後續變更雜湊必須重新目視。
+PIC1-151 與 PIC1-143 第 0 幀的色號及所有使用色 RGB 完全相同，沿用同一張生圖，未用全色盤雜湊差異誤判。
+32 個其餘動畫狀態另作生圖與遮罩驗收，基準圖完成不代表整批 81 張完成。
+[hd_vga_review.py](../../tools/hd_vga_review.py) 只匯出同時通過數值及目視雜湊的圖，
+正式並列頁見 [b02 基準圖](../../review/hd/b02-base/README.md)。

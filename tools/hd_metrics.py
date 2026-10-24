@@ -103,5 +103,3 @@ def structural_score(orig_rgb, hd_rgb):
     small = hd_rgb[..., :3].reshape(h, sy, w, sx, 3).mean(axis=(1, 3))
     filtered = np.repeat(np.repeat(lowpass(small), sy, 0), sx, 1)
     return float(align_score(lowpass(orig_rgb), filtered)[0])
-
-

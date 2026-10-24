@@ -14,6 +14,8 @@ Issue：[#18](https://github.com/wicanr2/pools-of-darkness-cht/issues/18)。狀�
 
 人物圖 PIC1-131、PIC1-043 第 0 幀已通過數值與同狀態比較，重畫及遊戲畫面均已目視核對。
 來源、完整提示詞、原始生成圖與最終 PNG 雜湊見 [b02-manifest.json](b02-manifest.json)。
-實際執行畫面見 [README](../../README.md#繁中與-hd-實際畫面)。其餘 PIC 仍在製作。
+實際執行畫面見 [README](../../README.md#繁中與-hd-實際畫面)。
+49 個 PIC 基準畫面已完成數值與目視驗收，原版並列、提示詞與逐件 SHA-256 見 [b02 基準圖](b02-base/README.md)。
+其餘 32 個動畫狀態仍在製作。
 
 本頁包含擷取的原版素材，只限目前私人儲存庫；公開前須依 AGENTS.md 移除並清理歷史。

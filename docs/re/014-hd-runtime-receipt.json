@@ -1,0 +1,144 @@
+{
+  "scope": "正常冷啟動 STARTUP 設定、snd.com、CONTROL、DEMO；兩張 PIC 與文字；其他圖族未驗",
+  "toolchain": {
+    "dosgolem_commit": "ad17b65f2a47bdbc3893c1208f7347292ecc6f86",
+    "image": "dosgolem-go-ebiten:1.24-r1",
+    "go": "1.24.13"
+  },
+  "run": {
+    "frames": 5900,
+    "script": "900: ,1800: ,2050:shot,2100:shot,2200:shot,5500:shot,5600:shot,5700:shot,5800:shot",
+    "run_log_sha256": "bbc02718b4fb7fa3ead0e9fe2a6cd244323ffbe04c14cb8465b5931644571ef2",
+    "flash_count": 0,
+    "loaded_state": false,
+    "guest_memory_injection": false
+  },
+  "screenshots": [
+    {
+      "frame": 2050,
+      "hd_key": "pic1-131",
+      "png_sha256": "d3c730d70820f217022f72a9bbaf744e99825e4165b1c6d18b5a14977a528f41",
+      "whole_image_equal_to_readme": true
+    },
+    {
+      "frame": 5600,
+      "hd_key": "pic1-043@0",
+      "png_sha256": "fe777f37cfb79f70b1c4a243c5c42118e161488936fc659ca8502d3255a8a3be",
+      "whole_image_equal_to_readme": true
+    }
+  ],
+  "theme": {
+    "scale": 3,
+    "items": [
+      {
+        "key": "pic1-043@0",
+        "screen_rect": [
+          24,
+          24,
+          88,
+          88
+        ],
+        "png": "pic1-043@0.png",
+        "png_sha256": "628c10d79e5124b47f61b51c436def1add28ace4ea95f65b283c5f8692a0760e",
+        "indexed": "pic1-043@0.idx",
+        "indexed_sha256": "f0fa10c76694608e2fe1728565be87338ea2430c11ad151a87a27ab29ae65779"
+      },
+      {
+        "key": "pic1-131",
+        "screen_rect": [
+          24,
+          24,
+          88,
+          88
+        ],
+        "png": "pic1-131.png",
+        "png_sha256": "7200e950a4f21eb1968d25922d89d17cd738d723ddfb4218838e7d1ea6396949",
+        "indexed": "pic1-131.idx",
+        "indexed_sha256": "2d8755ab3b0a2b71cea4436b1730032145e6fac5c2510061d9966890ac2d3aad"
+      }
+    ]
+  },
+  "same_state": {
+    "scope": "PIC1-131、PIC1-043@0；正常 DEMO 的加速同狀態重播，非首次繪製閃現驗收",
+    "comparisons": [
+      {
+        "base": "welcome-3-base",
+        "other": "welcome-3-hd",
+        "original_state_and_scratch_equal": true,
+        "changed_pixels": 69694,
+        "outside_portrait": 0,
+        "passed": true
+      },
+      {
+        "base": "welcome-3-base",
+        "other": "welcome-3-mismatch",
+        "original_state_and_scratch_equal": true,
+        "changed_pixels": 0,
+        "outside_portrait": 0,
+        "passed": true
+      },
+      {
+        "base": "welcome-2-base",
+        "other": "welcome-2-hd",
+        "original_state_and_scratch_equal": true,
+        "changed_pixels": 0,
+        "outside_portrait": 0,
+        "passed": true
+      },
+      {
+        "base": "fire-3-base",
+        "other": "fire-3-hd",
+        "original_state_and_scratch_equal": true,
+        "changed_pixels": 69620,
+        "outside_portrait": 0,
+        "passed": true
+      },
+      {
+        "base": "fire-3-base",
+        "other": "fire-3-mismatch",
+        "original_state_and_scratch_equal": true,
+        "changed_pixels": 0,
+        "outside_portrait": 0,
+        "passed": true
+      },
+      {
+        "base": "fire-2-base",
+        "other": "fire-2-hd",
+        "original_state_and_scratch_equal": true,
+        "changed_pixels": 0,
+        "outside_portrait": 0,
+        "passed": true
+      }
+    ],
+    "all_pass": true
+  },
+  "inputs": {
+    "workplace/dosgolem/workplace/bin/pod-play": "211838361c97a2c7369633f7081f7b721bd7ee9d39775c6de1fdaec926a0f10d",
+    "workplace/font/pod-rounded.golemfnt": "0f0430e7db828b8b74249b69f02ac7c590724215d9edc0f212830790ae4531ac",
+    "workplace/font/pod-rounded-3x.golemfnt": "52e749e344c5bf6a60fa6501ad4ab17b72de0871897382a5c58d2acc3cc21730",
+    "workplace/input/dos/pod/PIC1.DAX": "a3cf36ca3d51ca7960fd73b630489f019c5ad984808ad08bcf91186f67401ab7"
+  },
+  "frontend_switch": {
+    "method": "前端腳本 toggle/scale 與 F12/F2 共用動作；鍵盤路由單元測試",
+    "normal_coldboot": true,
+    "frames": 2210,
+    "original_state_equal": true,
+    "steps": "212712500",
+    "memory_sha256": "407acf3df80edac1df653803d20563f2e233633ca755a4101b1bc84ae4a7af0e",
+    "indexed_sha256": "fdcb9523281066334cc302987e63e467e3a703c6739983fe5b9a56ce68335102",
+    "original_view_portrait_exact": true,
+    "return_hd_exact": true,
+    "scale2_portrait_original_exact": true,
+    "scale3_return_exact": true,
+    "files": {
+      "workplace/probe/g9-hd/frontend-switch/switched/shots/pod-f002142.png": "d3c730d70820f217022f72a9bbaf744e99825e4165b1c6d18b5a14977a528f41",
+      "workplace/probe/g9-hd/frontend-switch/switched/shots/pod-f002050.png": "d3c730d70820f217022f72a9bbaf744e99825e4165b1c6d18b5a14977a528f41",
+      "workplace/probe/g9-hd/frontend-switch/switched/shots/pod-f002182.png": "d3c730d70820f217022f72a9bbaf744e99825e4165b1c6d18b5a14977a528f41",
+      "workplace/probe/g9-hd/frontend-switch/switched/shots/pod-f002102.png": "ffe666941a734582fc2bb0da4546044d3599a11bb038dc9f5e64028dd5682ea9",
+      "workplace/probe/g9-hd/frontend-switch/switched/shots/pod-f002162.png": "edbbdbc3fbb92c7eb4604d7427b5b125cc5502580a81800b7d8069d3f1a8fa0a",
+      "workplace/probe/g9-hd/frontend-switch/switched/shots/pod-f002192.png": "d3c730d70820f217022f72a9bbaf744e99825e4165b1c6d18b5a14977a528f41",
+      "workplace/probe/g9-hd/frontend-switch/base/run.log": "9e6e8f36fa9a82dde9a8265ac195f2684b2e3804c8472d5324181aede1a93d40",
+      "workplace/probe/g9-hd/frontend-switch/switched/run.log": "9e6e8f36fa9a82dde9a8265ac195f2684b2e3804c8472d5324181aede1a93d40"
+    }
+  }
+}

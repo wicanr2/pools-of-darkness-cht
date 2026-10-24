@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""本作 VGA BIGPIC／TITLE／PIC 研究圖。只寫 ignored 工作區；執行期另驗。
+"""本作 VGA 區塊／雙層 RLE 研究圖。只寫 ignored 工作區；執行期另驗。
 
-偏移契約與外部線索見 docs/re/014-vga-hd.md。PIC 使用獨立的第二層解碼；SPRIT 尚未支援。
+偏移契約與外部線索見 docs/re/014-vga-hd.md。PIC／SPRIT 使用獨立的第二層解碼。
 """
 import argparse
 import hashlib
@@ -95,15 +95,22 @@ def main():
     ap.add_argument('--orig', type=Path, required=True)
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--base-palette', type=Path, help='dosgolem 原版收據的 768-byte RGB 色盤，供資產外保留色使用')
+    ap.add_argument('--archives',nargs='+',default=['BIGPIC1.DAX','TITLE.DAX','PIC1.DAX'])
+    ap.add_argument('--manifest',default='inventory.json')
+    ap.add_argument('--no-atlas',action='store_true',help='大量小圖只寫各件與清單，避免建立巨幅總覽')
     a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
     items, tiles = [], []
     base_palette = a.base_palette.read_bytes() if a.base_palette else None
-    for name in ('BIGPIC1.DAX', 'TITLE.DAX', 'PIC1.DAX'):
+    if Path(a.manifest).name!=a.manifest:raise ValueError('manifest 須為單一檔名')
+    known={'BIGPIC1.DAX','TITLE.DAX','PIC1.DAX','SPRIT1.DAX','CPIC1.DAX','CBODY.DAX',
+           'CHEAD.DAX','COMSPR.DAX','DUNGCOM.DAX','WILDCOM.DAX','SKYGRND.DAX','BACK1.DAX'}
+    if not set(a.archives)<=known:raise ValueError('未辨識的圖族，不套用候選格式')
+    for name in a.archives:
         path = a.orig / name
         raw = path.read_bytes()
         for bid, decoded in dax_blocks(raw):
-            parser=sprite_vga if name=='PIC1.DAX' else block_vga
+            parser=sprite_vga if name in {'PIC1.DAX','SPRIT1.DAX'} else block_vga
             w, h, frames, palette, start, pal_end = parser(decoded, base_palette)
             for frame, px in enumerate(frames):
                 key = f'{path.stem.lower()}-{bid:03d}' + (f'@{frame}' if len(frames)>1 else '')
@@ -116,17 +123,19 @@ def main():
                                   width=w, height=h, decoded_sha256=sha(decoded), indexed_sha256=sha(px),
                                   palette_sha256=sha(palette), pixel_offset=start, palette_end=pal_end,
                                   evidence_level='strong inference', runtime_observed=False))
-                tile=Image.new('RGB',(640,h*2+28),'#242424')
-                ImageDraw.Draw(tile).text((8,7),key,fill='white')
-                tile.paste(im.convert('RGB').resize((w*2,h*2),Image.Resampling.NEAREST),(8,28))
-                tiles.append(tile)
-    sheet=Image.new('RGB',(1280,sum(max(t.height for t in tiles[i:i+2]) for i in range(0,len(tiles),2))),'#242424')
-    y=0
-    for i in range(0,len(tiles),2):
-        for x,t in enumerate(tiles[i:i+2]):sheet.paste(t,(x*640,y))
-        y+=max(t.height for t in tiles[i:i+2])
-    sheet.save(a.out/'atlas.png')
-    (a.out/'inventory.json').write_text(json.dumps({'items':items,
+                if not a.no_atlas:
+                    tile=Image.new('RGB',(640,h*2+28),'#242424')
+                    ImageDraw.Draw(tile).text((8,7),key,fill='white')
+                    tile.paste(im.convert('RGB').resize((w*2,h*2),Image.Resampling.NEAREST),(8,28))
+                    tiles.append(tile)
+    if tiles:
+        sheet=Image.new('RGB',(1280,sum(max(t.height for t in tiles[i:i+2]) for i in range(0,len(tiles),2))),'#242424')
+        y=0
+        for i in range(0,len(tiles),2):
+            for x,t in enumerate(tiles[i:i+2]):sheet.paste(t,(x*640,y))
+            y+=max(t.height for t in tiles[i:i+2])
+        sheet.save(a.out/'atlas.png')
+    (a.out/a.manifest).write_text(json.dumps({'items':items,
         'base_palette_sha256':sha(base_palette) if base_palette else None},ensure_ascii=False,indent=2)+'\n')
     print(f'{len(items)} 個 VGA 影像狀態；執行期依觀測收據分別驗證')
 

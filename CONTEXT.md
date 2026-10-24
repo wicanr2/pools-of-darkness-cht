@@ -58,7 +58,7 @@
 | G6 覆繪接入 | #7 | 完成：冷開機、建角、存讀檔、選單收據；自動探索兩輪（使用者指示到此為止） | docs/re/007、010 |
 | G7 手札與查驗題 | #8 | 完成：查驗題 54 題 CONFORMED；手札實機觸發第 57 則、面板自動開出 | docs/re/008、009 |
 | G8 攻略與地圖 | #9 | 攻略 78 段，地名與已定專名對齊；32 塊 GEO 雜湊、24 個 GEO 名稱、東西菲蘭 5 個攻略點共 7 格。兩城 2／3 倍 A/B 通過；已有正常冷開機讀檔與面板切換收據。其餘 8 個名稱、未觀測地點與共用場景未驗，#9 保持開啟 | docs/re/011–013；規格 008、009 READY |
-| G9 HD | #10、#18、#19 | 首批畫風已確認；BIGPIC 7 塊、TITLE 3 塊、PIC 49 塊共 91 個狀態已盤點。4 張重畫通過數值驗收，正接入已證實的兩張 DEMO 圖 | docs/re/014；規格 010 局部 READY |
+| G9 HD | #10、#18、#19 | 首批畫風已確認；兩張 PIC 接入，正常冷啟動 DEMO 到戰鬥閃現 0，同狀態、2 倍、F12／F2 對應動作與失配回退通過。PIC 全量重畫與動畫驗收中；另解出其他圖族 817 個候選狀態，尚未接入 | docs/re/014；規格 010 局部 READY |
 | README | #17 | 故事背景、原版 BIGPIC、HD 預覽與兩組繁中＋HD 實際 DEMO 截圖已寫 | README.md |
 | G10–G11 | #11–#12 | 未開始 | — |
 | 規格 018–021 | #13–#16 | 未開始；019、020 的程式由前作沿用，未驗 | docs/spec/000-index.md |
@@ -70,6 +70,7 @@
 | 要做什麼 | 從哪裡開始 |
 |---|---|
 | 從冷開機看中文畫面 | `tools/play-smoke.sh`（pod-play，xvfb）；送鍵腳本格式見腳本註解 |
+| 從冷開機看已接入的 HD | `tools/g9-hd-play-receipt.sh demo`；`switch` 驗前端切換。需本機 `workplace/hd/theme/` 與已建置 pod-play；同狀態收據掛載契約見研究 014 |
 | 從遊戲中的狀態接著做 | `workplace/probe/states/g6r-*.state`（建角、存讀檔各段，`tools/g6-stage.sh` 說明怎麼重播）；街上起點 `workplace/probe/g6-town/town.state` 與同目錄 `scratch/`；叛徒門觸發後 `workplace/probe/g6-explore/town1/end.state` |
 | 盤點新地圖的缺譯 | `tools/g6-explore.sh <名稱> <狀態檔> [-yes …]`，再 `tools/g6-misses.sh <inv.tsv>` |
 | 改譯文後 | `tools/font-dev.sh` 重建字型、`tools/font_coverage.py` 查缺字，再跑受影響的收據 |
@@ -100,7 +101,7 @@
 
 | 項目 | 值 |
 |---|---|
-| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作分支頂端 `ad17b65`（規格 430–433 CONFORMED；G8 地圖與初始化防護、前端讀檔路徑、同狀態與鍵盤測試），保存到本 repo 的 `dosgolem/pod` |
+| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作分支頂端 `e5c94ff`，在 `ad17b65` 上加 HD 收據的前端倍率動作與鍵名隔離檢查；保存到本 repo 的 `dosgolem/pod` |
 | Go／image | go1.24.13；`dosgolem-go-ebiten:1.24-r1` `sha256:8ed6bdee2bce…` |
 | 冷啟動 | 0 種缺服務；mode 13h；`START.BAT` 程式鏈；片頭送空白鍵跳過，製作群後送 `p` 進建立隊伍主選單。收據 `tools/g2-startup-receipt.sh`，見 [docs/re/003](docs/re/003-dosgolem-startup.md) |
 | adapter | `apps/pod/`（由 `apps/sosb/` 複製，路徑 A／B／C 換本作常數與 13h 換算）；`cmd/pod-overlay-shot`；自動探索 `cmd/pod-explore`（由 `cmd/sosb-explore` 複製） |

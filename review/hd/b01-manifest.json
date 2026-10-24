@@ -25,7 +25,19 @@
       "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 912 by 360 pixels, panoramic aspect ratio 304:120, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve the exact coastal city panorama: turbulent turquoise sea across the middle, storm-dark gray sky, pale distant mountains, green cliffs, cream buildings and red tiled roofs on both sides. Keep every coastline, tower, roof, tree group and horizon at its original relative position. Do not add people, ships, monsters, lettering or extra buildings.",
       "comparison_file": "b01-bigpic1-243-comparison.png",
       "comparison_sha256": "7eddb55262dfeb84115a6fb43eaf41f3c5ff5778a54b66f8d20773d6a43d5232",
-      "numeric_acceptance": "not-yet-calibrated-for-pod-vga"
+      "numeric_acceptance": {
+        "key": "bigpic1-243",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.4777223146607506,
+        "median_hue_difference_degrees": 9.912426035502932,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "7b1db02f0cd2249346ff6e51b814bc1863f931e4d10f6d5d088f82e8ed0e9c1f"
+      },
+      "final_rgba_png": "b01-bigpic1-243.png",
+      "final_rgba_sha256": "7b1db02f0cd2249346ff6e51b814bc1863f931e4d10f6d5d088f82e8ed0e9c1f",
+      "alpha": "RGBA, all 255"
     },
     {
       "key": "bigpic1-246",
@@ -47,7 +59,19 @@
       "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 912 by 360 pixels, panoramic aspect ratio 304:120, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve the exact fantasy battle composition: the large winged fiery orange and yellow creature dominates the left, reaching toward the right; the blue-white magical burst and robed spellcaster remain on the right. Preserve the wings, face, arms, hands, projectiles, purple ground and small green lights at their original relative positions. Do not add characters, weapons, lettering, frames or effects.",
       "comparison_file": "b01-bigpic1-246-comparison.png",
       "comparison_sha256": "6aa40e36003820438f57a6941ea7846242feacb99f8508b50ed6bf6323185d99",
-      "numeric_acceptance": "not-yet-calibrated-for-pod-vga"
+      "numeric_acceptance": {
+        "key": "bigpic1-246",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.49103346274727305,
+        "median_hue_difference_degrees": 12.260294854432393,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "358f0c02aae45bd752d254fd7062df284f04314a6abd23fb2718de41d32bf220"
+      },
+      "final_rgba_png": "b01-bigpic1-246.png",
+      "final_rgba_sha256": "358f0c02aae45bd752d254fd7062df284f04314a6abd23fb2718de41d32bf220",
+      "alpha": "RGBA, all 255"
     }
   ],
   "style_approval": {
