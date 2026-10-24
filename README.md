@@ -26,19 +26,20 @@
 繁中已驗證冷啟動、建角、存讀檔、查驗題與部分探索路徑。人物 HD 主題的 81 個狀態已完成，去重後 78 項，
 已接入並做正常 DEMO 抽樣。七張 BIGPIC 已重畫，執行期接入仍在驗證；其他圖族尚在製作。
 首批三種戰鬥怪物共六個狀態與兩張石牆也已接入，通過正常冷啟動、倍率與原版切換抽樣。
+開場封面、世界標誌與製作名單已接入，可用 F8 切換繁中與英文。
 完整現況與驗證範圍見 [CONTEXT.md](CONTEXT.md)。
 
 ## 畫面介紹
 
 ### 遊戲封面：原版與 HD
 
-| 原版封面 | HD 重畫預覽 |
+| 原版封面 | 繁中 HD 實際畫面 |
 |---|---|
-| ![原版遊戲封面](docs/screenshots/game-cover-original.png) | ![繁中 HD 封面重畫預覽](docs/screenshots/game-cover-hd-preview.png) |
+| ![原版遊戲封面](docs/screenshots/game-cover-original.png) | ![正常冷啟動的繁中 HD 封面](docs/screenshots/game-cover-hd.png) |
 
-左圖為遊戲內 `TITLE.DAX` 第 2 塊封面，3 倍顯示。HD 採完整藍紫色禮服，保留女王、王冠與寶座構圖。
-標題文字與美術分離，可依語系渲染，另見[英文 HD 預覽](docs/screenshots/game-cover-hd-preview-en.png)。
-封面目前為重畫預覽，正式遊戲接入仍在驗證。
+左圖由 `TITLE.DAX` 第 2 塊解碼，與正常冷啟動原版畫面逐像素一致；右圖是實際遊戲截圖。
+HD 採完整藍紫色禮服，保留女王、王冠與寶座構圖。標題文字與美術分離，F8 可切為[英文 HD 封面](docs/screenshots/game-cover-hd-en.png)。
+另見[含兩側海報的完整封面視窗](docs/screenshots/game-cover-window.png)。三張開場圖與語系切換的原版狀態比較、零閃現範圍見[開場驗收](docs/re/014-vga-hd.md#開場與英文正常路徑驗收)。
 
 ### 原版 BIGPIC 與 HD 重畫
 
@@ -92,7 +93,7 @@ HD、無 HD、F12 原版及 2 倍四路的 CPU、記憶體、色號、色盤與 
 
 固定加寬保留中央遊戲尺寸。3 倍為 1440×600，中央 960×600；2 倍為 960×400，中央 640×400。
 兩側採用[官方商店的原版插畫](https://store.steampowered.com/app/1904522/Pools_of_Darkness/)，
-標題與文案跟隨目前語系，F12 切回英文。
+標題與文案跟隨目前語系，F8 切換繁中／英文，F12 切回英文原版。
 另見[英文原版模式](docs/screenshots/demo-poster-en.png)與[2 倍畫面](docs/screenshots/demo-poster-2x.png)。
 這些是實際遊戲視窗截圖，來源與驗證範圍見[海報紀錄](docs/re/015-side-posters.md)。
 

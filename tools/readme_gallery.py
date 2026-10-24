@@ -39,16 +39,53 @@ def add_battle(root, commit, runtime):
     print('README 戰鬥三圖：原版／繁中HD中央精確裁切及完整視窗，來源雜湊通過。')
 
 
+def add_titles(root,commit,runtime):
+    out=root/'docs/screenshots';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+    report=json.loads((runtime/'summary.json').read_text())
+    if not report['all_pass']or report['flashes']or len(report['poster_checks'])!=17:raise ValueError('正常開場驗收未完成')
+    original=rgba_file(out/'game-cover-original.png')
+    if not np.array_equal(original,rgba_file(runtime/'base/shots/pod-f001100.png')):raise ValueError('原版封面不符正常冷啟動')
+    manifest=json.loads((out/'manifest.json').read_text());rows=[]
+    for row in manifest['items']:
+        if sha(out/row['file'])!=row['sha256']:raise ValueError('現有展示圖變更')
+    for name,case,frame,locale,whole in [('game-cover-hd.png','hd',1100,'zh-TW',False),
+            ('game-cover-hd-en.png','switch',1106,'en',False),('game-cover-window.png','hd',1100,'zh-TW',True)]:
+        folder='window-shots'if whole else'shots';source=runtime/case/folder/f'pod-f{frame:06d}.png'
+        candidates=report['poster_checks']if whole else report['screenshots']
+        expected=next(v['sha256']for v in candidates if v['case']==case and v['frame']==frame)
+        if sha(source)!=expected:raise ValueError('開場收據已變更')
+        image=Image.open(source).convert('RGBA');image.save(out/name)
+        if not whole:
+            preview=out/('game-cover-hd-preview.png'if locale=='zh-TW'else'game-cover-hd-preview-en.png')
+            if not np.array_equal(np.array(image),rgba_file(preview)):raise ValueError('偏離使用者核准的封面')
+        rows.append(dict(file=name,kind='normal-cold-boot-runtime-title',locale=locale,dimensions=list(image.size),
+            source=str(source.relative_to(root)),source_sha256=sha(source),sha256=sha(out/name),dosgolem_commit=commit,
+            research='docs/re/014-vga-hd.md',issue='https://github.com/wicanr2/pools-of-darkness-cht/issues/26'))
+    for row in rows:manifest['items']=[v for v in manifest['items']if v['file']!=row['file']]+[row]
+    (out/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+    (out/'title-receipt.json').write_text(json.dumps(dict(runtime_receipt_sha256=sha(runtime/'summary.json'),
+        dosgolem_commit=commit,screenshots=rows),ensure_ascii=False,indent=2)+'\n')
+    print('正常冷啟動封面三圖已匯入README；核准服裝及標題完全相同。')
+
+
+def rgba_file(path):return np.array(Image.open(path).convert('RGBA'))
+
+
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--root',type=Path,required=True)
     ap.add_argument('--dosgolem-commit',required=True)
     ap.add_argument('--battle',type=Path,help='已通過四路正常戰鬥驗收的收據根')
+    ap.add_argument('--titles',type=Path,help='已通過正常開場及語系切換的收據根')
+    ap.add_argument('--ui-runtime',type=Path,help='相同正常讀檔路線的新地圖／工具列收據根')
     a=ap.parse_args()
     if a.battle:
         add_battle(a.root,a.dosgolem_commit,a.battle)
         return
-    p=a.root;out=p/'docs/screenshots';runtime=p/'workplace/probe/readme-ui'
+    if a.titles:
+        add_titles(a.root,a.dosgolem_commit,a.titles)
+        return
+    p=a.root;out=p/'docs/screenshots';runtime=a.ui_runtime or p/'workplace/probe/readme-ui'
     sha=lambda f:hashlib.sha256(f.read_bytes()).hexdigest()
     result=json.loads((out/'manifest.json').read_text())
     for row in result['items']:

@@ -15,9 +15,9 @@ def tree(root):
             for p in sorted(root.rglob('*')) if p.is_file()}
 
 
-def record(path):
+def record(path, binary='/app/pod-play-vga'):
     inputs = {name: tree(Path('/' + name)) for name in ('orig', 'font', 'text', 'theme')}
-    inputs['binary_sha256'] = sha(Path('/app/pod-play-vga').read_bytes())
+    inputs['binary_sha256'] = sha(Path(binary).read_bytes())
     Path(path).write_text(json.dumps(inputs, ensure_ascii=False, indent=2) + '\n')
 
 
@@ -47,7 +47,7 @@ def check(root, theme):
         assert np.all(original[:, :, 3] == 255)
         saved = tree(folder / 'save')
         frontend = {'pod-map-visited.txt', 'pod-journal-seen.txt', 'pod-walkthrough-pos.txt',
-                    'pod-language.txt', 'pod-speed.txt', 'pod-barfont.txt'}
+                    'pod-lang.txt', 'pod-speed.txt', 'pod-barfont.txt'}
         guest = {k: v for k, v in saved.items() if k not in frontend}
         cases[name] = dict(end=end.groups(), digest=digest.groups(), idx=idx, pal=pal, center=center,
                            original=original, guest=guest, inputs=json.loads((folder / 'inputs.json').read_text()),
@@ -113,11 +113,12 @@ def check(root, theme):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--record')
+    parser.add_argument('--record-binary', default='/app/pod-play-vga')
     parser.add_argument('--out', type=Path)
     parser.add_argument('--theme', type=Path)
     args = parser.parse_args()
     if args.record:
-        record(args.record)
+        record(args.record, args.record_binary)
     else:
         assert args.out and args.theme
         check(args.out, args.theme)

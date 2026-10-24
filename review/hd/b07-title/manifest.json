@@ -1,0 +1,114 @@
+{
+  "issue": 26,
+  "status": "art and localized type preview; runtime separate",
+  "items": [
+    {
+      "key": "title-001",
+      "source": {
+        "key": "title-001",
+        "source_file": "TITLE.DAX",
+        "source_file_sha256": "8a53adf4044527df86d2d983f6c4eeee440c3d09773e7cbd4166279ccafde757",
+        "block": 1,
+        "packed_file_offset": 29,
+        "decoded_sha256": "fd4a759bd8a720954391b7b27cc8a016715fe081376260dcafe0ee845dc249af",
+        "source_size": [
+          320,
+          200
+        ],
+        "output_size": [
+          960,
+          600
+        ],
+        "reference_1x": "title-001-1x.png",
+        "reference_3x": "title-001-3x.png",
+        "reference_1x_sha256": "110eef8895c618eb56c7a70dfef88696a3cd9a181cdfdc204ddbe47417039899",
+        "reference_3x_sha256": "2c3d5ceaac2c7edbf89f39f3e0df3c7acae4131fc16cbe724fa0ab777b8dbcd2",
+        "indexed": "title-001.idx",
+        "indexed_sha256": "f61a14b25fe8e4921b9da854e15f1cc60475ec75ce2147e15b7d1dfc5525db0c",
+        "palette": "title-001.pal",
+        "palette_sha256": "17dc586aa5241390980763e8b5abf9db044d3ad788a2b2bdd5d6d285325b2acf",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 960 by 600 pixels, aspect ratio 320:200, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "output_size": [
+        960,
+        600
+      ],
+      "plate_sha256": "eb991f476d1e47fddd64bcb3a84662af053afaf59e2dac683c6dadb017afa78b",
+      "generation": {
+        "key": "title-001",
+        "version": 0,
+        "prompt": "Use case: style-transfer. Edit this original 960x600 retro fantasy game opening card into a faithful smooth hand-painted fantasy HD BACKGROUND PLATE, retaining EXACT layout and original colors. Keep the dark crimson-to-black background; long horizontal blue-gray carved stone plaque spanning from about x24 to936, y185 to368; ornate gold/copper inner edging with the raised round central medallion and small corner details. Keep the same overall geometry, stone slab silhouette, scale, spacing, framing and lighting. REMOVE ALL TEXT AND LETTERING: remove the tiny top A, every gold title letter inside the plaque, and both subtitle lines below. Fill only where letters were with matching dark carved stone inside the plaque and quiet dark crimson below. This empty background will receive precisely localized text in the game, so leave the inner plaque broad and uncluttered. Fine controlled 1990s hand-painted fantasy brushwork, weathered stone and hammered gold, no visible pixel squares, no modern 3D. No new symbols, no people, no landscape, no extra ornamentation, no watermark. Target aspect8:5,960x600.",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-dd33dfe0-7db9-4a28-9744-949684687977.png",
+        "status": "generated-background-plate-awaiting-localized-text-and-validation",
+        "generation": "built-in image_gen image edit",
+        "text_policy": "all lettering removed; localized TSV rendered separately",
+        "raw_sha256": "d11378a8456e7b6e58e12bf51d73fb75bccc3d209b2f342245a1aa5ca2c36707"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope; localized type uses OFL font"
+    },
+    {
+      "key": "title-003",
+      "source": {
+        "key": "title-003",
+        "source_file": "TITLE.DAX",
+        "source_file_sha256": "8a53adf4044527df86d2d983f6c4eeee440c3d09773e7cbd4166279ccafde757",
+        "block": 3,
+        "packed_file_offset": 99295,
+        "decoded_sha256": "d2981152e8a92b3515588e335415e7f0a8519092717f5ab83311be74788b93c4",
+        "source_size": [
+          320,
+          200
+        ],
+        "output_size": [
+          960,
+          600
+        ],
+        "reference_1x": "title-003-1x.png",
+        "reference_3x": "title-003-3x.png",
+        "reference_1x_sha256": "87e4eeee37bb98e35426debb80421af505fcdead99935bb4a6af5ddeff174fec",
+        "reference_3x_sha256": "27b5e4e7ef46b4f433068a1d5a2811f7a104a8c848e9eb4c54cb58189d2b005c",
+        "indexed": "title-003.idx",
+        "indexed_sha256": "2c2f516bb9bd70302ee85b953673eb82f94c3ded401ac1e5968ae65e1e207396",
+        "palette": "title-003.pal",
+        "palette_sha256": "17dc586aa5241390980763e8b5abf9db044d3ad788a2b2bdd5d6d285325b2acf",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 960 by 600 pixels, aspect ratio 320:200, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "output_size": [
+        960,
+        600
+      ],
+      "plate_sha256": "baf695130dccd2851e713c50e16fee04b074b9752201207da8d6c78bfe31cf65",
+      "generation": {
+        "key": "title-003",
+        "version": 0,
+        "prompt": "Use case: style-transfer. Edit the original 960x600 retro fantasy credits card into a faithful smooth hand-painted fantasy HD BACKGROUND PLATE. Preserve the EXACT layout and original blue-gray slate panels on a dark crimson-black background. Keep the wide thin top panel around [69,6,810,48], three small panels in the upper left and one tall lower-left panel, a tall upper-right panel and a lower-right panel. All rectangular panels remain at the source positions and sizes with the same gaps and restrained diagonal stone grain, pale upper-left bevel, darker lower-right shadow. REMOVE EVERY LETTER AND ALL WORDS from ALL panels, leaving clean stone surfaces; exact localized credits will be drawn separately by code. Do not merge panels, add panels, round corners, change the composition or change palette. Hand-painted1990s fantasy, finely textured blue-gray stone, smooth brushwork, no visible pixel squares and no modern3D. No new decoration, no lettering, no symbols, no characters, no watermark. Target aspect8:5,960x600.",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-656d7526-f2ad-4540-88a2-04bf427221d5.png",
+        "status": "generated-background-plate-awaiting-localized-text-and-validation",
+        "generation": "built-in image_gen image edit",
+        "text_policy": "all lettering removed; localized TSV rendered separately",
+        "raw_sha256": "867b4e603237391388bf269a625c774f0769a65d78b2a426b10ff700792d63f8"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope; localized type uses OFL font"
+    }
+  ],
+  "request_manifest_sha256": "31727ff1ce79ec0367f80e96c4aa0907df3d3afacf3bc20908359a81fc5f2ed8",
+  "visual_outputs": {
+    "title-001.zh-TW.png": "c8451ded28f6638dad004dc1f0266475dc7a162b8c69425f40fd185c9d657880",
+    "title-001.en.png": "d6671b4d3118bca0229fec0389950d5ee59d64acc1e4d978491eb8f153a64dca",
+    "title-003.zh-TW.png": "e8467d0901e661ffea13a7ebdff13046b8b97cd5ca0182c25ce1bb6c8f7aed66",
+    "title-003.en.png": "3304a70fc5a781ac1535596645c3a2be27e27fc1a811d6a61346e31678830820"
+  },
+  "text_sha256": {
+    "zh-TW": "22bc9e8b1192d75920d6ea0d3d3b1e7acbb5c6cbfee9e58745079969315f9d1d",
+    "en": "8cf32af2ae5c8e9659414cc1a4c00a180ddb1a0952d661b61e6b12cca13def62"
+  },
+  "font_sha256": "050f9ebf394faab3c0ba59092ae3e4b6686b349eadb3018d76d385c5829a1267",
+  "text_policy": "原版圖上的文字另由正式TSV渲染，數值驗收不將不同語系字形視為同一圖案",
+  "private_only": true
+}

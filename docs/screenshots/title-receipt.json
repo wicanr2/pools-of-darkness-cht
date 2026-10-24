@@ -1,0 +1,51 @@
+{
+  "runtime_receipt_sha256": "74ba5b5f5f9c5add5d7f3b7b910ea801e2e9d9dcc2617bb678a632072ecc4469",
+  "dosgolem_commit": "f3d019e",
+  "screenshots": [
+    {
+      "file": "game-cover-hd.png",
+      "kind": "normal-cold-boot-runtime-title",
+      "locale": "zh-TW",
+      "dimensions": [
+        960,
+        600
+      ],
+      "source": "workplace/probe/g9-hd/title-play-v3/hd/shots/pod-f001100.png",
+      "source_sha256": "ac4a58fde168951f0315053059f4b31b3927e161679064db332b80dec338a5ce",
+      "sha256": "b8bbc88aa9ab4b288a12fa3c52327cde9c74391a6ceeafa7df4a13c6ee62ef12",
+      "dosgolem_commit": "f3d019e",
+      "research": "docs/re/014-vga-hd.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/26"
+    },
+    {
+      "file": "game-cover-hd-en.png",
+      "kind": "normal-cold-boot-runtime-title",
+      "locale": "en",
+      "dimensions": [
+        960,
+        600
+      ],
+      "source": "workplace/probe/g9-hd/title-play-v3/switch/shots/pod-f001106.png",
+      "source_sha256": "f5456e8324ba7ba5c7095933e7576dc954f1fba543b412b007d3051c061cc993",
+      "sha256": "3fe93a0a9f91a56d70cf8ab1825ce4891ef1768584a4851e5a7838a25c4411e4",
+      "dosgolem_commit": "f3d019e",
+      "research": "docs/re/014-vga-hd.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/26"
+    },
+    {
+      "file": "game-cover-window.png",
+      "kind": "normal-cold-boot-runtime-title",
+      "locale": "zh-TW",
+      "dimensions": [
+        1440,
+        600
+      ],
+      "source": "workplace/probe/g9-hd/title-play-v3/hd/window-shots/pod-f001100.png",
+      "source_sha256": "cad7554979803f21ccaf7f147cedaefa90d99df6216a616e728103a90b6928bc",
+      "sha256": "496fc8e83526fe2c3ae8534c8c7ac314aa9163d539a8ec8a811659ab3cfdb366",
+      "dosgolem_commit": "f3d019e",
+      "research": "docs/re/014-vga-hd.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/26"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "all_pass": true,
+  "scope": "正常冷啟動三張TITLE、F8繁中英文、F2、F12；未知語系／改色／底列另見真實畫格測試",
+  "state": [
+    "1250",
+    "120312500",
+    "6b4037cd6d960491351a95e23fdc84b30334ce6910c9017ee057515e0339aff7",
+    "2c2f516bb9bd70302ee85b953673eb82f94c3ded401ac1e5968ae65e1e207396",
+    "9af2b5a6eae042cdd661f7af212ae4b13e22f0ef9fb6aee743bcb2b6c368a398",
+    "17dc586aa5241390980763e8b5abf9db044d3ad788a2b2bdd5d6d285325b2acf"
+  ],
+  "guest_files": 127,
+  "guest_state_equal": true,
+  "binary_sha256": "2654ff7615532378865cde61f761740e9a3e8f1d3c1828fd993be68c658870cd",
+  "inputs_sha256": "e51cda344803c2bd8d526fbc4006d0bc622bca0d94cce372615785f0e9b68f5d",
+  "flashes": 0,
+  "screenshots": [
+    {
+      "case": "hd",
+      "key": "title-001",
+      "frame": 1000,
+      "sha256": "59bbd52d32ee31e1dcc9848be7558898b3de7b446d037321196d316bce4fcc0c",
+      "locale": "zh-TW"
+    },
+    {
+      "case": "switch",
+      "key": "title-001",
+      "frame": 1000,
+      "sha256": "59bbd52d32ee31e1dcc9848be7558898b3de7b446d037321196d316bce4fcc0c",
+      "locale": "zh-TW"
+    },
+    {
+      "case": "switch",
+      "key": "title-001",
+      "frame": 1006,
+      "sha256": "5c660b892a55e5982ef0854cafd98b12cac39bebe688aeddf42bc4d36917e775",
+      "locale": "en"
+    },
+    {
+      "case": "hd",
+      "key": "title-002",
+      "frame": 1100,
+      "sha256": "ac4a58fde168951f0315053059f4b31b3927e161679064db332b80dec338a5ce",
+      "locale": "zh-TW"
+    },
+    {
+      "case": "switch",
+      "key": "title-002",
+      "frame": 1100,
+      "sha256": "ac4a58fde168951f0315053059f4b31b3927e161679064db332b80dec338a5ce",
+      "locale": "zh-TW"
+    },
+    {
+      "case": "switch",
+      "key": "title-002",
+      "frame": 1106,
+      "sha256": "f5456e8324ba7ba5c7095933e7576dc954f1fba543b412b007d3051c061cc993",
+      "locale": "en"
+    },
+    {
+      "case": "hd",
+      "key": "title-003",
+      "frame": 1200,
+      "sha256": "4f057bba2b1949417f8ad01b05b8da219a07ca555dac4b5c4f4ac6e7e6c52d84",
+      "locale": "zh-TW"
+    },
+    {
+      "case": "switch",
+      "key": "title-003",
+      "frame": 1200,
+      "sha256": "4f057bba2b1949417f8ad01b05b8da219a07ca555dac4b5c4f4ac6e7e6c52d84",
+      "locale": "zh-TW"
+    },
+    {
+      "case": "switch",
+      "key": "title-003",
+      "frame": 1206,
+      "sha256": "49d2cbce27915aef0cb90499e475e933301b3b317f69ba00edb8790eda15919c",
+      "locale": "en"
+    }
+  ],
+  "poster_checks": [
+    {
+      "case": "hd",
+      "frame": 1000,
+      "locale": "zh-TW",
+      "scale": 3,
+      "sha256": "aebd94734b84ba3cde1eb714dd099114e3c5e6b698013e842443f332edbc9508"
+    },
+    {
+      "case": "hd",
+      "frame": 1100,
+      "locale": "zh-TW",
+      "scale": 3,
+      "sha256": "cad7554979803f21ccaf7f147cedaefa90d99df6216a616e728103a90b6928bc"
+    },
+    {
+      "case": "hd",
+      "frame": 1200,
+      "locale": "zh-TW",
+      "scale": 3,
+      "sha256": "3621eee8d36923ec0a4c037f8293ed68e94c50abc2c7b87c4c87ca7490baab04"
+    },
+    {
+      "case": "base",
+      "frame": 1000,
+      "locale": "zh-TW",
+      "scale": 3,
+      "sha256": "da5f8ff9dad82b044a3ea5dfb6c225c9e1435e0f1e573f3df55f16fcdbb3adc9"
+    },
+    {
+      "case": "base",
+      "frame": 1100,
+      "locale": "zh-TW",
+      "scale": 3,
+      "sha256": "65a081d8288c9c2171d8face6ac62468f473a14b75dc2d10f55669f53f622ba8"
+    },
+    {
+      "case": "base",
+      "frame": 1200,
+      "locale": "zh-TW",
+      "scale": 3,
+      "sha256": "d867f4643b5718b305c4d4149ae8ab8f8ff718ed7de8091d0012bb330bda630c"
+    },
+    {
+      "case": "switch",
+      "frame": 1000,
+      "locale": "zh-TW",
+      "scale": 3,
+      "sha256": "aebd94734b84ba3cde1eb714dd099114e3c5e6b698013e842443f332edbc9508"
+    },
+    {
+      "case": "switch",
+      "frame": 1006,
+      "locale": "en",
+      "scale": 3,
+      "sha256": "6ebda8d474f91f141a942a5028bfa14539f6b2904a66f19ec2ca4fee6611df1a"
+    },
+    {
+      "case": "switch",
+      "frame": 1100,
+      "locale": "zh-TW",
+      "scale": 3,
+      "sha256": "cad7554979803f21ccaf7f147cedaefa90d99df6216a616e728103a90b6928bc"
+    },
+    {
+      "case": "switch",
+      "frame": 1106,
+      "locale": "en",
+      "scale": 3,
+      "sha256": "6b9a14ddf3d0da13d5ffb9d55c096289019195562320b8e8828dbb2e4e42403b"
+    },
+    {
+      "case": "switch",
+      "frame": 1200,
+      "locale": "zh-TW",
+      "scale": 3,
+      "sha256": "3621eee8d36923ec0a4c037f8293ed68e94c50abc2c7b87c4c87ca7490baab04"
+    },
+    {
+      "case": "switch",
+      "frame": 1206,
+      "locale": "en",
+      "scale": 3,
+      "sha256": "361359e73a0f2ec6f8a52147cc2d4d6ba942600faa3775274da625504cc43d3a"
+    },
+    {
+      "case": "switch",
+      "frame": 1211,
+      "locale": "zh-TW",
+      "scale": 3,
+      "sha256": "3621eee8d36923ec0a4c037f8293ed68e94c50abc2c7b87c4c87ca7490baab04"
+    },
+    {
+      "case": "switch",
+      "frame": 1216,
+      "locale": "zh-TW",
+      "scale": 2,
+      "sha256": "bd17958442a163939d2dedf0b6719cd5a80f45d085d67177785ad5db953d72eb"
+    },
+    {
+      "case": "switch",
+      "frame": 1221,
+      "locale": "zh-TW",
+      "scale": 3,
+      "sha256": "3621eee8d36923ec0a4c037f8293ed68e94c50abc2c7b87c4c87ca7490baab04"
+    },
+    {
+      "case": "switch",
+      "frame": 1226,
+      "locale": "en",
+      "scale": 3,
+      "sha256": "6541818cf1b4ff52a735aab4f58f1b58aadbf971c6bab9f9970ae6e0ad1b41a7"
+    },
+    {
+      "case": "switch",
+      "frame": 1231,
+      "locale": "zh-TW",
+      "scale": 3,
+      "sha256": "3621eee8d36923ec0a4c037f8293ed68e94c50abc2c7b87c4c87ca7490baab04"
+    }
+  ]
+}

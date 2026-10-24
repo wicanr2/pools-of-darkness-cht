@@ -1,0 +1,30 @@
+{
+  "all_pass": true,
+  "scope": "英文前端及2210格正常DEMO對話；英文手札、攻略及其他語系未完成",
+  "original_state": [
+    "2210",
+    "212712500",
+    "407acf3df80edac1df653803d20563f2e233633ca755a4101b1bc84ae4a7af0e",
+    "fdcb9523281066334cc302987e63e467e3a703c6739983fe5b9a56ce68335102"
+  ],
+  "original_memory_index_equal": true,
+  "guest_files": 127,
+  "guest_files_equal": true,
+  "flashes": 0,
+  "missing_glyphs": false,
+  "screenshots": [
+    {
+      "frame": 2050,
+      "sha256": "c9f075c108ed0ddfecddce7dbb4959e00f6c73d6b9f48b797f52728973e2073e",
+      "changed_pixels_outside_portrait": 27731
+    },
+    {
+      "frame": 2200,
+      "sha256": "c9f075c108ed0ddfecddce7dbb4959e00f6c73d6b9f48b797f52728973e2073e",
+      "changed_pixels_outside_portrait": 27731
+    }
+  ],
+  "binary_sha256": "2654ff7615532378865cde61f761740e9a3e8f1d3c1828fd993be68c658870cd",
+  "baseline_run_log_sha256": "9e6e8f36fa9a82dde9a8265ac195f2684b2e3804c8472d5324181aede1a93d40",
+  "run_log_sha256": "842efb08cd3cb605fd6ded90589d6488cfe47c78bc72fe2a51142ac9c438aa41"
+}

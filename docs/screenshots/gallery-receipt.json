@@ -7,15 +7,15 @@
     "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d"
   ],
   "original_state_equal_to_previous": true,
-  "dosgolem_commit": "a73fb2e",
-  "binary_sha256": "a02a9cca766cec644b3d479084f5835050e80442243a92f7aee8f90c3bf1cc25",
-  "script_sha256": "3b55c209a193eaf5e3d751c0fe201f7be7839028dabf1304e840fc6cff4283b4",
-  "run_log_sha256": "6cd5ac67707d8b622648392accbe33e2f341c64fa95ec3f20d438fd898f95381",
+  "dosgolem_commit": "f3d019e",
+  "binary_sha256": "2654ff7615532378865cde61f761740e9a3e8f1d3c1828fd993be68c658870cd",
+  "script_sha256": "3535ed8402de9451137af275b982f7aa441a00326dc2ddff8fcc680027174aa2",
+  "run_log_sha256": "7324f0320b115356ecf8fe4ff92dd1a40aedd8a5b9f8bc69f66a01c2defed1ef",
   "screenshots": [
     {
       "file": "map-east-phlan.png",
       "kind": "normal-cold-boot-runtime-map",
-      "source": "workplace/probe/readme-ui/window-shots/pod-f004360.png",
+      "source": "workplace/probe/readme-ui-v2/window-shots/pod-f004360.png",
       "source_sha256": "aa9e0402fab715da2460dfd236557b3e57f10800f2fb036c1183d807a83ea56f",
       "sha256": "382ce44486ef532ff3366a098fb0541c2e466ac03a20020c1ccf5789c79d2b6a",
       "dimensions": [
@@ -23,7 +23,7 @@
         600
       ],
       "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/25",
-      "dosgolem_commit": "a73fb2e",
+      "dosgolem_commit": "f3d019e",
       "view": "F7 對應動作，V 全圖；預設只顯示走過區域",
       "research": "docs/re/013-map-identification.md"
     },
@@ -58,15 +58,15 @@
     {
       "file": "toolbar.png",
       "kind": "normal-runtime-toolbar-crop",
-      "source": "workplace/probe/readme-ui/window-shots/pod-f004720.png",
-      "source_sha256": "73e3b35b03fe8f3660cbdd3f08fcd21e1ba8a285005fffbeccd055b369271f9e",
-      "sha256": "d97b2d98dd887ac246092dba701c38b45189fed543986fc6752d3c84f2571c6f",
+      "source": "workplace/probe/readme-ui-v2/window-shots/pod-f004720.png",
+      "source_sha256": "38599b1390bd83a972f909923fd78f7f42ea5e9c7867daf372921a4e3898e77c",
+      "sha256": "d8f2af22562c4a567e915a62c4ba06321fed27f613a45b36fe3347250770a97e",
       "dimensions": [
         960,
         36
       ],
       "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/25",
-      "dosgolem_commit": "a73fb2e",
+      "dosgolem_commit": "f3d019e",
       "crop_rect": [
         240,
         0,
@@ -77,41 +77,41 @@
     {
       "file": "toolbar-window.png",
       "kind": "normal-cold-boot-runtime-toolbar",
-      "source": "workplace/probe/readme-ui/window-shots/pod-f004720.png",
-      "source_sha256": "73e3b35b03fe8f3660cbdd3f08fcd21e1ba8a285005fffbeccd055b369271f9e",
-      "sha256": "4c23d1400622d3cea307e9593c50b7ec633a736e64cfaeb4a0907b9dc75273b6",
+      "source": "workplace/probe/readme-ui-v2/window-shots/pod-f004720.png",
+      "source_sha256": "38599b1390bd83a972f909923fd78f7f42ea5e9c7867daf372921a4e3898e77c",
+      "sha256": "fca0b41c94a71e722403996840e81080a62f1e631e441f89048e5c30e145d236",
       "dimensions": [
         1440,
         600
       ],
       "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/25",
-      "dosgolem_commit": "a73fb2e"
+      "dosgolem_commit": "f3d019e"
     },
     {
       "file": "toolbar-speed-menu.png",
       "kind": "normal-cold-boot-runtime-toolbar-menu",
-      "source": "workplace/probe/readme-ui/window-shots/pod-f004750.png",
-      "source_sha256": "d32c706428cbcc56f1ac141bafcfef2b02f75d70948b7e2a646f8ed5cf39a910",
-      "sha256": "8f29e88805a58332d762d9c19246a1d387b63d35dfeff9e77b3c29101152746f",
+      "source": "workplace/probe/readme-ui-v2/window-shots/pod-f004750.png",
+      "source_sha256": "3a5a166925b3c0ed6e54745f36e6a244ba8dd6d250d9ee47a02bbeeb72ebb42c",
+      "sha256": "4ef4bf2038538b525283359fd69d3ea1f7e13da4333cad3d4416bf025168ba6c",
       "dimensions": [
         1440,
         600
       ],
       "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/25",
-      "dosgolem_commit": "a73fb2e"
+      "dosgolem_commit": "f3d019e"
     },
     {
       "file": "toolbar-font-menu.png",
       "kind": "normal-cold-boot-runtime-toolbar-menu",
-      "source": "workplace/probe/readme-ui/window-shots/pod-f004780.png",
-      "source_sha256": "df32697e6ea274b6c98b0de2aaf22aa64a82fd0bf454abea17feb7cdc3fa6110",
-      "sha256": "ed37c77b8bbbe058cc96c5665fd4ac6847b94ec6f9b8812930b9cc3cb5d51956",
+      "source": "workplace/probe/readme-ui-v2/window-shots/pod-f004780.png",
+      "source_sha256": "29193d5d9683907a195aabd102bbad3597ca441682f0a11880c9081c6fc50626",
+      "sha256": "a48024111b59f4d200fa0238209ce68bd88a3b779c2bf32f95af184ff56647df",
       "dimensions": [
         1440,
         600
       ],
       "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/25",
-      "dosgolem_commit": "a73fb2e"
+      "dosgolem_commit": "f3d019e"
     },
     {
       "file": "game-cover-original.png",

@@ -184,6 +184,8 @@ request ID `c5f4b695-469f-42d8-af35-6cde7382b6b2`。另做完整藍紫色禮服�
 正式文字為 `text/cover.zh-TW.tsv`、`cover.en.tsv`，源泉圓體 Bold，成品 RGBA、alpha 255，已逐張目視。
 此處只完成 README 素材預覽；TITLE 的繪製時機、底列覆寫與正常前端接入仍 DRAFT，未冒稱實際遊戲內 HD 封面。
 
+後續接入已完成，見下方「開場與英文正常路徑驗收」。上段DRAFT為當時素材預覽階段，保留原始紀錄。
+
 ### TITLE 完整來源補證
 
 同一正常冷啟動DEMO以 `-shot-source-dir` 在F10動作匯出原始色號及配對色盤。
@@ -195,3 +197,71 @@ TITLE1、2、3的完整320×200均與原始來源逐色號及用色RGB完全相�
 [014-title-source-proof.json](014-title-source-proof.json)。dosgolem來源擷取程式已保存在`f08d961`，
 原始擷取於其前一階段未提交的相同只讀匯出實作，Go1.24.13。
 來源收據 `workplace/probe/g9-hd/vga-transition/sources/`。TITLE接入另由#26推進，不把來源已解出算成執行期HD完成。
+
+TITLE每塊提供完整256色色盤，外層解壓後偏移8為0、9為255；RGB8雜湊與上述正常完整畫格相同。
+文字來源：[title.zh-TW.tsv](../../text/title.zh-TW.tsv)、[title.en.tsv](../../text/title.en.tsv)，
+封面沿既有cover語系表。轉錄人名只依原圖，不補履歷或其他版本名稱。
+底圖、文字及字型分離的審閱原型由[title_prototype.py](../../tools/title_prototype.py)與
+[poster_capture.mjs](../../tools/poster_capture.mjs)的`titles`模式建立，結果在[開場素材審閱](../../review/hd/b07-title/README.md)。
+初版CSS文字陰影遮住金色填色，已保存原型後移除該重複陰影；四張語系圖均目視，文字邊界通過。
+新語系文字納入字集後仍2843字、補字0，兩個golemfnt雜湊不變。
+
+### 英文前端及專用字型
+
+首次正常F8收據仍是繁中，原因為本作尚無英文host表及字型，只有一個語言包時F8依既有契約不切換。
+不是開場圖層未刷新。補[host-text.en.tsv](../../text/host-text.en.tsv)及兩個已證實菲蘭名稱的
+[map-titles.en.tsv](../../text/map-titles.en.tsv)，其他英文地圖名顯示未知；英文手札與攻略仍未交付。
+查驗題格式採本作`quiz.page`／`quiz.word`，不沿用前作不同題型的`quiz.entry`。
+
+英文遊戲文字字型沿前作生成器[en_font.py](../../tools/en_font.py)，開發入口[en-font-dev.sh](../../tools/en-font-dev.sh)。
+來源為前作唯讀`workplace/fonts-src/courier/courierprime__CourierPrime-Bold.ttf`，
+複製到本作`workplace/fonts-src/courier/CourierPrime-Bold.ttf`。來源SHA-256
+`ff1f38786c849d1c41fa8e447960abdb2bd75fdfb0cfcdeb524fad65a5af3638`，
+同行OFL授權保存為`OFL.txt`，SHA-256 `9a755af092b494944c99f471be6fddd19b006a448fefdc4717e4ee0aa09a97b0`。
+前作生成器原始SHA-256 `eb54a8cc7f18579bad98bda908f25c65bb7ca5ceab87f8e8e00f22e629483fc2`，本作只將說明中的輸出名改為pod。
+
+| 字型 | 字數 | SHA-256 |
+|---|---:|---|
+| pod-en.golemfnt，16×16 | 96 | `121e92b01c9c907aa66b8e6e78155d0a368102e599bbb9784feaec5c7f2234e0` |
+| pod-en-3x.golemfnt，24×24 | 96 | `c701ce90a4b3009e6126b0ccfc0dc042dc17c22dbf59c07b1e41c90678481db9` |
+
+繁中字集初次重建漏將新TITLE表加入明確清單；已補工具後重新建置，仍2843字、補字0、兩個雜湊不變。
+不得將先前漏收表的結果當成新表已驗覆蓋。英文前端、字型尺寸、本作問句行寬與原文輸入不變測試均通過。
+載入鏈及驗收範圍見[規格015](../spec/015-multilingual.md)。
+
+### 開場與英文正常路徑驗收
+
+dosgolem `eb72e98`加入獨立語系圖層，`f3d019e`補主字型旁的語系專用字型載入，均已推送私人分支。
+本作固定三張來源及完整色盤，以既有`theme.json`分置`localized/base`、`zh-TW`、`en`。
+未知語系用無字底圖；未知色盤回退。底列改寫按8×8格撤除，F8清除前一語系保留。
+PNG與文字例外不冒稱原版像素相同，原版色號／CPU／記憶體／存檔則不改。
+
+建置入口：[title_theme.py](../../tools/title_theme.py)接受`--root`專案根與`--theme`輸出主題。
+它先核對請求、原始生圖、目視成品、底圖、正式文案與字型雜湊，再匯出三組既有格式清單。
+原版來源與完整提示詞、權利分類保存於[開場素材清單](../../review/hd/b07-title/manifest.json)，服裝核准沿b06清單。
+實際執行檔SHA-256 `2654ff7615532378865cde61f761740e9a3e8f1d3c1828fd993be68c658870cd`。
+
+| 驗收 | 結果 |
+|---|---|
+| 三路正常冷啟動 | HD／無HD／切換，1250格、120312500步 |
+| 原版CPU、記憶體、色號、色盤 | 三路完全相同 |
+| 127個DOS檔案 | 三路完全相同，前端語系偏好另計 |
+| 三張開場的繁中／英文 | 與已驗收PNG逐像素相同 |
+| F8／F2／F12 | 語系、2倍原圖、原版及返回均通過 |
+| 17張完整視窗 | 中央與畫布相同、兩側與定版語系海報逐像素相同 |
+| 首次繪製量尺 | HD冷啟動1250格，閃現0；刻意顯示原版的切換另驗像素 |
+| 真實來源負對照 | 未知語系、改色、來源失配、credits底列改寫通過 |
+| 現行主題 | 與最終測試版本213檔完全相同 |
+
+固定收據：[014-title-runtime.json](014-title-runtime.json)，原始資料`workplace/probe/g9-hd/title-play-v3/`。
+入口：[title-play-receipt.sh](../../tools/title-play-receipt.sh)與[title_play_check.py](../../tools/title_play_check.py)。
+README原版封面另與無HD正常截圖相同，HD服裝及標題與使用者核准預覽完全相同；
+來源見[title-receipt.json](../screenshots/title-receipt.json)。
+地圖與工具列也沿相同G8讀槽A路線刷新到`readme-ui-v2`，4800格原版終點與既有收據相同，沒有增加探索。
+
+英文專用字型另沿既有2210格DEMO對話，A七次、B一次均覆繪，沒有缺字，閃現0。
+原版212712500步、記憶體`407acf3df80edac1df653803d20563f2e233633ca755a4101b1bc84ae4a7af0e`、
+色號`fdcb9523281066334cc302987e63e467e3a703c6739983fe5b9a56ce68335102`及127個DOS檔案同既有繁中基準。
+固定收據：[014-english-front-runtime.json](014-english-front-runtime.json)，
+檢查入口[english_front_check.py](../../tools/english_front_check.py)，正常畫面已目視。
+本項只涵蓋英文前端、開場與DEMO抽樣，英文手札、攻略及其他語系尚未交付。

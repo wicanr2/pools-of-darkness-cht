@@ -21,7 +21,7 @@ timeout 900 docker run --rm --network none -u "$(id -u):$(id -g)" --memory 2g --
   test "$(stat -c %u:%g /out)" = "$(id -u):$(id -g)"
   cats=(/text/journal.zh-TW.tsv)
   test -f "${cats[0]}"
-  for f in ecl-text.zh-TW ui-text.zh-TW name.zh-TW composed-templates host-text.zh-TW poster.zh-TW cover.zh-TW menu-masters translit-chars.zh-TW walkthrough.zh-TW map-geo map-guide.zh-TW; do
+  for f in ecl-text.zh-TW ui-text.zh-TW name.zh-TW composed-templates host-text.zh-TW poster.zh-TW cover.zh-TW title.zh-TW menu-masters translit-chars.zh-TW walkthrough.zh-TW map-geo map-guide.zh-TW; do
     test ! -f "/text/$f.tsv" || cats+=("/text/$f.tsv")
   done
   while IFS= read -r f; do cats+=("$f"); done < <(find /w/tr /w/text-src/trial -name "*.tsv" \( -path "*/done/*" -o -path "*/trial/*" \) 2>/dev/null | sort)

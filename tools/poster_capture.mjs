@@ -4,6 +4,7 @@ import {writeFile, mkdir, readFile} from 'node:fs/promises';
 const out=process.argv[2]||'/out';
 const assets=process.argv[3]==='assets';
 const cover=process.argv[3]==='cover';
+const titles=process.argv[3]==='titles';
 await mkdir(out,{recursive:true});
 const browser=spawn('/ms-playwright/chromium-1194/chrome-linux/chrome',[
   '--headless','--no-sandbox','--disable-dev-shm-usage','--allow-file-access-from-files',
@@ -26,12 +27,12 @@ try{
   const send=(method,params={})=>new Promise((resolve,reject)=>{const id=++sequence;const timer=setTimeout(()=>{waiting.delete(id);reject(Error('CDP 逾時：'+method+' '+(params.expression||'').slice(0,100)))},15000);waiting.set(id,{resolve,reject,timer});ws.send(JSON.stringify({id,method,params}))});
   await send('Page.enable');
   const shots=[];
-  const scenes=cover?[['cover-zh','zh-TW','wide',960],['cover-en','en','wide',960]]:assets?[['asset-zh','zh-TW','wide',1440],['asset-en','en','wide',1440]]:[['wide-zh','zh-TW','wide',1440],['wide-en','en','wide',1440],['narrow-zh','zh-TW','narrow',1066]];
+  const scenes=titles?['title-001','title-003'].flatMap(key=>['zh-TW','en'].map(lang=>[`${key}.${lang}`,lang,key,960])):cover?[['cover-zh','zh-TW','wide',960],['cover-en','en','wide',960]]:assets?[['asset-zh','zh-TW','wide',1440],['asset-en','en','wide',1440]]:[['wide-zh','zh-TW','wide',1440],['wide-en','en','wide',1440],['narrow-zh','zh-TW','narrow',1066]];
   for(const [name,lang,layout,width]of scenes){
     await send('Emulation.setDefaultBackgroundColorOverride',{});
-    const height=cover?600:684;
+    const height=cover||titles?600:684;
     await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});
-    const page=cover?'b06-cover':'poster';
+    const page=titles?'b07-title':cover?'b06-cover':'poster';
     const url=`file:///project/review/hd/${page}/prototype.html?lang=${lang}&layout=${layout}`;
     await send('Page.navigate',{url});
     let ready=false;
@@ -48,6 +49,12 @@ try{
     }
     if(!fontReady)throw Error('指定源泉圓體未載入');
     const metrics=await send('Runtime.evaluate',{expression:'JSON.stringify({viewport:[innerWidth,innerHeight],game:{x:game.getBoundingClientRect().x,y:game.getBoundingClientRect().y,w:game.width,h:game.height}})',returnByValue:true});
+    if(titles){
+      const info=await send('Runtime.evaluate',{expression:'JSON.stringify(titleMetrics())',returnByValue:true});
+      const boxes=JSON.parse(info.result.value);
+      if(boxes.some(b=>b.x<0||b.y<0||b.x+b.width>960||b.y+b.height>600||b.scrollWidth>b.width))throw Error('開場文字溢位：'+JSON.stringify(boxes));
+      await writeFile(`${out}/${name}.layout.json`,JSON.stringify(boxes,null,2)+'\n');
+    }
     if(assets){
       // 保留不透明背景下的原定版字緣。透明背景會停用 Chromium 的 LCD 字緣。
       for(const [side,x]of[['left',0],['right',1200]])for(const scale of [3,2]){
@@ -73,7 +80,7 @@ try{
     shots.push({file:name+'.png',lang,layout,...JSON.parse(metrics.result.value)});
   }
   await writeFile(out+(assets?'/assets-capture.json':'/capture.json'),JSON.stringify(shots,null,2)+'\n');
-  console.log(cover?'兩語系封面預覽已匯出':assets?'海報底圖與各語系透明文字層已匯出':'三張完整 viewport 截圖已產生');
+  console.log(titles?'四張開場標誌／名單與文字邊界已匯出':cover?'兩語系封面預覽已匯出':assets?'海報底圖與各語系透明文字層已匯出':'三張完整 viewport 截圖已產生');
 }catch(error){
   console.error(browserLog);
   for(const name of ['pids.current','pids.events','memory.events']){
