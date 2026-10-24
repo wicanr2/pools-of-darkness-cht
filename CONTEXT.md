@@ -47,7 +47,7 @@
 
 | 項目 | 何時決定 |
 |---|---|
-| 片頭片尾字幕：推定是畫格點陣圖（docs/re/004），辨識與覆繪方式 | G9 |
+| 片尾字幕與片頭片尾動畫HD：來源、辨識及呈現方式 | G9 |
 | `pool4.cfg` 第 6 行 `F` 與後續 `0` 欄位語意 | 需要時 |
 | 攻略摘要尚留英文的物品名（例 Silver Shield）、未定專名及來源歧義 | G8 後續校讀；地名與已定專名已對齊，見研究 013 |
 
@@ -63,7 +63,7 @@
 | G6 覆繪接入 | #7 | 完成：冷開機、建角、存讀檔、選單收據；自動探索兩輪（使用者指示到此為止） | docs/re/007、010 |
 | G7 手札與查驗題 | #8 | 完成：查驗題 54 題 CONFORMED；手札實機觸發第 57 則、面板自動開出 | docs/re/008、009 |
 | G8 攻略與地圖 | #9 | 攻略 78 段，地名與已定專名對齊；32 塊 GEO 雜湊、24 個 GEO 名稱、東西菲蘭 5 個攻略點共 7 格。兩城 2／3 倍 A/B 通過；已有正常冷開機讀檔與面板切換收據。其餘 8 個名稱、未觀測地點與共用場景未驗，#9 保持開啟 | docs/re/011–013；規格 008、009 READY |
-| G9 HD | #10、#18–#20、#23、#24、#26–#34 | PIC81狀態／78項主題、66張VGA怪物候選、2張地形與菲蘭起點121格街景已接入。正常7400格戰鬥及4800格讀檔的原版狀態、存檔與基準相同、閃現0；未觀測遇怪事件仍未知。三張TITLE繁中／英文、F8／F2／F12及海報通過。現行371檔與dd3e417執行檔均同受測版本。七張BIGPIC及其餘三張天空／地面為素材。片頭已採樣八組字幕，正式覆繪與動畫HD未接入；其他圖族未完成 | docs/re/014、017、018；規格010局部CONFORMED |
+| G9 HD | #10、#18–#20、#23、#24、#26–#34 | PIC81狀態／78項主題、66張VGA怪物候選、2張地形與菲蘭起點121格街景已接入。正常7400格戰鬥及4800格讀檔的原版狀態、存檔與基準相同、閃現0；未觀測遇怪事件仍未知。三張TITLE繁中／英文、F8／F2／F12及海報通過。現行371檔主題不變；e47af3e來源的受測執行檔已設為預設。七張BIGPIC及其餘三張天空／地面為素材。片頭八組雙語字幕、2／3倍及F8／F12通過正常5100格，原版狀態與127個DOS檔案一致、閃現0；動畫HD與片尾未完成 | docs/re/014、017、018；規格010局部CONFORMED |
 | README | #17 | 故事背景、原版 BIGPIC、HD 預覽與兩組繁中＋HD 實際 DEMO 截圖已寫 | README.md |
 | README 補圖 | #25、#26、#30 | 地圖、上方工具列與下拉選單已沿既有正常讀檔路線刷新，另有原版／HD街景；原版終點相同。原版封面與實際HD繁中／英文、完整海報視窗直接顯示或連結，禮服及標題同使用者核准預覽 | docs/re/014；docs/screenshots/wall-receipt.json、title-receipt.json |
 | 左右海報 | #21 | 固定加寬已接入，文字隨語系；中央與定版兩側逐像素一致，2／3 倍及 F12、原版狀態與 127 個 DOS 檔案比較通過。規格 023 CONFORMED，範圍為繁中／英文與已列抽樣 | docs/re/015；review/hd/poster/ |
@@ -87,7 +87,7 @@
 | 地圖記憶體與呈現 | `tools/g8-map-evidence.sh`（八個定點取樣）、`g8-map-receipt.sh [east\|west]`（兩城 2／3 倍 A/B）、`g8-map-play-receipt.sh`（正常冷開機讀檔、原版查驗題、地圖與攻略互斥），細節 docs/re/012、013 |
 | 地圖名稱與攻略點 | `text/map-titles.tsv`、`map-guide.zh-TW.tsv`，`tools/map_geo.py` 在 Docker 內從實際 GEO 清單產生 `map-geo.tsv`；`--check` 核對。只使用有證據的名稱、圖例與觸發格 |
 | 地圖參考與攻略專名 | 研究 013、`tools/map_reference.py`、`map_match.py` 與 `docs/re/013-map-reference-crops.json`；`tools/walkthrough_terms.py --check` 查攻略已定專名，`walkthrough_build.py` 重建正式表，均在 Docker 內執行 |
-| 片頭字幕來源 | 研究018、`tools/movie-source-receipt.sh`及`movie_subtitle_inventory.py`；本機`workplace/probe/intro-source-v1/`有59組配對來源、八組已校讀字幕與譯文草稿；正式覆繪仍DRAFT |
+| 片頭字幕 | 研究018及規格024；018-intro-timing.json／018-intro-runtime.json保存逐幀來源與正常視窗證據。八組繁中／英文已接入，5100格及F8／F2／F12通過；本機intro-timing-v3及g9-hd/intro-play-v1保存原始收據 |
 
 狀態檔、暫存目錄與截圖都在 `workplace/`（gitignore），換機器要另外搬。
 
@@ -111,7 +111,7 @@
 
 | 項目 | 值 |
 |---|---|
-| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作目前`dd3e417`，含固定海報、語系開場、VGA戰鬥與街景及查驗題列替換；保存到本 repo 的 `dosgolem/pod`。已驗執行檔SHA為`a0ee7d2a066f5c68a1b566ce4941b4f9d1006b9dfbef697fe2320397f49754ef` |
+| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作目前`e47af3e`，含固定海報、語系開場、VGA戰鬥與街景、查驗題列替換及八組片頭雙語字幕；保存到本 repo 的 `dosgolem/pod`。已驗執行檔SHA為`f737659169253e5df20f32f07f4397681273bb68ca1df80dc65781cb330d5971` |
 | Go／image | go1.24.13；`dosgolem-go-ebiten:1.24-r1` `sha256:8ed6bdee2bce…` |
 | 冷啟動 | 0 種缺服務；mode 13h；`START.BAT` 程式鏈；片頭送空白鍵跳過，製作群後送 `p` 進建立隊伍主選單。收據 `tools/g2-startup-receipt.sh`，見 [docs/re/003](docs/re/003-dosgolem-startup.md) |
 | adapter | `apps/pod/`（由 `apps/sosb/` 複製，路徑 A／B／C 換本作常數與 13h 換算）；`cmd/pod-overlay-shot`；自動探索 `cmd/pod-explore`（由 `cmd/sosb-explore` 複製） |
@@ -134,7 +134,7 @@
 | 攻略面板 | 規格 008 READY：《軟體世界》第 43–45 期自寫摘要 78 段（`text/walkthrough.zh-TW.tsv`，docs/re/011）；主選單三張、冒險畫面與地圖互斥收據無缺字（docs/re/012） |
 | 地圖疊層 | 規格 009 READY：`DS:A9EA` GEO 指標、`DS:A9F3–A9F5` 位置方向，八個定點取樣已證實；32 塊 GEO、24 個 GEO 名稱、5 個攻略點共 7 格。東西菲蘭 2／3 倍 A/B 通過，原版狀態不變；F7／V／Esc、F5／F6 互斥測試通過，走過格另存前端；初始化的全零緩衝區略過（docs/re/012、013） |
 | 跨畫面盤點 | G6 完成：自動探索兩輪（街上、店家門口）印字 1,857 次（第二輪計到第 400 鍵的快照），未命中只剩數字與引號；商店清單、神殿、訓練、戰鬥、野外未覆蓋（docs/re/010） |
-| 片頭片尾字幕 | 片頭正常播放自然結束並進入GAME.EXE，59組來源、八組字幕已目視校讀，正式覆繪與字型尚未接入；首次繪製／清除及片尾未驗（研究018） |
+| 片頭片尾字幕 | 片頭八組台詞來源、首次繪製／清除與正式雙語覆繪已驗，2／3倍及F8／F12通過、閃現0；片尾與完整動畫HD未驗（研究018、規格024） |
 
 ## 原始輸入
 
