@@ -1,6 +1,6 @@
 # 目前真相
 
-更新：2026-10-23（Asia/Taipei）。規則見 [AGENTS.md](AGENTS.md)，歷程見 [WORKLOG.md](WORKLOG.md)。
+更新：2026-10-24（Asia/Taipei）。規則見 [AGENTS.md](AGENTS.md)，歷程見 [WORKLOG.md](WORKLOG.md)。
 
 ## 儲存庫
 
@@ -39,17 +39,62 @@
 
 | 項目 | 何時決定 |
 |---|---|
-| 片頭片尾字幕：推定是畫格點陣圖（docs/re/004），辨識與覆繪方式 | G6／G9 |
+| 片頭片尾字幕：推定是畫格點陣圖（docs/re/004），辨識與覆繪方式 | G9 |
 | `pool4.cfg` 第 6 行 `F` 與後續 `0` 欄位語意 | 需要時 |
+| 攻略摘要保留英文的地名、物品名（例 Temple of Tyr、Silver Shield）是否補進術語表並對齊遊戲內譯名 | G8 |
+
+## 交接（2026-10-24）
+
+### 階段
+
+| 階段 | Issue | 狀態 | 依據 |
+|---|---|---|---|
+| G0–G3 | #1–#4 | 完成 | docs/re/001–004 |
+| G4 說明書 | #5 | 完成：手札 99 則錯譯校正、其餘章節名稱對照；正文不對照錯譯（使用者決定） | docs/re/005、006 |
+| G5 譯文與字型 | #6 | 完成 | `tools/g5-text-receipt.sh` |
+| G6 覆繪接入 | #7 | 完成：冷開機、建角、存讀檔、選單收據；自動探索兩輪（使用者指示到此為止） | docs/re/007、010 |
+| G7 手札與查驗題 | #8 | 完成：查驗題 54 題 CONFORMED；手札實機觸發第 57 則、面板自動開出 | docs/re/008、009 |
+| G8 攻略與地圖 | #9 | 攻略面板完成（自寫摘要 78 段，規格 008 READY）；地圖疊層（規格 009）未開始 | docs/re/011 |
+| G9–G11 | #10–#12 | 未開始 | — |
+| 規格 018–021 | #13–#16 | 未開始；019、020 的程式由前作沿用，未驗 | docs/spec/000-index.md |
+
+規格狀態：001–003、006 CONFORMED；007、008 READY；004、005、013 DRAFT；其餘未開始或未驗（docs/spec/000-index.md）。
+
+### 接手入口
+
+| 要做什麼 | 從哪裡開始 |
+|---|---|
+| 從冷開機看中文畫面 | `tools/play-smoke.sh`（pod-play，xvfb）；送鍵腳本格式見腳本註解 |
+| 從遊戲中的狀態接著做 | `workplace/probe/states/g6r-*.state`（建角、存讀檔各段，`tools/g6-stage.sh` 說明怎麼重播）；街上起點 `workplace/probe/g6-town/town.state` 與同目錄 `scratch/`；叛徒門觸發後 `workplace/probe/g6-explore/town1/end.state` |
+| 盤點新地圖的缺譯 | `tools/g6-explore.sh <名稱> <狀態檔> [-yes …]`，再 `tools/g6-misses.sh <inv.tsv>` |
+| 改譯文後 | `tools/font-dev.sh` 重建字型、`tools/font_coverage.py` 查缺字，再跑受影響的收據 |
+| 重跑本作收據 | `tools/g6-create-receipt.sh`、`g6-saveload-receipt.sh`、`g6-menus-receipt.sh`、`g7-quiz-receipt.sh`、`g7-journal-receipt.sh`（約 20 分鐘）、`g8-guide-receipt.sh` |
+
+狀態檔、暫存目錄與截圖都在 `workplace/`（gitignore），換機器要另外搬。
+
+### 下一步
+
+1. G8 地圖疊層（規格 009）：先找隊伍位置與所在地圖的記憶體位址（座標列 `x,y D` 的來源），攻略摘要的地圖編號可當疊層點的來源。
+2. G9 HD 與切換列（規格 010、011、020）、片頭片尾字幕。
+3. 規格 018、019、021，G10 配樂與多語系，G11 封包驗收。
+
+### 已知缺口與注意
+
+- G6 沒覆蓋：商店購買清單、神殿治療、訓練升級、旅店、DEMO 以外的戰鬥、野外與地下城（docs/re/010）。
+- 規格 007：冒險畫面按 F5 的路徑只有 pod-play 按鍵對照測試，沒有實機截圖。
+- 冒險主選單 `Move Area …` 要先按 `M` 才能用方向鍵移動；遊戲沒掛 int 09h，送鍵用 BIOS 緩衝區（`-bios-key-names`），`-press` 送不進去（docs/re/009）。
+- 自動探索會卡在只有 `Exit` 的事件選單（脫困鍵只有 Enter、Esc、空白）；長跑要給外層時限，盤點以每 100 鍵的快照為準。
+- 從狀態重播時，狀態存檔前就印好的字（隊伍欄、底列選單）不會重印，截圖上是英文，不算缺譯（docs/re/007）。
+- 主機不跑 python，分析一律進 Docker（WORKLOG 記過兩次誤帶）。
 
 ## dosgolem 基線
 
 | 項目 | 值 |
 |---|---|
-| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作分支頂端 `e67971e`（規格 430、431、432 CONFORMED，`apps/pod`、`cmd/pod-play`；本作查驗題題型），推到本 repo 的 `dosgolem/pod` |
+| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作分支頂端 `e67971e`（規格 430、431、432 CONFORMED，`apps/pod`、`cmd/pod-play`；本作查驗題題型、手札單元測試、pod-explore），推到本 repo 的 `dosgolem/pod` |
 | Go／image | go1.24.13；`dosgolem-go-ebiten:1.24-r1` `sha256:8ed6bdee2bce…` |
 | 冷啟動 | 0 種缺服務；mode 13h；`START.BAT` 程式鏈；片頭送空白鍵跳過，製作群後送 `p` 進建立隊伍主選單。收據 `tools/g2-startup-receipt.sh`，見 [docs/re/003](docs/re/003-dosgolem-startup.md) |
-| adapter | `apps/pod/`（由 `apps/sosb/` 複製，路徑 A／B／C 換本作常數與 13h 換算）；`cmd/pod-overlay-shot` |
+| adapter | `apps/pod/`（由 `apps/sosb/` 複製，路徑 A／B／C 換本作常數與 13h 換算）；`cmd/pod-overlay-shot`；自動探索 `cmd/pod-explore`（由 `cmd/sosb-explore` 複製） |
 | play 指令 | `cmd/pod-play`（由 `cmd/sosb-play` 複製）：照 `START.BAT` 以 `snd.com` 常駐、佇列 `CONTROL.EXE`、`RootTSRShrink`（dosgolem 規格 432）；冷開機收據 `tools/play-smoke.sh` |
 
 ## 中文化進度
