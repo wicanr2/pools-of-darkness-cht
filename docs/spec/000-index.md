@@ -19,7 +19,7 @@
 | 007 手札面板 | READY | #8 | 99 則珍157 修正譯文（`text/journal.zh-TW.tsv`），面板排版 3 頁以內；引用句由引擎組成整句「This is recorded as journal entry N.」經路徑 B 印出（`GAME.OVR` 0x2643），`JournalRefOf` 與組句模板有單元測試；實機在叛徒門觸發第 57 則，整句一次印在第 17 列第 1 欄，面板自動開出（`tools/g7-journal-receipt.sh`）；F5 翻閱以 `-journal-preview` 截圖（同一腳本的 `browse` 張） | docs/re/005、009；`tools/g7-journal-receipt.sh` |
 | 008 攻略面板 | READY | #9 | 內容是讀《軟體世界》第 43–45 期後自寫的摘要（雜誌原文不照抄），78 段，頁尾「整理自軟體世界 N 期 p.X–Y」；面板程式由前作沿用；主選單開面板三張截圖無缺字；冒險畫面開關與手札互斥未驗 | docs/re/011；`tools/g8-guide-receipt.sh` |
 | [009 地圖疊層](009-map-overlay.md) | READY | #9 | 本作 GEO 指標 `DS:A9EA`、座標方向 `DS:A9F3–A9F5`；32 塊 GEO、24 個 GEO 名稱、東西菲蘭 5 點共 7 格。兩城 2／3 倍 A/B 通過；已有正常冷開機讀檔、地圖／攻略互斥收據。其餘名稱、點及共用場景未驗 | docs/re/012、013；`tools/g8-map-evidence.sh`、`g8-map-receipt.sh [east\|west]`、`g8-map-play-receipt.sh` |
-| [010 HD 主題](010-hd-theme.md) | 局部 CONFORMED | #10、#18–#20、#23、#24、#26–#33 | 菲蘭起點121格街景、VGA五十四張怪物候選／兩張地形及三張開場語系圖接入通過，正常冷啟動狀態一致、閃現0；未觀測遇怪事件仍未知。PIC81狀態／78項主題局部READY；BIGPIC與其他來源仍DRAFT | docs/re/014、017；014-wall-runtime.json、014-title-runtime.json、017-vga-battle-runtime.json、017-b08-runtime.json、017-b09-runtime.json、017-b12-runtime.json、017-b13-runtime.json、017-b14-runtime.json |
+| [010 HD 主題](010-hd-theme.md) | 局部 CONFORMED | #10、#18–#20、#23、#24、#26–#34 | 菲蘭起點121格街景、VGA六十六張怪物候選／兩張地形及三張開場語系圖接入通過，正常冷啟動狀態一致、閃現0；未觀測遇怪事件仍未知。PIC81狀態／78項主題局部READY；BIGPIC與其他來源仍DRAFT | docs/re/014、017；014-wall-runtime.json、014-title-runtime.json、017-vga-battle-runtime.json、017-b08-runtime.json、017-b09-runtime.json、017-b12-runtime.json、017-b13-runtime.json、017-b14-runtime.json、017-b15-runtime.json |
 | 011 切換列 | 未驗 | #10 | 程式由前作沿用 | — |
 | 012 發行包 | 未開始 | #12 | — | — |
 | 013 玩家名音譯 | DRAFT | #7 | 音譯資料沿用前作；隊伍名單的玩家名已音譯（ROLAND → 羅倫德）；建角畫面的名字與性別欄位址未在本作驗證 | `tools/g6-create-receipt.sh` |

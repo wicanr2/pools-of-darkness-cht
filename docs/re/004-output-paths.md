@@ -74,6 +74,10 @@ DEMO 中 `44B7:03A8`、`03E5`、`034E` 逐字送出 `Play Demo` 等選單字；�
 都找不到字幕的明文（搜尋 `summoned`、`Phlan`、`heroes` 等）。推定字幕是動畫畫格裡的點陣圖（強推論），不經任何印字程序；
 處理方式是畫面辨識後覆繪，歸 G6／G9，不在本階段。
 
+後續來源盤點入口：[movie-source-receipt.sh](../../tools/movie-source-receipt.sh)。沿G2常駐驅動與CONTROL原始入口，
+不送跳過鍵，每2000萬指令匯出色號及色盤至12億指令；屬既有開場的來源採樣，不增加G6探索。
+這項收據本身不代表字幕辨識、翻譯、HD或不露原版已完成，時序仍以dosgolem實際畫格為準。
+
 ## 文字 catalog
 
 | catalog | 筆數 | 來源 | 備註 |
