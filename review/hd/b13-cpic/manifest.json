@@ -1,0 +1,1352 @@
+{
+  "batch": "b13",
+  "count": 12,
+  "private_only": true,
+  "request_manifest_sha256": "8ad384446982912c72e777e47ac11ddfccd02a346475e8ccfac202e2888591ce",
+  "items": [
+    {
+      "key": "cpic1-013",
+      "source": {
+        "key": "cpic1-013",
+        "source_file": "CPIC1.DAX",
+        "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+        "block": 13,
+        "packed_file_offset": 42196,
+        "decoded_sha256": "ff27b945511179ae3bffc988dd522bdda199462e171207ec8f0e61ba4e63f702",
+        "source_size": [
+          48,
+          48
+        ],
+        "output_size": [
+          144,
+          144
+        ],
+        "reference_1x": "cpic1-013-1x.png",
+        "reference_3x": "cpic1-013-3x.png",
+        "reference_1x_sha256": "7c1eff872917786000c602211e31c30612602229e67929bbebb7837f646e9b8f",
+        "reference_3x_sha256": "c8fce336f01944301fb370adeefc8abfbc8d8e6fb4e45fc69597a6989b589a03",
+        "indexed": "cpic1-013.idx",
+        "indexed_sha256": "4f0369f13ff9b184e69ac52050276d0c5b776917b4a1e8dee2e9c6411b4d432f",
+        "palette": "cpic1-013.pal",
+        "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 144 by 144 pixels, aspect ratio 48:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "cpic1-013",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-5bcdcd9f-1520-4bd1-818b-024a2446f182.png",
+        "prompt": "Use case: style-transfer. Asset type: ONE original classic CRPG combat sprite cpic1-013. Kalistes, the purple-and-gold figure with pale silver spiky crown/headdress. Preserve the small golden face, purple torso and sleeves, yellow-green ornamental forms across chest and broad crouched lower body. Left purple arm holds the broad pale silver curved blade along upper LEFT edge. Right purple hand holds a long vertical cyan-blue pole with pale silver axe head at upper RIGHT, shaft down to lower right. Retain exact original fully covered purple clothing and original gold-green shapes, do not reinterpret as bare skin or redesign anatomy. The original image alone determines geometry, proportions, silhouette, pose, every color area, crop and negative space. Smooth hand-painted1990s fantasy illustration, approved style B, original vivid palette. Preserve exact limb positions, small head proportions, weapon angles and full edge-to-edge framing. No added objects, limbs, effects, scenery, text, floor, shadow, margins or border. Background flat #555555. No pixel art, block mosaic, modern3D or photorealism. Input is nearest-neighbour enlarged for legibility only; repaint into continuous painted forms for a3x game asset.",
+        "generation": "built-in image_gen; one call per original state",
+        "references": [
+          "workplace/hd/out/b13/guidance/cpic1-013-original-8x.png"
+        ],
+        "raw_sha256": "b9a7d35db40f82ea8eef63ea33ad04ee6743f62ec7f2787a09e4191bbeba7ae9",
+        "target": [
+          144,
+          144
+        ],
+        "version": 0,
+        "issue": 32,
+        "status": "generated",
+        "source": {
+          "key": "cpic1-013",
+          "source_file": "CPIC1.DAX",
+          "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+          "block": 13,
+          "packed_file_offset": 42196,
+          "decoded_sha256": "ff27b945511179ae3bffc988dd522bdda199462e171207ec8f0e61ba4e63f702",
+          "source_size": [
+            48,
+            48
+          ],
+          "output_size": [
+            144,
+            144
+          ],
+          "reference_1x": "cpic1-013-1x.png",
+          "reference_3x": "cpic1-013-3x.png",
+          "reference_1x_sha256": "7c1eff872917786000c602211e31c30612602229e67929bbebb7837f646e9b8f",
+          "reference_3x_sha256": "c8fce336f01944301fb370adeefc8abfbc8d8e6fb4e45fc69597a6989b589a03",
+          "indexed": "cpic1-013.idx",
+          "indexed_sha256": "4f0369f13ff9b184e69ac52050276d0c5b776917b4a1e8dee2e9c6411b4d432f",
+          "palette": "cpic1-013.pal",
+          "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": false,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 144 by 144 pixels, aspect ratio 48:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+        },
+        "request_manifest_sha256": "8ad384446982912c72e777e47ac11ddfccd02a346475e8ccfac202e2888591ce",
+        "reference_sha256": {
+          "workplace/hd/out/b13/guidance/cpic1-013-original-8x.png": "cd96ccac1042152f4210dc4b3fdcd310f71baddaced55d2f5d0e8e990361d0e8"
+        },
+        "reference_resize": "nearest-neighbour original input only",
+        "identity_source": "MON1CHA same-number Pascal name is auxiliary; CPIC pose and palette remain authoritative",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "cpic1-013",
+        "raw": "cpic1-013-r0-raw.png",
+        "raw_sha256": "b9a7d35db40f82ea8eef63ea33ad04ee6743f62ec7f2787a09e4191bbeba7ae9",
+        "png": "cpic1-013.png",
+        "png_sha256": "1229af49705bc26de678e6a6a05a3a2467ddc0dd4f1e7e902233a6e3113261e4",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "cpic1-013",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.4126506024096386,
+        "median_hue_difference_degrees": 28.875,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "1229af49705bc26de678e6a6a05a3a2467ddc0dd4f1e7e902233a6e3113261e4"
+      },
+      "visual": {
+        "png_sha256": "1229af49705bc26de678e6a6a05a3a2467ddc0dd4f1e7e902233a6e3113261e4",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "cpic1-141",
+      "source": {
+        "key": "cpic1-141",
+        "source_file": "CPIC1.DAX",
+        "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+        "block": 141,
+        "packed_file_offset": 43926,
+        "decoded_sha256": "6596b721853dd315c5cc2dcfc6c5282cd5013aba78a04676ab0693c5d513258a",
+        "source_size": [
+          48,
+          48
+        ],
+        "output_size": [
+          144,
+          144
+        ],
+        "reference_1x": "cpic1-141-1x.png",
+        "reference_3x": "cpic1-141-3x.png",
+        "reference_1x_sha256": "83997990f85479b6181efbc3255a5a8b1820095391fefa079d603a54d5a11c81",
+        "reference_3x_sha256": "d4b5b65fdaefc8295c8840e1bcbe0c62990dae2efa10b4c0e7d47e7158646165",
+        "indexed": "cpic1-141.idx",
+        "indexed_sha256": "df78a0c08cc2af93b83e3ac70e7cc38a6382ae33f6f318e2b3d60bd3a3da097e",
+        "palette": "cpic1-141.pal",
+        "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 144 by 144 pixels, aspect ratio 48:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "cpic1-013",
+          "mask": "cpic1-141-mask.png",
+          "mask_sha256": "1d00211f6f8fb54df0f39477bf2185a374066103dd0b194cd0d792d5c897cd99",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "cpic1-141",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-3304e26e-467f-4049-9fac-415700040990.png",
+        "prompt": "Use case: style-transfer. Asset type: ONE original classic CRPG combat sprite cpic1-141. Kalistes alternate action, original purple-and-gold fully covered figure and pale spiky crown. Preserve exactly the FOUR purple arms: one holds broad pale silver curved blade at left edge, another raises a slim pale curved blade diagonally from upper-left hand toward top edge; right arm holds cyan vertical pole axe at far right; the remaining arm supports the long pale cyan-white shaft diagonal across upper right toward lower-right edge. Keep all original gold-green body shapes, narrow torso and low broad crouched lower body. Four arms are original; do not add or remove any. Exact source positions and small face, no bare skin reinterpretation. The original image alone determines geometry, proportions, silhouette, pose, every color area, crop and negative space. Smooth hand-painted1990s fantasy illustration, approved style B, original vivid palette. Preserve exact limb positions, small head proportions, weapon angles and full edge-to-edge framing. No added objects, limbs, effects, scenery, text, floor, shadow, margins or border. Background flat #555555. No pixel art, block mosaic, modern3D or photorealism. Input is nearest-neighbour enlarged for legibility only; repaint into continuous painted forms for a3x game asset.",
+        "generation": "built-in image_gen; one call per original state",
+        "references": [
+          "workplace/hd/out/b13/guidance/cpic1-141-original-8x.png"
+        ],
+        "raw_sha256": "4dc1601c267b7dc90762c9e5d060a6c94a6aa0fb734a7887b2fbe3d99211c1c1",
+        "target": [
+          144,
+          144
+        ],
+        "version": 0,
+        "issue": 32,
+        "status": "generated",
+        "source": {
+          "key": "cpic1-141",
+          "source_file": "CPIC1.DAX",
+          "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+          "block": 141,
+          "packed_file_offset": 43926,
+          "decoded_sha256": "6596b721853dd315c5cc2dcfc6c5282cd5013aba78a04676ab0693c5d513258a",
+          "source_size": [
+            48,
+            48
+          ],
+          "output_size": [
+            144,
+            144
+          ],
+          "reference_1x": "cpic1-141-1x.png",
+          "reference_3x": "cpic1-141-3x.png",
+          "reference_1x_sha256": "83997990f85479b6181efbc3255a5a8b1820095391fefa079d603a54d5a11c81",
+          "reference_3x_sha256": "d4b5b65fdaefc8295c8840e1bcbe0c62990dae2efa10b4c0e7d47e7158646165",
+          "indexed": "cpic1-141.idx",
+          "indexed_sha256": "df78a0c08cc2af93b83e3ac70e7cc38a6382ae33f6f318e2b3d60bd3a3da097e",
+          "palette": "cpic1-141.pal",
+          "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": false,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 144 by 144 pixels, aspect ratio 48:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "animation": {
+            "base": "cpic1-013",
+            "mask": "cpic1-141-mask.png",
+            "mask_sha256": "1d00211f6f8fb54df0f39477bf2185a374066103dd0b194cd0d792d5c897cd99",
+            "meaning": "source state difference; no timing claim"
+          }
+        },
+        "request_manifest_sha256": "8ad384446982912c72e777e47ac11ddfccd02a346475e8ccfac202e2888591ce",
+        "reference_sha256": {
+          "workplace/hd/out/b13/guidance/cpic1-141-original-8x.png": "19523f29acde0beeac64c25ab75017a797f18f48cad98a8f818aa88e84981c8b"
+        },
+        "reference_resize": "nearest-neighbour original input only",
+        "identity_source": "MON1CHA same-number Pascal name is auxiliary; CPIC pose and palette remain authoritative",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "cpic1-141",
+        "raw": "cpic1-141-r0-raw.png",
+        "raw_sha256": "4dc1601c267b7dc90762c9e5d060a6c94a6aa0fb734a7887b2fbe3d99211c1c1",
+        "png": "cpic1-141.png",
+        "png_sha256": "fba5daed58fd898aa75ef002777aa91216a6428d64f0cee4e5ac5d46293d67e8",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "cpic1-141",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.5210843373493976,
+        "median_hue_difference_degrees": 26.70607252802114,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "fba5daed58fd898aa75ef002777aa91216a6428d64f0cee4e5ac5d46293d67e8"
+      },
+      "visual": {
+        "png_sha256": "fba5daed58fd898aa75ef002777aa91216a6428d64f0cee4e5ac5d46293d67e8",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "cpic1-014",
+      "source": {
+        "key": "cpic1-014",
+        "source_file": "CPIC1.DAX",
+        "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+        "block": 14,
+        "packed_file_offset": 46043,
+        "decoded_sha256": "7bb10f2dfbc73d3e069fd471eb843104e93a90cd4e21d0e774db042a8685cc43",
+        "source_size": [
+          48,
+          48
+        ],
+        "output_size": [
+          144,
+          144
+        ],
+        "reference_1x": "cpic1-014-1x.png",
+        "reference_3x": "cpic1-014-3x.png",
+        "reference_1x_sha256": "67c659c9d72cb4772cb64edc8ebd5d0a1a37774ffa3913d0b67d767b9fed085c",
+        "reference_3x_sha256": "8d976c2aff26e0382937d7775cdfe86687ee32f20e9509dd4a4d2e199bee3c07",
+        "indexed": "cpic1-014.idx",
+        "indexed_sha256": "386f7be8993b5f782cf185a95c400704beee37b1bd9b54da1ef459a6a2cace33",
+        "palette": "cpic1-014.pal",
+        "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 144 by 144 pixels, aspect ratio 48:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "cpic1-014",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-78e3602f-530c-4b02-be07-a8a57a29c068.png",
+        "prompt": "Use case: style-transfer. Asset type: ONE original classic CRPG combat sprite cpic1-014. Tanetal, the red-orange and dark olive horned fiend. Head upper left-center, two long dark olive horns, red bent arms; far right fist/claw at upper right has white tips. Large pale white-yellow-cyan curved blade sweeps diagonally from center to bottom right, held in left foreground. Preserve the original black/purple narrow hips and legs, dark negative spaces and clawed feet. Do not add wings or change blade into another angle. The original image alone determines geometry, proportions, silhouette, pose, every color area, crop and negative space. Smooth hand-painted1990s fantasy illustration, approved style B, original vivid palette. Preserve exact limb positions, small head proportions, weapon angles and full edge-to-edge framing. No added objects, limbs, effects, scenery, text, floor, shadow, margins or border. Background flat #555555. No pixel art, block mosaic, modern3D or photorealism. Input is nearest-neighbour enlarged for legibility only; repaint into continuous painted forms for a3x game asset.",
+        "generation": "built-in image_gen; one call per original state",
+        "references": [
+          "workplace/hd/out/b13/guidance/cpic1-014-original-8x.png"
+        ],
+        "raw_sha256": "5c1771752d39185efa28f0aa9231e622c2d02bc274ba21be013e7b5cf3d3a06d",
+        "target": [
+          144,
+          144
+        ],
+        "version": 0,
+        "issue": 32,
+        "status": "generated",
+        "source": {
+          "key": "cpic1-014",
+          "source_file": "CPIC1.DAX",
+          "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+          "block": 14,
+          "packed_file_offset": 46043,
+          "decoded_sha256": "7bb10f2dfbc73d3e069fd471eb843104e93a90cd4e21d0e774db042a8685cc43",
+          "source_size": [
+            48,
+            48
+          ],
+          "output_size": [
+            144,
+            144
+          ],
+          "reference_1x": "cpic1-014-1x.png",
+          "reference_3x": "cpic1-014-3x.png",
+          "reference_1x_sha256": "67c659c9d72cb4772cb64edc8ebd5d0a1a37774ffa3913d0b67d767b9fed085c",
+          "reference_3x_sha256": "8d976c2aff26e0382937d7775cdfe86687ee32f20e9509dd4a4d2e199bee3c07",
+          "indexed": "cpic1-014.idx",
+          "indexed_sha256": "386f7be8993b5f782cf185a95c400704beee37b1bd9b54da1ef459a6a2cace33",
+          "palette": "cpic1-014.pal",
+          "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": false,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 144 by 144 pixels, aspect ratio 48:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+        },
+        "request_manifest_sha256": "8ad384446982912c72e777e47ac11ddfccd02a346475e8ccfac202e2888591ce",
+        "reference_sha256": {
+          "workplace/hd/out/b13/guidance/cpic1-014-original-8x.png": "5cc469f9e1344bda103e0202e955a32f9e95d1537e8d942b6fbeb1fb110be105"
+        },
+        "reference_resize": "nearest-neighbour original input only",
+        "identity_source": "MON1CHA same-number Pascal name is auxiliary; CPIC pose and palette remain authoritative",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "cpic1-014",
+        "raw": "cpic1-014-r0-raw.png",
+        "raw_sha256": "5c1771752d39185efa28f0aa9231e622c2d02bc274ba21be013e7b5cf3d3a06d",
+        "png": "cpic1-014.png",
+        "png_sha256": "e639a17dbe37c2be0aaf7ee8ac394b362cfdce11b3d4e2130437ff8f44497257",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "cpic1-014",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.6987951807228916,
+        "median_hue_difference_degrees": 8.473376247501779,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "e639a17dbe37c2be0aaf7ee8ac394b362cfdce11b3d4e2130437ff8f44497257"
+      },
+      "visual": {
+        "png_sha256": "e639a17dbe37c2be0aaf7ee8ac394b362cfdce11b3d4e2130437ff8f44497257",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "cpic1-142",
+      "source": {
+        "key": "cpic1-142",
+        "source_file": "CPIC1.DAX",
+        "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+        "block": 142,
+        "packed_file_offset": 47816,
+        "decoded_sha256": "616787c750556403529b2ac235c8e3975e7c89c7a075a709f3d4415605a738de",
+        "source_size": [
+          48,
+          48
+        ],
+        "output_size": [
+          144,
+          144
+        ],
+        "reference_1x": "cpic1-142-1x.png",
+        "reference_3x": "cpic1-142-3x.png",
+        "reference_1x_sha256": "b4a4210e091a2a4dd3c17d8f5fbc91a19b1470b49173c0b577b6ef4c67117b57",
+        "reference_3x_sha256": "360d6009bd57a35ae5c2d9d98a6d7516eb75dabbb614736670d210bdbca25ef7",
+        "indexed": "cpic1-142.idx",
+        "indexed_sha256": "c8593643babf8bdc768aa38cf07e19c1198236b31efe861dc18919a06f3771e5",
+        "palette": "cpic1-142.pal",
+        "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 144 by 144 pixels, aspect ratio 48:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "cpic1-014",
+          "mask": "cpic1-142-mask.png",
+          "mask_sha256": "eb1c5a8396a07a1b7b5e8b7301df6c57146d296572e18563d08def623e8a424c",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "cpic1-142",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-cb005cdc-acfd-4b2a-9f49-34bc514930d0.png",
+        "prompt": "Use case: style-transfer. Asset type: ONE original classic CRPG combat sprite cpic1-142. Tanetal alternate action, the original orange-red/dark olive horned fiend CROUCHING LOW toward RIGHT. Small horned head lies high on RIGHT, not left. Raised red arm reaches to upper middle holding the bright pale cyan-white curved blade across TOP edge. The narrow purple left leg stretches diagonally toward bottom LEFT; right arm or leg bends to lower RIGHT ending in white claw tips. Dark tail-like forms extend LEFT at middle. Keep exact diagonal twisting pose, all negative spaces and crop. The original image alone determines geometry, proportions, silhouette, pose, every color area, crop and negative space. Smooth hand-painted1990s fantasy illustration, approved style B, original vivid palette. Preserve exact limb positions, small head proportions, weapon angles and full edge-to-edge framing. No added objects, limbs, effects, scenery, text, floor, shadow, margins or border. Background flat #555555. No pixel art, block mosaic, modern3D or photorealism. Input is nearest-neighbour enlarged for legibility only; repaint into continuous painted forms for a3x game asset.",
+        "generation": "built-in image_gen; one call per original state",
+        "references": [
+          "workplace/hd/out/b13/guidance/cpic1-142-original-8x.png"
+        ],
+        "raw_sha256": "063ff441190706eb148e558534ae3a083a575492fc9a9473605efb36959a271e",
+        "target": [
+          144,
+          144
+        ],
+        "version": 0,
+        "issue": 32,
+        "status": "generated",
+        "source": {
+          "key": "cpic1-142",
+          "source_file": "CPIC1.DAX",
+          "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+          "block": 142,
+          "packed_file_offset": 47816,
+          "decoded_sha256": "616787c750556403529b2ac235c8e3975e7c89c7a075a709f3d4415605a738de",
+          "source_size": [
+            48,
+            48
+          ],
+          "output_size": [
+            144,
+            144
+          ],
+          "reference_1x": "cpic1-142-1x.png",
+          "reference_3x": "cpic1-142-3x.png",
+          "reference_1x_sha256": "b4a4210e091a2a4dd3c17d8f5fbc91a19b1470b49173c0b577b6ef4c67117b57",
+          "reference_3x_sha256": "360d6009bd57a35ae5c2d9d98a6d7516eb75dabbb614736670d210bdbca25ef7",
+          "indexed": "cpic1-142.idx",
+          "indexed_sha256": "c8593643babf8bdc768aa38cf07e19c1198236b31efe861dc18919a06f3771e5",
+          "palette": "cpic1-142.pal",
+          "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": false,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 144 by 144 pixels, aspect ratio 48:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "animation": {
+            "base": "cpic1-014",
+            "mask": "cpic1-142-mask.png",
+            "mask_sha256": "eb1c5a8396a07a1b7b5e8b7301df6c57146d296572e18563d08def623e8a424c",
+            "meaning": "source state difference; no timing claim"
+          }
+        },
+        "request_manifest_sha256": "8ad384446982912c72e777e47ac11ddfccd02a346475e8ccfac202e2888591ce",
+        "reference_sha256": {
+          "workplace/hd/out/b13/guidance/cpic1-142-original-8x.png": "e86a5bf47d492932e409fca28bc893fa5ea021e15d3decd348955f9cd8be6ba7"
+        },
+        "reference_resize": "nearest-neighbour original input only",
+        "identity_source": "MON1CHA same-number Pascal name is auxiliary; CPIC pose and palette remain authoritative",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "cpic1-142",
+        "raw": "cpic1-142-r0-raw.png",
+        "raw_sha256": "063ff441190706eb148e558534ae3a083a575492fc9a9473605efb36959a271e",
+        "png": "cpic1-142.png",
+        "png_sha256": "350f339a755d6cd7689c0c8a32049e97002ab4ae2be60613583cf17ae8eedbba",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "cpic1-142",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.668693009118541,
+        "median_hue_difference_degrees": 10.606931282715674,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "350f339a755d6cd7689c0c8a32049e97002ab4ae2be60613583cf17ae8eedbba"
+      },
+      "visual": {
+        "png_sha256": "350f339a755d6cd7689c0c8a32049e97002ab4ae2be60613583cf17ae8eedbba",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "cpic1-015",
+      "source": {
+        "key": "cpic1-015",
+        "source_file": "CPIC1.DAX",
+        "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+        "block": 15,
+        "packed_file_offset": 49598,
+        "decoded_sha256": "bb0dea027c3cac7a63e24949b0c6e05295031c2172877c95968df5162d815313",
+        "source_size": [
+          24,
+          48
+        ],
+        "output_size": [
+          72,
+          144
+        ],
+        "reference_1x": "cpic1-015-1x.png",
+        "reference_3x": "cpic1-015-3x.png",
+        "reference_1x_sha256": "c2de55bbab9a89235a1477be800f17770c84b65242c9ada0635f26217647bf86",
+        "reference_3x_sha256": "3fe4c2c8386aa627fe2fd8e96859f7133eb71ae07271366bebe35019d1063375",
+        "indexed": "cpic1-015.idx",
+        "indexed_sha256": "2567d57be710a1f3f562ab6c9c4aed26ef9dbab28e3489338464effa8aab0159",
+        "palette": "cpic1-015.pal",
+        "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 144 pixels, aspect ratio 24:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "cpic1-015",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-3bd79a64-add2-4c76-81f4-b2024b5c59b1.png",
+        "prompt": "Use case: style-transfer. Asset type: ONE original classic CRPG combat sprite cpic1-015. Hill giant, tall narrow orange-red and brown giant with dark long hair and beard, small face high at center. Preserve the raised left arm at top left, original brown-purple clothing and bands, orange-red knees and lower legs, dark feet. A long narrow purple shaft crosses from upper LEFT down diagonally to bottom RIGHT where it ends in the original cyan-white-yellow head. Retain exact pose and weapon shape, no added equipment. The original image alone determines geometry, proportions, silhouette, pose, every color area, crop and negative space. Smooth hand-painted1990s fantasy illustration, approved style B, original vivid palette. Preserve exact limb positions, small head proportions, weapon angles and full edge-to-edge framing. No added objects, limbs, effects, scenery, text, floor, shadow, margins or border. Background flat #555555. No pixel art, block mosaic, modern3D or photorealism. Input is nearest-neighbour enlarged for legibility only; repaint into continuous painted forms for a3x game asset.",
+        "generation": "built-in image_gen; one call per original state",
+        "references": [
+          "workplace/hd/out/b13/guidance/cpic1-015-original-8x.png"
+        ],
+        "raw_sha256": "f5ca92eb6c790c1d8d693badac1147ad874e1b96ac026eb1e866fa49782a23f3",
+        "target": [
+          72,
+          144
+        ],
+        "version": 0,
+        "issue": 32,
+        "status": "generated",
+        "source": {
+          "key": "cpic1-015",
+          "source_file": "CPIC1.DAX",
+          "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+          "block": 15,
+          "packed_file_offset": 49598,
+          "decoded_sha256": "bb0dea027c3cac7a63e24949b0c6e05295031c2172877c95968df5162d815313",
+          "source_size": [
+            24,
+            48
+          ],
+          "output_size": [
+            72,
+            144
+          ],
+          "reference_1x": "cpic1-015-1x.png",
+          "reference_3x": "cpic1-015-3x.png",
+          "reference_1x_sha256": "c2de55bbab9a89235a1477be800f17770c84b65242c9ada0635f26217647bf86",
+          "reference_3x_sha256": "3fe4c2c8386aa627fe2fd8e96859f7133eb71ae07271366bebe35019d1063375",
+          "indexed": "cpic1-015.idx",
+          "indexed_sha256": "2567d57be710a1f3f562ab6c9c4aed26ef9dbab28e3489338464effa8aab0159",
+          "palette": "cpic1-015.pal",
+          "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": false,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 144 pixels, aspect ratio 24:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+        },
+        "request_manifest_sha256": "8ad384446982912c72e777e47ac11ddfccd02a346475e8ccfac202e2888591ce",
+        "reference_sha256": {
+          "workplace/hd/out/b13/guidance/cpic1-015-original-8x.png": "d922210ccb03e9950dc6f104306008e826475c55ebeb2762204a88692cf7c8cc"
+        },
+        "reference_resize": "nearest-neighbour original input only",
+        "identity_source": "MON1CHA same-number Pascal name is auxiliary; CPIC pose and palette remain authoritative",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "cpic1-015",
+        "raw": "cpic1-015-r0-raw.png",
+        "raw_sha256": "f5ca92eb6c790c1d8d693badac1147ad874e1b96ac026eb1e866fa49782a23f3",
+        "png": "cpic1-015.png",
+        "png_sha256": "dfc3673837e39b4f81f6f7525ec9d0d6a84d59f09696c5d77f8f7238576d4530",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "cpic1-015",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.569620253164557,
+        "median_hue_difference_degrees": 6.166867720998686,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "dfc3673837e39b4f81f6f7525ec9d0d6a84d59f09696c5d77f8f7238576d4530"
+      },
+      "visual": {
+        "png_sha256": "dfc3673837e39b4f81f6f7525ec9d0d6a84d59f09696c5d77f8f7238576d4530",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "cpic1-143",
+      "source": {
+        "key": "cpic1-143",
+        "source_file": "CPIC1.DAX",
+        "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+        "block": 143,
+        "packed_file_offset": 50889,
+        "decoded_sha256": "843c8c861e7b76b7fb293206ef4f4eab1078a2ff512f626686ee47140dd4f9de",
+        "source_size": [
+          24,
+          48
+        ],
+        "output_size": [
+          72,
+          144
+        ],
+        "reference_1x": "cpic1-143-1x.png",
+        "reference_3x": "cpic1-143-3x.png",
+        "reference_1x_sha256": "d5b87331c9bf83adc495f7bd61dd504043a1b515fad04cc9c315aa9da87faeca",
+        "reference_3x_sha256": "b64d7a23b95366f5660362c1cbbd41e8c8707f79fa283849c4741b4062c675c2",
+        "indexed": "cpic1-143.idx",
+        "indexed_sha256": "29de1dd8c09a91e3d194697ad53b9b1cfdffe7b175777996c4a2667ed8b141e0",
+        "palette": "cpic1-143.pal",
+        "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 144 pixels, aspect ratio 24:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "cpic1-015",
+          "mask": "cpic1-143-mask.png",
+          "mask_sha256": "0d3fea496dcabf8671880902a06bda928bace0cf3d4a9d4e189b9ca289f0f283",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "cpic1-143",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-86ff5069-64b1-416c-a4c0-a82c2e87f784.png",
+        "prompt": "Use case: style-transfer. Asset type: ONE original classic CRPG combat sprite cpic1-143. Hill giant alternate action, original orange-red skin, brown-purple clothing, long dark hair and beard. Left arm raised along upper-left edge holding purple pole, RIGHT hand is now lowered at waist center-right holding the pole diagonally down to the bright cyan-white-yellow head at bottom right. Preserve the original narrow tall body, asymmetric bent legs, orange-red knees and black feet. No new equipment or objects. The original image alone determines geometry, proportions, silhouette, pose, every color area, crop and negative space. Smooth hand-painted1990s fantasy illustration, approved style B, original vivid palette. Preserve exact limb positions, small head proportions, weapon angles and full edge-to-edge framing. No added objects, limbs, effects, scenery, text, floor, shadow, margins or border. Background flat #555555. No pixel art, block mosaic, modern3D or photorealism. Input is nearest-neighbour enlarged for legibility only; repaint into continuous painted forms for a3x game asset.",
+        "generation": "built-in image_gen; one call per original state",
+        "references": [
+          "workplace/hd/out/b13/guidance/cpic1-143-original-8x.png"
+        ],
+        "raw_sha256": "d76d1b956bd72cc41f9bd1fb0694200f383a1aa3facce8182d81117feb4e31ed",
+        "target": [
+          72,
+          144
+        ],
+        "version": 0,
+        "issue": 32,
+        "status": "generated",
+        "source": {
+          "key": "cpic1-143",
+          "source_file": "CPIC1.DAX",
+          "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+          "block": 143,
+          "packed_file_offset": 50889,
+          "decoded_sha256": "843c8c861e7b76b7fb293206ef4f4eab1078a2ff512f626686ee47140dd4f9de",
+          "source_size": [
+            24,
+            48
+          ],
+          "output_size": [
+            72,
+            144
+          ],
+          "reference_1x": "cpic1-143-1x.png",
+          "reference_3x": "cpic1-143-3x.png",
+          "reference_1x_sha256": "d5b87331c9bf83adc495f7bd61dd504043a1b515fad04cc9c315aa9da87faeca",
+          "reference_3x_sha256": "b64d7a23b95366f5660362c1cbbd41e8c8707f79fa283849c4741b4062c675c2",
+          "indexed": "cpic1-143.idx",
+          "indexed_sha256": "29de1dd8c09a91e3d194697ad53b9b1cfdffe7b175777996c4a2667ed8b141e0",
+          "palette": "cpic1-143.pal",
+          "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": false,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 144 pixels, aspect ratio 24:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "animation": {
+            "base": "cpic1-015",
+            "mask": "cpic1-143-mask.png",
+            "mask_sha256": "0d3fea496dcabf8671880902a06bda928bace0cf3d4a9d4e189b9ca289f0f283",
+            "meaning": "source state difference; no timing claim"
+          }
+        },
+        "request_manifest_sha256": "8ad384446982912c72e777e47ac11ddfccd02a346475e8ccfac202e2888591ce",
+        "reference_sha256": {
+          "workplace/hd/out/b13/guidance/cpic1-143-original-8x.png": "c0cf20d044de23e2a1706abc0fc73459bb10f18b3e865f9baaa37dd7471ed355"
+        },
+        "reference_resize": "nearest-neighbour original input only",
+        "identity_source": "MON1CHA same-number Pascal name is auxiliary; CPIC pose and palette remain authoritative",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "cpic1-143",
+        "raw": "cpic1-143-r0-raw.png",
+        "raw_sha256": "d76d1b956bd72cc41f9bd1fb0694200f383a1aa3facce8182d81117feb4e31ed",
+        "png": "cpic1-143.png",
+        "png_sha256": "3d4df218113ff4db1cb827ac426ea8e7096fc2a606e6a4ba27dad4cedcb79449",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "cpic1-143",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.4382716049382716,
+        "median_hue_difference_degrees": 8.664788383628476,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "3d4df218113ff4db1cb827ac426ea8e7096fc2a606e6a4ba27dad4cedcb79449"
+      },
+      "visual": {
+        "png_sha256": "3d4df218113ff4db1cb827ac426ea8e7096fc2a606e6a4ba27dad4cedcb79449",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "cpic1-016",
+      "source": {
+        "key": "cpic1-016",
+        "source_file": "CPIC1.DAX",
+        "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+        "block": 16,
+        "packed_file_offset": 52178,
+        "decoded_sha256": "352a9dd426ef0662c16d01abb082eb6a3f3ca027e63ad83877730082ab529759",
+        "source_size": [
+          24,
+          48
+        ],
+        "output_size": [
+          72,
+          144
+        ],
+        "reference_1x": "cpic1-016-1x.png",
+        "reference_3x": "cpic1-016-3x.png",
+        "reference_1x_sha256": "57995cf0358305d0f8c06b96eab6763f007f15c603e426f61a7d2ac94adc83d1",
+        "reference_3x_sha256": "ceded4bfb760179752eceda9aaea4dc008d172f8af69c2dac2b2bff140d2bd28",
+        "indexed": "cpic1-016.idx",
+        "indexed_sha256": "5a48a565e3ab75aa868d8d0941837da5ae817c07a1a6c6011fe0deda71e1a862",
+        "palette": "cpic1-016.pal",
+        "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 144 pixels, aspect ratio 24:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "cpic1-016",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-50fefa17-c84a-4596-a871-f9665afc3cea.png",
+        "prompt": "Use case: style-transfer. Asset type: ONE original classic CRPG combat sprite cpic1-016. Hill giant shaman, tall narrow orange/brown and dark purple figure. Preserve long dark hair and small red face near upper middle, very tall brown club filling upper LEFT, orange right elbow/hand at midright, cyan-blue rounded object at lower LEFT attached to the long purple diagonal form across chest. Preserve purple clothing, orange-brown legs and feet with original red/yellow accents. Do not invent new objects or change any original form. The original image alone determines geometry, proportions, silhouette, pose, every color area, crop and negative space. Smooth hand-painted1990s fantasy illustration, approved style B, original vivid palette. Preserve exact limb positions, small head proportions, weapon angles and full edge-to-edge framing. No added objects, limbs, effects, scenery, text, floor, shadow, margins or border. Background flat #555555. No pixel art, block mosaic, modern3D or photorealism. Input is nearest-neighbour enlarged for legibility only; repaint into continuous painted forms for a3x game asset.",
+        "generation": "built-in image_gen; one call per original state",
+        "references": [
+          "workplace/hd/out/b13/guidance/cpic1-016-original-8x.png"
+        ],
+        "raw_sha256": "d20c372f2138b4f9a907f093b177a45ca4476b99c5648bd24717fc276c505e72",
+        "target": [
+          72,
+          144
+        ],
+        "version": 0,
+        "issue": 32,
+        "status": "generated",
+        "source": {
+          "key": "cpic1-016",
+          "source_file": "CPIC1.DAX",
+          "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+          "block": 16,
+          "packed_file_offset": 52178,
+          "decoded_sha256": "352a9dd426ef0662c16d01abb082eb6a3f3ca027e63ad83877730082ab529759",
+          "source_size": [
+            24,
+            48
+          ],
+          "output_size": [
+            72,
+            144
+          ],
+          "reference_1x": "cpic1-016-1x.png",
+          "reference_3x": "cpic1-016-3x.png",
+          "reference_1x_sha256": "57995cf0358305d0f8c06b96eab6763f007f15c603e426f61a7d2ac94adc83d1",
+          "reference_3x_sha256": "ceded4bfb760179752eceda9aaea4dc008d172f8af69c2dac2b2bff140d2bd28",
+          "indexed": "cpic1-016.idx",
+          "indexed_sha256": "5a48a565e3ab75aa868d8d0941837da5ae817c07a1a6c6011fe0deda71e1a862",
+          "palette": "cpic1-016.pal",
+          "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": false,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 144 pixels, aspect ratio 24:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+        },
+        "request_manifest_sha256": "8ad384446982912c72e777e47ac11ddfccd02a346475e8ccfac202e2888591ce",
+        "reference_sha256": {
+          "workplace/hd/out/b13/guidance/cpic1-016-original-8x.png": "01a2632cb6e8572081282f7f2c8ae0d53df5ca0e55c9801f96cc530c99af939b"
+        },
+        "reference_resize": "nearest-neighbour original input only",
+        "identity_source": "MON1CHA same-number Pascal name is auxiliary; CPIC pose and palette remain authoritative",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "cpic1-016",
+        "raw": "cpic1-016-r0-raw.png",
+        "raw_sha256": "d20c372f2138b4f9a907f093b177a45ca4476b99c5648bd24717fc276c505e72",
+        "png": "cpic1-016.png",
+        "png_sha256": "f1847829ea7140f658a1661c13cf86a36f5d3a07c7d4f7f0f36b9e3f219e0a9e",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "cpic1-016",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.6296296296296297,
+        "median_hue_difference_degrees": 5.816725632435233,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "f1847829ea7140f658a1661c13cf86a36f5d3a07c7d4f7f0f36b9e3f219e0a9e"
+      },
+      "visual": {
+        "png_sha256": "f1847829ea7140f658a1661c13cf86a36f5d3a07c7d4f7f0f36b9e3f219e0a9e",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "cpic1-144",
+      "source": {
+        "key": "cpic1-144",
+        "source_file": "CPIC1.DAX",
+        "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+        "block": 144,
+        "packed_file_offset": 53470,
+        "decoded_sha256": "d91bd0a10a85dc81fd3bba0763b9b3df5a00e745700e4bc24f852de0d10b25fb",
+        "source_size": [
+          24,
+          48
+        ],
+        "output_size": [
+          72,
+          144
+        ],
+        "reference_1x": "cpic1-144-1x.png",
+        "reference_3x": "cpic1-144-3x.png",
+        "reference_1x_sha256": "a228ce52e44ca53c2acff52ae146904703dce012aa275715914086c07887e11b",
+        "reference_3x_sha256": "e3aff7327416ea2359edddc14455cc82ac4690b5907ac2ea3b6f26886c3a2fdd",
+        "indexed": "cpic1-144.idx",
+        "indexed_sha256": "543f691e2dfa1e770fdeee6aece9514a0b5b970b3ce3a82bddf806fa8ce380ab",
+        "palette": "cpic1-144.pal",
+        "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 144 pixels, aspect ratio 24:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "cpic1-016",
+          "mask": "cpic1-144-mask.png",
+          "mask_sha256": "e917cbe16c017cf43dbeffb060360be3f90ca4e7282ad51acdaf35de1c38d63c",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "cpic1-144",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-fee2631c-b0ea-471f-8add-2bfb1527c1af.png",
+        "prompt": "Use case: style-transfer. Strict restoration of ONE narrow tall source sprite. Keep orange-brown figure in the exact long narrow stance, SMALL red face at original upper middle, original long purple-black hair and purple clothing. Thin orange left arm descends along source left side, its hand near center-left at waist. The brown wooden form is a relatively THIN diagonal strip from this hand toward bottom RIGHT, not an enlarged foreground log. Pale blue rounded form stays at left edge near waist, narrow cyan beads on diagonal chest band. Right arm is bent at original right-middle position. Preserve original narrow orange legs and exact feet, including brown strip crossing before lower-right leg. Faithfully restore the supplied original into smooth hand-painted fantasy gouache, approved style B. Original shapes and color-area boundaries are authoritative, including any unusual proportions. Keep the same full crop, every gray gap, clothing color and limb endpoint. Do not enlarge head, weapons or hands, add objects, or reinterpret the stance. Background exactly flat #555555. No floor, shadow, glow, text, border, margins,3D or photorealism. Smooth continuous painted edges and fine brush detail inside original shapes; no square pixel blocks. Input enlarged only for readability; output for3x game sprite.",
+        "generation": "built-in image_gen; one call per original state",
+        "references": [
+          "workplace/hd/out/b13/guidance/cpic1-144-original-8x.png"
+        ],
+        "raw_sha256": "b98ffb90d670d4f44347148871fb3bb5f143b0a7054f45092d37a7672c76c807",
+        "target": [
+          72,
+          144
+        ],
+        "version": 1,
+        "issue": 32,
+        "status": "generated",
+        "source": {
+          "key": "cpic1-144",
+          "source_file": "CPIC1.DAX",
+          "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+          "block": 144,
+          "packed_file_offset": 53470,
+          "decoded_sha256": "d91bd0a10a85dc81fd3bba0763b9b3df5a00e745700e4bc24f852de0d10b25fb",
+          "source_size": [
+            24,
+            48
+          ],
+          "output_size": [
+            72,
+            144
+          ],
+          "reference_1x": "cpic1-144-1x.png",
+          "reference_3x": "cpic1-144-3x.png",
+          "reference_1x_sha256": "a228ce52e44ca53c2acff52ae146904703dce012aa275715914086c07887e11b",
+          "reference_3x_sha256": "e3aff7327416ea2359edddc14455cc82ac4690b5907ac2ea3b6f26886c3a2fdd",
+          "indexed": "cpic1-144.idx",
+          "indexed_sha256": "543f691e2dfa1e770fdeee6aece9514a0b5b970b3ce3a82bddf806fa8ce380ab",
+          "palette": "cpic1-144.pal",
+          "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": false,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 144 pixels, aspect ratio 24:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "animation": {
+            "base": "cpic1-016",
+            "mask": "cpic1-144-mask.png",
+            "mask_sha256": "e917cbe16c017cf43dbeffb060360be3f90ca4e7282ad51acdaf35de1c38d63c",
+            "meaning": "source state difference; no timing claim"
+          }
+        },
+        "request_manifest_sha256": "8ad384446982912c72e777e47ac11ddfccd02a346475e8ccfac202e2888591ce",
+        "reference_sha256": {
+          "workplace/hd/out/b13/guidance/cpic1-144-original-8x.png": "d0d94ce05f8cd17617cba2fe1d49adc8e55a6f55b028a094b1d83933519a2f87"
+        },
+        "reference_resize": "nearest-neighbour original input only",
+        "identity_source": "MON1CHA same-number Pascal name is auxiliary; CPIC pose and palette remain authoritative",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "cpic1-144",
+        "raw": "cpic1-144-r1-raw.png",
+        "raw_sha256": "b98ffb90d670d4f44347148871fb3bb5f143b0a7054f45092d37a7672c76c807",
+        "png": "cpic1-144.png",
+        "png_sha256": "edb89dee18571fa96092b53bb228f88d926cdb9f470951e767068f11e1d2fd37",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "cpic1-144",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.6234567901234568,
+        "median_hue_difference_degrees": 7.1880294513498555,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "edb89dee18571fa96092b53bb228f88d926cdb9f470951e767068f11e1d2fd37"
+      },
+      "visual": {
+        "png_sha256": "edb89dee18571fa96092b53bb228f88d926cdb9f470951e767068f11e1d2fd37",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "cpic1-017",
+      "source": {
+        "key": "cpic1-017",
+        "source_file": "CPIC1.DAX",
+        "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+        "block": 17,
+        "packed_file_offset": 54709,
+        "decoded_sha256": "f3af3f7d5c940e1b3617580e57357e36f3e60ef3cc5361863e4fedd1ece9db69",
+        "source_size": [
+          24,
+          48
+        ],
+        "output_size": [
+          72,
+          144
+        ],
+        "reference_1x": "cpic1-017-1x.png",
+        "reference_3x": "cpic1-017-3x.png",
+        "reference_1x_sha256": "b47b9c46c89b3976fdb829e7494308429959c8ee0f86b0c2f6d7223cc81cddc2",
+        "reference_3x_sha256": "a4e93faa4a57c657a222a0382adcb905eebaebaa236b6d20c05416f811218cc0",
+        "indexed": "cpic1-017.idx",
+        "indexed_sha256": "faaa1e56cb7fd5764d7da56aac9b9b2be3f7cb238f6543ff68d039399d3a184c",
+        "palette": "cpic1-017.pal",
+        "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 144 pixels, aspect ratio 24:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "cpic1-017",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-28f03f36-9a30-4a4e-9250-7084b2be24e5.png",
+        "prompt": "Use case: style-transfer. Asset type: ONE original classic CRPG combat sprite cpic1-017. Fire giant, tall narrow near-black figure with dark cobalt arms raised beside head, small orange-red face, cyan helmet top. Preserve a long straight narrow pale cyan-white sword/pole standing VERTICAL just right of center from top to lower thigh. Keep original black chest, blue-purple belt and pants, blue checkered upper-leg details, bright yellow lower LEFT boot and red-orange lower RIGHT boot, with exact dark feet and stance. No wings, glow or new weapons. The original image alone determines geometry, proportions, silhouette, pose, every color area, crop and negative space. Smooth hand-painted1990s fantasy illustration, approved style B, original vivid palette. Preserve exact limb positions, small head proportions, weapon angles and full edge-to-edge framing. No added objects, limbs, effects, scenery, text, floor, shadow, margins or border. Background flat #555555. No pixel art, block mosaic, modern3D or photorealism. Input is nearest-neighbour enlarged for legibility only; repaint into continuous painted forms for a3x game asset.",
+        "generation": "built-in image_gen; one call per original state",
+        "references": [
+          "workplace/hd/out/b13/guidance/cpic1-017-original-8x.png"
+        ],
+        "raw_sha256": "5738e0df0718895ec21fe618cc6353717f8e6935c5cc6c350835c5bba62168c0",
+        "target": [
+          72,
+          144
+        ],
+        "version": 0,
+        "issue": 32,
+        "status": "generated",
+        "source": {
+          "key": "cpic1-017",
+          "source_file": "CPIC1.DAX",
+          "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+          "block": 17,
+          "packed_file_offset": 54709,
+          "decoded_sha256": "f3af3f7d5c940e1b3617580e57357e36f3e60ef3cc5361863e4fedd1ece9db69",
+          "source_size": [
+            24,
+            48
+          ],
+          "output_size": [
+            72,
+            144
+          ],
+          "reference_1x": "cpic1-017-1x.png",
+          "reference_3x": "cpic1-017-3x.png",
+          "reference_1x_sha256": "b47b9c46c89b3976fdb829e7494308429959c8ee0f86b0c2f6d7223cc81cddc2",
+          "reference_3x_sha256": "a4e93faa4a57c657a222a0382adcb905eebaebaa236b6d20c05416f811218cc0",
+          "indexed": "cpic1-017.idx",
+          "indexed_sha256": "faaa1e56cb7fd5764d7da56aac9b9b2be3f7cb238f6543ff68d039399d3a184c",
+          "palette": "cpic1-017.pal",
+          "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": false,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 144 pixels, aspect ratio 24:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+        },
+        "request_manifest_sha256": "8ad384446982912c72e777e47ac11ddfccd02a346475e8ccfac202e2888591ce",
+        "reference_sha256": {
+          "workplace/hd/out/b13/guidance/cpic1-017-original-8x.png": "75ae313e2793049b1ca8deda6a3ae5243adffacb444d702b5a858aee6c7f2571"
+        },
+        "reference_resize": "nearest-neighbour original input only",
+        "identity_source": "MON1CHA same-number Pascal name is auxiliary; CPIC pose and palette remain authoritative",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "cpic1-017",
+        "raw": "cpic1-017-r0-raw.png",
+        "raw_sha256": "5738e0df0718895ec21fe618cc6353717f8e6935c5cc6c350835c5bba62168c0",
+        "png": "cpic1-017.png",
+        "png_sha256": "d7bd9963dfb4c7ef164fa93f9548ec524fba6342580f69587d2d24296617384e",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "cpic1-017",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.7345679012345679,
+        "median_hue_difference_degrees": 10.100505302904082,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "d7bd9963dfb4c7ef164fa93f9548ec524fba6342580f69587d2d24296617384e"
+      },
+      "visual": {
+        "png_sha256": "d7bd9963dfb4c7ef164fa93f9548ec524fba6342580f69587d2d24296617384e",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "cpic1-145",
+      "source": {
+        "key": "cpic1-145",
+        "source_file": "CPIC1.DAX",
+        "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+        "block": 145,
+        "packed_file_offset": 55848,
+        "decoded_sha256": "d757b49aa4cf591d63942297be41e7ca70cf286a7e0ebac4e943371959549c0a",
+        "source_size": [
+          24,
+          48
+        ],
+        "output_size": [
+          72,
+          144
+        ],
+        "reference_1x": "cpic1-145-1x.png",
+        "reference_3x": "cpic1-145-3x.png",
+        "reference_1x_sha256": "20a12b1841a41a4b98fe3db95781b68b0deb4dd6d7abe9722fd44e0c2b7301d1",
+        "reference_3x_sha256": "41783a84df258c57a793010e3b55abfd7a560bc46e584bd9f862e998d1a0353b",
+        "indexed": "cpic1-145.idx",
+        "indexed_sha256": "5fb69f41342ac93a7b21c943852d72454fdda18c347250ac0e26573b47449911",
+        "palette": "cpic1-145.pal",
+        "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 144 pixels, aspect ratio 24:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "cpic1-017",
+          "mask": "cpic1-145-mask.png",
+          "mask_sha256": "f8f8007a36c10b906af2e73b12853562e466e202dfcb48cd717ed5cf4da2cdea",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "cpic1-145",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-f90c2b43-78c8-4d0f-a8e2-2a0d4e0cb506.png",
+        "prompt": "Use case: style-transfer. Asset type: ONE original classic CRPG combat sprite cpic1-145. Fire giant alternate action, original dark cobalt and near-black figure crouched with knees bent. Cyan helmet and orange-red face near upper center. Both purple arms extend horizontally across upper-middle around the long pale cyan-white sword standing VERTICAL at center-right and touching the bottom edge. Preserve the original blue patterned waist/legs, bright yellow-orange boot regions, white-yellow marks along ground edge and original stance. No added glow, flames, extra weapons or scene. The original image alone determines geometry, proportions, silhouette, pose, every color area, crop and negative space. Smooth hand-painted1990s fantasy illustration, approved style B, original vivid palette. Preserve exact limb positions, small head proportions, weapon angles and full edge-to-edge framing. No added objects, limbs, effects, scenery, text, floor, shadow, margins or border. Background flat #555555. No pixel art, block mosaic, modern3D or photorealism. Input is nearest-neighbour enlarged for legibility only; repaint into continuous painted forms for a3x game asset.",
+        "generation": "built-in image_gen; one call per original state",
+        "references": [
+          "workplace/hd/out/b13/guidance/cpic1-145-original-8x.png"
+        ],
+        "raw_sha256": "54bf620a9053860d1f6b7f748b3b691cb268192cfc47e130a8f24f11748b2a53",
+        "target": [
+          72,
+          144
+        ],
+        "version": 0,
+        "issue": 32,
+        "status": "generated",
+        "source": {
+          "key": "cpic1-145",
+          "source_file": "CPIC1.DAX",
+          "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+          "block": 145,
+          "packed_file_offset": 55848,
+          "decoded_sha256": "d757b49aa4cf591d63942297be41e7ca70cf286a7e0ebac4e943371959549c0a",
+          "source_size": [
+            24,
+            48
+          ],
+          "output_size": [
+            72,
+            144
+          ],
+          "reference_1x": "cpic1-145-1x.png",
+          "reference_3x": "cpic1-145-3x.png",
+          "reference_1x_sha256": "20a12b1841a41a4b98fe3db95781b68b0deb4dd6d7abe9722fd44e0c2b7301d1",
+          "reference_3x_sha256": "41783a84df258c57a793010e3b55abfd7a560bc46e584bd9f862e998d1a0353b",
+          "indexed": "cpic1-145.idx",
+          "indexed_sha256": "5fb69f41342ac93a7b21c943852d72454fdda18c347250ac0e26573b47449911",
+          "palette": "cpic1-145.pal",
+          "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": false,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 144 pixels, aspect ratio 24:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "animation": {
+            "base": "cpic1-017",
+            "mask": "cpic1-145-mask.png",
+            "mask_sha256": "f8f8007a36c10b906af2e73b12853562e466e202dfcb48cd717ed5cf4da2cdea",
+            "meaning": "source state difference; no timing claim"
+          }
+        },
+        "request_manifest_sha256": "8ad384446982912c72e777e47ac11ddfccd02a346475e8ccfac202e2888591ce",
+        "reference_sha256": {
+          "workplace/hd/out/b13/guidance/cpic1-145-original-8x.png": "56f3bdbeaafa5fd63c11dd75be6b07652f59b9b6f329a8e936f75b1791b1b2b5"
+        },
+        "reference_resize": "nearest-neighbour original input only",
+        "identity_source": "MON1CHA same-number Pascal name is auxiliary; CPIC pose and palette remain authoritative",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "cpic1-145",
+        "raw": "cpic1-145-r0-raw.png",
+        "raw_sha256": "54bf620a9053860d1f6b7f748b3b691cb268192cfc47e130a8f24f11748b2a53",
+        "png": "cpic1-145.png",
+        "png_sha256": "eac2c3b699c6b7857ebba689be3bf982fc10d6f291cad035e74e394e4fcc3762",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "cpic1-145",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.7407407407407407,
+        "median_hue_difference_degrees": 10.571428571428555,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "eac2c3b699c6b7857ebba689be3bf982fc10d6f291cad035e74e394e4fcc3762"
+      },
+      "visual": {
+        "png_sha256": "eac2c3b699c6b7857ebba689be3bf982fc10d6f291cad035e74e394e4fcc3762",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "cpic1-018",
+      "source": {
+        "key": "cpic1-018",
+        "source_file": "CPIC1.DAX",
+        "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+        "block": 18,
+        "packed_file_offset": 56973,
+        "decoded_sha256": "0b33ede6509f2225736a2c977d0d627f444ae4cb663ece89014053c970b0ea44",
+        "source_size": [
+          24,
+          48
+        ],
+        "output_size": [
+          72,
+          144
+        ],
+        "reference_1x": "cpic1-018-1x.png",
+        "reference_3x": "cpic1-018-3x.png",
+        "reference_1x_sha256": "895586c50b09888e6ce3436f022a59dbcaa1fc5ecac26e21564be43cc39073b9",
+        "reference_3x_sha256": "33afb9c3d36473c7ca381cea760a681e99ac01fa27632ea7310cf310cfed0c9b",
+        "indexed": "cpic1-018.idx",
+        "indexed_sha256": "1b91ab7737b17c6a1d76ba5fb3d08dc26d1f02c2ab639e237957a67e0050acbb",
+        "palette": "cpic1-018.pal",
+        "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 144 pixels, aspect ratio 24:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "cpic1-018",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-ede1b297-6e9f-4ca2-8fe7-b0251fc0ddc4.png",
+        "prompt": "Use case: style-transfer. Asset type: ONE original classic CRPG combat sprite cpic1-018. Fire giant shaman, tall narrow dark blue/purple armored figure. Preserve small yellow face under broad dark cobalt hat at upper left, bright red chest at upper right, pale cyan vertical form down upper-left chest, green-yellow and cyan bent form at upper-right arm. Preserve the red-green waist band, dark blue long legs, ochre/yellow calf bands and original purple-black boots. Every color form and gap must stay exactly where drawn, no extra staff, spell effects or objects. The original image alone determines geometry, proportions, silhouette, pose, every color area, crop and negative space. Smooth hand-painted1990s fantasy illustration, approved style B, original vivid palette. Preserve exact limb positions, small head proportions, weapon angles and full edge-to-edge framing. No added objects, limbs, effects, scenery, text, floor, shadow, margins or border. Background flat #555555. No pixel art, block mosaic, modern3D or photorealism. Input is nearest-neighbour enlarged for legibility only; repaint into continuous painted forms for a3x game asset.",
+        "generation": "built-in image_gen; one call per original state",
+        "references": [
+          "workplace/hd/out/b13/guidance/cpic1-018-original-8x.png"
+        ],
+        "raw_sha256": "3d2d757f02405aa8e7168fa3ecab3b74800ad701daa46adaa9625f2c0b4f9162",
+        "target": [
+          72,
+          144
+        ],
+        "version": 0,
+        "issue": 32,
+        "status": "generated",
+        "source": {
+          "key": "cpic1-018",
+          "source_file": "CPIC1.DAX",
+          "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+          "block": 18,
+          "packed_file_offset": 56973,
+          "decoded_sha256": "0b33ede6509f2225736a2c977d0d627f444ae4cb663ece89014053c970b0ea44",
+          "source_size": [
+            24,
+            48
+          ],
+          "output_size": [
+            72,
+            144
+          ],
+          "reference_1x": "cpic1-018-1x.png",
+          "reference_3x": "cpic1-018-3x.png",
+          "reference_1x_sha256": "895586c50b09888e6ce3436f022a59dbcaa1fc5ecac26e21564be43cc39073b9",
+          "reference_3x_sha256": "33afb9c3d36473c7ca381cea760a681e99ac01fa27632ea7310cf310cfed0c9b",
+          "indexed": "cpic1-018.idx",
+          "indexed_sha256": "1b91ab7737b17c6a1d76ba5fb3d08dc26d1f02c2ab639e237957a67e0050acbb",
+          "palette": "cpic1-018.pal",
+          "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": false,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 144 pixels, aspect ratio 24:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+        },
+        "request_manifest_sha256": "8ad384446982912c72e777e47ac11ddfccd02a346475e8ccfac202e2888591ce",
+        "reference_sha256": {
+          "workplace/hd/out/b13/guidance/cpic1-018-original-8x.png": "f307deb9cb2034b66c8c7b6d6bdfd87638939df1411e3241c07eeafcedc2dfba"
+        },
+        "reference_resize": "nearest-neighbour original input only",
+        "identity_source": "MON1CHA same-number Pascal name is auxiliary; CPIC pose and palette remain authoritative",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "cpic1-018",
+        "raw": "cpic1-018-r0-raw.png",
+        "raw_sha256": "3d2d757f02405aa8e7168fa3ecab3b74800ad701daa46adaa9625f2c0b4f9162",
+        "png": "cpic1-018.png",
+        "png_sha256": "7bc23834becd9426748ef9962a82f4087a4fbb290184af5ad90fea884ff2c84a",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "cpic1-018",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.7469135802469136,
+        "median_hue_difference_degrees": 6.585323641398361,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "7bc23834becd9426748ef9962a82f4087a4fbb290184af5ad90fea884ff2c84a"
+      },
+      "visual": {
+        "png_sha256": "7bc23834becd9426748ef9962a82f4087a4fbb290184af5ad90fea884ff2c84a",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "cpic1-146",
+      "source": {
+        "key": "cpic1-146",
+        "source_file": "CPIC1.DAX",
+        "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+        "block": 146,
+        "packed_file_offset": 58255,
+        "decoded_sha256": "9d8f730b0297d2f1fcf6c77f108659ba73b5c2d93bec94d7808b4a28c19c6cb3",
+        "source_size": [
+          24,
+          48
+        ],
+        "output_size": [
+          72,
+          144
+        ],
+        "reference_1x": "cpic1-146-1x.png",
+        "reference_3x": "cpic1-146-3x.png",
+        "reference_1x_sha256": "4bf50e906ae6a6b73062eb039bbd7d97466ff44c8163268cfce97d910918e5ab",
+        "reference_3x_sha256": "64f073e5d4e0d5a10283d7fd2deac39556b2c44fe611d3e28b7c1c14432a66a8",
+        "indexed": "cpic1-146.idx",
+        "indexed_sha256": "1414a998e897cd7928dd7ab245fbe641353d8a525f3c9ea783848bc9083065bc",
+        "palette": "cpic1-146.pal",
+        "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 144 pixels, aspect ratio 24:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "cpic1-018",
+          "mask": "cpic1-146-mask.png",
+          "mask_sha256": "261c384e10d08fefc7791768c362848f9bc7aef19a880711d84936ff3cfea2e3",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "cpic1-146",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-decde241-2c6f-4b65-b2ff-d383d851089f.png",
+        "prompt": "Use case: style-transfer. Strict restoration of ONE narrow tall source sprite. Keep small orange-red face at original upper right, dark red top shape, dark cobalt body and arms, pale cyan-blue rounded shoulder at upper left. Preserve EXACT large YELLOW-GREEN/cyan blocks crossing center of body and original narrow diagonal CYAN-BLUE shaft from shoulder across body toward lower right. At its end near right knee is original SMALL white-yellow shape, do not replace shaft with a big yellow flame. Keep all original deep purple-blue long legs and small yellow knee/ankle accents in place, original bent silhouette and feet. Do not enlarge torso, face or arms. Keep original bold dark blues, cyan and yellow-green, no increased warm red/orange areas. Faithfully restore the supplied original into smooth hand-painted fantasy gouache, approved style B. Original shapes and color-area boundaries are authoritative, including any unusual proportions. Keep the same full crop, every gray gap, clothing color and limb endpoint. Do not enlarge head, weapons or hands, add objects, or reinterpret the stance. Background exactly flat #555555. No floor, shadow, glow, text, border, margins,3D or photorealism. Smooth continuous painted edges and fine brush detail inside original shapes; no square pixel blocks. Input enlarged only for readability; output for3x game sprite.",
+        "generation": "built-in image_gen; one call per original state",
+        "references": [
+          "workplace/hd/out/b13/guidance/cpic1-146-original-8x.png"
+        ],
+        "raw_sha256": "a224a3a54ccdd53a4853cce806e15b47e158ffe3586c2793ecf1d286bc55d3dc",
+        "target": [
+          72,
+          144
+        ],
+        "version": 1,
+        "issue": 32,
+        "status": "generated",
+        "source": {
+          "key": "cpic1-146",
+          "source_file": "CPIC1.DAX",
+          "source_file_sha256": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+          "block": 146,
+          "packed_file_offset": 58255,
+          "decoded_sha256": "9d8f730b0297d2f1fcf6c77f108659ba73b5c2d93bec94d7808b4a28c19c6cb3",
+          "source_size": [
+            24,
+            48
+          ],
+          "output_size": [
+            72,
+            144
+          ],
+          "reference_1x": "cpic1-146-1x.png",
+          "reference_3x": "cpic1-146-3x.png",
+          "reference_1x_sha256": "4bf50e906ae6a6b73062eb039bbd7d97466ff44c8163268cfce97d910918e5ab",
+          "reference_3x_sha256": "64f073e5d4e0d5a10283d7fd2deac39556b2c44fe611d3e28b7c1c14432a66a8",
+          "indexed": "cpic1-146.idx",
+          "indexed_sha256": "1414a998e897cd7928dd7ab245fbe641353d8a525f3c9ea783848bc9083065bc",
+          "palette": "cpic1-146.pal",
+          "palette_sha256": "4423bc8bfec863a4a6047ec53e6b39e86dd374ecb7bd079ad998ac9758f4dd36",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": false,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 144 pixels, aspect ratio 24:48, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "animation": {
+            "base": "cpic1-018",
+            "mask": "cpic1-146-mask.png",
+            "mask_sha256": "261c384e10d08fefc7791768c362848f9bc7aef19a880711d84936ff3cfea2e3",
+            "meaning": "source state difference; no timing claim"
+          }
+        },
+        "request_manifest_sha256": "8ad384446982912c72e777e47ac11ddfccd02a346475e8ccfac202e2888591ce",
+        "reference_sha256": {
+          "workplace/hd/out/b13/guidance/cpic1-146-original-8x.png": "a36e93d074fbcc0c9481f9a2a18554a5292274feb8956c5ee8c66c23a25257ca"
+        },
+        "reference_resize": "nearest-neighbour original input only",
+        "identity_source": "MON1CHA same-number Pascal name is auxiliary; CPIC pose and palette remain authoritative",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "cpic1-146",
+        "raw": "cpic1-146-r1-raw.png",
+        "raw_sha256": "a224a3a54ccdd53a4853cce806e15b47e158ffe3586c2793ecf1d286bc55d3dc",
+        "png": "cpic1-146.png",
+        "png_sha256": "c79bdbfdab4146b9f9e4a2d9e51412249b318a6a111ca6781781624c4b3ce7e6",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "cpic1-146",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8209876543209876,
+        "median_hue_difference_degrees": 7.0990245344368965,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "c79bdbfdab4146b9f9e4a2d9e51412249b318a6a111ca6781781624c4b3ce7e6"
+      },
+      "visual": {
+        "png_sha256": "c79bdbfdab4146b9f9e4a2d9e51412249b318a6a111ca6781781624c4b3ce7e6",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    }
+  ]
+}

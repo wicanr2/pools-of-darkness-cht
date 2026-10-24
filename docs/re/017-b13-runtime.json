@@ -1,0 +1,28 @@
+{
+  "scope": "既有四路基準加未觀測資料；重跑7400格HD正常路徑；逐件2倍/F12與失配另由來源診斷驗證",
+  "added_actor_keys": [
+    "cpic1-013",
+    "cpic1-014",
+    "cpic1-015",
+    "cpic1-016",
+    "cpic1-017",
+    "cpic1-018",
+    "cpic1-141",
+    "cpic1-142",
+    "cpic1-143",
+    "cpic1-144",
+    "cpic1-145",
+    "cpic1-146"
+  ],
+  "registered_actor_states": 42,
+  "binary_sha256": "a0ee7d2a066f5c68a1b566ce4941b4f9d1006b9dfbef697fe2320397f49754ef",
+  "guest_files": 127,
+  "guest_state_equal": true,
+  "original_endpoint_equal": true,
+  "final_composite_equal": true,
+  "prior_assets_preserved": true,
+  "flash_count": 0,
+  "frame_sha256": "f86df33cdde0796ac237f77a5c0146d034a8ecadcff0732f64a45c25dac442d4",
+  "baseline_summary_sha256": "3101e09b81459af0cce1a6a7cbb4aa2b44b61134b680664d032220eaa56f26ec",
+  "inputs_sha256": "ee0328ed5e8b39a2b8c43ca3bd472b7b8ce77eaa2875892366460fffa233c5e2"
+}
