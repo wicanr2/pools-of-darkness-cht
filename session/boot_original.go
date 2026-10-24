@@ -14,6 +14,7 @@ import (
 	"errors"
 	"fmt"
 	"os"
+	"strings"
 )
 
 // maxBootEXESize is a corrupt-input guard, not a version assertion.
@@ -48,7 +49,29 @@ type BootInput struct {
 	SaveRoot          string
 	Format            BootFormat
 	Queue             []BootQueued
-	RootTSRShrink     bool // `docs/spec/431-root-tsr-shrink-option` §2
+	RootTSRShrink     bool   // `docs/spec/431-root-tsr-shrink-option` §2
+	ProgramPath       string // `docs/spec/433-session-boot-program-path`；空值保留原行為
+}
+
+func validBootProgramPath(path string) bool {
+	if path == "" {
+		return true
+	}
+	if len(path) < 4 || len(path) > 127 || path[1:3] != `:\` ||
+		!((path[0] >= 'A' && path[0] <= 'Z') || (path[0] >= 'a' && path[0] <= 'z')) {
+		return false
+	}
+	for _, c := range []byte(path) {
+		if c < 0x20 || c >= 0x7f {
+			return false
+		}
+	}
+	for _, part := range strings.Split(path[3:], `\`) {
+		if part == "" || part == "." || part == ".." || strings.ContainsAny(part, `/:*?"<>|`) {
+			return false
+		}
+	}
+	return true
 }
 
 // validBootQueueName 照 432 §2：非空、至多 12 bytes、不含路徑分隔、磁碟代號與控制字元。
@@ -108,6 +131,9 @@ func (o *Owner) BootOriginal(input BootInput) (BootReceipt, error) {
 	if len(input.Queue) > maxBootQueue {
 		return BootReceipt{}, fmt.Errorf("session: 開機佇列 %d 支超過 %d", len(input.Queue), maxBootQueue)
 	}
+	if !validBootProgramPath(input.ProgramPath) {
+		return BootReceipt{}, errors.New("session: DOS 程式路徑不合法")
+	}
 	for i, q := range input.Queue {
 		if !validBootQueueName(q.Name) {
 			return BootReceipt{}, fmt.Errorf("session: 開機佇列第 %d 支名稱 %q 不合法", i, q.Name)
@@ -145,6 +171,9 @@ func (o *Owner) BootOriginal(input BootInput) (BootReceipt, error) {
 	// 存檔根本身就是已驗證可寫的複製樹；設成 Scratch，遊戲寫檔才會真的落地
 	// （dosgolem 規格 009：Scratch 為空時寫入只記帳）。見規格 235 補充。
 	o.dos.Scratch = input.SaveRoot
+	if input.ProgramPath != "" {
+		o.dos.SetProgramPath(input.ProgramPath)
+	}
 	load := o.machine.LoadEXE
 	if input.Format == BootFormatCOM {
 		load = o.machine.LoadCOM

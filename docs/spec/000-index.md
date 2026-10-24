@@ -177,6 +177,7 @@
 - [430 — MZ 的 e_minalloc 算進程式佔用的記憶體](430-mz-minalloc-reservation.md)：CONFORMED（收據在 pools-of-darkness-cht `docs/re/003`）。`EndSeg`、`FreeSeg` 與 EXEC 需求量含 e_minalloc；Turbo Pascal 父程式放在堆疊上的 EXEC 命令列不再被子程式蓋掉。e_maxalloc 不做。
 - [431 — 疊底程式常駐後縮回保留量（選用）](431-root-tsr-shrink-option.md)：CONFORMED（接在 `cmd/probe` 與 `session.BootInput`〔432〕；oracle 入口仍見 §5；收據在 pools-of-darkness-cht `docs/re/003`）。`RootTSRShrink`／`-root-tsr-shrink`，預設關；疊底程式沒配過記憶體就常駐時，下一支從 PSP＋保留量接著放，不留 197 §5.1 的整段間隙。
 - [432 — Sealed Owner 開機：`.COM` 疊底、監督佇列、疊底常駐縮回](432-session-boot-com-queue.md)：CONFORMED（收據在 pools-of-darkness-cht `tools/play-smoke.sh`）。`BootInput` 加 `Format`（EXE／COM）、`Queue`、`RootTSRShrink`，零值等於 235；play 指令可照批次檔以常駐驅動為底接主程式。
+- [433 — Sealed Owner 開機的 DOS 程式路徑](433-session-boot-program-path.md)：CONFORMED。選用 `ProgramPath`，同步環境程式路徑及 DOS 虛擬工作目錄；空值保留舊行為。COM 開檔正負對照、session／DOS 測試與本作冷開機讀檔收據通過。
 - [250 CGA 圖形模式的 INT 10h 視窗捲動與清除、色彩選擇](250-cga-int10-scroll-and-palette.md)：CONFORMED。
 
 ### 武士傳說（Knights of Legend）（3 份）

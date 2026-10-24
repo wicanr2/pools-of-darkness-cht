@@ -785,7 +785,8 @@ func main() {
 	}
 	defer owner.Close()
 	if _, err := owner.BootOriginal(session.BootInput{EXE: exe, ExpectedEXESHA256: want, SaveRoot: saveRoot,
-		Format: session.BootFormatCOM, Queue: []session.BootQueued{{Name: startName}}, RootTSRShrink: true}); err != nil {
+		Format: session.BootFormatCOM, Queue: []session.BootQueued{{Name: startName}}, RootTSRShrink: true,
+		ProgramPath: `C:\POD\SND.COM`}); err != nil {
 		fail(err)
 	}
 	dir := *shotDir

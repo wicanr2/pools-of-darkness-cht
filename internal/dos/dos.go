@@ -652,6 +652,14 @@ func New(m *machine.Machine, root string) *DOS {
 	return d
 }
 
+// SetProgramPath 同步載入器的環境路徑與 DOS 虛擬目錄。只供開機前設定；
+// 不變更 New 的預設目錄，不存取主機路徑。契約見 433-session-boot-program-path。
+func (d *DOS) SetProgramPath(path string) {
+	d.M.ProgramPath = path
+	d.Dir = programDir(path)
+	d.RootDir = d.Dir
+}
+
 // programDir 取出 DOS 程式全路徑的目錄部分，大寫、不含磁碟機與開頭的 `\`。
 // 沒有目錄部分（或給的是空字串）回 ""，呼叫端沿用預設。
 func programDir(p string) string {
