@@ -1,0 +1,344 @@
+{
+  "batch": "b03",
+  "count": 5,
+  "private_only": true,
+  "request_manifest_sha256": "96981795c98543075997921f18b644b5da094f5a9fa0b50a97f6d93a8339a424",
+  "items": [
+    {
+      "key": "bigpic1-240",
+      "source": {
+        "key": "bigpic1-240",
+        "source_file": "BIGPIC1.DAX",
+        "source_file_sha256": "bc3565c62c1654ee757d1f98f64bbb78e06bcd551c2e8593c41feb130b9f0f6b",
+        "block": 240,
+        "packed_file_offset": 65,
+        "decoded_sha256": "4fc0ced79eba75d1f0452d2fd63a25da2d767850846cae40c3fb104ec8174633",
+        "source_size": [
+          304,
+          120
+        ],
+        "output_size": [
+          912,
+          360
+        ],
+        "reference_1x": "bigpic1-240-1x.png",
+        "reference_3x": "bigpic1-240-3x.png",
+        "reference_1x_sha256": "29ee47d56cda57c84b545b8b759ce29314e60149ae3226d8b65ee8598e8aab04",
+        "reference_3x_sha256": "e3438dbad8087857f5d6231140d3d085367e524510161679c79a9ece72945d73",
+        "indexed": "bigpic1-240.idx",
+        "indexed_sha256": "a9b0b5ec46b8a7843bc396a956d2305f41ffe32fdfb154e51b0e3027fe7b3e25",
+        "palette": "bigpic1-240.pal",
+        "palette_sha256": "d4fe27a82034ce24fa8928557c6472725822356c5954f5e5525caa198678e5b1",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 912 by 360 pixels, aspect ratio 304:120, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. This is a top-down fantasy geographical map, not a perspective landscape. Trace the exact coastline, islands, mountain chains, forest regions, roads and settlement symbols. Keep the original yellow-green land and blue sea. Do not invent or move settlements, roads, labels or decorative map furniture."
+      },
+      "generation": {
+        "batch": "b03",
+        "key": "bigpic1-240",
+        "rev": 1,
+        "refs": [
+          "/home/anr2/cht/golden_box/pool-of-darkness/workplace/hd/out/b03/bigpic1-240.png",
+          "/home/anr2/cht/golden_box/pool-of-darkness/workplace/hd/requests/b03/bigpic1-240-3x.png"
+        ],
+        "prompt": "Edit image 1 with one precise correction, keeping its existing panoramic fantasy-map painting intact. Image 2 is the original game source and content authority. Image 1 incorrectly added a pale stone building in the extreme BOTTOM LEFT CORNER (approximately x=0..80,y=300..359 on the 912x360 canvas). Remove that invented building completely and replace only that corner with the original dense green forest, matching image 2. Preserve EVERY other coastline, forest boundary, mountain, original town symbol, color and brushstroke as closely as possible. Do not add any new structure, town, road, label or object. Output same 304:120 aspect ratio, full bleed.",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-25de8d33-6b0d-4c5b-a703-84ff5e580f24.png",
+        "version": 1,
+        "generation": "built-in image_gen image edit",
+        "status": "generated",
+        "raw_sha256": "be2253516040dcfd752cd5fbe63f9a27a96b49ff10a15bba48699bcecd1aeb21"
+      },
+      "preparation": {
+        "key": "bigpic1-240",
+        "raw": "bigpic1-240-r1-raw.png",
+        "raw_sha256": "be2253516040dcfd752cd5fbe63f9a27a96b49ff10a15bba48699bcecd1aeb21",
+        "png": "bigpic1-240.png",
+        "png_sha256": "07b0d7d9366f078e2171a6342989dafb929a83b15abbf3923d9acc2ecc7617d7",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "bigpic1-240",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.5723793677204659,
+        "median_hue_difference_degrees": 4.263199367144622,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "07b0d7d9366f078e2171a6342989dafb929a83b15abbf3923d9acc2ecc7617d7"
+      },
+      "visual": {
+        "png_sha256": "07b0d7d9366f078e2171a6342989dafb929a83b15abbf3923d9acc2ecc7617d7",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "bigpic1-241",
+      "source": {
+        "key": "bigpic1-241",
+        "source_file": "BIGPIC1.DAX",
+        "source_file_sha256": "bc3565c62c1654ee757d1f98f64bbb78e06bcd551c2e8593c41feb130b9f0f6b",
+        "block": 241,
+        "packed_file_offset": 33458,
+        "decoded_sha256": "6ce611856659dabb6798525043f044d26db51f0e8fc7d5a7d465f9830560a81c",
+        "source_size": [
+          304,
+          120
+        ],
+        "output_size": [
+          912,
+          360
+        ],
+        "reference_1x": "bigpic1-241-1x.png",
+        "reference_3x": "bigpic1-241-3x.png",
+        "reference_1x_sha256": "7d8e18686402f96685c55c365256e4d3f2d4a6588244ae1d89d215f264ff2f2d",
+        "reference_3x_sha256": "3a5297b85f6cb2f5cbd9145bff5d35913bb8730b0b7f59cc1fa10b7b13446089",
+        "indexed": "bigpic1-241.idx",
+        "indexed_sha256": "3b94cba579ee81bf01289e66eadac799b784870ebb210cbffd4f6ed50ba1b0aa",
+        "palette": "bigpic1-241.pal",
+        "palette_sha256": "e63b486b4eea0f71ec765d1244355e1e8939694759dbd6e4c59bf0dc1cb5d6f1",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 912 by 360 pixels, aspect ratio 304:120, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve the exact overhead volcanic fantasy map, purple and black terrain, orange-red lava channels and the small gray structures or symbols. Keep every major boundary, ridge and small symbol in its original location. Do not add a perspective sky, horizon, buildings, creatures or objects."
+      },
+      "generation": {
+        "key": "bigpic1-241",
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 912 by 360 pixels, aspect ratio 304:120, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve the exact overhead volcanic fantasy map, purple and black terrain, orange-red lava channels and the small gray structures or symbols. Keep every major boundary, ridge and small symbol in its original location. Do not add a perspective sky, horizon, buildings, creatures or objects. Strict paint-over: trace the exact major contours and every broad color region at the original image coordinates. Keep the full panoramic crop and the original palette. No layout changes or extra subjects.",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-0af32beb-51d8-449e-b3f7-dbf51069532b.png",
+        "version": 0,
+        "status": "generated",
+        "generation": "built-in image_gen image edit",
+        "source_indexed_sha256": "3b94cba579ee81bf01289e66eadac799b784870ebb210cbffd4f6ed50ba1b0aa",
+        "source_palette_sha256": "e63b486b4eea0f71ec765d1244355e1e8939694759dbd6e4c59bf0dc1cb5d6f1",
+        "raw_sha256": "031e770fcd21ffb4a6812845f4c06376dc6b5f8b66434c93183d83ddc3555cc8"
+      },
+      "preparation": {
+        "key": "bigpic1-241",
+        "raw": "bigpic1-241-r0-raw.png",
+        "raw_sha256": "031e770fcd21ffb4a6812845f4c06376dc6b5f8b66434c93183d83ddc3555cc8",
+        "png": "bigpic1-241.png",
+        "png_sha256": "6ae9bb2eee4d8a46f02bcbfb02f18640497aa8c5171953ef42b6d32fa2869627",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "bigpic1-241",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.7469033092993159,
+        "median_hue_difference_degrees": 13.169602658129776,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "6ae9bb2eee4d8a46f02bcbfb02f18640497aa8c5171953ef42b6d32fa2869627"
+      },
+      "visual": {
+        "png_sha256": "6ae9bb2eee4d8a46f02bcbfb02f18640497aa8c5171953ef42b6d32fa2869627",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "bigpic1-242",
+      "source": {
+        "key": "bigpic1-242",
+        "source_file": "BIGPIC1.DAX",
+        "source_file_sha256": "bc3565c62c1654ee757d1f98f64bbb78e06bcd551c2e8593c41feb130b9f0f6b",
+        "block": 242,
+        "packed_file_offset": 66837,
+        "decoded_sha256": "cc1709ee9b7ea132298975087b3dfba9e9819ac9e9c8c8aa2d8f3c93cbe20186",
+        "source_size": [
+          304,
+          120
+        ],
+        "output_size": [
+          912,
+          360
+        ],
+        "reference_1x": "bigpic1-242-1x.png",
+        "reference_3x": "bigpic1-242-3x.png",
+        "reference_1x_sha256": "c2df5f0173e595f15bc31004646041fa7f81267534108a0254073b86bd1e7917",
+        "reference_3x_sha256": "b0c83fc400abaa0946f808e1559f79dafe6e5d17b9cd1aef4b63e1cc69431f52",
+        "indexed": "bigpic1-242.idx",
+        "indexed_sha256": "98a9650b8bcc7bef8822439837588ad88a0c7441cea58884d8d6ef6b440257bc",
+        "palette": "bigpic1-242.pal",
+        "palette_sha256": "a4fd453202291e4abca21cf14b32152b691b75a2a3e98895ca948d9685ef70ab",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 912 by 360 pixels, aspect ratio 304:120, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve this exact green fantasy landscape and colossal organic form, including every original silhouette, texture region, color mass and background boundary. Do not reinterpret the forms, invent anatomy or add creatures or buildings."
+      },
+      "generation": {
+        "key": "bigpic1-242",
+        "version": 3,
+        "prompt": "Edit image 1, using image 2 as the exact original pixel-art palette and composition authority. Keep image 1's entire hand-painted fantasy rendering, contours, anatomy, face, beard, red wounds, purple jewel and panoramic crop. Correct ONLY the local painted colors to match image 2. This original is a dithered mixture of OCHRE GOLD highlights (RGB 121,77,20 and RGB 77,65,12), deep BLUE-TEAL shadows (RGB 0,48,60 and RGB 0,32,40), and patches of moss green (RGB 60,138,40 and RGB 0,101,69). The ochre highlight and blue-teal shadow must remain distinct; do not put a uniform grass-green tint over both. Especially preserve broad warm ochre/yellow-brown highlights across the torso ridges and limbs, and cool blue-teal shadow valleys. Avoid pure lemon-yellow highlights, avoid flat all-green recoloring. The background stays nearly black with the original small blue stars, no big added glows. Make the skin's painted color distribution very close to the original second image, preserving localized colors at corresponding positions. Target 912x360, full-bleed 304:120 panorama, no margins, no text, no new objects.",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-e7924364-667b-485a-9d8b-f8aa64e74cba.png",
+        "generation": "built-in image_gen image edit",
+        "status": "generated",
+        "note": "訂正 r2 將藍綠陰影誤寫為草綠的提示；依實際 RGB 色盤重畫。",
+        "raw_sha256": "323f47a3c90ff8a3c45e109b2aba028143113c27b33b770a2f40f756cf7a7209"
+      },
+      "preparation": {
+        "key": "bigpic1-242",
+        "raw": "bigpic1-242-r3-raw.png",
+        "raw_sha256": "323f47a3c90ff8a3c45e109b2aba028143113c27b33b770a2f40f756cf7a7209",
+        "png": "bigpic1-242.png",
+        "png_sha256": "b613da3eb2a46d4251903d022f8bf7a7855dde20d49512799bbf03fed7affb06",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "bigpic1-242",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.6666666666666666,
+        "median_hue_difference_degrees": 29.19954648526077,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "b613da3eb2a46d4251903d022f8bf7a7855dde20d49512799bbf03fed7affb06"
+      },
+      "visual": {
+        "png_sha256": "b613da3eb2a46d4251903d022f8bf7a7855dde20d49512799bbf03fed7affb06",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "bigpic1-244",
+      "source": {
+        "key": "bigpic1-244",
+        "source_file": "BIGPIC1.DAX",
+        "source_file_sha256": "bc3565c62c1654ee757d1f98f64bbb78e06bcd551c2e8593c41feb130b9f0f6b",
+        "block": 244,
+        "packed_file_offset": 132472,
+        "decoded_sha256": "3c05efd691bc547528f377d244366e5af7d1769db692bedf35cc43adc2d392d5",
+        "source_size": [
+          304,
+          120
+        ],
+        "output_size": [
+          912,
+          360
+        ],
+        "reference_1x": "bigpic1-244-1x.png",
+        "reference_3x": "bigpic1-244-3x.png",
+        "reference_1x_sha256": "74080fad72f1cfa24a80aec68458e7ce9baa7e17485bed3191506ab156c55949",
+        "reference_3x_sha256": "2f2c68d0ed46cc3a2e09fec194be6b3a913c710c67aafd4d6f2a3ed9e55218c2",
+        "indexed": "bigpic1-244.idx",
+        "indexed_sha256": "04d166867708c4d61b9f05ff719ddfd8bf42aaa748f46f03077d725da262d33c",
+        "palette": "bigpic1-244.pal",
+        "palette_sha256": "0a3edb1ff957b4160be4344f1856ad78e8e3b4263c69d9ed1fa5fee434940e5a",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 912 by 360 pixels, aspect ratio 304:120, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve the exact strange forest scene, twisting orange-red trunks, turquoise and green background, roots, vines and distant silhouettes. Keep their original positions, widths and shapes. No new subjects or objects."
+      },
+      "generation": {
+        "key": "bigpic1-244",
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 912 by 360 pixels, aspect ratio 304:120, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve the exact strange forest scene, twisting orange-red trunks, turquoise and green background, roots, vines and distant silhouettes. Keep their original positions, widths and shapes. No new subjects or objects. Strict paint-over: trace the exact major contours and every broad color region at the original image coordinates. Keep the full panoramic crop and the original palette. No layout changes or extra subjects.",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-d90f2f72-baf3-473a-89ac-e8f5a1001a95.png",
+        "version": 0,
+        "status": "generated",
+        "generation": "built-in image_gen image edit",
+        "source_indexed_sha256": "04d166867708c4d61b9f05ff719ddfd8bf42aaa748f46f03077d725da262d33c",
+        "source_palette_sha256": "0a3edb1ff957b4160be4344f1856ad78e8e3b4263c69d9ed1fa5fee434940e5a",
+        "raw_sha256": "66f2ff853223df3e0b5fb78a73cad4104ba0fc416cbc7bfe8bcde8311f2deb7b"
+      },
+      "preparation": {
+        "key": "bigpic1-244",
+        "raw": "bigpic1-244-r0-raw.png",
+        "raw_sha256": "66f2ff853223df3e0b5fb78a73cad4104ba0fc416cbc7bfe8bcde8311f2deb7b",
+        "png": "bigpic1-244.png",
+        "png_sha256": "01dc85a1f8728dee328a5cf2b366d1b1967677619840a26d3496618555a1fd2c",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "bigpic1-244",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.6668515437234239,
+        "median_hue_difference_degrees": 10.492207058063475,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "01dc85a1f8728dee328a5cf2b366d1b1967677619840a26d3496618555a1fd2c"
+      },
+      "visual": {
+        "png_sha256": "01dc85a1f8728dee328a5cf2b366d1b1967677619840a26d3496618555a1fd2c",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "bigpic1-245",
+      "source": {
+        "key": "bigpic1-245",
+        "source_file": "BIGPIC1.DAX",
+        "source_file_sha256": "bc3565c62c1654ee757d1f98f64bbb78e06bcd551c2e8593c41feb130b9f0f6b",
+        "block": 245,
+        "packed_file_offset": 167684,
+        "decoded_sha256": "050ee3e0e430b0c83fe806c0f4c85ed809a1977880a34c85c71b34bdf8d1ecfc",
+        "source_size": [
+          304,
+          120
+        ],
+        "output_size": [
+          912,
+          360
+        ],
+        "reference_1x": "bigpic1-245-1x.png",
+        "reference_3x": "bigpic1-245-3x.png",
+        "reference_1x_sha256": "6f81f351aafcfc894fdd7634ecb549038a49d719a0b4d7b0fca98e6b9a43a085",
+        "reference_3x_sha256": "855bbe3f6af3a7c47c7a3dbef0375d334304682c0f2058b24de911aa36d10f1d",
+        "indexed": "bigpic1-245.idx",
+        "indexed_sha256": "70272d633fe952e63194c75663da87619dfe8c95967d5aa58e097f69557bd7f5",
+        "palette": "bigpic1-245.pal",
+        "palette_sha256": "d4fe27a82034ce24fa8928557c6472725822356c5954f5e5525caa198678e5b1",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 912 by 360 pixels, aspect ratio 304:120, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. This is the original top-down fantasy map with a different set of settlement symbols. Preserve every coastline, island, mountain and town location exactly, including the exact roof colors and silhouettes of each source settlement. Do not reinterpret red roofs as fire. No new sites, roads, labels or decorations.",
+        "animation": {
+          "base": "bigpic1-240",
+          "mask": "bigpic1-245-mask.png",
+          "mask_sha256": "59356fbe77c5bcf73bc589faa4717fb6be759effd2622a9291dc96d9277b16e1",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "bigpic1-245",
+        "version": 0,
+        "refs": [
+          "/home/anr2/cht/golden_box/pool-of-darkness/workplace/hd/out/b03/bigpic1-240.png",
+          "/home/anr2/cht/golden_box/pool-of-darkness/workplace/hd/requests/b03/bigpic1-245-3x.png"
+        ],
+        "prompt": "Edit image 1, the painted fantasy map, to match EXACTLY the settlement symbols in original game reference image 2. Preserve the entire existing coastline, sea, forests, mountains and terrain of image 1 without moving anything. Add, remove or replace ONLY those settlement symbols that differ from image 2, at their exact source positions. Image 2 is absolute authority for which town markers exist. Red shapes on towns are ROOFS, never flames. Do not invent a new town, road, building, label, border or object. Keep the full panoramic 304:120 crop and the same hand-painted style and colors as image 1. This is a map state variant, not a new scene.",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-cb61df53-1347-4cee-84e4-c3de7d3aab13.png",
+        "generation": "built-in image_gen image edit",
+        "status": "generated",
+        "raw_sha256": "cac20d81599145dcd307dde4ce45d7a958721af5e2a574a199bbe34a21460138"
+      },
+      "preparation": {
+        "key": "bigpic1-245",
+        "raw": "bigpic1-245-r0-raw.png",
+        "raw_sha256": "cac20d81599145dcd307dde4ce45d7a958721af5e2a574a199bbe34a21460138",
+        "png": "bigpic1-245.png",
+        "png_sha256": "1eeb2a3a412e5f0dac743889f1bad431ba11ac53867c39d8e7e0965651d78e23",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "bigpic1-245",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.553706784987983,
+        "median_hue_difference_degrees": 4.2624097652352635,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "1eeb2a3a412e5f0dac743889f1bad431ba11ac53867c39d8e7e0965651d78e23"
+      },
+      "visual": {
+        "png_sha256": "1eeb2a3a412e5f0dac743889f1bad431ba11ac53867c39d8e7e0965651d78e23",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    }
+  ]
+}

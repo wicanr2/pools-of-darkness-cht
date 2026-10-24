@@ -136,6 +136,45 @@
         "run_log_sha256": "bbc02718b4fb7fa3ead0e9fe2a6cd244323ffbe04c14cb8465b5931644571ef2",
         "pixels_equal": true
       }
+    },
+    {
+      "file": "demo-poster-cht.png",
+      "kind": "normal-cold-boot-runtime-with-posters",
+      "source": "workplace/probe/g9-hd/poster-switch-v3/switched/window-shots/pod-f002050.png",
+      "sha256": "5b8c38866fec5b46c166a28756636accb85ba254dd3553e648e55dd8d32ad6fc",
+      "dimensions": [
+        1440,
+        600
+      ],
+      "dosgolem_commit": "49f2935",
+      "research": "docs/re/015-side-posters.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/21"
+    },
+    {
+      "file": "demo-poster-en.png",
+      "kind": "normal-cold-boot-runtime-with-posters",
+      "source": "workplace/probe/g9-hd/poster-switch-v3/switched/window-shots/pod-f002102.png",
+      "sha256": "576edd6d815bf6a10ca2d88a10f5116e6ad51e1cad10612ef3f54cd77656e824",
+      "dimensions": [
+        1440,
+        600
+      ],
+      "dosgolem_commit": "49f2935",
+      "research": "docs/re/015-side-posters.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/21"
+    },
+    {
+      "file": "demo-poster-2x.png",
+      "kind": "normal-cold-boot-runtime-with-posters",
+      "source": "workplace/probe/g9-hd/poster-switch-v3/switched/window-shots/pod-f002162.png",
+      "sha256": "4dd3f5b1b52ec796dcb6f8c32ebeeb7b1dbb11e5b3cb836125cca865a346ece2",
+      "dimensions": [
+        960,
+        400
+      ],
+      "dosgolem_commit": "49f2935",
+      "research": "docs/re/015-side-posters.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/21"
     }
   ]
 }

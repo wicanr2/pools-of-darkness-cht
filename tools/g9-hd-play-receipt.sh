@@ -4,10 +4,12 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 MODE="${1:-switch}"
+TAG="${2:-frontend-$MODE}"
+case "$TAG" in *[!A-Za-z0-9_-]*|'') echo '收據名稱只接受英數、底線與連字號' >&2; exit 2;; esac
 case "$MODE" in demo|switch) ;; *) echo '用法：g9-hd-play-receipt.sh [demo|switch]' >&2; exit 2;; esac
 for d in workplace/dosgolem/workplace/bin workplace/input/dos/pod workplace/font workplace/hd/theme text; do test -d "$ROOT/$d"; done
 test -f "$ROOT/workplace/dosgolem/workplace/bin/pod-play"
-OUT="$ROOT/workplace/probe/g9-hd/frontend-$MODE"
+OUT="$ROOT/workplace/probe/g9-hd/$TAG"
 mkdir -p "$OUT"
 timeout 900s docker run --rm --init --label pod.task=g9-hd-play --network none \
   --memory 2g --cpus 2 --pids-limit 256 --log-opt max-size=10m --log-opt max-file=3 \
@@ -39,7 +41,8 @@ timeout 900s docker run --rm --init --label pod.task=g9-hd-play --network none \
       fi
       xvfb-run -a /app/pod-play -original /orig -save /out/$name/save -text-dir /text \
         -font /font/pod-rounded.golemfnt -hd /theme -scale 3 -audio=false -frames "$frames" \
-        -script "$script" $audit -shot-dir /out/$name/shots -shot /out/$name/final.rgba > /out/$name/run.log 2>&1
+        -script "$script" $audit -shot-dir /out/$name/shots -shot /out/$name/final.rgba \
+        -shot-frame-dir /out/$name/window-shots -shot-frame /out/$name/final-window.png > /out/$name/run.log 2>&1
     done
     find /out -user root -o -type d -name "*.md"
   '

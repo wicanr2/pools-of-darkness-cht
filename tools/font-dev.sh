@@ -13,21 +13,22 @@ for f in "$SRC/rounded/GenSenRounded2TW-M.otf" "$SRC/rounded/GenSenRounded2TW-B.
 done
 mkdir -p "$ROOT/workplace/font"
 # 繁中字集只收玩家看得到的表（明確清單；新表要顯示中文時加在這裡）
-cats=()
-for f in journal.zh-TW; do
-  test -f "$ROOT/text/$f.tsv" || { echo "缺 text/$f.tsv" >&2; exit 1; }
-  cats+=("/text/$f.tsv")
-done
-for f in ecl-text.zh-TW ui-text.zh-TW name.zh-TW composed-templates host-text.zh-TW poster.zh-TW menu-masters translit-chars.zh-TW walkthrough.zh-TW map-geo map-guide.zh-TW; do
-  test -f "$ROOT/text/$f.tsv" && cats+=("/text/$f.tsv")
-done
-# 工作區的譯文批次與覆繪驗證用的試譯表（workplace/text-src/trial，含前作佔位）
-while IFS= read -r f; do cats+=("/w/${f#"$ROOT/workplace/"}"); done < <(find "$ROOT/workplace/tr" "$ROOT/workplace/text-src/trial" \
-  -name '*.tsv' \( -path '*/done/*' -o -path '*/trial/*' \) 2>/dev/null | sort)
 timeout 900 docker run --rm --network none -u "$(id -u):$(id -g)" --memory 2g --cpus 2 --pids-limit 32 \
   --log-opt max-size=10m --log-opt max-file=3 \
-  -v "$ROOT/tools:/tools:ro" -v "$ROOT/text:/text:ro" -v "$ROOT/workplace:/w" -v "$SRC/rounded:/f:ro" -v "$UNI:/uni:ro" \
-  sosb-img:r1 sh -c "
-  python -I /tools/rounded_font.py ${cats[*]} --otf /f/GenSenRounded2TW-M.otf --cell 16 --fallback /uni/unifont_t-17.0.05.hex --out /w/font/pod-rounded.golemfnt &&
-  python -I /tools/rounded_font.py ${cats[*]} --otf /f/GenSenRounded2TW-B.otf --cell 24 --fallback /uni/unifont_t-17.0.05.hex --out /w/font/pod-rounded-3x.golemfnt"
+  -v "$ROOT/tools:/tools:ro" -v "$ROOT/text:/text:ro" -v "$ROOT/workplace:/w:ro" \
+  -v "$ROOT/workplace/font:/out" -v "$SRC/rounded:/f:ro" -v "$UNI:/uni:ro" \
+  sosb-img:r1 bash -eu -c '
+  test "$(stat -c %u:%g /out)" = "$(id -u):$(id -g)"
+  cats=(/text/journal.zh-TW.tsv)
+  test -f "${cats[0]}"
+  for f in ecl-text.zh-TW ui-text.zh-TW name.zh-TW composed-templates host-text.zh-TW poster.zh-TW menu-masters translit-chars.zh-TW walkthrough.zh-TW map-geo map-guide.zh-TW; do
+    test ! -f "/text/$f.tsv" || cats+=("/text/$f.tsv")
+  done
+  while IFS= read -r f; do cats+=("$f"); done < <(find /w/tr /w/text-src/trial -name "*.tsv" \( -path "*/done/*" -o -path "*/trial/*" \) 2>/dev/null | sort)
+  sha256sum /out/pod-rounded*.golemfnt
+  python -I /tools/rounded_font.py "${cats[@]}" --otf /f/GenSenRounded2TW-M.otf --cell 16 --fallback /uni/unifont_t-17.0.05.hex --out /out/pod-rounded.golemfnt
+  python -I /tools/rounded_font.py "${cats[@]}" --otf /f/GenSenRounded2TW-B.otf --cell 24 --fallback /uni/unifont_t-17.0.05.hex --out /out/pod-rounded-3x.golemfnt
+  sha256sum /out/pod-rounded*.golemfnt
+  find /out -user root -o -type d -name "*.md"
+  '
 ls -la "$ROOT/workplace/font"/pod-*.golemfnt
