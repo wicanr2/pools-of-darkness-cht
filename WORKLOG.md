@@ -270,3 +270,20 @@
 - Docker 收尾：本輪一次性容器均已退出，自動刪除；標記 `pod.task` 的容器為 0。專案工作根無 root-owned 檔案或誤建 `.md` 目錄，抽查輸出均為 `1000:1000`。沒有清理其他專案資源。
 - 主分支提交 `67d4f3e` 已推送並以 `git ls-remote` 核對。[本輪進度留言](https://github.com/wicanr2/pools-of-darkness-cht/issues/9#issuecomment-6380601693)已回讀，#9 仍為 OPEN。主儲存庫與隔離 dosgolem 工作樹均乾淨。
 - 映像 ID 回讀：`cok-pdf:bookworm-r1` `05e99381d00a`、`sosb-img:r1` `8b9012adb991`、`python:3.13-slim` `bf44cdfcb76c`、`dosgolem-go-ebiten:1.24-r1` `8ed6bdee2bce`；本輪未重建或刪除映像。
+
+## 2026-10-24 本機工作區空間清理
+
+- 使用者要求先清理空間。路由命中文件職責入口；本輪只處理本專案，不清其他專案、Docker image 或 volume。
+- 清空已確認 gitignore、無執行中工作使用的 `workplace/dosgolem/workplace/gocache/`，保留目錄與擁有權，釋放 634,284 KiB。
+  Go module 快取、可執行檔與隔離開發工作樹保留，後續首次建置會重建 Go 編譯快取。
+- 九份早期診斷 log 無損壓縮成同目錄的 `.log.gz`：`g2-demo-shrink`、`g2-demo-tsr`、`g2-control-4`、`g2-demo-notsr`、`g2-control-5` 的 `run.log`，
+  以及 `g3-demo-calls` 的 `run.log`、`pathd.log`、`pathb.log`、`glyph.log`。
+  原本 253,434,207 bytes，壓縮後 21,161,871 bytes；每檔均確認解壓 SHA-256 與原檔相同，才移除未壓縮檔。
+- 清單、原始 SHA-256 與大小保存在 `workplace/probe/cleanup-20261024.json`。
+  需要舊 trace 時，在 Docker 內以 `gzip -dk <原路徑>.gz` 還原，保留壓縮備份；例如 `/probe/g3-demo-calls/run.log.gz`，
+  將本專案 `workplace/probe/` 掛為 `/probe`，使用既有 `alpine:3`，依 AGENTS.md 加資源限制、非 root 身分與 `--network none`。
+- 清空快取加壓縮 log 共釋放約 841 MiB；`workplace/` 由 1,786,564 KiB 降至 925,420 KiB。
+  全磁碟同時有其他工作釋放空間，最後盤點可用 133.29 GiB；不把全磁碟的可用量變化算成本專案成果。
+- 原始壓縮檔、原版與英文 PDF、掃描、字型來源、存檔、快照、現行收據及 OCR 中間圖保留。
+  `geo-reference/receipt.json` 綁定的所有輸入及輸出 SHA-256 全數相同；主儲存庫與 dosgolem 工作樹的產品檔案未改。
+- 所有清理與驗證在一次性 Docker 執行。沒有留下本專案容器，沒有 root-owned 檔案或誤建 `.md` 目錄；清理清單、壓縮檔與快取目錄均為 `1000:1000`。
