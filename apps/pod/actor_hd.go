@@ -44,6 +44,57 @@ type actorHD struct {
 	owner        []int
 	full         map[[32]byte]int
 	vgaPaletteOK bool
+	deferCells   [21 * 21]bool
+}
+
+// partialFrame只辨識需短暫保留的完整前景小格，不繪局部HD。資訊量沿loader的144點／三色。
+func (a *actorHD) partialFrame(indexed []byte, terrainGuard bool) {
+	if a == nil {
+		return
+	}
+	clear(a.deferCells[:])
+	if !terrainGuard || !a.vgaPaletteOK || len(indexed) != 64000 {
+		return
+	}
+	for _, p := range a.patterns {
+		if !p.vga {
+			continue
+		}
+		for y := 8; y+p.h <= 176; y += 24 {
+			for x := 8; x+p.w <= 176; x += 24 {
+				matches, colors := 0, 0
+				var used [256]bool
+				var invalid, ink [54]bool
+				for n, point := range p.ink {
+					cell := (point.y/8)*(p.w/8) + point.x/8
+					ink[cell] = true
+					if indexed[(y+point.y)*320+x+point.x] == point.color {
+						matches++
+						if !used[point.color] {
+							used[point.color] = true
+							colors++
+						}
+					} else {
+						invalid[cell] = true
+					}
+					if matches+len(p.ink)-n-1 < 144 {
+						break
+					}
+				}
+				if matches < 144 || colors < 3 {
+					continue
+				}
+				for cy := 0; cy < p.h/8; cy++ {
+					for cx := 0; cx < p.w/8; cx++ {
+						cell := cy*(p.w/8) + cx
+						if ink[cell] && !invalid[cell] {
+							a.deferCells[((y-8)/8+cy)*21+(x-8)/8+cx] = true
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 func actorShape(w, h int) bool {

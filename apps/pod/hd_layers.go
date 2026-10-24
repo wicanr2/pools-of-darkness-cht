@@ -73,9 +73,24 @@ func (h *HDLayers) Frame(indexed []byte, pal [256][3]uint8) {
 		h.actors.vgaPaletteOK = paletteBankHash(pal, 144, 256) == cpicVGAPalette
 	}
 	h.actors.frame(indexed, guard)
+	h.actors.partialFrame(indexed, guard)
 	h.encounters.frame(indexed, pal)
 	h.walls.frame(indexed, pal)
 	h.exact.frame(indexed, pal)
+}
+
+func (h *HDLayers) pendingBattleCells() (cells [21 * 21]bool) {
+	if h == nil || h.combat == nil || h.combat.vgaGuards < 3 {
+		return
+	}
+	if len(h.combat.matches) < 3 || h.actors != nil && !h.actors.vgaPaletteOK {
+		for n := range cells {
+			cells[n] = true
+		}
+	} else if h.actors != nil {
+		cells = h.actors.deferCells
+	}
+	return
 }
 
 func (h *HDLayers) Draw(out, indexed []byte, scale int) {

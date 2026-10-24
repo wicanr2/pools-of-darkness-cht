@@ -66,9 +66,10 @@ type Live struct {
 	Flash      *xlate.FlashAudit
 	flashFrame int
 	// hdHold、hdCells：HD 保留呈現與主題圖各墨跡格的指紋（主專案規格 021 §4.1；AddHD 時建立）
-	hdHold  *xlate.Hold
-	hdCells map[int]map[uint64]*hdHoldCell
-	hdLatch *xlate.Latch // 戰鬥等圖層的 HD 鎖存（AddHD 載入圖層時建立）
+	hdHold     *xlate.Hold
+	hdCells    map[int]map[uint64]*hdHoldCell
+	hdLatch    *xlate.Latch // 戰鬥等圖層的 HD 鎖存（AddHD 載入圖層時建立）
+	battleHold *battleHold
 
 	ui      Lookuper
 	ecl     *Catalog
@@ -245,6 +246,9 @@ func (l *Live) journalEntry(text []byte, mem CPUView) {
 
 // ModeChange 在視訊模式改變時呼叫。
 func (l *Live) ModeChange() {
+	if l.battleHold != nil {
+		l.battleHold = &battleHold{}
+	}
 	l.Journal.closeAutoSafe()
 	l.Layer.ForgetGhosts()
 	if l.hdLatch != nil {
@@ -262,6 +266,7 @@ func (l *Live) ModeChange() {
 
 // Frame 在每個 retrace 呼叫；palette 須是與 indexed 配對的色盤（machine.FramePalette）。
 func (l *Live) Frame(indexed []byte, palette [256][3]uint8) {
+	l.battleHold.commit()
 	if l.hdHold != nil {
 		l.hdHold.Commit() // 上一幀最後一次合成的結果成為保留的依據
 	}
@@ -323,6 +328,12 @@ func (l *Live) Compose(scale int, overlay bool, missing func(rune)) []byte {
 			}
 			l.hdHold.Apply(l.indexed, base, out, scale, l.hdRegion)
 		}
+		if l.battleHold != nil && scale == hdHoldScale {
+			if base == nil {
+				base = l.Compose(scale, false, nil)
+			}
+			l.battleHold.apply(l.indexed, base, out, l.palSig(), l.HDLayers.pendingBattleCells())
+		}
 		if l.Flash != nil && l.flashFrame != 0 {
 			if base == nil {
 				base = l.Compose(scale, false, nil)
@@ -354,7 +365,7 @@ func (l *Live) AuditFlash(frame, scale int) {
 	l.flashFrame = 0
 }
 
-// palSig 是目前色盤前 16 色的指紋（HD 鎖存判斷色盤沒變）。
+// palSig 是目前全部256色的指紋（HD鎖存與戰場保留判斷色盤沒變）。
 func (l *Live) palSig() uint64 {
 	h := uint64(14695981039346656037)
 	for _, c := range l.pal {

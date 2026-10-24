@@ -30,10 +30,12 @@ type combatTile struct {
 type combatMatch struct{ tile, x, y int }
 
 type combatHD struct {
-	tiles     []combatTile
-	lookup    map[[32]byte]int
-	matches   []combatMatch
-	vgaLookup map[vgaTerrainSignature]int
+	tiles       []combatTile
+	lookup      map[[32]byte]int
+	matches     []combatMatch
+	vgaLookup   map[vgaTerrainSignature]int
+	vgaGeometry map[[32]byte]bool
+	vgaGuards   int
 }
 
 // loadCombatHD 先完整驗證，呼叫端成功後才登記。缺少可選檔案時維持舊主題行為。
@@ -66,7 +68,7 @@ func loadCombatHD(dir string) (*combatHD, error) {
 		manifest.Grid != [5]int{8, 8, 7, 7, 24} || len(manifest.Items) == 0 || len(manifest.Items) > 256 {
 		return nil, fmt.Errorf("combat.json：版本、倍率、類型、格線或件數不符規格 010 §6.2")
 	}
-	theme := &combatHD{lookup: make(map[[32]byte]int), vgaLookup: make(map[vgaTerrainSignature]int)}
+	theme := &combatHD{lookup: make(map[[32]byte]int), vgaLookup: make(map[vgaTerrainSignature]int), vgaGeometry: make(map[[32]byte]bool)}
 	keys := make(map[string]bool)
 	for _, item := range manifest.Items {
 		if item.Key == "" || keys[item.Key] || item.Size != [2]int{24, 24} {
@@ -123,6 +125,7 @@ func loadCombatHD(dir string) (*combatHD, error) {
 			theme.lookup[sum] = len(theme.tiles)
 		} else {
 			theme.vgaLookup[vgaTerrainSignature{sum, vgaPalette}] = len(theme.tiles)
+			theme.vgaGeometry[sum] = colorCount > 1 && nonGray >= 16
 		}
 		theme.tiles = append(theme.tiles, combatTile{item.Key, ref, rgba.Pix, colorCount > 1 && nonGray >= 16})
 	}
@@ -134,12 +137,14 @@ func (c *combatHD) frame(indexed []byte, palette [256][3]uint8) {
 		return
 	}
 	c.matches = c.matches[:0]
+	c.vgaGuards = 0
 	if len(indexed) != 320*200 {
 		return
 	}
+	validPalette := true
 	for n, color := range combatEGA {
 		if palette[n] != color {
-			return // 未證實色盤及閃光變色保留原版。
+			validPalette = false // 繪圖守衛維持；僅收集暫緩呈現的幾何證據。
 		}
 	}
 	guards := 0
@@ -154,6 +159,12 @@ func (c *combatHD) frame(indexed []byte, palette [256][3]uint8) {
 				copy(tile[row*24:], indexed[(y+row)*320+x:(y+row)*320+x+24])
 			}
 			sum := sha256.Sum256(tile[:])
+			if c.vgaGeometry[sum] {
+				c.vgaGuards++
+			}
+			if !validPalette {
+				continue
+			}
 			n, found := c.lookup[sum]
 			if !found && bank != "" {
 				n, found = c.vgaLookup[vgaTerrainSignature{sum, bank}]

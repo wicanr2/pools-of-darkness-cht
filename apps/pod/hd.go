@@ -143,6 +143,9 @@ func (l *Live) AddHD(dir string) error {
 		l.Layer.Watch(it.Watcher())
 	}
 	l.HDLayers = layers
+	if layers.combat != nil && len(layers.combat.vgaGeometry) > 0 {
+		l.battleHold = &battleHold{}
+	}
 	l.HDItems += len(items) + count
 	l.armHDHold(items)
 	if count > 0 {

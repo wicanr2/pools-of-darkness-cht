@@ -2,6 +2,7 @@ package pod
 
 import (
 	"bytes"
+	"fmt"
 	"image/png"
 	"os"
 	"path/filepath"
@@ -39,6 +40,133 @@ func vgaFixture(t *testing.T) (*HDLayers, []byte, [256][3]uint8, string) {
 		t.Fatalf("首批圖層數%d，預期8", count)
 	}
 	return h, idx, pal, dir
+}
+
+func fixtureLive(t *testing.T, dir string) *Live {
+	t.Helper()
+	l := NewLive(nil, nil, nil)
+	if err := l.AddHD(dir); err != nil {
+		t.Fatal(err)
+	}
+	return l
+}
+
+func TestVGABattleTransitionFixture(t *testing.T) {
+	_, _, _, dir := vgaFixture(t)
+	capture := os.Getenv("DOSGOLEM_POD_HD_VGA_TRANSITION")
+	if capture == "" {
+		t.Skip("未提供正常DEMO逐格來源")
+	}
+	for _, keep := range []bool{false, true} {
+		flashes := 0
+		for _, span := range [][2]int{{6466, 6475}, {6688, 6695}} {
+			live := fixtureLive(t, dir)
+			if !keep {
+				live.battleHold = nil
+			}
+			live.Flash = xlate.NewFlashAudit(320, 200, 8)
+			for frame := span[0]; frame <= span[1]; frame++ {
+				prefix := filepath.Join(capture, fmt.Sprintf("pod-f%06d", frame))
+				idx, err := os.ReadFile(prefix + ".idx")
+				if err != nil {
+					t.Fatal(err)
+				}
+				rawpal, err := os.ReadFile(prefix + ".pal")
+				if err != nil || len(rawpal) != 768 {
+					t.Fatal("逐格色盤不合", err)
+				}
+				var pal [256][3]uint8
+				for i := range pal {
+					copy(pal[i][:], rawpal[i*3:i*3+3])
+				}
+				original := append([]byte(nil), idx...)
+				live.Frame(idx, pal)
+				live.AuditFlash(frame-1, 3)
+				a := live.Compose(3, true, nil)
+				b := live.Compose(3, true, nil)
+				if !bytes.Equal(a, b) {
+					t.Fatal("同格多次合成不一致")
+				}
+				if !bytes.Equal(original, idx) {
+					t.Fatal("保留修改原始色號")
+				}
+			}
+			flashes += live.Flash.Count()
+			if keep && live.Flash.Count() > 0 {
+				t.Logf("未消除事件：%+v", live.Flash.Events())
+			}
+		}
+		t.Logf("保留%v：閃現%d", keep, flashes)
+		if keep && flashes != 0 || !keep && flashes == 0 {
+			t.Fatalf("保留%v：閃現%d", keep, flashes)
+		}
+	}
+}
+
+func TestVGABattleHoldUnknownBoundAndPalette(t *testing.T) {
+	_, idx, pal, dir := vgaFixture(t)
+	live := fixtureLive(t, dir)
+	live.Frame(idx, pal)
+	live.Compose(3, true, nil)
+	offset := 100*320 + 100 // 沒有來源的場中央，不能等候猜測中的HD。
+	pixel := (300*960 + 300) * 4
+	for frame := 0; frame < 4; frame++ {
+		changed := append([]byte(nil), idx...)
+		changed[offset] = byte(9 + frame)
+		live.Frame(changed, pal)
+		got := live.Compose(3, true, nil)
+		base := vgaBaseRGBA(changed, pal, 3)
+		if !bytes.Equal(got[pixel:pixel+4], base[pixel:pixel+4]) {
+			t.Fatal("未知圖形未立即回退")
+		}
+		if !bytes.Equal(live.Compose(3, false, nil), base) {
+			t.Fatal("F12仍保留")
+		}
+		if !bytes.Equal(live.Compose(2, true, nil), vgaBaseRGBA(changed, pal, 2)) {
+			t.Fatal("2倍仍保留")
+		}
+	}
+	changedPalette := pal
+	changedPalette[200][0] ^= 1
+	live.Frame(idx, changedPalette)
+	want := vgaBaseRGBA(idx, changedPalette, 3)
+	live.HDLayers.Draw(want, idx, 3)
+	if !bytes.Equal(live.Compose(3, true, nil), want) {
+		t.Fatal("改色後保留舊HD")
+	}
+	blank := bytes.Repeat([]byte{8}, 64000)
+	live.Frame(blank, changedPalette)
+	if !bytes.Equal(live.Compose(3, true, nil), vgaBaseRGBA(blank, changedPalette, 3)) {
+		t.Fatal("非戰場仍保留")
+	}
+}
+
+func TestVGABattleHoldBound(t *testing.T) {
+	_, idx, pal, _ := vgaFixture(t)
+	h := &battleHold{}
+	var eligible [21 * 21]bool
+	for n := range eligible {
+		eligible[n] = true
+	}
+	previous := vgaBaseRGBA(idx, pal, 3)
+	h.apply(idx, previous, previous, 1, eligible)
+	offset, pixel := 100*320+100, (300*960+300)*4
+	for frame := 0; frame < 8; frame++ {
+		h.commit()
+		changed := append([]byte(nil), idx...)
+		changed[offset] = byte(9 + frame)
+		base := vgaBaseRGBA(changed, pal, 3)
+		got := append([]byte(nil), base...)
+		h.apply(changed, base, got, 1, eligible)
+		if frame%4 < 3 {
+			if !bytes.Equal(got[pixel:pixel+4], previous[pixel:pixel+4]) {
+				t.Fatal("未按已證實的三格間隔保留")
+			}
+		} else if !bytes.Equal(got[pixel:pixel+4], base[pixel:pixel+4]) {
+			t.Fatal("連續變化超過三格未回退")
+		}
+		previous = got
+	}
 }
 
 func vgaBaseRGBA(idx []byte, pal [256][3]uint8, scale int) []byte {
