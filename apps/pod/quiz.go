@@ -155,7 +155,7 @@ func (p *PathA) observeQuiz(text []byte, row, col, bg int, st *xlate.Stamp) {
 // widen 以同原點、較長的 Stamp 取代 st，涵蓋到後面數字段的結尾。
 func (p *PathA) widen(st *xlate.Stamp, cells int, text []rune, key string) *xlate.Stamp {
 	w := &xlate.Stamp{Key: key, X: st.X, Y: st.Y, Cells: cells, CellW: 8, CellH: 8,
-		Font: p.Font, Text: text, State: xlate.Pending}
+		Font: p.Font, Text: text, State: xlate.Pending, Early: st.Early, BG: st.BG, FG: st.FG}
 	p.Layer.Replace(w)
 	if p.bgOf == nil {
 		p.bgOf = map[*xlate.Stamp]uint8{}
