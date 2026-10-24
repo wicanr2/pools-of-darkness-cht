@@ -2,6 +2,8 @@
 
 新增需求：[左右海報](poster/README.md)，原版封面來源與定版原型已保存，固定加寬與語系切換已接入驗收。
 
+[遊戲封面原版／HD](b06-cover/README.md)已補，採使用者確認的禮服版，標題文字依語系渲染；目前為素材預覽。
+
 Issue：[#18](https://github.com/wicanr2/pools-of-darkness-cht/issues/18)。狀態：使用者於 2026-10-24 確認「採用這批畫風，繼續全量」。
 這些是 BIGPIC 資產的原版／重繪對照，尚非遊戲內 HD 截圖。
 

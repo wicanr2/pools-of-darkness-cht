@@ -163,3 +163,23 @@ b03 其餘五張 BIGPIC 已完成，與首批合計七張；完整對照及逐�
 訂正為赭金亮部、藍綠陰影，沿用第一輪構圖重畫。最終結構 0.667、色相中位差 29.2°，
 其餘四張結構 0.554–0.747、色相 4.3–13.2°。仍用原閾值，沒有改量測公式或放寬標準。
 失敗版本保留於本機 `out/b03/`；正式匯出僅使用已通過並目視的版本。BIGPIC 的執行期接入仍為 DRAFT。
+
+### README 地圖、工具列與封面
+
+使用者追加直接展示地圖、上方工具列及封面原版／HD。Issue [#25](https://github.com/wicanr2/pools-of-darkness-cht/issues/25)。
+`tools/readme-ui-receipt.sh` 沿既有 G8 正常冷啟動讀槽 A 的路線，補 F7／V 對應動作、工具列及下拉選單，
+4800 格終點的步數、記憶體與色號與原收據完全相同。沒有新探索或座標注入。
+腳本新增 `mapall` 前端動作，與實體 V 共用 `actReveal`；腳本 V 仍送 DOS，解析回歸通過。
+來源樹為 dosgolem `a73fb2e`；原始截圖留在 `workplace/probe/readme-ui/`。
+
+README 工具列細節只裁切實際視窗的 `[240,0,960,36]`，未改像素；地圖為東菲蘭全圖模式，預設走過模式另保留。
+[gallery-receipt.json](../screenshots/gallery-receipt.json)及[展示圖清單](../screenshots/manifest.json)保存來源、裁切與輸出雜湊。
+匯出工具為 [readme_gallery.py](../../tools/readme_gallery.py)。
+
+封面來源為 TITLE 第 2 塊，完整原版圖已解碼。原服裝重畫被生圖服務在輸出階段以 sexual 分類拒絕，
+request ID `c5f4b695-469f-42d8-af35-6cde7382b6b2`。另做完整藍紫色禮服示意，使用者明確確認採用。
+不把單次服務拒絕當成原版素材不合法或內容判定。
+禮服與分離的語系標題為核准呈現例外，來源、完整提示詞及雜湊見 [封面審閱](../../review/hd/b06-cover/README.md)。
+由 [cover_prototype.py](../../tools/cover_prototype.py) 及既有 Chromium 匯出繁中／英文 960×600，
+正式文字為 `text/cover.zh-TW.tsv`、`cover.en.tsv`，源泉圓體 Bold，成品 RGBA、alpha 255，已逐張目視。
+此處只完成 README 素材預覽；TITLE 的繪製時機、底列覆寫與正常前端接入仍 DRAFT，未冒稱實際遊戲內 HD 封面。

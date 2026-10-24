@@ -1,0 +1,55 @@
+{
+  "status": "user-approved costume; HD art preview; not runtime",
+  "issue": 25,
+  "source": {
+    "key": "title-002",
+    "source_file": "TITLE.DAX",
+    "source_file_sha256": "8a53adf4044527df86d2d983f6c4eeee440c3d09773e7cbd4166279ccafde757",
+    "block": 2,
+    "packed_file_offset": 49171,
+    "decoded_sha256": "f36de1f36360e6e2991d1b4d8ead5ec1ac2c1d1bb9cf7b4be533719723e084ec",
+    "source_size": [
+      320,
+      200
+    ],
+    "output_size": [
+      960,
+      600
+    ],
+    "reference_1x": "title-002-1x.png",
+    "reference_3x": "title-002-3x.png",
+    "reference_1x_sha256": "03f661cb5d24b51797cce5e8747264b6443b32192c6df3727013c75f5421bae5",
+    "reference_3x_sha256": "ea036782833c83609285699949a8d563d0c82febfca72bd7b394a31ab27396c1",
+    "indexed": "title-002.idx",
+    "indexed_sha256": "f5aff74e221772af84d2883bb091c0facf82e3995c8096ba5814c81caceb1795",
+    "palette": "title-002.pal",
+    "palette_sha256": "2f4985c33a587ff45d028fbdd1ba2fa34f3f5c0b9cd8c67a870b07e7604b741a",
+    "transparent": false,
+    "animation_mask": null,
+    "runtime_observed": false,
+    "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 960 by 600 pixels, aspect ratio 320:200, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+  },
+  "generation": {
+    "key": "title-002",
+    "version": 1,
+    "prompt": "Create a non-sexual, formal royal fantasy game title-screen illustration based on this original composition, target960x600, aspect8:5. This is a DISPOSABLE costume-coverage prototype. Preserve the adult queen's right-side seated throne position, white hair, spider-shaped gold crown, pale gray and purple carved throne, gold jewelry, raised hand, other arm resting at her side, original crop and deep crimson-black background. Dress her in a fully opaque, elegant BLUE-PURPLE ROYAL GOWN with a high neckline, covered shoulders and a long skirt completely covering both legs from waist to ankles. Her pose remains the same underneath the draped fabric. The fabric follows the seated pose naturally. Only her face and hands need show. Keep the queen and throne at the original scale on the RIGHT, not the center. The LEFT is a quiet dark crimson field for a title to be added separately; REMOVE ALL English lettering and leave no text, no logo, no symbols. Rich controlled hand-painted 1990s fantasy illustration, smooth painted materials, no pixels, no modern3D render. Do not add any other people, new objects, background scenery or new framing.",
+    "status": "user-approved-costume-HD-art-preview",
+    "generation": "built-in image_gen image edit",
+    "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-934ae16e-9a68-4c34-be64-710f8a238b43.png",
+    "raw_sha256": "6e53897f14319f3b8c4f33e61d544ac6f4b8218cec043203997d5a507402df03",
+    "costume_approval": "2026-10-24: 採用禮服版"
+  },
+  "plate_sha256": "51eb3af166c9fd2f2cc6bd3fb2bf6196b577635bf1dc18191a6a1992f8e4fa24",
+  "text_sha256": {
+    "zh-TW": "ce062ef1e1f2d4a39dd3d48d8f0e673174a979da4ad5bbb04463e7607e7b9af8",
+    "en": "1dcad1d41608a6cd097be6983fe39d90aeef4e772e1b5530ff35d6faaec78dc9"
+  },
+  "font_sha256": "050f9ebf394faab3c0ba59092ae3e4b6686b349eadb3018d76d385c5829a1267",
+  "costume_exception": "使用者核准完整藍紫色禮服；原版標題文字改由目前語系另畫，不以全圖色相／結構判定冒稱原版一致。",
+  "private_only": true,
+  "preview_outputs": {
+    "bigpic1-240-hd-preview.png": "07b0d7d9366f078e2171a6342989dafb929a83b15abbf3923d9acc2ecc7617d7",
+    "game-cover-hd-preview.png": "b8bbc88aa9ab4b288a12fa3c52327cde9c74391a6ceeafa7df4a13c6ee62ef12",
+    "game-cover-hd-preview-en.png": "3fe93a0a9f91a56d70cf8ab1825ce4891ef1768584a4851e5a7838a25c4411e4"
+  }
+}

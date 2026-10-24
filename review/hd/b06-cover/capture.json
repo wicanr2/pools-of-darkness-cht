@@ -1,0 +1,32 @@
+[
+  {
+    "file": "cover-zh.png",
+    "lang": "zh-TW",
+    "layout": "wide",
+    "viewport": [
+      960,
+      600
+    ],
+    "game": {
+      "x": 0,
+      "y": 0,
+      "w": 960,
+      "h": 600
+    }
+  },
+  {
+    "file": "cover-en.png",
+    "lang": "en",
+    "layout": "wide",
+    "viewport": [
+      960,
+      600
+    ],
+    "game": {
+      "x": 0,
+      "y": 0,
+      "w": 960,
+      "h": 600
+    }
+  }
+]

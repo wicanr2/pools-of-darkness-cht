@@ -29,17 +29,28 @@
 
 ## 畫面介紹
 
-### 原版 BIGPIC 與 HD 首批預覽
+### 遊戲封面：原版與 HD
+
+| 原版封面 | HD 重畫預覽 |
+|---|---|
+| ![原版遊戲封面](docs/screenshots/game-cover-original.png) | ![繁中 HD 封面重畫預覽](docs/screenshots/game-cover-hd-preview.png) |
+
+左圖為遊戲內 `TITLE.DAX` 第 2 塊封面，3 倍顯示。HD 採完整藍紫色禮服，保留女王、王冠與寶座構圖。
+標題文字與美術分離，可依語系渲染，另見[英文 HD 預覽](docs/screenshots/game-cover-hd-preview-en.png)。
+封面目前為重畫預覽，正式遊戲接入仍在驗證。
+
+### 原版 BIGPIC 與 HD 重畫
 
 | 原版 BIGPIC | HD 重繪預覽 |
 |---|---|
+| ![原版區域地圖 BIGPIC](docs/screenshots/bigpic1-240-original.png) | ![區域地圖 HD 重繪預覽](docs/screenshots/bigpic1-240-hd-preview.png) |
 | ![原版港灣城市 BIGPIC](docs/screenshots/bigpic1-243-original.png) | ![港灣城市 HD 重繪預覽](docs/screenshots/bigpic1-243-hd-preview.png) |
 | ![原版魔法戰鬥 BIGPIC](docs/screenshots/bigpic1-246-original.png) | ![魔法戰鬥 HD 重繪預覽](docs/screenshots/bigpic1-246-hd-preview.png) |
 
-左側從本作 `BIGPIC1.DAX` 區塊 243、246 解碼，以 3 倍最近鄰顯示；右側是依原圖手繪風格重畫的 912×360 素材。
+左側從本作 `BIGPIC1.DAX` 區塊 240、243、246 解碼，以 3 倍最近鄰顯示；右側是依原圖手繪風格重畫的 912×360 素材。
 這一批畫風已確認，上表為素材預覽。
 來源與 SHA-256 見[展示圖清單](docs/screenshots/manifest.json)，完整並列與提示詞見 [HD 審閱頁](review/hd/README.md)。
-HD 製作由 [#10](https://github.com/wicanr2/pools-of-darkness-cht/issues/10) 追蹤；README 由 [#17](https://github.com/wicanr2/pools-of-darkness-cht/issues/17) 追蹤。
+HD 製作與接入進度由 [#10](https://github.com/wicanr2/pools-of-darkness-cht/issues/10) 追蹤。
 
 ### 繁中與 HD 實際畫面
 
@@ -51,6 +62,20 @@ HD 製作由 [#10](https://github.com/wicanr2/pools-of-darkness-cht/issues/10) �
 以上是 dosgolem 執行 DEMO 的 960×600 畫面。右側繁中與 HD 另以正常冷啟動核對，像素完全一致。
 兩張小圖已接入；同狀態比較確認 HD 差異只落在原版圖框，原版記憶體、暫存器、色號與存檔一致。
 目前展示範圍為開場 DEMO，冷啟動到戰鬥的抽樣路線閃現為 0；其餘圖族仍在製作與驗證。
+
+### 遊戲內地圖與攻略點
+
+![東菲蘭全圖與攻略點的實際遊戲截圖](docs/screenshots/map-east-phlan.png)
+
+按 F7 開關地圖，可看隊伍位置、方向與攻略點。預設只顯示走過的區域，按 V 切換全圖。
+上圖為東菲蘭的全圖模式，標出訓練廳、提爾修院與叛徒門，取自正常冷啟動讀檔後的實際操作。
+
+### 上方工具列
+
+![遊戲上方工具列的實際截圖](docs/screenshots/toolbar.png)
+
+滑鼠移到視窗頂端即可展開工具列，切換顯示、開啟手札、攻略、地圖及其他選項。灰色項目目前停用。
+另見[完整視窗](docs/screenshots/toolbar-window.png)、[速度選單](docs/screenshots/toolbar-speed-menu.png)與[字級選單](docs/screenshots/toolbar-font-menu.png)。
 
 ### 左右海報
 
