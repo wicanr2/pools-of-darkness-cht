@@ -15,6 +15,7 @@ def main():
     ap=argparse.ArgumentParser(description=__doc__)
     for name in ('actor-req','actor-out','terrain-req','terrain-out','theme'):
         ap.add_argument('--'+name,type=Path,required=True)
+    ap.add_argument('--merge-existing',action='store_true',help='保留已驗收圖層，拒絕跨批key、來源與鏡像歧義')
     a=ap.parse_args();files=[];outputs={};proof=[]
     for kind,req,out,target,sourcefile in (
         ('combat-actors',a.actor_req,a.actor_out,'actors.json','CPIC1.DAX'),
@@ -47,6 +48,40 @@ def main():
         if kind=='combat-actors':manifest['background_index']=8
         outputs[target]=manifest
         proof.append(dict(kind=kind,request_sha256=sha(req/'manifest.json'),validation_sha256=sha(out/'validation.json'),visual_sha256=sha(out/'visual-review.json'),keys=[r['key']for r in items]))
+    pending={name:source for source,name in files}
+    if a.merge_existing:
+        for target,manifest in outputs.items():
+            path=a.theme/target
+            if not path.exists():continue
+            existing=json.loads(path.read_text())
+            if any(existing.get(k)!=v for k,v in manifest.items()if k!='items'):raise ValueError('既有圖層契約不同')
+            combined={item['key']:item for item in existing['items']}
+            if len(combined)!=len(existing['items']):raise ValueError('既有key重複')
+            for item in manifest['items']:
+                if item['key']in combined and combined[item['key']]!=item:raise ValueError('同key已有不同內容，不能覆寫')
+                combined[item['key']]=item
+            merged=dict(existing);merged['items']=list(combined.values());outputs[target]=merged
+        seen_by_kind={}
+        for target,manifest in outputs.items():
+            seen=seen_by_kind.setdefault(target,set())
+            for item in manifest['items']:
+                refpath=pending.get(item['indexed'],a.theme/item['indexed'])
+                pngpath=pending.get(item['png'],a.theme/item['png'])
+                if sha(refpath)!=item['indexed_sha256']or sha(pngpath)!=item['png_sha256']:raise ValueError('合併來源或成品雜湊失配')
+                ref=refpath.read_bytes();w,h=item['size']
+                if len(ref)!=w*h:raise ValueError('合併來源尺寸不合')
+                variants=[ref,b''.join(ref[y*w:(y+1)*w][::-1]for y in range(h))]if target=='actors.json'else[ref]
+                # 研究017證實各地形區塊的色盤雜湊互異；低色號沿既有EGA契約。
+                bank=item['key'].split('@')[0]if target=='combat.json'and any(c>15 for c in ref)else''
+                for value in variants:
+                    signature=(w,h,hashlib.sha256(value).hexdigest(),bank)
+                    if signature in seen:raise ValueError('跨批來源或鏡像重複，須先核對別名')
+                    seen.add(signature)
+        previous=a.theme/'vga-layers-provenance.json'
+        old=json.loads(previous.read_text())['items']if previous.exists()else[]
+        merged={(row['kind'],row['request_sha256']):row for row in old}
+        merged.update({(row['kind'],row['request_sha256']):row for row in proof})
+        proof=list(merged.values())
     a.theme.mkdir(parents=True,exist_ok=True)
     # 先驗完全部輸入，再寫到獨立 staging 主題；正式啟用前仍須正常前端及失配驗證。
     for source,name in files:shutil.copyfile(source,a.theme/name)

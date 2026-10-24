@@ -31,6 +31,7 @@ timeout 600s docker run --rm --init --label pod.task=readme-ui --network none --
   xvfb-run -a /app/pod-play-readme -original /orig -save /out/save -text-dir /text \
     -font /font/pod-rounded.golemfnt -hd /theme -lang zh-TW -audio=false -scale 3 -frames 4800 \
     -script "900: ,1800:p,2400:Down,2450:Down,2500:Return,2800:P,3000:A,3400:Down,3420:Down,3440:Down,3460:Down,3480:Down,3500:Return,3900:shot,4000:Y,4010:O,4020:U,4030:Return,4200:shot,4300:map,4320:shot,4350:mapall,4360:shot,4400:guide,4420:shot,4500:map,4520:shot,4600:map,4620:shot,4700:bar,4720:shot,4740:speeds,4750:shot,4760:speeds,4770:barfonts,4780:shot" \
-    -shot-dir /out/shots -shot-frame-dir /out/window-shots -shot /out/final.rgba -inventory /out/inv.tsv > /out/run.log 2>&1
+    -shot-dir /out/shots -shot-frame-dir /out/window-shots -shot-source-dir /out/sources \
+    -shot-source /out/source -shot /out/final.rgba -inventory /out/inv.tsv > /out/run.log 2>&1
   find /out -user root -o -type d -name "*.md"
   '

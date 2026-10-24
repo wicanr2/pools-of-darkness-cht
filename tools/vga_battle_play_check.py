@@ -96,7 +96,11 @@ def check(root, theme):
     assert audit, '缺少閃現量尺'
     # 量尺的摘要格式由pod-play固定；保留全文供證據審查。
     assert int(audit[1]) == 0, '閃現量尺未通過'
-    report = dict(scope='7400格既有冷啟動DEMO；六張CPIC狀態／兩張地形；未觀測狀態保持條件式候選',
+    actors = json.loads((theme / 'actors.json').read_text())['items']
+    observed = {r['key'] for r in matches if r['key'].startswith('cpic1-')}
+    report = dict(scope='7400格既有冷啟動DEMO；八個CPIC鏡像位置／兩張地形；未觀測狀態保持條件式候選',
+                  registered_actor_states=len(actors),
+                  unobserved_actor_keys=[r['key'] for r in actors if r['key'] not in observed],
                   frames=7400, steps=712250000, memory_sha256=first['end'][2], indexed_sha256=first['end'][3],
                   cpu_sha256=first['digest'][0], palette_sha256=first['digest'][1],
                   paired_palette_sha256=sha(first['pal']), binary_sha256=first['inputs']['binary_sha256'],
