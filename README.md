@@ -25,6 +25,7 @@
 
 繁中已驗證冷啟動、建角、存讀檔、查驗題與部分探索路徑。人物 HD 主題的 81 個狀態已完成，去重後 78 項，
 已接入並做正常 DEMO 抽樣。七張 BIGPIC 已重畫，執行期接入仍在驗證；其他圖族尚在製作。
+首批三種戰鬥怪物共六個狀態與兩張石牆也已接入，通過正常冷啟動、倍率與原版切換抽樣。
 完整現況與驗證範圍見 [CONTEXT.md](CONTEXT.md)。
 
 ## 畫面介紹
@@ -62,6 +63,14 @@ HD 製作與接入進度由 [#10](https://github.com/wicanr2/pools-of-darkness-c
 以上是 dosgolem 執行 DEMO 的 960×600 畫面。右側繁中與 HD 另以正常冷啟動核對，像素完全一致。
 兩張小圖已接入；同狀態比較確認 HD 差異只落在原版圖框，原版記憶體、暫存器、色號與存檔一致。
 目前展示範圍為開場 DEMO，冷啟動到戰鬥的抽樣路線閃現為 0；其餘圖族仍在製作與驗證。
+
+| 原版戰鬥 | 繁中與首批戰鬥 HD |
+|---|---|
+| ![原版 DEMO 戰鬥](docs/screenshots/demo-battle-original.png) | ![繁中與 HD 戰鬥](docs/screenshots/demo-battle-cht-hd.png) |
+
+本批包含半蜘蛛精靈、吸血鬼法師、電蜘蛛及兩張石牆。完整冷啟動 7,400 格的閃現為 0，
+HD、無 HD、F12 原版及 2 倍四路的 CPU、記憶體、色號、色盤與 127 個 DOS 檔案一致。
+另見[含兩側海報的完整戰鬥視窗](docs/screenshots/demo-battle-window.png)與[驗收範圍](docs/re/017-vga-battle-hd.md)。
 
 ### 遊戲內地圖與攻略點
 

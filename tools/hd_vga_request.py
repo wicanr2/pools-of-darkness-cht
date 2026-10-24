@@ -30,6 +30,7 @@ def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--orig',type=Path,required=True)
     ap.add_argument('--inventory',type=Path,required=True)
+    ap.add_argument('--catalog',default='inventory.json',help='盤點清單檔名，其他圖族使用 inventory-other.json')
     ap.add_argument('--out',type=Path,required=True)
     ap.add_argument('--issue',required=True)
     ap.add_argument('--batch',default='b01')
@@ -37,7 +38,8 @@ def main():
     ap.add_argument('--variants',nargs='*',default=[],help='明示狀態變體 key:base，使用來源 RGB 差異遮罩，不推論時間')
     a=ap.parse_args()
     a.out.mkdir(parents=True,exist_ok=True)
-    source=json.loads((a.inventory/'inventory.json').read_text())
+    if Path(a.catalog).name!=a.catalog:raise ValueError('catalog 須為清單檔名')
+    source=json.loads((a.inventory/a.catalog).read_text())
     manifest=dict(batch=a.batch,scale=3,style='B',spec='010',issue=a.issue,items=[],
                   rights='local-original-reference; private-review-only; no-original-data-in-release')
     for it in source['items']:

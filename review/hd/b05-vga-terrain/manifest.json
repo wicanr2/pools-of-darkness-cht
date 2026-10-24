@@ -1,0 +1,134 @@
+{
+  "batch": "b05",
+  "count": 2,
+  "private_only": true,
+  "request_manifest_sha256": "c835528feadc8e37a46f02817ea3202386c314c234a71ba26bdfede807a7a255",
+  "items": [
+    {
+      "key": "dungcom-005@3",
+      "source": {
+        "key": "dungcom-005@3",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 5,
+        "packed_file_offset": 41837,
+        "decoded_sha256": "277cacb60582055ef5f73c702b7a1c67b3a89d8551fd86198e2f940603e5bc1c",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-005@3-1x.png",
+        "reference_3x": "dungcom-005@3-3x.png",
+        "reference_1x_sha256": "3a84fafb902f3559bc24273c7555f5f76a3aa15adb2ce416d0f53f0dd35baa61",
+        "reference_3x_sha256": "652776dce1e23fd6dddca4bc9fd5ad884538ad9b81134d9da96def3fbdb4b2cd",
+        "indexed": "dungcom-005@3.idx",
+        "indexed_sha256": "6c5f792149af48fea6937bb0d7bed1f47eedde3053fce27896990089702a72e2",
+        "palette": "dungcom-005@3.pal",
+        "palette_sha256": "8c9ae86591082c5e9188475e175e67cde4edfb5c6eb4d147ede3b20f744fad99",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "dungcom-005@3",
+        "version": 0,
+        "prompt": "Repaint this exact small top-down stone-wall game tile as a detailed hand-painted 1990s fantasy illustration texture. Target 72x72 square, full bleed. Preserve the exact position of every stone mass, black crack, pale mortar seam, diagonal boundaries and edge intersections. Keep the original cool gray, pale beige-gray and dark charcoal colors. The pale long seam near the center must remain at the same coordinates and width. Preserve all four tile edges exactly so this tile joins its neighbors. Replace pixel blocks with painted stone texture and clean natural contours. Do NOT turn this into a wall in perspective, do NOT add a sky, floor, objects, frame or margins. No text, objects, monsters, extra cracks or lights.",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-a4581fab-2739-4be6-a491-bbd80fcb1e0d.png",
+        "status": "generated",
+        "generation": "built-in image_gen image edit",
+        "raw_sha256": "ff5680ad37165d37f8b3ba4e84710a9aa9e1d8444ee48d172a7ef6273c1aa712"
+      },
+      "preparation": {
+        "key": "dungcom-005@3",
+        "raw": "dungcom-005@3-r0-raw.png",
+        "raw_sha256": "ff5680ad37165d37f8b3ba4e84710a9aa9e1d8444ee48d172a7ef6273c1aa712",
+        "png": "dungcom-005@3.png",
+        "png_sha256": "b591860cff5c9a5f7b6a97134977a9639c7eb8647bc31cb82774690e0794e6a1",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-005@3",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.4875,
+        "median_hue_difference_degrees": 0.0,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "b591860cff5c9a5f7b6a97134977a9639c7eb8647bc31cb82774690e0794e6a1"
+      },
+      "visual": {
+        "png_sha256": "b591860cff5c9a5f7b6a97134977a9639c7eb8647bc31cb82774690e0794e6a1",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-005@13",
+      "source": {
+        "key": "dungcom-005@13",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 5,
+        "packed_file_offset": 41837,
+        "decoded_sha256": "277cacb60582055ef5f73c702b7a1c67b3a89d8551fd86198e2f940603e5bc1c",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-005@13-1x.png",
+        "reference_3x": "dungcom-005@13-3x.png",
+        "reference_1x_sha256": "e93b3c8b163d80226d9bb0e78411df937a4db886f3ad29249c5e9c4e4d46c900",
+        "reference_3x_sha256": "aef4b3131f060f7b91da8f14b26fb4ea6dc42b7dee8121a311297c78a600ebd3",
+        "indexed": "dungcom-005@13.idx",
+        "indexed_sha256": "fbcd6128a2d2b5c25681bc41e4f58ddabb6c64378011c88c589f54c4c1c93e8c",
+        "palette": "dungcom-005@13.pal",
+        "palette_sha256": "8c9ae86591082c5e9188475e175e67cde4edfb5c6eb4d147ede3b20f744fad99",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "dungcom-005@13",
+        "version": 0,
+        "prompt": "Repaint this exact top-down fantasy stone-wall boundary tile as a detailed hand-painted 1990s fantasy illustration texture. Target 72x72 square, full bleed. The upper/right portion is the original FLAT blue-gray ground color; preserve that region and its diagonal boundary exactly. The pale stone cap/seam runs diagonally from the top-left toward the bottom-right, dividing the blue-gray region from the irregular gray stones along the lower-left. Trace that exact diagonal line, its thickness, all stone contours and where each feature meets all four edges. Keep the original cool gray and beige-gray palette and black cracks. Replace pixel blocks with painted stone material, not a 3D render and not pixel art. No scenery, perspective view, extra subjects, shadows, lettering, margins or border.",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-5d242e8d-28a1-4f07-af32-6c4c735505bd.png",
+        "status": "generated",
+        "generation": "built-in image_gen image edit",
+        "raw_sha256": "4eeb79c41cb4b59c2779884144236d2c949646d2d73d543a5979179ba52944f5"
+      },
+      "preparation": {
+        "key": "dungcom-005@13",
+        "raw": "dungcom-005@13-r0-raw.png",
+        "raw_sha256": "4eeb79c41cb4b59c2779884144236d2c949646d2d73d543a5979179ba52944f5",
+        "png": "dungcom-005@13.png",
+        "png_sha256": "c615feca7a99dc30e0d73f224c8bcb01b5080cea82293c870324d42b737cf6ed",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-005@13",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.5875,
+        "median_hue_difference_degrees": 13.777777777777771,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "c615feca7a99dc30e0d73f224c8bcb01b5080cea82293c870324d42b737cf6ed"
+      },
+      "visual": {
+        "png_sha256": "c615feca7a99dc30e0d73f224c8bcb01b5080cea82293c870324d42b737cf6ed",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    }
+  ]
+}

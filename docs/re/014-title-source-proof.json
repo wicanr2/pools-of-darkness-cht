@@ -1,0 +1,53 @@
+{
+  "scope": "正常冷啟動DEMO；F10在本次推進前，檔名格數減一為配對來源格",
+  "hits": [
+    {
+      "capture": "pod-f001000",
+      "key": "title-001",
+      "rect": [
+        0,
+        0,
+        320,
+        200
+      ],
+      "indexed_equal": true,
+      "used_rgb_equal": true,
+      "indexed_sha256": "f61a14b25fe8e4921b9da854e15f1cc60475ec75ce2147e15b7d1dfc5525db0c",
+      "palette_sha256": "17dc586aa5241390980763e8b5abf9db044d3ad788a2b2bdd5d6d285325b2acf",
+      "source_indexed_sha256": "f61a14b25fe8e4921b9da854e15f1cc60475ec75ce2147e15b7d1dfc5525db0c",
+      "archive_sha256": "8a53adf4044527df86d2d983f6c4eeee440c3d09773e7cbd4166279ccafde757"
+    },
+    {
+      "capture": "pod-f001100",
+      "key": "title-002",
+      "rect": [
+        0,
+        0,
+        320,
+        200
+      ],
+      "indexed_equal": true,
+      "used_rgb_equal": true,
+      "indexed_sha256": "f5aff74e221772af84d2883bb091c0facf82e3995c8096ba5814c81caceb1795",
+      "palette_sha256": "2f4985c33a587ff45d028fbdd1ba2fa34f3f5c0b9cd8c67a870b07e7604b741a",
+      "source_indexed_sha256": "f5aff74e221772af84d2883bb091c0facf82e3995c8096ba5814c81caceb1795",
+      "archive_sha256": "8a53adf4044527df86d2d983f6c4eeee440c3d09773e7cbd4166279ccafde757"
+    },
+    {
+      "capture": "pod-f001200",
+      "key": "title-003",
+      "rect": [
+        0,
+        0,
+        320,
+        200
+      ],
+      "indexed_equal": true,
+      "used_rgb_equal": true,
+      "indexed_sha256": "2c2f516bb9bd70302ee85b953673eb82f94c3ded401ac1e5968ae65e1e207396",
+      "palette_sha256": "17dc586aa5241390980763e8b5abf9db044d3ad788a2b2bdd5d6d285325b2acf",
+      "source_indexed_sha256": "2c2f516bb9bd70302ee85b953673eb82f94c3ded401ac1e5968ae65e1e207396",
+      "archive_sha256": "8a53adf4044527df86d2d983f6c4eeee440c3d09773e7cbd4166279ccafde757"
+    }
+  ]
+}

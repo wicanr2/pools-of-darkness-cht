@@ -183,3 +183,15 @@ request ID `c5f4b695-469f-42d8-af35-6cde7382b6b2`。另做完整藍紫色禮服�
 由 [cover_prototype.py](../../tools/cover_prototype.py) 及既有 Chromium 匯出繁中／英文 960×600，
 正式文字為 `text/cover.zh-TW.tsv`、`cover.en.tsv`，源泉圓體 Bold，成品 RGBA、alpha 255，已逐張目視。
 此處只完成 README 素材預覽；TITLE 的繪製時機、底列覆寫與正常前端接入仍 DRAFT，未冒稱實際遊戲內 HD 封面。
+
+### TITLE 完整來源補證
+
+同一正常冷啟動DEMO以 `-shot-source-dir` 在F10動作匯出原始色號及配對色盤。
+F10在本次推進前執行，檔名1000／1100／1200分別是來源格999／1099／1199。
+TITLE1、2、3的完整320×200均與原始來源逐色號及用色RGB完全相同，位置 `[0,0,320,200]` 已證實。
+先前300M時credits底列被改寫的觀察仍正確，只是較晚的另一狀態，不能據此否定早期完整畫面。
+
+工具：[hd_vga_source_frames.py](../../tools/hd_vga_source_frames.py)；固定報告
+[014-title-source-proof.json](014-title-source-proof.json)。dosgolem來源擷取程式已保存在`f08d961`，
+原始擷取於其前一階段未提交的相同只讀匯出實作，Go1.24.13。
+來源收據 `workplace/probe/g9-hd/vga-transition/sources/`。TITLE接入另由#26推進，不把來源已解出算成執行期HD完成。

@@ -10,11 +10,45 @@ import numpy as np
 from PIL import Image
 
 
+def add_battle(root, commit, runtime):
+    out=root/'docs/screenshots'
+    sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+    report=json.loads((runtime/'summary.json').read_text())
+    if not report['guest_state_equal'] or report['outside_battlefield_changes'] or report['audit']!='pod-play: 閃現 0 次':
+        raise ValueError('戰鬥正常路徑尚未通過')
+    manifest=json.loads((out/'manifest.json').read_text())
+    for row in manifest['items']:
+        if sha(out/row['file'])!=row['sha256']:raise ValueError('現有展示圖雜湊改變')
+    rows=[]
+    for name,case,crop in [('demo-battle-original.png','english',[240,0,960,600]),
+                           ('demo-battle-cht-hd.png','hd',[240,0,960,600]),
+                           ('demo-battle-window.png','hd',None)]:
+        source=runtime/case/'frame.png'
+        if sha(source)!=report['frames_sha256'][case]:raise ValueError('戰鬥擷取已變更')
+        image=Image.open(source).convert('RGBA')
+        if crop:image=image.crop((crop[0],crop[1],crop[0]+crop[2],crop[1]+crop[3]))
+        image.save(out/name)
+        rows.append(dict(file=name,kind='normal-cold-boot-runtime-battle',source=str(source.relative_to(root)),
+            source_sha256=sha(source),sha256=sha(out/name),dimensions=list(image.size),crop_rect=crop,
+            dosgolem_commit=commit,research='docs/re/017-vga-battle-hd.md',
+            issue='https://github.com/wicanr2/pools-of-darkness-cht/issues/23'))
+    for row in rows:manifest['items']=[r for r in manifest['items']if r['file']!=row['file']]+[row]
+    (out/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+    (out/'battle-receipt.json').write_text(json.dumps(dict(runtime_receipt_sha256=sha(runtime/'summary.json'),
+        dosgolem_commit=commit,screenshots=rows),ensure_ascii=False,indent=2)+'\n')
+    print('README 戰鬥三圖：原版／繁中HD中央精確裁切及完整視窗，來源雜湊通過。')
+
+
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--root',type=Path,required=True)
     ap.add_argument('--dosgolem-commit',required=True)
-    a=ap.parse_args();p=a.root;out=p/'docs/screenshots';runtime=p/'workplace/probe/readme-ui'
+    ap.add_argument('--battle',type=Path,help='已通過四路正常戰鬥驗收的收據根')
+    a=ap.parse_args()
+    if a.battle:
+        add_battle(a.root,a.dosgolem_commit,a.battle)
+        return
+    p=a.root;out=p/'docs/screenshots';runtime=p/'workplace/probe/readme-ui'
     sha=lambda f:hashlib.sha256(f.read_bytes()).hexdigest()
     result=json.loads((out/'manifest.json').read_text())
     for row in result['items']:

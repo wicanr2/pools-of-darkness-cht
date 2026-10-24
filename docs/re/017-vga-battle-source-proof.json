@@ -1,0 +1,459 @@
+{
+  "all_pass": true,
+  "scope": "正常冷啟動7400格DEMO；三個CPIC來源八個鏡像位置與兩個DUNGCOM來源五個完整圖塊；不推斷driver內部",
+  "inputs": {
+    "archives": {
+      "CPIC1.DAX": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+      "DUNGCOM.DAX": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+      "WILDCOM.DAX": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421"
+    },
+    "indexed_sha256": "4f1d7430cda6cde30c7a684b9a97573e2bb2bd13b0309c001d55d9434175e601",
+    "palette_sha256": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+    "log_sha256": "7f765f1a89b11f5561d5b6770124207be30192113b5fa9f4f60f46edabddfa13"
+  },
+  "palette_banks": {
+    "cpic1": {
+      "start": 144,
+      "count": 112,
+      "sha256": "f565f6507750cb76102763cde24ce198cfcbbc37e1b08edcc7dc121f03299151"
+    },
+    "dungcom-001": {
+      "start": 32,
+      "count": 32,
+      "sha256": "d10ff3c9b87208a6d05cede1114360fa8d1dbf7c8eb3eb7cd200c701079c9a5f"
+    },
+    "dungcom-002": {
+      "start": 32,
+      "count": 32,
+      "sha256": "43ba359d37b0bb9be6b7f22c9d2034ec522df97f104a3bb53e775aefa2c906c3"
+    },
+    "dungcom-003": {
+      "start": 32,
+      "count": 32,
+      "sha256": "a8f9ba1517e6201f9a01b8dc39c3c7806423b059e0ae39b618e30f9471346a20"
+    },
+    "dungcom-004": {
+      "start": 32,
+      "count": 32,
+      "sha256": "1e4309c18ac862d4b78bf1c1f04c4236b87b1dc2fa28f800e10ab7c3fcbf6830"
+    },
+    "dungcom-005": {
+      "start": 32,
+      "count": 32,
+      "sha256": "072944b66eed642a372f2e70e094649cad7b53b7574b0cad471dc7e26164dd63"
+    },
+    "dungcom-006": {
+      "start": 32,
+      "count": 32,
+      "sha256": "f9437fb038ecd486af5fa4fd22f9e11253c3128fecbbaaa52c6111d3d6405be6"
+    },
+    "wildcom-000": {
+      "start": 32,
+      "count": 32,
+      "sha256": "d5bdbb077fba30cd4ab4ac314cf316d08bcdd4a00fb3b15030c426a894074998"
+    },
+    "wildcom-001": {
+      "start": 32,
+      "count": 32,
+      "sha256": "2fa59ed27afe7410987e5db7e653bfad517795058520d27e31ad5e88cc1082d4"
+    },
+    "wildcom-002": {
+      "start": 32,
+      "count": 32,
+      "sha256": "84e32cd2ac203bd725d48591de3aa501c86e593829fc5258293faadfeded556d"
+    }
+  },
+  "hits": [
+    {
+      "key": "cpic1-041",
+      "rect": [
+        8,
+        56,
+        48,
+        24
+      ],
+      "hflip": true,
+      "foreground_pixels": 377,
+      "indexed_equal": true,
+      "used_rgb_equal": true,
+      "source_background_index": 8,
+      "background_rgb_colors": [
+        [
+          81,
+          89,
+          105
+        ]
+      ],
+      "bank_equal": true
+    },
+    {
+      "key": "cpic1-064",
+      "rect": [
+        128,
+        128,
+        24,
+        24
+      ],
+      "hflip": true,
+      "foreground_pixels": 171,
+      "indexed_equal": true,
+      "used_rgb_equal": true,
+      "source_background_index": 8,
+      "background_rgb_colors": [
+        [
+          81,
+          89,
+          105
+        ]
+      ],
+      "bank_equal": true
+    },
+    {
+      "key": "cpic1-064",
+      "rect": [
+        152,
+        128,
+        24,
+        24
+      ],
+      "hflip": true,
+      "foreground_pixels": 171,
+      "indexed_equal": true,
+      "used_rgb_equal": true,
+      "source_background_index": 8,
+      "background_rgb_colors": [
+        [
+          81,
+          89,
+          105
+        ]
+      ],
+      "bank_equal": true
+    },
+    {
+      "key": "cpic1-102",
+      "rect": [
+        80,
+        8,
+        24,
+        24
+      ],
+      "hflip": true,
+      "foreground_pixels": 299,
+      "indexed_equal": true,
+      "used_rgb_equal": true,
+      "source_background_index": 8,
+      "background_rgb_colors": [
+        [
+          36,
+          48,
+          56
+        ],
+        [
+          65,
+          73,
+          81
+        ],
+        [
+          81,
+          89,
+          105
+        ],
+        [
+          97,
+          101,
+          101
+        ],
+        [
+          130,
+          121,
+          117
+        ],
+        [
+          146,
+          142,
+          134
+        ],
+        [
+          154,
+          150,
+          146
+        ],
+        [
+          170,
+          166,
+          158
+        ],
+        [
+          211,
+          199,
+          190
+        ],
+        [
+          239,
+          227,
+          219
+        ]
+      ],
+      "bank_equal": true
+    },
+    {
+      "key": "cpic1-102",
+      "rect": [
+        32,
+        32,
+        24,
+        24
+      ],
+      "hflip": true,
+      "foreground_pixels": 299,
+      "indexed_equal": true,
+      "used_rgb_equal": true,
+      "source_background_index": 8,
+      "background_rgb_colors": [
+        [
+          81,
+          89,
+          105
+        ]
+      ],
+      "bank_equal": true
+    },
+    {
+      "key": "cpic1-102",
+      "rect": [
+        56,
+        32,
+        24,
+        24
+      ],
+      "hflip": true,
+      "foreground_pixels": 299,
+      "indexed_equal": true,
+      "used_rgb_equal": true,
+      "source_background_index": 8,
+      "background_rgb_colors": [
+        [
+          81,
+          89,
+          105
+        ]
+      ],
+      "bank_equal": true
+    },
+    {
+      "key": "cpic1-102",
+      "rect": [
+        104,
+        32,
+        24,
+        24
+      ],
+      "hflip": true,
+      "foreground_pixels": 299,
+      "indexed_equal": true,
+      "used_rgb_equal": true,
+      "source_background_index": 8,
+      "background_rgb_colors": [
+        [
+          36,
+          48,
+          56
+        ],
+        [
+          65,
+          73,
+          81
+        ],
+        [
+          81,
+          89,
+          105
+        ],
+        [
+          97,
+          101,
+          101
+        ],
+        [
+          130,
+          121,
+          117
+        ],
+        [
+          146,
+          142,
+          134
+        ],
+        [
+          154,
+          150,
+          146
+        ],
+        [
+          170,
+          166,
+          158
+        ],
+        [
+          211,
+          199,
+          190
+        ],
+        [
+          239,
+          227,
+          219
+        ]
+      ],
+      "bank_equal": true
+    },
+    {
+      "key": "cpic1-102",
+      "rect": [
+        128,
+        56,
+        24,
+        24
+      ],
+      "hflip": true,
+      "foreground_pixels": 299,
+      "indexed_equal": true,
+      "used_rgb_equal": true,
+      "source_background_index": 8,
+      "background_rgb_colors": [
+        [
+          36,
+          48,
+          56
+        ],
+        [
+          65,
+          73,
+          81
+        ],
+        [
+          81,
+          89,
+          105
+        ],
+        [
+          97,
+          101,
+          101
+        ],
+        [
+          130,
+          121,
+          117
+        ],
+        [
+          146,
+          142,
+          134
+        ],
+        [
+          154,
+          150,
+          146
+        ],
+        [
+          170,
+          166,
+          158
+        ],
+        [
+          211,
+          199,
+          190
+        ],
+        [
+          239,
+          227,
+          219
+        ]
+      ],
+      "bank_equal": true
+    },
+    {
+      "key": "dungcom-005@3",
+      "rect": [
+        104,
+        8,
+        24,
+        24
+      ],
+      "hflip": false,
+      "foreground_pixels": 576,
+      "indexed_equal": true,
+      "used_rgb_equal": true,
+      "source_background_index": null,
+      "background_rgb_colors": [],
+      "bank_equal": true
+    },
+    {
+      "key": "dungcom-005@3",
+      "rect": [
+        128,
+        32,
+        24,
+        24
+      ],
+      "hflip": false,
+      "foreground_pixels": 576,
+      "indexed_equal": true,
+      "used_rgb_equal": true,
+      "source_background_index": null,
+      "background_rgb_colors": [],
+      "bank_equal": true
+    },
+    {
+      "key": "dungcom-005@3",
+      "rect": [
+        152,
+        56,
+        24,
+        24
+      ],
+      "hflip": false,
+      "foreground_pixels": 576,
+      "indexed_equal": true,
+      "used_rgb_equal": true,
+      "source_background_index": null,
+      "background_rgb_colors": [],
+      "bank_equal": true
+    },
+    {
+      "key": "dungcom-005@13",
+      "rect": [
+        128,
+        8,
+        24,
+        24
+      ],
+      "hflip": false,
+      "foreground_pixels": 576,
+      "indexed_equal": true,
+      "used_rgb_equal": true,
+      "source_background_index": null,
+      "background_rgb_colors": [],
+      "bank_equal": true
+    },
+    {
+      "key": "dungcom-005@13",
+      "rect": [
+        152,
+        32,
+        24,
+        24
+      ],
+      "hflip": false,
+      "foreground_pixels": 576,
+      "indexed_equal": true,
+      "used_rgb_equal": true,
+      "source_background_index": null,
+      "background_rgb_colors": [],
+      "bank_equal": true
+    }
+  ]
+}

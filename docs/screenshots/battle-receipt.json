@@ -1,0 +1,61 @@
+{
+  "runtime_receipt_sha256": "8547938ef24c0241d261f8689181912a85894f71c5efe48fbbbaa9aa0d7f4f29",
+  "dosgolem_commit": "f08d961",
+  "screenshots": [
+    {
+      "file": "demo-battle-original.png",
+      "kind": "normal-cold-boot-runtime-battle",
+      "source": "workplace/probe/g9-hd/vga-play-r2/english/frame.png",
+      "source_sha256": "b137cf512a888dc90b07b3ffeda05ad155349b64b40c7fc273b679eb1834f6b4",
+      "sha256": "90f0f53d5566ceb3624e2a14a1da073f643372149d91f41f3124b06f4fac43e9",
+      "dimensions": [
+        960,
+        600
+      ],
+      "crop_rect": [
+        240,
+        0,
+        960,
+        600
+      ],
+      "dosgolem_commit": "f08d961",
+      "research": "docs/re/017-vga-battle-hd.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/23"
+    },
+    {
+      "file": "demo-battle-cht-hd.png",
+      "kind": "normal-cold-boot-runtime-battle",
+      "source": "workplace/probe/g9-hd/vga-play-r2/hd/frame.png",
+      "source_sha256": "f86df33cdde0796ac237f77a5c0146d034a8ecadcff0732f64a45c25dac442d4",
+      "sha256": "0a7e059bfa68079e591e2282acf82b4e7588846d8c01c78743aad14025b78589",
+      "dimensions": [
+        960,
+        600
+      ],
+      "crop_rect": [
+        240,
+        0,
+        960,
+        600
+      ],
+      "dosgolem_commit": "f08d961",
+      "research": "docs/re/017-vga-battle-hd.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/23"
+    },
+    {
+      "file": "demo-battle-window.png",
+      "kind": "normal-cold-boot-runtime-battle",
+      "source": "workplace/probe/g9-hd/vga-play-r2/hd/frame.png",
+      "source_sha256": "f86df33cdde0796ac237f77a5c0146d034a8ecadcff0732f64a45c25dac442d4",
+      "sha256": "6c80111f207f79f5cfb51c6a80f54f2b0051b9c3387e17796a85f690ba2c925b",
+      "dimensions": [
+        1440,
+        600
+      ],
+      "crop_rect": null,
+      "dosgolem_commit": "f08d961",
+      "research": "docs/re/017-vga-battle-hd.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/23"
+    }
+  ]
+}
