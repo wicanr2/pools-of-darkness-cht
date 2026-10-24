@@ -50,6 +50,10 @@ type shotResult struct {
 	Name          string   `json:"name"`
 	Step          uint64   `json:"step"`
 	IndexedSHA256 string   `json:"indexed_sha256"` // 原版色號陣列，與 probe -dump-at 的 .bin 同一份資料
+	MemorySHA256  string   `json:"memory_sha256"`  // 收據用，確認呈現層不改原版記憶體
+	MapKey        string   `json:"map_key,omitempty"`
+	Registers     string   `json:"registers"`
+	MapPosition   []int    `json:"map_position,omitempty"`
 	BaseSHA256    string   `json:"base_sha256"`
 	OverlaySHA256 string   `json:"overlay_sha256"`
 	DiffPixels    int      `json:"diff_pixels"`
@@ -311,6 +315,13 @@ func capture(m *machine.Machine, live *pod.HDLive, s shot, dir string) shotResul
 	}
 	isum := sha256.Sum256(idx)
 	r := shotResult{Name: s.name, Step: m.Steps, IndexedSHA256: hex.EncodeToString(isum[:]), Stamps: len(layer.Stamps)}
+	msum := sha256.Sum256(m.Mem)
+	r.MemorySHA256 = hex.EncodeToString(msum[:])
+	r.Registers = fmt.Sprintf("R=%04X Seg=%04X IP=%04X Flags=%04X", m.CPU.R, m.CPU.Seg, m.CPU.IP, m.CPU.Flags)
+	if live.Map != nil {
+		r.MapKey = live.Map.Key
+		r.MapPosition = []int{live.Map.X, live.Map.Y, live.Map.Dir}
+	}
 	for _, st := range layer.Stamps {
 		if st.State == xlate.Shown {
 			r.StampsShown++

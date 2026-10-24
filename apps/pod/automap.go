@@ -18,13 +18,13 @@ import (
 // 地圖身分以 0x400 本體雜湊對 text/map-geo.tsv；攻略點取自 text/map-guide.zh-TW.tsv。
 
 const (
-	// 銀色匕首之謎值，本作未驗（#9 地圖疊層前重驗；本作不開 Map）。以下「本作」指銀色匕首之謎。
-	// 本作 DS:89CE 是指向目前 GEO 區塊本體的遠指標（off, seg），DS:89D7 起是 x、y、面向（0 北、2 東、4 南、6 西）。
-	// 新維地格里城 3,3 面南時 DS:89D7 為 03 03 04，遠指標 4990:000C 處 0x400 bytes 等於 GEO1 區塊 16 的本體；
-	// 按 M 進移動模式、前進兩步再左轉後為 03 05 02，畫面顯示 3,5 E（主專案 docs/re/009，已證實）。
-	// 與克萊恩英豪 6D7C／6D85、幽靈騎士 C06A／C073 同樣相差 9 bytes。
-	geoPtrOff   = 0x89CE
-	partyXOff   = 0x89D7
+	// 已證實：Pools of Darkness v1.10 遊戲資料段 DS:A9EA 為 GEO 本體遠指標，
+	// DS:A9F3..A9F5 為 x、y、方向（0 北、2 東、4 南、6 西）。
+	// 主專案 docs/re/012、規格 009；tools/g8-map-evidence.sh 八個正常按鍵取樣：
+	// 2096:A9EA = 5A7F:0000，0x400 bytes 與 GEO1.DAX 區塊 10h 本體相同；
+	// (11,2) 南、左轉東、前進至 (12,2)/(13,2)、右轉南/西/北及 (0,4) 西。
+	geoPtrOff   = 0xA9EA
+	partyXOff   = 0xA9F3
 	geoBodySize = 0x400
 	// 遊戲狀態區塊指標（幽靈騎士 DS:8484，用來以 ECL 區塊區分重用的 GEO）本作尚未找到，0 表示停用。
 	statePtrOff = 0
@@ -179,8 +179,16 @@ func (m *AutoMap) Sample(mem CPUView, ds uint16) {
 		return
 	}
 	body := make([]byte, geoBodySize)
+	var nonzero byte
 	for i := range body {
 		body[i] = mem.Read8(ptr + uint32(i))
+		nonzero |= body[i]
+	}
+	// 已證實：本作 32 塊 GEO 均非全零；正常冷開機曾讀到零填緩衝區及垃圾座標。
+	// 初始化期間不能記成走過格。主專案規格 009、docs/re/012。
+	if nonzero == 0 {
+		m.Key, m.sum, m.ptr, m.loaded = "", "", 0, false
+		return
 	}
 	s := sha256.Sum256(body)
 	sum := hex.EncodeToString(s[:])
