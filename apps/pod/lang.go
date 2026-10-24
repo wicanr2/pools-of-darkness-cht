@@ -151,6 +151,7 @@ func (l *Live) SetLang(p *LangPack) {
 		p.UI.Relearn(old)
 	}
 	l.lang = p
+	l.localized.setLocale(p.Code)
 	l.Font, l.ui, l.ecl, l.QuizFormat = p.Font, p.UI, p.ECL, p.QuizFormat
 	// 語言沒有手札或攻略時面板停用（nil），不沿用上一種語言的內容；面板物件與狀態留在 keep 欄位
 	if l.journalKeep == nil {

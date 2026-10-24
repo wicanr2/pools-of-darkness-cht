@@ -139,14 +139,22 @@ func (l *Live) AddHD(dir string) error {
 	if err != nil {
 		return err
 	}
+	localized, localizedCount, err := loadLocalizedHD(dir)
+	if err != nil {
+		return err
+	}
 	for _, it := range items {
 		l.Layer.Watch(it.Watcher())
 	}
 	l.HDLayers = layers
+	l.localized = localized
+	if l.lang != nil {
+		l.localized.setLocale(l.lang.Code)
+	}
 	if layers.combat != nil && len(layers.combat.vgaGeometry) > 0 {
 		l.battleHold = &battleHold{}
 	}
-	l.HDItems += len(items) + count
+	l.HDItems += len(items) + count + localizedCount
 	l.armHDHold(items)
 	if count > 0 {
 		l.hdLatch = xlate.NewLatch(320, 200, hdLatchKeep, hdLatchFrames)
