@@ -114,15 +114,76 @@ def check(root, theme):
     print(json.dumps(report, ensure_ascii=False, indent=2))
 
 
+def check_incremental(root, theme, baseline, baseline_theme, added):
+    """只增未觀測素材時，比較新的正常HD路徑與已通過的四路基準。"""
+    assert added and len(set(added)) == len(added)
+    current, previous = root / 'hd', baseline / 'hd'
+    inputs = json.loads((current / 'inputs.json').read_text())
+    old_inputs = json.loads((previous / 'inputs.json').read_text())
+    for key in ('orig', 'font', 'text', 'binary_sha256'):
+        assert inputs[key] == old_inputs[key], f'{key}與固定基準不同'
+    manifests = []
+    for directory, recorded in ((baseline_theme, old_inputs), (theme, inputs)):
+        path = directory / 'actors.json'
+        assert sha(path.read_bytes()) == recorded['theme']['actors.json']
+        manifests.append(json.loads(path.read_text()))
+        assert tree(directory) == recorded['theme'], '主題已在執行後變更'
+    old, new = manifests
+    assert {k: v for k, v in old.items() if k != 'items'} == {k: v for k, v in new.items() if k != 'items'}
+    old_rows, new_rows = ({r['key']: r for r in m['items']} for m in manifests)
+    assert len(old_rows) == len(old['items']) and len(new_rows) == len(new['items'])
+    assert set(new_rows) - set(old_rows) == set(added)
+    assert all(new_rows.get(k) == row for k, row in old_rows.items()), '舊條目被覆寫'
+    allowed = {'actors.json', 'vga-layers-provenance.json'}
+    for key in added:
+        row = new_rows[key]
+        allowed.update((row['png'], row['indexed']))
+        for path, digest in ((row['png'], row['png_sha256']), (row['indexed'], row['indexed_sha256'])):
+            assert inputs['theme'][path] == digest
+    for path, digest in old_inputs['theme'].items():
+        assert path in inputs['theme'] and (path in allowed or inputs['theme'][path] == digest), f'{path}被刪除或變更'
+    assert set(inputs['theme']) - set(old_inputs['theme']) == allowed - {'actors.json', 'vga-layers-provenance.json'}
+    log, old_log = ((d / 'run.log').read_text() for d in (current, previous))
+    patterns = (r'frames=(\d+) steps=(\d+) memory_sha256=(\w+) indexed_sha256=(\w+)',
+                r'cpu_sha256=(\w+) palette_sha256=(\w+)')
+    for pattern in patterns:
+        actual, expected = (re.search(pattern, s) for s in (log, old_log))
+        assert actual and expected and actual.groups() == expected.groups(), '原版終點不符基準'
+    for name in ('source.idx', 'source.pal', 'original.rgba', 'frame.png'):
+        assert (current / name).read_bytes() == (previous / name).read_bytes(), f'{name}不符基準'
+    frontend = {'pod-map-visited.txt', 'pod-journal-seen.txt', 'pod-walkthrough-pos.txt',
+                'pod-lang.txt', 'pod-speed.txt', 'pod-barfont.txt'}
+    guest = [{k: v for k, v in tree(d / 'save').items() if k not in frontend} for d in (current, previous)]
+    assert guest[0] == guest[1]
+    assert re.search(r'pod-play: 閃現 (\d+) 次', log)[1] == '0'
+    report = dict(scope='既有四路基準加未觀測資料；重跑7400格HD正常路徑；逐件2倍/F12與失配另由來源診斷驗證',
+                  added_actor_keys=added, registered_actor_states=len(new_rows),
+                  binary_sha256=inputs['binary_sha256'], guest_files=len(guest[0]),
+                  guest_state_equal=True, original_endpoint_equal=True, final_composite_equal=True,
+                  prior_assets_preserved=True, flash_count=0,
+                  frame_sha256=sha((current / 'frame.png').read_bytes()),
+                  baseline_summary_sha256=sha((baseline / 'summary.json').read_bytes()),
+                  inputs_sha256=sha((current / 'inputs.json').read_bytes()))
+    (root / 'summary.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+    print(json.dumps(report, ensure_ascii=False, indent=2))
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--record')
     parser.add_argument('--record-binary', default='/app/pod-play-vga')
     parser.add_argument('--out', type=Path)
     parser.add_argument('--theme', type=Path)
+    parser.add_argument('--baseline', type=Path)
+    parser.add_argument('--baseline-theme', type=Path)
+    parser.add_argument('--added', nargs='+')
     args = parser.parse_args()
     if args.record:
         record(args.record, args.record_binary)
     else:
         assert args.out and args.theme
-        check(args.out, args.theme)
+        if args.baseline:
+            assert args.baseline_theme
+            check_incremental(args.out, args.theme, args.baseline, args.baseline_theme, args.added)
+        else:
+            check(args.out, args.theme)

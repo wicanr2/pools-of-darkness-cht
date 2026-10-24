@@ -1,0 +1,1457 @@
+{
+  "scope": "同一既有G8冷啟動讀檔4800格終點；只證明該88×88街景的完整來源組合",
+  "evidence": "已證實：本次色號、來源區段RGB及13留底組合逐像素吻合；未知：其他位置與WALLDEF內部繪製規則",
+  "tool": "Python 3.13.16 / Pillow 11.0 / NumPy; sosb-img:r1; dosgolem pod-play-readme f3d019e來源",
+  "inputs": {
+    "8X8D1.DAX": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+    "WALLDEF1.DAX": "b483f86268112d74a261c3e1c167164b4924f32ba4e47fd42c3ba5b0027b5ad1",
+    "SKYGRND.DAX": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+    "indexed_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+    "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+    "binary_sha256": "0704494ac68b7ee55f0cb43301b56e66924d8f3719d752b1eedd3e62f9575e49",
+    "run_log_sha256": "7324f0320b115356ecf8fe4ff92dd1a40aedd8a5b9f8bc69f66a01c2defed1ef"
+  },
+  "viewport": [
+    24,
+    24,
+    88,
+    88
+  ],
+  "wall_bank": 1,
+  "sky_block": 1,
+  "transparent_wall_index": 13,
+  "wall_palette": {
+    "start": 32,
+    "count": 112,
+    "sha256": "23c42b2c120d0b7740f503cc8d2c20ab29ddaa2ad0408eba17805a79c641ee2f"
+  },
+  "sky_palette": {
+    "start": 144,
+    "count": 32,
+    "sha256": "f4780f94d70c97e8bd659ff668a8f8eab9599ba9e66233d4aa878d6a8fa1b609"
+  },
+  "wall_block_size": 16818,
+  "tile_pixel_offset": 434,
+  "tile_count_per_bank": 256,
+  "palette_end_offset": 346,
+  "unknown_gap": [
+    346,
+    434
+  ],
+  "sky_only_cells": 90,
+  "wall_cells": 31,
+  "unique_wall_tiles": [
+    21,
+    32,
+    36,
+    37,
+    38,
+    40,
+    41,
+    42,
+    43,
+    44,
+    46,
+    47,
+    55,
+    60,
+    61,
+    62,
+    193
+  ],
+  "cells": [
+    {
+      "position": 0,
+      "rect": [
+        24,
+        24,
+        8,
+        8
+      ],
+      "indexed_sha256": "394ac66cf8b254a8bd064a709e12043dd245eea1c1084141b9c7fc74af88ad32",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 1,
+      "rect": [
+        32,
+        24,
+        8,
+        8
+      ],
+      "indexed_sha256": "c965bb72fb7e950f39ba5d85a2a69053aeff84ce29ed2d29a7e60fdf190d31ce",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 2,
+      "rect": [
+        40,
+        24,
+        8,
+        8
+      ],
+      "indexed_sha256": "a67d34912c8c3cdcb386fceec57076df561544f44f9f32af4acac1cdaae139a1",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 3,
+      "rect": [
+        48,
+        24,
+        8,
+        8
+      ],
+      "indexed_sha256": "281d03eb05cbd43842433f11b209bc187fde5409381a8febc222270a0e0456ba",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 4,
+      "rect": [
+        56,
+        24,
+        8,
+        8
+      ],
+      "indexed_sha256": "89d63a2de58e19c251be81458d87ed1566c3d56da25b3a1dfcccf52ffb552a64",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 5,
+      "rect": [
+        64,
+        24,
+        8,
+        8
+      ],
+      "indexed_sha256": "96f709e12fb73181c2aa23549b2a8ad2708cfc438b160e12a086df3963ef3665",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 6,
+      "rect": [
+        72,
+        24,
+        8,
+        8
+      ],
+      "indexed_sha256": "fba339860e1645c3fbb48ba8c7b79beaaeb4612d8b8b499ff9bbea23cce1cadc",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 7,
+      "rect": [
+        80,
+        24,
+        8,
+        8
+      ],
+      "indexed_sha256": "a017fc81ee476c08436d049dbf6914a00882d944395183b81f1e1a433063b685",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 8,
+      "rect": [
+        88,
+        24,
+        8,
+        8
+      ],
+      "indexed_sha256": "455f394e94f0be184aac2def1a041d9cc32d4d67e3f61a6bbba29da11c52c5d9",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 9,
+      "rect": [
+        96,
+        24,
+        8,
+        8
+      ],
+      "indexed_sha256": "fec0b97bfba9e6cf25886e0c4884536456a151b4a91b372dc9e74a0b1b68403f",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 10,
+      "rect": [
+        104,
+        24,
+        8,
+        8
+      ],
+      "indexed_sha256": "4a4c8c191f98533d13dd786328e95eda994b5264ea8a943075fdc550c559379c",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 11,
+      "rect": [
+        24,
+        32,
+        8,
+        8
+      ],
+      "indexed_sha256": "9d867cd467411403ea3636c4fd5e6d3d6784f7fb140df1c8c90c5be69cc72576",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 12,
+      "rect": [
+        32,
+        32,
+        8,
+        8
+      ],
+      "indexed_sha256": "f028994d08ab3e7b7b7b233f8067d28b6ae8ea3cd646adf7e729312a64eb3c6c",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 13,
+      "rect": [
+        40,
+        32,
+        8,
+        8
+      ],
+      "indexed_sha256": "4a4decb1b36d44938416131dcc0c42b93aef1da8c71f3118ca7cb5b4b471438e",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 14,
+      "rect": [
+        48,
+        32,
+        8,
+        8
+      ],
+      "indexed_sha256": "3eef7a24204651f4e22638169121c8a39b2039c1f4600d8fe09af2d28c2cdecc",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 15,
+      "rect": [
+        56,
+        32,
+        8,
+        8
+      ],
+      "indexed_sha256": "09bd396b7967240cc43a844ef76a6d060ab1864f2cf8a6ce6529d50e4f5e6189",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 16,
+      "rect": [
+        64,
+        32,
+        8,
+        8
+      ],
+      "indexed_sha256": "75bbd3f21135b3d49e144fe1af627e008f007cf2e9cde33ce1edaced3a28cc87",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 17,
+      "rect": [
+        72,
+        32,
+        8,
+        8
+      ],
+      "indexed_sha256": "07badd8a7e6185088cbd42a2ee7646eb145018020fc0c99878d718053da9a173",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 18,
+      "rect": [
+        80,
+        32,
+        8,
+        8
+      ],
+      "indexed_sha256": "2dca7ce25ade3057a8b93cc6a414375e338e38a7e82378885e00783fc39f470e",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 19,
+      "rect": [
+        88,
+        32,
+        8,
+        8
+      ],
+      "indexed_sha256": "3150e48b659cd1ff2a61be89606638f75da3b54fd5ba780c900e8880e0418524",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 20,
+      "rect": [
+        96,
+        32,
+        8,
+        8
+      ],
+      "indexed_sha256": "153945272b9ea714db7f6e8b956ddba010cf7ceceee30335182bc1c0b7d89701",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 21,
+      "rect": [
+        104,
+        32,
+        8,
+        8
+      ],
+      "indexed_sha256": "12ecde9afb380864c71685c9bc1bc80ac8a874bf2acbe600a012456246e9ac80",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 22,
+      "rect": [
+        24,
+        40,
+        8,
+        8
+      ],
+      "indexed_sha256": "b2e292f677c78c49ba422dbe57970c1edccdc549c0b6ede890af720f13553111",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@42",
+      "wall_decoded_pixel_offset": 3122
+    },
+    {
+      "position": 23,
+      "rect": [
+        32,
+        40,
+        8,
+        8
+      ],
+      "indexed_sha256": "e633d48a45b68350d7016627962ac7ae3da22d10c153cfe86c878e28a8a0cd78",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@41",
+      "wall_decoded_pixel_offset": 3058
+    },
+    {
+      "position": 24,
+      "rect": [
+        40,
+        40,
+        8,
+        8
+      ],
+      "indexed_sha256": "4f4841e166ce056cc8a2d5ef558c9181f014d36c81273bc4a9f8f81613eaab53",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@55",
+      "wall_decoded_pixel_offset": 3954
+    },
+    {
+      "position": 25,
+      "rect": [
+        48,
+        40,
+        8,
+        8
+      ],
+      "indexed_sha256": "ad44654dd9b48fdf1ba4abd3dd619aad92149684e1867745f52c9d3d00270556",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 26,
+      "rect": [
+        56,
+        40,
+        8,
+        8
+      ],
+      "indexed_sha256": "a01a7c026a13ccabeac7968a6f749123745831d8d51c4c84d95cb4234bb523b1",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 27,
+      "rect": [
+        64,
+        40,
+        8,
+        8
+      ],
+      "indexed_sha256": "01787f13a8ed369756c7baf47dc52a90716752d74cb1863f6f51f3959a3432bc",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 28,
+      "rect": [
+        72,
+        40,
+        8,
+        8
+      ],
+      "indexed_sha256": "1290777003de065075c451633980c04b0ded7872df592c2886cf47f71f46fb1c",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 29,
+      "rect": [
+        80,
+        40,
+        8,
+        8
+      ],
+      "indexed_sha256": "f2fb85f27fb172a4121cc9d806e1aa5f36dc7b93e073d56f19bbfb6577bdcbdf",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 30,
+      "rect": [
+        88,
+        40,
+        8,
+        8
+      ],
+      "indexed_sha256": "ac223f2fe203d1b96ae605137ad2a7aa028c8088779ff1ef34868d8b67e86a62",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 31,
+      "rect": [
+        96,
+        40,
+        8,
+        8
+      ],
+      "indexed_sha256": "798fa8491474f0fc073d2c975fe3c843df850619eae9c606ca1974426240f18c",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 32,
+      "rect": [
+        104,
+        40,
+        8,
+        8
+      ],
+      "indexed_sha256": "c024bc47b14717d962b04ed2233eda0d24bc0370f5ca05b1216ac1966a4aba5d",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 33,
+      "rect": [
+        24,
+        48,
+        8,
+        8
+      ],
+      "indexed_sha256": "3582aef5f6c4a02841aba0c5dc0c615431e9d3338b87f112f8c78ddc2f8212ab",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@43",
+      "wall_decoded_pixel_offset": 3186
+    },
+    {
+      "position": 34,
+      "rect": [
+        32,
+        48,
+        8,
+        8
+      ],
+      "indexed_sha256": "6ee6fc904dd9c9b2ec5463d77b9e4b83ca78441512956f8aa4cdabe6cab3ac05",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@47",
+      "wall_decoded_pixel_offset": 3442
+    },
+    {
+      "position": 35,
+      "rect": [
+        40,
+        48,
+        8,
+        8
+      ],
+      "indexed_sha256": "356a32f5d4be4bc0ebbdf946023cad2676ac3b94d611289dddebca9c834554d2",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@61",
+      "wall_decoded_pixel_offset": 4338
+    },
+    {
+      "position": 36,
+      "rect": [
+        48,
+        48,
+        8,
+        8
+      ],
+      "indexed_sha256": "2704b5c5b09a4b8a52e382f9ac9064f3980df13fbc9ab910749e7e76d095cf36",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@55",
+      "wall_decoded_pixel_offset": 3954
+    },
+    {
+      "position": 37,
+      "rect": [
+        56,
+        48,
+        8,
+        8
+      ],
+      "indexed_sha256": "671c9a2651a42dbc17caf59450a6b9f48013604c7622d02d936875e666c73782",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 38,
+      "rect": [
+        64,
+        48,
+        8,
+        8
+      ],
+      "indexed_sha256": "b2829f26de69d35618e6585e0845e7e331121a092cbf38e9b2c96427e4843d4a",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 39,
+      "rect": [
+        72,
+        48,
+        8,
+        8
+      ],
+      "indexed_sha256": "8641bd8ea96eb00d58313ebde3a22d2ba75ef1ef1ac562666b623b1cbeaff737",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 40,
+      "rect": [
+        80,
+        48,
+        8,
+        8
+      ],
+      "indexed_sha256": "f4356920c48b01d84ad3077b30ea2287111ebd84d7a7acd6a2b3875bee032bea",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 41,
+      "rect": [
+        88,
+        48,
+        8,
+        8
+      ],
+      "indexed_sha256": "9ea97d20f301beb26cc75b8ac57a2f9036a90f88435cfdf5670aa11b0c105dbe",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 42,
+      "rect": [
+        96,
+        48,
+        8,
+        8
+      ],
+      "indexed_sha256": "ea57ea281c401806941e03423f4d212f99725e9fca6db540bf80ab5505e164df",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 43,
+      "rect": [
+        104,
+        48,
+        8,
+        8
+      ],
+      "indexed_sha256": "d3450511c2cc261ec1392a17ba93a10a663bfca5aa2770dbc3da1f912f7443b7",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 44,
+      "rect": [
+        24,
+        56,
+        8,
+        8
+      ],
+      "indexed_sha256": "6cabd3819586f10d48e173f3b8459452b088c120c4a6021549e6206e093f3f4b",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@193",
+      "wall_decoded_pixel_offset": 12786
+    },
+    {
+      "position": 45,
+      "rect": [
+        32,
+        56,
+        8,
+        8
+      ],
+      "indexed_sha256": "2339f6113431a9ed0057313f69031aceb3b043b05a26181ac613c18dfe4a722f",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@40",
+      "wall_decoded_pixel_offset": 2994
+    },
+    {
+      "position": 46,
+      "rect": [
+        40,
+        56,
+        8,
+        8
+      ],
+      "indexed_sha256": "98438ab6e6a26af00eddcfa1687321916e055119b74db7d85b853488f1fbf1a5",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@32",
+      "wall_decoded_pixel_offset": 2482
+    },
+    {
+      "position": 47,
+      "rect": [
+        48,
+        56,
+        8,
+        8
+      ],
+      "indexed_sha256": "356a32f5d4be4bc0ebbdf946023cad2676ac3b94d611289dddebca9c834554d2",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@61",
+      "wall_decoded_pixel_offset": 4338
+    },
+    {
+      "position": 48,
+      "rect": [
+        56,
+        56,
+        8,
+        8
+      ],
+      "indexed_sha256": "c6d8b481312f25976935b16f4ca07104b72e88fe6d6ab8753652dce53918d30c",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@55",
+      "wall_decoded_pixel_offset": 3954
+    },
+    {
+      "position": 49,
+      "rect": [
+        64,
+        56,
+        8,
+        8
+      ],
+      "indexed_sha256": "bcedc529e9a16278f178b1481f8ad1b54a80d3ab853e5e255331f1783f22ee15",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 50,
+      "rect": [
+        72,
+        56,
+        8,
+        8
+      ],
+      "indexed_sha256": "ab9d0c6b114f0c07ac04163df7e87202f022ef6333a7313fc38bda8072133e4b",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 51,
+      "rect": [
+        80,
+        56,
+        8,
+        8
+      ],
+      "indexed_sha256": "1129be32cd691df8f61b02636ca55c79efdfdbac47c45e7435796a2fcb2a46a5",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 52,
+      "rect": [
+        88,
+        56,
+        8,
+        8
+      ],
+      "indexed_sha256": "d83e60dfb183e9aafc0b26278f0c097f0f6c7a66b5e2575137c8f4aae437023a",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 53,
+      "rect": [
+        96,
+        56,
+        8,
+        8
+      ],
+      "indexed_sha256": "83f338d4310c9a26be0a507fb8382c2fb5db5000e320612e5e9667a11589cc03",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 54,
+      "rect": [
+        104,
+        56,
+        8,
+        8
+      ],
+      "indexed_sha256": "7815bd6d5c56c19f0acdb1a25215e9756df8a045dbce10bf2998211444a80771",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 55,
+      "rect": [
+        24,
+        64,
+        8,
+        8
+      ],
+      "indexed_sha256": "3582aef5f6c4a02841aba0c5dc0c615431e9d3338b87f112f8c78ddc2f8212ab",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@43",
+      "wall_decoded_pixel_offset": 3186
+    },
+    {
+      "position": 56,
+      "rect": [
+        32,
+        64,
+        8,
+        8
+      ],
+      "indexed_sha256": "3582aef5f6c4a02841aba0c5dc0c615431e9d3338b87f112f8c78ddc2f8212ab",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@43",
+      "wall_decoded_pixel_offset": 3186
+    },
+    {
+      "position": 57,
+      "rect": [
+        40,
+        64,
+        8,
+        8
+      ],
+      "indexed_sha256": "7142992b523a7aa6598a93221f50ddcbc64e84d2c2c9fb4b06030fc880f8d9b0",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@60",
+      "wall_decoded_pixel_offset": 4274
+    },
+    {
+      "position": 58,
+      "rect": [
+        48,
+        64,
+        8,
+        8
+      ],
+      "indexed_sha256": "559846e2140bc92cf8558513333798bb6c2de17ffe11d28ac4060b8d09944f45",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@62",
+      "wall_decoded_pixel_offset": 4402
+    },
+    {
+      "position": 59,
+      "rect": [
+        56,
+        64,
+        8,
+        8
+      ],
+      "indexed_sha256": "7142992b523a7aa6598a93221f50ddcbc64e84d2c2c9fb4b06030fc880f8d9b0",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@60",
+      "wall_decoded_pixel_offset": 4274
+    },
+    {
+      "position": 60,
+      "rect": [
+        64,
+        64,
+        8,
+        8
+      ],
+      "indexed_sha256": "1d868da5ba1d2f0e0dd024c24a16cc11ac12dc0805caf3131557002cef3e4579",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 61,
+      "rect": [
+        72,
+        64,
+        8,
+        8
+      ],
+      "indexed_sha256": "2d0a1051ff62c53110a5ea1f22595b722810119b033759f3e35c6eaa7fd7dedc",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 62,
+      "rect": [
+        80,
+        64,
+        8,
+        8
+      ],
+      "indexed_sha256": "700f23c8b9af1c2c5a0c578569a8910b3ccdda0996fd73cd51ef1f75bc6c4569",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 63,
+      "rect": [
+        88,
+        64,
+        8,
+        8
+      ],
+      "indexed_sha256": "7a07fe36004ba4bd8a18f1acc33c39c3b23d8edb184e5decc4708d13f541d3f6",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 64,
+      "rect": [
+        96,
+        64,
+        8,
+        8
+      ],
+      "indexed_sha256": "812a73536bf50b814bbfd2412b6d5739cb1aa510e2e7587bb24807480c4e8b62",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@37",
+      "wall_decoded_pixel_offset": 2802
+    },
+    {
+      "position": 65,
+      "rect": [
+        104,
+        64,
+        8,
+        8
+      ],
+      "indexed_sha256": "8571df0505d5356e0bf9a21c8c310e677cf32c70920b653f07fe6be172e44c9e",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@38",
+      "wall_decoded_pixel_offset": 2866
+    },
+    {
+      "position": 66,
+      "rect": [
+        24,
+        72,
+        8,
+        8
+      ],
+      "indexed_sha256": "6ee6fc904dd9c9b2ec5463d77b9e4b83ca78441512956f8aa4cdabe6cab3ac05",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@47",
+      "wall_decoded_pixel_offset": 3442
+    },
+    {
+      "position": 67,
+      "rect": [
+        32,
+        72,
+        8,
+        8
+      ],
+      "indexed_sha256": "390fbde0d864227a0774cf37a30141801ddf755f0bbc25d8c7c97ca057338be2",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@46",
+      "wall_decoded_pixel_offset": 3378
+    },
+    {
+      "position": 68,
+      "rect": [
+        40,
+        72,
+        8,
+        8
+      ],
+      "indexed_sha256": "98438ab6e6a26af00eddcfa1687321916e055119b74db7d85b853488f1fbf1a5",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@32",
+      "wall_decoded_pixel_offset": 2482
+    },
+    {
+      "position": 69,
+      "rect": [
+        48,
+        72,
+        8,
+        8
+      ],
+      "indexed_sha256": "22071fee4bcffe2cbdaad1ca3eb4c8c08ef98cedb8a6df14cad3386f76d91420",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@36",
+      "wall_decoded_pixel_offset": 2738
+    },
+    {
+      "position": 70,
+      "rect": [
+        56,
+        72,
+        8,
+        8
+      ],
+      "indexed_sha256": "9af4667149eee9646f7fecadd5d5fa8fa7e17c19b94e58fb22a51ff35c1ebe81",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@21",
+      "wall_decoded_pixel_offset": 1778
+    },
+    {
+      "position": 71,
+      "rect": [
+        64,
+        72,
+        8,
+        8
+      ],
+      "indexed_sha256": "bcd3972ddd1492ac1c7fb8fb82feebe46ff32b7a75027a996fab5e6399749dfe",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 72,
+      "rect": [
+        72,
+        72,
+        8,
+        8
+      ],
+      "indexed_sha256": "730a999bf1af4357a56207d217e8863360d73a929731aca317cbca60a1b4aaa1",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 73,
+      "rect": [
+        80,
+        72,
+        8,
+        8
+      ],
+      "indexed_sha256": "55fbc71a20336e9c61a41ab1dc4a185c53d9a7f003e78a0af84ad5134ad7d64a",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 74,
+      "rect": [
+        88,
+        72,
+        8,
+        8
+      ],
+      "indexed_sha256": "1f1f4ef1d37597fb26d500ea565705b8dbea8bc884e6c02bb087e2c32f152388",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 75,
+      "rect": [
+        96,
+        72,
+        8,
+        8
+      ],
+      "indexed_sha256": "e41e27ad7a675a30d88fd442675b303f5ff027faa230a90b693ce60a87387dc8",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 76,
+      "rect": [
+        104,
+        72,
+        8,
+        8
+      ],
+      "indexed_sha256": "197a472e52e00ce01046d1187b63a70f01f8a2080c44474856f948e9985cfba8",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 77,
+      "rect": [
+        24,
+        80,
+        8,
+        8
+      ],
+      "indexed_sha256": "3582aef5f6c4a02841aba0c5dc0c615431e9d3338b87f112f8c78ddc2f8212ab",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@43",
+      "wall_decoded_pixel_offset": 3186
+    },
+    {
+      "position": 78,
+      "rect": [
+        32,
+        80,
+        8,
+        8
+      ],
+      "indexed_sha256": "6ee6fc904dd9c9b2ec5463d77b9e4b83ca78441512956f8aa4cdabe6cab3ac05",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@47",
+      "wall_decoded_pixel_offset": 3442
+    },
+    {
+      "position": 79,
+      "rect": [
+        40,
+        80,
+        8,
+        8
+      ],
+      "indexed_sha256": "22071fee4bcffe2cbdaad1ca3eb4c8c08ef98cedb8a6df14cad3386f76d91420",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@36",
+      "wall_decoded_pixel_offset": 2738
+    },
+    {
+      "position": 80,
+      "rect": [
+        48,
+        80,
+        8,
+        8
+      ],
+      "indexed_sha256": "df09bc2dab6062a936f91fde4fdfb3ba5788b1b94ccc1c0127e64f8206310d29",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@21",
+      "wall_decoded_pixel_offset": 1778
+    },
+    {
+      "position": 81,
+      "rect": [
+        56,
+        80,
+        8,
+        8
+      ],
+      "indexed_sha256": "aab38ce7aa17cfbc3a6e0fac9572acd0e2f147c9d5eb5718ee7b78b57a37b3a7",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 82,
+      "rect": [
+        64,
+        80,
+        8,
+        8
+      ],
+      "indexed_sha256": "a2f5e81d1bd935b2290685d871c9ec447e779855c4efe23ec13c5d177037c498",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 83,
+      "rect": [
+        72,
+        80,
+        8,
+        8
+      ],
+      "indexed_sha256": "8bf29e0cef097e31e670cf6fb9effa06c620b699c405396781390eb4166f6cb2",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 84,
+      "rect": [
+        80,
+        80,
+        8,
+        8
+      ],
+      "indexed_sha256": "3c6885689a9fd09a99f410211aaa8286f87098bcaa0662d527d8cd49507cd423",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 85,
+      "rect": [
+        88,
+        80,
+        8,
+        8
+      ],
+      "indexed_sha256": "d2589cdbc23da3b372e1be94672cd5c312a5d9932c7f3b83a5967b23e9c8ad8d",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 86,
+      "rect": [
+        96,
+        80,
+        8,
+        8
+      ],
+      "indexed_sha256": "bf8ba1b01f075dd64eb67deffbdb79b04d9c239b1efd604610c7fceb8dd56c44",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 87,
+      "rect": [
+        104,
+        80,
+        8,
+        8
+      ],
+      "indexed_sha256": "185da6e99e830063db66a81cb1fba257998929ca794cf69cb6b4a5b7c6f20dea",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 88,
+      "rect": [
+        24,
+        88,
+        8,
+        8
+      ],
+      "indexed_sha256": "55598827dfd96fb9fd1bbe63ed268a4e34d3cf07880d554e274b9548e5860149",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@44",
+      "wall_decoded_pixel_offset": 3250
+    },
+    {
+      "position": 89,
+      "rect": [
+        32,
+        88,
+        8,
+        8
+      ],
+      "indexed_sha256": "55598827dfd96fb9fd1bbe63ed268a4e34d3cf07880d554e274b9548e5860149",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@44",
+      "wall_decoded_pixel_offset": 3250
+    },
+    {
+      "position": 90,
+      "rect": [
+        40,
+        88,
+        8,
+        8
+      ],
+      "indexed_sha256": "bd48e0aca9aadf9f711820ccbf5f27e1842b73c574e9f94264c820c24662e566",
+      "sky": "skygrnd-001",
+      "wall": "8x8d1-001@21",
+      "wall_decoded_pixel_offset": 1778
+    },
+    {
+      "position": 91,
+      "rect": [
+        48,
+        88,
+        8,
+        8
+      ],
+      "indexed_sha256": "8c85b000743146480484d393c27accb6b7fdf2deccba1ca98bea7e687d2f6262",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 92,
+      "rect": [
+        56,
+        88,
+        8,
+        8
+      ],
+      "indexed_sha256": "db23e987eff907be19633625dc8bade7c3ef513b984f86573c5f5ccf7eaea11b",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 93,
+      "rect": [
+        64,
+        88,
+        8,
+        8
+      ],
+      "indexed_sha256": "9e51d5538d6d4a64f0a10dd249e04eda42d99b8ff8a27118d3993910ac683aff",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 94,
+      "rect": [
+        72,
+        88,
+        8,
+        8
+      ],
+      "indexed_sha256": "f1971bfe76ebdc9bf940b790068ea272abfb976b7508ff911e5ed5c8d51637c5",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 95,
+      "rect": [
+        80,
+        88,
+        8,
+        8
+      ],
+      "indexed_sha256": "e51968e6b0407ce91f6ce729fe9c9cc61c1adf8016b885d0b2e770faa366314e",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 96,
+      "rect": [
+        88,
+        88,
+        8,
+        8
+      ],
+      "indexed_sha256": "f9d6cd3889dc659c1b2548d6c44044a260bbf3333329a518531351adce69443d",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 97,
+      "rect": [
+        96,
+        88,
+        8,
+        8
+      ],
+      "indexed_sha256": "fdadd7e4af9c02e2a61246741645149590bddce5fa428facc402fb401e346c61",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 98,
+      "rect": [
+        104,
+        88,
+        8,
+        8
+      ],
+      "indexed_sha256": "a4b61295088bfb8611a83cb3a0de61b37ff786df4dfab14f5c8e115b1834e26d",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 99,
+      "rect": [
+        24,
+        96,
+        8,
+        8
+      ],
+      "indexed_sha256": "72092f236c582bbee79f36595e9d6d23d676c81436e8379e1ab10bb38fe889e5",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 100,
+      "rect": [
+        32,
+        96,
+        8,
+        8
+      ],
+      "indexed_sha256": "953c1a344d8816af9a8c5d85b9802c057ab6e4386a859f40eccc6b971965f17c",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 101,
+      "rect": [
+        40,
+        96,
+        8,
+        8
+      ],
+      "indexed_sha256": "4190d0c755df836c5203d5eebb5fb2f1751b6c757431bf186ffc451e2cbbba37",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 102,
+      "rect": [
+        48,
+        96,
+        8,
+        8
+      ],
+      "indexed_sha256": "32853a4946383f57fb6f4e3816d680be10da791fcb494f590afec7fd5527ae77",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 103,
+      "rect": [
+        56,
+        96,
+        8,
+        8
+      ],
+      "indexed_sha256": "ae748beb70e8735e2843b61ba18dd927c82706006482746d81a0d4e964b65372",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 104,
+      "rect": [
+        64,
+        96,
+        8,
+        8
+      ],
+      "indexed_sha256": "800802cdd78cc263636c3133ca8ca64ac8672277e6a4bc14a92330e6e62a6465",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 105,
+      "rect": [
+        72,
+        96,
+        8,
+        8
+      ],
+      "indexed_sha256": "c6b7bbb081e263b2b4f82d65ee97418a50a82df4f0acd920334b83d09cb0e184",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 106,
+      "rect": [
+        80,
+        96,
+        8,
+        8
+      ],
+      "indexed_sha256": "cbaf2b04728cbf5b81c79b09fddbd28589bb5f537dfd6bce6824a600c5adb458",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 107,
+      "rect": [
+        88,
+        96,
+        8,
+        8
+      ],
+      "indexed_sha256": "993a698fa4f35065cddb7ca2416b5a90953f53b727e3c3ff33a9c2a4be43d681",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 108,
+      "rect": [
+        96,
+        96,
+        8,
+        8
+      ],
+      "indexed_sha256": "54f59be20ac84a970974167e3e8e5133345cf45e9fa52b7de93ef21351f50af9",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 109,
+      "rect": [
+        104,
+        96,
+        8,
+        8
+      ],
+      "indexed_sha256": "1e89ecd088da5132c453ef186946c6ca56c7b7cc2cb332403a23d05b3ae7b1d8",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 110,
+      "rect": [
+        24,
+        104,
+        8,
+        8
+      ],
+      "indexed_sha256": "d257fd8c88c739885e34a44973722621e07c0416849abb026f56af51d0c5b09d",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 111,
+      "rect": [
+        32,
+        104,
+        8,
+        8
+      ],
+      "indexed_sha256": "c5039b6926bdccbf3744a98d36802bf1d78783cc0071c70253defee310df6eb8",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 112,
+      "rect": [
+        40,
+        104,
+        8,
+        8
+      ],
+      "indexed_sha256": "a3fcd2649791ba3a90a36cef4d9bfea334e4711c6d3eb79247b0bdf1b197ea54",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 113,
+      "rect": [
+        48,
+        104,
+        8,
+        8
+      ],
+      "indexed_sha256": "f560b3475f7739e05dda2a20ada2d1f80cf8323d2f354d673fee13a6c98a2f7b",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 114,
+      "rect": [
+        56,
+        104,
+        8,
+        8
+      ],
+      "indexed_sha256": "5a1d5eec723da90085a9a9bc7c5a217f66f4382597d7086a4f119db8368f6bc3",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 115,
+      "rect": [
+        64,
+        104,
+        8,
+        8
+      ],
+      "indexed_sha256": "b43713e9c9646e8f018c808dc1ced02cac223961e27ab13774782e3b750854fa",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 116,
+      "rect": [
+        72,
+        104,
+        8,
+        8
+      ],
+      "indexed_sha256": "da1e63882d8810e9f0364a2da766037fe7ff5b5c69230eed1313863a04eb43dc",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 117,
+      "rect": [
+        80,
+        104,
+        8,
+        8
+      ],
+      "indexed_sha256": "b19fa7fc730ccab950aba94fdd6fc40ac1547a44c5b4047fe285713a6d68b9ce",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 118,
+      "rect": [
+        88,
+        104,
+        8,
+        8
+      ],
+      "indexed_sha256": "6cce75ea5b5687fe51d6ce22d32c0971d62801e043a24aa8911ac67aaaf0ca77",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 119,
+      "rect": [
+        96,
+        104,
+        8,
+        8
+      ],
+      "indexed_sha256": "23d7f19e4815394bda875fedcba0dc1759a18d0171e2bbb612344b44030ac7b0",
+      "sky": "skygrnd-001"
+    },
+    {
+      "position": 120,
+      "rect": [
+        104,
+        104,
+        8,
+        8
+      ],
+      "indexed_sha256": "4bf0dbf21977e0a3756a4800caabb6198d598c8f4f900017e91d32c1988ab86c",
+      "sky": "skygrnd-001"
+    }
+  ]
+}

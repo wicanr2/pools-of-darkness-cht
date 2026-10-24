@@ -265,3 +265,29 @@ README原版封面另與無HD正常截圖相同，HD服裝及標題與使用者�
 固定收據：[014-english-front-runtime.json](014-english-front-runtime.json)，
 檢查入口[english_front_check.py](../../tools/english_front_check.py)，正常畫面已目視。
 本項只涵蓋英文前端、開場與DEMO抽樣，英文手札、攻略及其他語系尚未交付。
+
+### 正常街景的天空與牆面來源
+
+2026-10-25，沿相同G8讀槽A路線重跑`readme-source-v3`，4800格、462000000步。
+記憶體`0e6e8e53b475dfc58edd6841ba5aa55960bdb7c790c0b54d5710413ffa484973`及色號
+`df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d`與原收據相同。
+只增加配對來源匯出，不增加探索。下列偏移是DAX解壓後區塊內偏移，不是EXE位址。
+
+- `8X8D1.DAX`六塊各16818 bytes，表頭8×8、256張圖，RGB6色盤32–143。
+  像素從434起，每張64 bytes；色盤在346結束，中間88 bytes用途未知，不據此推繪圖規則。
+- 本次配對色盤只符合第1塊牆面及`SKYGRND.DAX`第1塊的144–175區段。
+  天空1／2／3雖色號相同，色盤不同，只能選實際吻合者；其他區塊不因像素相同共用錯色圖。
+- 視窗`[24,24,88,88]`的121格可完全重建。90格只有天空／地面，31格疊牆面，使用17種8×8圖塊。
+  牆面色號13取底下天空／地面，各格來源色號及提供區段RGB均吻合，沒有歧義或未解格。
+  此為本次呈現組合的已證實契約；未逆推WALLDEF內部座標算法或宣稱其他街景均已驗。
+
+入口：[vga_wall_source_check.py](../../tools/vga_wall_source_check.py)，四個參數`--orig`、`--capture`、`--binary`、`--out`。
+原始收據`workplace/probe/readme-source-v3/`，輸出`workplace/probe/g9-hd/vga-wall-source/`，
+固定輸入雜湊、17種來源偏移與121格明細見[014-wall-source-proof.json](014-wall-source-proof.json)。
+工具沿Python3.13.16、Pillow11.0與NumPy容器；牆面預覽把13留底畫成灰色，原始idx不改。
+這次只補來源證據，沒有把原版濾鏡放大當HD，也沒有接入3D牆面。
+
+天空／地面四張已在b10逐張以內建生圖重畫，264×264不透明RGBA，
+構圖0.455–0.832、色相差4.4–27.1度及最終尺寸目視通過。來源色盤各自綁定，不自行推定日夜切換時間。
+素材與完整提示詞見[b10審閱](../../review/hd/b10-sky/README.md)，Issue [#29](https://github.com/wicanr2/pools-of-darkness-cht/issues/29)。
+本批只完成素材，產品的牆面組合、逐格撤除與色盤守衛仍需另有READY契約。

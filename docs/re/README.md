@@ -21,4 +21,4 @@
 | [011](011-walkthrough.md) | 遊戲內攻略：《軟體世界》第 43–45 期的自寫摘要、照抄檢查、面板資料與收據 | #9 |
 | [012](012-map-overlay.md) | 地圖疊層：本作 GEO 指標、座標、方向、東菲蘭攻略點；`g8-map-evidence.sh`、`g8-map-receipt.sh`、`map_geo.py` 及檢查器 | #9 |
 | [013](013-map-identification.md) | 24 塊 GEO 名稱與五個攻略點、[裁切表](013-map-reference-crops.json)、牆面比對與攻略專名對齊工具 | #9 |
-| [014](014-vga-hd.md) | 本作 VGA 圖檔、色盤與 BIGPIC／TITLE 盤點、HD 首批、展示圖與來源核對 | #10、#17 |
+| [014](014-vga-hd.md) | 本作 VGA 圖檔、色盤、BIGPIC／TITLE、正常街景天空及17種牆面來源、HD素材與實際展示核對 | #10、#17 |

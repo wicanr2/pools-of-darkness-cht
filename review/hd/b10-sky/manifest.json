@@ -1,0 +1,432 @@
+{
+  "batch": "b10",
+  "count": 4,
+  "private_only": true,
+  "request_manifest_sha256": "b8e226a03dac0d8a962dc4fe51b9e06577115ed2a4014e789c0bc511ff30df95",
+  "items": [
+    {
+      "key": "skygrnd-001",
+      "source": {
+        "key": "skygrnd-001",
+        "source_file": "SKYGRND.DAX",
+        "source_file_sha256": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+        "block": 1,
+        "packed_file_offset": 38,
+        "decoded_sha256": "1a3e49db2494b619c47eff303175107f69b29be66f6b59640c8a353cf97902ff",
+        "source_size": [
+          88,
+          88
+        ],
+        "output_size": [
+          264,
+          264
+        ],
+        "reference_1x": "skygrnd-001-1x.png",
+        "reference_3x": "skygrnd-001-3x.png",
+        "reference_1x_sha256": "fe2ff72a8fb2d9d29390f7c6c8aedda1507776871daef358db1f0e63a0f8ff93",
+        "reference_3x_sha256": "c603b8832b2899957e36da63ecfed561f4bad8c10455c38e154b20a4a3e75761",
+        "indexed": "skygrnd-001.idx",
+        "indexed_sha256": "3b7758d528493c836059053a9f64243c9907c75743d77028f9cc5d9afcdd79cb",
+        "palette": "skygrnd-001.pal",
+        "palette_sha256": "1d0accaba5632cc301b0bfa70baae29feaef82aafc11390b5c888507ded58c34",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "skygrnd-001",
+        "target": [
+          264,
+          264
+        ],
+        "version": 0,
+        "issue": 29,
+        "status": "generated",
+        "generation": "built-in image_gen; one original reference per image",
+        "raw": "skygrnd-001-r0-raw.png",
+        "raw_sha256": "a7a49cd514ea264a30a1e7d4113bd257fc7ff566ac0f99258a649a9d7a1bc236",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-891ed74f-116c-4381-bb0d-fc2ec0a5dc0a.png",
+        "prompt": "Use case: style-transfer. Asset type: one seamless-edged background plate for a classic1991 fantasy CRPG's small first-person viewport, skygrnd-001. Repaint the single supplied original as approved style B hand-painted1990s fantasy illustration. Preserve the exact square88x88 composition, final264x264: upper HALF is a blue daytime sky almost covered by the SAME sprawling bank of white and pale gray clouds with muted lavender-gray undersides; lower HALF is an uninterrupted flat green grassy plain seen in perspective, mottled yellow-green and olive. The horizontal horizon remains at exactly the original midpoint. Every main white cloud ridge, blue gap, pale gray band and color mass stays at its exact original relative location. These are CLOUDS, not mountains: do not turn them into snowy peaks, buildings or landscape forms. Replace pixel dithering with smooth deliberate painted cloud texture and restrained finely brushed grass, keeping all original color relationships and original edge colors. NO new mountains, trees, hills, roads, rocks, buildings, animals, figures, sun, stars, effects, frame, text or border. Flat unobstructed ground and sky only. Preserve full edge-to-edge square framing and horizon height, no margins. No pixel art, mosaic, 3D or photorealism.",
+        "references": [
+          {
+            "file": "workplace/hd/requests/b10/skygrnd-001-3x.png",
+            "sha256": "c603b8832b2899957e36da63ecfed561f4bad8c10455c38e154b20a4a3e75761"
+          }
+        ],
+        "source": {
+          "key": "skygrnd-001",
+          "source_file": "SKYGRND.DAX",
+          "source_file_sha256": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+          "block": 1,
+          "packed_file_offset": 38,
+          "decoded_sha256": "1a3e49db2494b619c47eff303175107f69b29be66f6b59640c8a353cf97902ff",
+          "source_size": [
+            88,
+            88
+          ],
+          "output_size": [
+            264,
+            264
+          ],
+          "reference_1x": "skygrnd-001-1x.png",
+          "reference_3x": "skygrnd-001-3x.png",
+          "reference_1x_sha256": "fe2ff72a8fb2d9d29390f7c6c8aedda1507776871daef358db1f0e63a0f8ff93",
+          "reference_3x_sha256": "c603b8832b2899957e36da63ecfed561f4bad8c10455c38e154b20a4a3e75761",
+          "indexed": "skygrnd-001.idx",
+          "indexed_sha256": "3b7758d528493c836059053a9f64243c9907c75743d77028f9cc5d9afcdd79cb",
+          "palette": "skygrnd-001.pal",
+          "palette_sha256": "1d0accaba5632cc301b0bfa70baae29feaef82aafc11390b5c888507ded58c34",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": false,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+        },
+        "request_manifest_sha256": "b8e226a03dac0d8a962dc4fe51b9e06577115ed2a4014e789c0bc511ff30df95",
+        "style_batch": "B approved b01",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "skygrnd-001",
+        "raw": "skygrnd-001-r0-raw.png",
+        "raw_sha256": "a7a49cd514ea264a30a1e7d4113bd257fc7ff566ac0f99258a649a9d7a1bc236",
+        "png": "skygrnd-001.png",
+        "png_sha256": "c15992627f698ef9b5e3c2941d68a821614e8721a149a369b806bdff1893aa9c",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "skygrnd-001",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8089788732394366,
+        "median_hue_difference_degrees": 11.805555555555557,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "c15992627f698ef9b5e3c2941d68a821614e8721a149a369b806bdff1893aa9c"
+      },
+      "visual": {
+        "png_sha256": "c15992627f698ef9b5e3c2941d68a821614e8721a149a369b806bdff1893aa9c",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "skygrnd-002",
+      "source": {
+        "key": "skygrnd-002",
+        "source_file": "SKYGRND.DAX",
+        "source_file_sha256": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+        "block": 2,
+        "packed_file_offset": 7159,
+        "decoded_sha256": "55610d1e064553cdd18a2ab244e2f0c09fca2e09259be3cda38606c9cc385347",
+        "source_size": [
+          88,
+          88
+        ],
+        "output_size": [
+          264,
+          264
+        ],
+        "reference_1x": "skygrnd-002-1x.png",
+        "reference_3x": "skygrnd-002-3x.png",
+        "reference_1x_sha256": "a7e43f671cae901f225eb3836e3a8b832d6066c4bb6a4b257741a5976aca74a5",
+        "reference_3x_sha256": "ef0212ca03a4db5c222a3cd9e780a5f93c5ca5a5833515463b8088bf238a3395",
+        "indexed": "skygrnd-002.idx",
+        "indexed_sha256": "3b7758d528493c836059053a9f64243c9907c75743d77028f9cc5d9afcdd79cb",
+        "palette": "skygrnd-002.pal",
+        "palette_sha256": "b6692205a8328771015d2feb612cfbb454e2875c24248036119c74fa7d0831cf",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "skygrnd-002",
+        "target": [
+          264,
+          264
+        ],
+        "version": 0,
+        "issue": 29,
+        "status": "generated",
+        "generation": "built-in image_gen; one original reference per image",
+        "raw": "skygrnd-002-r0-raw.png",
+        "raw_sha256": "fc1b1e3b3dd86a6d33aeafb89d9955e17ed4de6e3367a1e11483002c6aa4417c",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-808092a4-8272-4a7a-9979-d95a871eb672.png",
+        "prompt": "Use case: style-transfer. Repaint this exact skygrnd-002 single88x88 background plate for a classic fantasy CRPG as smooth hand-painted1990s fantasy illustration approved style B, final264x264 square. Preserve the supplied reference's exact composition and unusually DARK palette: upper HALF is nearly black midnight navy sky, with the original barely visible dark purple/indigo cloud bands and ridges. Lower HALF is a flat very dark olive/forest-green grassy plain, faint yellow-olive mottling. Keep the perfectly level horizon exactly at the source midpoint and all major cloud shapes and dark gaps exactly in place. Retain the low original contrast and darkness; do not brighten it to daytime, do not add moonlight, stars, moon, sun, silhouettes, mountains, hills, trees, roads, buildings, figures, animals, light sources or effects. These are low-contrast CLOUDS, not mountain peaks. Replace pixel dithering with restrained fine painted cloud texture and subtle grassy brushwork within the original color masses. Same colors at each edge, unobstructed sky and flat ground only, full edge-to-edge square, no text, border, frame or margins. No pixel art, mosaic, 3D or photorealism.",
+        "references": [
+          {
+            "file": "workplace/hd/requests/b10/skygrnd-002-3x.png",
+            "sha256": "ef0212ca03a4db5c222a3cd9e780a5f93c5ca5a5833515463b8088bf238a3395"
+          }
+        ],
+        "source": {
+          "key": "skygrnd-002",
+          "source_file": "SKYGRND.DAX",
+          "source_file_sha256": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+          "block": 2,
+          "packed_file_offset": 7159,
+          "decoded_sha256": "55610d1e064553cdd18a2ab244e2f0c09fca2e09259be3cda38606c9cc385347",
+          "source_size": [
+            88,
+            88
+          ],
+          "output_size": [
+            264,
+            264
+          ],
+          "reference_1x": "skygrnd-002-1x.png",
+          "reference_3x": "skygrnd-002-3x.png",
+          "reference_1x_sha256": "a7e43f671cae901f225eb3836e3a8b832d6066c4bb6a4b257741a5976aca74a5",
+          "reference_3x_sha256": "ef0212ca03a4db5c222a3cd9e780a5f93c5ca5a5833515463b8088bf238a3395",
+          "indexed": "skygrnd-002.idx",
+          "indexed_sha256": "3b7758d528493c836059053a9f64243c9907c75743d77028f9cc5d9afcdd79cb",
+          "palette": "skygrnd-002.pal",
+          "palette_sha256": "b6692205a8328771015d2feb612cfbb454e2875c24248036119c74fa7d0831cf",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": false,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+        },
+        "request_manifest_sha256": "b8e226a03dac0d8a962dc4fe51b9e06577115ed2a4014e789c0bc511ff30df95",
+        "style_batch": "B approved b01",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "skygrnd-002",
+        "raw": "skygrnd-002-r0-raw.png",
+        "raw_sha256": "fc1b1e3b3dd86a6d33aeafb89d9955e17ed4de6e3367a1e11483002c6aa4417c",
+        "png": "skygrnd-002.png",
+        "png_sha256": "9303657d04657d3ffbef64d05ea7921a90dcfdebb5fdd57f3a8f91e1e47942ab",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "skygrnd-002",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.4551056338028169,
+        "median_hue_difference_degrees": 8.134667879890799,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "9303657d04657d3ffbef64d05ea7921a90dcfdebb5fdd57f3a8f91e1e47942ab"
+      },
+      "visual": {
+        "png_sha256": "9303657d04657d3ffbef64d05ea7921a90dcfdebb5fdd57f3a8f91e1e47942ab",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "skygrnd-003",
+      "source": {
+        "key": "skygrnd-003",
+        "source_file": "SKYGRND.DAX",
+        "source_file_sha256": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+        "block": 3,
+        "packed_file_offset": 14286,
+        "decoded_sha256": "bbc59e55610767544ef5be2253cb2fec8e3172e381275c8eed03734b985563bb",
+        "source_size": [
+          88,
+          88
+        ],
+        "output_size": [
+          264,
+          264
+        ],
+        "reference_1x": "skygrnd-003-1x.png",
+        "reference_3x": "skygrnd-003-3x.png",
+        "reference_1x_sha256": "ea897ddbfb4cf19a3eb28dea23f9ef358e5b76f1ebdbc434b15d695d5acdaadf",
+        "reference_3x_sha256": "de74b7eada030b730286bc4b6e1000c928a6e38dcc256b45bddebe7f8df80c68",
+        "indexed": "skygrnd-003.idx",
+        "indexed_sha256": "3b7758d528493c836059053a9f64243c9907c75743d77028f9cc5d9afcdd79cb",
+        "palette": "skygrnd-003.pal",
+        "palette_sha256": "8b0cefcf48ceb1e02ffec6b9fb03d3ab026e67a4bcdd2c95ea7bcb619a3dff58",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "skygrnd-003",
+        "target": [
+          264,
+          264
+        ],
+        "version": 0,
+        "issue": 29,
+        "status": "generated",
+        "generation": "built-in image_gen; one original reference per image",
+        "raw": "skygrnd-003-r0-raw.png",
+        "raw_sha256": "af561c1839623e681a3cc0ec3e5030aee64e8b126e6a8acb5c019e358160ae36",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-58908deb-0e0f-4592-b833-34bcdbf2c802.png",
+        "prompt": "Use case: style-transfer. Repaint this exact single skygrnd-00388x88 viewport background for a classic fantasy CRPG as hand-painted1990s fantasy illustration approved style B, final264x264 square. Preserve the original OVERCAST palette and exact composition: upper HALF is a solid muted dark gray-mauve sky with the same rolling pale gray cloud ridges and darker brownish gray/purple undersides. Lower HALF is flat deep green and teal-green grassy ground with olive-yellow mottling. The horizon remains perfectly level at the exact original midpoint. Trace the major cloud masses, dark gaps and light ridges at the same relative positions. No blue daytime sky, sunset light or bright white sunshine; keep the gray source mood. These are clouds, not mountains. Replace coarse pixel dithering with smooth deliberate painted cloud forms and restrained short grass brush texture, preserving the original color relationships and edge colors. No new mountains, trees, hills, roads, buildings, rocks, characters, animals, sun, stars, rain streaks or effects. Unobstructed sky and flat ground only, original edge-to-edge framing, no margins, words, border or frame. No pixel art, mosaic, 3D or photo.",
+        "references": [
+          {
+            "file": "workplace/hd/requests/b10/skygrnd-003-3x.png",
+            "sha256": "de74b7eada030b730286bc4b6e1000c928a6e38dcc256b45bddebe7f8df80c68"
+          }
+        ],
+        "source": {
+          "key": "skygrnd-003",
+          "source_file": "SKYGRND.DAX",
+          "source_file_sha256": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+          "block": 3,
+          "packed_file_offset": 14286,
+          "decoded_sha256": "bbc59e55610767544ef5be2253cb2fec8e3172e381275c8eed03734b985563bb",
+          "source_size": [
+            88,
+            88
+          ],
+          "output_size": [
+            264,
+            264
+          ],
+          "reference_1x": "skygrnd-003-1x.png",
+          "reference_3x": "skygrnd-003-3x.png",
+          "reference_1x_sha256": "ea897ddbfb4cf19a3eb28dea23f9ef358e5b76f1ebdbc434b15d695d5acdaadf",
+          "reference_3x_sha256": "de74b7eada030b730286bc4b6e1000c928a6e38dcc256b45bddebe7f8df80c68",
+          "indexed": "skygrnd-003.idx",
+          "indexed_sha256": "3b7758d528493c836059053a9f64243c9907c75743d77028f9cc5d9afcdd79cb",
+          "palette": "skygrnd-003.pal",
+          "palette_sha256": "8b0cefcf48ceb1e02ffec6b9fb03d3ab026e67a4bcdd2c95ea7bcb619a3dff58",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": false,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+        },
+        "request_manifest_sha256": "b8e226a03dac0d8a962dc4fe51b9e06577115ed2a4014e789c0bc511ff30df95",
+        "style_batch": "B approved b01",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "skygrnd-003",
+        "raw": "skygrnd-003-r0-raw.png",
+        "raw_sha256": "af561c1839623e681a3cc0ec3e5030aee64e8b126e6a8acb5c019e358160ae36",
+        "png": "skygrnd-003.png",
+        "png_sha256": "865fb940fc455acaa546383b55818d70ce0372d91a5624bcb52577a53807b0d7",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "skygrnd-003",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8318661971830986,
+        "median_hue_difference_degrees": 27.125910314331186,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "865fb940fc455acaa546383b55818d70ce0372d91a5624bcb52577a53807b0d7"
+      },
+      "visual": {
+        "png_sha256": "865fb940fc455acaa546383b55818d70ce0372d91a5624bcb52577a53807b0d7",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "skygrnd-004",
+      "source": {
+        "key": "skygrnd-004",
+        "source_file": "SKYGRND.DAX",
+        "source_file_sha256": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+        "block": 4,
+        "packed_file_offset": 21408,
+        "decoded_sha256": "1ed9ca9df64ade4c683ec2f1b122f7ccf3b98c3f7593f031cca06ffb0bde82e0",
+        "source_size": [
+          88,
+          88
+        ],
+        "output_size": [
+          264,
+          264
+        ],
+        "reference_1x": "skygrnd-004-1x.png",
+        "reference_3x": "skygrnd-004-3x.png",
+        "reference_1x_sha256": "83f4d44a30375b1edae3cf0934f4387cbe27fd42eb66152c2c3f84fd841b477a",
+        "reference_3x_sha256": "2521843edfdef8266c106c8a4c1b5d9e7fb5f76e687c6340978376766c918fc1",
+        "indexed": "skygrnd-004.idx",
+        "indexed_sha256": "0c036b72e3c6ff1ced410c5171df87ac9abc4aaceb7cb891b500594be56176fa",
+        "palette": "skygrnd-004.pal",
+        "palette_sha256": "f3f54977663e56e58acd8b5a5a103a2ede5e8f14e5020953030269c6f8f3d6f1",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "skygrnd-004",
+        "target": [
+          264,
+          264
+        ],
+        "version": 0,
+        "issue": 29,
+        "status": "generated",
+        "generation": "built-in image_gen; one original reference per image",
+        "raw": "skygrnd-004-r0-raw.png",
+        "raw_sha256": "3339703985de393dcc4de088d4e0fb457e49f2a5df5fc755394820264250763f",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-ad4f6d95-e2b2-44ea-92d8-6c96282de884.png",
+        "prompt": "Use case: style-transfer. Repaint this exact single skygrnd-00488x88 background plate for a classic fantasy CRPG as approved style B hand-painted1990s fantasy illustration, final264x264 square. Preserve the reference's exact cloud silhouettes, horizontal banding, level midpoint horizon and unusual muted colors. Upper HALF: dark dull brick-red and maroon rolling cloud banks across a muted blue-gray sky, with purple/gray undersides, same blue gaps and every principal ridge in its original position. These are CLOUDS and empty sky, not red mountain peaks. Lower HALF: an uninterrupted flat barren plain with fine dark charcoal, gray, mauve and reddish-brown ground texture, cooler gray near the horizon and warmer muted reddish-brown at the bottom, as in the reference. Replace pixel dithering with restrained painterly textures, not added rocks or grass. Keep exact edge colors and source mood, no orange sunset, lava, fire, sun, moon, stars, mountains, hills, trees, road, buildings, characters, animals or new objects. Unobstructed sky and ground only; full square edge-to-edge with no added margins, lettering, border or frame. Smooth brushwork, no pixel art, mosaic,3D or photo.",
+        "references": [
+          {
+            "file": "workplace/hd/requests/b10/skygrnd-004-3x.png",
+            "sha256": "2521843edfdef8266c106c8a4c1b5d9e7fb5f76e687c6340978376766c918fc1"
+          }
+        ],
+        "source": {
+          "key": "skygrnd-004",
+          "source_file": "SKYGRND.DAX",
+          "source_file_sha256": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+          "block": 4,
+          "packed_file_offset": 21408,
+          "decoded_sha256": "1ed9ca9df64ade4c683ec2f1b122f7ccf3b98c3f7593f031cca06ffb0bde82e0",
+          "source_size": [
+            88,
+            88
+          ],
+          "output_size": [
+            264,
+            264
+          ],
+          "reference_1x": "skygrnd-004-1x.png",
+          "reference_3x": "skygrnd-004-3x.png",
+          "reference_1x_sha256": "83f4d44a30375b1edae3cf0934f4387cbe27fd42eb66152c2c3f84fd841b477a",
+          "reference_3x_sha256": "2521843edfdef8266c106c8a4c1b5d9e7fb5f76e687c6340978376766c918fc1",
+          "indexed": "skygrnd-004.idx",
+          "indexed_sha256": "0c036b72e3c6ff1ced410c5171df87ac9abc4aaceb7cb891b500594be56176fa",
+          "palette": "skygrnd-004.pal",
+          "palette_sha256": "f3f54977663e56e58acd8b5a5a103a2ede5e8f14e5020953030269c6f8f3d6f1",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": false,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+        },
+        "request_manifest_sha256": "b8e226a03dac0d8a962dc4fe51b9e06577115ed2a4014e789c0bc511ff30df95",
+        "style_batch": "B approved b01",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "skygrnd-004",
+        "raw": "skygrnd-004-r0-raw.png",
+        "raw_sha256": "3339703985de393dcc4de088d4e0fb457e49f2a5df5fc755394820264250763f",
+        "png": "skygrnd-004.png",
+        "png_sha256": "7b8752dd44511d673ded6bdc960d0d8f1f1e179aaf961139c1504b98730b57a2",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "skygrnd-004",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.5827464788732394,
+        "median_hue_difference_degrees": 4.436468054558475,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "7b8752dd44511d673ded6bdc960d0d8f1f1e179aaf961139c1504b98730b57a2"
+      },
+      "visual": {
+        "png_sha256": "7b8752dd44511d673ded6bdc960d0d8f1f1e179aaf961139c1504b98730b57a2",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    }
+  ]
+}
