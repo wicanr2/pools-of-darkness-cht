@@ -1,0 +1,22 @@
+{
+  "scope": "同一G8正常冷啟動讀槽A及4800格；18來源／121格街景；不外推其他地點",
+  "frames": 4800,
+  "steps": 462000000,
+  "memory_sha256": "0e6e8e53b475dfc58edd6841ba5aa55960bdb7c790c0b54d5710413ffa484973",
+  "indexed_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+  "cpu_sha256": "a1f6d59ef98b263cfe7bc612e4838c32ebb0b03f7e4ebd0dec7c6cd379de5188",
+  "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+  "binary_sha256": "a0ee7d2a066f5c68a1b566ce4941b4f9d1006b9dfbef697fe2320397f49754ef",
+  "original_state_equal": true,
+  "guest_files": 54,
+  "guest_state_equal": true,
+  "changed_pixels": 67089,
+  "outside_viewport_changes": 0,
+  "final_viewport_matches_diagnostic": true,
+  "flash_count": 0,
+  "frame_sha256": {
+    "hd": "7004e84323066759912517f6c6d8e72c31a938b935040ac73315cdac9e03f2f5",
+    "base": "29193d5d9683907a195aabd102bbad3597ca441682f0a11880c9081c6fc50626"
+  },
+  "inputs_sha256": "bb7c80344204a939c9e41fd78033ccf3d9cd845b84ecb889d0122d242bc6707a"
+}

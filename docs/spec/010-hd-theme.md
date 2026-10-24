@@ -1,6 +1,6 @@
 # 010 HD 重繪主題
 
-狀態：局部 CONFORMED（2026-10-24；VGA 戰鬥首批、分段呈現保留及三張開場語系圖）；PIC1 條件式整圖辨識維持 READY，其他來源仍 DRAFT。Issue：[#10](https://github.com/wicanr2/pools-of-darkness-cht/issues/10)。
+狀態：局部 CONFORMED（2026-10-24；VGA 戰鬥首批、分段呈現保留、三張開場語系圖及菲蘭起點街景）；PIC1 條件式整圖辨識維持 READY，其他來源仍 DRAFT。Issue：[#10](https://github.com/wicanr2/pools-of-darkness-cht/issues/10)。
 證據：[研究 014](../re/014-vga-hd.md)。前作契約為銀色匕首之謎規格 010；本作 VGA 的來源、色盤與遮擋另驗。
 
 - 維持 960×600 的 3 倍畫布；預設 2 倍顯示原版，HD 只在 3 倍顯示。
@@ -153,7 +153,7 @@ CPIC4／5／6及132／133／134完成數值及逐件目視，三個來源變體�
 
 ## VGA街景的完整組合格
 
-狀態：READY（2026-10-25）。Issue：[#30](https://github.com/wicanr2/pools-of-darkness-cht/issues/30)。
+狀態：CONFORMED（2026-10-25；下列菲蘭起點與條件式呈現範圍）。Issue：[#30](https://github.com/wicanr2/pools-of-darkness-cht/issues/30)。
 來源證據為研究014及014-wall-source-proof.json。只接入第1組牆面已觀測的17種圖塊及SKYGRND第1塊，
 121個8×8組合格逐色號及RGB已吻合。WALLDEF內部規則、其他位置與其他圖組維持未知。
 
@@ -179,3 +179,8 @@ CPIC4／5／6及132／133／134完成數值及逐件目視，三個來源變體�
 素材驗收／目視及完整121格組合，再輸出到獨立測試主題。來源參數及證據根見研究014。
 正常入口：[wall-play-receipt.sh](../../tools/wall-play-receipt.sh)的`hd`與`base`，
 由[vga_wall_play_check.py](../../tools/vga_wall_play_check.py)核對同一讀檔路線、原版狀態、範圍及閃現。
+
+驗收：dosgolem `dd3e417`，真實121格RGBA及來源、色盤、遮擋、EGA相容性、2倍／F12負對照通過。
+正常4800格兩路的CPU、記憶體、色號、色盤與54個DOS檔案同原基準，街景外差異0，閃現0。
+量尺曾發現查驗題列替換的9格閃字，依規格006修正後重跑；沒有降低量尺或加街景保留特例。
+現行275檔及執行檔與已測版本相同，固定[014-wall-runtime.json](../re/014-wall-runtime.json)。

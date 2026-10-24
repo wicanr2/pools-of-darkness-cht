@@ -28,6 +28,7 @@
 戰鬥已有十八個怪物狀態候選與兩張石牆接入，通過正常冷啟動、倍率與原版切換抽樣。
 尚未遇到的怪物狀態依完整原版前景辨識，驗收範圍見[研究017](docs/re/017-vga-battle-hd.md)。
 開場封面、世界標誌與製作名單已接入，可用 F8 切換繁中與英文。
+菲蘭起點的天空、地面與牆面也已接入，完整讀檔抽樣通過。
 完整現況與驗證範圍見 [CONTEXT.md](CONTEXT.md)。
 
 ## 畫面介紹
@@ -73,6 +74,16 @@ HD 製作與接入進度由 [#10](https://github.com/wicanr2/pools-of-darkness-c
 本批包含半蜘蛛精靈、吸血鬼法師、電蜘蛛及兩張石牆。完整冷啟動 7,400 格的閃現為 0，
 HD、無 HD、F12 原版及 2 倍四路的 CPU、記憶體、色號、色盤與 127 個 DOS 檔案一致。
 另見[含兩側海報的完整戰鬥視窗](docs/screenshots/demo-battle-window.png)與[驗收範圍](docs/re/017-vga-battle-hd.md)。
+
+### 菲蘭街景
+
+| 原版菲蘭街景 | 繁中與 HD 街景 |
+|---|---|
+| ![原版菲蘭街景](docs/screenshots/street-original.png) | ![繁中與HD菲蘭街景](docs/screenshots/street-cht-hd.png) |
+
+上圖取自正常冷啟動讀檔後的同一地點。17種牆面與天空、地面組成121格街景，
+4,800格抽樣閃現為0，原版狀態及存檔一致；其他地點仍在製作。
+另見[含兩側海報的街景視窗](docs/screenshots/street-window.png)。
 
 ### 遊戲內地圖與攻略點
 

@@ -4,7 +4,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 MODE="${1:-hd}"
 TAG="${2:-wall-play}"
-case "$MODE" in hd|base) ;; *) echo '用法：wall-play-receipt.sh [hd|base] [收據名稱]' >&2; exit 2;; esac
+case "$MODE" in hd|base|source) ;; *) echo '用法：wall-play-receipt.sh [hd|base|source] [收據名稱]' >&2; exit 2;; esac
 case "$TAG" in *[!A-Za-z0-9_-]*|'') echo '收據名稱不合法' >&2; exit 2;; esac
 SEED="$ROOT/workplace/probe/g6-saveload-receipt/scratch/SAVE"
 for d in workplace/dosgolem/workplace/bin workplace/input/dos/pod workplace/font text tools workplace/hd/theme-wall-stage workplace/hd/theme-b09-stage; do test -d "$ROOT/$d"; done
@@ -29,9 +29,15 @@ timeout 900s docker run --rm --init --label pod.task=wall-play --network none --
     cp -r /seed/. /out/save/SAVE/
     theme=/base; audit=""
     if test "$MODE" = hd; then theme=/walls; audit=-flash-audit; fi
+    frames=4800; inventory=""
+    script="900: ,1800:p,2400:Down,2450:Down,2500:Return,2800:P,3000:A,3400:Down,3420:Down,3440:Down,3460:Down,3480:Down,3500:Return,3900:shot,4000:Y,4010:O,4020:U,4030:Return,4200:shot,4300:map,4320:shot,4350:mapall,4360:shot,4400:guide,4420:shot,4500:map,4520:shot,4600:map,4620:shot,4700:bar,4720:shot,4740:speeds,4750:shot,4760:speeds,4770:barfonts,4780:shot"
+    if test "$MODE" = source; then
+      theme=/walls; audit=-flash-audit; frames=3512; inventory="-inventory /out/inv.tsv"
+      script="900: ,1800:p,2400:Down,2450:Down,2500:Return,2800:P,3000:A,3400:Down,3420:Down,3440:Down,3460:Down,3480:Down,3500:Return,3501:shot,3502:shot,3503:shot,3504:shot,3505:shot,3506:shot,3507:shot,3508:shot,3509:shot,3510:shot"
+    fi
     xvfb-run -a /app/pod-play-wall -original /orig -save /out/save -text-dir /text \
-      -font /font/pod-rounded.golemfnt -hd "$theme" -posters "$theme/posters" -lang zh-TW -audio=false -scale 3 -frames 4800 $audit \
-      -script "900: ,1800:p,2400:Down,2450:Down,2500:Return,2800:P,3000:A,3400:Down,3420:Down,3440:Down,3460:Down,3480:Down,3500:Return,3900:shot,4000:Y,4010:O,4020:U,4030:Return,4200:shot,4300:map,4320:shot,4350:mapall,4360:shot,4400:guide,4420:shot,4500:map,4520:shot,4600:map,4620:shot,4700:bar,4720:shot,4740:speeds,4750:shot,4760:speeds,4770:barfonts,4780:shot" \
+      -font /font/pod-rounded.golemfnt -hd "$theme" -posters "$theme/posters" -lang zh-TW -audio=false -scale 3 -frames "$frames" $audit $inventory \
+      -script "$script" \
       -shot-dir /out/shots -shot-frame-dir /out/window-shots -shot-source-dir /out/sources \
       -shot-source /out/source -shot-original /out/original.rgba -shot-frame /out/final.png > /out/run.log 2>&1
     find /out -user root -o -type d -name "*.md"

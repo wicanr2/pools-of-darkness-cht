@@ -1,0 +1,132 @@
+{
+  "runtime_receipt_sha256": "755fcdd4d8b07bdb191e24758f6430b4ebc5572c8be55441547f9214bdd77a07",
+  "binary_sha256": "a0ee7d2a066f5c68a1b566ce4941b4f9d1006b9dfbef697fe2320397f49754ef",
+  "dosgolem_commit": "dd3e417",
+  "screenshots": [
+    {
+      "file": "street-original.png",
+      "kind": "normal-cold-boot-runtime-wall-gallery",
+      "source": "workplace/probe/g9-hd/wall-play-v3/hd/original.rgba",
+      "source_sha256": "613ee0299e0491166b945c1a6df755ed16eafa839f80a7c0a3ae86a2bc363217",
+      "sha256": "97d48f171d019a47f7478dee9e063950be819f857a434f130d077402c4a85e90",
+      "dimensions": [
+        960,
+        600
+      ],
+      "crop_rect": null,
+      "dosgolem_commit": "dd3e417",
+      "research": "docs/re/014-vga-hd.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/30"
+    },
+    {
+      "file": "street-cht-hd.png",
+      "kind": "normal-cold-boot-runtime-wall-gallery",
+      "source": "workplace/probe/g9-hd/wall-play-v3/hd/shots/pod-f004200.png",
+      "source_sha256": "9086a20c8bfa62000a5ab334d0f095f3ef0f022c3438550b2aba2072b479bfde",
+      "sha256": "c8ed09511e78c672088135cd7580fcdbc68e7904a2996e44f14ee301c30017d1",
+      "dimensions": [
+        960,
+        600
+      ],
+      "crop_rect": null,
+      "dosgolem_commit": "dd3e417",
+      "research": "docs/re/014-vga-hd.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/30"
+    },
+    {
+      "file": "street-window.png",
+      "kind": "normal-cold-boot-runtime-wall-gallery",
+      "source": "workplace/probe/g9-hd/wall-play-v3/hd/window-shots/pod-f004200.png",
+      "source_sha256": "b7c39ed6341b5c3ff0ea5fe17968b28e1e4ddb6137e8532f7954cb74d9a5cb8f",
+      "sha256": "de690f5b99b3c05222b4d55da05a3dc2798bf58830ba7cd609806de73dbbb6bd",
+      "dimensions": [
+        1440,
+        600
+      ],
+      "crop_rect": null,
+      "dosgolem_commit": "dd3e417",
+      "research": "docs/re/014-vga-hd.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/30"
+    },
+    {
+      "file": "map-east-phlan.png",
+      "kind": "normal-cold-boot-runtime-wall-gallery",
+      "source": "workplace/probe/g9-hd/wall-play-v3/hd/window-shots/pod-f004360.png",
+      "source_sha256": "aa9e0402fab715da2460dfd236557b3e57f10800f2fb036c1183d807a83ea56f",
+      "sha256": "382ce44486ef532ff3366a098fb0541c2e466ac03a20020c1ccf5789c79d2b6a",
+      "dimensions": [
+        1440,
+        600
+      ],
+      "crop_rect": null,
+      "dosgolem_commit": "dd3e417",
+      "research": "docs/re/014-vga-hd.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/30"
+    },
+    {
+      "file": "toolbar.png",
+      "kind": "normal-cold-boot-runtime-wall-gallery",
+      "source": "workplace/probe/g9-hd/wall-play-v3/hd/window-shots/pod-f004720.png",
+      "source_sha256": "d050e6a3d1d00946629ab489ef05aa5fbc26f03c1fd1670a2a7954908a2a360a",
+      "sha256": "d8f2af22562c4a567e915a62c4ba06321fed27f613a45b36fe3347250770a97e",
+      "dimensions": [
+        960,
+        36
+      ],
+      "crop_rect": [
+        240,
+        0,
+        1200,
+        36
+      ],
+      "dosgolem_commit": "dd3e417",
+      "research": "docs/re/014-vga-hd.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/30"
+    },
+    {
+      "file": "toolbar-window.png",
+      "kind": "normal-cold-boot-runtime-wall-gallery",
+      "source": "workplace/probe/g9-hd/wall-play-v3/hd/window-shots/pod-f004720.png",
+      "source_sha256": "d050e6a3d1d00946629ab489ef05aa5fbc26f03c1fd1670a2a7954908a2a360a",
+      "sha256": "2c413188c4099b6f47d903596f06fdc630d57f5e19e5754cb72277d2a3bdb461",
+      "dimensions": [
+        1440,
+        600
+      ],
+      "crop_rect": null,
+      "dosgolem_commit": "dd3e417",
+      "research": "docs/re/014-vga-hd.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/30"
+    },
+    {
+      "file": "toolbar-speed-menu.png",
+      "kind": "normal-cold-boot-runtime-wall-gallery",
+      "source": "workplace/probe/g9-hd/wall-play-v3/hd/window-shots/pod-f004750.png",
+      "source_sha256": "0a8221c5aa1d7892999ba2eaa2fc4d31311146ae7c1e79dcc04f680c28d1bf94",
+      "sha256": "a572ac4b243f18d3373c8b5d33e09d2135d2c5e3de6f36464a2455442f221a88",
+      "dimensions": [
+        1440,
+        600
+      ],
+      "crop_rect": null,
+      "dosgolem_commit": "dd3e417",
+      "research": "docs/re/014-vga-hd.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/30"
+    },
+    {
+      "file": "toolbar-font-menu.png",
+      "kind": "normal-cold-boot-runtime-wall-gallery",
+      "source": "workplace/probe/g9-hd/wall-play-v3/hd/window-shots/pod-f004780.png",
+      "source_sha256": "7004e84323066759912517f6c6d8e72c31a938b935040ac73315cdac9e03f2f5",
+      "sha256": "fb0a904d5590ea0ad47fce82b927b706b14e4e35c6b15fac713b40b34f9d50ce",
+      "dimensions": [
+        1440,
+        600
+      ],
+      "crop_rect": null,
+      "dosgolem_commit": "dd3e417",
+      "research": "docs/re/014-vga-hd.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/30"
+    }
+  ]
+}

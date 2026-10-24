@@ -2,6 +2,18 @@
 
 日期：2026-10-23。Issue：[#8](https://github.com/wicanr2/pools-of-darkness-cht/issues/8)。前置：[004](004-output-paths.md)、[007](007-g6-normal-path.md)。
 
+後續補證：2026-10-25，同一正常讀槽A路線的查驗題替換時序，見[規格006](../spec/006-quiz-rendering.md)。
+`workplace/probe/g9-hd/wall-transition-v1/source/`保留3500–3509格配對idx／pal、原版及合成圖、印字盤點與執行輸入雜湊。
+3503格答案已顯示，但頁碼三格及字序問句六格仍是原版；3504格被中文替換，完整路線量尺9。
+當時街景完整組合格命中0，不能由螢幕座標落在3D視窗就當成街景閃現。
+固定來源、六段呼叫與雜湊見[轉場正對照收據](008-quiz-transition-source.json)，
+由[`tools/quiz_transition_source.py`](../../tools/quiz_transition_source.py)重生。
+
+逐格診斷`TestQuizSourceTransition`使用上述真實3502–3505格及正式字型。
+第一格原文字形尚未完成，舊譯文以Early顯示；下一格原文完成才返回並定色。
+頁碼先於採樣出現，其餘段落於採樣後完成組句。舊行為重現完全相同9個座標，繼承Early／BG／FG後0。
+診斷沒有執行原版CPU，正常路徑另由`tools/wall-play-receipt.sh`驗證。
+
 ## 證據來源
 
 | 證據 | 取得方式 |

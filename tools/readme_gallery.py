@@ -71,6 +71,43 @@ def add_titles(root,commit,runtime):
 def rgba_file(path):return np.array(Image.open(path).convert('RGBA'))
 
 
+def add_walls(root, commit, runtime):
+    out = root/'docs/screenshots'
+    sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+    report = json.loads((runtime/'summary.json').read_text())
+    if not report['original_state_equal'] or not report['guest_state_equal'] or report['flash_count'] or report['outside_viewport_changes']:
+        raise ValueError('正常街景尚未通過')
+    manifest = json.loads((out/'manifest.json').read_text())
+    for row in manifest['items']:
+        if sha(out/row['file']) != row['sha256']: raise ValueError('現有展示圖已變更')
+    rows = []
+    captures = [('street-original.png', 'original.rgba', None),
+                ('street-cht-hd.png', 'shots/pod-f004200.png', None),
+                ('street-window.png', 'window-shots/pod-f004200.png', None),
+                ('map-east-phlan.png', 'window-shots/pod-f004360.png', None),
+                ('toolbar.png', 'window-shots/pod-f004720.png', (240,0,1200,36)),
+                ('toolbar-window.png', 'window-shots/pod-f004720.png', None),
+                ('toolbar-speed-menu.png', 'window-shots/pod-f004750.png', None),
+                ('toolbar-font-menu.png', 'window-shots/pod-f004780.png', None)]
+    for name, rel, crop in captures:
+        source = runtime/'hd'/rel
+        if source.suffix == '.rgba':
+            im = Image.frombytes('RGBA', (960,600), source.read_bytes())
+        else:
+            im = Image.open(source).convert('RGBA')
+        if crop: im = im.crop(crop)
+        im.save(out/name)
+        rows.append(dict(file=name, kind='normal-cold-boot-runtime-wall-gallery',
+            source=str(source.relative_to(root)), source_sha256=sha(source), sha256=sha(out/name),
+            dimensions=list(im.size), crop_rect=crop, dosgolem_commit=commit,
+            research='docs/re/014-vga-hd.md', issue='https://github.com/wicanr2/pools-of-darkness-cht/issues/30'))
+    for row in rows: manifest['items'] = [r for r in manifest['items'] if r['file'] != row['file']]+[row]
+    (out/'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2)+'\n')
+    (out/'wall-receipt.json').write_text(json.dumps(dict(runtime_receipt_sha256=sha(runtime/'summary.json'),
+        binary_sha256=report['binary_sha256'], dosgolem_commit=commit, screenshots=rows), ensure_ascii=False, indent=2)+'\n')
+    print('正常街景原版／HD、地圖及工具列八圖已匯入README。')
+
+
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--root',type=Path,required=True)
@@ -78,7 +115,11 @@ def main():
     ap.add_argument('--battle',type=Path,help='已通過四路正常戰鬥驗收的收據根')
     ap.add_argument('--titles',type=Path,help='已通過正常開場及語系切換的收據根')
     ap.add_argument('--ui-runtime',type=Path,help='相同正常讀檔路線的新地圖／工具列收據根')
+    ap.add_argument('--walls',type=Path,help='已通過正常街景的兩路收據根')
     a=ap.parse_args()
+    if a.walls:
+        add_walls(a.root,a.dosgolem_commit,a.walls)
+        return
     if a.battle:
         add_battle(a.root,a.dosgolem_commit,a.battle)
         return
