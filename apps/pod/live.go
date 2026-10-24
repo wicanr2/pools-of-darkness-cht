@@ -346,6 +346,7 @@ func (l *Live) Compose(scale int, overlay bool, missing func(rune)) []byte {
 			}
 			l.battleHold.apply(l.indexed, base, out, l.palSig(), l.HDLayers.pendingBattleCells())
 		}
+		l.drawIntro(out, scale, missing)
 		if l.Flash != nil && l.flashFrame != 0 {
 			if base == nil {
 				base = l.Compose(scale, false, nil)
