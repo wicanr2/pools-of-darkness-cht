@@ -206,6 +206,9 @@
 - 入口照 `START.BAT`：`STARTUP.EXE` 設定、常駐 `snd.com`、監督佇列接 `CONTROL.EXE`，並帶 `-root-tsr-shrink`
   （`tools/g2-startup-receipt.sh`）。不常駐驅動時 DEMO 會跳進顯存當掉；沒有 `-root-tsr-shrink` 時遊戲報記憶體不足。
   `apps/pod` 的 play 與收據指令也要照這條鏈走並設 `DOS.RootTSRShrink`；oracle 缺對應入口，先補通用層規格（dosgolem 431 §5）。
+- `pod-play` 開機以 dosgolem 規格 `433-session-boot-program-path` 的 `BootInput.ProgramPath` 明示
+  `C:\POD\SND.COM`，同步 DOS 虛擬目錄；否則設定檔的 `C:\POD\SAVE\` 讀不到本作存檔。
+  規格在 `workplace/dosgolem/docs/spec/433-session-boot-program-path.md`，重播入口 `tools/g8-map-play-receipt.sh`，證據 `docs/re/012`。
 - Go 不允許外部 module 引用 dosgolem `internal/`，adapter 必須在 dosgolem module 樹內。
 - dosgolem 是原版行為、畫面與虛擬時間的權威執行器，正式收據由它產生。DOSBox／DOSBox-X
   只作診斷與交叉基準，擷取明標輔助。

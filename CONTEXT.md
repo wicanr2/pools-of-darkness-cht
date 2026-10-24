@@ -54,11 +54,11 @@
 | G5 譯文與字型 | #6 | 完成 | `tools/g5-text-receipt.sh` |
 | G6 覆繪接入 | #7 | 完成：冷開機、建角、存讀檔、選單收據；自動探索兩輪（使用者指示到此為止） | docs/re/007、010 |
 | G7 手札與查驗題 | #8 | 完成：查驗題 54 題 CONFORMED；手札實機觸發第 57 則、面板自動開出 | docs/re/008、009 |
-| G8 攻略與地圖 | #9 | 攻略面板完成（自寫摘要 78 段，規格 008 READY）；地圖疊層（規格 009）未開始 | docs/re/011 |
+| G8 攻略與地圖 | #9 | 攻略 78 段；地圖疊層已接入，32 塊 GEO 雜湊、東菲蘭 2 個攻略點共 4 格；2／3 倍 A/B 與正常冷開機讀檔、面板切換通過。其餘地圖名稱與攻略點未驗，#9 保持開啟 | docs/re/011、012；規格 008、009 READY |
 | G9–G11 | #10–#12 | 未開始 | — |
 | 規格 018–021 | #13–#16 | 未開始；019、020 的程式由前作沿用，未驗 | docs/spec/000-index.md |
 
-規格狀態：001–003、006 CONFORMED；007、008 READY；004、005、013 DRAFT；其餘未開始或未驗（docs/spec/000-index.md）。
+規格狀態：001–003、006 CONFORMED；007–009 READY；004、005、013 DRAFT；其餘未開始或未驗（docs/spec/000-index.md）。
 
 ### 接手入口
 
@@ -69,12 +69,14 @@
 | 盤點新地圖的缺譯 | `tools/g6-explore.sh <名稱> <狀態檔> [-yes …]`，再 `tools/g6-misses.sh <inv.tsv>` |
 | 改譯文後 | `tools/font-dev.sh` 重建字型、`tools/font_coverage.py` 查缺字，再跑受影響的收據 |
 | 重跑本作收據 | `tools/g6-create-receipt.sh`、`g6-saveload-receipt.sh`、`g6-menus-receipt.sh`、`g7-quiz-receipt.sh`、`g7-journal-receipt.sh`（約 20 分鐘）、`g8-guide-receipt.sh` |
+| 地圖記憶體與呈現 | `tools/g8-map-evidence.sh`（八個定點取樣）、`g8-map-receipt.sh`（2／3 倍 A/B）、`g8-map-play-receipt.sh`（正常冷開機讀檔、原版查驗題、地圖與攻略互斥），細節 docs/re/012 |
+| 地圖名稱與攻略點 | `text/map-titles.tsv`、`map-guide.zh-TW.tsv`，`tools/map_geo.py` 在 Docker 內從實際 GEO 清單產生 `map-geo.tsv`；`--check` 核對。只使用有證據的名稱、圖例與觸發格 |
 
 狀態檔、暫存目錄與截圖都在 `workplace/`（gitignore），換機器要另外搬。
 
 ### 下一步
 
-1. G8 地圖疊層（規格 009）：先找隊伍位置與所在地圖的記憶體位址（座標列 `x,y D` 的來源），攻略摘要的地圖編號可當疊層點的來源。
+1. G8：核對其餘 31 塊 GEO 的地圖名稱及攻略圖例，補有證據的觸發格；目前只含東菲蘭訓練廳、提爾修院。摘要保留英文的名稱仍待術語對齊。不追加 G6 自動探索。
 2. G9 HD 與切換列（規格 010、011、020）、片頭片尾字幕。
 3. 規格 018、019、021，G10 配樂與多語系，G11 封包驗收。
 
@@ -82,6 +84,7 @@
 
 - G6 沒覆蓋：商店購買清單、神殿治療、訓練升級、旅店、DEMO 以外的戰鬥、野外與地下城（docs/re/010）。
 - 規格 007：冒險畫面按 F5 的路徑只有 pod-play 按鍵對照測試，沒有實機截圖。
+- 規格 009：已驗東菲蘭與 2／3 倍呈現；其餘地圖只有 GEO 格式與雜湊，沒有全路線驗收。正常前端收據使用 map／guide 腳本動作，實際 F7、V、Esc、F5、F6 路由由單元測試驗證。
 - 冒險主選單 `Move Area …` 要先按 `M` 才能用方向鍵移動；遊戲沒掛 int 09h，送鍵用 BIOS 緩衝區（`-bios-key-names`），`-press` 送不進去（docs/re/009）。
 - 自動探索會卡在只有 `Exit` 的事件選單（脫困鍵只有 Enter、Esc、空白）；長跑要給外層時限，盤點以每 100 鍵的快照為準。
 - 從狀態重播時，狀態存檔前就印好的字（隊伍欄、底列選單）不會重印，截圖上是英文，不算缺譯（docs/re/007）。
@@ -91,11 +94,11 @@
 
 | 項目 | 值 |
 |---|---|
-| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作分支頂端 `e67971e`（規格 430、431、432 CONFORMED，`apps/pod`、`cmd/pod-play`；本作查驗題題型、手札單元測試、pod-explore），推到本 repo 的 `dosgolem/pod` |
+| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作分支頂端 `ad17b65`（規格 430–433 CONFORMED；G8 地圖與初始化防護、前端讀檔路徑、同狀態與鍵盤測試），保存到本 repo 的 `dosgolem/pod` |
 | Go／image | go1.24.13；`dosgolem-go-ebiten:1.24-r1` `sha256:8ed6bdee2bce…` |
 | 冷啟動 | 0 種缺服務；mode 13h；`START.BAT` 程式鏈；片頭送空白鍵跳過，製作群後送 `p` 進建立隊伍主選單。收據 `tools/g2-startup-receipt.sh`，見 [docs/re/003](docs/re/003-dosgolem-startup.md) |
 | adapter | `apps/pod/`（由 `apps/sosb/` 複製，路徑 A／B／C 換本作常數與 13h 換算）；`cmd/pod-overlay-shot`；自動探索 `cmd/pod-explore`（由 `cmd/sosb-explore` 複製） |
-| play 指令 | `cmd/pod-play`（由 `cmd/sosb-play` 複製）：照 `START.BAT` 以 `snd.com` 常駐、佇列 `CONTROL.EXE`、`RootTSRShrink`（dosgolem 規格 432）；冷開機收據 `tools/play-smoke.sh` |
+| play 指令 | `cmd/pod-play`（由 `cmd/sosb-play` 複製）：照 `START.BAT` 以 `snd.com` 常駐、佇列 `CONTROL.EXE`、`RootTSRShrink`（規格 432）；透過規格 433 明示 `C:\POD\SND.COM`，讓 `C:\POD\SAVE\` 正確對到存檔根。冷開機入口 `tools/play-smoke.sh`，正常讀檔收據 `g8-map-play-receipt.sh` |
 
 ## 中文化進度
 
@@ -111,7 +114,8 @@
 | 字型 | 源泉圓體開發字型 `workplace/font/pod-rounded.golemfnt`（16）、`-3x`（24），2,842 字，`tools/font_coverage.py` 缺 0。DEMO 以正式譯文覆繪，開場到戰鬥 5 張截圖範圍外差異 0（`tools/g5-text-receipt.sh`）；DEMO 戰鬥畫面的隊員名、物品名與加值、施法訊息已覆繪（docs/re/007） |
 | 查驗題 | 規格 006 CONFORMED：GAME.EXE 題目表 21 筆 54 題（`tools/quiz_table.py` → `text/quiz-answers.tsv`），改寫第 2、4、6 列並顯示答案（F9 切換），收據 `tools/g7-quiz-receipt.sh`（docs/re/008） |
 | 手札面板 | 規格 007 READY：叛徒門實機觸發第 57 則，面板自動開出、翻閱模式可開（`tools/g7-journal-receipt.sh`，docs/re/009）；酒館另觸發第 9 則 |
-| 攻略面板 | 規格 008 READY：《軟體世界》第 43–45 期自寫摘要 78 段（`text/walkthrough.zh-TW.tsv`，docs/re/011）；主選單開 F6 三張截圖無缺字 |
+| 攻略面板 | 規格 008 READY：《軟體世界》第 43–45 期自寫摘要 78 段（`text/walkthrough.zh-TW.tsv`，docs/re/011）；主選單三張、冒險畫面與地圖互斥收據無缺字（docs/re/012） |
+| 地圖疊層 | 規格 009 READY：`DS:A9EA` GEO 指標、`DS:A9F3–A9F5` 位置方向，八個定點取樣已證實；32 塊 GEO、1 個名稱、2 個攻略點共 4 格。F7／V／Esc、F5／F6 互斥測試通過，前端走過格保存 `pod-map-visited.txt`；初始化的全零緩衝區略過（docs/re/012） |
 | 跨畫面盤點 | G6 完成：自動探索兩輪（街上、店家門口）印字 1,857 次（第二輪計到第 400 鍵的快照），未命中只剩數字與引號；商店清單、神殿、訓練、戰鬥、野外未覆蓋（docs/re/010） |
 | 片頭片尾字幕 | 推定是畫格點陣圖，待 G9 |
 

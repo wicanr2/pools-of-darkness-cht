@@ -13,3 +13,4 @@
 | [009](009-journal-ref.md) | 手札引用：引擎組成的整句、路徑 B 參數、單元測試；實機觸發點待 G8 | #8 |
 | [010](010-g6-cross-screen.md) | G6 跨畫面盤點：pod-explore 自動探索兩輪，未命中只剩數字與引號；未覆蓋項 | #7 |
 | [011](011-walkthrough.md) | 遊戲內攻略：《軟體世界》第 43–45 期的自寫摘要、照抄檢查、面板資料與收據 | #9 |
+| [012](012-map-overlay.md) | 地圖疊層：本作 GEO 指標、座標、方向、東菲蘭攻略點；`g8-map-evidence.sh`、`g8-map-receipt.sh`、`map_geo.py` 及檢查器 | #9 |
