@@ -186,7 +186,8 @@ var scriptHostActs = map[string]hostAction{
 	"journal": actJournal, "guide": actGuide, "map": actMap,
 	"pgup": actPageUp, "pgdn": actPageDown, "prev": actPrevEntry, "next": actNextEntry, "shot": actShot,
 	"speeds": actSpeed, "barfonts": actBarFont,
-	"scale": actScale, // 收據走與 F2 相同的前端動作，不將 F2 注入 DOS。
+	"scale":  actScale,  // 收據走與 F2 相同的前端動作，不將 F2 注入 DOS。
+	"mapall": actReveal, // 地圖開啟後等同 V，不改腳本 V 原本送 DOS 的語意。
 }
 
 // parseScript 解析 `畫格:動作[,…]`。動作是鍵名（dos.KeyNamed，例 Enter、Down）、
