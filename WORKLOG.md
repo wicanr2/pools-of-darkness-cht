@@ -243,3 +243,4 @@
 - 隔離 dosgolem 已提交 `939ec6d`（開機路徑）與 `ad17b65`（地圖位址、防護與測試）。
 - 兩個提交已推到本專案 private repo 的 `dosgolem/pod`；主儲存庫提交包含規格、研究、資料表與工具，不含原版、存檔或擷取圖片。
 - Docker 收尾：本輪一次性容器均已退出並自動刪除，標記 `pod.task` 的容器為 0；專案工作根沒有 root-owned 檔案或誤建的 `.md` 目錄，抽查輸出均為 `1000:1000`。
+- main `518e960` 已推送；[G8 進度留言](https://github.com/wicanr2/pools-of-darkness-cht/issues/9#issuecomment-6377882247)與[G6 讀檔補驗](https://github.com/wicanr2/pools-of-darkness-cht/issues/7#issuecomment-6377882575)已回讀，#9 保持 OPEN、#7 保持 CLOSED。
