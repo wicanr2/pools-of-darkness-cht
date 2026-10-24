@@ -1,0 +1,128 @@
+{
+  "batch": "b02",
+  "status": "two-images-integrated-same-state-pass",
+  "scope": [
+    "pic1-131",
+    "pic1-043@0"
+  ],
+  "items": [
+    {
+      "key": "pic1-131",
+      "version": 0,
+      "status": "generated",
+      "raw": "pic1-131-r0-raw.png",
+      "original_generated_file": "exec-18b574bb-c425-4cad-bb50-d827f3c9fb72.png",
+      "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve this exact elderly wizard portrait: long flowing white beard and white hair, broad olive green pointed hat, wise elderly face, purple robe and warm golden patterned shoulder collar, warm brown-gold background. Keep the face, eyes, hat brim, beard silhouette and shoulder positions fixed. Keep his age and expression. No extra objects, letters or frame. Input image 1 is the edit target and absolute authority for composition, anatomy and its own colors. Input image 2 is the user-approved style reference for brushwork only: do not borrow its scene, poses, colors or creatures.",
+      "generation": "built-in image_gen image edit",
+      "style_reference": "review/hd/b01-bigpic1-246-r0-raw.png",
+      "source_indexed_sha256": "2d8755ab3b0a2b71cea4436b1730032145e6fac5c2510061d9966890ac2d3aad",
+      "source_palette_sha256": "50722b8b0331518f2099dac422029ab2fc5a0376a5c0f8ac1ffcb75b1c6b2fea",
+      "raw_sha256": "66a8049d6ed3149756776180acf12a69e4610cc3611552196c7c2c098597e9bd",
+      "raw_file": "b02-pic1-131-r0-raw.png",
+      "png": "b02-pic1-131.png",
+      "png_sha256": "7200e950a4f21eb1968d25922d89d17cd738d723ddfb4218838e7d1ea6396949",
+      "visual_review": "viewed raw artwork and full runtime screenshot; accepted"
+    },
+    {
+      "key": "pic1-043@0",
+      "version": 0,
+      "status": "generated",
+      "raw": "pic1-043@0-r0-raw.png",
+      "original_generated_file": "exec-e419e4a6-c888-49dd-a045-b855d7b8b050.png",
+      "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve the exact fiery orange-yellow creature, the black silhouette around it, facial expression, raised arms, flame shapes and the original orange-red glow. This is a painted fantasy creature portrait, not a new scene. Keep the original pose and every flame mass in place. Do not add objects, letters or frame. Input image 1 is the edit target and absolute authority for composition, anatomy and its own colors. Input image 2 is the user-approved style reference for brushwork only: do not borrow its scene, poses, colors or creatures.",
+      "generation": "built-in image_gen image edit",
+      "style_reference": "review/hd/b01-bigpic1-246-r0-raw.png",
+      "source_indexed_sha256": "f0fa10c76694608e2fe1728565be87338ea2430c11ad151a87a27ab29ae65779",
+      "source_palette_sha256": "406d624ee404d8639a75ecf0ccb53f852981de51421ef60548bdd77aa3f35094",
+      "raw_sha256": "bb7eab73468d7b4f7d30c342a377a1627704ab3a87c94c1c5c77c8287cea9916",
+      "raw_file": "b02-pic1-043@0-r0-raw.png",
+      "png": "b02-pic1-043@0.png",
+      "png_sha256": "628c10d79e5124b47f61b51c436def1add28ace4ea95f65b283c5f8692a0760e",
+      "visual_review": "viewed raw artwork and full runtime screenshot; accepted"
+    }
+  ],
+  "validation": {
+    "batch": "b02",
+    "request_manifest_sha256": "a9efcb6e082d7bd0c0b4e7ae348255da5d07b4aa0fe915569d919c8608df5b66",
+    "scope": "selected",
+    "requested": 2,
+    "total": 81,
+    "all_pass": true,
+    "items": [
+      {
+        "key": "pic1-043@0",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.45598591549295775,
+        "median_hue_difference_degrees": 17.24760127058978,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "628c10d79e5124b47f61b51c436def1add28ace4ea95f65b283c5f8692a0760e"
+      },
+      {
+        "key": "pic1-131",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.4242957746478873,
+        "median_hue_difference_degrees": 3.9766763848397204,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "7200e950a4f21eb1968d25922d89d17cd738d723ddfb4218838e7d1ea6396949"
+      }
+    ]
+  },
+  "receipt": {
+    "scope": "PIC1-131、PIC1-043@0；正常 DEMO 的加速同狀態重播，非首次繪製閃現驗收",
+    "comparisons": [
+      {
+        "base": "welcome-3-base",
+        "other": "welcome-3-hd",
+        "original_state_and_scratch_equal": true,
+        "changed_pixels": 69694,
+        "outside_portrait": 0,
+        "passed": true
+      },
+      {
+        "base": "welcome-3-base",
+        "other": "welcome-3-mismatch",
+        "original_state_and_scratch_equal": true,
+        "changed_pixels": 0,
+        "outside_portrait": 0,
+        "passed": true
+      },
+      {
+        "base": "welcome-2-base",
+        "other": "welcome-2-hd",
+        "original_state_and_scratch_equal": true,
+        "changed_pixels": 0,
+        "outside_portrait": 0,
+        "passed": true
+      },
+      {
+        "base": "fire-3-base",
+        "other": "fire-3-hd",
+        "original_state_and_scratch_equal": true,
+        "changed_pixels": 69620,
+        "outside_portrait": 0,
+        "passed": true
+      },
+      {
+        "base": "fire-3-base",
+        "other": "fire-3-mismatch",
+        "original_state_and_scratch_equal": true,
+        "changed_pixels": 0,
+        "outside_portrait": 0,
+        "passed": true
+      },
+      {
+        "base": "fire-2-base",
+        "other": "fire-2-hd",
+        "original_state_and_scratch_equal": true,
+        "changed_pixels": 0,
+        "outside_portrait": 0,
+        "passed": true
+      }
+    ],
+    "all_pass": true
+  }
+}

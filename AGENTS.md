@@ -35,7 +35,7 @@
 | 手札 | 修正後的說明書手札全部放進遊戲，劇情引用時自動彈出，另以前端鍵（F5）翻閱已觸發的手札。說明書有酒店傳聞等其他引用段落時一併處理 |
 | 手冊查驗題 | 問句後顯示答案，預設開啟、可關閉（F9）；玩家仍要作答，判定照原版。題型是 Adventurer's Journal 頁碼、標題後第 N 字（docs/re/001） |
 | HD | HD 圖以 3 倍（960×600）為準，風格 B（奇幻插畫），配色照原版。預設 2 倍顯示原版，F2 切 3 倍，HD 圖只在 3 倍顯示 |
-| HD 分工 | 來源盤點、請求包、前處理、驗收對位、接入與規格 021 不露原版圖由 Claude 處理；只有依原版手繪重畫（生圖）交 Codex，介面見第 6 節。不用濾鏡放大。第一批先給使用者確認畫風再全量 |
+| HD 分工 | 使用者 2026-10-24 改為由 Codex 全程負責來源盤點、請求包、生圖、前處理、驗收對位、接入與規格 021 不露原版圖。沿用第 6 節的資料與驗證契約，不用濾鏡放大。第一批先給使用者確認畫風再全量 |
 | 切換列 | 視窗最上方，平常隱藏，滑鼠移到頂端時出現；HD 與擴充功能切換放這裡。沒有 HD 素材時停用 HD 切換並顯示原因。F12 切回英文原版 |
 | 切換列字級 | 小、中、大，記住上次選擇。3 倍 16／22／24、2 倍 12／16／16；只影響切換列（銀色匕首之謎規格 020） |
 | CPU 模擬速度 | 切換列「速度」下拉 1x–32x，只顯示倍率，記住上次倍率，不加快速鍵（銀色匕首之謎規格 019） |
@@ -83,7 +83,7 @@
 | [G6 繁中接入／#7](https://github.com/wicanr2/pools-of-darkness-cht/issues/7) | G3、G5 | 每條路徑 READY 規格、覆繪、A/B 收據與正常玩家路徑；含組句、英數半形、玩家名音譯 |
 | [G7 手札與查驗題／#8](https://github.com/wicanr2/pools-of-darkness-cht/issues/8) | G3、G4 | 手札引用與查驗題的輸出證據、修正後譯文、自動彈出與翻閱、答案顯示的收據 |
 | [G8 攻略面板與地圖疊層／#9](https://github.com/wicanr2/pools-of-darkness-cht/issues/9) | G6 | 《軟體世界》第 43–45 期轉錄、術語對齊、面板與地圖疊層收據 |
-| [G9 HD 與切換列／#10](https://github.com/wicanr2/pools-of-darkness-cht/issues/10) | G6、G7 | Claude：來源與遮擋證據、請求包、驗收、接入、F2 與切換列收據、規格 021 不露原版圖；Codex：生圖 |
+| [G9 HD 與切換列／#10](https://github.com/wicanr2/pools-of-darkness-cht/issues/10) | G6、G7 | Codex 全程負責來源與遮擋證據、請求包、生圖、驗收、接入、F2 與切換列收據、規格 021 不露原版圖（使用者 2026-10-24） |
 | [G10 配樂、多語系、作弊、推廣片／#11](https://github.com/wicanr2/pools-of-darkness-cht/issues/11) | G6、G9 | 各自規格與收據；配樂經使用者試聽；無敵位址在本作重驗 |
 | [G11 封包驗收／#12](https://github.com/wicanr2/pools-of-darkness-cht/issues/12) | G6、G9 | 乾淨目錄啟動、manifest 與 SHA-256、存檔位置；明列未驗平台 |
 | [規格 018 開場 demo 控制／#13](https://github.com/wicanr2/pools-of-darkness-cht/issues/13) | G3 | 選單逾時、demo 旗標與 demo 進出點的本作位址；中止收據 |
@@ -233,20 +233,20 @@
 
 | 步驟 | 負責 | 產出 |
 |---|---|---|
-| 來源辨識 | Claude | 本作繪圖來源、繪製時機、遮擋與動畫相位證據；DRAFT 規格 |
-| 盤點 | Claude | `workplace/hd/inventory/inventory.json`：以寬、高、色號 SHA-256 去重；動畫以第 0 幀為底 |
-| 請求 | Claude | `workplace/hd/requests/<批次>/`：1 倍與 3 倍參考 PNG、色號索引、動畫遮罩、`manifest.json`（來源檔、offset、SHA-256、尺寸、色盤、透明色、規格編號、提示詞） |
+| 來源辨識 | Codex | 本作繪圖來源、繪製時機、遮擋與動畫相位證據；DRAFT 規格 |
+| 盤點 | Codex | `workplace/hd/inventory/inventory.json`：以寬、高、色號 SHA-256 去重；動畫以第 0 幀為底 |
+| 請求 | Codex | `workplace/hd/requests/<批次>/`：1 倍與 3 倍參考 PNG、色號索引、動畫遮罩、`manifest.json`（來源檔、offset、SHA-256、尺寸、色盤、透明色、規格編號、提示詞） |
 | 生圖 | Codex | `workplace/hd/out/<批次>/`：依原版手繪重畫的 PNG 與 `manifest.json`（來源 key、輸出尺寸、風格批次、生成方式、權利註記） |
-| 前處理與驗收 | Claude | 3 倍、對位、alpha、遮罩外差異、結構與色相閘門（閾值沿用銀色匕首之謎規格 010 §3，本作重驗）；並列比較頁綁定 PNG SHA-256，未目視或雜湊改變不得接入 |
-| 接入 | Claude | `workplace/hd/theme/` 主題；dosgolem 呈現層的圖面 watcher（`Sticky`、`Hold`）；`review/hd/` 審閱頁 |
+| 前處理與驗收 | Codex | 3 倍、對位、alpha、遮罩外差異、結構與色相閘門（閾值沿用銀色匕首之謎規格 010 §3，本作重驗）；並列比較頁綁定 PNG SHA-256，未目視或雜湊改變不得接入 |
+| 接入 | Codex | `workplace/hd/theme/` 主題；dosgolem 呈現層的圖面 watcher（`Sticky`、`Hold`）；`review/hd/` 審閱頁 |
 
 - 每個批次先開 Issue，寫明請求目錄、規格、風格定案、完成條件，以及 Codex 可否 commit、push。
   Issue 沒寫明時不 commit、不 push。
-- Claude 以主機 `codex exec` 委派，這是繼 `gh` 之後第二個主機工具例外。前作記錄的旗標為
+- 若日後由 Claude 另行委派生圖，以主機 `codex exec` 執行，這是繼 `gh` 之後第二個主機工具例外。前作記錄的旗標為
   `-C`、`-s workspace-write`、`-o`、`--add-dir`；首次使用前以 `codex exec --help` 重新核對。
   prompt 明寫可讀與可寫的目錄。
-- Codex 只做生圖，只改 Issue 指定的目錄與檔案，不改其他規格或 `CONTEXT.md` 的有效決策。轉檔、縮放、
-  建置與批次腳本一律在 Docker 內。輸出無法符合請求 manifest 時在 Issue 說明，不自行改規格。
+- 使用者於 2026-10-24 授權 Codex 全程完成 HD，包含必要規格、研究、工具、接入與文件。若另行委派只生圖的批次，該子任務仍只改 Issue 指定的目錄與檔案。
+  轉檔、縮放、建置與批次腳本一律在 Docker 內。輸出無法符合請求 manifest 時在 Issue 說明，不自行改規格。
 - Codex 產出的素材視為可放進原版＋HD patch，權利分類仍記在 manifest 與 Issue。
 - 與前作逐位元組相同的來源可沿用前作已通過的 HD 圖，manifest 記來源專案與 key。
 - HD 只改呈現。來源、繪製時機、遮擋、清除與動畫依本作證據辨識；失配、撤除或遮擋未知時

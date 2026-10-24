@@ -1,0 +1,109 @@
+# 014 VGA 圖檔與 HD 首批
+
+日期：2026-10-24。Issue：[#10](https://github.com/wicanr2/pools-of-darkness-cht/issues/10)、[#17](https://github.com/wicanr2/pools-of-darkness-cht/issues/17)。
+狀態：研究與畫風原型中，未作全量或執行期 HD 完成聲明。
+
+## 範圍與來源
+
+使用者已授權 Codex 全程負責 HD，先做第一批並列圖確認畫風。維持 3 倍、風格 B 與原版配色。
+不把前作 EGA 圖檔解碼當作本作 VGA 的證據。
+
+| 輸入 | SHA-256 | 本作容器區塊數 |
+|---|---|---|
+| `BIGPIC1.DAX` | `bc3565c62c1654ee757d1f98f64bbb78e06bcd551c2e8593c41feb130b9f0f6b` | 7 |
+| `PIC1.DAX` | `a3cf36ca3d51ca7960fd73b630489f019c5ad984808ad08bcf91186f67401ab7` | 49 |
+| `TITLE.DAX` | `8a53adf4044527df86d2d983f6c4eeee440c3d09773e7cbd4166279ccafde757` | 3 |
+
+原檔為 `workplace/input/dos/pod/` 的唯讀研究輸入。解碼圖與索引只寫 `workplace/hd/`。
+工具：[dax_vga.py](../../tools/dax_vga.py)。原版圖片與重繪預覽、遊戲實際截圖分別標示。
+首批請求工具：[hd_vga_request.py](../../tools/hd_vga_request.py)，輸出 `workplace/hd/requests/b01/`；生成結果放 `workplace/hd/out/b01/`。
+前處理：[hd_vga_prepare.py](../../tools/hd_vga_prepare.py)；數值驗收：[hd_vga_validate.py](../../tools/hd_vga_validate.py)，
+公式沿用前作並保留來源雜湊於 [hd_metrics.py](../../tools/hd_metrics.py)。VGA 使用各來源自己的 256 色 RGB 色盤，不套用 EGA 16 色表。
+
+## 外部格式線索
+
+參考 Gold Box Explorer 原作者的固定版本程式，僅作格式線索，不執行下載的程式：
+
+- commit `4fd42bd4617eb8ae28654c3b548ea0910d878ac0`。
+- [VgaBlock.cs](https://github.com/simeonpilgrim/goldboxexplorer/blob/4fd42bd4617eb8ae28654c3b548ea0910d878ac0/Common/Plugins/Dax/VgaBlock.cs)，
+  SHA-256 `9b16215e041682f7f9ff1f7310e9b95bad9ff8eb9fdbae3ec624eb33ec92b8e0`。
+- [EgaVgaPalette.cs](https://github.com/simeonpilgrim/goldboxexplorer/blob/4fd42bd4617eb8ae28654c3b548ea0910d878ac0/Common/Plugins/Dax/EgaVgaPalette.cs)，
+  SHA-256 `cebfe319fa433ba4eca735f0b5183bbf58385a0af4bb593e1ce5678329d1e960`。
+- 原作者對本作雙層壓縮圖片的[說明](https://forums.goldbox.games/index.php?topic=1033.30)，2010-08-07，回覆 43。
+
+快照在 `workplace/hd/source/`；來源原碼不進本專案版控。解碼器以本專案的 Python 實作，未複製外部程式。
+
+## 第一階段格式候選
+
+以下偏移均為「外層 DAX RLE 解開後的區塊內偏移」，不是 EXE 位址或原檔絕對偏移。
+外部程式提供線索，本作仍須以原版實際畫面核對。
+
+| 偏移／資料 | 候選意義 | 等級 |
+|---|---|---|
+| `0`、`1` | 高度、以 8 像素為單位的寬度，各一 byte | 強推論；本作 BIGPIC 為 304×120、TITLE 為 320×200 |
+| `6..7` | 連續影像數，little endian u16 | 強推論 |
+| `8`、`9` | 色盤起始索引、色數減一 | 強推論 |
+| `10` 起 | 每色 RGB 各 6 bit，三 bytes | 強推論；值域核對 |
+| 區塊尾端 `影像數×寬×高` bytes | 每像素 8 bit 色號，逐列排列 | 強推論；待畫面比對 |
+
+色盤與影像之間的資料保留為未知，不拿來猜動畫語意。PIC1 使用下節的格式，不套用此表。
+解碼圖能產生只證明格式候選可讀，不代表正常玩家路徑或原版畫面已驗。
+
+## 驗證與展示
+
+盤點、同色號前作素材比對、執行期來源辨識、首批生成與收據於本篇追加。
+正式接入依[規格 010](../spec/010-hd-theme.md)的狀態閘門。
+
+### PIC 格式與執行畫面核對
+
+外部線索另讀固定版本的 `VgaSpriteBlock.cs`，SHA-256
+`b03426294a0ad56dcd5a96964012155f11129d385c742ef0be5f14d4d459bd43`。
+以下均為外層 DAX 解壓後偏移。高度為 offset 0 的 u16，寬度為 offset 2 的 u16 乘 8；
+offset 8 是額外資料數、9 是色盤起點、10 是色數，RGB6 資料從 11 開始。
+第二層 RLE 從 `132+3×額外資料數+3×色數` 開始；literal 長度為控制值加一，repeat 為 257 減控制值。
+基準幀編號在 `127+3×色數`；其餘幀與該幀逐 byte XOR。49 塊共解出 81 個 88×88 狀態。
+動畫的播放時間尚未驗證；呈現層依原版當下色號選圖，不自行推進動畫。
+
+RGB6 轉 RGB8 採 `(v<<2)|(v>>4)`。圖內未提供的色號，取原版已觀測的基礎色盤
+`workplace/probe/g2-receipt/menu-a.pal`，SHA-256
+`62ed0c9528b22f85a7ca8a4d313bc3eb6a80ddfde959b927d71980ab2f68a486`。
+
+| 已知正常 DEMO 畫面 | 指令步數 | 原版矩形 | 結果與等級 |
+|---|---|---|---|
+| welcome，PIC1-131 | 350,000,000 | 24,24,88,88 | 色號與所有使用色的 RGB 完全一致，已證實 |
+| fire，PIC1-043 第 0 幀 | 700,000,000 | 24,24,88,88 | 色號與所有使用色的 RGB 完全一致，已證實 |
+| credits，TITLE 第 3 塊 | 300,000,000 | 0,0,320,192 | 上方 192 列色號一致；底部 8 列被原版改寫，不能直接用完整圖作 watcher |
+
+收據在 `workplace/probe/g9-hd/pic-source-proof.json`，使用 dosgolem `ad17b65`、Go 1.24.13。
+從既有正常冷開機 300M 狀態重播，330M 送空白鍵；沒有狀態或座標注入。
+349M、699M 另存狀態供同狀態測試加速；該加速測試不取代首次繪製驗收。
+解碼器、請求包、前處理與驗收在 `sosb-img:r1`，Python 3.13.16、Pillow 11.0.0 執行。
+
+### 畫風與數值閘門
+
+使用者已確認 b01 港灣城市與魔法戰鬥畫風，授權全量。原始生成圖、完整提示詞與 SHA-256 保存在
+[HD 審閱頁](../../review/hd/README.md)。生成方式為內建 imagegen，無濾鏡放大代替重畫。
+
+| 圖 | 結構重疊 | 色相中位差 | 驗收 |
+|---|---:|---:|---|
+| BIGPIC1-243 | 0.4777 | 9.91° | 通過 |
+| BIGPIC1-246 | 0.4910 | 12.26° | 通過 |
+| PIC1-131 | 0.4243 | 3.98° | 通過 |
+| PIC1-043 第 0 幀 | 0.4560 | 17.25° | 通過 |
+
+沿用前作閾值，未放寬。正對照為來源最近鄰，分數 1、色相差 0；243／246 交換的負對照分數低於 0.19、
+色相差大於 123°，均拒絕。實際數值在 `workplace/hd/out/b01/metric-probe.json` 與各批 `validation*.json`。
+目前只驗收上述四張，不能將 b02 的兩張通過寫成 81 個狀態已完成。
+主題建置入口為 [hd_vga_theme.py](../../tools/hd_vga_theme.py)。
+同狀態收據入口為 [hd_vga_receipt.py](../../tools/hd_vga_receipt.py)。在容器內將原版掛 `/orig:ro`、
+dosgolem binaries 掛 `/app:ro`、正式譯文掛 `/text:ro`、字型掛 `/font:ro`、主題掛 `/theme:ro`、
+`workplace/probe/g9-hd` 掛 `/state:ro`、獨立收據目錄掛 `/out` 後執行。
+既有 `pod-overlay-shot` 的 `diff_outside_stamps` 未包含 Layer.Art 與 HD Hold，會將圖面誤報為越界；
+本收據直接比較兩側 PNG，依已證實的圖面矩形判定，並保留原始報告供回查。
+
+首批兩張的 10 次執行、6 組比較通過：3 倍只改圖框，2 倍完全相同，將來源色號 XOR 255 後完全不繪 HD。
+所有比較的原版記憶體、暫存器、色號、原版 PNG 與 scratch 檔案一致，圖框外差異 0。
+收據為 `workplace/probe/g9-hd/receipt/summary.json`。另從正常冷開機的 300M 狀態重播到 700M，
+保留中途印字掛勾，產生實際繁中與 HD 截圖 `workplace/probe/g9-hd/demo-hd/`；已目視核對。
+README 展示副本與來源雜湊列於 [screenshots/manifest.json](../screenshots/manifest.json)。
+此步不是前端冷啟動或首次繪製閃現驗收，規格維持局部 READY。

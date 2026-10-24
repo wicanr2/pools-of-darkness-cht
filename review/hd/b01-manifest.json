@@ -1,0 +1,89 @@
+{
+  "batch": "b01",
+  "style": "B",
+  "status": "user-approved-style-and-numeric-pass",
+  "generation": "built-in image_gen image edit",
+  "rights": "AI redraw from user-provided original; private review; eligible for original+HD patch under project decision",
+  "items": [
+    {
+      "key": "bigpic1-243",
+      "source_indexed_sha256": "6e01f186c173e4c069866e768329e8aa29d2e5802403548ad82753e345294ba0",
+      "source_palette_sha256": "8c9b35e8c288e6da00a9410465cd89e7fbb454d7898f2a5f95db369470979d66",
+      "raw_file": "bigpic1-243-r0-raw.png",
+      "raw_size": [
+        1996,
+        788
+      ],
+      "raw_sha256": "92cfc00e18d3d79a3f6231ca6b5fecf6ea6fa22a2d70957f06107632d91eeac0",
+      "output_file": "bigpic1-243-r0.png",
+      "output_size": [
+        912,
+        360
+      ],
+      "output_sha256": "e46ac4fd98fcec0df68685a0ea25bb41b9053a84ca65778790111852e3cd4981",
+      "preparation": "whole-image LANCZOS downsample; no crop",
+      "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 912 by 360 pixels, panoramic aspect ratio 304:120, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve the exact coastal city panorama: turbulent turquoise sea across the middle, storm-dark gray sky, pale distant mountains, green cliffs, cream buildings and red tiled roofs on both sides. Keep every coastline, tower, roof, tree group and horizon at its original relative position. Do not add people, ships, monsters, lettering or extra buildings.",
+      "comparison_file": "b01-bigpic1-243-comparison.png",
+      "comparison_sha256": "7eddb55262dfeb84115a6fb43eaf41f3c5ff5778a54b66f8d20773d6a43d5232",
+      "numeric_acceptance": "not-yet-calibrated-for-pod-vga"
+    },
+    {
+      "key": "bigpic1-246",
+      "source_indexed_sha256": "2f400e237a5431a4b4d55331eec575e15ae73bf659c911de44a64ea6d226b683",
+      "source_palette_sha256": "a84385868979b9baca9fd6f13946a851dc782f87f91b1a07eb835bd2e2e79cb3",
+      "raw_file": "bigpic1-246-r0-raw.png",
+      "raw_size": [
+        1996,
+        788
+      ],
+      "raw_sha256": "1cb5074ac17d228283e1c30e498ff58e22d3d65cc653faade4df9be826a39e39",
+      "output_file": "bigpic1-246-r0.png",
+      "output_size": [
+        912,
+        360
+      ],
+      "output_sha256": "a09a184c3c6269542f64d2ac1d0d5d7fe6ae0f7b558f8a349c75a47dd6eee361",
+      "preparation": "whole-image LANCZOS downsample; no crop",
+      "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 912 by 360 pixels, panoramic aspect ratio 304:120, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve the exact fantasy battle composition: the large winged fiery orange and yellow creature dominates the left, reaching toward the right; the blue-white magical burst and robed spellcaster remain on the right. Preserve the wings, face, arms, hands, projectiles, purple ground and small green lights at their original relative positions. Do not add characters, weapons, lettering, frames or effects.",
+      "comparison_file": "b01-bigpic1-246-comparison.png",
+      "comparison_sha256": "6aa40e36003820438f57a6941ea7846242feacb99f8508b50ed6bf6323185d99",
+      "numeric_acceptance": "not-yet-calibrated-for-pod-vga"
+    }
+  ],
+  "style_approval": {
+    "date": "2026-10-24",
+    "decision": "採用這批畫風，繼續全量",
+    "source": "user explicit answer in current conversation",
+    "scope": "visual style; runtime acceptance remains required"
+  },
+  "numeric_validation": {
+    "batch": "b01",
+    "request_manifest_sha256": "4d9bb4c43c6dc1f693bf4de5fe3eca5d0c7ddbc390fe5950cdbc63c3c7dc0d42",
+    "scope": "all",
+    "requested": 2,
+    "total": 2,
+    "all_pass": true,
+    "items": [
+      {
+        "key": "bigpic1-243",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.4777223146607506,
+        "median_hue_difference_degrees": 9.912426035502932,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "7b1db02f0cd2249346ff6e51b814bc1863f931e4d10f6d5d088f82e8ed0e9c1f"
+      },
+      {
+        "key": "bigpic1-246",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.49103346274727305,
+        "median_hue_difference_degrees": 12.260294854432393,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "358f0c02aae45bd752d254fd7062df284f04314a6abd23fb2718de41d32bf220"
+      }
+    ]
+  }
+}

@@ -1,14 +1,68 @@
-# 黑暗之池（Pools of Darkness）繁體中文化
+# 黑暗之池（Pools of Darkness）繁體中文化與 HD
 
 以 [dosgolem](https://github.com/wicanr2/dosgolem) 執行 SSI DOS 版《Pools of Darkness》，
 在執行期攔截原版輸出並覆繪繁體中文，之後再加入 HD 重繪圖。原版遊戲、規則與存檔保持原樣，需自備原版。
 
 本專案另修正軟體世界珍藏版說明書的錯譯，並把修正後的手札放進遊戲，劇情引用時直接開啟。
 
+## 重返菲蘭城
+
+十年來，你們走遍王國，挫敗邪惡勢力的陰謀。如今船隻駛入月之海的港灣，昔日滿目瘡痍的菲蘭城已重建高塔與街市。
+擊敗泰蘭特拉克斯的英雄回到成名之地，迎接你們的似乎是一段難得的太平日子。
+
+但班恩並未放棄。籠罩月之海的黑暗即將把隊伍帶離熟悉的街道，穿過次元傳送池，迎向龍族、黑暗精靈與異界的敵人。
+這場旅程從重返家園開始，最後要面對的，是威脅整個王國的力量。
+
+本作是 SSI 於 1991 年推出的 AD&D《被遺忘的國度》角色扮演遊戲，也是這套四部曲的第四作。
+玩家組成冒險隊伍，探索城鎮與地下城、閱讀手札線索，並在回合制戰鬥中安排移動、武器與法術。
+故事背景整理自 [SSI《冒險者手冊》導言](https://www.mocagh.org/ssi/pod-journal.pdf)與本作開場文字；
+原文來源與版本見[參考文件紀錄](docs/re/002-reference-sources.md)。
+
+## 本專案做了什麼
+
+遊戲仍由 dosgolem 執行原版 DOS 程式。繁體中文與 HD 透過呈現層覆繪，原版規則、資料判定、亂數與存檔保持原樣。
+手札採用經英文原文校正的珍157 譯文，事件引用時直接顯示；另有遊戲內攻略與地圖疊層，減少來回翻閱紙本的需要。
+
+繁中已驗證冷啟動、建角、存讀檔、查驗題與部分探索路徑。HD 正在製作，尚未完成全量素材與正常路徑驗收。
+完整現況與驗證範圍見 [CONTEXT.md](CONTEXT.md)。
+
+## 畫面介紹
+
+### 原版 BIGPIC 與 HD 首批預覽
+
+| 原版 BIGPIC | HD 重繪預覽 |
+|---|---|
+| ![原版港灣城市 BIGPIC](docs/screenshots/bigpic1-243-original.png) | ![港灣城市 HD 重繪預覽](docs/screenshots/bigpic1-243-hd-preview.png) |
+| ![原版魔法戰鬥 BIGPIC](docs/screenshots/bigpic1-246-original.png) | ![魔法戰鬥 HD 重繪預覽](docs/screenshots/bigpic1-246-hd-preview.png) |
+
+左側從本作 `BIGPIC1.DAX` 區塊 243、246 解碼，以 3 倍最近鄰顯示；右側是依原圖手繪風格重畫的 912×360 素材。
+這一批畫風已確認，上表為素材預覽。
+來源與 SHA-256 見[展示圖清單](docs/screenshots/manifest.json)，完整並列與提示詞見 [HD 審閱頁](review/hd/README.md)。
+HD 製作由 [#10](https://github.com/wicanr2/pools-of-darkness-cht/issues/10) 追蹤；README 由 [#17](https://github.com/wicanr2/pools-of-darkness-cht/issues/17) 追蹤。
+
+### 繁中與 HD 實際畫面
+
+| 原版 DOS 畫面 | 繁中與 HD，3 倍顯示 |
+|---|---|
+| ![原版 DEMO 歡迎對話](docs/screenshots/demo-welcome-original.png) | ![繁中與 HD 歡迎對話](docs/screenshots/demo-welcome-cht-hd.png) |
+| ![原版 DEMO 異界生物](docs/screenshots/demo-fire-original.png) | ![繁中與 HD 異界生物](docs/screenshots/demo-fire-cht-hd.png) |
+
+以上是 dosgolem 從正常冷開機的既有狀態重播 DEMO 所擷取的 960×600 畫面。
+兩張小圖已接入；同狀態比較確認 HD 差異只落在原版圖框，原版記憶體、暫存器、色號與存檔一致。
+目前展示範圍為開場 DEMO，首次繪製的零閃現與其餘圖族仍在驗證。
+
+## 執行與文件
+
+目前開發入口為 `tools/play-smoke.sh`，使用 Docker 與 dosgolem。需自備原版遊戲資料；本儲存庫不附原版遊戲或可直接遊玩的完整包。
+開發工作樹、字型來源及本機輸入的準備位置見 [CONTEXT.md](CONTEXT.md)。
+
 現況見 [CONTEXT.md](CONTEXT.md)，工作項目見
 [GitHub Issues](https://github.com/wicanr2/pools-of-darkness-cht/issues)，協作規則見 [AGENTS.md](AGENTS.md)。
+規格與來源證據分別見[規格索引](docs/spec/000-index.md)及[研究索引](docs/re/README.md)。
 
 ## 授權
 
 本專案自有的程式與文件採 [RRSAL-1.0](LICENSE)（source-available，非商業免費、商業另洽）。
 授權不涵蓋原版遊戲素材與中文說明書，使用者須自備合法取得的原版。
+README 與 HD 審閱頁中的原版圖片僅依本專案現有私人儲存庫展示範圍保存，不是可散布素材。
+本專案與 SSI、TSR 及相關權利人沒有隸屬關係。
