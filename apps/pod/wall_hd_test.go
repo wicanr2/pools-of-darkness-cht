@@ -15,6 +15,42 @@ import (
 )
 
 func wallHash(b []byte) string { s := sha256.Sum256(b); return hex.EncodeToString(s[:]) }
+
+func TestWallEGASourceNameRemainsCompatible(t *testing.T) {
+	dir, _ := wallFixture(t)
+	p := filepath.Join(dir, "walls.json")
+	b, err := os.ReadFile(p)
+	if err != nil {
+		t.Fatal(err)
+	}
+	var m wallManifest
+	if err = json.Unmarshal(b, &m); err != nil {
+		t.Fatal(err)
+	}
+	for n := range m.Assets {
+		if m.Assets[n].Key == "a" {
+			m.Assets[n].Key = "8x8d1-001@999"
+		}
+	}
+	for n := range m.Cells {
+		for j := range m.Cells[n].Layers {
+			if m.Cells[n].Layers[j].Key == "a" {
+				m.Cells[n].Layers[j].Key = "8x8d1-001@999"
+			}
+		}
+	}
+	b, err = json.Marshal(m)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err = os.WriteFile(p, b, 0644); err != nil {
+		t.Fatal(err)
+	}
+	h, err := loadWallHD(dir)
+	if err != nil || h == nil || h.vga {
+		t.Fatalf("EGA來源不該套VGA名稱限制：%v", err)
+	}
+}
 func wallFixture(t *testing.T) (string, [][]byte) {
 	t.Helper()
 	dir := t.TempDir()

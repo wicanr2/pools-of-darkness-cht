@@ -96,9 +96,19 @@ func loadWallHD(dir string) (*wallHD, error) {
 	}
 	for _, s := range m.Assets {
 		w, h := s.Size[0], s.Size[1]
-		vga, err := knownVGAWall(s)
+		ref, err := checked(s.Indexed, s.IndexSHA)
 		if err != nil {
 			return nil, err
+		}
+		vga := hasVGAPixels(ref)
+		if vga {
+			known, err := knownVGAWall(s)
+			if err != nil {
+				return nil, err
+			}
+			if !known {
+				return nil, fmt.Errorf("%s：未知VGA牆面來源", s.Key)
+			}
 		}
 		if _, ok := assets[s.Key]; ok || s.Key == "" {
 			return nil, fmt.Errorf("牆面key重複或空白")
@@ -108,10 +118,6 @@ func loadWallHD(dir string) (*wallHD, error) {
 		}
 		if s.Algorithm != "" && (s.Algorithm != "scale3x" || s.Kind != "wall") {
 			return nil, fmt.Errorf("牆面演算法不合法")
-		}
-		ref, err := checked(s.Indexed, s.IndexSHA)
-		if err != nil {
-			return nil, err
 		}
 		if len(ref) != w*h {
 			return nil, fmt.Errorf("牆面來源長度不符")
