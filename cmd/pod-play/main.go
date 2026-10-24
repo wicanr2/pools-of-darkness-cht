@@ -809,6 +809,9 @@ func main() {
 	if err != nil {
 		fail(err)
 	}
+	if !release {
+		discoverSiblingLangFonts(*fontPath, fontsByLang)
+	}
 	langs, err := loadLangs(*textDir, font, fontsByLang, release)
 	if err != nil {
 		fail(err)

@@ -32,6 +32,22 @@ func parseLangFonts(s string) (map[string]string, error) {
 }
 
 // langFontPath 回 code 的字型：-lang-fonts 指定的優先，發行模式再找 font/pod-<代碼>.golemfnt；找不到回空字串。
+// 開發模式由discoverSiblingLangFonts先補主字型旁既有的專用字型。
+func discoverSiblingLangFonts(mainPath string, fonts map[string]string) {
+	if mainPath == "" {
+		return
+	}
+	for _, code := range []string{"en", "zh-CN", "ja", "ko"} {
+		if fonts[code] != "" {
+			continue
+		}
+		candidate := filepath.Join(filepath.Dir(mainPath), "pod-"+code+".golemfnt")
+		if fileExists(candidate) {
+			fonts[code] = candidate
+		}
+	}
+}
+
 func langFontPath(code string, fonts map[string]string, release bool) string {
 	if p := fonts[code]; p != "" {
 		return p
