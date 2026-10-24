@@ -58,11 +58,13 @@ type wallCell struct {
 	guard bool
 }
 type wallHD struct {
-	sources int
-	global  map[[64]byte]*wallCell
-	cells   [121]map[[64]byte]*wallCell
-	matches [121]*wallCell
-	active  bool
+	sources   int
+	vga       bool
+	vgaAssets []wallAsset
+	global    map[[64]byte]*wallCell
+	cells     [121]map[[64]byte]*wallCell
+	matches   [121]*wallCell
+	active    bool
 }
 
 func loadWallHD(dir string) (*wallHD, error) {
@@ -84,6 +86,7 @@ func loadWallHD(dir string) (*wallHD, error) {
 		return nil, fmt.Errorf("牆面完整格比對模式不合法")
 	}
 	assets := map[string]wallAsset{}
+	var vgaAssets []wallAsset
 	checked := func(name, hash string) ([]byte, error) {
 		full, ok := themeFile(dir, name)
 		if !ok {
@@ -93,10 +96,14 @@ func loadWallHD(dir string) (*wallHD, error) {
 	}
 	for _, s := range m.Assets {
 		w, h := s.Size[0], s.Size[1]
+		vga, err := knownVGAWall(s)
+		if err != nil {
+			return nil, err
+		}
 		if _, ok := assets[s.Key]; ok || s.Key == "" {
 			return nil, fmt.Errorf("牆面key重複或空白")
 		}
-		if s.Kind != "wall" && s.Kind != "sky" || s.Kind == "wall" && (w != 8 || h != 8) || s.Kind == "sky" && s.Size != [2]int{88, 16} && s.Size != [2]int{24, 24} && s.Size != [2]int{88, 48} {
+		if s.Kind != "wall" && s.Kind != "sky" || s.Kind == "wall" && (w != 8 || h != 8) || s.Kind == "sky" && !vga && s.Size != [2]int{88, 16} && s.Size != [2]int{24, 24} && s.Size != [2]int{88, 48} {
 			return nil, fmt.Errorf("牆面來源種類或尺寸不合法")
 		}
 		if s.Algorithm != "" && (s.Algorithm != "scale3x" || s.Kind != "wall") {
@@ -110,7 +117,7 @@ func loadWallHD(dir string) (*wallHD, error) {
 			return nil, fmt.Errorf("牆面來源長度不符")
 		}
 		for _, v := range ref {
-			if v > 15 {
+			if !vga && v > 15 || vga && !vgaWallColor(v, s.Kind == "wall") {
 				return nil, fmt.Errorf("牆面非EGA色號")
 			}
 		}
@@ -137,7 +144,7 @@ func loadWallHD(dir string) (*wallHD, error) {
 				if s.Algorithm == "" && v == 13 && !bytes.Equal(rgba.Pix[n:n+3], []byte{85, 85, 85}) {
 					return nil, fmt.Errorf("牆面留底遮罩被改動")
 				}
-				if s.Algorithm == "" && s.Kind == "wall" && (x == 0 || y == 0 || x == w*3-1 || y == h*3-1) {
+				if !vga && s.Algorithm == "" && s.Kind == "wall" && (x == 0 || y == 0 || x == w*3-1 || y == h*3-1) {
 					c := v
 					if c == 13 {
 						c = 8
@@ -156,19 +163,29 @@ func loadWallHD(dir string) (*wallHD, error) {
 			a.scaled = hdScale3x(ref, w, h)
 		}
 		assets[s.Key] = a
+		if vga {
+			vgaAssets = append(vgaAssets, a)
+		}
 	}
-	h := &wallHD{sources: len(assets), global: map[[64]byte]*wallCell{}}
+	if len(vgaAssets) != 0 && (len(vgaAssets) != len(assets) || m.Matching != "") {
+		return nil, fmt.Errorf("VGA街景不混EGA或通用位置模式")
+	}
+	h := &wallHD{sources: len(assets), global: map[[64]byte]*wallCell{}, vga: len(vgaAssets) > 0, vgaAssets: vgaAssets}
 	for i := range h.cells {
 		h.cells[i] = map[[64]byte]*wallCell{}
 	}
 	keys := map[string]bool{}
 	for _, s := range m.Cells {
+		if h.vga && (!s.Paint || len(s.Positions) == 0) {
+			return nil, fmt.Errorf("VGA街景須明列位置並採來源重繪")
+		}
 		if s.Key == "" || keys[s.Key] || s.Base < 0 || s.Base > 15 || len(s.Layers) > 6 || len(s.Positions) > 121 {
 			return nil, fmt.Errorf("牆面組合格契約不符")
 		}
 		keys[s.Key] = true
 		cell := &wallCell{pix: make([]byte, 24*24*4)}
 		var owners [64]bool
+		var covered [64]bool
 		for n := range cell.ref {
 			cell.ref[n] = byte(s.Base)
 		}
@@ -196,6 +213,7 @@ func loadWallHD(dir string) (*wallHD, error) {
 						continue
 					}
 					cell.ref[y*8+x] = v
+					covered[y*8+x] = true
 					owners[y*8+x] = a.wall
 					if a.scaled != nil {
 						continue
@@ -220,6 +238,13 @@ func loadWallHD(dir string) (*wallHD, error) {
 				}
 			}
 		}
+		if h.vga {
+			for _, ok := range covered {
+				if !ok {
+					return nil, fmt.Errorf("VGA組合格背景未由完整來源覆蓋")
+				}
+			}
+		}
 		digest := sha256.Sum256(cell.ref[:])
 		if hex.EncodeToString(digest[:]) != s.IndexSHA {
 			return nil, fmt.Errorf("牆面組合基準SHA不符")
@@ -232,6 +257,17 @@ func loadWallHD(dir string) (*wallHD, error) {
 			}
 		}
 		cell.guard = ink >= 16 && len(colors) >= 2
+		if h.vga {
+			counts := map[byte]int{}
+			maximum := 0
+			for _, c := range cell.ref {
+				counts[c]++
+				if counts[c] > maximum {
+					maximum = counts[c]
+				}
+			}
+			cell.guard = 64-maximum >= 16 && len(counts) >= 2
+		}
 		if !s.Paint {
 			for y := 0; y < 24; y++ {
 				for x := 0; x < 24; x++ {
@@ -337,6 +373,9 @@ func (h *wallHD) frame(idx []byte, pal [256][3]uint8) {
 			return
 		}
 	}
+	if h.vga && !h.vgaPaletteOK(pal) {
+		return
+	}
 	for pos := 0; pos < 121; pos++ {
 		x, y := 24+pos%11*8, 24+pos/11*8
 		var ref [64]byte
@@ -352,6 +391,25 @@ func (h *wallHD) frame(idx []byte, pal [256][3]uint8) {
 		}
 		h.matches[pos] = cell
 		h.active = true
+	}
+	if h.vga {
+		known := 0
+		for _, cell := range h.matches {
+			if cell != nil && cell.guard {
+				known++
+			}
+		}
+		h.active = false
+		for pos, cell := range h.matches {
+			if cell == nil {
+				continue
+			}
+			if !cell.guard && known < 3 {
+				h.matches[pos] = nil
+				continue
+			}
+			h.active = true
+		}
 	}
 }
 func (h *wallHD) draw(out, idx []byte, scale int) {
