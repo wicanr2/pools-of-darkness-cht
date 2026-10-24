@@ -168,3 +168,22 @@ dosgolem `f08d961`，Go 1.24.13，執行檔 SHA-256
 
 固定收據：[017-b08-runtime.json](017-b08-runtime.json)。六件接入依完整前景條件控制，
 尚未觀測的遇怪位置及動畫時序保持未知；不宣稱本批六個事件均已正常試玩。
+
+## b09 同格式續批
+
+2026-10-25，Issue [#28](https://github.com/wicanr2/pools-of-darkness-cht/issues/28)。
+CPIC4／5／6及132／133／134六張完成數值與逐件目視，三個變體遮罩外0。
+素材來源、提示詞及各版raw保存在[b09私人審閱](../../review/hd/b09-cpic/README.md)。
+沿本節原有候選契約，十八個怪物狀態及兩張地形合併，不改產品程式。
+
+- `62d6c6d`把診斷擴為主題中較首批新增的全部實際素材，逐件驗左右翻轉RGBA、色盤變更、缺一前景點、非戰場、2倍與F12回退，通過。
+  該來源插入保持明示診斷，不當正常遇怪收據。
+- `vga-battle-play-receipt.sh hd b09-play workplace/hd/theme-b09-stage pod-play`重跑既有7400格正常路徑。
+  `vga_battle_play_check.py --out <本輪根> --theme <本輪主題> --baseline <b08四路根> --baseline-theme <b08固定主題> --added <本批六key>`
+  核對只有六張PNG／idx、actors與provenance清單改動；原版、字型、譯文、執行檔及舊素材均相同。
+- 原版CPU、記憶體、色盤、色號及127個DOS檔案終點同b08，完整最終合成亦相同，閃現0。
+  無關的三路切換不重跑，逐件負對照與b08四路正式證據共同覆蓋本次資料增量。
+- 現行主題237檔與已測主題相同，執行檔仍為`f3d019e`。
+  未觀測遇怪位置及時序保持未知；不是全遊戲HD完成聲明。
+
+固定收據：[017-b09-runtime.json](017-b09-runtime.json)。

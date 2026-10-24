@@ -1,0 +1,29 @@
+{
+  "scope": "既有四路基準加未觀測資料；重跑7400格HD正常路徑；逐件2倍/F12與失配另由來源診斷驗證",
+  "added_actor_keys": [
+    "cpic1-004",
+    "cpic1-005",
+    "cpic1-006",
+    "cpic1-132",
+    "cpic1-133",
+    "cpic1-134"
+  ],
+  "registered_actor_states": 18,
+  "binary_sha256": "2654ff7615532378865cde61f761740e9a3e8f1d3c1828fd993be68c658870cd",
+  "guest_files": 127,
+  "guest_state_equal": true,
+  "original_endpoint_equal": true,
+  "final_composite_equal": true,
+  "prior_assets_preserved": true,
+  "flash_count": 0,
+  "frame_sha256": "f86df33cdde0796ac237f77a5c0146d034a8ecadcff0732f64a45c25dac442d4",
+  "baseline_summary_sha256": "2fb3eaf80f6cc29a16ee798a6eae90759ef46902643043467849698bd90cc50a",
+  "inputs_sha256": "aaa4a0dc1a103084a58e8f58a69b2aec87c867fec97d60f3617c499f28c056dd",
+  "active_theme_files": 237,
+  "active_theme_equals_tested": true,
+  "diagnostic_commit": "62d6c6d",
+  "runtime_source_commit": "f3d019e",
+  "candidate_asset_validation_sha256": "4e6269d3159b53b434c88e83d9de6d1fc262b0e9bd5622e30c3ed8c85e7db2b7",
+  "candidate_visual_sha256": "59aa4b12454bea3f0cd98fd5ec4e94aa7bdafada3673b0717169f2c360df7671",
+  "diagnostic_scope": "左右翻轉RGBA、改色、缺點、非戰場、2倍與F12；來源插入不是正常遇怪證據"
+}
