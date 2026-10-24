@@ -14,3 +14,4 @@
 | [010](010-g6-cross-screen.md) | G6 跨畫面盤點：pod-explore 自動探索兩輪，未命中只剩數字與引號；未覆蓋項 | #7 |
 | [011](011-walkthrough.md) | 遊戲內攻略：《軟體世界》第 43–45 期的自寫摘要、照抄檢查、面板資料與收據 | #9 |
 | [012](012-map-overlay.md) | 地圖疊層：本作 GEO 指標、座標、方向、東菲蘭攻略點；`g8-map-evidence.sh`、`g8-map-receipt.sh`、`map_geo.py` 及檢查器 | #9 |
+| [013](013-map-identification.md) | 24 塊 GEO 名稱與五個攻略點、[裁切表](013-map-reference-crops.json)、牆面比對與攻略專名對齊工具 | #9 |

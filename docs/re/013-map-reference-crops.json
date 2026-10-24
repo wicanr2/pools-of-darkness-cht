@@ -1,0 +1,548 @@
+[
+  {
+    "name": "Phlan East",
+    "page": 9,
+    "rect": [
+      106,
+      169,
+      710,
+      772
+    ],
+    "cols": 16,
+    "rows": 16
+  },
+  {
+    "name": "Phlan West",
+    "page": 9,
+    "rect": [
+      1008,
+      166,
+      1611,
+      769
+    ],
+    "cols": 16,
+    "rows": 16
+  },
+  {
+    "name": "Sasha and the Lands of Thar",
+    "page": 12,
+    "rect": [
+      110,
+      151,
+      711,
+      757
+    ],
+    "cols": 16,
+    "rows": 16
+  },
+  {
+    "name": "Vala vs Vaasa",
+    "page": 12,
+    "rect": [
+      999,
+      148,
+      1601,
+      748
+    ],
+    "cols": 16,
+    "rows": 16
+  },
+  {
+    "name": "Hill Giant Steading",
+    "page": 14,
+    "rect": [
+      1000,
+      173,
+      1599,
+      777
+    ],
+    "cols": 16,
+    "rows": 16
+  },
+  {
+    "name": "Fire Giant Cave",
+    "page": 15,
+    "rect": [
+      1008,
+      163,
+      1606,
+      764
+    ],
+    "cols": 16,
+    "rows": 16
+  },
+  {
+    "name": "Dragons Aerie",
+    "page": 16,
+    "rect": [
+      106,
+      164,
+      707,
+      766
+    ],
+    "cols": 16,
+    "rows": 16
+  },
+  {
+    "name": "Thornes Cave",
+    "page": 17,
+    "rect": [
+      109,
+      181,
+      710,
+      778
+    ],
+    "cols": 16,
+    "rows": 16
+  },
+  {
+    "name": "Zhentil Keep",
+    "page": 18,
+    "rect": [
+      91,
+      178,
+      690,
+      479
+    ],
+    "cols": 16,
+    "rows": 8
+  },
+  {
+    "name": "Temple of Tyr proper",
+    "page": 13,
+    "rect": [
+      969,
+      162,
+      1234,
+      430
+    ],
+    "cols": 8,
+    "rows": 8
+  },
+  {
+    "name": "Temple of Tyr upstairs",
+    "page": 13,
+    "rect": [
+      1476,
+      162,
+      1741,
+      430
+    ],
+    "cols": 8,
+    "rows": 8
+  },
+  {
+    "name": "Temple of Tyr cellar",
+    "page": 13,
+    "rect": [
+      970,
+      566,
+      1235,
+      831
+    ],
+    "cols": 8,
+    "rows": 8
+  },
+  {
+    "name": "Temple of Tyr catacombs",
+    "page": 13,
+    "rect": [
+      1476,
+      566,
+      1742,
+      832
+    ],
+    "cols": 8,
+    "rows": 8
+  },
+  {
+    "name": "Manshoon Ground",
+    "page": 19,
+    "rect": [
+      110,
+      189,
+      645,
+      728
+    ],
+    "cols": 16,
+    "rows": 16
+  },
+  {
+    "name": "Descent first 16 columns",
+    "page": 20,
+    "rect": [
+      91,
+      189,
+      579,
+      678
+    ],
+    "cols": 16,
+    "rows": 16
+  },
+  {
+    "name": "Slaves of Drow",
+    "page": 21,
+    "rect": [
+      72,
+      158,
+      672,
+      758
+    ],
+    "cols": 16,
+    "rows": 16
+  },
+  {
+    "name": "Kalistes Temple",
+    "page": 22,
+    "rect": [
+      110,
+      166,
+      711,
+      767
+    ],
+    "cols": 16,
+    "rows": 16
+  },
+  {
+    "name": "Web minis reused layout",
+    "page": 23,
+    "rect": [
+      484,
+      715,
+      819,
+      1049
+    ],
+    "cols": 10,
+    "rows": 10
+  },
+  {
+    "name": "Drow Testing Ground",
+    "page": 25,
+    "rect": [
+      99,
+      173,
+      698,
+      772
+    ],
+    "cols": 16,
+    "rows": 16
+  },
+  {
+    "name": "Kalistes Parlor Upper",
+    "page": 26,
+    "rect": [
+      99,
+      184,
+      701,
+      787
+    ],
+    "cols": 16,
+    "rows": 16
+  },
+  {
+    "name": "Kalistes Parlor Lower",
+    "page": 26,
+    "rect": [
+      1008,
+      184,
+      1612,
+      786
+    ],
+    "cols": 16,
+    "rows": 16
+  },
+  {
+    "name": "Myth Drannor",
+    "page": 27,
+    "rect": [
+      975,
+      176,
+      1575,
+      776
+    ],
+    "cols": 16,
+    "rows": 16
+  },
+  {
+    "name": "Marcus level 0",
+    "page": 28,
+    "rect": [
+      1016,
+      227,
+      1384,
+      530
+    ],
+    "cols": 11,
+    "rows": 9,
+    "origins": [
+      [
+        7,
+        8
+      ]
+    ]
+  },
+  {
+    "name": "Marcus level 1",
+    "page": 28,
+    "rect": [
+      970,
+      675,
+      1270,
+      940
+    ],
+    "cols": 9,
+    "rows": 8,
+    "origins": [
+      [
+        0,
+        8
+      ]
+    ]
+  },
+  {
+    "name": "Marcus level 2",
+    "page": 28,
+    "rect": [
+      970,
+      1124,
+      1237,
+      1258
+    ],
+    "cols": 8,
+    "rows": 4,
+    "origins": [
+      [
+        8,
+        0
+      ]
+    ]
+  },
+  {
+    "name": "Marcus level 3",
+    "page": 28,
+    "rect": [
+      1450,
+      609,
+      1718,
+      744
+    ],
+    "cols": 8,
+    "rows": 4,
+    "origins": [
+      [
+        0,
+        4
+      ]
+    ]
+  },
+  {
+    "name": "Marcus level 4",
+    "page": 28,
+    "rect": [
+      1450,
+      870,
+      1718,
+      1003
+    ],
+    "cols": 8,
+    "rows": 4,
+    "origins": [
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "name": "Marcus level 5",
+    "page": 28,
+    "rect": [
+      1450,
+      1124,
+      1719,
+      1259
+    ],
+    "cols": 8,
+    "rows": 4,
+    "origins": [
+      [
+        8,
+        4
+      ]
+    ]
+  },
+  {
+    "name": "Marcus level 6",
+    "page": 29,
+    "rect": [
+      70,
+      203,
+      470,
+      370
+    ],
+    "cols": 12,
+    "rows": 5,
+    "origins": [
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "name": "Marcus level 7",
+    "page": 29,
+    "rect": [
+      385,
+      464,
+      820,
+      633
+    ],
+    "cols": 13,
+    "rows": 5,
+    "origins": [
+      [
+        0,
+        5
+      ]
+    ]
+  },
+  {
+    "name": "Marcus level 8",
+    "page": 29,
+    "rect": [
+      64,
+      719,
+      530,
+      887
+    ],
+    "cols": 14,
+    "rows": 5,
+    "origins": [
+      [
+        0,
+        10
+      ]
+    ]
+  },
+  {
+    "name": "Marcus level 9",
+    "page": 29,
+    "rect": [
+      947,
+      211,
+      1481,
+      379
+    ],
+    "cols": 16,
+    "rows": 5
+  },
+  {
+    "name": "Marcus level 10",
+    "page": 29,
+    "rect": [
+      1215,
+      448,
+      1747,
+      616
+    ],
+    "cols": 16,
+    "rows": 5
+  },
+  {
+    "name": "Marcus level 11",
+    "page": 29,
+    "rect": [
+      947,
+      671,
+      1481,
+      903
+    ],
+    "cols": 16,
+    "rows": 7
+  },
+  {
+    "name": "Moanders Heart",
+    "page": 33,
+    "rect": [
+      104,
+      155,
+      702,
+      755
+    ],
+    "cols": 16,
+    "rows": 16
+  },
+  {
+    "name": "Mulmaster",
+    "page": 34,
+    "rect": [
+      999,
+      172,
+      1595,
+      473
+    ],
+    "cols": 16,
+    "rows": 8
+  },
+  {
+    "name": "Beholder Outer Chambers",
+    "page": 35,
+    "rect": [
+      301,
+      169,
+      710,
+      769
+    ],
+    "cols": 11,
+    "rows": 16
+  },
+  {
+    "name": "Beholder Labyrinth",
+    "page": 35,
+    "rect": [
+      975,
+      230,
+      1209,
+      432
+    ],
+    "cols": 7,
+    "rows": 6
+  },
+  {
+    "name": "Beholder Hall of Dead",
+    "page": 36,
+    "rect": [
+      150,
+      256,
+      419,
+      390
+    ],
+    "cols": 8,
+    "rows": 4
+  },
+  {
+    "name": "Dark Phlan",
+    "page": 37,
+    "rect": [
+      132,
+      160,
+      655,
+      760
+    ],
+    "cols": 14,
+    "rows": 16
+  },
+  {
+    "name": "Palace of Gothmenes",
+    "page": 38,
+    "rect": [
+      101,
+      208,
+      693,
+      800
+    ],
+    "cols": 16,
+    "rows": 16
+  }
+]

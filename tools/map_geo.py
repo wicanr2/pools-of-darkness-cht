@@ -37,6 +37,8 @@ def main():
     for r in read(a.titles, ['map', 'title', 'evidence']):
         if r['map'] in titles or not r['title'] or not r['evidence']:
             raise ValueError(f'名稱重複或缺證據：{r}')
+        if '|' in r['title'] and (len(r['title'].split('|')) != 4 or not all(r['title'].split('|'))):
+            raise ValueError(f'分區名稱須為四個非空象限：{r}')
         titles[r['map']] = r['title']
     archives = sorted(a.orig.glob('GEO[0-9]*.DAX'))
     if not archives:
@@ -58,7 +60,7 @@ def main():
     if titles.keys() - keys:
         raise ValueError(f'名稱找不到 GEO：{titles.keys() - keys}')
     points = read(a.guide, ['map', 'n', 'x', 'y', 'label', 'summary', 'source'])
-    seen = set()
+    seen, descriptions = set(), {}
     for r in points:
         ident = (r['map'], int(r['n']), int(r['x']), int(r['y']))
         key, n, x, y = ident
@@ -66,6 +68,9 @@ def main():
             raise ValueError(f'攻略點重複、未命名或越界：{r}')
         if not r['label'] or len(r['label']) > 8 or not r['summary'] or not r['source']:
             raise ValueError(f'攻略點缺文、名稱過長或缺出處：{r}')
+        description = (r['label'], r['summary'])
+        if descriptions.setdefault((key, n), description) != description:
+            raise ValueError(f'同圖例多格的說明不同，顯示端會只取一筆：{r}')
         seen.add(ident)
     result = '\n'.join(rows) + '\n'
     if a.check:

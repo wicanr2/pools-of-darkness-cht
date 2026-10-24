@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """核對地圖 A/B 收據，失配即以非零結束。"""
+import argparse
 import hashlib
 import json
 from pathlib import Path
-import sys
 
 
 def tree(path):
@@ -11,7 +11,12 @@ def tree(path):
             for p in path.rglob('*') if p.is_file()}
 
 
-root = Path(sys.argv[1])
+ap = argparse.ArgumentParser(description=__doc__)
+ap.add_argument('root', type=Path)
+ap.add_argument('--map-key', default='1/10')
+ap.add_argument('--position', type=int, nargs=3, default=[11, 2, 2])
+args = ap.parse_args()
+root = args.root
 for scale in (2, 3):
     results = {m: json.loads((root / f'{scale}-{m}' / 'result.json').read_text())['shots'][0]
                for m in ('original', 'visited', 'all')}
@@ -24,7 +29,7 @@ for scale in (2, 3):
             raise SystemExit(f'{scale}-{mode}：範圍外差異或缺字')
         if tree(root / f'{scale}-{mode}' / 'scratch') != tree(root / f'{scale}-original' / 'scratch'):
             raise SystemExit(f'{scale}-{mode}：原版存檔／暫存層不同')
-        if mode != 'original' and (result.get('map_key') != '1/10' or result.get('map_position') != [11, 2, 2]):
+        if mode != 'original' and (result.get('map_key') != args.map_key or result.get('map_position') != args.position):
             raise SystemExit(f'{scale}-{mode}：地圖或座標方向不符')
     if len({r['overlay_sha256'] for r in results.values()}) != 3:
         raise SystemExit(f'{scale} 倍三個模式畫面沒有區分')

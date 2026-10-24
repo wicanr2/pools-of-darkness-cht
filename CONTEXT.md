@@ -41,7 +41,7 @@
 |---|---|
 | 片頭片尾字幕：推定是畫格點陣圖（docs/re/004），辨識與覆繪方式 | G9 |
 | `pool4.cfg` 第 6 行 `F` 與後續 `0` 欄位語意 | 需要時 |
-| 攻略摘要保留英文的地名、物品名（例 Temple of Tyr、Silver Shield）是否補進術語表並對齊遊戲內譯名 | G8 |
+| 攻略摘要尚留英文的物品名（例 Silver Shield）、未定專名及來源歧義 | G8 後續校讀；地名與已定專名已對齊，見研究 013 |
 
 ## 交接（2026-10-24）
 
@@ -54,7 +54,7 @@
 | G5 譯文與字型 | #6 | 完成 | `tools/g5-text-receipt.sh` |
 | G6 覆繪接入 | #7 | 完成：冷開機、建角、存讀檔、選單收據；自動探索兩輪（使用者指示到此為止） | docs/re/007、010 |
 | G7 手札與查驗題 | #8 | 完成：查驗題 54 題 CONFORMED；手札實機觸發第 57 則、面板自動開出 | docs/re/008、009 |
-| G8 攻略與地圖 | #9 | 攻略 78 段；地圖疊層已接入，32 塊 GEO 雜湊、東菲蘭 2 個攻略點共 4 格；2／3 倍 A/B 與正常冷開機讀檔、面板切換通過。其餘地圖名稱與攻略點未驗，#9 保持開啟 | docs/re/011、012；規格 008、009 READY |
+| G8 攻略與地圖 | #9 | 攻略 78 段，地名與已定專名對齊；32 塊 GEO 雜湊、24 個 GEO 名稱、東西菲蘭 5 個攻略點共 7 格。兩城 2／3 倍 A/B 通過；已有正常冷開機讀檔與面板切換收據。其餘 8 個名稱、未觀測地點與共用場景未驗，#9 保持開啟 | docs/re/011–013；規格 008、009 READY |
 | G9–G11 | #10–#12 | 未開始 | — |
 | 規格 018–021 | #13–#16 | 未開始；019、020 的程式由前作沿用，未驗 | docs/spec/000-index.md |
 
@@ -69,14 +69,15 @@
 | 盤點新地圖的缺譯 | `tools/g6-explore.sh <名稱> <狀態檔> [-yes …]`，再 `tools/g6-misses.sh <inv.tsv>` |
 | 改譯文後 | `tools/font-dev.sh` 重建字型、`tools/font_coverage.py` 查缺字，再跑受影響的收據 |
 | 重跑本作收據 | `tools/g6-create-receipt.sh`、`g6-saveload-receipt.sh`、`g6-menus-receipt.sh`、`g7-quiz-receipt.sh`、`g7-journal-receipt.sh`（約 20 分鐘）、`g8-guide-receipt.sh` |
-| 地圖記憶體與呈現 | `tools/g8-map-evidence.sh`（八個定點取樣）、`g8-map-receipt.sh`（2／3 倍 A/B）、`g8-map-play-receipt.sh`（正常冷開機讀檔、原版查驗題、地圖與攻略互斥），細節 docs/re/012 |
+| 地圖記憶體與呈現 | `tools/g8-map-evidence.sh`（八個定點取樣）、`g8-map-receipt.sh [east\|west]`（兩城 2／3 倍 A/B）、`g8-map-play-receipt.sh`（正常冷開機讀檔、原版查驗題、地圖與攻略互斥），細節 docs/re/012、013 |
 | 地圖名稱與攻略點 | `text/map-titles.tsv`、`map-guide.zh-TW.tsv`，`tools/map_geo.py` 在 Docker 內從實際 GEO 清單產生 `map-geo.tsv`；`--check` 核對。只使用有證據的名稱、圖例與觸發格 |
+| 地圖參考與攻略專名 | 研究 013、`tools/map_reference.py`、`map_match.py` 與 `docs/re/013-map-reference-crops.json`；`tools/walkthrough_terms.py --check` 查攻略已定專名，`walkthrough_build.py` 重建正式表，均在 Docker 內執行 |
 
 狀態檔、暫存目錄與截圖都在 `workplace/`（gitignore），換機器要另外搬。
 
 ### 下一步
 
-1. G8：核對其餘 31 塊 GEO 的地圖名稱及攻略圖例，補有證據的觸發格；目前只含東菲蘭訓練廳、提爾修院。摘要保留英文的名稱仍待術語對齊。不追加 G6 自動探索。
+1. G8：尚有 8 塊 GEO 未命名；其餘攻略點須取得本作觸發格證據，共用場景須先分辨，不能混用圖例。攻略物品名與未知專名繼續校讀。不追加 G6 自動探索。
 2. G9 HD 與切換列（規格 010、011、020）、片頭片尾字幕。
 3. 規格 018、019、021，G10 配樂與多語系，G11 封包驗收。
 
@@ -84,7 +85,7 @@
 
 - G6 沒覆蓋：商店購買清單、神殿治療、訓練升級、旅店、DEMO 以外的戰鬥、野外與地下城（docs/re/010）。
 - 規格 007：冒險畫面按 F5 的路徑只有 pod-play 按鍵對照測試，沒有實機截圖。
-- 規格 009：已驗東菲蘭與 2／3 倍呈現；其餘地圖只有 GEO 格式與雜湊，沒有全路線驗收。正常前端收據使用 map／guide 腳本動作，實際 F7、V、Esc、F5、F6 路由由單元測試驗證。
+- 規格 009：24 個 GEO 名稱有靜態牆面辨識，東西菲蘭有正常路徑快照及 2／3 倍呈現，沒有全路線驗收。四象限外的共用樓層只用整座塔名稱，蛛網據點只用通稱。正常前端收據使用 map／guide 腳本動作，實際 F7、V、Esc、F5、F6 路由由單元測試驗證。
 - 冒險主選單 `Move Area …` 要先按 `M` 才能用方向鍵移動；遊戲沒掛 int 09h，送鍵用 BIOS 緩衝區（`-bios-key-names`），`-press` 送不進去（docs/re/009）。
 - 自動探索會卡在只有 `Exit` 的事件選單（脫困鍵只有 Enter、Esc、空白）；長跑要給外層時限，盤點以每 100 鍵的快照為準。
 - 從狀態重播時，狀態存檔前就印好的字（隊伍欄、底列選單）不會重印，截圖上是英文，不算缺譯（docs/re/007）。
@@ -108,14 +109,14 @@
 | 路徑 A／B／C | 規格 001–003 CONFORMED：冷開機、DEMO、建角、存讀檔、選單收據範圍外差異 0（docs/re/007），自動探索兩輪未命中只剩數字與引號（docs/re/010） |
 | catalog | ui 1,357 筆（654 筆與銀色匕首之謎、625 筆與幽靈騎士 key 相同）、ECL 4,725 筆 |
 | 手札譯文 | 99 則修正譯文 `text/journal.zh-TW.tsv`（90 則有修正）；錯譯表 354 條通過 `tools/errata_check.py`（docs/re/005） |
-| 術語 | `text/glossary.tsv` 949 筆：手札 194、併入銀色匕首之謎術語表 579、試譯新詞 23、說明書名稱 25（前作沒有的）、`MON1CHA.DAX` 怪物名 60、全量新詞 64、別名與複數 4；舊譯 `text/term-avoid.tsv` 38 筆；`tools/term_check.py`、`tools/zh157_names.py check` 通過，`tools/term_consistency.py` 只剩語境變化 |
+| 術語 | `text/glossary.tsv` 981 筆：原 949 筆加 G8 攻略地名與拼法別名 32 筆，研究 013；舊譯 `text/term-avoid.tsv` 38 筆。術語唯一、`tools/term_check.py`、攻略完整詞組對齊通過；物品與來源歧義另保留校讀 |
 | 說明書其餘章節 | 名稱 159 列對照與裁定（`text/zh157-names.tsv`）；全冊 OCR 草稿未校讀（docs/re/006） |
 | 介面與劇情譯文 | `text/ecl-text.zh-TW.tsv` 4,634 則（其餘 91 則是雜訊）；`text/ui-text.zh-TW.tsv` 980 則（654 沿用前作、326 新譯；377 則雜訊）；`tools/translation_merge.py` 0 錯誤。翻譯指引 `text/TRANSLATION-GUIDE.md` |
-| 字型 | 源泉圓體開發字型 `workplace/font/pod-rounded.golemfnt`（16）、`-3x`（24），2,842 字，`tools/font_coverage.py` 缺 0。DEMO 以正式譯文覆繪，開場到戰鬥 5 張截圖範圍外差異 0（`tools/g5-text-receipt.sh`）；DEMO 戰鬥畫面的隊員名、物品名與加值、施法訊息已覆繪（docs/re/007） |
+| 字型 | 源泉圓體開發字型 `workplace/font/pod-rounded.golemfnt`（16）、`-3x`（24），2,843 字，12 份正式顯示表缺字 0。DEMO 以正式譯文覆繪，開場到戰鬥 5 張截圖範圍外差異 0（`tools/g5-text-receipt.sh`）；DEMO 戰鬥畫面的隊員名、物品名與加值、施法訊息已覆繪（docs/re/007） |
 | 查驗題 | 規格 006 CONFORMED：GAME.EXE 題目表 21 筆 54 題（`tools/quiz_table.py` → `text/quiz-answers.tsv`），改寫第 2、4、6 列並顯示答案（F9 切換），收據 `tools/g7-quiz-receipt.sh`（docs/re/008） |
 | 手札面板 | 規格 007 READY：叛徒門實機觸發第 57 則，面板自動開出、翻閱模式可開（`tools/g7-journal-receipt.sh`，docs/re/009）；酒館另觸發第 9 則 |
 | 攻略面板 | 規格 008 READY：《軟體世界》第 43–45 期自寫摘要 78 段（`text/walkthrough.zh-TW.tsv`，docs/re/011）；主選單三張、冒險畫面與地圖互斥收據無缺字（docs/re/012） |
-| 地圖疊層 | 規格 009 READY：`DS:A9EA` GEO 指標、`DS:A9F3–A9F5` 位置方向，八個定點取樣已證實；32 塊 GEO、1 個名稱、2 個攻略點共 4 格。F7／V／Esc、F5／F6 互斥測試通過，前端走過格保存 `pod-map-visited.txt`；初始化的全零緩衝區略過（docs/re/012） |
+| 地圖疊層 | 規格 009 READY：`DS:A9EA` GEO 指標、`DS:A9F3–A9F5` 位置方向，八個定點取樣已證實；32 塊 GEO、24 個 GEO 名稱、5 個攻略點共 7 格。東西菲蘭 2／3 倍 A/B 通過，原版狀態不變；F7／V／Esc、F5／F6 互斥測試通過，走過格另存前端；初始化的全零緩衝區略過（docs/re/012、013） |
 | 跨畫面盤點 | G6 完成：自動探索兩輪（街上、店家門口）印字 1,857 次（第二輪計到第 400 鍵的快照），未命中只剩數字與引號；商店清單、神殿、訓練、戰鬥、野外未覆蓋（docs/re/010） |
 | 片頭片尾字幕 | 推定是畫格點陣圖，待 G9 |
 
