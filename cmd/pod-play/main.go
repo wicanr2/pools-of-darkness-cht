@@ -150,9 +150,13 @@ type game struct {
 	accelSteps   uint64
 	perf         perfStats
 	// 主專案規格 020：切換列字級。
-	barSize     barSize
-	barSizePath string
-	barFonts    barFonts
+	barSize      barSize
+	barSizePath  string
+	barFonts     barFonts
+	posters      *pod.PosterSet
+	windowPixels []byte
+	frameShotDir string
+	shotFrame    string
 }
 
 func (g *game) hostInput(u *session.CapturedUpdate) []hostAction {
@@ -173,7 +177,7 @@ func (g *game) hostInput(u *session.CapturedUpdate) []hostAction {
 	}
 	u.BIOSKeys = append(u.BIOSKeys, keys...)
 	cx, cy := ebiten.CursorPosition()
-	dx, dy := dosPoint(cx, cy, g.scale)
+	dx, dy := g.canvasPoint(cx, cy)
 	g.cursorX, g.cursorY = dx, dy
 	g.bar.track(dx, dy)
 	if inpututil.IsMouseButtonJustPressed(ebiten.MouseButtonLeft) && !g.pressing && menuWasOpen {
@@ -232,7 +236,7 @@ func (g *game) apply(acts []hostAction) {
 		case actScale:
 			g.scale = 5 - g.scale // 2 ↔ 3
 			if !ebiten.IsFullscreen() {
-				ebiten.SetWindowSize(320*g.scale, 200*g.scale)
+				ebiten.SetWindowSize(g.frameSize())
 			}
 		case actFullscreen:
 			ebiten.SetFullscreen(!ebiten.IsFullscreen())
@@ -336,6 +340,7 @@ func (g *game) screenshot() {
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "pod-play: 截圖失敗：", err)
 	}
+	g.windowShot(name, rgba)
 }
 
 func (g *game) Update() error {
@@ -452,6 +457,13 @@ func (g *game) finish() error {
 	if err := write(g.shotOrig, false); err != nil {
 		return err
 	}
+	if g.shotFrame != "" {
+		rgba := g.compose()
+		g.drawBar(rgba)
+		if err := g.saveWindowPNG(g.shotFrame, rgba); err != nil {
+			return err
+		}
+	}
 	g.perf.report(g.speed.base)
 	if a := g.live.Flash; a != nil {
 		fmt.Fprintf(os.Stderr, "pod-play: 閃現 %d 次\n", a.Count())
@@ -546,12 +558,13 @@ func (g *game) drawBar(rgba []byte) {
 func (g *game) Draw(screen *ebiten.Image) {
 	rgba := g.compose()
 	g.drawBar(rgba)
+	rgba = g.windowRGBA(rgba)
 	if b := screen.Bounds(); rgba != nil && len(rgba) == 4*b.Dx()*b.Dy() {
 		screen.WritePixels(rgba)
 	}
 }
 
-func (g *game) Layout(_, _ int) (int, int) { return 320 * g.scale, 200 * g.scale }
+func (g *game) Layout(_, _ int) (int, int) { return g.frameSize() }
 
 // fail 是致命錯誤：stderr、錯誤紀錄（發行模式）與 Windows 對話框（launcher.go）。
 func fail(err error) { fatal(err) }
@@ -585,6 +598,9 @@ func main() {
 	langFonts := flag.String("lang-fonts", "", "繁中以外語言的字型：代碼=路徑，逗號分隔（發行模式另找 font/pod-<代碼>.golemfnt）")
 	cheatOn := flag.Bool("cheat", false, "開機時開啟我方無敵（主專案規格 017；F1 或切換列切換）")
 	hdDir := flag.String("hd", "", "HD 主題目錄（theme.json；主專案規格 010，只在 3× 顯示）")
+	posterDir := flag.String("posters", "", "左右海報目錄；空白時找 HD 主題的 posters/，- 為停用")
+	shotFrame := flag.String("shot-frame", "", "自動模式結束時輸出含海報的完整視窗 PNG")
+	frameShotDir := flag.String("shot-frame-dir", "", "F10 同時輸出完整視窗 PNG 的目錄")
 	showVersion := flag.Bool("version", false, "印版號與 dosgolem commit 後結束")
 	flag.Parse()
 	if *speedFlag != 0 && !validSpeed(*speedFlag) {
@@ -677,6 +693,18 @@ func main() {
 		fail(errors.New("snd.com 與原版 ADLIB.COM 雜湊不符"))
 	}
 	live := pod.NewLive(font, ui, ecl)
+	var posters *pod.PosterSet
+	if *posterDir == "" && *hdDir != "" {
+		candidate := filepath.Join(*hdDir, "posters")
+		if st, err := os.Stat(candidate); err == nil && st.IsDir() {
+			*posterDir = candidate
+		}
+	}
+	if *posterDir != "" && *posterDir != "-" {
+		if posters, err = pod.LoadPosters(*posterDir); err != nil {
+			fail(err)
+		}
+	}
 	if *hdDir != "" {
 		if err := live.AddHD(*hdDir); err != nil {
 			fail(err)
@@ -798,6 +826,7 @@ func main() {
 		langs: langs, lang: langIdx, langDir: stateDir, mainFont: font, cheat: cheat,
 		chunk: budget, delayAccel: *delayAccel, speedPath: filepath.Join(stateDir, "pod-speed.txt"),
 		barSizePath: filepath.Join(stateDir, "pod-barfont.txt"), barSize: barMedium}
+	g.posters, g.shotFrame, g.frameShotDir = posters, *shotFrame, *frameShotDir
 	g.speed = speedControl{base: *clock, set: 1, pct: *clock, adaptive: *frames == 0 || *adaptiveFlag}
 	g.perf = perfStats{on: *perfFlag, start: time.Now()}
 	switch {
@@ -834,7 +863,7 @@ func main() {
 		g.player = player
 	}
 	ebiten.SetWindowTitle(windowTitle)
-	ebiten.SetWindowSize(320*g.scale, 200*g.scale)
+	ebiten.SetWindowSize(g.frameSize())
 	ebiten.SetTPS(60)
 	clearErrorLog()
 	err = ebiten.RunGame(g)
