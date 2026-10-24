@@ -14,7 +14,7 @@ SHA-256 `1e63d7fa7bf7ad10460135a15642f621a5879bc452d2a428d7f7d20eabdf14f2`；
 `GEO1.DAX` SHA-256 `d628bae8349044a1c1c05b821ccfbba6464ed5bfa57cef15ca05ec52cc5afc1f`。
 工具輸出與原始參考圖片放 `workplace/geo-reference/`，不進 Git。
 研究工具為 Python 3.13.16、Pillow 11.0.0、Poppler `pdftoppm` 22.12.0。
-沿用 `sosb-img:r1`（`8b9012adb991`）、`cok-pdf:bookworm-r1`（`05e993…`）及 dosgolem Go image，沒有重建工具鏈。
+沿用 `sosb-img:r1`（`8b9012adb991`）、`cok-pdf:bookworm-r1`（`05e99381d00a`）及 dosgolem Go image，沒有重建工具鏈。
 
 ## 已排除的方法
 

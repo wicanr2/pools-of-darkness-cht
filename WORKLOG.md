@@ -268,3 +268,5 @@
 - dosgolem 程式未改，分支維持 `ad17b65`；規格 009 維持 READY，#9 不關閉。
   未完成項為八個名稱、未觀測攻略點、同形共用場景辨識及攻略物品詞／來源歧義。
 - Docker 收尾：本輪一次性容器均已退出，自動刪除；標記 `pod.task` 的容器為 0。專案工作根無 root-owned 檔案或誤建 `.md` 目錄，抽查輸出均為 `1000:1000`。沒有清理其他專案資源。
+- 主分支提交 `67d4f3e` 已推送並以 `git ls-remote` 核對。[本輪進度留言](https://github.com/wicanr2/pools-of-darkness-cht/issues/9#issuecomment-6380601693)已回讀，#9 仍為 OPEN。主儲存庫與隔離 dosgolem 工作樹均乾淨。
+- 映像 ID 回讀：`cok-pdf:bookworm-r1` `05e99381d00a`、`sosb-img:r1` `8b9012adb991`、`python:3.13-slim` `bf44cdfcb76c`、`dosgolem-go-ebiten:1.24-r1` `8ed6bdee2bce`；本輪未重建或刪除映像。
