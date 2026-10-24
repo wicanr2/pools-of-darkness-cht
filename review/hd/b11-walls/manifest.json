@@ -1,0 +1,1809 @@
+{
+  "batch": "b11",
+  "count": 17,
+  "private_only": true,
+  "request_manifest_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+  "items": [
+    {
+      "key": "8x8d1-001@21",
+      "source": {
+        "key": "8x8d1-001@21",
+        "source_file": "8X8D1.DAX",
+        "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "block": 1,
+        "packed_file_offset": 56,
+        "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+        "source_size": [
+          8,
+          8
+        ],
+        "output_size": [
+          24,
+          24
+        ],
+        "reference_1x": "8x8d1-001@21-1x.png",
+        "reference_3x": "8x8d1-001@21-3x.png",
+        "reference_1x_sha256": "3827725f573b6199aff0d1bef651978c4cad5593211e689f34afe321b27cbe4e",
+        "reference_3x_sha256": "9be90e5f54bcc329085b0afef3f748acb61e97a457c2efa32b05d71acb39bb5b",
+        "indexed": "8x8d1-001@21.idx",
+        "indexed_sha256": "92c4523dd0e910c9b61fba0420bb19529bc1ce43d054e8c5c80a48ffcb3bb1c2",
+        "palette": "8x8d1-001@21.pal",
+        "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": true,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "transparent_index": 13
+      },
+      "generation": {
+        "key": "8x8d1-001@21",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-5078c41f-a05f-4405-bf1b-2b4138d39cf7.png",
+        "generation": "built-in image_gen; one call per original tile",
+        "prompt": "Use case: style-transfer. Asset type: ONE tiny flat wall texture fragment for an original fantasy CRPG, source 8x8d1-001@21. Repaint this exact single supplied reference as a richly hand-painted 1990s fantasy texture, approved style B. Original is only8x8 pixels; final game tile is24x24. Keep the exact original framing, relative positions of every large light/dark spot, orange-peach wall region, ochre/brown mottling and any flat gray empty region. The wall is in the upper LEFT and the flat gray empty area is below and to the RIGHT; keep the diagonal boundary exactly. It is a FLAT fragment of warm peach/orange mottled plaster or stone, not a new room or a full wall scene. Replace the blocky pixels with smooth continuous brushwork and subtle painted material inside the existing color shapes. Preserve the same lighting and orange/ochre palette. No added brick courses, masonry seams, decorative grooves, objects, scenery, cast shadow, perspective bevel, highlights along the outer frame, letters or border. Gray areas must stay flat neutral #555555; do not fill them with orange texture. Edge-to-edge square with no padding. Not pixel art, mosaic,3D or a photograph.",
+        "raw_sha256": "69a9e8bab2aa47f59c2442478d2384507fa4cd8ba5e8c803f76cbc14759d692f",
+        "target": [
+          24,
+          24
+        ],
+        "version": 0,
+        "issue": 30,
+        "status": "generated",
+        "source": {
+          "key": "8x8d1-001@21",
+          "source_file": "8X8D1.DAX",
+          "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+          "block": 1,
+          "packed_file_offset": 56,
+          "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+          "source_size": [
+            8,
+            8
+          ],
+          "output_size": [
+            24,
+            24
+          ],
+          "reference_1x": "8x8d1-001@21-1x.png",
+          "reference_3x": "8x8d1-001@21-3x.png",
+          "reference_1x_sha256": "3827725f573b6199aff0d1bef651978c4cad5593211e689f34afe321b27cbe4e",
+          "reference_3x_sha256": "9be90e5f54bcc329085b0afef3f748acb61e97a457c2efa32b05d71acb39bb5b",
+          "indexed": "8x8d1-001@21.idx",
+          "indexed_sha256": "92c4523dd0e910c9b61fba0420bb19529bc1ce43d054e8c5c80a48ffcb3bb1c2",
+          "palette": "8x8d1-001@21.pal",
+          "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": true,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "transparent_index": 13
+        },
+        "request_manifest_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+        "references": [
+          "workplace/hd/requests/b11/8x8d1-001@21-3x.png"
+        ],
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "8x8d1-001@21",
+        "raw": "8x8d1-001@21-r0-raw.png",
+        "raw_sha256": "69a9e8bab2aa47f59c2442478d2384507fa4cd8ba5e8c803f76cbc14759d692f",
+        "png": "8x8d1-001@21.png",
+        "png_sha256": "b8b1e1ccd3635c18a2b3bf8cbd02583ce6bbac2db6b4b7b311cab5fddbd0c591",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source13 neutral-gray mask; outer1px source RGB seam lock"
+      },
+      "numeric": {
+        "key": "8x8d1-001@21",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.75,
+        "median_hue_difference_degrees": 6.094081357239251,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "b8b1e1ccd3635c18a2b3bf8cbd02583ce6bbac2db6b4b7b311cab5fddbd0c591",
+        "seam_difference": 0,
+        "transparent_region_difference": 0
+      },
+      "visual": {
+        "png_sha256": "b8b1e1ccd3635c18a2b3bf8cbd02583ce6bbac2db6b4b7b311cab5fddbd0c591",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "8x8d1-001@32",
+      "source": {
+        "key": "8x8d1-001@32",
+        "source_file": "8X8D1.DAX",
+        "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "block": 1,
+        "packed_file_offset": 56,
+        "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+        "source_size": [
+          8,
+          8
+        ],
+        "output_size": [
+          24,
+          24
+        ],
+        "reference_1x": "8x8d1-001@32-1x.png",
+        "reference_3x": "8x8d1-001@32-3x.png",
+        "reference_1x_sha256": "7c8a5f42f3296c9977653bf9ee06c753d414a28fec76358d9efd53dfb15b089a",
+        "reference_3x_sha256": "522fc289224389b0d3bcf91da803210bb6657f01ec8cd902325c45f47fb72cac",
+        "indexed": "8x8d1-001@32.idx",
+        "indexed_sha256": "98438ab6e6a26af00eddcfa1687321916e055119b74db7d85b853488f1fbf1a5",
+        "palette": "8x8d1-001@32.pal",
+        "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": true,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "transparent_index": 13
+      },
+      "generation": {
+        "key": "8x8d1-001@32",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-2335eac5-0ebc-43e2-9079-428b01e7a0f6.png",
+        "generation": "built-in image_gen; one call per original tile",
+        "prompt": "Use case: style-transfer. Precisely repaint this exact original tiny square8x8 wall texture tile as a FLAT two-dimensional gouache fantasy-game texture, final24x24, approved style B. Preserve the prominent short HORIZONTAL medium-brown bar in the upper middle, the bent ochre marking below-left, the isolated lower-left gold patch and small bottom-right dark markings. Keep every main spot at its exact original relative location, size and contrast. The source image is the strict underdrawing. Solid light PEACH/salmon base with clearly bounded flat ochre-yellow, medium tan and warm brown patches. Keep the original bright pastel palette; do not darken the corners. Make the painted edges sharp and controlled, gently organic, with only very fine brush marks INSIDE each original color patch. Do NOT blur the patches together or add new speckles. This is painted flat COLOR, not recessed chipped plaster: no cracks, holes, relief, bevels, shading, vignette, directional lighting or drop shadow. No pixel grid, no mosaic, no visible squares within the brushwork, no brick courses or mortar. If a gray region exists, keep it flat #555555 in exactly the source position. Full square edge to edge, unchanged framing, no border, text, margin, objects, scenery,3D or photography.",
+        "raw_sha256": "f16151e1675ce435e5d66e24dc901eb8d6024e5a13791955d61dc43a419e7476",
+        "target": [
+          24,
+          24
+        ],
+        "version": 1,
+        "issue": 30,
+        "status": "generated",
+        "source": {
+          "key": "8x8d1-001@32",
+          "source_file": "8X8D1.DAX",
+          "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+          "block": 1,
+          "packed_file_offset": 56,
+          "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+          "source_size": [
+            8,
+            8
+          ],
+          "output_size": [
+            24,
+            24
+          ],
+          "reference_1x": "8x8d1-001@32-1x.png",
+          "reference_3x": "8x8d1-001@32-3x.png",
+          "reference_1x_sha256": "7c8a5f42f3296c9977653bf9ee06c753d414a28fec76358d9efd53dfb15b089a",
+          "reference_3x_sha256": "522fc289224389b0d3bcf91da803210bb6657f01ec8cd902325c45f47fb72cac",
+          "indexed": "8x8d1-001@32.idx",
+          "indexed_sha256": "98438ab6e6a26af00eddcfa1687321916e055119b74db7d85b853488f1fbf1a5",
+          "palette": "8x8d1-001@32.pal",
+          "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": true,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "transparent_index": 13
+        },
+        "request_manifest_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+        "references": [
+          "workplace/hd/requests/b11/8x8d1-001@32-3x.png"
+        ],
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "8x8d1-001@32",
+        "raw": "8x8d1-001@32-r1-raw.png",
+        "raw_sha256": "f16151e1675ce435e5d66e24dc901eb8d6024e5a13791955d61dc43a419e7476",
+        "png": "8x8d1-001@32.png",
+        "png_sha256": "0ee4d45ca93fab91f92dfd540b96978f9c6b4a9e06cb4d5cdf1dbc5440220e56",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source13 neutral-gray mask; outer1px source RGB seam lock"
+      },
+      "numeric": {
+        "key": "8x8d1-001@32",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.5,
+        "median_hue_difference_degrees": 4.373818212388585,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "0ee4d45ca93fab91f92dfd540b96978f9c6b4a9e06cb4d5cdf1dbc5440220e56",
+        "seam_difference": 0,
+        "transparent_region_difference": 0
+      },
+      "visual": {
+        "png_sha256": "0ee4d45ca93fab91f92dfd540b96978f9c6b4a9e06cb4d5cdf1dbc5440220e56",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "8x8d1-001@36",
+      "source": {
+        "key": "8x8d1-001@36",
+        "source_file": "8X8D1.DAX",
+        "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "block": 1,
+        "packed_file_offset": 56,
+        "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+        "source_size": [
+          8,
+          8
+        ],
+        "output_size": [
+          24,
+          24
+        ],
+        "reference_1x": "8x8d1-001@36-1x.png",
+        "reference_3x": "8x8d1-001@36-3x.png",
+        "reference_1x_sha256": "aeb4fddd1806e650f58fc9cc5ff07c675c7539b24fa0f8d7dabc4f0741f31418",
+        "reference_3x_sha256": "ec0502e8e88c30c552cdf3233cdf8c1f80ae86f846a79f0d675d2916279a2b58",
+        "indexed": "8x8d1-001@36.idx",
+        "indexed_sha256": "22071fee4bcffe2cbdaad1ca3eb4c8c08ef98cedb8a6df14cad3386f76d91420",
+        "palette": "8x8d1-001@36.pal",
+        "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": true,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "transparent_index": 13
+      },
+      "generation": {
+        "key": "8x8d1-001@36",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-fe21bbeb-cb76-451b-9ca3-40fc7b40355c.png",
+        "generation": "built-in image_gen; one call per original tile",
+        "prompt": "Use case: style-transfer. Asset type: ONE tiny flat wall texture fragment for an original fantasy CRPG, source 8x8d1-001@36. Repaint this exact single supplied reference as a richly hand-painted 1990s fantasy texture, approved style B. Original is only8x8 pixels; final game tile is24x24. Keep the exact original framing, relative positions of every large light/dark spot, orange-peach wall region, ochre/brown mottling and any flat gray empty region. Preserve the complete original texture pattern, including any little gray edge or corner. It is a FLAT fragment of warm peach/orange mottled plaster or stone, not a new room or a full wall scene. Replace the blocky pixels with smooth continuous brushwork and subtle painted material inside the existing color shapes. Preserve the same lighting and orange/ochre palette. No added brick courses, masonry seams, decorative grooves, objects, scenery, cast shadow, perspective bevel, highlights along the outer frame, letters or border. Gray areas must stay flat neutral #555555; do not fill them with orange texture. Edge-to-edge square with no padding. Not pixel art, mosaic,3D or a photograph.",
+        "raw_sha256": "cfbf91d2104bb5d7d0b8bd74be63572ca3693a2189704c7b573a370fdf5297bc",
+        "target": [
+          24,
+          24
+        ],
+        "version": 0,
+        "issue": 30,
+        "status": "generated",
+        "source": {
+          "key": "8x8d1-001@36",
+          "source_file": "8X8D1.DAX",
+          "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+          "block": 1,
+          "packed_file_offset": 56,
+          "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+          "source_size": [
+            8,
+            8
+          ],
+          "output_size": [
+            24,
+            24
+          ],
+          "reference_1x": "8x8d1-001@36-1x.png",
+          "reference_3x": "8x8d1-001@36-3x.png",
+          "reference_1x_sha256": "aeb4fddd1806e650f58fc9cc5ff07c675c7539b24fa0f8d7dabc4f0741f31418",
+          "reference_3x_sha256": "ec0502e8e88c30c552cdf3233cdf8c1f80ae86f846a79f0d675d2916279a2b58",
+          "indexed": "8x8d1-001@36.idx",
+          "indexed_sha256": "22071fee4bcffe2cbdaad1ca3eb4c8c08ef98cedb8a6df14cad3386f76d91420",
+          "palette": "8x8d1-001@36.pal",
+          "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": true,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "transparent_index": 13
+        },
+        "request_manifest_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+        "references": [
+          "workplace/hd/requests/b11/8x8d1-001@36-3x.png"
+        ],
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "8x8d1-001@36",
+        "raw": "8x8d1-001@36-r0-raw.png",
+        "raw_sha256": "cfbf91d2104bb5d7d0b8bd74be63572ca3693a2189704c7b573a370fdf5297bc",
+        "png": "8x8d1-001@36.png",
+        "png_sha256": "78966a608247f5b3c604321aad655dfc3089eb89bc5b46ced69bf1137e9e3d14",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source13 neutral-gray mask; outer1px source RGB seam lock"
+      },
+      "numeric": {
+        "key": "8x8d1-001@36",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.625,
+        "median_hue_difference_degrees": 6.254215068642901,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "78966a608247f5b3c604321aad655dfc3089eb89bc5b46ced69bf1137e9e3d14",
+        "seam_difference": 0,
+        "transparent_region_difference": 0
+      },
+      "visual": {
+        "png_sha256": "78966a608247f5b3c604321aad655dfc3089eb89bc5b46ced69bf1137e9e3d14",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "8x8d1-001@37",
+      "source": {
+        "key": "8x8d1-001@37",
+        "source_file": "8X8D1.DAX",
+        "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "block": 1,
+        "packed_file_offset": 56,
+        "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+        "source_size": [
+          8,
+          8
+        ],
+        "output_size": [
+          24,
+          24
+        ],
+        "reference_1x": "8x8d1-001@37-1x.png",
+        "reference_3x": "8x8d1-001@37-3x.png",
+        "reference_1x_sha256": "f3321ef89691732a4ae2231463142c70207fc8ecb877c9fc60075a56f03528b0",
+        "reference_3x_sha256": "fde19ac5c49fb21158f2694b63ff6160dbb7fff1504ffeb5e0b6ba9987dcbdaf",
+        "indexed": "8x8d1-001@37.idx",
+        "indexed_sha256": "812a73536bf50b814bbfd2412b6d5739cb1aa510e2e7587bb24807480c4e8b62",
+        "palette": "8x8d1-001@37.pal",
+        "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": true,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "transparent_index": 13
+      },
+      "generation": {
+        "key": "8x8d1-001@37",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-50e77601-3183-4e81-a6af-3a94edbab0d4.png",
+        "generation": "built-in image_gen; one call per original tile",
+        "prompt": "Use case: style-transfer. Asset type: ONE tiny flat wall texture fragment for an original fantasy CRPG, source 8x8d1-001@37. Repaint this exact single supplied reference as a richly hand-painted 1990s fantasy texture, approved style B. Original is only8x8 pixels; final game tile is24x24. Keep the exact original framing, relative positions of every large light/dark spot, orange-peach wall region, ochre/brown mottling and any flat gray empty region. Preserve the complete original texture pattern, including any little gray edge or corner. It is a FLAT fragment of warm peach/orange mottled plaster or stone, not a new room or a full wall scene. Replace the blocky pixels with smooth continuous brushwork and subtle painted material inside the existing color shapes. Preserve the same lighting and orange/ochre palette. No added brick courses, masonry seams, decorative grooves, objects, scenery, cast shadow, perspective bevel, highlights along the outer frame, letters or border. Gray areas must stay flat neutral #555555; do not fill them with orange texture. Edge-to-edge square with no padding. Not pixel art, mosaic,3D or a photograph.",
+        "raw_sha256": "9b356c2a4c4aa48aa9d67053039ae25a3b535ff118ec495b3eaf93f60ae4e5f7",
+        "target": [
+          24,
+          24
+        ],
+        "version": 0,
+        "issue": 30,
+        "status": "generated",
+        "source": {
+          "key": "8x8d1-001@37",
+          "source_file": "8X8D1.DAX",
+          "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+          "block": 1,
+          "packed_file_offset": 56,
+          "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+          "source_size": [
+            8,
+            8
+          ],
+          "output_size": [
+            24,
+            24
+          ],
+          "reference_1x": "8x8d1-001@37-1x.png",
+          "reference_3x": "8x8d1-001@37-3x.png",
+          "reference_1x_sha256": "f3321ef89691732a4ae2231463142c70207fc8ecb877c9fc60075a56f03528b0",
+          "reference_3x_sha256": "fde19ac5c49fb21158f2694b63ff6160dbb7fff1504ffeb5e0b6ba9987dcbdaf",
+          "indexed": "8x8d1-001@37.idx",
+          "indexed_sha256": "812a73536bf50b814bbfd2412b6d5739cb1aa510e2e7587bb24807480c4e8b62",
+          "palette": "8x8d1-001@37.pal",
+          "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": true,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "transparent_index": 13
+        },
+        "request_manifest_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+        "references": [
+          "workplace/hd/requests/b11/8x8d1-001@37-3x.png"
+        ],
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "8x8d1-001@37",
+        "raw": "8x8d1-001@37-r0-raw.png",
+        "raw_sha256": "9b356c2a4c4aa48aa9d67053039ae25a3b535ff118ec495b3eaf93f60ae4e5f7",
+        "png": "8x8d1-001@37.png",
+        "png_sha256": "1a2e440d07983d9ba801bfd15839d874ce2e6c0d5387bcb2df9f87298d2412e6",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source13 neutral-gray mask; outer1px source RGB seam lock"
+      },
+      "numeric": {
+        "key": "8x8d1-001@37",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.75,
+        "median_hue_difference_degrees": 5.3002083154218305,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "1a2e440d07983d9ba801bfd15839d874ce2e6c0d5387bcb2df9f87298d2412e6",
+        "seam_difference": 0,
+        "transparent_region_difference": 0
+      },
+      "visual": {
+        "png_sha256": "1a2e440d07983d9ba801bfd15839d874ce2e6c0d5387bcb2df9f87298d2412e6",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "8x8d1-001@38",
+      "source": {
+        "key": "8x8d1-001@38",
+        "source_file": "8X8D1.DAX",
+        "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "block": 1,
+        "packed_file_offset": 56,
+        "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+        "source_size": [
+          8,
+          8
+        ],
+        "output_size": [
+          24,
+          24
+        ],
+        "reference_1x": "8x8d1-001@38-1x.png",
+        "reference_3x": "8x8d1-001@38-3x.png",
+        "reference_1x_sha256": "39bb841b62159b4c01004794c3cac6ac783fbe7d0eeda9d43ff5d646e721a16c",
+        "reference_3x_sha256": "588af983320b90826e0eb10159e1d236e4714bd2b1ce117daf98de70dd2d16ca",
+        "indexed": "8x8d1-001@38.idx",
+        "indexed_sha256": "8571df0505d5356e0bf9a21c8c310e677cf32c70920b653f07fe6be172e44c9e",
+        "palette": "8x8d1-001@38.pal",
+        "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": true,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "transparent_index": 13
+      },
+      "generation": {
+        "key": "8x8d1-001@38",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-78915129-09b2-44dc-b3d8-3dd4d232d64b.png",
+        "generation": "built-in image_gen; one call per original tile",
+        "prompt": "Use case: style-transfer. Asset type: ONE tiny flat wall texture fragment for an original fantasy CRPG, source 8x8d1-001@38. Repaint this exact single supplied reference as a richly hand-painted 1990s fantasy texture, approved style B. Original is only8x8 pixels; final game tile is24x24. Keep the exact original framing, relative positions of every large light/dark spot, orange-peach wall region, ochre/brown mottling and any flat gray empty region. Preserve the complete original texture pattern, including any little gray edge or corner. It is a FLAT fragment of warm peach/orange mottled plaster or stone, not a new room or a full wall scene. Replace the blocky pixels with smooth continuous brushwork and subtle painted material inside the existing color shapes. Preserve the same lighting and orange/ochre palette. No added brick courses, masonry seams, decorative grooves, objects, scenery, cast shadow, perspective bevel, highlights along the outer frame, letters or border. Gray areas must stay flat neutral #555555; do not fill them with orange texture. Edge-to-edge square with no padding. Not pixel art, mosaic,3D or a photograph.",
+        "raw_sha256": "947c863496dfe52641a4596558d824126db4bbe2f6052ee280a8945c08947212",
+        "target": [
+          24,
+          24
+        ],
+        "version": 0,
+        "issue": 30,
+        "status": "generated",
+        "source": {
+          "key": "8x8d1-001@38",
+          "source_file": "8X8D1.DAX",
+          "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+          "block": 1,
+          "packed_file_offset": 56,
+          "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+          "source_size": [
+            8,
+            8
+          ],
+          "output_size": [
+            24,
+            24
+          ],
+          "reference_1x": "8x8d1-001@38-1x.png",
+          "reference_3x": "8x8d1-001@38-3x.png",
+          "reference_1x_sha256": "39bb841b62159b4c01004794c3cac6ac783fbe7d0eeda9d43ff5d646e721a16c",
+          "reference_3x_sha256": "588af983320b90826e0eb10159e1d236e4714bd2b1ce117daf98de70dd2d16ca",
+          "indexed": "8x8d1-001@38.idx",
+          "indexed_sha256": "8571df0505d5356e0bf9a21c8c310e677cf32c70920b653f07fe6be172e44c9e",
+          "palette": "8x8d1-001@38.pal",
+          "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": true,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "transparent_index": 13
+        },
+        "request_manifest_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+        "references": [
+          "workplace/hd/requests/b11/8x8d1-001@38-3x.png"
+        ],
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "8x8d1-001@38",
+        "raw": "8x8d1-001@38-r0-raw.png",
+        "raw_sha256": "947c863496dfe52641a4596558d824126db4bbe2f6052ee280a8945c08947212",
+        "png": "8x8d1-001@38.png",
+        "png_sha256": "f5b15c38edbd434102ced82b9f856b577dc2e8c55975afff0c6869cb98e00468",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source13 neutral-gray mask; outer1px source RGB seam lock"
+      },
+      "numeric": {
+        "key": "8x8d1-001@38",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.75,
+        "median_hue_difference_degrees": 5.935182483616716,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "f5b15c38edbd434102ced82b9f856b577dc2e8c55975afff0c6869cb98e00468",
+        "seam_difference": 0,
+        "transparent_region_difference": 0
+      },
+      "visual": {
+        "png_sha256": "f5b15c38edbd434102ced82b9f856b577dc2e8c55975afff0c6869cb98e00468",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "8x8d1-001@40",
+      "source": {
+        "key": "8x8d1-001@40",
+        "source_file": "8X8D1.DAX",
+        "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "block": 1,
+        "packed_file_offset": 56,
+        "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+        "source_size": [
+          8,
+          8
+        ],
+        "output_size": [
+          24,
+          24
+        ],
+        "reference_1x": "8x8d1-001@40-1x.png",
+        "reference_3x": "8x8d1-001@40-3x.png",
+        "reference_1x_sha256": "dc3a9de20ba8c75db1eb2cf18222358fb3d520144316a48501b7274764f1fdf0",
+        "reference_3x_sha256": "1414cb941cf4af77f59945dbf27f99b8be05ce05fe40427bfc451c7e4a9f7f17",
+        "indexed": "8x8d1-001@40.idx",
+        "indexed_sha256": "2339f6113431a9ed0057313f69031aceb3b043b05a26181ac613c18dfe4a722f",
+        "palette": "8x8d1-001@40.pal",
+        "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": true,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "transparent_index": 13
+      },
+      "generation": {
+        "key": "8x8d1-001@40",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-6293d52b-bd9c-40c2-8f59-e7101a005633.png",
+        "generation": "built-in image_gen; one call per original tile",
+        "prompt": "Use case: style-transfer. Asset type: ONE tiny flat wall texture fragment for an original fantasy CRPG, source 8x8d1-001@40. Repaint this exact single supplied reference as a richly hand-painted 1990s fantasy texture, approved style B. Original is only8x8 pixels; final game tile is24x24. Keep the exact original framing, relative positions of every large light/dark spot, orange-peach wall region, ochre/brown mottling and any flat gray empty region. Preserve the complete original texture pattern, including any little gray edge or corner. It is a FLAT fragment of warm peach/orange mottled plaster or stone, not a new room or a full wall scene. Replace the blocky pixels with smooth continuous brushwork and subtle painted material inside the existing color shapes. Preserve the same lighting and orange/ochre palette. No added brick courses, masonry seams, decorative grooves, objects, scenery, cast shadow, perspective bevel, highlights along the outer frame, letters or border. Gray areas must stay flat neutral #555555; do not fill them with orange texture. Edge-to-edge square with no padding. Not pixel art, mosaic,3D or a photograph.",
+        "raw_sha256": "dea83abac8ad0e47a9defc493355a66c02904308036acd2f625bfef6b4dde2ee",
+        "target": [
+          24,
+          24
+        ],
+        "version": 0,
+        "issue": 30,
+        "status": "generated",
+        "source": {
+          "key": "8x8d1-001@40",
+          "source_file": "8X8D1.DAX",
+          "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+          "block": 1,
+          "packed_file_offset": 56,
+          "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+          "source_size": [
+            8,
+            8
+          ],
+          "output_size": [
+            24,
+            24
+          ],
+          "reference_1x": "8x8d1-001@40-1x.png",
+          "reference_3x": "8x8d1-001@40-3x.png",
+          "reference_1x_sha256": "dc3a9de20ba8c75db1eb2cf18222358fb3d520144316a48501b7274764f1fdf0",
+          "reference_3x_sha256": "1414cb941cf4af77f59945dbf27f99b8be05ce05fe40427bfc451c7e4a9f7f17",
+          "indexed": "8x8d1-001@40.idx",
+          "indexed_sha256": "2339f6113431a9ed0057313f69031aceb3b043b05a26181ac613c18dfe4a722f",
+          "palette": "8x8d1-001@40.pal",
+          "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": true,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "transparent_index": 13
+        },
+        "request_manifest_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+        "references": [
+          "workplace/hd/requests/b11/8x8d1-001@40-3x.png"
+        ],
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "8x8d1-001@40",
+        "raw": "8x8d1-001@40-r0-raw.png",
+        "raw_sha256": "dea83abac8ad0e47a9defc493355a66c02904308036acd2f625bfef6b4dde2ee",
+        "png": "8x8d1-001@40.png",
+        "png_sha256": "9699dd1e24a9a36e54cc1c1bb10bf32c1e657f8da9fb9cdb903e513192cd247e",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source13 neutral-gray mask; outer1px source RGB seam lock"
+      },
+      "numeric": {
+        "key": "8x8d1-001@40",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.625,
+        "median_hue_difference_degrees": 5.687927275936628,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "9699dd1e24a9a36e54cc1c1bb10bf32c1e657f8da9fb9cdb903e513192cd247e",
+        "seam_difference": 0,
+        "transparent_region_difference": 0
+      },
+      "visual": {
+        "png_sha256": "9699dd1e24a9a36e54cc1c1bb10bf32c1e657f8da9fb9cdb903e513192cd247e",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "8x8d1-001@41",
+      "source": {
+        "key": "8x8d1-001@41",
+        "source_file": "8X8D1.DAX",
+        "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "block": 1,
+        "packed_file_offset": 56,
+        "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+        "source_size": [
+          8,
+          8
+        ],
+        "output_size": [
+          24,
+          24
+        ],
+        "reference_1x": "8x8d1-001@41-1x.png",
+        "reference_3x": "8x8d1-001@41-3x.png",
+        "reference_1x_sha256": "b6ac801f0d4032dba1065fbd957228d57577a842255b2464c4b105c71e9862cc",
+        "reference_3x_sha256": "275679d47eedfc7159e2404c0e6b1a112932fccee543a00fe44a6ecd12a66ec2",
+        "indexed": "8x8d1-001@41.idx",
+        "indexed_sha256": "e633d48a45b68350d7016627962ac7ae3da22d10c153cfe86c878e28a8a0cd78",
+        "palette": "8x8d1-001@41.pal",
+        "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": true,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "transparent_index": 13
+      },
+      "generation": {
+        "key": "8x8d1-001@41",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-c149afd2-f9e7-43ae-9e95-c3e81a2ae014.png",
+        "generation": "built-in image_gen; one call per original tile",
+        "prompt": "Use case: style-transfer. Asset type: ONE tiny flat wall texture fragment for an original fantasy CRPG, source 8x8d1-001@41. Repaint this exact single supplied reference as a richly hand-painted 1990s fantasy texture, approved style B. Original is only8x8 pixels; final game tile is24x24. Keep the exact original framing, relative positions of every large light/dark spot, orange-peach wall region, ochre/brown mottling and any flat gray empty region. Preserve the complete original texture pattern, including any little gray edge or corner. It is a FLAT fragment of warm peach/orange mottled plaster or stone, not a new room or a full wall scene. Replace the blocky pixels with smooth continuous brushwork and subtle painted material inside the existing color shapes. Preserve the same lighting and orange/ochre palette. No added brick courses, masonry seams, decorative grooves, objects, scenery, cast shadow, perspective bevel, highlights along the outer frame, letters or border. Gray areas must stay flat neutral #555555; do not fill them with orange texture. Edge-to-edge square with no padding. Not pixel art, mosaic,3D or a photograph.",
+        "raw_sha256": "e50f68ffa3329a876ff77948f568ac1450773ffb67671482f98c1b521de849fb",
+        "target": [
+          24,
+          24
+        ],
+        "version": 0,
+        "issue": 30,
+        "status": "generated",
+        "source": {
+          "key": "8x8d1-001@41",
+          "source_file": "8X8D1.DAX",
+          "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+          "block": 1,
+          "packed_file_offset": 56,
+          "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+          "source_size": [
+            8,
+            8
+          ],
+          "output_size": [
+            24,
+            24
+          ],
+          "reference_1x": "8x8d1-001@41-1x.png",
+          "reference_3x": "8x8d1-001@41-3x.png",
+          "reference_1x_sha256": "b6ac801f0d4032dba1065fbd957228d57577a842255b2464c4b105c71e9862cc",
+          "reference_3x_sha256": "275679d47eedfc7159e2404c0e6b1a112932fccee543a00fe44a6ecd12a66ec2",
+          "indexed": "8x8d1-001@41.idx",
+          "indexed_sha256": "e633d48a45b68350d7016627962ac7ae3da22d10c153cfe86c878e28a8a0cd78",
+          "palette": "8x8d1-001@41.pal",
+          "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": true,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "transparent_index": 13
+        },
+        "request_manifest_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+        "references": [
+          "workplace/hd/requests/b11/8x8d1-001@41-3x.png"
+        ],
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "8x8d1-001@41",
+        "raw": "8x8d1-001@41-r0-raw.png",
+        "raw_sha256": "e50f68ffa3329a876ff77948f568ac1450773ffb67671482f98c1b521de849fb",
+        "png": "8x8d1-001@41.png",
+        "png_sha256": "71010160fb771a5e8e342233220f1ca82c699eba2e0122a67bc4757cafd35596",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source13 neutral-gray mask; outer1px source RGB seam lock"
+      },
+      "numeric": {
+        "key": "8x8d1-001@41",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.875,
+        "median_hue_difference_degrees": 6.2276117059580365,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "71010160fb771a5e8e342233220f1ca82c699eba2e0122a67bc4757cafd35596",
+        "seam_difference": 0,
+        "transparent_region_difference": 0
+      },
+      "visual": {
+        "png_sha256": "71010160fb771a5e8e342233220f1ca82c699eba2e0122a67bc4757cafd35596",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "8x8d1-001@42",
+      "source": {
+        "key": "8x8d1-001@42",
+        "source_file": "8X8D1.DAX",
+        "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "block": 1,
+        "packed_file_offset": 56,
+        "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+        "source_size": [
+          8,
+          8
+        ],
+        "output_size": [
+          24,
+          24
+        ],
+        "reference_1x": "8x8d1-001@42-1x.png",
+        "reference_3x": "8x8d1-001@42-3x.png",
+        "reference_1x_sha256": "d5b8ca3786c482429f5ca0dbdf7736fa6fe830b6ebf2f184e1c5224261436bc7",
+        "reference_3x_sha256": "f5664d7017367e27dfc27280d7a0e6c337ee79f5d9d0dbf37f8b93ada4db82dc",
+        "indexed": "8x8d1-001@42.idx",
+        "indexed_sha256": "b2e292f677c78c49ba422dbe57970c1edccdc549c0b6ede890af720f13553111",
+        "palette": "8x8d1-001@42.pal",
+        "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": true,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "transparent_index": 13
+      },
+      "generation": {
+        "key": "8x8d1-001@42",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-dfe6c901-d593-414f-915d-eb51fffc4891.png",
+        "generation": "built-in image_gen; one call per original tile",
+        "prompt": "Use case: style-transfer. Asset type: ONE tiny flat wall texture fragment for an original fantasy CRPG, source 8x8d1-001@42. Repaint this exact single supplied reference as a richly hand-painted 1990s fantasy texture, approved style B. Original is only8x8 pixels; final game tile is24x24. Keep the exact original framing, relative positions of every large light/dark spot, orange-peach wall region, ochre/brown mottling and any flat gray empty region. Preserve the complete original texture pattern, including any little gray edge or corner. It is a FLAT fragment of warm peach/orange mottled plaster or stone, not a new room or a full wall scene. Replace the blocky pixels with smooth continuous brushwork and subtle painted material inside the existing color shapes. Preserve the same lighting and orange/ochre palette. No added brick courses, masonry seams, decorative grooves, objects, scenery, cast shadow, perspective bevel, highlights along the outer frame, letters or border. Gray areas must stay flat neutral #555555; do not fill them with orange texture. Edge-to-edge square with no padding. Not pixel art, mosaic,3D or a photograph.",
+        "raw_sha256": "2a0b8c5a648297c988cae6174b6675595a58e633f79016bbc6b61f9ae5e127d2",
+        "target": [
+          24,
+          24
+        ],
+        "version": 0,
+        "issue": 30,
+        "status": "generated",
+        "source": {
+          "key": "8x8d1-001@42",
+          "source_file": "8X8D1.DAX",
+          "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+          "block": 1,
+          "packed_file_offset": 56,
+          "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+          "source_size": [
+            8,
+            8
+          ],
+          "output_size": [
+            24,
+            24
+          ],
+          "reference_1x": "8x8d1-001@42-1x.png",
+          "reference_3x": "8x8d1-001@42-3x.png",
+          "reference_1x_sha256": "d5b8ca3786c482429f5ca0dbdf7736fa6fe830b6ebf2f184e1c5224261436bc7",
+          "reference_3x_sha256": "f5664d7017367e27dfc27280d7a0e6c337ee79f5d9d0dbf37f8b93ada4db82dc",
+          "indexed": "8x8d1-001@42.idx",
+          "indexed_sha256": "b2e292f677c78c49ba422dbe57970c1edccdc549c0b6ede890af720f13553111",
+          "palette": "8x8d1-001@42.pal",
+          "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": true,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "transparent_index": 13
+        },
+        "request_manifest_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+        "references": [
+          "workplace/hd/requests/b11/8x8d1-001@42-3x.png"
+        ],
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "8x8d1-001@42",
+        "raw": "8x8d1-001@42-r0-raw.png",
+        "raw_sha256": "2a0b8c5a648297c988cae6174b6675595a58e633f79016bbc6b61f9ae5e127d2",
+        "png": "8x8d1-001@42.png",
+        "png_sha256": "33f9a721a267dd75a75305c1b3934017ef585951a301a7d6a174cf9b2e4fa987",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source13 neutral-gray mask; outer1px source RGB seam lock"
+      },
+      "numeric": {
+        "key": "8x8d1-001@42",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.5,
+        "median_hue_difference_degrees": 5.2097737821340875,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "33f9a721a267dd75a75305c1b3934017ef585951a301a7d6a174cf9b2e4fa987",
+        "seam_difference": 0,
+        "transparent_region_difference": 0
+      },
+      "visual": {
+        "png_sha256": "33f9a721a267dd75a75305c1b3934017ef585951a301a7d6a174cf9b2e4fa987",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "8x8d1-001@43",
+      "source": {
+        "key": "8x8d1-001@43",
+        "source_file": "8X8D1.DAX",
+        "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "block": 1,
+        "packed_file_offset": 56,
+        "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+        "source_size": [
+          8,
+          8
+        ],
+        "output_size": [
+          24,
+          24
+        ],
+        "reference_1x": "8x8d1-001@43-1x.png",
+        "reference_3x": "8x8d1-001@43-3x.png",
+        "reference_1x_sha256": "e6e108f01857d327d899471663129615c4369b738b6c178687c26a8469267415",
+        "reference_3x_sha256": "7eb6a7ac4180bb806ec57cebdeca50db752644fac850ad0cf2348fdc8823c59d",
+        "indexed": "8x8d1-001@43.idx",
+        "indexed_sha256": "3582aef5f6c4a02841aba0c5dc0c615431e9d3338b87f112f8c78ddc2f8212ab",
+        "palette": "8x8d1-001@43.pal",
+        "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": true,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "transparent_index": 13
+      },
+      "generation": {
+        "key": "8x8d1-001@43",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-6267bd46-96be-431d-bae8-7409b44fdbfc.png",
+        "generation": "built-in image_gen; one call per original tile",
+        "prompt": "Use case: style-transfer. Refine the supplied EXACT abstract wall texture image in place into a hand-painted gouache fantasy-game texture. Keep ALL original color regions in their exact locations, sizes, connected shapes and boundaries, including every peach gap, ochre edge and tan/brown band. Do not recompose it as isolated scattered spots. Do not add or remove shapes or create a new pattern. The entire source square is the strict underdrawing: trace its principal regions exactly, apply only subtle fine material brushwork within them and gently soften pixel stair steps into continuous organic contours without moving them. Preserve the source's light peach/salmon, ochre-yellow, medium tan and warm brown palette, original relative brightness and sharp contrast boundaries. Flat straight-on two-dimensional texture, not a room, relief, stone sculpture, cracks or perspective surface. Approved1990s fantasy hand-painted style B. Edge-to-edge square, unchanged framing, final game asset24x24. No dark vignette, directional shadow, border, frame, margin, text, bricks, mortar, objects,3D, photo, pixel grid or mosaic. This is a faithful repaint of this particular exact pattern, not an invitation to invent different mottling.",
+        "references": [
+          "workplace/hd/out/b11/guidance/8x8d1-001@43-original-384.png"
+        ],
+        "raw_sha256": "1eb6345961315f2b6c0d271c1eeb2d7467fea14b4026472d3795f9bcc055cca7",
+        "target": [
+          24,
+          24
+        ],
+        "version": 2,
+        "issue": 30,
+        "status": "generated",
+        "source": {
+          "key": "8x8d1-001@43",
+          "source_file": "8X8D1.DAX",
+          "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+          "block": 1,
+          "packed_file_offset": 56,
+          "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+          "source_size": [
+            8,
+            8
+          ],
+          "output_size": [
+            24,
+            24
+          ],
+          "reference_1x": "8x8d1-001@43-1x.png",
+          "reference_3x": "8x8d1-001@43-3x.png",
+          "reference_1x_sha256": "e6e108f01857d327d899471663129615c4369b738b6c178687c26a8469267415",
+          "reference_3x_sha256": "7eb6a7ac4180bb806ec57cebdeca50db752644fac850ad0cf2348fdc8823c59d",
+          "indexed": "8x8d1-001@43.idx",
+          "indexed_sha256": "3582aef5f6c4a02841aba0c5dc0c615431e9d3338b87f112f8c78ddc2f8212ab",
+          "palette": "8x8d1-001@43.pal",
+          "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": true,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "transparent_index": 13
+        },
+        "request_manifest_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+        "reference_sha256": {
+          "workplace/hd/out/b11/guidance/8x8d1-001@43-original-384.png": "7bb8ee97728a004e117433245fed438e6038544eaa90f3e75da046483d0776b9"
+        },
+        "reference_resize": "nearest-neighbour original source; visual guidance only",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "8x8d1-001@43",
+        "raw": "8x8d1-001@43-r2-raw.png",
+        "raw_sha256": "1eb6345961315f2b6c0d271c1eeb2d7467fea14b4026472d3795f9bcc055cca7",
+        "png": "8x8d1-001@43.png",
+        "png_sha256": "dc66f049befc1c625a505db4dafb6e3fe585976ba9f987ecc2a67e382664c4e4",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source13 neutral-gray mask; outer1px source RGB seam lock"
+      },
+      "numeric": {
+        "key": "8x8d1-001@43",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.75,
+        "median_hue_difference_degrees": 1.1356521260927774,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "dc66f049befc1c625a505db4dafb6e3fe585976ba9f987ecc2a67e382664c4e4",
+        "seam_difference": 0,
+        "transparent_region_difference": 0
+      },
+      "visual": {
+        "png_sha256": "dc66f049befc1c625a505db4dafb6e3fe585976ba9f987ecc2a67e382664c4e4",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "8x8d1-001@44",
+      "source": {
+        "key": "8x8d1-001@44",
+        "source_file": "8X8D1.DAX",
+        "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "block": 1,
+        "packed_file_offset": 56,
+        "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+        "source_size": [
+          8,
+          8
+        ],
+        "output_size": [
+          24,
+          24
+        ],
+        "reference_1x": "8x8d1-001@44-1x.png",
+        "reference_3x": "8x8d1-001@44-3x.png",
+        "reference_1x_sha256": "c9cb8633a9ca788591256b32bfcc9b82e862cea2c97e41c295d3d8e2defa9222",
+        "reference_3x_sha256": "38a26938091ecd5e899ad7104e2889c851888c5b8360699fd8558e6a7ad24f8c",
+        "indexed": "8x8d1-001@44.idx",
+        "indexed_sha256": "55598827dfd96fb9fd1bbe63ed268a4e34d3cf07880d554e274b9548e5860149",
+        "palette": "8x8d1-001@44.pal",
+        "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": true,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "transparent_index": 13
+      },
+      "generation": {
+        "key": "8x8d1-001@44",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-c331c917-9c21-4801-a208-2fc1e20fe175.png",
+        "generation": "built-in image_gen; one call per original tile",
+        "prompt": "Use case: style-transfer. Asset type: ONE tiny flat wall texture fragment for an original fantasy CRPG, source 8x8d1-001@44. Repaint this exact single supplied reference as a richly hand-painted 1990s fantasy texture, approved style B. Original is only8x8 pixels; final game tile is24x24. Keep the exact original framing, relative positions of every large light/dark spot, orange-peach wall region, ochre/brown mottling and any flat gray empty region. Preserve the complete original texture pattern, including any little gray edge or corner. It is a FLAT fragment of warm peach/orange mottled plaster or stone, not a new room or a full wall scene. Replace the blocky pixels with smooth continuous brushwork and subtle painted material inside the existing color shapes. Preserve the same lighting and orange/ochre palette. No added brick courses, masonry seams, decorative grooves, objects, scenery, cast shadow, perspective bevel, highlights along the outer frame, letters or border. Gray areas must stay flat neutral #555555; do not fill them with orange texture. Edge-to-edge square with no padding. Not pixel art, mosaic,3D or a photograph.",
+        "raw_sha256": "6ba527b8ad012206e7f97b9ea1e4f1eb39f14f5e2f86103fb454278011005559",
+        "target": [
+          24,
+          24
+        ],
+        "version": 0,
+        "issue": 30,
+        "status": "generated",
+        "source": {
+          "key": "8x8d1-001@44",
+          "source_file": "8X8D1.DAX",
+          "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+          "block": 1,
+          "packed_file_offset": 56,
+          "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+          "source_size": [
+            8,
+            8
+          ],
+          "output_size": [
+            24,
+            24
+          ],
+          "reference_1x": "8x8d1-001@44-1x.png",
+          "reference_3x": "8x8d1-001@44-3x.png",
+          "reference_1x_sha256": "c9cb8633a9ca788591256b32bfcc9b82e862cea2c97e41c295d3d8e2defa9222",
+          "reference_3x_sha256": "38a26938091ecd5e899ad7104e2889c851888c5b8360699fd8558e6a7ad24f8c",
+          "indexed": "8x8d1-001@44.idx",
+          "indexed_sha256": "55598827dfd96fb9fd1bbe63ed268a4e34d3cf07880d554e274b9548e5860149",
+          "palette": "8x8d1-001@44.pal",
+          "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": true,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "transparent_index": 13
+        },
+        "request_manifest_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+        "references": [
+          "workplace/hd/requests/b11/8x8d1-001@44-3x.png"
+        ],
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "8x8d1-001@44",
+        "raw": "8x8d1-001@44-r0-raw.png",
+        "raw_sha256": "6ba527b8ad012206e7f97b9ea1e4f1eb39f14f5e2f86103fb454278011005559",
+        "png": "8x8d1-001@44.png",
+        "png_sha256": "71f127cfe6a0cebf74f4ef292688981c0a8ac5ea8d8236cd6df1087b774f8914",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source13 neutral-gray mask; outer1px source RGB seam lock"
+      },
+      "numeric": {
+        "key": "8x8d1-001@44",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.875,
+        "median_hue_difference_degrees": 5.184870472195444,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "71f127cfe6a0cebf74f4ef292688981c0a8ac5ea8d8236cd6df1087b774f8914",
+        "seam_difference": 0,
+        "transparent_region_difference": 0
+      },
+      "visual": {
+        "png_sha256": "71f127cfe6a0cebf74f4ef292688981c0a8ac5ea8d8236cd6df1087b774f8914",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "8x8d1-001@46",
+      "source": {
+        "key": "8x8d1-001@46",
+        "source_file": "8X8D1.DAX",
+        "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "block": 1,
+        "packed_file_offset": 56,
+        "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+        "source_size": [
+          8,
+          8
+        ],
+        "output_size": [
+          24,
+          24
+        ],
+        "reference_1x": "8x8d1-001@46-1x.png",
+        "reference_3x": "8x8d1-001@46-3x.png",
+        "reference_1x_sha256": "eb4f62dd07e7014abfade93f5fec04863bdabd15ce6223383973aef2ea68bd0f",
+        "reference_3x_sha256": "7e20f3f13fd70a2c44d5bd286007088939630831f3fbd033a147215adfaf92ec",
+        "indexed": "8x8d1-001@46.idx",
+        "indexed_sha256": "390fbde0d864227a0774cf37a30141801ddf755f0bbc25d8c7c97ca057338be2",
+        "palette": "8x8d1-001@46.pal",
+        "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": true,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "transparent_index": 13
+      },
+      "generation": {
+        "key": "8x8d1-001@46",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-79dc03e0-33d3-4da8-9a2a-4201548e4ff3.png",
+        "generation": "built-in image_gen; one call per original tile",
+        "prompt": "Use case: style-transfer. Refine the supplied EXACT abstract wall texture image in place into a hand-painted gouache fantasy-game texture. Keep ALL original color regions in their exact locations, sizes, connected shapes and boundaries, including every peach gap, ochre edge and tan/brown band. Do not recompose it as isolated scattered spots. Do not add or remove shapes or create a new pattern. The entire source square is the strict underdrawing: trace its principal regions exactly, apply only subtle fine material brushwork within them and gently soften pixel stair steps into continuous organic contours without moving them. Preserve the source's light peach/salmon, ochre-yellow, medium tan and warm brown palette, original relative brightness and sharp contrast boundaries. Flat straight-on two-dimensional texture, not a room, relief, stone sculpture, cracks or perspective surface. Approved1990s fantasy hand-painted style B. Edge-to-edge square, unchanged framing, final game asset24x24. No dark vignette, directional shadow, border, frame, margin, text, bricks, mortar, objects,3D, photo, pixel grid or mosaic. This is a faithful repaint of this particular exact pattern, not an invitation to invent different mottling.",
+        "references": [
+          "workplace/hd/out/b11/guidance/8x8d1-001@46-original-384.png"
+        ],
+        "raw_sha256": "5b63dc132147b4ccde8fb8e106b86f6ff4c1eeeefd5ad1879fe0daef2e050686",
+        "target": [
+          24,
+          24
+        ],
+        "version": 2,
+        "issue": 30,
+        "status": "generated",
+        "source": {
+          "key": "8x8d1-001@46",
+          "source_file": "8X8D1.DAX",
+          "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+          "block": 1,
+          "packed_file_offset": 56,
+          "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+          "source_size": [
+            8,
+            8
+          ],
+          "output_size": [
+            24,
+            24
+          ],
+          "reference_1x": "8x8d1-001@46-1x.png",
+          "reference_3x": "8x8d1-001@46-3x.png",
+          "reference_1x_sha256": "eb4f62dd07e7014abfade93f5fec04863bdabd15ce6223383973aef2ea68bd0f",
+          "reference_3x_sha256": "7e20f3f13fd70a2c44d5bd286007088939630831f3fbd033a147215adfaf92ec",
+          "indexed": "8x8d1-001@46.idx",
+          "indexed_sha256": "390fbde0d864227a0774cf37a30141801ddf755f0bbc25d8c7c97ca057338be2",
+          "palette": "8x8d1-001@46.pal",
+          "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": true,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "transparent_index": 13
+        },
+        "request_manifest_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+        "reference_sha256": {
+          "workplace/hd/out/b11/guidance/8x8d1-001@46-original-384.png": "4562731a64d4e989161733026236d6d5bb24837ccabbf78d01ff89825eb675cb"
+        },
+        "reference_resize": "nearest-neighbour original source; visual guidance only",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "8x8d1-001@46",
+        "raw": "8x8d1-001@46-r2-raw.png",
+        "raw_sha256": "5b63dc132147b4ccde8fb8e106b86f6ff4c1eeeefd5ad1879fe0daef2e050686",
+        "png": "8x8d1-001@46.png",
+        "png_sha256": "ac37415864d5c10b607ab29322e54ffcb5bdf47dbf2c504a22ea1e7d5216091b",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source13 neutral-gray mask; outer1px source RGB seam lock"
+      },
+      "numeric": {
+        "key": "8x8d1-001@46",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.75,
+        "median_hue_difference_degrees": 0.4839742350391312,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "ac37415864d5c10b607ab29322e54ffcb5bdf47dbf2c504a22ea1e7d5216091b",
+        "seam_difference": 0,
+        "transparent_region_difference": 0
+      },
+      "visual": {
+        "png_sha256": "ac37415864d5c10b607ab29322e54ffcb5bdf47dbf2c504a22ea1e7d5216091b",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "8x8d1-001@47",
+      "source": {
+        "key": "8x8d1-001@47",
+        "source_file": "8X8D1.DAX",
+        "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "block": 1,
+        "packed_file_offset": 56,
+        "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+        "source_size": [
+          8,
+          8
+        ],
+        "output_size": [
+          24,
+          24
+        ],
+        "reference_1x": "8x8d1-001@47-1x.png",
+        "reference_3x": "8x8d1-001@47-3x.png",
+        "reference_1x_sha256": "12aaaf7697529c0d8948991b45b87da82e59b99334e99bc5b7ab37d9e2775e75",
+        "reference_3x_sha256": "68bd3a014a4c81fb3b63ca4fb996590dd30c89881f26097e66b69fd34b04c270",
+        "indexed": "8x8d1-001@47.idx",
+        "indexed_sha256": "6ee6fc904dd9c9b2ec5463d77b9e4b83ca78441512956f8aa4cdabe6cab3ac05",
+        "palette": "8x8d1-001@47.pal",
+        "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": true,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "transparent_index": 13
+      },
+      "generation": {
+        "key": "8x8d1-001@47",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-9ca17f3e-46f2-4674-99c0-a432033caa52.png",
+        "generation": "built-in image_gen; one call per original tile",
+        "prompt": "Use case: style-transfer. Asset type: ONE tiny flat wall texture fragment for an original fantasy CRPG, source 8x8d1-001@47. Repaint this exact single supplied reference as a richly hand-painted 1990s fantasy texture, approved style B. Original is only8x8 pixels; final game tile is24x24. Keep the exact original framing, relative positions of every large light/dark spot, orange-peach wall region, ochre/brown mottling and any flat gray empty region. Preserve the complete original texture pattern, including any little gray edge or corner. It is a FLAT fragment of warm peach/orange mottled plaster or stone, not a new room or a full wall scene. Replace the blocky pixels with smooth continuous brushwork and subtle painted material inside the existing color shapes. Preserve the same lighting and orange/ochre palette. No added brick courses, masonry seams, decorative grooves, objects, scenery, cast shadow, perspective bevel, highlights along the outer frame, letters or border. Gray areas must stay flat neutral #555555; do not fill them with orange texture. Edge-to-edge square with no padding. Not pixel art, mosaic,3D or a photograph.",
+        "raw_sha256": "55625ecf525e9c885a2c818df35cd52eadc707dbe1e091fe8593004ea9235273",
+        "target": [
+          24,
+          24
+        ],
+        "version": 0,
+        "issue": 30,
+        "status": "generated",
+        "source": {
+          "key": "8x8d1-001@47",
+          "source_file": "8X8D1.DAX",
+          "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+          "block": 1,
+          "packed_file_offset": 56,
+          "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+          "source_size": [
+            8,
+            8
+          ],
+          "output_size": [
+            24,
+            24
+          ],
+          "reference_1x": "8x8d1-001@47-1x.png",
+          "reference_3x": "8x8d1-001@47-3x.png",
+          "reference_1x_sha256": "12aaaf7697529c0d8948991b45b87da82e59b99334e99bc5b7ab37d9e2775e75",
+          "reference_3x_sha256": "68bd3a014a4c81fb3b63ca4fb996590dd30c89881f26097e66b69fd34b04c270",
+          "indexed": "8x8d1-001@47.idx",
+          "indexed_sha256": "6ee6fc904dd9c9b2ec5463d77b9e4b83ca78441512956f8aa4cdabe6cab3ac05",
+          "palette": "8x8d1-001@47.pal",
+          "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": true,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "transparent_index": 13
+        },
+        "request_manifest_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+        "references": [
+          "workplace/hd/requests/b11/8x8d1-001@47-3x.png"
+        ],
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "8x8d1-001@47",
+        "raw": "8x8d1-001@47-r0-raw.png",
+        "raw_sha256": "55625ecf525e9c885a2c818df35cd52eadc707dbe1e091fe8593004ea9235273",
+        "png": "8x8d1-001@47.png",
+        "png_sha256": "482b519f33188f49ab33b33c734a0eeb2e87e881953eebf583e77787c4c723e9",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source13 neutral-gray mask; outer1px source RGB seam lock"
+      },
+      "numeric": {
+        "key": "8x8d1-001@47",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.875,
+        "median_hue_difference_degrees": 6.8086496882369545,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "482b519f33188f49ab33b33c734a0eeb2e87e881953eebf583e77787c4c723e9",
+        "seam_difference": 0,
+        "transparent_region_difference": 0
+      },
+      "visual": {
+        "png_sha256": "482b519f33188f49ab33b33c734a0eeb2e87e881953eebf583e77787c4c723e9",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "8x8d1-001@55",
+      "source": {
+        "key": "8x8d1-001@55",
+        "source_file": "8X8D1.DAX",
+        "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "block": 1,
+        "packed_file_offset": 56,
+        "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+        "source_size": [
+          8,
+          8
+        ],
+        "output_size": [
+          24,
+          24
+        ],
+        "reference_1x": "8x8d1-001@55-1x.png",
+        "reference_3x": "8x8d1-001@55-3x.png",
+        "reference_1x_sha256": "ced17317ac6973471759e1a1cc7096d28e0d7e58e0a146bffcae520d8dbb6ee3",
+        "reference_3x_sha256": "36828ce43b798950d2ac7b9d6279cb2e17d8f40349cc3962e1d6820818501e27",
+        "indexed": "8x8d1-001@55.idx",
+        "indexed_sha256": "9e7becb32c97e758d775e3e1c7df675f3cfe534837784bdf153a9a5876aee4cc",
+        "palette": "8x8d1-001@55.pal",
+        "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": true,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "transparent_index": 13
+      },
+      "generation": {
+        "key": "8x8d1-001@55",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-9e8af1b4-8fe6-448f-bfea-df6cafe55398.png",
+        "generation": "built-in image_gen; one call per original tile",
+        "prompt": "Use case: style-transfer. Asset type: ONE tiny flat wall texture fragment for an original fantasy CRPG, source 8x8d1-001@55. Repaint this exact single supplied reference as a richly hand-painted 1990s fantasy texture, approved style B. Original is only8x8 pixels; final game tile is24x24. Keep the exact original framing, relative positions of every large light/dark spot, orange-peach wall region, ochre/brown mottling and any flat gray empty region. The flat gray empty area is at the upper RIGHT, and the orange wall slopes diagonally across the lower LEFT; keep that boundary exactly. It is a FLAT fragment of warm peach/orange mottled plaster or stone, not a new room or a full wall scene. Replace the blocky pixels with smooth continuous brushwork and subtle painted material inside the existing color shapes. Preserve the same lighting and orange/ochre palette. No added brick courses, masonry seams, decorative grooves, objects, scenery, cast shadow, perspective bevel, highlights along the outer frame, letters or border. Gray areas must stay flat neutral #555555; do not fill them with orange texture. Edge-to-edge square with no padding. Not pixel art, mosaic,3D or a photograph.",
+        "raw_sha256": "4a3475e89c1f9b669f752e12684ef5ed379430ca5157542538006c46c28484e9",
+        "target": [
+          24,
+          24
+        ],
+        "version": 0,
+        "issue": 30,
+        "status": "generated",
+        "source": {
+          "key": "8x8d1-001@55",
+          "source_file": "8X8D1.DAX",
+          "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+          "block": 1,
+          "packed_file_offset": 56,
+          "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+          "source_size": [
+            8,
+            8
+          ],
+          "output_size": [
+            24,
+            24
+          ],
+          "reference_1x": "8x8d1-001@55-1x.png",
+          "reference_3x": "8x8d1-001@55-3x.png",
+          "reference_1x_sha256": "ced17317ac6973471759e1a1cc7096d28e0d7e58e0a146bffcae520d8dbb6ee3",
+          "reference_3x_sha256": "36828ce43b798950d2ac7b9d6279cb2e17d8f40349cc3962e1d6820818501e27",
+          "indexed": "8x8d1-001@55.idx",
+          "indexed_sha256": "9e7becb32c97e758d775e3e1c7df675f3cfe534837784bdf153a9a5876aee4cc",
+          "palette": "8x8d1-001@55.pal",
+          "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": true,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "transparent_index": 13
+        },
+        "request_manifest_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+        "references": [
+          "workplace/hd/requests/b11/8x8d1-001@55-3x.png"
+        ],
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "8x8d1-001@55",
+        "raw": "8x8d1-001@55-r0-raw.png",
+        "raw_sha256": "4a3475e89c1f9b669f752e12684ef5ed379430ca5157542538006c46c28484e9",
+        "png": "8x8d1-001@55.png",
+        "png_sha256": "6bad34cb6a480c4f15b333a3b12b39be0632162f5edfa2ada93c779be5e177e3",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source13 neutral-gray mask; outer1px source RGB seam lock"
+      },
+      "numeric": {
+        "key": "8x8d1-001@55",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.875,
+        "median_hue_difference_degrees": 5.767531500234059,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "6bad34cb6a480c4f15b333a3b12b39be0632162f5edfa2ada93c779be5e177e3",
+        "seam_difference": 0,
+        "transparent_region_difference": 0
+      },
+      "visual": {
+        "png_sha256": "6bad34cb6a480c4f15b333a3b12b39be0632162f5edfa2ada93c779be5e177e3",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "8x8d1-001@60",
+      "source": {
+        "key": "8x8d1-001@60",
+        "source_file": "8X8D1.DAX",
+        "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "block": 1,
+        "packed_file_offset": 56,
+        "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+        "source_size": [
+          8,
+          8
+        ],
+        "output_size": [
+          24,
+          24
+        ],
+        "reference_1x": "8x8d1-001@60-1x.png",
+        "reference_3x": "8x8d1-001@60-3x.png",
+        "reference_1x_sha256": "38d23809ece8afbb0dd6aa575dbe54f399e58e1939fde68bd272c65b49cde03a",
+        "reference_3x_sha256": "12d95970d1fbfb9caa5da595d611ba83963731302beefa6c0189fe1c2ac4ce2a",
+        "indexed": "8x8d1-001@60.idx",
+        "indexed_sha256": "7142992b523a7aa6598a93221f50ddcbc64e84d2c2c9fb4b06030fc880f8d9b0",
+        "palette": "8x8d1-001@60.pal",
+        "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": true,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "transparent_index": 13
+      },
+      "generation": {
+        "key": "8x8d1-001@60",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-d838a414-1c82-468f-bc6a-e50fa5f054a5.png",
+        "generation": "built-in image_gen; one call per original tile",
+        "prompt": "Use case: style-transfer. Asset type: ONE tiny flat wall texture fragment for an original fantasy CRPG, source 8x8d1-001@60. Repaint this exact single supplied reference as a richly hand-painted 1990s fantasy texture, approved style B. Original is only8x8 pixels; final game tile is24x24. Keep the exact original framing, relative positions of every large light/dark spot, orange-peach wall region, ochre/brown mottling and any flat gray empty region. Preserve the complete original texture pattern, including any little gray edge or corner. It is a FLAT fragment of warm peach/orange mottled plaster or stone, not a new room or a full wall scene. Replace the blocky pixels with smooth continuous brushwork and subtle painted material inside the existing color shapes. Preserve the same lighting and orange/ochre palette. No added brick courses, masonry seams, decorative grooves, objects, scenery, cast shadow, perspective bevel, highlights along the outer frame, letters or border. Gray areas must stay flat neutral #555555; do not fill them with orange texture. Edge-to-edge square with no padding. Not pixel art, mosaic,3D or a photograph.",
+        "raw_sha256": "6b44f79662d47fabfbe95c2f8ae5989e41003f8fa239291a90cab775fc4e3027",
+        "target": [
+          24,
+          24
+        ],
+        "version": 0,
+        "issue": 30,
+        "status": "generated",
+        "source": {
+          "key": "8x8d1-001@60",
+          "source_file": "8X8D1.DAX",
+          "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+          "block": 1,
+          "packed_file_offset": 56,
+          "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+          "source_size": [
+            8,
+            8
+          ],
+          "output_size": [
+            24,
+            24
+          ],
+          "reference_1x": "8x8d1-001@60-1x.png",
+          "reference_3x": "8x8d1-001@60-3x.png",
+          "reference_1x_sha256": "38d23809ece8afbb0dd6aa575dbe54f399e58e1939fde68bd272c65b49cde03a",
+          "reference_3x_sha256": "12d95970d1fbfb9caa5da595d611ba83963731302beefa6c0189fe1c2ac4ce2a",
+          "indexed": "8x8d1-001@60.idx",
+          "indexed_sha256": "7142992b523a7aa6598a93221f50ddcbc64e84d2c2c9fb4b06030fc880f8d9b0",
+          "palette": "8x8d1-001@60.pal",
+          "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": true,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "transparent_index": 13
+        },
+        "request_manifest_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+        "references": [
+          "workplace/hd/requests/b11/8x8d1-001@60-3x.png"
+        ],
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "8x8d1-001@60",
+        "raw": "8x8d1-001@60-r0-raw.png",
+        "raw_sha256": "6b44f79662d47fabfbe95c2f8ae5989e41003f8fa239291a90cab775fc4e3027",
+        "png": "8x8d1-001@60.png",
+        "png_sha256": "1c406c901359fecf570abd51fe86dbfaa1b3b5dc189ed3c5ccb213dc51df0694",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source13 neutral-gray mask; outer1px source RGB seam lock"
+      },
+      "numeric": {
+        "key": "8x8d1-001@60",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.75,
+        "median_hue_difference_degrees": 6.007987826709629,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "1c406c901359fecf570abd51fe86dbfaa1b3b5dc189ed3c5ccb213dc51df0694",
+        "seam_difference": 0,
+        "transparent_region_difference": 0
+      },
+      "visual": {
+        "png_sha256": "1c406c901359fecf570abd51fe86dbfaa1b3b5dc189ed3c5ccb213dc51df0694",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "8x8d1-001@61",
+      "source": {
+        "key": "8x8d1-001@61",
+        "source_file": "8X8D1.DAX",
+        "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "block": 1,
+        "packed_file_offset": 56,
+        "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+        "source_size": [
+          8,
+          8
+        ],
+        "output_size": [
+          24,
+          24
+        ],
+        "reference_1x": "8x8d1-001@61-1x.png",
+        "reference_3x": "8x8d1-001@61-3x.png",
+        "reference_1x_sha256": "80548aa2777a65065456cf5e2ebc703e9cb4e84cdf0455b35c2aced19b64a516",
+        "reference_3x_sha256": "ee584d5f5949ce7dadd66ff33782af337204bba7c6137a858c5264055e32c043",
+        "indexed": "8x8d1-001@61.idx",
+        "indexed_sha256": "356a32f5d4be4bc0ebbdf946023cad2676ac3b94d611289dddebca9c834554d2",
+        "palette": "8x8d1-001@61.pal",
+        "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": true,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "transparent_index": 13
+      },
+      "generation": {
+        "key": "8x8d1-001@61",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-57d57091-9a19-4c8d-9f6d-405397cb3ce7.png",
+        "generation": "built-in image_gen; one call per original tile",
+        "prompt": "Use case: style-transfer. Refine the supplied EXACT abstract wall texture image in place into a hand-painted gouache fantasy-game texture. Keep ALL original color regions in their exact locations, sizes, connected shapes and boundaries, including every peach gap, ochre edge and tan/brown band. Do not recompose it as isolated scattered spots. Do not add or remove shapes or create a new pattern. The entire source square is the strict underdrawing: trace its principal regions exactly, apply only subtle fine material brushwork within them and gently soften pixel stair steps into continuous organic contours without moving them. Preserve the source's light peach/salmon, ochre-yellow, medium tan and warm brown palette, original relative brightness and sharp contrast boundaries. Flat straight-on two-dimensional texture, not a room, relief, stone sculpture, cracks or perspective surface. Approved1990s fantasy hand-painted style B. Edge-to-edge square, unchanged framing, final game asset24x24. No dark vignette, directional shadow, border, frame, margin, text, bricks, mortar, objects,3D, photo, pixel grid or mosaic. This is a faithful repaint of this particular exact pattern, not an invitation to invent different mottling.",
+        "references": [
+          "workplace/hd/out/b11/guidance/8x8d1-001@61-original-384.png"
+        ],
+        "raw_sha256": "0e365b4104f859531c134b344796203d2716835bfd0923f204272af6fa453f78",
+        "target": [
+          24,
+          24
+        ],
+        "version": 2,
+        "issue": 30,
+        "status": "generated",
+        "source": {
+          "key": "8x8d1-001@61",
+          "source_file": "8X8D1.DAX",
+          "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+          "block": 1,
+          "packed_file_offset": 56,
+          "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+          "source_size": [
+            8,
+            8
+          ],
+          "output_size": [
+            24,
+            24
+          ],
+          "reference_1x": "8x8d1-001@61-1x.png",
+          "reference_3x": "8x8d1-001@61-3x.png",
+          "reference_1x_sha256": "80548aa2777a65065456cf5e2ebc703e9cb4e84cdf0455b35c2aced19b64a516",
+          "reference_3x_sha256": "ee584d5f5949ce7dadd66ff33782af337204bba7c6137a858c5264055e32c043",
+          "indexed": "8x8d1-001@61.idx",
+          "indexed_sha256": "356a32f5d4be4bc0ebbdf946023cad2676ac3b94d611289dddebca9c834554d2",
+          "palette": "8x8d1-001@61.pal",
+          "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": true,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "transparent_index": 13
+        },
+        "request_manifest_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+        "reference_sha256": {
+          "workplace/hd/out/b11/guidance/8x8d1-001@61-original-384.png": "bddf7147d99d6fae07e98702def3756b9f412b1e004f0d822765da820e8dceb6"
+        },
+        "reference_resize": "nearest-neighbour original source; visual guidance only",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "8x8d1-001@61",
+        "raw": "8x8d1-001@61-r2-raw.png",
+        "raw_sha256": "0e365b4104f859531c134b344796203d2716835bfd0923f204272af6fa453f78",
+        "png": "8x8d1-001@61.png",
+        "png_sha256": "a9564ffa64b4d6ecaf7bef15466d6a4738a61c42578cd1af964e474f010e6c96",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source13 neutral-gray mask; outer1px source RGB seam lock"
+      },
+      "numeric": {
+        "key": "8x8d1-001@61",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.875,
+        "median_hue_difference_degrees": 0.8864521262632845,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "a9564ffa64b4d6ecaf7bef15466d6a4738a61c42578cd1af964e474f010e6c96",
+        "seam_difference": 0,
+        "transparent_region_difference": 0
+      },
+      "visual": {
+        "png_sha256": "a9564ffa64b4d6ecaf7bef15466d6a4738a61c42578cd1af964e474f010e6c96",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "8x8d1-001@62",
+      "source": {
+        "key": "8x8d1-001@62",
+        "source_file": "8X8D1.DAX",
+        "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "block": 1,
+        "packed_file_offset": 56,
+        "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+        "source_size": [
+          8,
+          8
+        ],
+        "output_size": [
+          24,
+          24
+        ],
+        "reference_1x": "8x8d1-001@62-1x.png",
+        "reference_3x": "8x8d1-001@62-3x.png",
+        "reference_1x_sha256": "61061a3ed37a1a8a23497449af16122aa0bec8472002dcce8679ddd584ae731e",
+        "reference_3x_sha256": "a75f06f592cc53611f62488d28d7589a0c1688dee5297a00660c45afe4180cd7",
+        "indexed": "8x8d1-001@62.idx",
+        "indexed_sha256": "559846e2140bc92cf8558513333798bb6c2de17ffe11d28ac4060b8d09944f45",
+        "palette": "8x8d1-001@62.pal",
+        "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": true,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "transparent_index": 13
+      },
+      "generation": {
+        "key": "8x8d1-001@62",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-c99075ae-a56c-46a0-a51b-7b2fec8e276f.png",
+        "generation": "built-in image_gen; one call per original tile",
+        "prompt": "Use case: style-transfer. Asset type: ONE tiny flat wall texture fragment for an original fantasy CRPG, source 8x8d1-001@62. Repaint this exact single supplied reference as a richly hand-painted 1990s fantasy texture, approved style B. Original is only8x8 pixels; final game tile is24x24. Keep the exact original framing, relative positions of every large light/dark spot, orange-peach wall region, ochre/brown mottling and any flat gray empty region. Preserve the complete original texture pattern, including any little gray edge or corner. It is a FLAT fragment of warm peach/orange mottled plaster or stone, not a new room or a full wall scene. Replace the blocky pixels with smooth continuous brushwork and subtle painted material inside the existing color shapes. Preserve the same lighting and orange/ochre palette. No added brick courses, masonry seams, decorative grooves, objects, scenery, cast shadow, perspective bevel, highlights along the outer frame, letters or border. Gray areas must stay flat neutral #555555; do not fill them with orange texture. Edge-to-edge square with no padding. Not pixel art, mosaic,3D or a photograph.",
+        "raw_sha256": "2c160711516c5186a08328ea1e2079b3542f10e5f93480768d153f629456c84c",
+        "target": [
+          24,
+          24
+        ],
+        "version": 0,
+        "issue": 30,
+        "status": "generated",
+        "source": {
+          "key": "8x8d1-001@62",
+          "source_file": "8X8D1.DAX",
+          "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+          "block": 1,
+          "packed_file_offset": 56,
+          "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+          "source_size": [
+            8,
+            8
+          ],
+          "output_size": [
+            24,
+            24
+          ],
+          "reference_1x": "8x8d1-001@62-1x.png",
+          "reference_3x": "8x8d1-001@62-3x.png",
+          "reference_1x_sha256": "61061a3ed37a1a8a23497449af16122aa0bec8472002dcce8679ddd584ae731e",
+          "reference_3x_sha256": "a75f06f592cc53611f62488d28d7589a0c1688dee5297a00660c45afe4180cd7",
+          "indexed": "8x8d1-001@62.idx",
+          "indexed_sha256": "559846e2140bc92cf8558513333798bb6c2de17ffe11d28ac4060b8d09944f45",
+          "palette": "8x8d1-001@62.pal",
+          "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": true,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "transparent_index": 13
+        },
+        "request_manifest_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+        "references": [
+          "workplace/hd/requests/b11/8x8d1-001@62-3x.png"
+        ],
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "8x8d1-001@62",
+        "raw": "8x8d1-001@62-r0-raw.png",
+        "raw_sha256": "2c160711516c5186a08328ea1e2079b3542f10e5f93480768d153f629456c84c",
+        "png": "8x8d1-001@62.png",
+        "png_sha256": "9b5518546783dab7094d762af6a2bd412ec9a992614ca76ac751f835e5df0257",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source13 neutral-gray mask; outer1px source RGB seam lock"
+      },
+      "numeric": {
+        "key": "8x8d1-001@62",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.625,
+        "median_hue_difference_degrees": 7.230232916493804,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "9b5518546783dab7094d762af6a2bd412ec9a992614ca76ac751f835e5df0257",
+        "seam_difference": 0,
+        "transparent_region_difference": 0
+      },
+      "visual": {
+        "png_sha256": "9b5518546783dab7094d762af6a2bd412ec9a992614ca76ac751f835e5df0257",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "8x8d1-001@193",
+      "source": {
+        "key": "8x8d1-001@193",
+        "source_file": "8X8D1.DAX",
+        "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "block": 1,
+        "packed_file_offset": 56,
+        "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+        "source_size": [
+          8,
+          8
+        ],
+        "output_size": [
+          24,
+          24
+        ],
+        "reference_1x": "8x8d1-001@193-1x.png",
+        "reference_3x": "8x8d1-001@193-3x.png",
+        "reference_1x_sha256": "8f7b0c07c95dde311723a2c47ca45ab611f623ddc78bbbde7ace7e8cc35bdac2",
+        "reference_3x_sha256": "0b9204f677491731767642494adc03df351b63a4bbc6114ef46f3b6e420752d8",
+        "indexed": "8x8d1-001@193.idx",
+        "indexed_sha256": "6cabd3819586f10d48e173f3b8459452b088c120c4a6021549e6206e093f3f4b",
+        "palette": "8x8d1-001@193.pal",
+        "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": true,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "transparent_index": 13
+      },
+      "generation": {
+        "key": "8x8d1-001@193",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-66735472-5056-4531-960e-bd87e2c7f975.png",
+        "generation": "built-in image_gen; one call per original tile",
+        "prompt": "Use case: style-transfer. Refine the supplied EXACT abstract wall texture image in place into a hand-painted gouache fantasy-game texture. Keep ALL original color regions in their exact locations, sizes, connected shapes and boundaries, including every peach gap, ochre edge and tan/brown band. Do not recompose it as isolated scattered spots. Do not add or remove shapes or create a new pattern. The entire source square is the strict underdrawing: trace its principal regions exactly, apply only subtle fine material brushwork within them and gently soften pixel stair steps into continuous organic contours without moving them. Preserve the source's light peach/salmon, ochre-yellow, medium tan and warm brown palette, original relative brightness and sharp contrast boundaries. Flat straight-on two-dimensional texture, not a room, relief, stone sculpture, cracks or perspective surface. Approved1990s fantasy hand-painted style B. Edge-to-edge square, unchanged framing, final game asset24x24. No dark vignette, directional shadow, border, frame, margin, text, bricks, mortar, objects,3D, photo, pixel grid or mosaic. This is a faithful repaint of this particular exact pattern, not an invitation to invent different mottling.",
+        "references": [
+          "workplace/hd/out/b11/guidance/8x8d1-001@193-original-384.png"
+        ],
+        "raw_sha256": "6a9aacd829c79adc09473b700784f9113a5af3f17f32252f76363efc4b5d67ac",
+        "target": [
+          24,
+          24
+        ],
+        "version": 2,
+        "issue": 30,
+        "status": "generated",
+        "source": {
+          "key": "8x8d1-001@193",
+          "source_file": "8X8D1.DAX",
+          "source_file_sha256": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+          "block": 1,
+          "packed_file_offset": 56,
+          "decoded_sha256": "bff9202de944dd75b6b8ba99d0cda0893b23674fa2ad4d3c53247ed8bc2f90ae",
+          "source_size": [
+            8,
+            8
+          ],
+          "output_size": [
+            24,
+            24
+          ],
+          "reference_1x": "8x8d1-001@193-1x.png",
+          "reference_3x": "8x8d1-001@193-3x.png",
+          "reference_1x_sha256": "8f7b0c07c95dde311723a2c47ca45ab611f623ddc78bbbde7ace7e8cc35bdac2",
+          "reference_3x_sha256": "0b9204f677491731767642494adc03df351b63a4bbc6114ef46f3b6e420752d8",
+          "indexed": "8x8d1-001@193.idx",
+          "indexed_sha256": "6cabd3819586f10d48e173f3b8459452b088c120c4a6021549e6206e093f3f4b",
+          "palette": "8x8d1-001@193.pal",
+          "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+          "transparent": false,
+          "animation_mask": null,
+          "runtime_observed": true,
+          "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 24 by 24 pixels, aspect ratio 8:8, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+          "transparent_index": 13
+        },
+        "request_manifest_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+        "reference_sha256": {
+          "workplace/hd/out/b11/guidance/8x8d1-001@193-original-384.png": "3d2a504a5baeec11df9c9b702d5b9f0102d23c218206197be983efbd1b3d497d"
+        },
+        "reference_resize": "nearest-neighbour original source; visual guidance only",
+        "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
+      },
+      "preparation": {
+        "key": "8x8d1-001@193",
+        "raw": "8x8d1-001@193-r2-raw.png",
+        "raw_sha256": "6a9aacd829c79adc09473b700784f9113a5af3f17f32252f76363efc4b5d67ac",
+        "png": "8x8d1-001@193.png",
+        "png_sha256": "0fb818c54533e448fa4ca54cd45fb4c21d8eb9ff3078ef0983a78373e6760663",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source13 neutral-gray mask; outer1px source RGB seam lock"
+      },
+      "numeric": {
+        "key": "8x8d1-001@193",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.875,
+        "median_hue_difference_degrees": 1.7030985214936791,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "0fb818c54533e448fa4ca54cd45fb4c21d8eb9ff3078ef0983a78373e6760663",
+        "seam_difference": 0,
+        "transparent_region_difference": 0
+      },
+      "visual": {
+        "png_sha256": "0fb818c54533e448fa4ca54cd45fb4c21d8eb9ff3078ef0983a78373e6760663",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    }
+  ]
+}

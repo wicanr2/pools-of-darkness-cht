@@ -39,9 +39,24 @@ def main():
             mask=Image.open(path).convert('L').filter(ImageFilter.MaxFilter(13))
             if base.size!=im.size or mask.size!=im.size:raise ValueError('動畫尺寸不合')
             im=Image.composite(im,base,mask)
+        preparation='whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels'
+        if it['source_file']=='8X8D1.DAX':
+            if it['source_size']!=[8,8]or it['output_size']!=[24,24]or it.get('transparent_index')!=13:
+                raise ValueError('VGA牆面來源契約不符')
+            idx_path,pal_path=a.req/it['indexed'],a.req/it['palette']
+            if sha(idx_path)!=it['indexed_sha256']or sha(pal_path)!=it['palette_sha256']:
+                raise ValueError('牆面來源雜湊改變')
+            ref=idx_path.read_bytes();pal=pal_path.read_bytes()
+            if len(ref)!=64 or len(pal)!=768:raise ValueError('牆面來源長度不合')
+            for y in range(24):
+                for x in range(24):
+                    c=ref[y//3*8+x//3]
+                    if c==13:im.putpixel((x,y),(85,85,85,255))
+                    elif x in(0,23)or y in(0,23):im.putpixel((x,y),tuple(pal[c*3:c*3+3])+(255,))
+            preparation='whole-image LANCZOS; opaque RGBA; source13 neutral-gray mask; outer1px source RGB seam lock'
         dst=a.out/(key+'.png');im.save(dst)
         rows.append(dict(key=key,raw=raw.name,raw_sha256=sha(raw),png=dst.name,png_sha256=sha(dst),
-                         preparation='whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels'))
+                         preparation=preparation))
         print(key,im.size,'RGBA')
     p=a.out/'prepared.json'
     old=json.loads(p.read_text())['items'] if p.exists() else []

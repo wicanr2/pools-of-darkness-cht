@@ -37,6 +37,10 @@ def main():
         idx=idx_path.read_bytes();pal=pal_path.read_bytes()
         if len(idx)!=w*h or len(pal)!=768:raise ValueError('原版色號或RGB色盤長度錯誤')
         orig=np.frombuffer(pal,np.uint8).reshape(256,3)[np.frombuffer(idx,np.uint8).reshape(h,w)]
+        wall=it['source_file']=='8X8D1.DAX'
+        if wall:
+            if(w,h,W,H)!=(8,8,24,24)or it.get('transparent_index')!=13:raise ValueError('牆面來源契約不合')
+            orig=orig.copy();orig[np.frombuffer(idx,np.uint8).reshape(h,w)==13]=(85,85,85)
         ct,hd=read_png(p);shape_ok=ct==6 and hd.shape==(H,W,4)
         alpha_ok=bool(np.all(hd[...,3]==255));score,hue,off=0.,360.,None
         if hd.shape[:2]==(H,W):
@@ -51,6 +55,14 @@ def main():
         passed=shape_ok and alpha_ok and score>=.4 and hue<30 and off in (None,0)
         row=dict(key=key,format_ok=shape_ok,alpha_ok=alpha_ok,structural_edge_overlap=score,
                  median_hue_difference_degrees=hue,outside_mask_difference=off,target_met=passed,png_sha256=sha(p))
+        if wall and shape_ok:
+            expected=orig.repeat(3,0).repeat(3,1)
+            mask=(np.frombuffer(idx,np.uint8).reshape(h,w)==13).repeat(3,0).repeat(3,1)
+            edge=np.zeros((H,W),bool);edge[0,:]=edge[-1,:]=True;edge[:,0]=edge[:,-1]=True
+            delta=np.any(hd[...,:3]!=expected,axis=2)
+            row['seam_difference']=int(np.count_nonzero(delta&edge))
+            row['transparent_region_difference']=int(np.count_nonzero(delta&mask))
+            row['target_met']=passed and row['seam_difference']==0 and row['transparent_region_difference']==0
         rows.append(row);print(key,f'structure={score:.3f} hue={hue:.1f} off={off}',passed)
     result=dict(batch=request['batch'],request_manifest_sha256=sha(a.req/'manifest.json'),
                 scope='selected' if a.keys else 'all',requested=len(items),total=len(request['items']),

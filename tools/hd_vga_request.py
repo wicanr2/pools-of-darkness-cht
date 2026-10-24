@@ -77,6 +77,8 @@ def main():
             indexed=f'{key}.idx',indexed_sha256=it['indexed_sha256'],
             palette=f'{key}.pal',palette_sha256=it['palette_sha256'],transparent=False,
             animation_mask=None,runtime_observed=it['runtime_observed'],prompt=prompt))
+        if 'transparent_index' in it:
+            manifest['items'][-1]['transparent_index']=it['transparent_index']
     if {i['key'] for i in manifest['items']}!=set(a.keys):raise ValueError('缺指定來源')
     by_key={i['key']:i for i in manifest['items']}
     variants=dict(v.split(':',1)for v in a.variants)

@@ -79,10 +79,19 @@ def main():
         reference = actual_rgb[np.frombuffer(pixels, np.uint8).reshape(h, w)].copy()
         if transparent is not None:
             reference[np.frombuffer(pixels, np.uint8).reshape(h, w) == transparent] = (85, 85, 85)
+        Image.fromarray(reference).save(a.out / (key + '.png'))
         Image.fromarray(reference).resize((w*3, h*3), Image.Resampling.NEAREST).save(a.out / (key + '-3x.png'))
     save_source('skygrnd-001', skies[1][0], 88, 88)
     for tile in sorted(used):
         save_source(f'8x8d1-001@{tile}', tiles[tile].tobytes(), 8, 8, 13)
+    inventory = [dict(key=f'8x8d1-001@{tile}', file='8X8D1.DAX',
+                      archive_sha256=sha(archives['8X8D1.DAX']), block=1, frame=tile,
+                      width=8, height=8, decoded_sha256=sha(banks[1]['data']),
+                      indexed_sha256=sha(tiles[tile].tobytes()), palette_sha256=sha(palette),
+                      pixel_offset=434+tile*64, palette_end=346,
+                      evidence_level='confirmed in captured viewport', runtime_observed=True, transparent_index=13)
+                 for tile in sorted(used)]
+    (a.out / 'inventory-walls.json').write_text(json.dumps(dict(items=inventory), ensure_ascii=False, indent=2) + '\n')
     report = dict(scope='同一既有G8冷啟動讀檔4800格終點；只證明該88×88街景的完整來源組合',
                   evidence='已證實：本次色號、來源區段RGB及13留底組合逐像素吻合；未知：其他位置與WALLDEF內部繪製規則',
                   tool='Python 3.13.16 / Pillow 11.0 / NumPy; sosb-img:r1; dosgolem pod-play-readme f3d019e來源',
