@@ -357,7 +357,7 @@ func (l *Live) AuditFlash(frame, scale int) {
 // palSig 是目前色盤前 16 色的指紋（HD 鎖存判斷色盤沒變）。
 func (l *Live) palSig() uint64 {
 	h := uint64(14695981039346656037)
-	for _, c := range l.pal[:16] {
+	for _, c := range l.pal {
 		for _, v := range c {
 			h = (h ^ uint64(v)) * 1099511628211
 		}

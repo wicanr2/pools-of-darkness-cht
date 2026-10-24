@@ -20,6 +20,7 @@ type actorInk struct {
 
 type actorPattern struct {
 	key            string
+	vga            bool
 	w, h           int
 	ink            []actorInk
 	anchors        []actorInk
@@ -37,11 +38,12 @@ type actorMatch struct {
 }
 
 type actorHD struct {
-	sources  int
-	patterns []actorPattern
-	matches  []actorMatch
-	owner    []int
-	full     map[[32]byte]int
+	sources      int
+	patterns     []actorPattern
+	matches      []actorMatch
+	owner        []int
+	full         map[[32]byte]int
+	vgaPaletteOK bool
 }
 
 func actorShape(w, h int) bool {
@@ -87,7 +89,7 @@ func loadActorHD(dir string) (*actorHD, error) {
 	keys, signatures := map[string]bool{}, map[string]bool{}
 	for _, item := range manifest.Items {
 		w, h := item.Size[0], item.Size[1]
-		if item.Key == "" || keys[item.Key] || !actorShape(w, h) {
+		if item.Key == "" || keys[item.Key] || (!actorShape(w, h) && !(w == 72 && h == 48)) {
 			return nil, fmt.Errorf("actors.json：%q key 或尺寸不合法", item.Key)
 		}
 		keys[item.Key] = true
@@ -95,12 +97,16 @@ func loadActorHD(dir string) (*actorHD, error) {
 		if err != nil || len(ref) != w*h {
 			return nil, fmt.Errorf("%s：色號長度或 SHA 不符：%v", item.Key, err)
 		}
-		var colors [16]bool
+		vga, err := vgaActorReference(item.Key, ref)
+		if err != nil {
+			return nil, err
+		}
+		if w == 72 && !vga {
+			return nil, fmt.Errorf("%s：72×48僅供已盤點VGA來源", item.Key)
+		}
+		var colors [256]bool
 		count, foreground := 0, 0
 		for _, c := range ref {
-			if c > 15 {
-				return nil, fmt.Errorf("%s：色號 %d 超過 15", item.Key, c)
-			}
 			if !colors[c] {
 				colors[c] = true
 				count++
@@ -128,7 +134,7 @@ func loadActorHD(dir string) (*actorHD, error) {
 			}
 		}
 		for _, flip := range []bool{false, true} {
-			pattern := actorPattern{key: item.Key, w: w, h: h, pixels: make([]byte, len(rgba.Pix))}
+			pattern := actorPattern{key: item.Key, vga: vga, w: w, h: h, pixels: make([]byte, len(rgba.Pix))}
 			transformed := make([]byte, len(ref))
 			for y := 0; y < h; y++ {
 				for x := 0; x < w; x++ {
@@ -200,6 +206,9 @@ func (a *actorHD) frame(indexed []byte, terrainGuard bool) {
 	}
 	for n := range a.patterns {
 		pattern := &a.patterns[n]
+		if pattern.vga && !a.vgaPaletteOK {
+			continue
+		}
 		if len(pattern.full) != 0 {
 			continue
 		}
@@ -271,7 +280,7 @@ func (a *actorHD) draw(out, indexed []byte, scale int) {
 	}
 	for _, match := range a.matches {
 		pattern := &a.patterns[match.pattern]
-		if match.conflict || !pattern.present(indexed, match.x, match.y) {
+		if match.conflict || pattern.vga && !a.vgaPaletteOK || !pattern.present(indexed, match.x, match.y) {
 			continue
 		}
 		for _, point := range pattern.ink {

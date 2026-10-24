@@ -532,6 +532,7 @@ func (g *game) finish() error {
 	}
 	if d, err := g.owner.Digest(); err == nil {
 		fmt.Fprintf(os.Stderr, "pod-play: frames=%d steps=%d memory_sha256=%x indexed_sha256=%x\n", g.frame, d.Steps, d.MemorySHA256, d.IndexedSHA256)
+		fmt.Fprintf(os.Stderr, "pod-play: cpu_sha256=%x palette_sha256=%x\n", d.CPUSHA256, d.PaletteSHA256)
 	}
 	return ebiten.Termination
 }

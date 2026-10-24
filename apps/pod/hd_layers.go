@@ -69,6 +69,9 @@ func (h *HDLayers) Frame(indexed []byte, pal [256][3]uint8) {
 	}
 	h.combat.frame(indexed, pal)
 	guard := h.combat != nil && len(h.combat.matches) >= 3
+	if h.actors != nil {
+		h.actors.vgaPaletteOK = paletteBankHash(pal, 144, 256) == cpicVGAPalette
+	}
 	h.actors.frame(indexed, guard)
 	h.encounters.frame(indexed, pal)
 	h.walls.frame(indexed, pal)

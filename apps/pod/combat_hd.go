@@ -30,9 +30,10 @@ type combatTile struct {
 type combatMatch struct{ tile, x, y int }
 
 type combatHD struct {
-	tiles   []combatTile
-	lookup  map[[32]byte]int
-	matches []combatMatch
+	tiles     []combatTile
+	lookup    map[[32]byte]int
+	matches   []combatMatch
+	vgaLookup map[vgaTerrainSignature]int
 }
 
 // loadCombatHD 先完整驗證，呼叫端成功後才登記。缺少可選檔案時維持舊主題行為。
@@ -65,7 +66,7 @@ func loadCombatHD(dir string) (*combatHD, error) {
 		manifest.Grid != [5]int{8, 8, 7, 7, 24} || len(manifest.Items) == 0 || len(manifest.Items) > 256 {
 		return nil, fmt.Errorf("combat.json：版本、倍率、類型、格線或件數不符規格 010 §6.2")
 	}
-	theme := &combatHD{lookup: make(map[[32]byte]int)}
+	theme := &combatHD{lookup: make(map[[32]byte]int), vgaLookup: make(map[vgaTerrainSignature]int)}
 	keys := make(map[string]bool)
 	for _, item := range manifest.Items {
 		if item.Key == "" || keys[item.Key] || item.Size != [2]int{24, 24} {
@@ -79,12 +80,13 @@ func loadCombatHD(dir string) (*combatHD, error) {
 		if len(ref) != 24*24 {
 			return nil, fmt.Errorf("%s：地形基準長度不符", item.Key)
 		}
-		var colors [16]bool
+		vgaPalette, err := vgaTerrainReference(item.Key, ref)
+		if err != nil {
+			return nil, err
+		}
+		var colors [256]bool
 		colorCount, nonGray := 0, 0
 		for _, c := range ref {
-			if c > 15 {
-				return nil, fmt.Errorf("%s：色號 %d 超過 15", item.Key, c)
-			}
 			if !colors[c] {
 				colorCount++
 				colors[c] = true
@@ -94,7 +96,9 @@ func loadCombatHD(dir string) (*combatHD, error) {
 			}
 		}
 		sum := sha256.Sum256(ref)
-		if _, found := theme.lookup[sum]; found {
+		_, duplicateEGA := theme.lookup[sum]
+		_, duplicateVGA := theme.vgaLookup[vgaTerrainSignature{sum, vgaPalette}]
+		if vgaPalette == "" && duplicateEGA || vgaPalette != "" && duplicateVGA {
 			return nil, fmt.Errorf("%s：地形基準重複", item.Key)
 		}
 		raw, err := readChecked(filepath.Join(dir, item.PNG), item.PNGSHA)
@@ -115,7 +119,11 @@ func loadCombatHD(dir string) (*combatHD, error) {
 				return nil, fmt.Errorf("%s：不透明地形含 alpha", item.Key)
 			}
 		}
-		theme.lookup[sum] = len(theme.tiles)
+		if vgaPalette == "" {
+			theme.lookup[sum] = len(theme.tiles)
+		} else {
+			theme.vgaLookup[vgaTerrainSignature{sum, vgaPalette}] = len(theme.tiles)
+		}
 		theme.tiles = append(theme.tiles, combatTile{item.Key, ref, rgba.Pix, colorCount > 1 && nonGray >= 16})
 	}
 	return theme, nil
@@ -135,13 +143,22 @@ func (c *combatHD) frame(indexed []byte, palette [256][3]uint8) {
 		}
 	}
 	guards := 0
+	bank := ""
+	if len(c.vgaLookup) > 0 {
+		bank = paletteBankHash(palette, 32, 64)
+	}
 	var tile [24 * 24]byte
 	for y := 8; y <= 152; y += 24 {
 		for x := 8; x <= 152; x += 24 {
 			for row := 0; row < 24; row++ {
 				copy(tile[row*24:], indexed[(y+row)*320+x:(y+row)*320+x+24])
 			}
-			if n, found := c.lookup[sha256.Sum256(tile[:])]; found {
+			sum := sha256.Sum256(tile[:])
+			n, found := c.lookup[sum]
+			if !found && bank != "" {
+				n, found = c.vgaLookup[vgaTerrainSignature{sum, bank}]
+			}
+			if found {
 				c.matches = append(c.matches, combatMatch{n, x, y})
 				if c.tiles[n].guard {
 					guards++
