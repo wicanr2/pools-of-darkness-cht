@@ -1,0 +1,44 @@
+{
+  "status": "user-approved-fixed-wide-layout",
+  "issue": 21,
+  "canvas": {
+    "game": [
+      960,
+      600
+    ],
+    "wide": [
+      1440,
+      600
+    ],
+    "narrow": [
+      1066,
+      600
+    ]
+  },
+  "source_page": "https://store.steampowered.com/app/1904522/Pools_of_Darkness/",
+  "inputs": {
+    "art": {
+      "path": "workplace/hd/source/poster/steam-background.jpg",
+      "sha256": "7bfb0f23a9d09f5046c0b79b96421f4b1c841f8e97b63c0ec0c248ab7c73d9f0"
+    },
+    "zh": {
+      "path": "docs/screenshots/demo-welcome-cht-hd.png",
+      "sha256": "d3c730d70820f217022f72a9bbaf744e99825e4165b1c6d18b5a14977a528f41"
+    },
+    "en": {
+      "path": "workplace/probe/g9-hd/frontend-switch/switched/shots/pod-f002102.png",
+      "sha256": "ffe666941a734582fc2bb0da4546044d3599a11bb038dc9f5e64028dd5682ea9"
+    }
+  },
+  "text": "separate DOM text from text/poster.<locale>.tsv; switches with locale",
+  "private_only": true,
+  "text_sha256": {
+    "zh-TW": "f30d556d8aabcc9805f51f5278e626fd5093161a461bfe1a0f4b0d0430d1c7e7",
+    "en": "e4f6056403edc62a8cdb8c9c073a0aa4c037926c5fe7d294a127abb01deeebff"
+  },
+  "approval": "2026-10-24: fixed wider window, full posters, central canvas unchanged",
+  "approved_screenshots": {
+    "wide-zh.png": "bd4b53f1372a8a250ae219fc75e29ece2a5af54218fc25963a198971d9353c9c",
+    "wide-en.png": "d40eedeaeabd79c6ed5d47b8817ed94675b2636e428190b69798d32735d880ce"
+  }
+}

@@ -10,6 +10,11 @@ import struct
 from PIL import Image, ImageChops
 
 SCENES = {
+    'bigpic1-240': 'This is a top-down fantasy geographical map, not a perspective landscape. Trace the exact coastline, islands, mountain chains, forest regions, roads and settlement symbols. Keep the original yellow-green land and blue sea. Do not invent or move settlements, roads, labels or decorative map furniture.',
+    'bigpic1-241': 'Preserve the exact overhead volcanic fantasy map, purple and black terrain, orange-red lava channels and the small gray structures or symbols. Keep every major boundary, ridge and small symbol in its original location. Do not add a perspective sky, horizon, buildings, creatures or objects.',
+    'bigpic1-242': 'Preserve this exact green fantasy landscape and colossal organic form, including every original silhouette, texture region, color mass and background boundary. Do not reinterpret the forms, invent anatomy or add creatures or buildings.',
+    'bigpic1-244': 'Preserve the exact strange forest scene, twisting orange-red trunks, turquoise and green background, roots, vines and distant silhouettes. Keep their original positions, widths and shapes. No new subjects or objects.',
+    'bigpic1-245': 'This is the original top-down fantasy map with a different set of settlement symbols. Preserve every coastline, island, mountain and town location exactly, including the exact roof colors and silhouettes of each source settlement. Do not reinterpret red roofs as fire. No new sites, roads, labels or decorations.',
     'bigpic1-243': 'Preserve the exact coastal city panorama: turbulent turquoise sea across the middle, storm-dark gray sky, pale distant mountains, green cliffs, cream buildings and red tiled roofs on both sides. Keep every coastline, tower, roof, tree group and horizon at its original relative position. Do not add people, ships, monsters, lettering or extra buildings.',
     'bigpic1-246': 'Preserve the exact fantasy battle composition: the large winged fiery orange and yellow creature dominates the left, reaching toward the right; the blue-white magical burst and robed spellcaster remain on the right. Preserve the wings, face, arms, hands, projectiles, purple ground and small green lights at their original relative positions. Do not add characters, weapons, lettering, frames or effects.',
     'pic1-131': 'Preserve this exact elderly wizard portrait: long flowing white beard and white hair, broad olive green pointed hat, wise elderly face, purple robe and warm golden patterned shoulder collar, warm brown-gold background. Keep the face, eyes, hat brim, beard silhouette and shoulder positions fixed. Keep his age and expression. No extra objects, letters or frame.',
@@ -29,6 +34,7 @@ def main():
     ap.add_argument('--issue',required=True)
     ap.add_argument('--batch',default='b01')
     ap.add_argument('--keys',nargs='+',default=['bigpic1-243','bigpic1-246'])
+    ap.add_argument('--variants',nargs='*',default=[],help='明示狀態變體 key:base，使用來源 RGB 差異遮罩，不推論時間')
     a=ap.parse_args()
     a.out.mkdir(parents=True,exist_ok=True)
     source=json.loads((a.inventory/'inventory.json').read_text())
@@ -71,10 +77,12 @@ def main():
             animation_mask=None,runtime_observed=it['runtime_observed'],prompt=prompt))
     if {i['key'] for i in manifest['items']}!=set(a.keys):raise ValueError('缺指定來源')
     by_key={i['key']:i for i in manifest['items']}
+    variants=dict(v.split(':',1)for v in a.variants)
+    if not set(variants)<=set(by_key):raise ValueError('變體 key 未列入請求')
     for it in manifest['items']:
         key=it['key']
-        if key.startswith('pic1-') and '@' in key and not key.endswith('@0'):
-            base=key.split('@')[0]+'@0'
+        if key in variants or key.startswith('pic1-') and '@' in key and not key.endswith('@0'):
+            base=variants.get(key,key.split('@')[0]+'@0')
             if base not in by_key:raise ValueError(f'{key}: 缺基底 {base}')
             im=Image.open(a.out/it['reference_1x']).convert('RGB')
             first=Image.open(a.out/by_key[base]['reference_1x']).convert('RGB')

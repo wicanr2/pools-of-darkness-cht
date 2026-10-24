@@ -1,0 +1,58 @@
+[
+  {
+    "key": "box-front",
+    "url": "https://www.mocagh.org/ssi/pod.jpg",
+    "final_url": "https://www.mocagh.org/ssi/pod.jpg",
+    "page": "https://www.mocagh.org/loadpage.php?getgame=pod",
+    "file": "box-front.jpg",
+    "size": [
+      402,
+      612
+    ],
+    "sha256": "f15f8880b2d36eccb2ae4025292169cef0e725b6fc8951e5fcfa1df067a88f4c",
+    "retrieved": "2026-10-24",
+    "rights": "original protected scan, local reference only"
+  },
+  {
+    "key": "box-back",
+    "url": "https://www.mocagh.org/ssi/pod-back.jpg",
+    "final_url": "https://www.mocagh.org/ssi/pod-back.jpg",
+    "page": "https://www.mocagh.org/loadpage.php?getgame=pod",
+    "file": "box-back.jpg",
+    "size": [
+      412,
+      632
+    ],
+    "sha256": "52a60001a04e4dbc5a2c7bd2ef0b45f25da6dc69f3229a91737ccd121cac3d2e",
+    "retrieved": "2026-10-24",
+    "rights": "original protected scan, local reference only"
+  },
+  {
+    "key": "magazine-ad",
+    "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuMag4AvIHxfI4eLqV9ziUy3MmQ1WpnLw-GU63iwwGB3Mkwi1ab2HQW2UpkGiIAqygnKv7aBAwNQsSGum2E434xu8-wLmvgk2cdYeiCKeusw_SbYRXnecrt_F3poIhjrmbpXbQVspQnDE/s1600/1991+-+Pools+of+Darkness.JPG",
+    "final_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuMag4AvIHxfI4eLqV9ziUy3MmQ1WpnLw-GU63iwwGB3Mkwi1ab2HQW2UpkGiIAqygnKv7aBAwNQsSGum2E434xu8-wLmvgk2cdYeiCKeusw_SbYRXnecrt_F3poIhjrmbpXbQVspQnDE/s1600/1991+-+Pools+of+Darkness.JPG",
+    "page": "https://videogamecomicads.blogspot.com/2016/09/pools-of-darkness-1991.html",
+    "file": "magazine-ad.jpg",
+    "size": [
+      1210,
+      1600
+    ],
+    "sha256": "6561aaf1eb8fc5df2a8dc6cc7f4961a310574b33751a041ee34a41955bc4a450",
+    "retrieved": "2026-10-24",
+    "rights": "original protected scan, local reference only"
+  },
+  {
+    "key": "steam-background",
+    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1904522/page_bg_raw.jpg?t=1648566553",
+    "final_url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1904522/page_bg_raw.jpg?t=1648566553",
+    "page": "https://store.steampowered.com/app/1904522/Pools_of_Darkness/",
+    "file": "steam-background.jpg",
+    "size": [
+      1438,
+      810
+    ],
+    "sha256": "7bfb0f23a9d09f5046c0b79b96421f4b1c841f8e97b63c0ec0c248ab7c73d9f0",
+    "retrieved": "2026-10-24",
+    "rights": "official store original artwork, local reference only"
+  }
+]

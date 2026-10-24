@@ -1,5 +1,7 @@
 # 規格索引
 
+- [022 左右海報](022-side-posters.md)：#21，使用者確認固定加寬與語系文字，READY。
+
 狀態：DRAFT → 證據審查 → READY → 實作 → 同狀態驗證 → CONFORMED（`AGENTS.md` 第 7 節）。
 規格 001–017 的契約沿用克萊恩英豪（`/home/anr2/cht/golden_box/champions_of_krynn/docs/spec/`），018–022 沿用銀色匕首之謎
 （`/home/anr2/cht/golden_box/secret-of-the-sliver-blader/docs/spec/`）。adapter 是由 `apps/sosb` 複製的 `apps/pod`，play 指令是由

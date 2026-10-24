@@ -1,5 +1,7 @@
 # HD 首批審閱
 
+新增需求：[左右海報示意](poster/README.md)，原版封面來源與語系切換原型，尚未接入。
+
 Issue：[#18](https://github.com/wicanr2/pools-of-darkness-cht/issues/18)。狀態：使用者於 2026-10-24 確認「採用這批畫風，繼續全量」。
 這些是 BIGPIC 資產的原版／重繪對照，尚非遊戲內 HD 截圖。
 
@@ -15,7 +17,7 @@ Issue：[#18](https://github.com/wicanr2/pools-of-darkness-cht/issues/18)。狀�
 人物圖 PIC1-131、PIC1-043 第 0 幀已通過數值與同狀態比較，重畫及遊戲畫面均已目視核對。
 來源、完整提示詞、原始生成圖與最終 PNG 雜湊見 [b02-manifest.json](b02-manifest.json)。
 實際執行畫面見 [README](../../README.md#繁中與-hd-實際畫面)。
-49 個 PIC 基準畫面已完成數值與目視驗收，原版並列、提示詞與逐件 SHA-256 見 [b02 基準圖](b02-base/README.md)。
-其餘 32 個動畫狀態仍在製作。
+PIC 的 49 個基準畫面與 32 個動畫狀態均完成數值與目視驗收，原版並列、提示詞與逐件 SHA-256 見 [b02 全量圖](b02-base/README.md)。
+三組原版完全相同的狀態共用重畫，主題登記 78 項；完整主題的正常路徑驗收另在進行。
 
 本頁包含擷取的原版素材，只限目前私人儲存庫；公開前須依 AGENTS.md 移除並清理歷史。

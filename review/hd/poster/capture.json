@@ -1,0 +1,47 @@
+[
+  {
+    "file": "wide-zh.png",
+    "lang": "zh-TW",
+    "layout": "wide",
+    "viewport": [
+      1440,
+      684
+    ],
+    "game": {
+      "x": 240,
+      "y": 56,
+      "w": 960,
+      "h": 600
+    }
+  },
+  {
+    "file": "wide-en.png",
+    "lang": "en",
+    "layout": "wide",
+    "viewport": [
+      1440,
+      684
+    ],
+    "game": {
+      "x": 240,
+      "y": 56,
+      "w": 960,
+      "h": 600
+    }
+  },
+  {
+    "file": "narrow-zh.png",
+    "lang": "zh-TW",
+    "layout": "narrow",
+    "viewport": [
+      1066,
+      684
+    ],
+    "game": {
+      "x": 53,
+      "y": 56,
+      "w": 960,
+      "h": 600
+    }
+  }
+]
