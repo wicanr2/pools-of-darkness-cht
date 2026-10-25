@@ -3,6 +3,18 @@
 日期：2026-10-24。Issue：[#10](https://github.com/wicanr2/pools-of-darkness-cht/issues/10)、[#17](https://github.com/wicanr2/pools-of-darkness-cht/issues/17)。
 狀態：研究與畫風原型中，未作全量或執行期 HD 完成聲明。
 
+## 既有來源盤點續核
+
+2026-10-25以[盤點摘要工具](../../tools/hd_vga_inventory_summary.py)核對兩份既有catalog，每筆尺寸、色號及色盤SHA均驗證。
+固定結果見[014-inventory-summary.json](014-inventory-summary.json)：共908個來源狀態，按尺寸、完整色號與實際用色RGB去重後為887組。
+這只是兩份已收錄圖檔的計數，不含另行盤點的牆面及INTRO／FINAL，不能當作全遊戲美術分母或HD完成率。
+
+- 在`sosb-img:r1`容器內執行`python3 -I tools/hd_vga_inventory_summary.py --inventory workplace/hd/inventory --out docs/re/014-inventory-summary.json`可重生。
+  原始來源唯讀；輸出只保存數量、輸入雜湊與完全相同來源的別名，不含原始色號資料。
+- CPIC244個狀態有238組可見圖樣。後續六組完全相同的來源為78／121、206／249、97／122、225／250、120／126、248／254。
+  可沿用同一已驗收生圖，但仍須保留來源別名，不能把相同前景重複登記為不同HD而製造歧義。
+- 本工具沒有按鏡像去重，也沒有以缺少主題key推測素材未完成。實際接入與正常路徑驗收仍以規格010及各批收據為準。
+
 ## 範圍與來源
 
 使用者已授權 Codex 全程負責 HD，先做第一批並列圖確認畫風。維持 3 倍、風格 B 與原版配色。

@@ -1,0 +1,423 @@
+{
+  "scope": "two existing image catalogs only; excludes separately inventoried wall banks and INTRO/FINAL; exact size/indexed/used-RGB; no mirror equivalence or completion inference",
+  "inputs": {
+    "inventory.json": "ac2e96e6acca72ec333cfb6bf8fa9484e489577e4e1d7b2c7e6b0f9e76bac2e7",
+    "inventory-other.json": "9381076a6fa1cb381b73e1e809f64a2013c1d1b9c38ebeb97de5513a6b67c376"
+  },
+  "source_states": 908,
+  "unique_visible_signatures": 887,
+  "families": [
+    {
+      "file": "BACK1.DAX",
+      "source_states": 6,
+      "unique_visible_signatures": 6
+    },
+    {
+      "file": "BIGPIC1.DAX",
+      "source_states": 7,
+      "unique_visible_signatures": 7
+    },
+    {
+      "file": "CBODY.DAX",
+      "source_states": 128,
+      "unique_visible_signatures": 128
+    },
+    {
+      "file": "CHEAD.DAX",
+      "source_states": 28,
+      "unique_visible_signatures": 25
+    },
+    {
+      "file": "COMSPR.DAX",
+      "source_states": 44,
+      "unique_visible_signatures": 38
+    },
+    {
+      "file": "CPIC1.DAX",
+      "source_states": 244,
+      "unique_visible_signatures": 238
+    },
+    {
+      "file": "DUNGCOM.DAX",
+      "source_states": 156,
+      "unique_visible_signatures": 156
+    },
+    {
+      "file": "PIC1.DAX",
+      "source_states": 81,
+      "unique_visible_signatures": 78
+    },
+    {
+      "file": "SKYGRND.DAX",
+      "source_states": 4,
+      "unique_visible_signatures": 4
+    },
+    {
+      "file": "SPRIT1.DAX",
+      "source_states": 87,
+      "unique_visible_signatures": 87
+    },
+    {
+      "file": "TITLE.DAX",
+      "source_states": 3,
+      "unique_visible_signatures": 3
+    },
+    {
+      "file": "WILDCOM.DAX",
+      "source_states": 120,
+      "unique_visible_signatures": 117
+    }
+  ],
+  "aliases": [
+    {
+      "size": [
+        88,
+        88
+      ],
+      "indexed_sha256": "57eccb38042fb3eb5dbc70e24cb739192bae9fc0994ae252eb3bbe6cbd76bf31",
+      "used_palette_sha256": "ea3ba0624eb532a96be070bc4dff2e35cb12c3ac7332eb1c793594e1c975b49f",
+      "sources": [
+        {
+          "key": "pic1-044@5",
+          "file": "PIC1.DAX"
+        },
+        {
+          "key": "pic1-044@7",
+          "file": "PIC1.DAX"
+        }
+      ]
+    },
+    {
+      "size": [
+        88,
+        88
+      ],
+      "indexed_sha256": "9956d2d6abb1c9e79e6d04162ba9fbfad94875bac0674d8ad5d01f7fd06fcc21",
+      "used_palette_sha256": "2b18604a719c892e2475c6b74bc6c6a15bb43bb97783c993f5dfb5663d8f899e",
+      "sources": [
+        {
+          "key": "pic1-047@1",
+          "file": "PIC1.DAX"
+        },
+        {
+          "key": "pic1-047@3",
+          "file": "PIC1.DAX"
+        }
+      ]
+    },
+    {
+      "size": [
+        88,
+        88
+      ],
+      "indexed_sha256": "f9fad155768dfdb993a00a3988c758db366ffeefd00f8d44fcc4861b5b900b0f",
+      "used_palette_sha256": "95c3d032000a923ab0aa9bbabe7a9ae4f08a68aecf158708b0355d5f8270970e",
+      "sources": [
+        {
+          "key": "pic1-143@0",
+          "file": "PIC1.DAX"
+        },
+        {
+          "key": "pic1-151",
+          "file": "PIC1.DAX"
+        }
+      ]
+    },
+    {
+      "size": [
+        24,
+        24
+      ],
+      "indexed_sha256": "86fca20bf30f00ca128323f962c8bfee8678b31df9215663308645822afeadd9",
+      "used_palette_sha256": "4b647e31a4bf4d8635ff112031aec2ff93d174c45670bd697dc5e758ad0ec5cd",
+      "sources": [
+        {
+          "key": "cpic1-078",
+          "file": "CPIC1.DAX"
+        },
+        {
+          "key": "cpic1-121",
+          "file": "CPIC1.DAX"
+        }
+      ]
+    },
+    {
+      "size": [
+        24,
+        24
+      ],
+      "indexed_sha256": "c90091b5765ac2bba9227c1d9f8593728a7dda5e64251b3343aa049f08e0dda2",
+      "used_palette_sha256": "915c35e244d393dc2d636b8dcde5bc357a3685954725a79a9c762efea6ab89c9",
+      "sources": [
+        {
+          "key": "cpic1-206",
+          "file": "CPIC1.DAX"
+        },
+        {
+          "key": "cpic1-249",
+          "file": "CPIC1.DAX"
+        }
+      ]
+    },
+    {
+      "size": [
+        24,
+        24
+      ],
+      "indexed_sha256": "2e81c214025ce20070441e712707b27900a55fb53a035935823a89369a7e4eb7",
+      "used_palette_sha256": "15075b5cd74401cacfe453c29781b2b468cbc9f3e0337f62e3112073d7ae6717",
+      "sources": [
+        {
+          "key": "cpic1-097",
+          "file": "CPIC1.DAX"
+        },
+        {
+          "key": "cpic1-122",
+          "file": "CPIC1.DAX"
+        }
+      ]
+    },
+    {
+      "size": [
+        24,
+        24
+      ],
+      "indexed_sha256": "4ea529ca9153029dc893d1c7d8f3db3da46be9f3b91762c822a26cd0ba24b4ee",
+      "used_palette_sha256": "03eb06e272451760de141d643520e573ecaf4fd1c554fb47cf2d0b315d4135fb",
+      "sources": [
+        {
+          "key": "cpic1-225",
+          "file": "CPIC1.DAX"
+        },
+        {
+          "key": "cpic1-250",
+          "file": "CPIC1.DAX"
+        }
+      ]
+    },
+    {
+      "size": [
+        24,
+        24
+      ],
+      "indexed_sha256": "2756e4ce524420e7e4972bde83e802a5cf85d2e47765f67005972311f0cbac6a",
+      "used_palette_sha256": "978bd6fe9c9d4432cf0ab74d7c2cb8705e58b284d4de7e18676b726e82a5e17e",
+      "sources": [
+        {
+          "key": "cpic1-120",
+          "file": "CPIC1.DAX"
+        },
+        {
+          "key": "cpic1-126",
+          "file": "CPIC1.DAX"
+        }
+      ]
+    },
+    {
+      "size": [
+        24,
+        24
+      ],
+      "indexed_sha256": "5761e6dbbe751a0ce76061dd19d9f0bff48ed6f2e8bbe8390358db34b0065c14",
+      "used_palette_sha256": "480c8e7cab8821f9b18dbf169e7cd59a0d09bd873d8cb97c3d4c347f46ae6404",
+      "sources": [
+        {
+          "key": "cpic1-248",
+          "file": "CPIC1.DAX"
+        },
+        {
+          "key": "cpic1-254",
+          "file": "CPIC1.DAX"
+        }
+      ]
+    },
+    {
+      "size": [
+        24,
+        10
+      ],
+      "indexed_sha256": "430c5be6d053eb5499404e62efa3d967227a2e0c3e00f8d9b7350d52e08709df",
+      "used_palette_sha256": "7a55999a7f9453088673fd62154088ba6a55a772987eee9b3e12ee6342cf7bbd",
+      "sources": [
+        {
+          "key": "chead-000",
+          "file": "CHEAD.DAX"
+        },
+        {
+          "key": "chead-011",
+          "file": "CHEAD.DAX"
+        },
+        {
+          "key": "chead-013",
+          "file": "CHEAD.DAX"
+        }
+      ]
+    },
+    {
+      "size": [
+        24,
+        10
+      ],
+      "indexed_sha256": "3bef0910921d83d4d4281f5f75e358b597c165ef72751fd541aa5e3ae73c7f9d",
+      "used_palette_sha256": "c09dd69ed73cced1dfe1a3bc6c2582b4b1ae9e7ec0cbcc5eb1278530e693ab64",
+      "sources": [
+        {
+          "key": "chead-010",
+          "file": "CHEAD.DAX"
+        },
+        {
+          "key": "chead-012",
+          "file": "CHEAD.DAX"
+        }
+      ]
+    },
+    {
+      "size": [
+        24,
+        24
+      ],
+      "indexed_sha256": "497c42f9c837a55a6d3d23353d52537af325da839db705c3779dede6c96921dd",
+      "used_palette_sha256": "2cfa551d42ef526f6fcfcc484cff3670d2a641f1fe5451820ff11445d26c7fc0",
+      "sources": [
+        {
+          "key": "comspr-012",
+          "file": "COMSPR.DAX"
+        },
+        {
+          "key": "comspr-140",
+          "file": "COMSPR.DAX"
+        }
+      ]
+    },
+    {
+      "size": [
+        24,
+        24
+      ],
+      "indexed_sha256": "4afb12813172c9dfd5fb2df477e9229916098bf83acce4fb0d84a5eeb9d151c0",
+      "used_palette_sha256": "50f063601b7daa3c3459d1ccfc5faa56fe506d489a58364af4b60c78a99f0bf0",
+      "sources": [
+        {
+          "key": "comspr-013",
+          "file": "COMSPR.DAX"
+        },
+        {
+          "key": "comspr-141",
+          "file": "COMSPR.DAX"
+        }
+      ]
+    },
+    {
+      "size": [
+        24,
+        24
+      ],
+      "indexed_sha256": "fbfc28be6ea71dc37b9f88edc364a2ca9e8662f8bd4108847a90e835c166f977",
+      "used_palette_sha256": "1b38e673af0834c95e74755c57cd78eff75c736411d0ddce117b86330406c986",
+      "sources": [
+        {
+          "key": "comspr-015",
+          "file": "COMSPR.DAX"
+        },
+        {
+          "key": "comspr-143",
+          "file": "COMSPR.DAX"
+        }
+      ]
+    },
+    {
+      "size": [
+        24,
+        24
+      ],
+      "indexed_sha256": "2a751cc94f1d90f1aded18533e246b086783b46396887de41a445c9b7935aec8",
+      "used_palette_sha256": "50c6db2f9b85fb5753f687cf9ef67cf16da978b5e25f1361c69b051f389b6144",
+      "sources": [
+        {
+          "key": "comspr-016",
+          "file": "COMSPR.DAX"
+        },
+        {
+          "key": "comspr-144",
+          "file": "COMSPR.DAX"
+        }
+      ]
+    },
+    {
+      "size": [
+        24,
+        24
+      ],
+      "indexed_sha256": "92a0c28f3468711266efb09cc89f621d1587855bf84049923c82b00ebbe75417",
+      "used_palette_sha256": "c5b2da511eedfef25025c88ab88cf7bb5884e399c7caa17281f9a68c9715827c",
+      "sources": [
+        {
+          "key": "comspr-020",
+          "file": "COMSPR.DAX"
+        },
+        {
+          "key": "comspr-148",
+          "file": "COMSPR.DAX"
+        }
+      ]
+    },
+    {
+      "size": [
+        24,
+        24
+      ],
+      "indexed_sha256": "9d089efc776f1fc68d20faaf29fe143a25667de4297585959be9c311f4fb122b",
+      "used_palette_sha256": "7a467163a346ad613428da3b611b73337bf1fe8c1625f30da0b9a2797f94c7e9",
+      "sources": [
+        {
+          "key": "comspr-021",
+          "file": "COMSPR.DAX"
+        },
+        {
+          "key": "comspr-149",
+          "file": "COMSPR.DAX"
+        }
+      ]
+    },
+    {
+      "size": [
+        24,
+        24
+      ],
+      "indexed_sha256": "0db2e3d8ea06e485b61b15971454566a862bd25da4e539941da342ce0ce75512",
+      "used_palette_sha256": "dac7bcdac8f42583181730274d63f7ca2e01d017895859079758945eb5d1c59c",
+      "sources": [
+        {
+          "key": "wildcom-001@8",
+          "file": "WILDCOM.DAX"
+        },
+        {
+          "key": "wildcom-001@9",
+          "file": "WILDCOM.DAX"
+        }
+      ]
+    },
+    {
+      "size": [
+        24,
+        24
+      ],
+      "indexed_sha256": "5722583fa1ac814bdc1d90c98237a4279da897a9fc15ebdeb537196a9c139ba5",
+      "used_palette_sha256": "c4544280b14dded4566234223635285423de86859a8a3fd2c572f62c5043f987",
+      "sources": [
+        {
+          "key": "wildcom-001@37",
+          "file": "WILDCOM.DAX"
+        },
+        {
+          "key": "wildcom-001@38",
+          "file": "WILDCOM.DAX"
+        },
+        {
+          "key": "wildcom-001@39",
+          "file": "WILDCOM.DAX"
+        }
+      ]
+    }
+  ]
+}

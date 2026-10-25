@@ -1202,7 +1202,7 @@
         "reference_sha256": {
           "workplace/hd/out/b16/cpic1-036-r0-raw.png": "91beac8dae70d79889bb364a7f7b904b4b845f372460df44d1fa601d58ba96c1"
         },
-        "reference_resize": "nearest-neighbour original input only",
+        "reference_resize": "unresized previously generated AI r0 artwork; original indexed source remains pinned in request",
         "identity_source": "MON1CHA same-number Pascal name is auxiliary; CPIC pose and palette remain authoritative",
         "rights": "AI redraw eligible for existing HD patch scope; original reference private only"
       },
