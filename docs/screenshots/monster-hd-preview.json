@@ -1,0 +1,116 @@
+{
+  "scope": "AI-redrawn asset preview; not a gameplay screenshot",
+  "composition": "native 3x PNG; no resizing or cropping",
+  "size": [
+    600,
+    300
+  ],
+  "output_sha256": "e383721ae3fc6acb0e523d02f06cd97976ce4cc391e812038053e41669ecdbb0",
+  "items": [
+    {
+      "key": "cpic1-044",
+      "source": "review/hd/b18-cpic/cpic1-044.png",
+      "png_sha256": "c61a3861109896adca3b016a329333aa6cf40c9aae1f1d86f80e2dae98cadafd",
+      "size": [
+        144,
+        144
+      ],
+      "position": [
+        3,
+        3
+      ]
+    },
+    {
+      "key": "cpic1-048",
+      "source": "review/hd/b18-cpic/cpic1-048.png",
+      "png_sha256": "36bc947563a9304dcaac486a4f8943d03d3911e4efba4439cf8d734ebd5b09b9",
+      "size": [
+        144,
+        144
+      ],
+      "position": [
+        153,
+        3
+      ]
+    },
+    {
+      "key": "cpic1-069",
+      "source": "review/hd/b21-cpic/cpic1-069.png",
+      "png_sha256": "86aa4fa0a544c8246a47a3ccfbc7f013b3004513450d2446abad8d2f1fa85be0",
+      "size": [
+        144,
+        144
+      ],
+      "position": [
+        303,
+        3
+      ]
+    },
+    {
+      "key": "cpic1-077",
+      "source": "review/hd/b21-cpic/cpic1-077.png",
+      "png_sha256": "105c4f644f62200bdc0df21549988a42c7ecdb65fcdf950328f5ad560b40e964",
+      "size": [
+        144,
+        144
+      ],
+      "position": [
+        453,
+        3
+      ]
+    },
+    {
+      "key": "cpic1-094",
+      "source": "review/hd/b23-cpic/cpic1-094.png",
+      "png_sha256": "3a65a0797f247f4a0e63eb363c3160a162fc2316e477199a25be6ee3c2b32233",
+      "size": [
+        144,
+        144
+      ],
+      "position": [
+        3,
+        153
+      ]
+    },
+    {
+      "key": "cpic1-095",
+      "source": "review/hd/b23-cpic/cpic1-095.png",
+      "png_sha256": "687762e5abc07345de641aac2065b9aded4e9e44d1390c920d7fba14575058f8",
+      "size": [
+        144,
+        144
+      ],
+      "position": [
+        153,
+        153
+      ]
+    },
+    {
+      "key": "cpic1-105",
+      "source": "review/hd/b23-cpic/cpic1-105.png",
+      "png_sha256": "5b42f6aaacbf489ae3975f5b8642572cc09da2b1001546473c753394386bcc3c",
+      "size": [
+        144,
+        72
+      ],
+      "position": [
+        303,
+        189
+      ]
+    },
+    {
+      "key": "cpic1-108",
+      "source": "review/hd/b24-cpic/cpic1-108.png",
+      "png_sha256": "57c9ec0a29eb9a8e3d5b0df7eb404353ad82066b10a9433a929f773ed064f25f",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        489,
+        189
+      ]
+    }
+  ],
+  "rights": "AI redraws within existing private HD patch scope; no original reference pixels"
+}

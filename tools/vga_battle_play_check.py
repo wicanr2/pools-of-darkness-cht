@@ -21,7 +21,7 @@ def record(path, binary='/app/pod-play-vga'):
     Path(path).write_text(json.dumps(inputs, ensure_ascii=False, indent=2) + '\n')
 
 
-def check(root, theme):
+def check(root, theme, original_baseline=None):
     import numpy as np
     from PIL import Image
 
@@ -56,6 +56,7 @@ def check(root, theme):
     for name, value in cases.items():
         for key in ('end', 'digest', 'idx', 'pal', 'guest', 'inputs'):
             assert value[key] == first[key], f'{name}: {key} 改變'
+    assert tree(theme) == first['inputs']['theme'], '主題已在執行後變更'
     assert np.array_equal(cases['english']['center'], first['original']), 'F12仍顯示中文或HD'
     diff = np.any(first['center'] != cases['base']['center'], axis=2)
     allowed = np.zeros((600, 960), dtype=bool)
@@ -100,6 +101,7 @@ def check(root, theme):
     observed = {r['key'] for r in matches if r['key'].startswith('cpic1-')}
     report = dict(scope='7400格既有冷啟動DEMO；八個CPIC鏡像位置／兩張地形；未觀測狀態保持條件式候選',
                   registered_actor_states=len(actors),
+                  actors_manifest_sha256=sha((theme / 'actors.json').read_bytes()), theme_files=len(first['inputs']['theme']),
                   unobserved_actor_keys=[r['key'] for r in actors if r['key'] not in observed],
                   frames=7400, steps=712250000, memory_sha256=first['end'][2], indexed_sha256=first['end'][3],
                   cpu_sha256=first['digest'][0], palette_sha256=first['digest'][1],
@@ -110,6 +112,24 @@ def check(root, theme):
                   matches=matches, audit=audit[0],
                   frames_sha256={name: v['frame_sha256'] for name, v in cases.items()},
                   inputs_sha256=sha(json.dumps(first['inputs'], sort_keys=True).encode()))
+    if original_baseline:
+        previous = original_baseline / 'hd'
+        old_log = (previous / 'run.log').read_text()
+        for pattern in (r'frames=(\d+) steps=(\d+) memory_sha256=(\w+) indexed_sha256=(\w+)',
+                        r'cpu_sha256=(\w+) palette_sha256=(\w+)'):
+            actual, expected = (re.search(pattern, value) for value in (log, old_log))
+            assert actual and expected and actual.groups() == expected.groups(), '新執行檔的原版終點不同'
+        for name in ('source.idx', 'source.pal', 'original.rgba'):
+            assert (root / 'hd' / name).read_bytes() == (previous / name).read_bytes(), f'新執行檔的{name}不同'
+        old_guest = {k: v for k, v in tree(previous / 'save').items() if k not in frontend}
+        assert first['guest'] == old_guest, '新執行檔的DOS檔案不同'
+        old_inputs = json.loads((previous / 'inputs.json').read_text())
+        for key in ('orig', 'font', 'text'):
+            assert first['inputs'][key] == old_inputs[key], f'{key}與原版終點基準不同'
+        report.update(prior_original_state_equal=True,
+                      prior_baseline_binary_sha256=old_inputs['binary_sha256'],
+                      prior_baseline_summary_sha256=sha((original_baseline / 'summary.json').read_bytes()),
+                      prior_sample_composite_equal=(root / 'hd/frame.png').read_bytes() == (previous / 'frame.png').read_bytes())
     (root / 'summary.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps(report, ensure_ascii=False, indent=2))
 
@@ -176,14 +196,16 @@ if __name__ == '__main__':
     parser.add_argument('--theme', type=Path)
     parser.add_argument('--baseline', type=Path)
     parser.add_argument('--baseline-theme', type=Path)
+    parser.add_argument('--original-baseline', type=Path, help='四路完整驗收後，另比先前執行檔的原版終點；不取代四路')
     parser.add_argument('--added', nargs='+')
     args = parser.parse_args()
     if args.record:
         record(args.record, args.record_binary)
     else:
         assert args.out and args.theme
+        assert not (args.baseline and args.original_baseline), '純資料增量與新執行檔四路驗收不能混用'
         if args.baseline:
             assert args.baseline_theme
             check_incremental(args.out, args.theme, args.baseline, args.baseline_theme, args.added)
         else:
-            check(args.out, args.theme)
+            check(args.out, args.theme, args.original_baseline)

@@ -81,4 +81,17 @@ PIC 的 49 個基準畫面與 32 個動畫狀態均完成數值與目視驗收�
 原版相同的121／249由078／206代表圖涵蓋；正式接入與正常收據由[#40](https://github.com/wicanr2/pools-of-darkness-cht/issues/40)追蹤。
 來源診斷及正常7400格通過，原版終點、127個DOS檔案及最終合成同固定基準，閃現0；559檔同受測版本，160個候選已啟用。
 
+[b22 CPIC80–91及208–219](b22-cpic/README.md)24張數值與正式尺寸逐件目視通過，十二個變體遮罩外0。
+弓手已依原圖修正頭部、手臂與弓的位置，接入由[#41](https://github.com/wicanr2/pools-of-darkness-cht/issues/41)追蹤。
+
+[b23 CPIC92–105排除102](b23-cpic/README.md)26張數值與正式尺寸逐件目視通過，十三個變體遮罩外0。
+保留首批102／230，來源相同的122／250由097／225代表，接入由[#42](https://github.com/wicanr2/pools-of-darkness-cht/issues/42)追蹤。
+
+[b24 CPIC後段](b24-cpic/README.md)28張數值與正式尺寸逐件目視通過，十四個變體遮罩外0。
+六組相同來源只保留代表圖，238組唯一圖樣已涵蓋244個CPIC來源狀態；正常接入驗收由[#43](https://github.com/wicanr2/pools-of-darkness-cht/issues/43)追蹤。
+
+b22至b24已合併接入，完整244個來源狀態／238張重畫的[覆蓋紀錄](../../docs/re/017-cpic-coverage.json)與[四路正常收據](../../docs/re/017-b24-runtime.json)均通過。
+715檔正式主題同受測版本，原版終點及127個DOS檔案同固定基準、戰場外差異0、閃現0；未觀測正常遭遇仍未知。
+來源ID尾端補證與驗證範圍見[研究017](../../docs/re/017-vga-battle-hd.md#b22至b24-完整cpic來源接入)。
+
 本頁包含擷取的原版素材，只限目前私人儲存庫；公開前須依 AGENTS.md 移除並清理歷史。
