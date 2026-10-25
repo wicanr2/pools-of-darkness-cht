@@ -45,6 +45,10 @@
 
 ## 待定
 
+目前新增工作：使用者於2026-10-25要求完全攔截繪圖函數，避免先繪製底圖再繪HD，指定參考`/home/anr2/cht/mm3`。
+已確認採直接替換與前端繪圖命令方向；本作來源／輸出／事件邊界先補證，見[規格025](docs/spec/025-direct-render-commands.md)、[研究019](docs/re/019-draw-interception.md)及[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)。
+目前正式f77eac3與730檔主題不變，原型未達READY前不接入。
+
 | 項目 | 何時決定 |
 |---|---|
 | 片尾字幕與片頭片尾動畫HD：來源、辨識及呈現方式 | G9 |
