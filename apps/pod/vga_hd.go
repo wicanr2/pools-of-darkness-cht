@@ -42,12 +42,20 @@ func hasVGAPixels(ref []byte) bool {
 	return false
 }
 
+// 主專案研究017：CPIC1.DAX的244筆實際目錄；ID不連續，不能以筆數代替最大ID。
+func cpicVGAIDExists(n int) bool {
+	if n >= 128 {
+		n -= 128
+	}
+	return n >= 1 && n <= 108 || n >= 112 && n <= 122 || n >= 125 && n <= 127
+}
+
 func vgaActorReference(key string, ref []byte) (bool, error) {
 	if !hasVGAPixels(ref) {
 		return false, nil
 	}
 	n, err := strconv.Atoi(strings.TrimPrefix(key, "cpic1-"))
-	if err != nil || key != fmt.Sprintf("cpic1-%03d", n) || !(n >= 1 && n <= 122 || n >= 129 && n <= 250) {
+	if err != nil || key != fmt.Sprintf("cpic1-%03d", n) || !cpicVGAIDExists(n) {
 		return false, fmt.Errorf("%s：未知VGA怪物來源", key)
 	}
 	for _, c := range ref {
