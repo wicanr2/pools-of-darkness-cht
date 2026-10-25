@@ -41,8 +41,19 @@
 | ![原版遊戲封面](docs/screenshots/game-cover-original.png) | ![正常冷啟動的繁中 HD 封面](docs/screenshots/game-cover-hd.png) |
 
 左圖由 `TITLE.DAX` 第 2 塊解碼，與正常冷啟動原版畫面逐像素一致；右圖是實際遊戲截圖。
-HD 採完整藍紫色禮服，保留女王、王冠與寶座構圖。標題文字與美術分離，F8 可切為[英文 HD 封面](docs/screenshots/game-cover-hd-en.png)。
-另見[含兩側海報的完整封面視窗](docs/screenshots/game-cover-window.png)。三張開場圖與語系切換的原版狀態比較、零閃現範圍見[開場驗收](docs/re/014-vga-hd.md#開場與英文正常路徑驗收)。
+HD 採完整藍紫色禮服，保留女王、王冠與寶座構圖。標題文字與美術分離，F8 可切為英文。
+
+| 英文 HD 封面 | 含兩側海報的完整封面視窗 |
+|---|---|
+| ![英文 HD 封面](docs/screenshots/game-cover-hd-en.png) | ![含兩側海報的完整封面視窗](docs/screenshots/game-cover-window.png) |
+
+| 繁中封面重繪素材 | 英文封面重繪素材 |
+|---|---|
+| ![繁中封面重繪素材預覽](docs/screenshots/game-cover-hd-preview.png) | ![英文封面重繪素材預覽](docs/screenshots/game-cover-hd-preview-en.png) |
+
+這兩張是重繪素材預覽；上方的封面與海報視窗則是實際遊戲截圖。
+
+三張開場圖與語系切換的原版狀態比較、零閃現範圍見[開場驗收](docs/re/014-vga-hd.md#開場與英文正常路徑驗收)。
 
 ### 原版 BIGPIC 與 HD 重畫
 
@@ -74,7 +85,9 @@ HD 製作與接入進度由 [#10](https://github.com/wicanr2/pools-of-darkness-c
 
 本批包含半蜘蛛精靈、吸血鬼法師、電蜘蛛及兩張石牆。完整冷啟動 7,400 格的閃現為 0，
 HD、無 HD、F12 原版及 2 倍四路的 CPU、記憶體、色號、色盤與 127 個 DOS 檔案一致。
-另見[含兩側海報的完整戰鬥視窗](docs/screenshots/demo-battle-window.png)與[驗收範圍](docs/re/017-vga-battle-hd.md)。
+完整戰鬥視窗如下，兩側保留海報；[驗收範圍](docs/re/017-vga-battle-hd.md)另有說明。
+
+![含兩側海報的完整戰鬥視窗](docs/screenshots/demo-battle-window.png)
 
 ### 菲蘭街景
 
@@ -84,7 +97,8 @@ HD、無 HD、F12 原版及 2 倍四路的 CPU、記憶體、色號、色盤與 
 
 上圖取自正常冷啟動讀檔後的同一地點。17種牆面與天空、地面組成121格街景，
 4,800格抽樣閃現為0，原版狀態及存檔一致；其他地點仍在製作。
-另見[含兩側海報的街景視窗](docs/screenshots/street-window.png)。
+
+![含兩側海報的街景視窗](docs/screenshots/street-window.png)
 
 ### 遊戲內地圖與攻略點
 
@@ -98,7 +112,12 @@ HD、無 HD、F12 原版及 2 倍四路的 CPU、記憶體、色號、色盤與 
 ![遊戲上方工具列的實際截圖](docs/screenshots/toolbar.png)
 
 滑鼠移到視窗頂端即可展開工具列，切換顯示、開啟手札、攻略、地圖及其他選項。灰色項目目前停用。
-另見[完整視窗](docs/screenshots/toolbar-window.png)、[速度選單](docs/screenshots/toolbar-speed-menu.png)與[字級選單](docs/screenshots/toolbar-font-menu.png)。
+
+![工具列展開時的完整視窗](docs/screenshots/toolbar-window.png)
+
+| 速度選單 | 字級選單 |
+|---|---|
+| ![工具列速度選單](docs/screenshots/toolbar-speed-menu.png) | ![工具列字級選單](docs/screenshots/toolbar-font-menu.png) |
 
 ### 左右海報
 
@@ -107,7 +126,11 @@ HD、無 HD、F12 原版及 2 倍四路的 CPU、記憶體、色號、色盤與 
 固定加寬保留中央遊戲尺寸。3 倍為 1440×600，中央 960×600；2 倍為 960×400，中央 640×400。
 兩側採用[官方商店的原版插畫](https://store.steampowered.com/app/1904522/Pools_of_Darkness/)，
 標題與文案跟隨目前語系，F8 切換繁中／英文，F12 切回英文原版。
-另見[英文原版模式](docs/screenshots/demo-poster-en.png)與[2 倍畫面](docs/screenshots/demo-poster-2x.png)。
+
+| 英文原版模式與英文海報 | 2 倍畫面與完整海報 |
+|---|---|
+| ![英文原版模式與英文海報](docs/screenshots/demo-poster-en.png) | ![2 倍畫面與完整海報](docs/screenshots/demo-poster-2x.png) |
+
 這些是實際遊戲視窗截圖，來源與驗證範圍見[海報紀錄](docs/re/015-side-posters.md)。
 
 ## 執行與文件
