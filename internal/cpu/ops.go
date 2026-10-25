@@ -262,6 +262,7 @@ func (c *CPU) executeCore(op uint8) error {
 		c.push(c.Seg[CS])
 		c.push(c.IP)
 		c.Seg[CS], c.IP = seg, off
+		c.afterGuestCall()
 	case op == 0x9B: // WAIT
 	case op == 0x9C: // PUSHF
 		c.push(c.Flags)
@@ -440,6 +441,7 @@ func (c *CPU) executeCore(op uint8) error {
 		off := int16(c.fetch16())
 		c.push(c.IP)
 		c.IP = uint16(int16(c.IP) + off)
+		c.afterGuestCall()
 	case op == 0xE9: // JMP rel16
 		c.charge(cycJump)
 		off := int16(c.fetch16())
@@ -748,12 +750,14 @@ func (c *CPU) group45(op uint8) error {
 		t := c.get16(m.rm)
 		c.push(c.IP)
 		c.IP = t
+		c.afterGuestCall()
 	case 3: // CALL far m16:16
 		off := c.get16(m.rm)
 		seg := c.read16(m.rm.seg, m.rm.off+2)
 		c.push(c.Seg[CS])
 		c.push(c.IP)
 		c.Seg[CS], c.IP = seg, off
+		c.afterGuestCall()
 	case 4: // JMP near r/m16
 		c.IP = c.get16(m.rm)
 	case 5: // JMP far m16:16

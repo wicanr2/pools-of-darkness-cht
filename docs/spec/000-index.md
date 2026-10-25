@@ -1,5 +1,7 @@
 # 規格索引
 
+- [436 CALL後的有界主機效果](436-host-call-effects.md)：READY；唯讀計畫、完整CPU／RAM效果及事件／回合配額，預設關閉。
+
 - [434 原生文字串繪圖命令](434-native-video-commands.md)：CONFORMED；可選mode13h命令、相容背板及原指令事件邊界。
 - [435 延後填入原版RGB](435-deferred-original-rgb.md)：CONFORMED；不可變索引來源與Hold／Latch等價入口，不先填原版RGB再覆畫。
 

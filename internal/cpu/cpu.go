@@ -99,6 +99,7 @@ type CPU struct {
 	Bus   Bus
 	// NativeStrings is a host-only opt-in MOVS/STOS command path (spec434).
 	NativeStrings bool
+	HostCalls     bool // spec436; optional post-CALL owner callback, disabled by default
 
 	// Model 決定 `60`–`6F` 怎麼解。預設是 Model8086。
 	Model Model

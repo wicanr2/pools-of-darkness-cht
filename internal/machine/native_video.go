@@ -104,6 +104,6 @@ func (m *Machine) commandPixel(a uint32, v byte) {
 	if m.onVideoCommand == nil || m.inVideoCommand || !m.nativeVideo || a < vgaLo || a >= vgaLo+64000 || m.planarOn || m.Unchained() || m.Peek8(0x449) != 0x13 {
 		return
 	}
-	cs, ip := m.CPU.OpAddr()
-	m.onVideoCommand(VideoCommand{Kind: VideoPixel, Step: m.Steps, CS: cs, IP: ip, Offset: a - vgaLo, Count: 1, Width: 1, Value: uint16(v)})
+	step, cs, ip := m.videoWriteContext()
+	m.onVideoCommand(VideoCommand{Kind: VideoPixel, Step: step, CS: cs, IP: ip, Offset: a - vgaLo, Count: 1, Width: 1, Value: uint16(v), Native: m.hostEffect != nil})
 }

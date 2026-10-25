@@ -10,6 +10,7 @@ type DrawWriterCount struct{ Commands, NativeBytes, FallbackBytes uint64 }
 type DirectStats struct {
 	Commands, NativeBytes, FallbackBytes, Frames, BootstrapFrames, Mismatches uint64
 	RGBFrames, OriginalRGBPixels, SelectedRGBPixels, LegacyRGBFrames          uint64
+	HostCalls, HostInstructions                                               uint64
 	Writers                                                                   map[uint32]DrawWriterCount
 }
 
@@ -19,6 +20,13 @@ type DirectCanvas struct {
 	pending, committed []byte
 	ready, seenDraw    bool
 	stats              DirectStats
+}
+
+func (d *DirectCanvas) RecordHostWork(calls, instructions uint64) {
+	if d != nil {
+		d.stats.HostCalls += calls
+		d.stats.HostInstructions += instructions
+	}
 }
 
 func NewDirectCanvas() *DirectCanvas {

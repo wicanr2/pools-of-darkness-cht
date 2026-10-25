@@ -309,12 +309,16 @@ type Machine struct {
 	watchLo, watchHi uint32
 
 	// 讀取監看（WatchReads）。rWatchLo > rWatchHi 表示關閉。
-	rWatchLo, rWatchHi          uint32
-	onRead                      func(addr uint32, v uint8)
-	onWrite                     func(addr uint32, old, new uint8)
-	onVideoWrite                func(VideoWrite)
-	onVideoCommand              func(VideoCommand)
-	nativeVideo, inVideoCommand bool
+	rWatchLo, rWatchHi                    uint32
+	onRead                                func(addr uint32, v uint8)
+	onWrite                               func(addr uint32, old, new uint8)
+	onHostCall                            func()
+	hostCallTargets                       []uint32
+	hostEffect                            *HostWrite
+	HostCallCommits, HostCallInstructions uint64
+	onVideoWrite                          func(VideoWrite)
+	onVideoCommand                        func(VideoCommand)
+	nativeVideo, inVideoCommand           bool
 	// 視訊模式觀測（Buck 規格 052）。callback 在 SetVideoMode 末尾呼叫；ModeChanges 照舊追加。
 	onModeChange func(ModeChange)
 
@@ -822,8 +826,8 @@ func (m *Machine) Write8(a uint32, v uint8) {
 		return
 	}
 	if m.onVideoWrite != nil && a >= vgaLo && a < vgaHi {
-		cs, ip := m.CPU.OpAddr()
-		m.onVideoWrite(VideoWrite{Step: m.Steps, CS: cs, IP: ip, Offset: a - vgaLo, Value: v, WriteMode: m.VGA.WriteMode()})
+		step, cs, ip := m.videoWriteContext()
+		m.onVideoWrite(VideoWrite{Step: step, CS: cs, IP: ip, Offset: a - vgaLo, Value: v, WriteMode: m.VGA.WriteMode()})
 	}
 	if m.planarOn && a >= vgaLo && a < vgaHi {
 		// planar 的位元組不在 Mem[] 裡，WatchWrites 看不到它們。

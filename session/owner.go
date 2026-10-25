@@ -69,7 +69,8 @@ type TickReceipt struct {
 	Phase              Phase
 	Reason             StopReason
 	// Accelerated 是本回合 TP Delay 快轉的步數（dosgolem `docs/spec/429` §2.3），已含在 Steps 內。
-	Accelerated uint64
+	Accelerated                 uint64
+	HostCalls, HostInstructions uint64 // spec436, already included in Steps
 }
 
 // CapturedUpdate is the value-only input captured for one future frontend
@@ -119,6 +120,7 @@ type Config struct {
 	ClockPercent int
 	// NativeVideoCommands opts into spec434 and requires VideoCommandObserver.
 	NativeVideoCommands bool
+	NativeHostCalls     bool // spec436; requires HostCallProvider
 }
 
 // Status is a value-only lifecycle receipt.  It deliberately exposes neither
@@ -165,6 +167,7 @@ type Owner struct {
 
 	observer            StepObserver
 	nativeVideoCommands bool
+	nativeHostCalls     bool
 	viewToken           uint64
 	viewOpen            bool
 	viewMisuse          bool
@@ -174,6 +177,11 @@ type Owner struct {
 // original executable nor accepts one; later boot work must remain within this
 // owner rather than exposing these resources.
 func New(cfg Config) (*Owner, error) {
+	if cfg.NativeHostCalls {
+		if _, ok := cfg.Observer.(HostCallProvider); !ok {
+			return nil, errors.New("session: native calls require host call provider")
+		}
+	}
 	if cfg.NativeVideoCommands {
 		if _, ok := cfg.Observer.(VideoCommandObserver); !ok {
 			return nil, errors.New("session: native video requires command observer")
@@ -229,6 +237,7 @@ func New(cfg Config) (*Owner, error) {
 	}
 	o.observer = cfg.Observer
 	o.nativeVideoCommands = cfg.NativeVideoCommands
+	o.nativeHostCalls = cfg.NativeHostCalls
 	m.SetNativeVideo(cfg.NativeVideoCommands)
 	if cfg.AdLib {
 		m.SetAdLib(true)
@@ -574,6 +583,7 @@ func (o *Owner) Advance(budget InstructionBudget) (TickReceipt, error) {
 
 	receipt.MachineStepsBefore = o.machine.Steps
 	accelBefore := o.machine.DelayAccelerated
+	hostCallsBefore, hostInstructionsBefore := o.machine.HostCallCommits, o.machine.HostCallInstructions
 	o.machine.RunLimit = o.machine.Steps + uint64(budget)
 	var rawStop machine.Stop
 	var rawErr, observerErr error
@@ -584,6 +594,8 @@ func (o *Owner) Advance(budget InstructionBudget) (TickReceipt, error) {
 	}
 	o.machine.RunLimit = 0
 	receipt.Accelerated = o.machine.DelayAccelerated - accelBefore
+	receipt.HostCalls = o.machine.HostCallCommits - hostCallsBefore
+	receipt.HostInstructions = o.machine.HostCallInstructions - hostInstructionsBefore
 	receipt.HasRawStop = true
 	receipt.RawStop = rawStop
 	receipt.RawError = rawErr

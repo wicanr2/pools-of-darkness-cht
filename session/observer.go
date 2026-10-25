@@ -21,6 +21,13 @@ type StepObserver interface {
 
 // VideoCommandObserver receives owned pixel payloads and no machine capability.
 type VideoCommandObserver interface{ VideoCommand(machine.VideoCommand) }
+type HostCallTargetProvider interface{ HostCallTargets() []uint32 }
+
+// HostCallProvider returns a read-only effect proposal after a completed CALL.
+// A nil proposal declines without observing the callee entry twice.
+type HostCallProvider interface {
+	PrepareHostCall(v StepView, budget uint64) (*machine.HostWorkPlan, error)
+}
 
 // AudioObserver is an optional extension of StepObserver (docs/spec/240
 // §3.3).  It is only called inside a turn; callbacks collect value-type
@@ -113,6 +120,13 @@ func (v StepView) Steps() uint64 {
 	return v.o.machine.Steps
 }
 func (v StepView) CS() uint16 { return v.seg(cpu.CS) }
+
+func (v StepView) DOSBoxCost() bool {
+	if !v.live() {
+		return false
+	}
+	return v.o.machine.CPU.DOSBoxCost
+}
 func (v StepView) DS() uint16 { return v.seg(cpu.DS) }
 func (v StepView) ES() uint16 { return v.seg(cpu.ES) }
 func (v StepView) SS() uint16 { return v.seg(cpu.SS) }
@@ -275,6 +289,48 @@ func (o *Owner) runObserved(budget uint64) (stop machine.Stop, rawErr, observerE
 			return observerErr
 		}
 		return nil
+	}
+	if o.nativeHostCalls {
+		provider := o.observer.(HostCallProvider)
+		o.machine.ObserveHostCalls(func() {
+			guard("HostCall", func() {
+				defer func() { o.viewOpen = false; inObserver = false }()
+				if o.machine.RunLimit <= o.machine.Steps {
+					return
+				}
+				budget := o.machine.HostWorkBudget(o.machine.RunLimit - o.machine.Steps)
+				if budget == 0 {
+					return
+				}
+				o.viewToken++
+				o.viewOpen = true
+				var p *machine.HostWorkPlan
+				var err error
+				func() {
+					defer func() { o.viewOpen = false }()
+					p, err = provider.PrepareHostCall(StepView{o: o, token: o.viewToken}, budget)
+				}()
+				if err != nil {
+					panic(err)
+				}
+				if p == nil {
+					return
+				}
+				if o.machine.ValidateHostWork(p) != nil {
+					return
+				}
+				if err := observe(o.machine); err != nil {
+					panic(err)
+				}
+				if err := o.machine.CommitHostWork(p); err != nil {
+					panic(err)
+				}
+			})
+		})
+		if targets, ok := o.observer.(HostCallTargetProvider); ok {
+			guard("HostCallTargets", func() { o.machine.SetHostCallTargets(targets.HostCallTargets()) })
+		}
+		defer o.machine.ObserveHostCalls(nil)
 	}
 	// A BeforeStep panic happens before that instruction's Step, so unwinding
 	// the whole loop here leaves the machine exactly where it was.  Recovering

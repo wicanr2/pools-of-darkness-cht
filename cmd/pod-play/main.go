@@ -83,6 +83,10 @@ func (o observer) GuardWrite(addr uint32, old, new uint8) bool {
 }
 
 func (o observer) BeforeStep(v session.StepView) error { return o.live.BeforeStep(v) }
+func (o observer) HostCallTargets() []uint32           { return pod.GlyphHostCallTargets() }
+func (o observer) PrepareHostCall(v session.StepView, budget uint64) (*machine.HostWorkPlan, error) {
+	return o.live.PrepareHostCall(v, budget)
+}
 func (o observer) VideoWrite(w machine.VideoWrite)     { o.live.VideoWrite(w.Offset) }
 func (o observer) VideoCommand(c machine.VideoCommand) { o.live.VideoCommand(c) }
 func (o observer) VideoModeChange(machine.ModeChange)  { o.live.ModeChange() }
@@ -410,6 +414,7 @@ func (g *game) Update() error {
 			return err
 		}
 		g.lastSteps, g.accelSteps = tick.MachineStepsAfter, g.accelSteps+tick.Accelerated
+		g.live.Direct.RecordHostWork(tick.HostCalls, tick.HostInstructions)
 		g.samples = g.mix.Render(g.samples[:0], tick.MachineStepsBefore, tick.MachineStepsAfter)
 		g.music.Mix(g.samples)
 		if g.ring != nil {
@@ -613,6 +618,7 @@ func main() {
 	perfFlag := flag.Bool("perf", false, "自動模式結束時印每格模擬與繪製耗時、畫出 fps（主專案規格 019 §4）")
 	flashFlag := flag.Bool("flash-audit", false, "自動模式每畫格量測閃現：原版內容先原樣呈現、之後才被疊字或 HD 換掉（主專案規格 021）")
 	directFlag := flag.Bool("direct-render", true, "直接繪圖命令與單次 RGB 合成；關閉供等價性對照")
+	wholeCallFlag := flag.Bool("whole-call", true, "整段字模呼叫接管；關閉供等價性對照")
 	drawReport := flag.String("draw-report", "", "輸出繪圖命令與像素填色計數 JSON 收據")
 	adaptiveFlag := flag.Bool("speed-adaptive", false, "自動模式也調節實際倍率（只供量測，結果不可重播）")
 	barFontFlag := flag.Int("barfont", 0, "切換列字級 1 小、2 中、3 大（主專案規格 020）；0 表示讀取前端偏好，自動模式為中")
@@ -846,6 +852,7 @@ func main() {
 	cheat := &pod.Invincible{On: *cheatOn}
 	owner, err := session.New(session.Config{InitialScale: s, InitialLayout: layout, AdLib: *adlib, ClockPercent: *clock,
 		NativeVideoCommands: *directFlag,
+		NativeHostCalls:     *directFlag && *wholeCallFlag,
 		Observer:            observer{live: live, mix: mix, cheat: cheat}})
 	if err != nil {
 		fail(err)
