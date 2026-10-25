@@ -65,4 +65,16 @@ PIC 的 49 個基準畫面與 32 個動畫狀態均完成數值與目視驗收�
 來源診斷與正常7400格HD路徑通過，原版終點、127檔與最終合成同b16四路基準、閃現0，90個候選已接入。
 完整收據與範圍由[#36](https://github.com/wicanr2/pools-of-darkness-cht/issues/36)追蹤。
 
+[b18 CPIC44–49及172–177](b18-cpic/README.md)十二張完成數值與正式尺寸逐件目視，六個變體遮罩外0。
+美杜莎的蛇髮與鐵魔像的前傾姿勢已依原圖修正，執行期驗收由[#37](https://github.com/wicanr2/pools-of-darkness-cht/issues/37)追蹤。
+來源診斷及b20累積主題的正常7400格收據已通過，範圍見[研究017](../../docs/re/017-vga-battle-hd.md#b18至b20-累積續批)。
+
+[b19 CPIC50–55及178–183](b19-cpic/README.md)十二張數值與正式尺寸逐件目視通過，六個變體遮罩外0。
+雙頭巨人保留兩個頭，執行期驗收由[#38](https://github.com/wicanr2/pools-of-darkness-cht/issues/38)追蹤。
+與b18及b20合併的正常7400格原版終點、127個DOS檔案及最終合成同固定基準，閃現0。
+
+[b20 CPIC56–67及184–195](b20-cpic/README.md)24張生成素材通過數值及正式尺寸逐件目視。
+064／192沿用已接入首批，不採本批新稿，實際新增22個候選；11個新增變體遮罩外0。
+正常7400格累積主題通過，現行511檔與受測版本相同，合計136個候選。收據由[#39](https://github.com/wicanr2/pools-of-darkness-cht/issues/39)追蹤。
+
 本頁包含擷取的原版素材，只限目前私人儲存庫；公開前須依 AGENTS.md 移除並清理歷史。

@@ -16,6 +16,7 @@ def main():
     for name in ('actor-req','actor-out','terrain-req','terrain-out','theme'):
         ap.add_argument('--'+name,type=Path,required=True)
     ap.add_argument('--merge-existing',action='store_true',help='保留已驗收圖層，拒絕跨批key、來源與鏡像歧義')
+    ap.add_argument('--actor-keys',nargs='+',help='明示只接入本請求的指定怪物；未列出者不覆寫既有主題')
     a=ap.parse_args();files=[];outputs={};proof=[]
     for kind,req,out,target,sourcefile in (
         ('combat-actors',a.actor_req,a.actor_out,'actors.json','CPIC1.DAX'),
@@ -26,7 +27,13 @@ def main():
         if not validation['all_pass'] or validation['scope']!='all' or validation['request_manifest_sha256']!=sha(req/'manifest.json'):
             raise ValueError('驗收未過、非全批或請求已變更')
         bykey={r['key']:r for r in validation['items']};items=[];seen=set()
-        for it in request['items']:
+        selected=request['items']
+        if kind=='combat-actors' and a.actor_keys:
+            keys=set(a.actor_keys)
+            if len(keys)!=len(a.actor_keys) or not keys<={it['key']for it in selected}:
+                raise ValueError('指定怪物key重複或不在請求內')
+            selected=[it for it in selected if it['key']in keys]
+        for it in selected:
             key=it['key'];png=out/(key+'.png');idx=req/it['indexed'];pal=req/it['palette']
             if not re.fullmatch(r'[a-z0-9@-]+',key)or it['source_file']!=sourcefile:raise ValueError('來源種類或key不符本批')
             if sha(png)!=bykey[key]['png_sha256']or sha(png)!=visual.get(key)or sha(idx)!=it['indexed_sha256']or sha(pal)!=it['palette_sha256']:

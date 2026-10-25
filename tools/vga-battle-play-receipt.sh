@@ -6,6 +6,9 @@ MODE="${1:-hd}"
 TAG="${2:-vga-play}"
 THEME="${3:-workplace/hd/theme-vga-stage}"
 BINARY="${4:-pod-play-vga}"
+RECEIPT_TIMEOUT="${POD_RECEIPT_TIMEOUT:-900}"
+case "$RECEIPT_TIMEOUT" in *[!0-9]*|'') echo '收據逾時須為60至3600秒' >&2; exit 2;; esac
+test "$RECEIPT_TIMEOUT" -ge 60 && test "$RECEIPT_TIMEOUT" -le 3600 || { echo '收據逾時須為60至3600秒' >&2; exit 2; }
 case "$THEME" in workplace/hd/*) ;; *) echo '主題須在 workplace/hd 內' >&2; exit 2;; esac
 case "$THEME" in *..*|*[!A-Za-z0-9_/-]*) echo '主題路徑不合法' >&2; exit 2;; esac
 case "$BINARY" in *[!A-Za-z0-9_-]*|'') echo '執行檔名稱不合法' >&2; exit 2;; esac
@@ -16,7 +19,7 @@ test -f "$ROOT/workplace/dosgolem/workplace/bin/$BINARY"
 OUT="$ROOT/workplace/probe/g9-hd/$TAG/$MODE"
 mkdir -p "$OUT"
 test ! -e "$OUT/save" || { echo '保留既有收據，請另定輸出位置' >&2; exit 2; }
-timeout 900s docker run --rm --init --label pod.task=vga-battle-play --network none \
+timeout "${RECEIPT_TIMEOUT}s" docker run --rm --init --label pod.task=vga-battle-play --network none \
   --memory 2g --cpus 2 --pids-limit 256 --log-opt max-size=10m --log-opt max-file=3 \
   --user "$(id -u):$(id -g)" -e HOME=/tmp -e POD_NO_DIALOG=1 -e GOMAXPROCS=2 -e MODE="$MODE" -e BINARY="$BINARY" \
   -v "$ROOT/workplace/dosgolem/workplace/bin:/app:ro" -v "$ROOT/workplace/input/dos/pod:/orig:ro" \
