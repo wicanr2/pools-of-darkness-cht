@@ -143,11 +143,16 @@ func (l *Live) AddHD(dir string) error {
 	if err != nil {
 		return err
 	}
-	for _, it := range items {
+	bigpics, plain, err := loadBigpicHD(items)
+	if err != nil {
+		return err
+	}
+	for _, it := range plain {
 		l.Layer.Watch(it.Watcher())
 	}
 	l.HDLayers = layers
 	l.localized = localized
+	l.bigpics = bigpics
 	if l.lang != nil {
 		l.localized.setLocale(l.lang.Code)
 	}
@@ -155,7 +160,7 @@ func (l *Live) AddHD(dir string) error {
 		l.battleHold = &battleHold{}
 	}
 	l.HDItems += len(items) + count + localizedCount
-	l.armHDHold(items)
+	l.armHDHold(plain)
 	if count > 0 {
 		l.hdLatch = xlate.NewLatch(320, 200, hdLatchKeep, hdLatchFrames)
 	}

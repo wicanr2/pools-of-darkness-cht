@@ -23,7 +23,12 @@ func (l *HDLive) AddHD(dir string) error {
 		return err
 	}
 	// 全部資產核對成功後才登記，不留下部分主題。
-	for _, it := range items {
+	bigpics, plain, err := loadBigpicHD(items)
+	if err != nil {
+		return err
+	}
+	l.bigpics = bigpics
+	for _, it := range plain {
 		l.Layer.Watch(it.Watcher())
 	}
 	l.HDLayers = layers
@@ -42,7 +47,11 @@ func (l *HDLive) Compose(scale int, overlay bool, missing func(rune)) []byte {
 		return out
 	}
 	l.HDLayers.Draw(out, l.indexed, scale)
+	l.bigpics.art(out, scale)
 	l.Layer.Draw(out, scale, missing)
+	if l.bigpics != nil && scale == 3 {
+		l.bigpics.draw(l.indexed, l.Live.Compose(scale, false, nil), out, scale)
+	}
 	if l.Journal.Open() {
 		l.Journal.Draw(out, scale, l.Font, missing)
 	}

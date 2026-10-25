@@ -71,6 +71,7 @@ type Live struct {
 	hdLatch    *xlate.Latch // 戰鬥等圖層的 HD 鎖存（AddHD 載入圖層時建立）
 	battleHold *battleHold
 	localized  *localizedHD
+	bigpics    *bigpicHD
 
 	ui      Lookuper
 	ecl     *Catalog
@@ -247,6 +248,7 @@ func (l *Live) journalEntry(text []byte, mem CPUView) {
 
 // ModeChange 在視訊模式改變時呼叫。
 func (l *Live) ModeChange() {
+	l.bigpics.reset()
 	if l.localized != nil {
 		l.localized.hold = xlate.NewHold(320, 200, hdHoldFrames)
 	}
@@ -270,6 +272,7 @@ func (l *Live) ModeChange() {
 
 // Frame 在每個 retrace 呼叫；palette 須是與 indexed 配對的色盤（machine.FramePalette）。
 func (l *Live) Frame(indexed []byte, palette [256][3]uint8) {
+	l.bigpics.frame(indexed, palette)
 	l.localized.frame(indexed, palette)
 	l.battleHold.commit()
 	if l.hdHold != nil {
@@ -327,12 +330,19 @@ func (l *Live) Compose(scale int, overlay bool, missing func(rune)) []byte {
 			l.hdLatch.Apply(l.indexed, l.palSig(), base, out, scale)
 		}
 		l.localized.art(out, scale)
+		l.bigpics.art(out, scale)
 		l.Layer.Draw(out, scale, missing)
 		if l.localized != nil && scale == hdHoldScale {
 			if base == nil {
 				base = l.Compose(scale, false, nil)
 			}
 			l.localized.draw(l.indexed, base, out, scale)
+		}
+		if l.bigpics != nil && scale == hdHoldScale {
+			if base == nil {
+				base = l.Compose(scale, false, nil)
+			}
+			l.bigpics.draw(l.indexed, base, out, scale)
 		}
 		if l.hdHold != nil && scale == hdHoldScale {
 			if base == nil {
