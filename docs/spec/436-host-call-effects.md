@@ -1,6 +1,6 @@
 # 436 CALL後的有界主機效果
 
-狀態：READY。參考mm3已驗HostWorkBudget／CommitHostWork方法，依本分支Step、CALL、IRQ及RunUntilObserved契約重新審查。
+狀態：CONFORMED，限16位CALL後有界CPU／RAM效果與已列驗收。參考mm3已驗HostWorkBudget／CommitHostWork方法，依本分支Step、CALL、IRQ及RunUntilObserved契約重新審查後達READY再實作。
 
 ## 範圍與控制權
 
@@ -31,3 +31,11 @@ session需明確啟用並驗provider，callback僅Advance內有效，結束後�
 失配回原路徑時不得先呼叫一次BeforeStep再重複通知；只有已驗可提交的計畫才通知入口。
 通用測試比原CALL／主機效果的CPU、完整RAM、步數、週期、有序通知及恰好／不足的事件與回合配額；測近遠CALL、零／溢位、未知mode、監看及callback撤除。
 消費端須另有獨立原版呼叫oracle、正常玩家路徑、同狀態RGB／存檔及包含相容寫入的成對成本。本規格不含任何遊戲常數。
+
+## 驗收
+
+程式`64e734c92ecaa096be9bb91d6e6f792fd5fad7fd`，Go1.24.13。近遠／直接間接CALL、事件恰好及不足、回合配額、入口表值複製、模式／監看／溢位拒絕及observer錯誤／撤除測試通過。
+消費端32個真實入口在三模型／兩週期的192組完整狀態與有序寫入相同，另驗16組邊界、空返回及失配對照。
+正常機器重播的全部像素、回掃、音訊、DOS操作與CPU／RAM一致；正式視窗四路、讀檔10對畫面與正常新存B／冷讀B六對畫面及存檔位元組相同。
+成對完整CALL成本包含資格檢查、計畫、相容寫入及通知，約4.2–4.9倍，不換算全遊戲FPS。
+具體遊戲位址、輸入、雜湊與正常驗收入口保存在消費端[研究019](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-draw-interception.md)與[固定收據](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-whole-call-runtime.json)。
