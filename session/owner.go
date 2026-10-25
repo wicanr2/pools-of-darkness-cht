@@ -117,6 +117,8 @@ type Config struct {
 	AdLib bool
 	// ClockPercent 是機器時脈比例 10–100（docs/spec/242）；0 視為 100。
 	ClockPercent int
+	// NativeVideoCommands opts into spec434 and requires VideoCommandObserver.
+	NativeVideoCommands bool
 }
 
 // Status is a value-only lifecycle receipt.  It deliberately exposes neither
@@ -161,16 +163,22 @@ type Owner struct {
 	closeErr       error
 	closed         bool
 
-	observer   StepObserver
-	viewToken  uint64
-	viewOpen   bool
-	viewMisuse bool
+	observer            StepObserver
+	nativeVideoCommands bool
+	viewToken           uint64
+	viewOpen            bool
+	viewMisuse          bool
 }
 
 // New creates a new sealed, synthetic-ready owner.  It neither loads an
 // original executable nor accepts one; later boot work must remain within this
 // owner rather than exposing these resources.
 func New(cfg Config) (*Owner, error) {
+	if cfg.NativeVideoCommands {
+		if _, ok := cfg.Observer.(VideoCommandObserver); !ok {
+			return nil, errors.New("session: native video requires command observer")
+		}
+	}
 	if cfg.InitialLayout.Epoch == 0 && cfg.InitialLayout != (host.MouseLayout{}) {
 		return nil, errors.New("session: InitialLayout 非零時必須有 layout epoch")
 	}
@@ -220,6 +228,8 @@ func New(cfg Config) (*Owner, error) {
 		o.layout, o.layoutSet = cfg.InitialLayout, true
 	}
 	o.observer = cfg.Observer
+	o.nativeVideoCommands = cfg.NativeVideoCommands
+	m.SetNativeVideo(cfg.NativeVideoCommands)
 	if cfg.AdLib {
 		m.SetAdLib(true)
 		o.muteAudio()

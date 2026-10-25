@@ -19,6 +19,9 @@ type StepObserver interface {
 	Frame(indexed []byte, palette [256][3]uint8)
 }
 
+// VideoCommandObserver receives owned pixel payloads and no machine capability.
+type VideoCommandObserver interface{ VideoCommand(machine.VideoCommand) }
+
 // AudioObserver is an optional extension of StepObserver (docs/spec/240
 // §3.3).  It is only called inside a turn; callbacks collect value-type
 // writes with their step and must not synthesise inside Step.
@@ -202,6 +205,9 @@ func (o *Owner) runObserved(budget uint64) (stop machine.Stop, rawErr, observerE
 		}()
 		f()
 	}
+	if co, ok := o.observer.(VideoCommandObserver); ok && o.nativeVideoCommands {
+		o.machine.ObserveVideoCommands(func(c machine.VideoCommand) { guard("VideoCommand", func() { co.VideoCommand(c) }) })
+	}
 	if mo, ok := o.observer.(ModeObserver); ok {
 		o.machine.ObserveModeChanges(func(c machine.ModeChange) { guard("VideoModeChange", func() { mo.VideoModeChange(c) }) })
 	}
@@ -232,6 +238,7 @@ func (o *Owner) runObserved(budget uint64) (stop machine.Stop, rawErr, observerE
 	}
 	defer func() {
 		o.machine.ObserveVideoWrites(nil)
+		o.machine.ObserveVideoCommands(nil)
 		o.machine.ObserveModeChanges(nil)
 		o.machine.SetOnFrame(nil)
 		if o.machine.AdLibPresent() {

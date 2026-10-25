@@ -1,13 +1,16 @@
 package pod
 
+import "github.com/wicanr2/dosgolem/xlate"
+
 // 主專案規格010／研究017：戰場像素可能先於色盤，怪物也可能跨畫格畫完。
 // 已證實的6690–6692局部繪製最多保留三格；未知來源不等待，不更動原版執行。
 type battleHold struct {
-	prev, current               []byte
-	prevIndex, currentIndex     []byte
-	prevPalette, currentPalette uint64
-	prevHeld, currentHeld       [21 * 21]uint8
-	pending                     bool
+	prev, current                 []byte
+	prevIndex, currentIndex       []byte
+	prevPalette, currentPalette   uint64
+	prevHeld, currentHeld         [21 * 21]uint8
+	pending                       bool
+	prevOriginal, currentOriginal *xlate.IndexedSource
 }
 
 func (h *battleHold) commit() {
@@ -17,11 +20,18 @@ func (h *battleHold) commit() {
 	h.prev, h.current = h.current, h.prev[:0]
 	h.prevIndex, h.currentIndex = h.currentIndex, h.prevIndex[:0]
 	h.prevPalette, h.prevHeld = h.currentPalette, h.currentHeld
+	h.prevOriginal = h.currentOriginal
 	h.pending = false
 }
 
 func (h *battleHold) apply(indexed, base, out []byte, palette uint64, eligible [21 * 21]bool) {
-	if h == nil || len(indexed) != 64000 || len(base) != 960*600*4 || len(out) != len(base) {
+	h.applySource(indexed, base, out, palette, eligible, nil)
+}
+func (h *battleHold) applyDeferred(indexed, out []byte, palette uint64, eligible [21 * 21]bool, source *xlate.IndexedSource) {
+	h.applySource(indexed, nil, out, palette, eligible, source)
+}
+func (h *battleHold) applySource(indexed, base, out []byte, palette uint64, eligible [21 * 21]bool, source *xlate.IndexedSource) {
+	if h == nil || len(indexed) != 64000 || len(out) != 960*600*4 || source == nil && len(base) != len(out) {
 		return
 	}
 	clear(h.currentHeld[:])
@@ -43,7 +53,10 @@ func (h *battleHold) apply(indexed, base, out []byte, palette uint64, eligible [
 				if !changed && h.prevHeld[n] == 0 {
 					continue
 				}
-				for row := 0; row < 24 && original; row++ {
+				if source != nil {
+					original = source.CellIsOriginal(out, x/8, y/8)
+				}
+				for row := 0; row < 24 && original && source == nil; row++ {
 					o := ((y*3+row)*960 + x*3) * 4
 					for k := 0; k < 24*4; k++ {
 						if base[o+k] != out[o+k] {
@@ -55,7 +68,10 @@ func (h *battleHold) apply(indexed, base, out []byte, palette uint64, eligible [
 				if !original {
 					continue
 				}
-				for row := 0; row < 24; row++ {
+				if h.prevOriginal != nil {
+					h.prevOriginal.CopyCellTo(out, h.prev, x/8, y/8)
+				}
+				for row := 0; row < 24 && h.prevOriginal == nil; row++ {
 					o := ((y*3+row)*960 + x*3) * 4
 					copy(out[o:o+24*4], h.prev[o:o+24*4])
 				}
@@ -66,4 +82,5 @@ func (h *battleHold) apply(indexed, base, out []byte, palette uint64, eligible [
 	h.current = append(h.current[:0], out...)
 	h.currentIndex = append(h.currentIndex[:0], indexed...)
 	h.currentPalette, h.pending = palette, true
+	h.currentOriginal = source
 }

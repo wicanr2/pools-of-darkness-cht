@@ -13,6 +13,7 @@ package main
 
 import (
 	"crypto/sha256"
+	"encoding/json"
 	"errors"
 	"flag"
 	"fmt"
@@ -83,6 +84,7 @@ func (o observer) GuardWrite(addr uint32, old, new uint8) bool {
 
 func (o observer) BeforeStep(v session.StepView) error { return o.live.BeforeStep(v) }
 func (o observer) VideoWrite(w machine.VideoWrite)     { o.live.VideoWrite(w.Offset) }
+func (o observer) VideoCommand(c machine.VideoCommand) { o.live.VideoCommand(c) }
 func (o observer) VideoModeChange(machine.ModeChange)  { o.live.ModeChange() }
 func (o observer) Frame(indexed []byte, palette [256][3]uint8) {
 	o.live.Frame(indexed, palette)
@@ -112,35 +114,36 @@ func init() {
 }
 
 type game struct {
-	owner    *session.Owner
-	scale    int // 輸出倍率 2 或 3（F2 切換，比照拯救地球）
-	live     *pod.Live
-	chinese  bool
-	frame    int
-	frames   int
-	script   map[int][]scriptAction
-	shot     string
-	shotOrig string
-	shotDir  string
-	budget   uint64
-	mix      *mixer.Mixer
-	ring     *mixer.Ring
-	player   *audio.Player
-	muted    bool
-	pressing bool
-	focused  bool
-	samples  []float32
-	missing  map[rune]bool
-	bar      toolbar           // 視窗頂端切換列（主專案規格 011）
-	barText  map[string]string // host-text 的 toolbar.* 文字
-	music    *bgm.Player       // 遊戲中配樂（規格 014）；nil 表示沒有素材
-	cheat    *pod.Invincible   // 我方無敵（主專案規格 017），預設關
-	langs    []*pod.LangPack   // 已載入的語言（規格 015），索引 lang 為目前語言
-	lang     int
-	langDir  string      // 語言選擇記錄的目錄
-	mainFont *xlate.Font // -font（切換列在英文版用它）
-	cursorX  int         // 游標邏輯位置（切換列懸停用）
-	cursorY  int
+	owner      *session.Owner
+	scale      int // 輸出倍率 2 或 3（F2 切換，比照拯救地球）
+	live       *pod.Live
+	chinese    bool
+	frame      int
+	frames     int
+	drawReport string
+	script     map[int][]scriptAction
+	shot       string
+	shotOrig   string
+	shotDir    string
+	budget     uint64
+	mix        *mixer.Mixer
+	ring       *mixer.Ring
+	player     *audio.Player
+	muted      bool
+	pressing   bool
+	focused    bool
+	samples    []float32
+	missing    map[rune]bool
+	bar        toolbar           // 視窗頂端切換列（主專案規格 011）
+	barText    map[string]string // host-text 的 toolbar.* 文字
+	music      *bgm.Player       // 遊戲中配樂（規格 014）；nil 表示沒有素材
+	cheat      *pod.Invincible   // 我方無敵（主專案規格 017），預設關
+	langs      []*pod.LangPack   // 已載入的語言（規格 015），索引 lang 為目前語言
+	lang       int
+	langDir    string      // 語言選擇記錄的目錄
+	mainFont   *xlate.Font // -font（切換列在英文版用它）
+	cursorX    int         // 游標邏輯位置（切換列懸停用）
+	cursorY    int
 	// 主專案規格 019：CPU 模擬速度。chunk 是 1x 的每格預算；delayAccel 為 false 時不登記 TP Delay（等價性對照用）。
 	speed        speedControl
 	speedPath    string
@@ -532,6 +535,15 @@ func (g *game) finish() error {
 		fmt.Fprintf(os.Stderr, "pod-play: frames=%d steps=%d memory_sha256=%x indexed_sha256=%x\n", g.frame, d.Steps, d.MemorySHA256, d.IndexedSHA256)
 		fmt.Fprintf(os.Stderr, "pod-play: cpu_sha256=%x palette_sha256=%x\n", d.CPUSHA256, d.PaletteSHA256)
 	}
+	if g.drawReport != "" {
+		b, err := json.MarshalIndent(g.live.Direct.Stats(), "", "  ")
+		if err != nil {
+			return err
+		}
+		if err := os.WriteFile(g.drawReport, append(b, '\n'), 0600); err != nil {
+			return err
+		}
+	}
 	return ebiten.Termination
 }
 
@@ -600,6 +612,8 @@ func main() {
 	delayAccel := flag.Bool("delay-accel", true, "登記 Turbo Pascal Delay 精確快轉（dosgolem 規格 429）；關閉只供等價性對照")
 	perfFlag := flag.Bool("perf", false, "自動模式結束時印每格模擬與繪製耗時、畫出 fps（主專案規格 019 §4）")
 	flashFlag := flag.Bool("flash-audit", false, "自動模式每畫格量測閃現：原版內容先原樣呈現、之後才被疊字或 HD 換掉（主專案規格 021）")
+	directFlag := flag.Bool("direct-render", true, "直接繪圖命令與單次 RGB 合成；關閉供等價性對照")
+	drawReport := flag.String("draw-report", "", "輸出繪圖命令與像素填色計數 JSON 收據")
 	adaptiveFlag := flag.Bool("speed-adaptive", false, "自動模式也調節實際倍率（只供量測，結果不可重播）")
 	barFontFlag := flag.Int("barfont", 0, "切換列字級 1 小、2 中、3 大（主專案規格 020）；0 表示讀取前端偏好，自動模式為中")
 	adlib := flag.Bool("adlib", true, "模擬 AdLib")
@@ -728,6 +742,9 @@ func main() {
 			fail(err)
 		}
 	}
+	if *directFlag {
+		live.EnableDirect()
+	}
 	live.Inventory = *invPath != ""
 	live.ControlDemo = true
 	if *flashFlag && *frames > 0 {
@@ -828,7 +845,8 @@ func main() {
 	mix := mixer.New(budget * 60)
 	cheat := &pod.Invincible{On: *cheatOn}
 	owner, err := session.New(session.Config{InitialScale: s, InitialLayout: layout, AdLib: *adlib, ClockPercent: *clock,
-		Observer: observer{live: live, mix: mix, cheat: cheat}})
+		NativeVideoCommands: *directFlag,
+		Observer:            observer{live: live, mix: mix, cheat: cheat}})
 	if err != nil {
 		fail(err)
 	}
@@ -843,7 +861,8 @@ func main() {
 		dir = filepath.Join(filepath.Dir(filepath.Clean(saveRoot)), "screenshots")
 	}
 	g := &game{owner: owner, live: live, scale: *scaleFlag, chinese: !*original0, frames: *frames, script: keys, shot: *shot, shotOrig: *shotOrig,
-		shotDir: dir, budget: budget, mix: mix, focused: true, missing: map[rune]bool{}, barText: barText,
+		drawReport: *drawReport,
+		shotDir:    dir, budget: budget, mix: mix, focused: true, missing: map[rune]bool{}, barText: barText,
 		langs: langs, lang: langIdx, langDir: stateDir, mainFont: font, cheat: cheat,
 		chunk: budget, delayAccel: *delayAccel, speedPath: filepath.Join(stateDir, "pod-speed.txt"),
 		barSizePath: filepath.Join(stateDir, "pod-barfont.txt"), barSize: barMedium}

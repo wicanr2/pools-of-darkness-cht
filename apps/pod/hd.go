@@ -147,6 +147,7 @@ func (l *Live) AddHD(dir string) error {
 	if err != nil {
 		return err
 	}
+	l.deferredUnsafe = !deferredThemeSafe(dir)
 	for _, it := range plain {
 		l.Layer.Watch(it.Watcher())
 	}

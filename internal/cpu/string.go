@@ -27,6 +27,9 @@ func (c *CPU) stringOp(op uint8) {
 		size = 16
 	}
 	d := c.delta(size)
+	if c.nativeString(op, d) {
+		return
+	}
 
 	// 沒有 REP 前綴就只做一次。
 	if c.repPrefix == 0 {

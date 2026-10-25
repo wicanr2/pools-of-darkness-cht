@@ -1,5 +1,8 @@
 # 規格索引
 
+- [434 原生文字串繪圖命令](434-native-video-commands.md)：READY；可選mode13h命令、相容背板及原指令事件邊界。
+- [435 延後填入原版RGB](435-deferred-original-rgb.md)：READY；不可變索引來源與Hold／Latch等價入口，不先填原版RGB再覆畫。
+
 `docs/spec/` 是 dosgolem 的規格目錄。SDD 的規則沒變：**只有標 `READY`
 的規格可以動手**，反組譯／量測 → 規格 → 才寫程式。
 

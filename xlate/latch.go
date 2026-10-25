@@ -12,6 +12,7 @@ type latchEntry struct {
 	scale    int
 	pix      []uint8 // 這格放大後的 RGBA，逐列連續
 	idle     int     // 連續沒用到的幀數
+	original *IndexedSource
 }
 
 // NewLatch 建立鎖存；w、h 是原版畫面大小（8 的倍數），每格最多記 keep 筆，超過 frames 幀沒用到就移除。
@@ -21,7 +22,18 @@ func NewLatch(w, h, keep, frames int) *Latch {
 
 // Apply 就地改寫 out：indexed 是原版色號，pal 是色盤指紋，base 是原版放大 scale 倍的 RGBA，out 是圖層合成後的 RGBA。
 func (l *Latch) Apply(indexed []uint8, pal uint64, base, out []uint8, scale int) {
-	if scale <= 0 || len(indexed) < l.w*l.h || len(base) != l.w*l.h*scale*scale*4 || len(out) != len(base) {
+	l.apply(indexed, pal, base, out, scale, nil)
+}
+
+func (l *Latch) ApplyDeferred(source *IndexedSource, pal uint64, out []byte) {
+	if source == nil || source.w != l.w || source.h != l.h {
+		return
+	}
+	l.apply(source.indexed, pal, nil, out, source.scale, source)
+}
+
+func (l *Latch) apply(indexed []byte, pal uint64, base, out []byte, scale int, source *IndexedSource) {
+	if scale <= 0 || len(indexed) < l.w*l.h || len(out) != l.w*l.h*scale*scale*4 || source == nil && len(base) != len(out) {
 		return
 	}
 	cols := l.w / flashCellPx
@@ -41,7 +53,7 @@ func (l *Latch) Apply(indexed []uint8, pal uint64, base, out []uint8, scale int)
 					break
 				}
 			}
-			if !cellSame(base, out, l.w, cx, cy, scale) {
+			if !sameOriginalCell(base, out, l.w, scale, cx, cy, source) {
 				if found >= 0 && l.same(found, c, out, cx, cy, scale) {
 					l.cells[c][found].idle = 0 // 同樣的 HD 畫面：不重新配置
 					continue
@@ -51,7 +63,7 @@ func (l *Latch) Apply(indexed []uint8, pal uint64, base, out []uint8, scale int)
 					o := y*stride + cx*n
 					pix = append(pix, out[o:o+n]...)
 				}
-				e := latchEntry{sum: sum, pal: pal, scale: scale, pix: pix}
+				e := latchEntry{sum: sum, pal: pal, scale: scale, pix: pix, original: source}
 				list := l.cells[c]
 				if found >= 0 {
 					list = append(list[:found], list[found+1:]...)
@@ -68,10 +80,7 @@ func (l *Latch) Apply(indexed []uint8, pal uint64, base, out []uint8, scale int)
 			}
 			e := &l.cells[c][found]
 			e.idle = 0
-			for y, k := cy*flashCellPx*scale, 0; y < (cy+1)*flashCellPx*scale; y, k = y+1, k+n {
-				o := y*stride + cx*n
-				copy(out[o:o+n], e.pix[k:k+n])
-			}
+			copyRecordedCell(out, e.pix, l.w, scale, cx, cy, false, e.original)
 		}
 	}
 }

@@ -12,10 +12,11 @@ type Hold struct {
 	sums []uint64
 	held []int
 	// 這一幀最後一次 Apply 的結果，Commit 時才生效
-	cur     []uint8
-	curSums []uint64
-	curHeld []int
-	pending bool
+	cur                       []uint8
+	curSums                   []uint64
+	curHeld                   []int
+	pending                   bool
+	prevOriginal, curOriginal *IndexedSource
 }
 
 // NewHold 建立保留層；w、h 是原版畫面大小（8 的倍數），max 是一格連續保留的上限（幀）。
@@ -33,7 +34,18 @@ func NewHold(w, h, max int) *Hold {
 // region 回 (hd, true) 且 hd 不是 nil 時，這格直接畫 hd（放大後這格的 RGBA，逐列連續），不計保留次數也沒有上限：
 // 呼叫端已確定這格就是某張 HD 圖的這一格。hd 是 nil 時照上述規則保留上一幀。
 func (h *Hold) Apply(indexed, base, out []uint8, scale int, region func(cx, cy int, sum uint64) ([]uint8, bool)) {
-	if scale <= 0 || len(indexed) < h.w*h.h || len(base) != h.w*h.h*scale*scale*4 || len(out) != len(base) {
+	h.apply(indexed, base, out, scale, region, nil)
+}
+
+func (h *Hold) ApplyDeferred(source *IndexedSource, out []byte, region func(int, int, uint64) ([]byte, bool)) {
+	if source == nil || source.w != h.w || source.h != h.h {
+		return
+	}
+	h.apply(source.indexed, nil, out, source.scale, region, source)
+}
+
+func (h *Hold) apply(indexed, base, out []byte, scale int, region func(int, int, uint64) ([]byte, bool), source *IndexedSource) {
+	if scale <= 0 || len(indexed) < h.w*h.h || len(out) != h.w*h.h*scale*scale*4 || source == nil && len(base) != len(out) {
 		return
 	}
 	havePrev := len(h.prev) == len(out)
@@ -46,7 +58,7 @@ func (h *Hold) Apply(indexed, base, out []uint8, scale int, region func(cx, cy i
 			ink, sum := cellContent(indexed, h.w, cx, cy)
 			h.curSums[c], h.curHeld[c] = sum, 0
 			changed := sum != h.sums[c]
-			if !ink || !cellSame(base, out, h.w, cx, cy, scale) {
+			if !ink || !sameOriginalCell(base, out, h.w, scale, cx, cy, source) {
 				continue
 			}
 			hd, ok := region(cx, cy, sum)
@@ -58,15 +70,13 @@ func (h *Hold) Apply(indexed, base, out []uint8, scale int, region func(cx, cy i
 				continue
 			}
 			if havePrev && ok && (changed || h.held[c] > 0) && h.held[c] < h.max {
-				for y := cy * flashCellPx * scale; y < (cy+1)*flashCellPx*scale; y++ {
-					o := y*stride + cx*n
-					copy(out[o:o+n], h.prev[o:o+n])
-				}
+				copyRecordedCell(out, h.prev, h.w, scale, cx, cy, true, h.prevOriginal)
 				h.curHeld[c] = h.held[c] + 1
 			}
 		}
 	}
 	h.cur = append(h.cur[:0], out...)
+	h.curOriginal = source
 	h.pending = true
 }
 
@@ -76,10 +86,13 @@ func (h *Hold) Commit() {
 		return
 	}
 	h.prev = append(h.prev[:0], h.cur...)
+	h.prevOriginal = h.curOriginal
 	copy(h.sums, h.curSums)
 	copy(h.held, h.curHeld)
 	h.pending = false
 }
 
 // CellContent 回第 (cx, cy) 個 8×8 格有沒有墨跡與色號指紋，與 Hold 傳給 region 的 sum 相同算法；w 是畫面寬。
-func CellContent(indexed []uint8, w, cx, cy int) (ink bool, sum uint64) { return cellContent(indexed, w, cx, cy) }
+func CellContent(indexed []uint8, w, cx, cy int) (ink bool, sum uint64) {
+	return cellContent(indexed, w, cx, cy)
+}

@@ -66,12 +66,14 @@ type Live struct {
 	Flash      *xlate.FlashAudit
 	flashFrame int
 	// hdHold、hdCells：HD 保留呈現與主題圖各墨跡格的指紋（主專案規格 021 §4.1；AddHD 時建立）
-	hdHold     *xlate.Hold
-	hdCells    map[int]map[uint64]*hdHoldCell
-	hdLatch    *xlate.Latch // 戰鬥等圖層的 HD 鎖存（AddHD 載入圖層時建立）
-	battleHold *battleHold
-	localized  *localizedHD
-	bigpics    *bigpicHD
+	hdHold         *xlate.Hold
+	hdCells        map[int]map[uint64]*hdHoldCell
+	hdLatch        *xlate.Latch // 戰鬥等圖層的 HD 鎖存（AddHD 載入圖層時建立）
+	battleHold     *battleHold
+	localized      *localizedHD
+	bigpics        *bigpicHD
+	Direct         *DirectCanvas
+	deferredUnsafe bool
 
 	ui      Lookuper
 	ecl     *Catalog
@@ -248,6 +250,7 @@ func (l *Live) journalEntry(text []byte, mem CPUView) {
 
 // ModeChange 在視訊模式改變時呼叫。
 func (l *Live) ModeChange() {
+	l.Direct.Reset()
 	l.bigpics.reset()
 	if l.localized != nil {
 		l.localized.hold = xlate.NewHold(320, 200, hdHoldFrames)
@@ -272,6 +275,11 @@ func (l *Live) ModeChange() {
 
 // Frame 在每個 retrace 呼叫；palette 須是與 indexed 配對的色盤（machine.FramePalette）。
 func (l *Live) Frame(indexed []byte, palette [256][3]uint8) {
+	if l.Direct != nil {
+		if err := l.Direct.Frame(indexed); err != nil {
+			panic(err)
+		}
+	}
 	l.bigpics.frame(indexed, palette)
 	l.localized.frame(indexed, palette)
 	l.battleHold.commit()
@@ -308,6 +316,16 @@ func (l *Live) Frame(indexed []byte, palette [256][3]uint8) {
 // Compose 回最後一個畫格放大 scale 倍的 RGBA；overlay 為 false 時是原版畫面。
 // missing 收字型缺字（可為 nil）。尚無 320×200 畫格時回 nil。
 func (l *Live) Compose(scale int, overlay bool, missing func(rune)) []byte {
+	if l.Direct != nil && overlay && !l.deferredUnsafe {
+		return l.composeDirect(scale, missing)
+	}
+	if l.Direct != nil && overlay {
+		l.Direct.stats.LegacyRGBFrames++
+	}
+	return l.composeLegacy(scale, overlay, missing)
+}
+
+func (l *Live) composeLegacy(scale int, overlay bool, missing func(rune)) []byte {
 	if len(l.indexed) != 320*200 || scale <= 0 {
 		return nil
 	}

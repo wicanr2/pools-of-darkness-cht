@@ -309,10 +309,12 @@ type Machine struct {
 	watchLo, watchHi uint32
 
 	// 讀取監看（WatchReads）。rWatchLo > rWatchHi 表示關閉。
-	rWatchLo, rWatchHi uint32
-	onRead             func(addr uint32, v uint8)
-	onWrite            func(addr uint32, old, new uint8)
-	onVideoWrite       func(VideoWrite)
+	rWatchLo, rWatchHi          uint32
+	onRead                      func(addr uint32, v uint8)
+	onWrite                     func(addr uint32, old, new uint8)
+	onVideoWrite                func(VideoWrite)
+	onVideoCommand              func(VideoCommand)
+	nativeVideo, inVideoCommand bool
 	// 視訊模式觀測（Buck 規格 052）。callback 在 SetVideoMode 末尾呼叫；ModeChanges 照舊追加。
 	onModeChange func(ModeChange)
 
@@ -864,10 +866,16 @@ func (m *Machine) Write8(a uint32, v uint8) {
 		m.Mem[a] = v
 		// ⚠ **值沒變也算一次寫入**（與 WatchWrites 不同）：
 		// 「誰在寫這個位址」與「這個值變了沒」是兩個問題，後者用 WatchWord。
+		if m.onVideoCommand != nil && !m.inVideoCommand {
+			m.commandPixel(a, v)
+		}
 		m.noteWrite(a, old, v)
 		return
 	}
 	m.Mem[a] = v
+	if m.onVideoCommand != nil && !m.inVideoCommand {
+		m.commandPixel(a, v)
+	}
 }
 
 // planarStride 是平面模式每一列的位元組數（寬 ÷ 8）。
