@@ -1,0 +1,735 @@
+{
+  "scope": "既有7400更新正常DEMO；CALL後整段接管；不同時刻的部分狀態不以終點代替，另比全部回掃與有序事件",
+  "program_commit": "64e734c92ecaa096be9bb91d6e6f792fd5fad7fd",
+  "binary_sha256": "d3f97dfb97ce3951da6dae880d39cbc5cb22e28532d38dc157a5ed59d93947f7",
+  "file_time": "2000-01-01T00:00:00Z",
+  "observed_calls": 2930,
+  "host_calls": 2401,
+  "fallback_calls": 529,
+  "host_instructions": 1528405,
+  "virtual_steps": 712250000,
+  "all_architectural_state_equal": true,
+  "digest": {
+    "Steps": 712250000,
+    "MemorySHA256": "49a1edb58e668520fb4e531aa6eda9a098eba9943aa3101bfb132cefb12ceb01",
+    "CPUSHA256": "768d5cef79e3ad1f442dda7405aca1b08442313a2964010dc59579938105f7fe",
+    "IndexedSHA256": "4f1d7430cda6cde30c7a684b9a97573e2bb2bd13b0309c001d55d9434175e601",
+    "PaletteSHA256": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+    "DOSExited": false,
+    "AdLib": true,
+    "ClockPercent": 50,
+    "IRQ0Clamped": 0
+  },
+  "video_writes": 3343240,
+  "video_sha256": "fa4f43127730a9a9db9ac30080231ddb677f7796db9a5a8e324d76fb91b1c7ff",
+  "retraces": 8633,
+  "retraces_sha256": "2bb8c2b7dcfeebe59c09848702b03d29e9d2252cf88d3c3a289b34447e1de35b",
+  "audio_events": 79012,
+  "audio_sha256": "a6bfb0fbc5912723be3a942c01bd8e9b5f2a9d1d460d59e0bf4b85f518a3211a",
+  "dos_requests": 1827984,
+  "dos_sha256": "69322e75ee2ffb25b3bb617846c1c054eba1518dbe2df6a5768a4207abd245c1",
+  "guest_files": 127,
+  "witnesses": [
+    {
+      "source": "glyph-012.mem",
+      "memory_sha256": "378eb46d3fc52499dd685c4524adf82112cad5416344c101be5bf1a307518755"
+    },
+    {
+      "source": "glyph-015.mem",
+      "memory_sha256": "2843617c798153f1a0ea451457363dc3c563815421994996db43d42acffda8bf"
+    },
+    {
+      "source": "glyph-001.mem",
+      "memory_sha256": "406cdac44d4d6c8acf466273ca68b5820d0e643898420c9ef114a66a60e5f9ac"
+    },
+    {
+      "source": "glyph-004.mem",
+      "memory_sha256": "3a4470b28c05ce1d58f6bc535352a1850b71e00e4d0afcfe2e35e4166a8bc1f7"
+    },
+    {
+      "source": "glyph-009.mem",
+      "memory_sha256": "d802dd02c3d40152aca0b8f310a343bada5a6da8b72c20b4c73b5257f4adba38"
+    },
+    {
+      "source": "glyph-014.mem",
+      "memory_sha256": "82f3ddd17683ed78050bacc85653030d957065d092aee60e6e67a77504eca098"
+    },
+    {
+      "source": "glyph-007.mem",
+      "memory_sha256": "2845501470e49449976426c830affa73a738c58ea3b72a15b9fcb2f2364d2f4a"
+    },
+    {
+      "source": "glyph-046.mem",
+      "memory_sha256": "a79b62e2e0802dc2b1e7b6210d479da5c3e58094f32c81093b4c87d1e7cc8f67"
+    },
+    {
+      "source": "glyph-016.mem",
+      "memory_sha256": "5381b0fd1f35d9d472ac12de443d3a41ef1fd05945abf0749984c361e3e81685"
+    },
+    {
+      "source": "glyph-005.mem",
+      "memory_sha256": "c3c99ec0850143ad41fa4d78eb80c6be55f63f30d13b9dc9ff31276dda69c56c"
+    },
+    {
+      "source": "glyph-019.mem",
+      "memory_sha256": "6383c1a52de686b5617582eef3a097d462870dd9e2d1b0de0c268a76fe871594"
+    },
+    {
+      "source": "glyph-032.mem",
+      "memory_sha256": "4922a50af3060a394e49d627e8af56e873db7ae2ed7e07b31c32edd53f06ae04"
+    },
+    {
+      "source": "glyph-023.mem",
+      "memory_sha256": "19f62c4d485ab066098fa4f8c5697456b2d19278ee08907d6f56f06db7561827"
+    },
+    {
+      "source": "glyph-020.mem",
+      "memory_sha256": "62bae8b361f06abc4e69a252f2db42dab569ad249234353f5bd35df28e13188c"
+    },
+    {
+      "source": "glyph-006.mem",
+      "memory_sha256": "ded71c661226fe1bf64101ced1f8cf23e36dc002e6fe043f683a107770e87ae5"
+    },
+    {
+      "source": "glyph-018.mem",
+      "memory_sha256": "ddba5b11d2553bdb0879e0311f0f7e4c40646b8d5300cfa231e6386a7b9b6747"
+    },
+    {
+      "source": "glyph-011.mem",
+      "memory_sha256": "3d85f55af73ad8786127d33e261f97b61cb81c7584f64af5c808b9aca17c9b93"
+    },
+    {
+      "source": "glyph-049.mem",
+      "memory_sha256": "33b9b8cf56eb8096bf2e1507c90a086f70358915213429522fd350f775a0fd8d"
+    },
+    {
+      "source": "glyph-048.mem",
+      "memory_sha256": "535ed762792dd64cc3c1074b8f6b444407338f3f14960e39171d960640df9b5d"
+    },
+    {
+      "source": "glyph-025.mem",
+      "memory_sha256": "7b6bea31806d2a51ed5e048acd281f66b3b1a8be7357d49b2464594729c9d84c"
+    },
+    {
+      "source": "glyph-013.mem",
+      "memory_sha256": "e6c910a2e8e67e48a5c384d9dc327518ffd61f9aab3dce741799c9748969d361"
+    },
+    {
+      "source": "glyph-003.mem",
+      "memory_sha256": "e7469c3db28c7641c4d155965c4af73431736b9d118dea49c9e2688c6ee54098"
+    },
+    {
+      "source": "glyph-008.mem",
+      "memory_sha256": "ca6802ff666b7112921f0e90319a15b37c8173454f92db1fe2e37423f7566fd4"
+    },
+    {
+      "source": "glyph-052.mem",
+      "memory_sha256": "addba6019f14d7b3c2857ec4b2fc9f48ddc9ea63e553df16cb76e1a517cc5dc1"
+    },
+    {
+      "source": "glyph-044.mem",
+      "memory_sha256": "2f0da4df46274d50bba30bdf5c9579b989a1787f0a774526f7ab8e8e234d3713"
+    },
+    {
+      "source": "glyph-053.mem",
+      "memory_sha256": "039a9de71d0ac9f1b3392b5b470767ac38bb3a2a59a2a1beaaf9c64f87a512fc"
+    },
+    {
+      "source": "glyph-058.mem",
+      "memory_sha256": "ddc7f0dfffc4a388d0fb37284b1e030d1d84aaf591ae323d6d032b9d764b7bce"
+    },
+    {
+      "source": "glyph-039.mem",
+      "memory_sha256": "c5d5db50101f3aac12b0874585d4edbf3146b1024fa6460f77988d5dfd477443"
+    },
+    {
+      "source": "glyph-021.mem",
+      "memory_sha256": "42947586d668f37a62791d628c074bb65644b03dfdeca70668c6e6f3ce4ad69f"
+    },
+    {
+      "source": "glyph-010.mem",
+      "memory_sha256": "580ccd884d0e5f57db50855aa43db7a3d687e69957340aea40e067bfefd28288"
+    },
+    {
+      "source": "glyph-022.mem",
+      "memory_sha256": "2faace8b47b9be25599dbeb4887732668f4c0d4051cb8ee9e641772086bfd62d"
+    },
+    {
+      "source": "glyph-045.mem",
+      "memory_sha256": "50e4b217d0abc9edb0e239b8043303d9f6e840e3eea50aabc4eaffe68427ddc2"
+    }
+  ],
+  "source_reports": {
+    "whole-calls-v4-legacy": "9e8f87fe1b24a0fbb6adc5051bc2b11c4e1ce7db3767f7398b7c76909a3886b1",
+    "whole-calls-v4-native": "64a2f7b766b317bb769e3f1337856f26219fce342e3467752790ff30732f4041"
+  },
+  "trace_tool_sha256": "9ca09fc773178231f0fddfab72af0a83c327a13f8274e118dcd4464efe1db9ac",
+  "trace_binary_sha256": "6803fe492589faf17038dbd910a2e3be221b2903b3859ddbb082d37e7936f796",
+  "check_tool_sha256": "2fa8a311de611073cbdde7bcfb49f2a32679fac2eacdd81127f99063f8cbe2c7",
+  "benchmark": {
+    "Scope": "三個真實字模來源；七組交錯、每組512次完整CALL，含客體參數準備、入口篩選、簽章、計畫、RAM及逐點／命令通知；事件關閉；不含Owner.BeforeStep、遊戲規則、RGB、GPU或視窗，不外推FPS",
+    "Rows": [
+      {
+        "Source": "glyph-012.mem",
+        "Instructions": 633,
+        "LegacyNS": [
+          30899,
+          40361,
+          43205,
+          41851,
+          50559,
+          36346,
+          32953
+        ],
+        "HostNS": [
+          7781,
+          7864,
+          10681,
+          8222,
+          7526,
+          10576,
+          8668
+        ],
+        "LegacyMedianNS": 40361,
+        "HostMedianNS": 8222,
+        "Ratio": 4.908902943322793,
+        "CallsPerSample": 512
+      },
+      {
+        "Source": "glyph-019.mem",
+        "Instructions": 629,
+        "LegacyNS": [
+          35951,
+          32385,
+          33882,
+          32274,
+          34362,
+          36872,
+          32444
+        ],
+        "HostNS": [
+          8000,
+          9188,
+          9255,
+          7692,
+          7534,
+          8966,
+          7500
+        ],
+        "LegacyMedianNS": 33882,
+        "HostMedianNS": 8000,
+        "Ratio": 4.23525,
+        "CallsPerSample": 512
+      },
+      {
+        "Source": "glyph-013.mem",
+        "Instructions": 621,
+        "LegacyNS": [
+          33721,
+          50033,
+          42470,
+          43825,
+          43222,
+          37476,
+          34401
+        ],
+        "HostNS": [
+          8301,
+          12429,
+          11718,
+          14221,
+          9249,
+          9700,
+          7869
+        ],
+        "LegacyMedianNS": 42470,
+        "HostMedianNS": 9700,
+        "Ratio": 4.378350515463918,
+        "CallsPerSample": 512
+      }
+    ]
+  },
+  "benchmark_tool_sha256": "e3f4965692407495b672e911522024202fe0aa8d1293065e89f6650f829cc5ed",
+  "benchmark_binary_sha256": "0b5f96e74f763979cfb0d4e95ea50f05a5e5e30babddad627a6c1d6d9252f1da",
+  "trace_timing_note": "兩個追蹤同時執行，含CPU profiling及完整串流核對，不用其wall time作效能結論。",
+  "normal_demo": {
+    "scope": "完整7400格正常DEMO四路與舊原版終點；3650格BIGPIC244；其他六張只驗條件式來源",
+    "registered_actor_states": 238,
+    "actors_manifest_sha256": "897a782ce2f227e7fbf187df7d8cfb35a740c5bb0d129c1fc7bd6ada964ecc1e",
+    "theme_files": 730,
+    "unobserved_actor_keys": [
+      "cpic1-169",
+      "cpic1-192",
+      "cpic1-230",
+      "cpic1-001",
+      "cpic1-129",
+      "cpic1-002",
+      "cpic1-130",
+      "cpic1-003",
+      "cpic1-131",
+      "cpic1-004",
+      "cpic1-132",
+      "cpic1-005",
+      "cpic1-133",
+      "cpic1-006",
+      "cpic1-134",
+      "cpic1-007",
+      "cpic1-135",
+      "cpic1-008",
+      "cpic1-136",
+      "cpic1-009",
+      "cpic1-137",
+      "cpic1-010",
+      "cpic1-138",
+      "cpic1-011",
+      "cpic1-139",
+      "cpic1-012",
+      "cpic1-140",
+      "cpic1-013",
+      "cpic1-141",
+      "cpic1-014",
+      "cpic1-142",
+      "cpic1-015",
+      "cpic1-143",
+      "cpic1-016",
+      "cpic1-144",
+      "cpic1-017",
+      "cpic1-145",
+      "cpic1-018",
+      "cpic1-146",
+      "cpic1-019",
+      "cpic1-147",
+      "cpic1-020",
+      "cpic1-148",
+      "cpic1-021",
+      "cpic1-149",
+      "cpic1-022",
+      "cpic1-150",
+      "cpic1-023",
+      "cpic1-151",
+      "cpic1-024",
+      "cpic1-152",
+      "cpic1-025",
+      "cpic1-153",
+      "cpic1-026",
+      "cpic1-154",
+      "cpic1-027",
+      "cpic1-155",
+      "cpic1-028",
+      "cpic1-156",
+      "cpic1-029",
+      "cpic1-157",
+      "cpic1-030",
+      "cpic1-158",
+      "cpic1-031",
+      "cpic1-159",
+      "cpic1-032",
+      "cpic1-160",
+      "cpic1-033",
+      "cpic1-161",
+      "cpic1-034",
+      "cpic1-162",
+      "cpic1-035",
+      "cpic1-163",
+      "cpic1-036",
+      "cpic1-164",
+      "cpic1-037",
+      "cpic1-165",
+      "cpic1-038",
+      "cpic1-166",
+      "cpic1-039",
+      "cpic1-167",
+      "cpic1-040",
+      "cpic1-168",
+      "cpic1-042",
+      "cpic1-170",
+      "cpic1-043",
+      "cpic1-171",
+      "cpic1-044",
+      "cpic1-172",
+      "cpic1-045",
+      "cpic1-173",
+      "cpic1-046",
+      "cpic1-174",
+      "cpic1-047",
+      "cpic1-175",
+      "cpic1-048",
+      "cpic1-176",
+      "cpic1-049",
+      "cpic1-177",
+      "cpic1-050",
+      "cpic1-178",
+      "cpic1-051",
+      "cpic1-179",
+      "cpic1-052",
+      "cpic1-180",
+      "cpic1-053",
+      "cpic1-181",
+      "cpic1-054",
+      "cpic1-182",
+      "cpic1-055",
+      "cpic1-183",
+      "cpic1-056",
+      "cpic1-184",
+      "cpic1-057",
+      "cpic1-185",
+      "cpic1-058",
+      "cpic1-186",
+      "cpic1-059",
+      "cpic1-187",
+      "cpic1-060",
+      "cpic1-188",
+      "cpic1-061",
+      "cpic1-189",
+      "cpic1-062",
+      "cpic1-190",
+      "cpic1-063",
+      "cpic1-191",
+      "cpic1-065",
+      "cpic1-193",
+      "cpic1-066",
+      "cpic1-194",
+      "cpic1-067",
+      "cpic1-195",
+      "cpic1-068",
+      "cpic1-196",
+      "cpic1-069",
+      "cpic1-197",
+      "cpic1-070",
+      "cpic1-198",
+      "cpic1-071",
+      "cpic1-199",
+      "cpic1-072",
+      "cpic1-200",
+      "cpic1-073",
+      "cpic1-201",
+      "cpic1-074",
+      "cpic1-202",
+      "cpic1-075",
+      "cpic1-203",
+      "cpic1-076",
+      "cpic1-204",
+      "cpic1-077",
+      "cpic1-205",
+      "cpic1-078",
+      "cpic1-206",
+      "cpic1-079",
+      "cpic1-207",
+      "cpic1-080",
+      "cpic1-208",
+      "cpic1-081",
+      "cpic1-209",
+      "cpic1-082",
+      "cpic1-210",
+      "cpic1-083",
+      "cpic1-211",
+      "cpic1-084",
+      "cpic1-212",
+      "cpic1-085",
+      "cpic1-213",
+      "cpic1-086",
+      "cpic1-214",
+      "cpic1-087",
+      "cpic1-215",
+      "cpic1-088",
+      "cpic1-216",
+      "cpic1-089",
+      "cpic1-217",
+      "cpic1-090",
+      "cpic1-218",
+      "cpic1-091",
+      "cpic1-219",
+      "cpic1-092",
+      "cpic1-220",
+      "cpic1-093",
+      "cpic1-221",
+      "cpic1-094",
+      "cpic1-222",
+      "cpic1-095",
+      "cpic1-223",
+      "cpic1-096",
+      "cpic1-224",
+      "cpic1-097",
+      "cpic1-225",
+      "cpic1-098",
+      "cpic1-226",
+      "cpic1-099",
+      "cpic1-227",
+      "cpic1-100",
+      "cpic1-228",
+      "cpic1-101",
+      "cpic1-229",
+      "cpic1-103",
+      "cpic1-231",
+      "cpic1-104",
+      "cpic1-232",
+      "cpic1-105",
+      "cpic1-233",
+      "cpic1-106",
+      "cpic1-234",
+      "cpic1-107",
+      "cpic1-235",
+      "cpic1-108",
+      "cpic1-236",
+      "cpic1-112",
+      "cpic1-240",
+      "cpic1-113",
+      "cpic1-241",
+      "cpic1-114",
+      "cpic1-242",
+      "cpic1-115",
+      "cpic1-243",
+      "cpic1-116",
+      "cpic1-244",
+      "cpic1-117",
+      "cpic1-245",
+      "cpic1-118",
+      "cpic1-246",
+      "cpic1-119",
+      "cpic1-247",
+      "cpic1-120",
+      "cpic1-248",
+      "cpic1-125",
+      "cpic1-253",
+      "cpic1-127",
+      "cpic1-255"
+    ],
+    "frames": 7400,
+    "steps": 712250000,
+    "memory_sha256": "b8041b4276222686f9684888e6df9de65ecd775b2990993bc68ae217b01d5c15",
+    "indexed_sha256": "4f1d7430cda6cde30c7a684b9a97573e2bb2bd13b0309c001d55d9434175e601",
+    "cpu_sha256": "768d5cef79e3ad1f442dda7405aca1b08442313a2964010dc59579938105f7fe",
+    "palette_sha256": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+    "paired_palette_sha256": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+    "binary_sha256": "d3f97dfb97ce3951da6dae880d39cbc5cb22e28532d38dc157a5ed59d93947f7",
+    "guest_files": 127,
+    "guest_state_equal": true,
+    "source_equal": true,
+    "f12_equals_original": true,
+    "twox_actor_equals_original": true,
+    "changed_hd_pixels": 45757,
+    "outside_battlefield_changes": 0,
+    "matches": [
+      {
+        "key": "dungcom-005@3",
+        "x": 104,
+        "y": 8,
+        "flip": false
+      },
+      {
+        "key": "dungcom-005@3",
+        "x": 128,
+        "y": 32,
+        "flip": false
+      },
+      {
+        "key": "dungcom-005@3",
+        "x": 152,
+        "y": 56,
+        "flip": false
+      },
+      {
+        "key": "dungcom-005@13",
+        "x": 128,
+        "y": 8,
+        "flip": false
+      },
+      {
+        "key": "dungcom-005@13",
+        "x": 152,
+        "y": 32,
+        "flip": false
+      },
+      {
+        "key": "cpic1-041",
+        "x": 8,
+        "y": 56,
+        "flip": true
+      },
+      {
+        "key": "cpic1-064",
+        "x": 128,
+        "y": 128,
+        "flip": true
+      },
+      {
+        "key": "cpic1-064",
+        "x": 152,
+        "y": 128,
+        "flip": true
+      },
+      {
+        "key": "cpic1-102",
+        "x": 80,
+        "y": 8,
+        "flip": true
+      },
+      {
+        "key": "cpic1-102",
+        "x": 32,
+        "y": 32,
+        "flip": true
+      },
+      {
+        "key": "cpic1-102",
+        "x": 56,
+        "y": 32,
+        "flip": true
+      },
+      {
+        "key": "cpic1-102",
+        "x": 104,
+        "y": 32,
+        "flip": true
+      },
+      {
+        "key": "cpic1-102",
+        "x": 128,
+        "y": 56,
+        "flip": true
+      }
+    ],
+    "audit": "pod-play: 閃現 0 次",
+    "frames_sha256": {
+      "hd": "f86df33cdde0796ac237f77a5c0146d034a8ecadcff0732f64a45c25dac442d4",
+      "base": "e22fca251c96a57c5fe7ea56be399fb16814b6f7bbb61a6dbed32aca0dad3f04",
+      "english": "b137cf512a888dc90b07b3ffeda05ad155349b64b40c7fc273b679eb1834f6b4",
+      "twox": "b87d38e2da83b10253b6269a94ce63ca1331fd3d5c2d1c911dc65aa19432315b"
+    },
+    "inputs_sha256": "43df94f501398f08ae4c3699f7701e25e28d5795d115fc6af88390f1bc4b1b64",
+    "prior_original_state_equal": true,
+    "prior_baseline_binary_sha256": "2b5bdaa2c6c4bdd3746108ed30e46db065f3a928b1a90a911c01e7de298deb81",
+    "prior_baseline_summary_sha256": "c18fb523d53ab9f5f5fa2ea52186a2195baea7ba44c43b347dbf1fcce7afd53b",
+    "prior_sample_composite_equal": true,
+    "producer": {
+      "script": "tools/bigpic_play_check.py",
+      "sha256": "306ec12bc17cc3517b439cd6e95e6794a94438c9e1b8c44f3f4cfd7515ae1d66"
+    },
+    "battle_summary_sha256": "6ac50a9cceca698e7947e45f360f781304785b48f46d52090998f0f0bc8ad421",
+    "bigpic_source_proof_sha256": "bd160b1aaa952cbaef27daca28fee9ae54e0a49fa97ab071599eb46342a45e70",
+    "bigpic_theme_sha256": "35201c489bbf59aaa1e18d0484a9f810d44a80d8169a7f0546c1803a1c3edcdc",
+    "bigpic_key": "bigpic1-244",
+    "bigpic_changed_pixels": 327898,
+    "bigpic_outside_changes": 0,
+    "bigpic_f12_original": true,
+    "bigpic_twox_original": true,
+    "bigpic_source_equal": true,
+    "bigpic_screenshots": [
+      {
+        "case": "hd",
+        "frame": 3650,
+        "source_frame": 3649,
+        "scale": 3,
+        "sha256": "9976f8c79f6d959adef14786ad861bd319ab827ead36b370409edd153764b609",
+        "window_sha256": "47212f5666e1ce953d086b72914b7603183bc56c8f25318d90419f1aa0db17e7"
+      },
+      {
+        "case": "base",
+        "frame": 3650,
+        "source_frame": 3649,
+        "scale": 3,
+        "sha256": "9eb2aa73d9609866d66dfe7823d7352041868e15dba02c22dfff1a6e6146dac4",
+        "window_sha256": "e4776fa4a1d9e7a12a7df9e6a7d69b4512e4ec54f39d170aad60b586bc6a18c3"
+      },
+      {
+        "case": "english",
+        "frame": 3650,
+        "source_frame": 3649,
+        "scale": 3,
+        "sha256": "9eb2aa73d9609866d66dfe7823d7352041868e15dba02c22dfff1a6e6146dac4",
+        "window_sha256": "8d353959055073b206cc677ed42ded5938496e30da45d6e23dfd49c32933ce81"
+      },
+      {
+        "case": "twox",
+        "frame": 3650,
+        "source_frame": 3649,
+        "scale": 2,
+        "sha256": "8fb140e56969d8643185ce6011f3f433e22846362dc260982a5cc74881164be2",
+        "window_sha256": "f82cb9565a721fc64aa934550c44eb03ae55be301bae36ae644f821abf64ca7c"
+      }
+    ],
+    "conditional_bigpic_keys": [
+      "bigpic1-243",
+      "bigpic1-246",
+      "bigpic1-240",
+      "bigpic1-241",
+      "bigpic1-242",
+      "bigpic1-245"
+    ]
+  },
+  "normal_demo_draws": {
+    "hd": {
+      "HostCalls": 2400,
+      "HostInstructions": 1527749,
+      "Mismatches": 0
+    },
+    "base": {
+      "HostCalls": 2400,
+      "HostInstructions": 1527749,
+      "Mismatches": 0
+    },
+    "english": {
+      "HostCalls": 2400,
+      "HostInstructions": 1527749,
+      "Mismatches": 0
+    },
+    "twox": {
+      "HostCalls": 2400,
+      "HostInstructions": 1527749,
+      "Mismatches": 0
+    }
+  },
+  "normal_load_ui": {
+    "frames": 4800,
+    "screenshot_pairs": 10,
+    "all_screenshots_equal": true,
+    "guest_files": 54,
+    "guest_files_equal": true,
+    "flash_count": 0,
+    "host_calls": 51472,
+    "host_instructions": 33740810,
+    "frame_sha256": "7004e84323066759912517f6c6d8e72c31a938b935040ac73315cdac9e03f2f5"
+  },
+  "normal_save_roundtrip": {
+    "scope": "正常冷啟動讀A、紮營另存原先不存在的B，再冷啟動讀B至隊伍選單；不注入機器狀態",
+    "slot_b_created": true,
+    "slot_b_loaded": true,
+    "slot_a_unchanged": true,
+    "slot_a_unchanged_files": 5,
+    "all_save_bytes_equal": true,
+    "screenshot_pairs": 6,
+    "slot_b_sha256": "a15bebcbea9ef582467f3b291e241b00b2ac89d13a428c3cce655b678bc90a3c",
+    "save_files_after_write": 10,
+    "save_files_after_load": 10,
+    "phases": [
+      {
+        "phase": "save",
+        "frames": 4700,
+        "endpoint": [
+          "4700",
+          "452375000",
+          "7f9455d067034b534a2e8895a6dd7672ee51553c978917d2e2e7e1141b345264",
+          "ea92c72a48cf3b7fa532f23c2374405e7abd529dccc2b3ae05f4d3309dfd8f0f",
+          "697e24e88593581e5b50f3701cf36d0656ec0f46cba1ae53515f1e3504c1f90d",
+          "1821746eb2949bbea9c498954c41be12d84067c1e1d5d065a111aa66fca214ed"
+        ],
+        "host_calls": 51815,
+        "host_instructions": 33960213
+      },
+      {
+        "phase": "load",
+        "frames": 3250,
+        "endpoint": [
+          "3250",
+          "312812500",
+          "0f65971e22b095dcbb50d90bd613db96b63072770e87482a77df0b18039653c4",
+          "3b81dc3e7531627710e4cc6d59538c1c00ee040938daf939ce0b2832e39d8cd9",
+          "441b946cd11d343b4f205dd1b48b9b3445b5f5f4d10510a5820ad598c3cb32b7",
+          "62ed0c9528b22f85a7ca8a4d313bc3eb6a80ddfde959b927d71980ab2f68a486"
+        ],
+        "host_calls": 841,
+        "host_instructions": 537212
+      }
+    ]
+  }
+}

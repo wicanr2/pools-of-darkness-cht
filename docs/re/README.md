@@ -1,6 +1,6 @@
 # 研究索引
 
-- [019 直接繪圖攔截](019-draw-interception.md)：#45，像素原生命令與單次RGB合成；[完整狀態與事件](019-native-runtime.json)、[四路DEMO](019-demo-runtime.json)、[39對前端截圖](019-ui-runtime.json)、[填色與成本](019-rgb-cost.json)。完整函式入口跳過仍DRAFT。
+- [019 直接繪圖攔截](019-draw-interception.md)：#45、#46，像素原生命令、單次RGB與限定整段字模；[完整狀態與事件](019-native-runtime.json)、[四路DEMO](019-demo-runtime.json)、[39對前端截圖](019-ui-runtime.json)、[填色與成本](019-rgb-cost.json)、[整段接管、正常存檔往返與成本](019-whole-call-runtime.json)。其餘常式未知。
 
 - [018 片頭字幕來源](018-movie-subtitles.md)：#10，八組來源、逐幀淡出與雙語覆繪；正常5100格及切換通過，字幕規格024局部CONFORMED，動畫HD仍為DRAFT。
 

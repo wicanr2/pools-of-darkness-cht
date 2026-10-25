@@ -5,28 +5,30 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 ROUTE="${1:?wall|movie|title}"
 MODE="${2:?direct|legacy}"
 TAG="${3:-direct-ui}"
+BINARY="${4:-pod-play-direct}"
+case "$BINARY" in *[!A-Za-z0-9_-]*|'') exit 2;; esac
 case "$ROUTE" in wall|movie|title) ;; *) exit 2;; esac
 case "$MODE" in direct) DIRECT=true;; legacy) DIRECT=false;; *) exit 2;; esac
 case "$TAG" in *[!A-Za-z0-9_-]*|'') exit 2;; esac
 for d in workplace/dosgolem/workplace/bin workplace/input/dos/pod workplace/font workplace/hd/theme text tools; do test -d "$ROOT/$d"; done
 SEED="$ROOT/workplace/probe/g6-saveload-receipt/scratch/SAVE"
 test -d "$SEED"
-test -f "$ROOT/workplace/dosgolem/workplace/bin/pod-play-direct"
+test -f "$ROOT/workplace/dosgolem/workplace/bin/$BINARY"
 OUT="$ROOT/workplace/probe/g9-hd/$TAG/$ROUTE-$MODE"
 test ! -e "$OUT" || { echo '保留既有收據，請換名稱' >&2; exit 2; }
 mkdir -p "$OUT"
 timeout 1800s docker run --rm --init --label pod.task=direct-ui --network none --memory 2g --cpus 2 --pids-limit 256 \
  --user "$(id -u):$(id -g)" --log-opt max-size=10m --log-opt max-file=3 \
- -e HOME=/tmp -e POD_NO_DIALOG=1 -e GOMAXPROCS=2 -e ROUTE="$ROUTE" -e DIRECT="$DIRECT" \
+ -e HOME=/tmp -e POD_NO_DIALOG=1 -e GOMAXPROCS=2 -e ROUTE="$ROUTE" -e DIRECT="$DIRECT" -e BINARY="$BINARY" \
  -v "$ROOT/workplace/dosgolem/workplace/bin:/app:ro" -v "$ROOT/workplace/input/dos/pod:/orig:ro" \
  -v "$ROOT/workplace/font:/font:ro" -v "$ROOT/text:/text:ro" -v "$ROOT/workplace/hd/theme:/theme:ro" \
  -v "$ROOT/tools:/tools:ro" -v "$SEED:/seed:ro" -v "$OUT:/out" \
  dosgolem-go-ebiten:1.24-r1 sh -eu -c '
  test "$(stat -c %u:%g /out)" = "$(id -u):$(id -g)"
- python3 -I /tools/vga_battle_play_check.py --record /out/inputs.json --record-binary /app/pod-play-direct
+ python3 -I /tools/vga_battle_play_check.py --record /out/inputs.json --record-binary "/app/$BINARY"
  case "$ROUTE" in
  wall)
-  xvfb-run -a /app/pod-play-direct -original /orig -save /out/save -text-dir /text -font /font/pod-rounded.golemfnt -audio=false -frames 1 -direct-render="$DIRECT" > /out/install.log 2>&1
+  xvfb-run -a "/app/$BINARY" -original /orig -save /out/save -text-dir /text -font /font/pod-rounded.golemfnt -audio=false -frames 1 -direct-render="$DIRECT" > /out/install.log 2>&1
   rm -rf /out/save/SAVE
   mkdir -p /out/save/SAVE
   cp -r /seed/. /out/save/SAVE/
@@ -42,7 +44,7 @@ timeout 1800s docker run --rm --init --label pod.task=direct-ui --network none -
   script="900: ,1000:shot,1100:shot,1200:shot,1005:lang,1006:shot,1050:lang,1105:lang,1106:shot,1110:lang,1205:lang,1206:shot,1210:lang,1211:shot,1215:scale,1216:shot,1220:scale,1221:shot,1225:toggle,1226:shot,1230:toggle,1231:shot"
   ;;
  esac
- xvfb-run -a /app/pod-play-direct -original /orig -save /out/save -text-dir /text \
+ xvfb-run -a "/app/$BINARY" -original /orig -save /out/save -text-dir /text \
   -font /font/pod-rounded.golemfnt -hd /theme -posters /theme/posters -lang zh-TW -audio=false -scale 3 \
   -frames "$frames" -script "$script" -direct-render="$DIRECT" -draw-report /out/draw-report.json -perf -flash-audit \
   -shot-dir /out/shots -shot-frame-dir /out/window-shots -shot-source-dir /out/sources \

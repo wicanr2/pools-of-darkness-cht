@@ -1,16 +1,16 @@
 # 019 直接繪圖攔截
 
-日期：2026-10-25。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)。狀態：像素出口與單次RGB合成已驗；完整函式空跳過仍未證。
+日期：2026-10-25／26。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)。狀態：像素出口、單次RGB及限定8×8字模整段CONFORMED。
 
 ## 目前狀態
 
 | 項目 | 本輪基準 |
 |---|---|
-| 程式來源 | dosgolem/pod `c0fc72b23476d695e2ca46d3431cf2fa9a9d54b6`；Go建置資訊為乾淨來源 |
-| 已驗執行檔 | SHA-256 `2b5bdaa2c6c4bdd3746108ed30e46db065f3a928b1a90a911c01e7de298deb81` |
+| 程式來源 | dosgolem/pod `64e734c92ecaa096be9bb91d6e6f792fd5fad7fd`；Go建置資訊為乾淨來源 |
+| 已驗執行檔 | SHA-256 `d3f97dfb97ce3951da6dae880d39cbc5cb22e28532d38dc157a5ed59d93947f7` |
 | 正式主題 | 730檔；既有BIGPIC、CPIC與正常四路收據不重開為未完成 |
 | 新要求 | 使用者指定直接攔截繪圖，避免原版底圖與HD的重複繪製；參考mm3 |
-| 參考限制 | mm3規格075為DRAFT，原版空返回不等價；只沿方法，不沿其位址或完成狀態 |
+| 參考限制 | 前輪mm3規格075為DRAFT；2026-10-26新版方法已有限定常式接管與事件預算，只沿方法，不沿其位址或完成範圍 |
 | 研究工作區 | `workplace/probe/draw-intercept-v1/`；原始資料唯讀 |
 
 ## VGA驅動初步定位
@@ -89,5 +89,54 @@ Hold／Latch記住當時的來源色盤，歷史畫面的原版像素不會誤�
 - [direct_rgb_bench.go](../../tools/direct_rgb_bench.go)：在隔離clone的workplace/directbench建置，只量測既有真實圖面的CPU合成。
 
 通用程式與規格保存於同repo的[dosgolem/pod分支](https://github.com/wicanr2/pools-of-darkness-cht/tree/dosgolem/pod)。
-原版背板與函式其他指令仍執行，不能稱為完整函式入口已空跳過；GPU／SIMD後端亦未實作。
+前輪像素分支保留全部函式指令；本輪成功接管的限定字模不再逐條模擬，其索引背板與所有已驗效果仍保留。
+其他完整函式與GPU／SIMD後端未實作。
 未走過的圖族、動畫HD與片尾不因本輪攔截通過而視為完成。
+
+## 2026-10-26 整段字模接管證據
+
+使用者指定mm3新版`docs/re/direct-render-methodology.md`。該作已完成限定圖片常式、相容背板、事件預算與原子效果提交，
+與前輪讀到的DRAFT狀態不同。本作不沿其位址或完成率；現有像素命令與單次RGB驗收不重新開啟。
+
+目前唯一新原始證據在`workplace/probe/draw-intercept-v1/whole-calls-v2/`。
+沿既有7400更新DEMO、900／1800空白鍵，觀測字模`1B2E:11A6`共2930次，保存32個字碼的真正入口CPU及完整RAM。
+完整函式93 bytes的SHA-256為`d1c978b914f28d1a978a2cae1b7a1c52f4b5d233176e8bd6c3029b05c9b4958b`；IDA位址空間仍為已記錄CS的IP，非EXE offset。
+獨立原版CPU跑到真正返回，三CPU模型及兩種週期共192組，完整RAM、暫存器、旗標、返回、步數、週期及84次有序寫入全部一致。
+原始輸入、RAM與存檔不加入Git。探針與模型為[draw_call_probe.go](../../tools/draw_call_probe.go)、[draw_call_oracle.go](../../tools/draw_call_oracle.go)。
+
+原呼叫者是PUSH CS加近CALL，far return仍正確返回，故加速接點須涵蓋16位近／遠CALL。
+不在每道指令增加資格查詢；主機依CALL後的完整入口與事件預算判定，失配回原版。
+字模的指令及成本公式、來源／堆疊別名停止線，先依規格025達READY，再由通用規格436接入，已完成下列驗收。
+
+### 整段接管與正常驗收
+
+正式程式`64e734c`，Go1.24.13，原版資料、730檔HD主題與玩法未改。
+CPU只在16位近遠CALL後通知，先依入口表篩選；適配器唯讀產生完整計畫，Owner先核對事件／回合／地圖取樣預算，再提交。
+拒絕未知、簽章失配、別名、未支援監看及不足預算。印字盤點模式回原版，callback僅在Advance內存在。
+
+| 驗證 | 結果 |
+|---|---|
+| 原版函式 | 32個真實入口×三CPU模型×兩週期192組；另16組畫面四角、全亮／全暗及字型段尾條件；完整CPU／RAM、返回、堆疊與有序寫入一致；空返回負對照確實失配 |
+| 通用機制 | 近遠、直接／間接CALL，事件恰好／不足、回合配額、入口表值複製、模式／監看／邊界拒絕、prepare／入口panic及callback撤除通過 |
+| 乾淨來源機器重播 | 7400更新、712250000虛擬步；2930次字模入口中接管2401次、529次回原路徑，以主機效果計入1528405道指令 |
+| 全部有序事件 | 3343240次像素通知、8633次完整索引＋色盤回掃、79012筆音訊、1827984次DOS請求／返回的有序雜湊皆同原版；32份入口RAM與全部CPU／RAM及127個DOS檔案相同 |
+| 正式DEMO | HD／無HD／F12／2倍四路、BIGPIC244與戰鬥獨立像素、舊版完整終點通過；每路實際接管2400次，已納入地圖取樣門檻；HD量尺0 |
+| 正常讀檔UI | 既有槽A、查驗題、街景、地圖、攻略、工具列及下拉選單10對中央／完整視窗圖全同舊版；54個DOS檔案相同，量尺0；實際接管51472次、計入33740810道指令 |
+| 真存檔往返 | 冷開機讀A、正常紮營選單另存原先不存在的B，再冷開機讀B至隊伍選單；6對畫面及兩側所有存檔bytes一致、原槽A未改，B讀回羅倫德、防護−4、生命力40 |
+
+固定收據為[019-whole-call-runtime.json](019-whole-call-runtime.json)，含完整程式／工具與事件雜湊。
+機器重播的輸入檔案日期固定2000-01-01 UTC，完整RAM同該組原版輸入；正式DEMO另對照既有日期輸入的原版完整終點，不混稱兩組RAM。
+
+### 成對成本及重生
+
+乾淨正式來源、同一Docker兩CPU配額及GOMAXPROCS=2，三個實際字模來源各七組交錯、每組512次完整CALL。
+包含客體參數準備、入口篩選、簽章、計畫、背板及逐點／命令通知。三組中位數由40.36／33.88／42.47μs降為8.22／8.00／9.70μs，約4.2–4.9倍。
+此量測關閉機器事件，不含Owner.BeforeStep、RGB、GPU、視窗與遊戲其他工作，不能換算全遊戲FPS。
+
+- [draw_call_probe.go](../../tools/draw_call_probe.go)：隔離clone的workplace/callprobe建置；`-whole-call=false/true`沿既有7400更新正常DEMO產生原版及接管串流與入口，正式資料在whole-calls-v4-legacy／native。
+- [draw_call_oracle.go](../../tools/draw_call_oracle.go)：可丟棄初始函式模型及獨立原版oracle；正式適配器另由apps/pod/glyph_call_test.go逐項核對，未以模型自測取代原版。
+- [whole_call_bench.go](../../tools/whole_call_bench.go)：隔離clone的workplace/callbench建置，完整CALL成本，無固定FPS聲明。
+- [whole-call-save-receipt.sh](../../tools/whole-call-save-receipt.sh)：`legacy|native`正常新存B／冷讀B；只寫全新輸出，不覆寫既有存檔。
+- [whole_call_check.py](../../tools/whole_call_check.py)：`--project . --gui --save --out <固定收據>`核對全部串流、四路視窗、讀檔與真存檔往返。
+
+本輪正式入口已切換，舊2b5bdaa執行檔以pod-play-direct保留。其他繪圖常式、GPU／SIMD及未列玩家路徑不外推完成。
