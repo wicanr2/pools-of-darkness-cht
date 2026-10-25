@@ -1,0 +1,117 @@
+{
+  "Scope": "實際索引來源的CPU RGB合成局部量測；七組交錯、每組12次；不含執行遊戲、觀測器、flashaudit、面板、GPU或視窗；不外推FPS",
+  "Rows": [
+    {
+      "Name": "workplace/hd/inventory/title-001",
+      "SourceSHA256": "f61a14b25fe8e4921b9da854e15f1cc60475ec75ce2147e15b7d1dfc5525db0c",
+      "PaletteSHA256": "17dc586aa5241390980763e8b5abf9db044d3ad788a2b2bdd5d6d285325b2acf",
+      "RGBSHA256": "35c9ff8e4e3f6a59f7909b60fbbbb39baa521bbfca19b534e04cb17e73b97170",
+      "LegacyNS": [
+        28460299,
+        25476432,
+        28540689,
+        27372911,
+        26979709,
+        29672247,
+        28980849
+      ],
+      "DirectNS": [
+        10784575,
+        9580835,
+        11505244,
+        11621837,
+        9651986,
+        9627734,
+        9896587
+      ],
+      "LegacyMedianNS": 28460299,
+      "DirectMedianNS": 9896587,
+      "OriginalPixels": 0,
+      "SelectedPixels": 576000
+    },
+    {
+      "Name": "workplace/probe/g9-hd/b25-play/hd/sources/pod-f003650",
+      "SourceSHA256": "fa446141372a6e898b2449743e18c94cebc6e1ef62353e0339d60e67c5e9e56d",
+      "PaletteSHA256": "3dfc9c2e130d40941c1952e525112706b99bdd1227522ee9d3cb86e2dd978d21",
+      "RGBSHA256": "9a6555110693fe9ddf1a799c811ac0f2cf6f42fc63b0b6369e2642a9fbd2a071",
+      "LegacyNS": [
+        34664559,
+        35947516,
+        38861854,
+        16229001,
+        14067333,
+        15499432,
+        14827152
+      ],
+      "DirectNS": [
+        17272567,
+        17290723,
+        22291812,
+        13894176,
+        7675007,
+        9901539,
+        7277176
+      ],
+      "LegacyMedianNS": 16229001,
+      "DirectMedianNS": 13894176,
+      "OriginalPixels": 247680,
+      "SelectedPixels": 328320
+    },
+    {
+      "Name": "workplace/probe/g9-hd/b25-play/hd/source",
+      "SourceSHA256": "4f1d7430cda6cde30c7a684b9a97573e2bb2bd13b0309c001d55d9434175e601",
+      "PaletteSHA256": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+      "RGBSHA256": "d09adc34eed8314ad87f1bee4d4d2aba7ee0cfdbbf4569cbb2ad47a377c73dd0",
+      "LegacyNS": [
+        22404086,
+        29949121,
+        20033682,
+        17641991,
+        17831198,
+        18013912,
+        17454947
+      ],
+      "DirectNS": [
+        14516443,
+        14446521,
+        13978135,
+        12858165,
+        11137978,
+        11489857,
+        11552616
+      ],
+      "LegacyMedianNS": 18013912,
+      "DirectMedianNS": 12858165,
+      "OriginalPixels": 530154,
+      "SelectedPixels": 45846
+    },
+    {
+      "Name": "workplace/probe/g9-hd/wall-play-v3/hd/source",
+      "SourceSHA256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+      "PaletteSHA256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+      "RGBSHA256": "62bc69c7a494b9411f10286441ef465b5f46258c15bc5fe00bf59c4ce903ac16",
+      "LegacyNS": [
+        18041010,
+        18018375,
+        17366347,
+        15908160,
+        18490767,
+        17623702,
+        18186487
+      ],
+      "DirectNS": [
+        11558850,
+        11787518,
+        11700251,
+        10566380,
+        13004439,
+        11050078,
+        11293333
+      ],
+      "LegacyMedianNS": 18018375,
+      "DirectMedianNS": 11558850,
+      "OriginalPixels": 506304,
+      "SelectedPixels": 69696
+    }
+  ]
+}

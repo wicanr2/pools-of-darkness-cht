@@ -1,0 +1,135 @@
+{
+  "scope": "正常冷啟動SND→CONTROL→VACE→GAME；7400更新；空白鍵900／1800；新舊成對固定暫存檔時間；另比歷史終點；不代表未觀測路線",
+  "fixed_scratch_file_time": "2000-01-01T00:00:00Z",
+  "witness_comparison": "十份完整記憶體及暫存器／堆疊，固定檔案時間的原指令與命令攔截逐位元組相同；不遮蔽位址",
+  "frames": 7400,
+  "steps": 712250000,
+  "indexed_retraces": 8633,
+  "digest": {
+    "Steps": 712250000,
+    "MemorySHA256": "49a1edb58e668520fb4e531aa6eda9a098eba9943aa3101bfb132cefb12ceb01",
+    "CPUSHA256": "768d5cef79e3ad1f442dda7405aca1b08442313a2964010dc59579938105f7fe",
+    "IndexedSHA256": "4f1d7430cda6cde30c7a684b9a97573e2bb2bd13b0309c001d55d9434175e601",
+    "PaletteSHA256": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+    "DOSExited": false,
+    "AdLib": true,
+    "ClockPercent": 50,
+    "IRQ0Clamped": 0
+  },
+  "historical_input_digest": {
+    "Steps": 712250000,
+    "MemorySHA256": "b8041b4276222686f9684888e6df9de65ecd775b2990993bc68ae217b01d5c15",
+    "CPUSHA256": "768d5cef79e3ad1f442dda7405aca1b08442313a2964010dc59579938105f7fe",
+    "IndexedSHA256": "4f1d7430cda6cde30c7a684b9a97573e2bb2bd13b0309c001d55d9434175e601",
+    "PaletteSHA256": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+    "DOSExited": false,
+    "AdLib": true,
+    "ClockPercent": 50,
+    "IRQ0Clamped": 0
+  },
+  "historical_input_endpoint_equal": true,
+  "input_metadata_boundary": "固定檔案日期的兩側比較完整RAM；歷史日期輸入另由未固定時間的兩側比較完整終點。不同日期的RAM不宣稱相同。",
+  "command_count": 242980,
+  "native_bytes": 3343240,
+  "fallback_bytes": 0,
+  "canvas_mismatches": 0,
+  "writers": [
+    {
+      "cs_ip": "1D1F:0482",
+      "witness_memory_sha256": "70a64de520088e957f70411e760bd003e556531fdaa45a884e5d4d8aaa351c16",
+      "Commands": 7722,
+      "NativeBytes": 1292928,
+      "FallbackBytes": 0
+    },
+    {
+      "cs_ip": "1ED4:1A78",
+      "witness_memory_sha256": "40027cfa8299ab6acc8ecf894d9cfcfcbf42eef97b023d11f197b3a80c0493db",
+      "Commands": 18008,
+      "NativeBytes": 928192,
+      "FallbackBytes": 0
+    },
+    {
+      "cs_ip": "1ED4:1A8E",
+      "witness_memory_sha256": "168c622c41a9097d6c645ab814d47b2371e9508bd0dd66778e1a64901681fbc3",
+      "Commands": 4376,
+      "NativeBytes": 732160,
+      "FallbackBytes": 0
+    },
+    {
+      "cs_ip": "1B2E:11EA",
+      "witness_memory_sha256": "2a39340bc122ed226ad0f6ac2d94879adf5b265029e863a1855bf615186cc1ec",
+      "Commands": 129627,
+      "NativeBytes": 129627,
+      "FallbackBytes": 0
+    },
+    {
+      "cs_ip": "48A1:6910",
+      "witness_memory_sha256": "7a0c7bfabcbce08105ad0b2ebfab5e68c5a9052db0351b75bf8833bae47715ab",
+      "Commands": 8431,
+      "NativeBytes": 80046,
+      "FallbackBytes": 0
+    },
+    {
+      "cs_ip": "48A1:42A1",
+      "witness_memory_sha256": "94eac8b16d6fc36b8b76443fee039c975e9aa1d31df12ef02af7d017efee6603",
+      "Commands": 200,
+      "NativeBytes": 64000,
+      "FallbackBytes": 0
+    },
+    {
+      "cs_ip": "1B2E:11F1",
+      "witness_memory_sha256": "c3ef1eb1ee7e5b5c67d436a2c04a61252b62bdda0668036c9b87927cab60ade2",
+      "Commands": 57765,
+      "NativeBytes": 57765,
+      "FallbackBytes": 0
+    },
+    {
+      "cs_ip": "48A1:68FF",
+      "witness_memory_sha256": "3516dbf98d9bec22b1a655489a17e7c23b5149c500f3fc9c963f17ed3403ce10",
+      "Commands": 7823,
+      "NativeBytes": 49494,
+      "FallbackBytes": 0
+    },
+    {
+      "cs_ip": "48A1:6903",
+      "witness_memory_sha256": "74ca6056d7f246879f9686c288e20327e9409c4528283713a703c1a3cfbee375",
+      "Commands": 4715,
+      "NativeBytes": 4715,
+      "FallbackBytes": 0
+    },
+    {
+      "cs_ip": "48A1:6914",
+      "witness_memory_sha256": "de77625415cf4e3be2f1901fc4def4266fd8c48ad69e9f71634d4547efab604b",
+      "Commands": 4313,
+      "NativeBytes": 4313,
+      "FallbackBytes": 0
+    }
+  ],
+  "audio_sha256": "a6bfb0fbc5912723be3a942c01bd8e9b5f2a9d1d460d59e0bf4b85f518a3211a",
+  "audio_events": 79012,
+  "guest_files": 127,
+  "dos_events": 1827984,
+  "dos_sha256": "69322e75ee2ffb25b3bb617846c1c054eba1518dbe2df6a5768a4207abd245c1",
+  "dos_events_equal": true,
+  "dos_scope": "直接INT21請求的步數、定位、完整16位暫存器／旗標、DS:DX起256 bytes雜湊及立即返回狀態；不寫入客體、不對外保存參數原文",
+  "original_state_equal": true,
+  "guest_state_equal": true,
+  "audio_events_equal": true,
+  "source_report_sha256": {
+    "native-audit-demo": "985be3ff7fe11f90a61c2b0ee8a5503c9734fffa34461f35d10d0aff44f4ea45",
+    "legacy-audit-demo": "d17edcf27cc2def4c815a273850a7ceda89edbeefaf9b1dfeebcf368e5fc85b7",
+    "normal-demo": "00431fe63290c54bc5867233ce89c30d2a1a03589a9b794949dafa2a32f9e366"
+  },
+  "historical_pair_report_sha256": {
+    "native-demo": "c581db2ff4eeb155afb10d4e7c8b04d575f0e1ab5ff2ced7ea7908c23d70008f",
+    "legacy-demo": "a48c28033fdab44a996157277d8a69b17f2063007ba75d7f18ade7a8640127e5"
+  },
+  "writer_proof_sha256": "2c0557b33d9db2cc0f9d0eb5dfc71fcd834c30b112015fc2a6d083ca7a38f64c",
+  "tool_sha256": "ef01b9eca80d63bc165d67ccf67739f25c69f9834700b8f111f0f569b4ccdaab",
+  "trace_source_sha256": "9d2229f0eddc406ad1c87ac613ff03d53800a1453392c5322fa098bf38df4248",
+  "timing": {
+    "native_seconds": 64.3046688,
+    "legacy_seconds": 64.137776127,
+    "scope": "同時執行的完整探針成本，含追蹤與獨立畫布核對；不作效能結論"
+  }
+}

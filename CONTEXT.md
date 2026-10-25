@@ -46,8 +46,9 @@
 ## 待定
 
 目前新增工作：使用者於2026-10-25要求完全攔截繪圖函數，避免先繪製底圖再繪HD，指定參考`/home/anr2/cht/mm3`。
-已確認採直接替換與前端繪圖命令方向；本作來源／輸出／事件邊界先補證，見[規格025](docs/spec/025-direct-render-commands.md)、[研究019](docs/re/019-draw-interception.md)及[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)。
-目前正式f77eac3與730檔主題不變，原型未達READY前不接入。
+像素出口與單次RGB合成已達局部CONFORMED，見[規格025](docs/spec/025-direct-render-commands.md)、[研究019](docs/re/019-draw-interception.md)及[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)。
+目前程式c0fc72b，主題仍730檔。原版索引背板及函式其他指令保留；正常DEMO十個出口全數原生，39對正常前端截圖相同。
+完整函式入口空跳過未證，GPU／SIMD未做；不因直接命令已驗而宣稱其他圖族或全遊戲HD完成。
 
 | 項目 | 何時決定 |
 |---|---|
@@ -69,6 +70,7 @@
 | G8 攻略與地圖 | #9 | 攻略 78 段，地名與已定專名對齊；32 塊 GEO 雜湊、24 個 GEO 名稱、東西菲蘭 5 個攻略點共 7 格。兩城 2／3 倍 A/B 通過；已有正常冷開機讀檔與面板切換收據。其餘 8 個名稱、未觀測地點與共用場景未驗，#9 保持開啟 | docs/re/011–013；規格 008、009 READY |
 | G9 HD | #10、#18–#20、#23、#24、#26–#44 | PIC81狀態／78項主題、238張VGA怪物候選、7張BIGPIC、2張地形與菲蘭起點121格街景已接入。CPIC原始244個來源狀態去重238組全部有重畫，六組別名由相同來源匹配涵蓋，未觀測正常遇怪事件仍未知。BIGPIC244正常DEMO位置及用色已證實，3650格逐像素成品、2倍與F12通過，其他六張為條件式來源。現行730檔主題同b25受測版本，舊素材保留。來源f77eac3、獨立用色守衛與原格式主題；重建後完整7400格四路通過，原版終點與127個DOS檔案同固定基準、閃現0。三張TITLE繁中／英文及海報、4800格街景讀檔已驗；其餘三張天空／地面仍為素材。片頭八組雙語字幕、2／3倍及F8／F12通過正常5100格，原版狀態與127檔一致、閃現0；動畫HD與片尾未完成 | docs/re/014、017、018；[完整CPIC覆蓋](docs/re/017-cpic-coverage.json)、[b24四路收據](docs/re/017-b24-runtime.json)、[BIGPIC四路收據](docs/re/014-bigpic-runtime.json)；規格010局部CONFORMED |
 | README | #17 | 故事背景、原版 BIGPIC、HD 預覽與兩組繁中＋HD 實際 DEMO 截圖已寫 | README.md |
+| 直接繪圖 | #45 | 十個已觀測像素出口全數轉原生命令，最終RGB只在未選像素填原版；DEMO四路及39對正常前端截圖、CPU／RAM／音訊／DOS操作／存檔通過。原版索引與必要函式指令仍保留，完整函式入口跳過維持DRAFT | [研究019](docs/re/019-draw-interception.md)、規格025局部CONFORMED |
 | README 補圖 | #25、#26、#30、#44 | 地圖、上方工具列與下拉選單沿既有正常讀檔路線刷新，另有原版／HD街景。原版封面與實際HD繁中／英文、完整海報視窗、工具列選單、八張代表怪物的素材圖鑑，以及BIGPIC244正常DEMO原版／HD，共33張展示圖全部直接顯示；素材預覽與正常遊戲截圖分開標示，禮服及標題同使用者核准預覽 | docs/re/014；docs/screenshots/wall-receipt.json、title-receipt.json、[素材圖鑑來源](docs/screenshots/monster-hd-preview.json)、[BIGPIC收據](docs/re/014-bigpic-runtime.json) |
 | 左右海報 | #21 | 固定加寬已接入，文字隨語系；中央與定版兩側逐像素一致，2／3 倍及 F12、原版狀態與 127 個 DOS 檔案比較通過。規格 023 CONFORMED，範圍為繁中／英文與已列抽樣 | docs/re/015；review/hd/poster/ |
 | 堆疊物品顯示 | #22 | 正式詞表六項數量／加值回歸通過；既有正常物品 UI 的一般／反白 50 支箭 +2 已驗；未修改產品邏輯 | docs/re/016 |
@@ -121,7 +123,7 @@
 
 | 項目 | 值 |
 |---|---|
-| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作目前`f77eac3`，含固定海報、語系開場、VGA戰鬥與街景、查驗題列替換、八組片頭雙語字幕、完整CPIC來源ID及BIGPIC使用RGB守衛；保存到本 repo 的 `dosgolem/pod`。已驗執行檔SHA為`1c676d2bb983c1bf4b957f3cc691ea0635e77acd881d083c8218b24133c98bd7`，Go建置資訊綁定乾淨的f77eac3來源 |
+| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；目前產品程式`c0fc72b`，在既有海報、語系、字幕、完整CPIC及BIGPIC上新增原生繪圖命令與延後RGB填色；保存到本 repo 的 `dosgolem/pod`。已驗執行檔SHA為`2b5bdaa2c6c4bdd3746108ed30e46db065f3a928b1a90a911c01e7de298deb81`，Go建置資訊綁定乾淨的c0fc72b來源；後續分支提交只補規格驗收 |
 | Go／image | go1.24.13；`dosgolem-go-ebiten:1.24-r1` `sha256:8ed6bdee2bce…` |
 | 冷啟動 | 0 種缺服務；mode 13h；`START.BAT` 程式鏈；片頭送空白鍵跳過，製作群後送 `p` 進建立隊伍主選單。收據 `tools/g2-startup-receipt.sh`，見 [docs/re/003](docs/re/003-dosgolem-startup.md) |
 | adapter | `apps/pod/`（由 `apps/sosb/` 複製，路徑 A／B／C 換本作常數與 13h 換算）；`cmd/pod-overlay-shot`；自動探索 `cmd/pod-explore`（由 `cmd/sosb-explore` 複製） |

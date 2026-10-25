@@ -1,0 +1,258 @@
+{
+  "scope": "既有正常讀檔、片頭與標題路線；命令／舊合成逐張同圖，原版終點另比既有收據；不外推未走路線",
+  "rows": [
+    {
+      "route": "wall",
+      "frames": 4800,
+      "steps": 462000000,
+      "memory_sha256": "0e6e8e53b475dfc58edd6841ba5aa55960bdb7c790c0b54d5710413ffa484973",
+      "indexed_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+      "cpu_sha256": "a1f6d59ef98b263cfe7bc612e4838c32ebb0b03f7e4ebd0dec7c6cd379de5188",
+      "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+      "guest_files": 54,
+      "original_state_equal": true,
+      "guest_state_equal": true,
+      "screenshot_pairs": 10,
+      "all_screenshots_equal": true,
+      "flash_count": 0,
+      "intentional_mode_change_cells": 0,
+      "unexpected_flash_count": 0,
+      "commands": {
+        "Commands": 3382844,
+        "NativeBytes": 4348232,
+        "FallbackBytes": 0,
+        "Frames": 5599,
+        "BootstrapFrames": 3,
+        "Mismatches": 0,
+        "RGBFrames": 7902,
+        "OriginalRGBPixels": 3384608832,
+        "SelectedRGBPixels": 1166943168,
+        "LegacyRGBFrames": 0,
+        "Writers": {
+          "1218527905": {
+            "Commands": 200,
+            "NativeBytes": 64000,
+            "FallbackBytes": 0
+          },
+          "1218537727": {
+            "Commands": 7823,
+            "NativeBytes": 49494,
+            "FallbackBytes": 0
+          },
+          "1218537731": {
+            "Commands": 4715,
+            "NativeBytes": 4715,
+            "FallbackBytes": 0
+          },
+          "1218537744": {
+            "Commands": 8431,
+            "NativeBytes": 80046,
+            "FallbackBytes": 0
+          },
+          "1218537748": {
+            "Commands": 4313,
+            "NativeBytes": 4313,
+            "FallbackBytes": 0
+          },
+          "456004074": {
+            "Commands": 3323372,
+            "NativeBytes": 3323372,
+            "FallbackBytes": 0
+          },
+          "456004081": {
+            "Commands": 24980,
+            "NativeBytes": 24980,
+            "FallbackBytes": 0
+          },
+          "488572034": {
+            "Commands": 1274,
+            "NativeBytes": 487936,
+            "FallbackBytes": 0
+          },
+          "517216888": {
+            "Commands": 7552,
+            "NativeBytes": 254656,
+            "FallbackBytes": 0
+          },
+          "517216910": {
+            "Commands": 184,
+            "NativeBytes": 54720,
+            "FallbackBytes": 0
+          }
+        }
+      },
+      "inputs_sha256": "2497fd1fdc614aee3d2f16cf17c4aa83d5a0ccfe97460cc68a83d86f41dd9bd5",
+      "frame_sha256": "7004e84323066759912517f6c6d8e72c31a938b935040ac73315cdac9e03f2f5",
+      "direct_draw_report_sha256": "a52e9dd1efea245a5c96d5330140cb651b5b57c3533ab56e36798eca70f8234a"
+    },
+    {
+      "route": "movie",
+      "frames": 5100,
+      "steps": 490875000,
+      "memory_sha256": "e4afc2c98d6b7615e84b168672d0c8472ca0b56927bba3f1fa772ecb953d1f27",
+      "indexed_sha256": "f61a14b25fe8e4921b9da854e15f1cc60475ec75ce2147e15b7d1dfc5525db0c",
+      "cpu_sha256": "de89e30ec065a49136d70332d61c6dcfd8db37c3e8681311e7dff10062f38c3d",
+      "palette_sha256": "17dc586aa5241390980763e8b5abf9db044d3ad788a2b2bdd5d6d285325b2acf",
+      "guest_files": 127,
+      "original_state_equal": true,
+      "guest_state_equal": true,
+      "screenshot_pairs": 18,
+      "all_screenshots_equal": true,
+      "flash_count": 0,
+      "intentional_mode_change_cells": 0,
+      "unexpected_flash_count": 0,
+      "commands": {
+        "Commands": 146874,
+        "NativeBytes": 1429921,
+        "FallbackBytes": 0,
+        "Frames": 5949,
+        "BootstrapFrames": 3,
+        "Mismatches": 0,
+        "RGBFrames": 8945,
+        "OriginalRGBPixels": 4373952000,
+        "SelectedRGBPixels": 775808000,
+        "LegacyRGBFrames": 0,
+        "Writers": {
+          "1218527905": {
+            "Commands": 1600,
+            "NativeBytes": 512000,
+            "FallbackBytes": 0
+          },
+          "1218537727": {
+            "Commands": 44648,
+            "NativeBytes": 319086,
+            "FallbackBytes": 0
+          },
+          "1218537731": {
+            "Commands": 31280,
+            "NativeBytes": 31280,
+            "FallbackBytes": 0
+          },
+          "1218537744": {
+            "Commands": 41790,
+            "NativeBytes": 410992,
+            "FallbackBytes": 0
+          },
+          "1218537748": {
+            "Commands": 26003,
+            "NativeBytes": 26003,
+            "FallbackBytes": 0
+          },
+          "456004074": {
+            "Commands": 872,
+            "NativeBytes": 872,
+            "FallbackBytes": 0
+          },
+          "456004081": {
+            "Commands": 472,
+            "NativeBytes": 472,
+            "FallbackBytes": 0
+          },
+          "488572034": {
+            "Commands": 1,
+            "NativeBytes": 64000,
+            "FallbackBytes": 0
+          },
+          "517216888": {
+            "Commands": 200,
+            "NativeBytes": 64000,
+            "FallbackBytes": 0
+          },
+          "517216910": {
+            "Commands": 8,
+            "NativeBytes": 1216,
+            "FallbackBytes": 0
+          }
+        }
+      },
+      "inputs_sha256": "2497fd1fdc614aee3d2f16cf17c4aa83d5a0ccfe97460cc68a83d86f41dd9bd5",
+      "frame_sha256": "aebd94734b84ba3cde1eb714dd099114e3c5e6b698013e842443f332edbc9508",
+      "direct_draw_report_sha256": "b912c7d329183baa23a149a8c785b92ad626b1bb6df307872e74599e260f5029"
+    },
+    {
+      "route": "title",
+      "frames": 1250,
+      "steps": 120312500,
+      "memory_sha256": "6b4037cd6d960491351a95e23fdc84b30334ce6910c9017ee057515e0339aff7",
+      "indexed_sha256": "2c2f516bb9bd70302ee85b953673eb82f94c3ded401ac1e5968ae65e1e207396",
+      "cpu_sha256": "9af2b5a6eae042cdd661f7af212ae4b13e22f0ef9fb6aee743bcb2b6c368a398",
+      "palette_sha256": "17dc586aa5241390980763e8b5abf9db044d3ad788a2b2bdd5d6d285325b2acf",
+      "guest_files": 127,
+      "original_state_equal": true,
+      "guest_state_equal": true,
+      "screenshot_pairs": 11,
+      "all_screenshots_equal": true,
+      "flash_count": 998,
+      "intentional_mode_change_cells": 998,
+      "unexpected_flash_count": 0,
+      "commands": {
+        "Commands": 27436,
+        "NativeBytes": 525128,
+        "FallbackBytes": 0,
+        "Frames": 1458,
+        "BootstrapFrames": 3,
+        "Mismatches": 0,
+        "RGBFrames": 2287,
+        "OriginalRGBPixels": 960773184,
+        "SelectedRGBPixels": 353658816,
+        "LegacyRGBFrames": 0,
+        "Writers": {
+          "1218527905": {
+            "Commands": 200,
+            "NativeBytes": 64000,
+            "FallbackBytes": 0
+          },
+          "1218537727": {
+            "Commands": 7823,
+            "NativeBytes": 49494,
+            "FallbackBytes": 0
+          },
+          "1218537731": {
+            "Commands": 4715,
+            "NativeBytes": 4715,
+            "FallbackBytes": 0
+          },
+          "1218537744": {
+            "Commands": 8431,
+            "NativeBytes": 80046,
+            "FallbackBytes": 0
+          },
+          "1218537748": {
+            "Commands": 4313,
+            "NativeBytes": 4313,
+            "FallbackBytes": 0
+          },
+          "456004074": {
+            "Commands": 872,
+            "NativeBytes": 872,
+            "FallbackBytes": 0
+          },
+          "456004081": {
+            "Commands": 472,
+            "NativeBytes": 472,
+            "FallbackBytes": 0
+          },
+          "488572034": {
+            "Commands": 2,
+            "NativeBytes": 128000,
+            "FallbackBytes": 0
+          },
+          "517216888": {
+            "Commands": 600,
+            "NativeBytes": 192000,
+            "FallbackBytes": 0
+          },
+          "517216910": {
+            "Commands": 8,
+            "NativeBytes": 1216,
+            "FallbackBytes": 0
+          }
+        }
+      },
+      "inputs_sha256": "2497fd1fdc614aee3d2f16cf17c4aa83d5a0ccfe97460cc68a83d86f41dd9bd5",
+      "frame_sha256": "3621eee8d36923ec0a4c037f8293ed68e94c50abc2c7b87c4c87ca7490baab04",
+      "direct_draw_report_sha256": "a44adbeaf40bf8dae82ef38c3d6a6753a3ef1e7f3daf10051b87e1ff569c9908"
+    }
+  ],
+  "tool_sha256": "017202aee17e0abc3c84aa60d597722492cf3daf026ad97f672ceac4d32b062c"
+}
