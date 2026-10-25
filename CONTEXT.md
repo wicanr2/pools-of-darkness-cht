@@ -63,16 +63,16 @@
 | G6 覆繪接入 | #7 | 完成：冷開機、建角、存讀檔、選單收據；自動探索兩輪（使用者指示到此為止） | docs/re/007、010 |
 | G7 手札與查驗題 | #8 | 完成：查驗題 54 題 CONFORMED；手札實機觸發第 57 則、面板自動開出 | docs/re/008、009 |
 | G8 攻略與地圖 | #9 | 攻略 78 段，地名與已定專名對齊；32 塊 GEO 雜湊、24 個 GEO 名稱、東西菲蘭 5 個攻略點共 7 格。兩城 2／3 倍 A/B 通過；已有正常冷開機讀檔與面板切換收據。其餘 8 個名稱、未觀測地點與共用場景未驗，#9 保持開啟 | docs/re/011–013；規格 008、009 READY |
-| G9 HD | #10、#18–#20、#23、#24、#26–#43 | PIC81狀態／78項主題、238張VGA怪物候選、2張地形與菲蘭起點121格街景已接入。CPIC原始244個來源狀態去重238組全部有重畫，六組別名由相同來源匹配涵蓋，未觀測正常遇怪事件仍未知。現行715檔主題同b24受測版本，全部舊圖保留。來源2d979c3修正CPIC實際ID範圍，重建後完整7400格HD／無HD／F12／2倍四路通過，原版終點與127個DOS檔案同先前固定基準，閃現0。三張TITLE繁中／英文、F8／F2／F12及海報已驗；4800格正常街景讀檔通過。七張BIGPIC及其餘三張天空／地面為素材。片頭八組雙語字幕、2／3倍及F8／F12通過正常5100格，原版狀態與127個DOS檔案一致、閃現0；動畫HD與片尾未完成 | docs/re/014、017、018；[完整CPIC覆蓋](docs/re/017-cpic-coverage.json)、[b24四路收據](docs/re/017-b24-runtime.json)；規格010局部CONFORMED |
+| G9 HD | #10、#18–#20、#23、#24、#26–#44 | PIC81狀態／78項主題、238張VGA怪物候選、7張BIGPIC、2張地形與菲蘭起點121格街景已接入。CPIC原始244個來源狀態去重238組全部有重畫，六組別名由相同來源匹配涵蓋，未觀測正常遇怪事件仍未知。BIGPIC244正常DEMO位置及用色已證實，3650格逐像素成品、2倍與F12通過，其他六張為條件式來源。現行730檔主題同b25受測版本，舊素材保留。來源f77eac3、獨立用色守衛與原格式主題；重建後完整7400格四路通過，原版終點與127個DOS檔案同固定基準、閃現0。三張TITLE繁中／英文及海報、4800格街景讀檔已驗；其餘三張天空／地面仍為素材。片頭八組雙語字幕、2／3倍及F8／F12通過正常5100格，原版狀態與127檔一致、閃現0；動畫HD與片尾未完成 | docs/re/014、017、018；[完整CPIC覆蓋](docs/re/017-cpic-coverage.json)、[b24四路收據](docs/re/017-b24-runtime.json)、[BIGPIC四路收據](docs/re/014-bigpic-runtime.json)；規格010局部CONFORMED |
 | README | #17 | 故事背景、原版 BIGPIC、HD 預覽與兩組繁中＋HD 實際 DEMO 截圖已寫 | README.md |
-| README 補圖 | #25、#26、#30 | 地圖、上方工具列與下拉選單已沿既有正常讀檔路線刷新，另有原版／HD街景；原版終點相同。原版封面與實際HD繁中／英文、完整海報視窗及工具列選單等，加上八張代表怪物的素材圖鑑，共31張展示圖全部直接顯示；素材預覽與正常遊戲截圖分開標示，禮服及標題同使用者核准預覽 | docs/re/014；docs/screenshots/wall-receipt.json、title-receipt.json、[素材圖鑑來源](docs/screenshots/monster-hd-preview.json) |
+| README 補圖 | #25、#26、#30、#44 | 地圖、上方工具列與下拉選單沿既有正常讀檔路線刷新，另有原版／HD街景。原版封面與實際HD繁中／英文、完整海報視窗、工具列選單、八張代表怪物的素材圖鑑，以及BIGPIC244正常DEMO原版／HD，共33張展示圖全部直接顯示；素材預覽與正常遊戲截圖分開標示，禮服及標題同使用者核准預覽 | docs/re/014；docs/screenshots/wall-receipt.json、title-receipt.json、[素材圖鑑來源](docs/screenshots/monster-hd-preview.json)、[BIGPIC收據](docs/re/014-bigpic-runtime.json) |
 | 左右海報 | #21 | 固定加寬已接入，文字隨語系；中央與定版兩側逐像素一致，2／3 倍及 F12、原版狀態與 127 個 DOS 檔案比較通過。規格 023 CONFORMED，範圍為繁中／英文與已列抽樣 | docs/re/015；review/hd/poster/ |
 | 堆疊物品顯示 | #22 | 正式詞表六項數量／加值回歸通過；既有正常物品 UI 的一般／反白 50 支箭 +2 已驗；未修改產品邏輯 | docs/re/016 |
 | G10 | #11 | 為開場F8先補英文前端、專用字型及兩個已證實地圖名稱；2210格英文對話無缺字、閃現0，原版狀態與127檔一致。其他語系、英文手札／攻略、配樂、作弊及推廣片未完成 | 規格015局部CONFORMED；docs/re/014 |
 | G11 | #12 | 未開始 | — |
-| 規格 018–021 | #13–#16 | 未開始；019、020 的程式由前作沿用，未驗 | docs/spec/000-index.md |
+| 規格 018–021 | #13–#16 | 018–020未正式驗收，019／020程式由前作沿用；021的已列正常路徑抽樣閃現0，其他圖族及路徑仍未驗，#16保持開啟 | docs/spec/000-index.md；docs/re/014、017、018 |
 
-規格狀態：001–003、006、023、024 已列範圍 CONFORMED；007–009 READY；010戰鬥首批與開場、015英文前端局部CONFORMED，PIC局部READY，021局部抽樣已驗；004、005、013 DRAFT；其餘未開始或未驗（docs/spec/000-index.md）。
+規格狀態：001–003、006、023、024 已列範圍 CONFORMED；007–009 READY；010戰鬥、BIGPIC與開場、015英文前端局部CONFORMED，PIC局部READY，021局部抽樣已驗；004、005、013 DRAFT；其餘未開始或未驗（docs/spec/000-index.md）。
 
 ### 接手入口
 
@@ -91,6 +91,9 @@
 | HD來源與去重 | 研究014及014-inventory-summary.json；`tools/hd_vga_inventory_summary.py`核對既有兩份catalog的908個狀態／887組可見圖樣，另列完全相同來源的別名。數字不含另行盤點的牆面及INTRO／FINAL，不當全遊戲完成率 |
 | CPIC來源覆蓋 | `tools/hd_vga_cpic_coverage.py --inventory workplace/hd/inventory --theme workplace/hd/theme --out workplace/hd/cpic-coverage.json`，在Docker執行。驗尺寸、色號、使用RGB與成品SHA，`--require-complete`於缺項時失敗；只證明候選來源覆蓋，不證明正常遭遇 |
 | README怪物素材圖鑑 | `tools/hd_vga_readme_preview.py`在Docker內從私人審閱的已驗收PNG製作原尺寸拼圖，預設輸出`docs/screenshots/monster-hd-preview.png`及逐件來源JSON；不當正常遭遇截圖 |
+| BIGPIC原版來源 | `bash tools/bigpic-source-receipt.sh <名稱>`沿正常DEMO兩個空白鍵做26000格有界觀測；原始碼`tools/bigpic_source_probe.go`複製到隔離clone的workplace再建置，輸出在`workplace/probe/g9-hd/`。目前只有244完整色號與使用RGB已觀測，見[014-bigpic-source-proof.json](docs/re/014-bigpic-source-proof.json) |
+| BIGPIC受測主題 | `tools/hd_vga_bigpic_theme.py --root . --theme workplace/hd/theme-b25-stage`於Docker內合併七張已驗SHA至既有theme.json，須先複製現行主題且不能覆寫已有BIGPIC；接入與正常驗收另依規格010，不以建置成功稱完成 |
+| BIGPIC正常驗收 | `POD_BIGPIC_SAMPLE=1`讓`tools/vga-battle-play-receipt.sh`在既有7400格DEMO加入3650格大圖、F12及2倍抽樣；四路結束後先跑`tools/vga_battle_play_check.py --out <本次四路根目錄> --theme <受測主題> --original-baseline <舊四路根目錄>`，再跑`tools/bigpic_play_check.py --out <本次四路根目錄> --theme <受測主題> --proof docs/re/014-bigpic-source-proof.json`，均在Docker執行；結果見014-bigpic-runtime.json |
 
 狀態檔、暫存目錄與截圖都在 `workplace/`（gitignore），換機器要另外搬。
 
@@ -114,7 +117,7 @@
 
 | 項目 | 值 |
 |---|---|
-| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作目前`2d979c3`，含固定海報、語系開場、VGA戰鬥與街景、查驗題列替換、八組片頭雙語字幕與完整CPIC來源ID檢查；保存到本 repo 的 `dosgolem/pod`。已驗執行檔SHA為`5e5ec39fe6ffd669095802639343f2f989431cad322d147c98b41de67c25167d`，Go建置資訊綁定乾淨的2d979c3來源 |
+| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；本作目前`f77eac3`，含固定海報、語系開場、VGA戰鬥與街景、查驗題列替換、八組片頭雙語字幕、完整CPIC來源ID及BIGPIC使用RGB守衛；保存到本 repo 的 `dosgolem/pod`。已驗執行檔SHA為`1c676d2bb983c1bf4b957f3cc691ea0635e77acd881d083c8218b24133c98bd7`，Go建置資訊綁定乾淨的f77eac3來源 |
 | Go／image | go1.24.13；`dosgolem-go-ebiten:1.24-r1` `sha256:8ed6bdee2bce…` |
 | 冷啟動 | 0 種缺服務；mode 13h；`START.BAT` 程式鏈；片頭送空白鍵跳過，製作群後送 `p` 進建立隊伍主選單。收據 `tools/g2-startup-receipt.sh`，見 [docs/re/003](docs/re/003-dosgolem-startup.md) |
 | adapter | `apps/pod/`（由 `apps/sosb/` 複製，路徑 A／B／C 換本作常數與 13h 換算）；`cmd/pod-overlay-shot`；自動探索 `cmd/pod-explore`（由 `cmd/sosb-explore` 複製） |

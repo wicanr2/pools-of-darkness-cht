@@ -1,7 +1,38 @@
 # 014 VGA 圖檔與 HD 首批
 
 日期：2026-10-24。Issue：[#10](https://github.com/wicanr2/pools-of-darkness-cht/issues/10)、[#17](https://github.com/wicanr2/pools-of-darkness-cht/issues/17)。
-狀態：研究與畫風原型中，未作全量或執行期 HD 完成聲明。
+狀態：分項證據與接入驗收見下文；目前入口為CONTEXT.md，未宣稱全遊戲HD完成。
+
+## BIGPIC正常來源補證
+
+2026-10-25，Issue [#44](https://github.com/wicanr2/pools-of-darkness-cht/issues/44)。沿既有正常冷啟動DEMO，900與1800格各送一次BIOS空白鍵。
+只讀觀測至26000格、每格96250步，未修改原版狀態、圖號或座標。七張來源逐張搜尋完整304×120矩形，僅244在觀測器第3635格完整吻合，位置`[8,8,304,120]`。
+這是完整來源首次觀測，不代表第一個可見像素的時間。其他六張的正常位置與出圖事件仍未知，不新增G6探索。
+
+固定[014-bigpic-source-proof.json](014-bigpic-source-proof.json)保存原始檔、觀測器原始碼／執行檔、Go及映像版本、完整來源色號及使用RGB指紋。
+可重生入口為[bigpic-source-receipt.sh](../../tools/bigpic-source-receipt.sh)，觀測器原始碼為[bigpic_source_probe.go](../../tools/bigpic_source_probe.go)，在隔離dosgolem module內建置，不連入正式遊戲。
+原始收據留`workplace/probe/g9-hd/b25-source-v1/`。每張解碼像素起點798的位址基準是外層DAX解開後區塊內byte offset。
+
+244實際色盤與盤點基礎色盤的槽16–26不同，但均未被本圖使用，所以完整色號及所有使用RGB仍相同。
+241實際使用24／25，不能套用忽略整個保留區的捷徑。每張依實際用色升冪組合`[index,R,G,B]`的SHA守衛，未知用色回退。
+規格010的b25補證由DRAFT審查到READY後，才實作專屬BIGPIC圖層與受測主題；當時正式715檔主題與預設執行檔保持先前已驗版本。
+七張素材沿用原b01／b03已驗PNG與既有theme.json欄位，不另定存檔格式。素材合併工具為[hd_vga_bigpic_theme.py](../../tools/hd_vga_bigpic_theme.py)，正式啟用仍待正常四路與閃現驗收。
+
+正常驗收沿[vga-battle-play-receipt.sh](../../tools/vga-battle-play-receipt.sh)的既有7400格路線，`POD_BIGPIC_SAMPLE=1`增加3650格大圖與3640／3660格的F12或2倍往返，7390格原有最終切換保留。
+四路結束後先由[vga_battle_play_check.py](../../tools/vga_battle_play_check.py)完整核對原版終點與舊基準，再由[bigpic_play_check.py](../../tools/bigpic_play_check.py)逐色號、使用RGB、已驗PNG、原版回退及圖框外差異核對大圖。
+檢查器的隔離合成測試只驗檢查器本身，不當遊戲收據；來源改動、使用色改動、F12殘留HD及完整視窗同步變更的圖框外差異負對照均拒收。
+
+後續正式驗收通過：七張真實來源逐件完整PNG、使用色／未使用色、局部改寫、清除、顯示模式重設、2倍與F12通過，
+錯誤key／位置／來源及重複來源拒收。正式Live與既有HDLive診斷入口皆可畫244；七張完整輸出只改圖框。
+完整CPIC來源診斷與`apps/pod`／`cmd/pod-play`回歸通過，來源`f77eac3fdea0398ca9913028c1fba174832b1f52`只改本作呈現層。
+乾淨Go1.24.13建置SHA-256為`1c676d2bb983c1bf4b957f3cc691ea0635e77acd881d083c8218b24133c98bd7`。
+
+正常7400格四路各712250000步，原版CPU、記憶體、色號、色盤及127個DOS檔案彼此一致，亦同b24固定基準。
+既有八個怪物位置與五個地形位置同已驗PNG，最終合成不變、戰場外差異0、原量尺閃現0。
+3650格244的完整912×360圖面逐像素同已驗PNG，F12與2倍同配對原版；四路來源色號與使用RGB相同，327898個差異像素只在大圖框內。
+固定[014-bigpic-runtime.json](014-bigpic-runtime.json)，包含抽樣來源格數3649與實際截圖SHA；README新增兩張實際遊戲截圖並保留素材預覽標示。
+730檔正式主題同受測staging、全部舊素材保留，已啟用；原CPIC執行檔保存在本機`pod-play-before-bigpic`。
+244正常路徑已驗，其他六張仍為完整來源條件式候選，動畫HD及其他圖族不由本節外推。
 
 ## 既有來源盤點續核
 

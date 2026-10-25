@@ -472,6 +472,40 @@
       "dosgolem_commit": "dd3e417",
       "research": "docs/re/014-vga-hd.md",
       "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/30"
+    },
+    {
+      "file": "bigpic-demo-original.png",
+      "kind": "dosgolem-normal-cold-demo-BIGPIC",
+      "sha256": "9eb2aa73d9609866d66dfe7823d7352041868e15dba02c22dfff1a6e6146dac4",
+      "source": "workplace/probe/g9-hd/b25-play/base/shots/pod-f003650.png",
+      "source_key": "bigpic1-244",
+      "frame": 3650,
+      "source_frame": 3649,
+      "dimensions": [
+        960,
+        600
+      ],
+      "binary_sha256": "1c676d2bb983c1bf4b957f3cc691ea0635e77acd881d083c8218b24133c98bd7",
+      "research": "docs/re/014-vga-hd.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/44",
+      "scope": "normal DEMO intermediate capture; full endpoint verification recorded separately"
+    },
+    {
+      "file": "bigpic-demo-hd.png",
+      "kind": "dosgolem-normal-cold-demo-BIGPIC",
+      "sha256": "9976f8c79f6d959adef14786ad861bd319ab827ead36b370409edd153764b609",
+      "source": "workplace/probe/g9-hd/b25-play/hd/shots/pod-f003650.png",
+      "source_key": "bigpic1-244",
+      "frame": 3650,
+      "source_frame": 3649,
+      "dimensions": [
+        960,
+        600
+      ],
+      "binary_sha256": "1c676d2bb983c1bf4b957f3cc691ea0635e77acd881d083c8218b24133c98bd7",
+      "research": "docs/re/014-vga-hd.md",
+      "issue": "https://github.com/wicanr2/pools-of-darkness-cht/issues/44",
+      "scope": "normal DEMO intermediate capture; full endpoint verification recorded separately"
     }
   ]
 }

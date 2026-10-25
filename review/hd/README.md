@@ -15,7 +15,7 @@ Issue：[#18](https://github.com/wicanr2/pools-of-darkness-cht/issues/18)。狀�
 
 原始生圖、最終 912×360 預覽、完整提示詞、生成方式與 SHA-256 見 [b01-manifest.json](b01-manifest.json)。
 畫風 B，原版配色及構圖為基準。只做全幅縮小，沒有裁切或用濾鏡生成 HD。
-上述兩張已通過數值閘門；BIGPIC 執行期接入仍待驗證。
+上述兩張已通過數值閘門並作條件式來源接入；BIGPIC244的正常DEMO與其餘候選驗證範圍見[研究014](../../docs/re/014-vga-hd.md#bigpic正常來源補證)。
 
 人物圖 PIC1-131、PIC1-043 第 0 幀已通過數值與同狀態比較，重畫及遊戲畫面均已目視核對。
 來源、完整提示詞、原始生成圖與最終 PNG 雜湊見 [b02-manifest.json](b02-manifest.json)。
@@ -24,7 +24,8 @@ PIC 的 49 個基準畫面與 32 個動畫狀態均完成數值與目視驗收�
 三組原版完全相同的狀態共用重畫，主題登記 78 項；完整主題已通過正常 DEMO、切換及同狀態抽樣，未觀測項仍為條件式候選。
 
 其餘五張 BIGPIC 已通過數值及逐件目視，見 [b03 大圖對照](b03-bigpic/README.md)。
-加上首批兩張，七張 BIGPIC 素材均已完成；遊戲內出圖位置與接入仍待驗證。
+加上首批兩張，七張 BIGPIC 素材均已完成並接入；244正常DEMO位置、完整成品與四路驗收通過，其餘六張為完整來源條件式候選。
+固定[014-bigpic-runtime.json](../../docs/re/014-bigpic-runtime.json)，730檔正式主題同受測版本，原版終點與127檔同基準、閃現0。
 
 [b04 VGA 怪物](b04-vga-actors/README.md)六個狀態與 [b05 VGA 地形](b05-vga-terrain/README.md)兩張石牆，
 均完成數值與逐件目視。正常戰鬥、鏡像與透明背景的接入驗收見[研究 017](../../docs/re/017-vga-battle-hd.md)。
