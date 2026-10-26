@@ -52,6 +52,9 @@ type block struct {
 }
 
 func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
+	if p := bitmap51(v, budget); p != nil {
+		return p
+	}
 	if budget == 0 || v.Read8(0x449) != 0x13 {
 		return nil
 	}
@@ -211,7 +214,7 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 		instr, cycles, lastCS, lastIP := e.p.Instructions, e.p.Cycles, e.p.LastCS, e.p.LastIP
 		nw, nt := len(e.p.Writes), len(e.p.Transfers)
 		b.run(e)
-		if e.bad || ellipseFixedPixelWrites(e.p.Writes[nw:]) || filledEllipseFixedTransfers(e.p.Transfers[nt:]) {
+		if e.bad || bitmap51FixedRaster(e.p.Writes[nw:], e.p.Transfers[nt:]) || ellipseFixedPixelWrites(e.p.Writes[nw:]) || filledEllipseFixedTransfers(e.p.Transfers[nt:]) {
 			e.s = before
 			e.p.Instructions, e.p.Cycles, e.p.LastCS, e.p.LastIP = instr, cycles, lastCS, lastIP
 			e.p.Writes = e.p.Writes[:nw]
@@ -231,6 +234,8 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 func algorithmBoundary(cs, ip uint16) bool {
 	if cs == 0x48a1 {
 		switch ip {
+		case 0x5373, 0x53c5, 0x53d8, 0x53f6, 0x53fa, 0x53fc:
+			return true
 		case 0x39b2, 0x3b3d, 0x3cc0, 0x3bd8, 0x3bdc, 0x3c2a, 0x3c2e, 0x3d47, 0x3d4b, 0x3d99, 0x3d9d:
 			return true
 		case 0x346a, 0x35f4, 0x37f6, 0x3660, 0x36b6, 0x370c, 0x3762, 0x384e, 0x38a4, 0x38fa, 0x3950:
