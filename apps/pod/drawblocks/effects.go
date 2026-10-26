@@ -79,6 +79,9 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 	if p := planFadeBlend(v, budget); p != nil {
 		return p
 	}
+	if p := planFadeColor(v, budget); p != nil {
+		return p
+	}
 	at := uint32(v.CS())*16 + uint32(v.IP())
 	if b, ok := blocks[at]; !ok || b.cs != v.CS() {
 		return nil
@@ -127,7 +130,7 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 // Stop a fixed-effects prefix before an algorithm's entry, so its pixel
 // work is offered to the typed Go path using the committed guest state.
 func algorithmBoundary(cs, ip uint16) bool {
-	return cs == 0x48a1 && (ip == 0x41af || ip == 0x4268 || ip == 0x68f4 || ip == 0x689e || ip == 0x4a67 || ip == 0x4b19 || ip == 0x4b6c || mirrorPairBase(ip) != 0)
+	return cs == 0x48a1 && (ip == 0x41af || ip == 0x4268 || ip == 0x68f4 || ip == 0x689e || ip == 0x4a67 || ip == 0x4b19 || ip == 0x4b6c || ip == 0x4b9a || ip == 0x4bc1 || mirrorPairBase(ip) != 0)
 }
 func (e *effect) mark(ip uint16, cost uint64) {
 	e.p.Instructions++
