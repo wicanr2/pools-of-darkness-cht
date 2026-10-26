@@ -544,3 +544,15 @@ Go先解表面及父鏈，以選取表面裁切，再按根表面的原點與列
 全部驗收完成後原子啟用63cb5b3，前版6e62028以pod-play-nativeprimitive保留，776檔主題與34張README直接圖片未改。[固定收據](019-native-axis-runtime.json)綁定來源、工具及啟用；重生入口為Docker內tools/native_fill_check.py --family axis，原始收據在workplace/probe/draw-intercept-v1/native-axis-v1及workplace/probe/g9-hd/nativeaxis-{play,ui,save}-v1。
 
 並行研究的表面內陡／緩斜線各240次獨立原版計畫、20種拒絕通過，規格READY，尚未接產品。兩者用Go整數誤差累加，緩斜線保留31EB對EC7的RAM暫存效果；其XCHG六成本只計一次ModRM記憶體成本，原型誤算已依原服務修正，沒有改CPU模型。裁切及其他未驗繪圖仍待接管，#49保持開啟。
+
+## 2026-10-27 Go斜線與裁切游標接入
+
+沿VGA.DRV原檔SHA及IDA9.4的2CFC–3235，以Go座標、主次距離與整數誤差產生陡／緩斜線。309C／30B9及3206／321C只選typed游標；原位置保留相容寫入與模型成本，不重播opcode。短預算可先交出第一點前的初始化，再分批接續。
+裁切保留原版窄高視窗特例：子表面0,0–10,100，線段−10,0至20,90輸出62點，最大X為20。側邊重算起點沒有相應扣除1139；Go以原版主次計數保留結果，不改為一般矩形交集。最初交集假說及反例均保留於規格025。
+
+表面內完整斜線480個原版計畫、40種拒絕與32個整台機器提交通過；游標424次、前綴32次、128次完整受控呼叫與44種拒絕通過，共848個Go計畫。裁切模型以固定種子0x2CFC通過5020個像素案例，游標1114次、前綴534次與44種拒絕通過；正式selector108次全呼叫共1280個Go計畫，完整SaveState bytes同原版。
+
+產品來源602b79e6d44100a79dfdab2dab77fa4c07ee3843，乾淨Go1.24.13候選9e45287cec07ed9256b768d55778ea76de53f5f028dd13708e611b2895153858。核心、session、pod、drawblocks、前端及go vet通過；完整正常CPU／RAM、有序事件及127檔同原版，46份直接加一份分割補證同47份原版。
+四路DEMO、39對介面與六對真存讀檔、十個SAVE檔相同，槽A五檔未改。非預期閃現0，998筆F2主動切換另列；新斜線出口在目前DEMO未觀測，正常Go計數與固定2576步維持。受控比較不外推正常玩家路線或FPS。
+全部通過後原子啟用9e45287，63cb5b3以pod-play-nativeaxis保留。固定[019-native-line-runtime.json](019-native-line-runtime.json)綁定來源及啟用；重生入口為Docker內`tools/native_fill_check.py --family line`，原始收據在`workplace/probe/draw-intercept-v1/native-line-v1`及`workplace/probe/g9-hd/nativeline-{play,ui,save}-v1`。
+矩形搬移仍在獨立研究副本，其他非相交與未驗繪圖保留，全部Go閘門仍DRAFT，#49開啟。

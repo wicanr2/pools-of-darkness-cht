@@ -32,22 +32,23 @@ def main():
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--stage', choices=('trace', 'full'), default='full')
     ap.add_argument('--commit', required=True)
-    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis'), default='fill')
+    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line'), default='fill')
     a = ap.parse_args()
     assert not a.out.exists(), '保留既有收據，請另定輸出檔名'
     p = a.project
     rle = a.family != 'fill'
-    axis = a.family == 'axis'
-    primitive = a.family in ('primitive', 'axis')
-    control = a.family in ('control', 'primitive', 'axis')
-    clip = a.family in ('clip', 'control', 'primitive', 'axis')
-    output = a.family in ('output', 'clip', 'control', 'primitive', 'axis')
-    row = a.family in ('row', 'output', 'clip', 'control', 'primitive', 'axis')
-    setup = a.family in ('setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis')
-    color = a.family in ('color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis')
-    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis')
-    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis')
-    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis')
+    axis = a.family in ('axis', 'line')
+    line = a.family == 'line'
+    primitive = a.family in ('primitive', 'axis', 'line')
+    control = a.family in ('control', 'primitive', 'axis', 'line')
+    clip = a.family in ('clip', 'control', 'primitive', 'axis', 'line')
+    output = a.family in ('output', 'clip', 'control', 'primitive', 'axis', 'line')
+    row = a.family in ('row', 'output', 'clip', 'control', 'primitive', 'axis', 'line')
+    setup = a.family in ('setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line')
+    color = a.family in ('color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line')
+    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line')
+    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line')
+    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line')
     stem = 'native'+a.family
     root = p/f'workplace/probe/draw-intercept-v1/native-{a.family}-v1'
     original_root = p/'workplace/probe/draw-intercept-v1/native-fade-v1' if color else root
@@ -492,6 +493,36 @@ def main():
         result['normal_machine_axis_and_rows_by_exit']={key:counts.get(key,[0,0]) for key in
             ('48a1:3235','48a1:3463','48a1:3469')}
         result['native_go_source_review']['axis_and_rows_scope']='Go coordinate sorting/clipping emits horizontal spans and a vertical pixel cursor; original eight positions only label ordered notices. Bounded rectangles resume a validated typed row cursor and retain ABI metadata separately; no guest instruction dispatch in geometry or pixels.'
+    if line:
+        for marker in ('steep original cases 108 independent plan comparisons 216',
+                       'steep parent original comparisons 24', 'steep refusals 20',
+                       'shallow original cases 108 independent plan comparisons 216',
+                       'shallow parent original comparisons 24', 'shallow refusals 20',
+                       'diagonal committed machine original comparisons 32',
+                       'line cursor original comparisons 280', 'line cursor parent comparisons 144',
+                       'line cursor refusals 44', 'diagonal prefix original comparisons 32',
+                       'bounded diagonal whole original comparisons 128 Go plans 848',
+                       'counter clipping pixel comparisons 5020 seed 11516',
+                       'clipped cursor original comparisons 1114',
+                       'clipped prefix comparisons 534 seed 11516',
+                       'clipped complete machine comparisons 108 Go plans 1280'):
+            assert marker in test_log.read_text(), marker
+        assert test_log.read_text().count('line cursor refusals 44') == 2
+        result['scope']='Go陡斜線、緩斜線、相交裁切與有界像素游標；新增路徑限受控原版比較，完整正常回歸保留，非相交及其他固定／未驗路徑仍保留，#49未全部完成'
+        names=('native_line.go','native_diagonal.go','native_line_cursor.go','native_line_clip.go',
+               'native_diagonal_test.go','native_line_cursor_test.go','diagonal_commit_test.go',
+               'native_line_clip_test.go','clipped_cursor_test.go','clipped_prefix_test.go','clipped_commit_test.go')
+        result['line_sources']={name:sha(module/'apps/pod/drawblocks'/name) for name in names}
+        for name in names[:4]:
+            source=(module/'apps/pod/drawblocks'/name).read_text()
+            assert '.Step(' not in source and 'effect{' not in source and 'b.run(' not in source
+        result['prototype_and_original_tests']['lines']=dict(
+            interior_plans=480,interior_refusals=40,interior_committed_machine_comparisons=32,
+            cursor_plans=424,cursor_refusals=44,prefix_comparisons=32,bounded_whole_calls=128,bounded_go_plans=848,
+            clip_pixel_cases=5020,clip_seed=11516,clip_cursor_plans=1114,clip_cursor_refusals=44,
+            clip_prefix_comparisons=534,clip_production_whole_calls=108,clip_production_go_plans=1280,
+            scope='Controlled original ABI states and cursors; full CPU/RAM/ordered writes/model-time and complete SaveState comparisons; not new normal-player-route evidence')
+        result['native_go_source_review']['line_scope']='Go coordinate/error arithmetic generates pixels. Typed counters retain the original narrow-tall clip behavior. Source positions label ABI/scratch/model-time notices only; no guest opcode dispatch in geometry or pixel generation.'
     a.out.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({k: result[k] for k in ('algorithmic_plans', 'algorithmic_instructions', 'fixed_semantic_instructions', 'guest_files')}, ensure_ascii=False))
 
