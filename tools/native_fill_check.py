@@ -32,16 +32,17 @@ def main():
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--stage', choices=('trace', 'full'), default='full')
     ap.add_argument('--commit', required=True)
-    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup'), default='fill')
+    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row'), default='fill')
     a = ap.parse_args()
     assert not a.out.exists(), '保留既有收據，請另定輸出檔名'
     p = a.project
     rle = a.family != 'fill'
-    setup = a.family == 'setup'
-    color = a.family in ('color', 'setup')
-    fade = a.family in ('fade', 'color', 'setup')
-    image = a.family in ('image', 'fade', 'color', 'setup')
-    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup')
+    row = a.family == 'row'
+    setup = a.family in ('setup', 'row')
+    color = a.family in ('color', 'setup', 'row')
+    fade = a.family in ('fade', 'color', 'setup', 'row')
+    image = a.family in ('image', 'fade', 'color', 'setup', 'row')
+    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row')
     stem = 'native'+a.family
     root = p/f'workplace/probe/draw-intercept-v1/native-{a.family}-v1'
     original_root = p/'workplace/probe/draw-intercept-v1/native-fade-v1' if color else root
@@ -101,13 +102,19 @@ def main():
     if setup:
         assert all(counts[key][0] > 0 for key in ('48a1:4a8f', '48a1:4b09', '48a1:4b53'))
     fixed = new['HostInstructions'] + new['BlockInstructions'] - new['AlgorithmicInstructions']
+    if row:
+        assert counts['48a1:6899'][0] > 0
     assert fixed > 0, '其餘固定區塊仍存在，不能稱全部Go演算法完成'
     assert new['Commands']['Mismatches'] == 0
     code = p/'workplace/input/dos/pod/VGA.DRV'
     assert sha(code) == 'eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f'
     assert hashlib.sha256(code.read_bytes()[0x41af:0x42b3]).hexdigest() == 'c7db9b7b119f14464a7e76d35125922a3559d10fef36624f79f5120dd0d02f00'
     test_log = p/f'workplace/dosgolem/workplace/native-{a.family}-product-tests.log'
-    if setup:
+    if row:
+        assert hashlib.sha256(code.read_bytes()[0x6850:0x689e]).hexdigest() == '1c4ab9672accc6ec8dcd86e8703b26cf877efa2ca54e8afa5268d2c5fed7a62b'
+        for line in ('image row synthetic original comparisons 174', 'image row original entry-state comparisons 384'):
+            assert line in test_log.read_text(), line
+    elif setup:
         for lo, hi, expected in ((0x4a83, 0x4a91, '1814a41894eea9e581384ac7c8a316353039634bf747a66ceb5ec19aff3361af'),
                                  (0x4afd, 0x4b0b, '343202170a7507bd27ba58e074710568546eac5f1fc99691bcac8d8e11a98349'),
                                  (0x4b3a, 0x4b55, '592b32248b4af06920a2979be064570ce726975b43eae84d9591126394638a7d')):
@@ -147,7 +154,9 @@ def main():
     else:
         assert '18 independent plan comparisons 194' in test_log.read_text()
     assert '\nPASS\n' in test_log.read_text()
-    tests = (dict(list_synthetic_plan_comparisons=36, target_synthetic_plan_comparisons=72,
+    tests = (dict(row_synthetic_plan_comparisons=174, original_entry_states=64,
+                  original_entry_state_plan_comparisons=384, refusal_cases=22) if row else
+             dict(list_synthetic_plan_comparisons=36, target_synthetic_plan_comparisons=72,
                   error_synthetic_plan_comparisons=32, isolated_entry_states=65,
                   isolated_entry_state_plan_comparisons=390, refusal_cases=21) if setup else
              dict(original_color_job_comparisons=32, refusal_cases=13) if color else
@@ -163,7 +172,8 @@ def main():
                   normal_state_plan_comparisons=192, refusal_cases=9) if rle else
              dict(geometries=9, cost_models=2, cases=18, plan_comparisons=194, refusal_cases=8))
     tests['log_sha256'] = sha(test_log)
-    result = dict(scope=('Go使用色清單、目標RGB與誤差陣列準備，保留既有Go圖像演算法；其餘控制、硬體I/O及固定區塊仍保留，#49未全部完成' if setup else
+    result = dict(scope=('Go圖片列標頭、上下界判斷與列位置，保留既有Go圖像演算法；其他裁切／鏡像控制及固定區塊仍保留，#49未全部完成' if row else
+                        'Go使用色清單、目標RGB與誤差陣列準備，保留既有Go圖像演算法；其餘控制、硬體I/O及固定區塊仍保留，#49未全部完成' if setup else
                         'Go逐色RGB工作與完成交接，保留既有Go圖像演算法；其餘控制、硬體I/O及固定區塊仍保留，#49未全部完成' if color else
                         'Go淡出色差與插值，保留既有Go圖像演算法；其餘控制、硬體I/O及固定區塊仍保留，#49未全部完成' if fade else
                         'Go未裁切圖片區塊解析、既有RLE與鏡像像素對；鏡像以受控原圖驗證，其他圖片控制、裁切與固定區塊仍保留，#49未全部完成' if image else
@@ -350,6 +360,10 @@ def main():
     if setup:
         result['palette_setup_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/native_palette_setup.go')
         result['native_go_source_review']['setup_scope'] = 'planPaletteList filters used-color data, planPaletteTarget fills RGB triplets and planPaletteError initializes the interpolation array; no opcode or instruction-effect dispatcher'
+    if row:
+        result['image_row_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/native_image_row.go')
+        result['native_go_source_review']['row_scope'] = 'planImageRow parses a row index, compares signed vertical bounds and calculates the destination using Go geometry; ABI registers, timing and ordered RAM notices are separate; no opcode or instruction-effect dispatcher'
+        result['normal_machine_row_by_exit'] = {key: value for key, value in counts.items() if key in ('48a1:685c', '48a1:6866', '48a1:686d', '48a1:6899')}
     a.out.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({k: result[k] for k in ('algorithmic_plans', 'algorithmic_instructions', 'fixed_semantic_instructions', 'guest_files')}, ensure_ascii=False))
 
