@@ -58,6 +58,9 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 	if p := planSmallCall(v, budget); p != nil {
 		return p
 	}
+	if p := planWait(v, budget); p != nil {
+		return p
+	}
 	if p := planImageInitialize(v, budget); p != nil {
 		return p
 	}
@@ -112,6 +115,27 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 	if p := planPaletteScan(v, budget); p != nil {
 		return p
 	}
+	if p := planPaletteStage(v, budget); p != nil {
+		return p
+	}
+	if p := planPaletteInitialize(v, budget); p != nil {
+		return p
+	}
+	if p := planPaletteSourceControl(v, budget); p != nil {
+		return p
+	}
+	if p := planPaletteSourceSample(v, budget); p != nil {
+		return p
+	}
+	if p := planPaletteSourceStore(v, budget); p != nil {
+		return p
+	}
+	if p := planPaletteAdvance(v, budget); p != nil {
+		return p
+	}
+	if p := planPaletteFrame(v, budget); p != nil {
+		return p
+	}
 	if p := planMirrorPairs(v, budget); p != nil {
 		return p
 	}
@@ -134,6 +158,9 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 		return p
 	}
 	if p := planPaletteOutput(v, budget); p != nil {
+		return p
+	}
+	if p := planPaletteRead(v, budget); p != nil {
 		return p
 	}
 	at := uint32(v.CS())*16 + uint32(v.IP())
@@ -186,6 +213,12 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 func algorithmBoundary(cs, ip uint16) bool {
 	if cs == 0x48a1 {
 		switch ip {
+		case 0x4b0b, 0x4b8d, 0x4b91, 0x4bc6, 0x4944, 0x4971, 0x4a91, 0x4aa4, 0x4aad, 0x4abd, 0x4ae3, 0x4af6:
+			return true
+		case 0x2aeb, 0x4a31, 0x4a72, 0x4b55:
+			return true
+		case 0x2a90, 0x2a9d, 0x2a9e, 0x2aa0, 0x2aa2, 0x2aa3, 0x2aa5, 0x2aa7:
+			return true
 		case 0x6733, 0x682d, 0x6e5e, 0x6a0c, 0x6a3a, 0x6a48, 0x6a50, 0x6a58, 0x6abe, 0x6b33, 0x6b5d, 0x6b71, 0x6bea, 0x6bee, 0x6bfe, 0x6c4d, 0x6c50, 0x6c53, 0x6c8f, 0x6cf6, 0x6cf9, 0x6d08, 0x6dc0, 0x6dc4, 0x6dd2:
 			return true
 		}

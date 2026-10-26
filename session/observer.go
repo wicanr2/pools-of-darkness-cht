@@ -139,6 +139,22 @@ func (v StepView) CPUModel() (cpu.Model, bool) {
 	}
 	return v.o.machine.CPU.Model, true
 }
+
+// PaletteRGB returns an owned six-bit color snapshot without changing DAC
+// read phase, counters or ports. The proposed read job revalidates it.
+func (v StepView) PaletteRGB(index byte) ([3]byte, bool) {
+	if !v.live() {
+		return [3]byte{}, false
+	}
+	return v.o.machine.PaletteRGB(index)
+}
+
+func (v StepView) VGAStatusSnapshot() (machine.VGAStatusSnapshot, bool) {
+	if !v.live() {
+		return machine.VGAStatusSnapshot{}, false
+	}
+	return v.o.machine.VGAStatusSnapshot()
+}
 func (v StepView) DS() uint16 { return v.seg(cpu.DS) }
 func (v StepView) ES() uint16 { return v.seg(cpu.ES) }
 func (v StepView) SS() uint16 { return v.seg(cpu.SS) }

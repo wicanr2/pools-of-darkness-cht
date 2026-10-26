@@ -21,6 +21,8 @@ type HostWorkPlan struct {
 	Writes               []HostWrite
 	Transfers            []HostTransfer
 	PaletteWrites        []HostPaletteWrite
+	PaletteReads         []HostPaletteRead
+	VideoStatusReads     []HostVideoStatusRead
 }
 
 // HostTransfer is an owned, nonwrapping string-write effect. Data==nil means
@@ -167,7 +169,13 @@ func (m *Machine) ValidateHostWork(p *HostWorkPlan) error {
 			return fmt.Errorf("machine: ambiguous host write order")
 		}
 	}
-	return m.validateHostPaletteWrites(p)
+	if err := m.validateHostPaletteWrites(p); err != nil {
+		return err
+	}
+	if err := m.validateHostPaletteReads(p); err != nil {
+		return err
+	}
+	return m.validateHostVideoStatusReads(p)
 }
 func (m *Machine) CommitHostWork(p *HostWorkPlan) error {
 	return m.commitHostWork(p, false)
@@ -183,6 +191,8 @@ func (m *Machine) commitHostWork(p *HostWorkPlan, block bool) error {
 	owned.Writes = append([]HostWrite(nil), p.Writes...)
 	owned.Transfers = append([]HostTransfer(nil), p.Transfers...)
 	owned.PaletteWrites = append([]HostPaletteWrite(nil), p.PaletteWrites...)
+	owned.PaletteReads = append([]HostPaletteRead(nil), p.PaletteReads...)
+	owned.VideoStatusReads = append([]HostVideoStatusRead(nil), p.VideoStatusReads...)
 	for i := range owned.Transfers {
 		if owned.Transfers[i].Data != nil {
 			owned.Transfers[i].Data = append([]byte{}, owned.Transfers[i].Data...)
@@ -193,12 +203,16 @@ func (m *Machine) commitHostWork(p *HostWorkPlan, block bool) error {
 		return err
 	}
 	palette := hostPaletteBytes(p.PaletteWrites)
+	if len(p.PaletteReads) > 0 {
+		palette = hostPaletteReadBytes(p.PaletteReads)
+	}
+	if len(p.VideoStatusReads) > 0 {
+		palette = hostVideoStatusBytes(p.VideoStatusReads)
+	}
 	defer func() { m.hostEffect = nil; m.inVideoCommand = false; m.hostPalette = nil }()
 	for i, ti, pi := 0, 0, 0; i < len(p.Writes) || ti < len(p.Transfers) || pi < len(palette); {
 		if pi < len(palette) && (i == len(p.Writes) || palette[pi].step < p.Writes[i].Step) && (ti == len(p.Transfers) || palette[pi].step < p.Transfers[ti].Step) {
-			m.hostPalette = &palette[pi]
-			m.Out8(palette[pi].port, palette[pi].value)
-			m.hostPalette = nil
+			m.executeHostVideoIO(&palette[pi])
 			pi++
 			continue
 		}

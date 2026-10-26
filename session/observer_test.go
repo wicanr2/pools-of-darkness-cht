@@ -41,6 +41,55 @@ func TestStepViewCPUModelLifetime(t *testing.T) {
 	}
 }
 
+func TestStepViewPaletteRGBLifetime(t *testing.T) {
+	o := startSyntheticOwner(t, observerLoopCOM)
+	o.machine.SetVideoMode(0x13)
+	o.machine.DAC[21], o.machine.DAC[22], o.machine.DAC[23] = 1, 2, 3
+	o.viewOpen = true
+	v := StepView{o: o, token: o.viewToken}
+	before := machineDigest(o)
+	rgb, ok := v.PaletteRGB(7)
+	if !ok || rgb != ([3]byte{1, 2, 3}) || before != machineDigest(o) || o.viewMisuse || len(o.machine.PortLog) != 0 || o.machine.PortsIn[0x3c9] != 0 {
+		t.Fatal("valid RGB query changed state")
+	}
+	o.viewOpen = false
+	if rgb, ok = v.PaletteRGB(7); ok || rgb != ([3]byte{}) || !o.viewMisuse {
+		t.Fatal("expired RGB query accepted")
+	}
+	o.viewOpen = true
+	o.viewToken++
+	o.viewMisuse = false
+	if _, ok = v.PaletteRGB(7); ok || !o.viewMisuse {
+		t.Fatal("stale token RGB query accepted")
+	}
+}
+
+func TestStepViewVGAStatusLifetime(t *testing.T) {
+	o := startSyntheticOwner(t, observerLoopCOM)
+	o.machine.SetVideoMode(0x13)
+	o.viewOpen = true
+	v := StepView{o: o, token: o.viewToken}
+	before := machineDigest(o)
+	snapshot, ok := v.VGAStatusSnapshot()
+	if !ok || snapshot.Steps != v.Steps() {
+		t.Fatal("valid status snapshot rejected")
+	}
+	if _, ok = snapshot.At(1, 1); !ok {
+		t.Fatal("valid status prediction rejected")
+	}
+	if before != machineDigest(o) || o.viewMisuse || o.machine.PortsIn[0x3da] != 0 {
+		t.Fatal("status query changed machine")
+	}
+	o.viewOpen = false
+	snapshot, ok = v.VGAStatusSnapshot()
+	if ok || !o.viewMisuse {
+		t.Fatal("expired status snapshot accepted")
+	}
+	if _, known := snapshot.At(1, 1); known {
+		t.Fatal("expired query yielded valid snapshot")
+	}
+}
+
 func (r *recordingObserver) BeforeStep(v StepView) error {
 	if r.readStale && r.keep != nil {
 		_ = r.keep.IP()

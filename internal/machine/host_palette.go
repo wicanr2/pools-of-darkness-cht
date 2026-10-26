@@ -14,6 +14,19 @@ type hostPaletteByte struct {
 	port         uint16
 	value        byte
 	step, cycles uint64
+	read         bool
+}
+
+// Shared internal clock context for the bounded VGA commands. The public
+// commands still select only their documented palette/status interfaces.
+func (m *Machine) executeHostVideoIO(command *hostPaletteByte) byte {
+	m.hostPalette = command
+	defer func() { m.hostPalette = nil }()
+	if command.read {
+		return m.In8(command.port)
+	}
+	m.Out8(command.port, command.value)
+	return 0
 }
 
 func (m *Machine) validateHostPaletteWrites(p *HostWorkPlan) error {

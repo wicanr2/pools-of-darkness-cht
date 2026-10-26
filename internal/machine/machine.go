@@ -1091,7 +1091,11 @@ func (m *Machine) In8(port uint16) uint8 {
 		// bit3 ＝ 垂直回掃、bit0 ＝ 顯示中。**兩個都要會變**，
 		// 這樣不管程式等的是哪一種邊緣都轉得出來。
 		if m.Mode13Phase && m.VideoMode() == 0x13 {
-			return mode13InputStatus(m.Steps, m.VGAFrameEvery)
+			step := m.Steps
+			if clock := m.hostPalette; clock != nil && clock.read && clock.port == 0x3da {
+				step += clock.step
+			}
+			return mode13InputStatus(step, m.VGAFrameEvery)
 		}
 		if m.CRTCTiming {
 			if v, ok := m.statusFromTiming(); ok {
