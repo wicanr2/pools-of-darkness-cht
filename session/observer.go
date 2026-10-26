@@ -23,6 +23,11 @@ type StepObserver interface {
 type VideoCommandObserver interface{ VideoCommand(machine.VideoCommand) }
 type HostCallTargetProvider interface{ HostCallTargets() []uint32 }
 
+type HostBlockProvider interface {
+	HostBlockRanges() []machine.HostCodeRange
+	PrepareHostBlock(StepView, uint64) (*machine.HostWorkPlan, error)
+}
+
 // HostCallProvider returns a read-only effect proposal after a completed CALL.
 // A nil proposal declines without observing the callee entry twice.
 type HostCallProvider interface {
@@ -173,6 +178,16 @@ func (v StepView) Read16(a uint32) uint16 {
 	return v.o.machine.Peek16(a)
 }
 
+// CopyRAM copies plain low RAM into caller-owned storage. It never exposes a
+// guest slice and retains the same callback lifetime as Read8.
+func (v StepView) CopyRAM(a uint32, dst []byte) bool {
+	if !v.live() || a > 0xa0000 || uint64(a)+uint64(len(dst)) > 0xa0000 {
+		return false
+	}
+	copy(dst, v.o.machine.Mem[int(a):int(a)+len(dst)])
+	return true
+}
+
 // errProgramExited stops the observed loop at the first instruction after the
 // program has exited.  It is not an error of the program or the observer.
 var errProgramExited = errors.New("session: 程式已結束")
@@ -289,6 +304,53 @@ func (o *Owner) runObserved(budget uint64) (stop machine.Stop, rawErr, observerE
 			return observerErr
 		}
 		return nil
+	}
+	if o.nativeHostBlocks {
+		provider := o.observer.(HostBlockProvider)
+		var ranges []machine.HostCodeRange
+		guard("HostBlockRanges", func() { ranges = provider.HostBlockRanges() })
+		o.machine.ObserveHostBlocks(ranges, func() (err error) {
+			defer func() {
+				o.viewOpen = false
+				if r := recover(); r != nil {
+					err = fmt.Errorf("session: 觀測器 HostBlock panic：%v", r)
+				}
+				if err != nil {
+					observerErr = err
+				}
+			}()
+			if videoPanic != nil {
+				return videoPanic
+			}
+			if o.machine.RunLimit <= o.machine.Steps {
+				return nil
+			}
+			budget := o.machine.HostWorkBudget(o.machine.RunLimit - o.machine.Steps)
+			if budget == 0 {
+				return nil
+			}
+			o.viewToken++
+			o.viewOpen = true
+			p, e := provider.PrepareHostBlock(StepView{o: o, token: o.viewToken}, budget)
+			o.viewOpen = false
+			if e != nil {
+				return e
+			}
+			if p == nil {
+				return nil
+			}
+			if o.machine.ValidateHostWork(p) != nil {
+				return nil
+			}
+			if err = o.machine.CommitHostBlock(p); err != nil {
+				return err
+			}
+			if videoPanic != nil {
+				return videoPanic
+			}
+			return nil
+		})
+		defer o.machine.ObserveHostBlocks(nil, nil)
 	}
 	if o.nativeHostCalls {
 		provider := o.observer.(HostCallProvider)

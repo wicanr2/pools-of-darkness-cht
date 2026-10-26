@@ -39,3 +39,22 @@ session需明確啟用並驗provider，callback僅Advance內有效，結束後�
 正常機器重播的全部像素、回掃、音訊、DOS操作與CPU／RAM一致；正式視窗四路、讀檔10對畫面與正常新存B／冷讀B六對畫面及存檔位元組相同。
 成對完整CALL成本包含資格檢查、計畫、相容寫入及通知，約4.2–4.9倍，不換算全遊戲FPS。
 具體遊戲位址、輸入、雜湊與正常驗收入口保存在消費端[研究019](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-draw-interception.md)與[固定收據](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-whole-call-runtime.json)。
+
+## 可重入繪圖區塊擴充（READY）
+
+新增預設關閉的NativeHostBlocks。持有者於Machine.Step先依原版順序處理tick與鍵盤，再於真正指令執行前按值複製的程式範圍篩選。
+provider仍只取得限期StepView與HostWorkBudget，回傳相同的純效果計畫。拒絕時原指令照常，接受時本Step以該計畫的原虛擬步數計入配額。
+下一步先處理恰好到期的事件，區塊續接只看事件後的實際CPU位置；無需保留可變的適配器續傳狀態。
+通用層不含遊戲位址、原碼或解碼器。HostBlocks與BlockInstructions獨立統計，不重算HostCalls。
+回呼僅在Advance存在，provider錯誤或panic於執行原指令前封鎖；範圍／view不得外洩；byte監看、部分拒絕、取消與時間預算沿上文契約。
+不補送被接管內部指令的BeforeStep；適配器必須在來源規格明列被跳過的觀測呼叫者，盤點模式改走原版。
+同一原指令、相同步數與CS:IP的連續byte writes可合成擁有資料的COPY／FILL命令，逐byte的VideoWrite與相容RAM順序保持原樣。
+不跨指令合併；向後word維持每個word低byte在前。未連續、單點或未知序列沿PIXEL。命令Host標記與HostBytes只記已提交效果，不記資格提案。
+驗收須含預設關閉、錯誤／拒絕原子性、事件先於計畫、回合邊界、回呼撤除、範圍值複製及正常消費端獨立原版串流。
+
+緊湊HostTransfer（READY）與Writes按原步數合併，兩種類型不能佔同一指令。每個transfer是段內不環繞的普通RAM／mode13h線性表面搬移或填色，寬1／2，次數非零。
+驗證來源長度、目的範圍、模式、觀測器、時間及順序後才寫入；提交先複製提案資料，回呼不能修改後續來源。
+逐byte VideoWrite維持原順序與時間，前端只收到一次擁有資料的COPY／FILL。區塊計畫可以含完整已驗前綴，未知後續區塊由適配器退回其原入口。
+任意RunUntil predicate會停用主機效果，不能跨過未宣告的停止條件。範圍可加精確CS篩選，避免overlay重用實體位址時支付提案成本。
+
+StepView.CopyRAM只複製0–A0000以下的普通RAM到呼叫者緩衝區，不回傳客體slice，期限與Read8相同。超出範圍返回false；畫面、ROM與HMA仍由既有介面處理。

@@ -309,16 +309,20 @@ type Machine struct {
 	watchLo, watchHi uint32
 
 	// 讀取監看（WatchReads）。rWatchLo > rWatchHi 表示關閉。
-	rWatchLo, rWatchHi                    uint32
-	onRead                                func(addr uint32, v uint8)
-	onWrite                               func(addr uint32, old, new uint8)
-	onHostCall                            func()
-	hostCallTargets                       []uint32
-	hostEffect                            *HostWrite
-	HostCallCommits, HostCallInstructions uint64
-	onVideoWrite                          func(VideoWrite)
-	onVideoCommand                        func(VideoCommand)
-	nativeVideo, inVideoCommand           bool
+	rWatchLo, rWatchHi                      uint32
+	onRead                                  func(addr uint32, v uint8)
+	onWrite                                 func(addr uint32, old, new uint8)
+	onHostCall                              func()
+	onHostBlock                             func() error
+	hostBlockRanges                         []HostCodeRange
+	hostPredicate                           bool
+	HostBlockCommits, HostBlockInstructions uint64
+	hostCallTargets                         []uint32
+	hostEffect                              *HostWrite
+	HostCallCommits, HostCallInstructions   uint64
+	onVideoWrite                            func(VideoWrite)
+	onVideoCommand                          func(VideoCommand)
+	nativeVideo, inVideoCommand             bool
 	// 視訊模式觀測（Buck 規格 052）。callback 在 SetVideoMode 末尾呼叫；ModeChanges 照舊追加。
 	onModeChange func(ModeChange)
 
@@ -1423,6 +1427,16 @@ func (m *Machine) Step() error {
 	if len(m.timedKeys) == 0 || !m.timedKeyTick() {
 		if len(m.keyQueue) > 0 {
 			m.keyTick()
+		}
+	}
+	if m.onHostBlock != nil && m.hostBlockMatch() {
+		before := m.Steps
+		if err := m.onHostBlock(); err != nil {
+			return err
+		}
+		if m.Steps > before {
+			m.accelCredit = m.Steps - before
+			return nil
 		}
 	}
 	if m.tpd.loop != 0 {

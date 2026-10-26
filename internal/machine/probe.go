@@ -130,6 +130,9 @@ type PreStepObserver func(*Machine) error
 // 但**跳過第一條**——否則停在中斷點上之後再呼叫一次會當場又停下來，
 // 永遠走不動。
 func (m *Machine) RunUntil(stop func(*Machine) bool, budget uint64) (Stop, error) {
+	oldPredicate := m.hostPredicate
+	m.hostPredicate = stop != nil
+	defer func() { m.hostPredicate = oldPredicate }()
 	for i := uint64(0); i < budget; i++ {
 		if i > 0 || len(m.breaks) == 0 {
 			if m.atBreak() {
@@ -164,6 +167,9 @@ func (m *Machine) RunUntil(stop func(*Machine) bool, budget uint64) (Stop, error
 // behavior.  It does not install an observer, route input, or expose any
 // owner resource to a frontend.
 func (m *Machine) RunUntilObserved(stop func(*Machine) bool, budget uint64, observe PreStepObserver) (Stop, error) {
+	oldPredicate := m.hostPredicate
+	m.hostPredicate = stop != nil
+	defer func() { m.hostPredicate = oldPredicate }()
 	for i := uint64(0); i < budget; i++ {
 		if i > 0 || len(m.breaks) == 0 {
 			if m.atBreak() {

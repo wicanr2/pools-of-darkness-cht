@@ -20,6 +20,7 @@ type VideoCommand struct {
 	Count, Value     uint16
 	Width            uint8
 	Backward, Native bool
+	Host             bool // effects committed by spec436, not a decoded string opcode
 	Source           uint32
 	Data             []byte
 }
@@ -105,5 +106,56 @@ func (m *Machine) commandPixel(a uint32, v byte) {
 		return
 	}
 	step, cs, ip := m.videoWriteContext()
-	m.onVideoCommand(VideoCommand{Kind: VideoPixel, Step: step, CS: cs, IP: ip, Offset: a - vgaLo, Count: 1, Width: 1, Value: uint16(v), Native: m.hostEffect != nil})
+	m.onVideoCommand(VideoCommand{Kind: VideoPixel, Step: step, CS: cs, IP: ip, Offset: a - vgaLo, Count: 1, Width: 1, Value: uint16(v), Native: m.hostEffect != nil, Host: m.hostEffect != nil})
+}
+
+// hostVideoGroup batches only writes belonging to the same original atomic
+// instruction. VideoWrite still observes every byte in original order.
+func (m *Machine) hostVideoGroup(ws []HostWrite) (int, VideoCommand) {
+	if len(ws) < 2 || !m.nativeVideo || m.onVideoCommand == nil || ws[0].Address < vgaLo {
+		return 0, VideoCommand{}
+	}
+	a := ws[0]
+	width, back := 1, false
+	if ws[1].Address+1 == a.Address {
+		back = true
+	} else if len(ws) > 2 && ws[1].Address == a.Address+1 && ws[2].Address+2 == a.Address {
+		width, back = 2, true
+	}
+	n := 0
+	for i, w := range ws {
+		if i >= 65535*width || w.Step != a.Step || w.CS != a.CS || w.IP != a.IP {
+			break
+		}
+		delta := (i / width) * width
+		if back {
+			delta = -delta
+		}
+		if int64(w.Address) != int64(a.Address)+int64(delta+i%width) {
+			break
+		}
+		n++
+	}
+	n -= n % width
+	if n < 2 {
+		return 0, VideoCommand{}
+	}
+	value := uint16(a.Value)
+	if width == 2 {
+		value |= uint16(ws[1].Value) << 8
+	}
+	c := VideoCommand{Kind: VideoFill, Step: m.Steps + a.Step, CS: a.CS, IP: a.IP, Offset: a.Address - vgaLo, Count: uint16(n / width), Width: uint8(width), Value: value, Backward: back, Native: true, Host: true}
+	for i, w := range ws[:n] {
+		if w.Value != byte(value>>uint(8*(i%width))) {
+			c.Kind = VideoCopy
+			break
+		}
+	}
+	if c.Kind == VideoCopy {
+		c.Data = make([]byte, n)
+		for i, w := range ws[:n] {
+			c.Data[i] = w.Value
+		}
+	}
+	return n, c
 }

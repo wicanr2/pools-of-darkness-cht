@@ -6,11 +6,13 @@ import (
 	"github.com/wicanr2/dosgolem/internal/machine"
 )
 
-type DrawWriterCount struct{ Commands, NativeBytes, FallbackBytes uint64 }
+type DrawWriterCount struct{ Commands, NativeBytes, FallbackBytes, HostBytes uint64 }
 type DirectStats struct {
+	HostBytes                                                                 uint64
 	Commands, NativeBytes, FallbackBytes, Frames, BootstrapFrames, Mismatches uint64
 	RGBFrames, OriginalRGBPixels, SelectedRGBPixels, LegacyRGBFrames          uint64
 	HostCalls, HostInstructions                                               uint64
+	HostBlocks, BlockInstructions                                             uint64
 	Writers                                                                   map[uint32]DrawWriterCount
 }
 
@@ -26,6 +28,12 @@ func (d *DirectCanvas) RecordHostWork(calls, instructions uint64) {
 	if d != nil {
 		d.stats.HostCalls += calls
 		d.stats.HostInstructions += instructions
+	}
+}
+func (d *DirectCanvas) RecordHostBlocks(blocks, instructions uint64) {
+	if d != nil {
+		d.stats.HostBlocks += blocks
+		d.stats.BlockInstructions += instructions
 	}
 }
 
@@ -81,6 +89,10 @@ func (d *DirectCanvas) Apply(c machine.VideoCommand) error {
 	w := d.stats.Writers[key]
 	w.Commands++
 	n := uint64(c.Count) * uint64(c.Width)
+	if c.Host {
+		d.stats.HostBytes += n
+		w.HostBytes += n
+	}
 	if c.Native {
 		d.stats.NativeBytes += n
 		w.NativeBytes += n
