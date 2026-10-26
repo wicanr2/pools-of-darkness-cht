@@ -1,13 +1,13 @@
 # 019 直接繪圖攔截
 
-日期：2026-10-25／26。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)。狀態：像素出口、單次RGB及限定8×8字模整段CONFORMED。
+日期：2026-10-25／26。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)。狀態：本作VGA繪圖、字模、共享搬移／填色／清零及單次RGB CONFORMED。
 
 ## 目前狀態
 
 | 項目 | 本輪基準 |
 |---|---|
-| 程式來源 | dosgolem/pod `64e734c92ecaa096be9bb91d6e6f792fd5fad7fd`；Go建置資訊為乾淨來源 |
-| 已驗執行檔 | SHA-256 `d3f97dfb97ce3951da6dae880d39cbc5cb22e28532d38dc157a5ed59d93947f7` |
+| 程式來源 | dosgolem/pod `191479d5492fdce1e5d925ea44033d2112f75016`；Go建置資訊為乾淨來源 |
+| 已驗執行檔 | SHA-256 `2c58d1d8e10f83eabb825e83e87bf781f8f136b50c3c33a8e4d93817049165fd` |
 | 正式主題 | 730檔；既有BIGPIC、CPIC與正常四路收據不重開為未完成 |
 | 新要求 | 使用者指定直接攔截繪圖，避免原版底圖與HD的重複繪製；參考mm3 |
 | 參考限制 | 前輪mm3規格075為DRAFT；2026-10-26新版方法已有限定常式接管與事件預算，只沿方法，不沿其位址或完成範圍 |
@@ -90,7 +90,7 @@ Hold／Latch記住當時的來源色盤，歷史畫面的原版像素不會誤�
 
 通用程式與規格保存於同repo的[dosgolem/pod分支](https://github.com/wicanr2/pools-of-darkness-cht/tree/dosgolem/pod)。
 前輪像素分支保留全部函式指令；本輪成功接管的限定字模不再逐條模擬，其索引背板與所有已驗效果仍保留。
-其他完整函式與GPU／SIMD後端未實作。
+#46完成時尚未實作其他完整函式；#47已補VGA繪圖與共享常式，見下文。GPU／SIMD後端未實作。
 未走過的圖族、動畫HD與片尾不因本輪攔截通過而視為完成。
 
 ## 2026-10-26 整段字模接管證據
@@ -98,7 +98,7 @@ Hold／Latch記住當時的來源色盤，歷史畫面的原版像素不會誤�
 使用者指定mm3新版`docs/re/direct-render-methodology.md`。該作已完成限定圖片常式、相容背板、事件預算與原子效果提交，
 與前輪讀到的DRAFT狀態不同。本作不沿其位址或完成率；現有像素命令與單次RGB驗收不重新開啟。
 
-目前唯一新原始證據在`workplace/probe/draw-intercept-v1/whole-calls-v2/`。
+字模入口盤點在`workplace/probe/draw-intercept-v1/whole-calls-v2/`，乾淨正式來源重播在whole-calls-v4-legacy／native。
 沿既有7400更新DEMO、900／1800空白鍵，觀測字模`1B2E:11A6`共2930次，保存32個字碼的真正入口CPU及完整RAM。
 完整函式93 bytes的SHA-256為`d1c978b914f28d1a978a2cae1b7a1c52f4b5d233176e8bd6c3029b05c9b4958b`；IDA位址空間仍為已記錄CS的IP，非EXE offset。
 獨立原版CPU跑到真正返回，三CPU模型及兩種週期共192組，完整RAM、暫存器、旗標、返回、步數、週期及84次有序寫入全部一致。
@@ -139,4 +139,58 @@ CPU只在16位近遠CALL後通知，先依入口表篩選；適配器唯讀產�
 - [whole-call-save-receipt.sh](../../tools/whole-call-save-receipt.sh)：`legacy|native`正常新存B／冷讀B；只寫全新輸出，不覆寫既有存檔。
 - [whole_call_check.py](../../tools/whole_call_check.py)：`--project . --gui --save --out <固定收據>`核對全部串流、四路視窗、讀檔與真存檔往返。
 
-本輪正式入口已切換，舊2b5bdaa執行檔以pod-play-direct保留。其他繪圖常式、GPU／SIMD及未列玩家路徑不外推完成。
+#46完成時正式入口已切換，舊2b5bdaa執行檔以pod-play-direct保留。其後#47接續補VGA其餘繪圖；GPU／SIMD及未列玩家路徑不外推完成。
+
+## #47 VGA繪圖接管完成
+
+使用者要求完成其餘繪圖接管。唯一新增證據工作區為`workplace/probe/draw-intercept-v1/all-functions-v1/`，研究原型在隔離clone的`workplace/drawall/`。
+沿用本檔IDA9.4匯出，核對VGA.DRV的檔案SHA及每條指令bytes，再以Capstone5.0.3做型別化交叉轉換。
+VACE快照48A1段的2786–757F與原VGA.DRV完全相同，已證實本作動畫實際載入此驅動。
+先前在GAME快照查無驅動的觀察仍成立，但不能用來推論VACE的入口。
+
+- [draw_blocks_gen.py](../../tools/draw_blocks_gen.py)：只將已由IDA定位的純繪圖運算轉為固定Go區塊；硬體、DOS與未知指令留原版。
+- [all_render_check.py](../../tools/all_render_check.py)：核對#47的完整事件、全部實際像素寫入者、四路DEMO、讀檔／片頭／封面與真存讀檔。固定收據為[019-all-render-runtime.json](019-all-render-runtime.json)。
+- 繪圖區塊的程式與來源索引在私人[dosgolem/pod分支](https://github.com/wicanr2/pools-of-darkness-cht/tree/dosgolem/pod/apps/pod/drawblocks)，不含原版EXE或原始RAM。
+- 規格見[025](../spec/025-direct-render-commands.md)，本作VGA範圍已達CONFORMED並接入正式入口。
+
+### 範圍與效果
+
+共90項函式／helper，包括VGA跳轉表與內部繪圖運算，以及GAME的Move、FillChar及清零。產生1432個固定Go區塊、7594道運算，無須在客體CPU重新解碼。
+只接管符合程式指紋、表面及事件預算的呼叫；I/O、POPF、未驗寬指令與控制轉移保持原CPU邊界。
+其中兩個B000區塊屬其他顯示模式，保守拒絕。未走過的玩家路線及其他HD素材仍不由本項外推完成。
+
+通用436新增預設關閉的指令前區塊掛勾，原tick與鍵盤先執行，再按精確CS與位址篩選。前端僅提供純計畫，不取得客體寫入權。
+區塊可跨函式續接，但不跨IRQ、畫面、回合或地圖取樣邊界；失配時只保留完整已驗前綴，回到失配區塊原入口。
+Move／Fill／清零另有完整呼叫公式，返回、參數清除、旗標、方向與字節／字組時序由原版驗證。
+
+REP以HostTransfer保存擁有的來源資料或填色值，不先擴成逐byte清單；提交前複製提案，逐byte相容寫入與VideoWrite的原順序仍保留，前端收到一次COPY／FILL。
+重疊、跨段或其他未知條件回到已驗區塊／原版。指紋只在一次純計畫內快取，已編譯程式區不允許被計畫寫入。
+CopyRAM僅複製普通低RAM，不暴露可變客體slice。原版索引讀回、規則、亂數、存檔、美術與切換操作均未改。
+
+### 驗收結果
+
+| 項目 | 結果 |
+|---|---|
+| 獨立原版區塊 | 12010組、1430個區塊；完整CPU／RAM、旗標、步數／週期及有序寫入相同 |
+| 完整呼叫 | 六個實際函式×兩週期12組；另192組零／奇偶長度、方向與重疊等邊界，均相同 |
+| 通用機制 | 預算、事件、拒絕原子性、callback錯誤與撤除、精確CS、predicate、向後word及來源壽命通過 |
+| 正常機器重播 | 7400更新、712250000步，125406批／1822287道區塊指令，另2401次字模接管 |
+| 全部像素出口 | 十個出口皆有完整效果，3306104／3343240次像素寫入由其產生，其餘保留事件邊界；畫布失配0 |
+| 狀態及事件 | 全部8633次回掃、79012筆音訊、1827984次DOS請求／返回、CPU／完整RAM及127個DOS檔案同原版 |
+| 正式DEMO | HD／無HD／F12／2倍完整四路、BIGPIC244及戰鬥獨立像素通過，HD原始閃現0 |
+| 正常介面 | 讀檔／地圖／攻略／工具列10對、完整片頭18對、封面11對中央及完整視窗相同，原版終點及54／127／127個DOS檔案相同 |
+| 真存讀檔 | 正常另存空槽B、冷啟動讀回，6對畫面及全部10個SAVE檔案同舊版；槽A五個檔案未改 |
+
+封面閃現原始998筆均為第1219格2倍原版轉1220格3倍HD的既有主動F2操作，逐筆分類後非預期0；讀檔與片頭原始計數0。
+正式候選由乾淨191479d建置，SHA見上表，驗收通過後原子替換pod-play；舊d3f97df版以pod-play-whole保留，730檔主題未改。
+
+### 成本與重生
+
+七組交錯、每組32次完整呼叫，重設機器狀態放在計時外。包含來源守衛、相容寫入與畫布命令，不含Owner、最終RGB及視窗。
+大圖、文字圖與矩形的原版中位數9.37／9.64／0.882ms，主機效果為7.35／7.76／0.834ms，約1.27／1.24／1.06倍。
+三支初次小型RAM呼叫約1.03／0.99／0.84倍，不宣稱所有呼叫更快，也不換算遊戲FPS。
+早期逐byte原型與受夾具配置干擾的v1至v4量測保留在工作區，未改寫成成功。
+
+產生器在`sc-cht-disasm:capstone5.0.3-r1`執行，使用`--project . --out workplace/dosgolem/apps/pod/drawblocks`；Go1.24.13再gofmt與建置。
+正常探針以`-whole-call=false/true -draw-blocks=false/true -draw-table <blocks.json>`在全新輸出重生trace-v2-legacy／native。
+`all_render_check.py --project . --commit <程式提交> --out <全新收據>`檢查全部門檻；正式GUI與存讀檔路線由既有收據腳本執行，不注入遊戲狀態。

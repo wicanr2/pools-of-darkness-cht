@@ -4,12 +4,16 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 MODE="${1:?legacy|native}"
 case "$MODE" in legacy) BINARY=pod-play-direct;; native) BINARY=pod-play-whole;; *) exit 2;; esac
+BINARY="${2:-$BINARY}"
+TAG="${3:-whole-save}"
+case "$BINARY" in *[!A-Za-z0-9_-]*|'') exit 2;; esac
+case "$TAG" in *[!A-Za-z0-9_-]*|'') exit 2;; esac
 for d in workplace/dosgolem/workplace/bin workplace/input/dos/pod workplace/font text tools workplace/probe/g6-saveload-receipt/scratch/SAVE; do test -d "$ROOT/$d"; done
 SEED="$ROOT/workplace/probe/g6-saveload-receipt/scratch/SAVE"
 test -f "$SEED/savgamA.pty"
 test ! -e "$SEED/savgamB.pty"
 test -f "$ROOT/workplace/dosgolem/workplace/bin/$BINARY"
-OUT="$ROOT/workplace/probe/g9-hd/whole-save/$MODE"
+OUT="$ROOT/workplace/probe/g9-hd/$TAG/$MODE"
 test ! -e "$OUT" || { echo '保留舊收據，請另定名稱' >&2; exit 2; }
 mkdir -p "$OUT"
 timeout 1200s docker run --rm --init --label pod.task=whole-save --network none --memory 2g --cpus 2 --pids-limit 256 \

@@ -45,12 +45,12 @@
 
 ## 待定
 
-目前新增工作：使用者於2026-10-25要求完全攔截繪圖函數，避免先繪製底圖再繪HD，指定參考`/home/anr2/cht/mm3`。
-像素出口與單次RGB合成已達局部CONFORMED，見[規格025](docs/spec/025-direct-render-commands.md)、[研究019](docs/re/019-draw-interception.md)及[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)。
-目前程式`64e734c`，主題仍730檔。2026-10-26依mm3新版方法接管限定8×8字模；192組真實原版呼叫、16組邊界與事件配額通過。
-完整正常機器重播、正式DEMO四路、既有讀檔10對畫面及另存B後冷啟動讀回6對畫面相同，所有存檔bytes一致、原槽A未改。
-已切換正式入口，程式SHA及重生證據見基線與[研究019](docs/re/019-draw-interception.md)；新增工作為[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)。
-其他完整繪圖常式未知，GPU／SIMD未做；不因字模接管而宣稱其他圖族或全遊戲HD完成。
+使用者要求的VGA繪圖接管已完成，見[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)。
+目前程式`191479d`，正式執行檔`2c58d1d`，主題仍730檔。VGA驅動與共享常式共90項函式／helper、1432區塊，三支搬移／填色／清零另有完整呼叫計畫；8×8字模與單次RGB保留。
+正常DEMO全部十個像素出口均有主機效果，3306104／3343240個像素寫入由完整效果產生，其餘受事件預算限制仍沿原生像素指令。
+完整事件、CPU／RAM與DOS檔案一致；四路DEMO、讀檔／片頭／封面39對畫面、另存B後冷讀6對畫面與全部存檔相同，槽A五個檔案未改。
+已切換正式入口，固定收據為[019-all-render-runtime.json](docs/re/019-all-render-runtime.json)，規格025在上述VGA範圍CONFORMED。
+I/O、POPF、未驗寬指令、B000及其他模式保留原版；GPU／SIMD、動畫HD、片尾及未列玩家路線不外推完成。小型RAM呼叫未全部更快，成對成本與FPS限制見[研究019](docs/re/019-draw-interception.md#47-vga繪圖接管完成)。
 
 | 項目 | 何時決定 |
 |---|---|
@@ -72,7 +72,7 @@
 | G8 攻略與地圖 | #9 | 攻略 78 段，地名與已定專名對齊；32 塊 GEO 雜湊、24 個 GEO 名稱、東西菲蘭 5 個攻略點共 7 格。兩城 2／3 倍 A/B 通過；已有正常冷開機讀檔與面板切換收據。其餘 8 個名稱、未觀測地點與共用場景未驗，#9 保持開啟 | docs/re/011–013；規格 008、009 READY |
 | G9 HD | #10、#18–#20、#23、#24、#26–#44 | PIC81狀態／78項主題、238張VGA怪物候選、7張BIGPIC、2張地形與菲蘭起點121格街景已接入。CPIC原始244個來源狀態去重238組全部有重畫，六組別名由相同來源匹配涵蓋，未觀測正常遇怪事件仍未知。BIGPIC244正常DEMO位置及用色已證實，3650格逐像素成品、2倍與F12通過，其他六張為條件式來源。現行730檔主題同b25受測版本，舊素材保留。來源f77eac3、獨立用色守衛與原格式主題；重建後完整7400格四路通過，原版終點與127個DOS檔案同固定基準、閃現0。三張TITLE繁中／英文及海報、4800格街景讀檔已驗；其餘三張天空／地面仍為素材。片頭八組雙語字幕、2／3倍及F8／F12通過正常5100格，原版狀態與127檔一致、閃現0；動畫HD與片尾未完成 | docs/re/014、017、018；[完整CPIC覆蓋](docs/re/017-cpic-coverage.json)、[b24四路收據](docs/re/017-b24-runtime.json)、[BIGPIC四路收據](docs/re/014-bigpic-runtime.json)；規格010局部CONFORMED |
 | README | #17 | 故事背景、原版 BIGPIC、HD 預覽與兩組繁中＋HD 實際 DEMO 截圖已寫 | README.md |
-| 直接繪圖 | #45、#46 | 十個像素出口與單次RGB保留；限定8×8字模整段事件有界接管。完整機器串流、DEMO四路、讀檔10對畫面、新存B／冷讀B六對畫面及存檔逐byte一致。完整CALL成本約4.2–4.9倍，範圍不含整體FPS；其他常式未知 | [研究019](docs/re/019-draw-interception.md)、[整段固定收據](docs/re/019-whole-call-runtime.json)、規格025局部CONFORMED |
+| 直接繪圖 | #45–#47 | VGA圖像、字模、搬移、填色、清除、裁切、鏡像與動畫接管；事件／指紋失配回原版。全部有序事件、四路DEMO、39對前端與6對新存讀檔畫面相同，全部存檔一致；局部成本不外推FPS | [研究019](docs/re/019-draw-interception.md)、[全部繪圖固定收據](docs/re/019-all-render-runtime.json)、規格025的VGA範圍CONFORMED |
 | README 補圖 | #25、#26、#30、#44 | 地圖、上方工具列與下拉選單沿既有正常讀檔路線刷新，另有原版／HD街景。原版封面與實際HD繁中／英文、完整海報視窗、工具列選單、八張代表怪物的素材圖鑑，以及BIGPIC244正常DEMO原版／HD，共33張展示圖全部直接顯示；素材預覽與正常遊戲截圖分開標示，禮服及標題同使用者核准預覽 | docs/re/014；docs/screenshots/wall-receipt.json、title-receipt.json、[素材圖鑑來源](docs/screenshots/monster-hd-preview.json)、[BIGPIC收據](docs/re/014-bigpic-runtime.json) |
 | 左右海報 | #21 | 固定加寬已接入，文字隨語系；中央與定版兩側逐像素一致，2／3 倍及 F12、原版狀態與 127 個 DOS 檔案比較通過。規格 023 CONFORMED，範圍為繁中／英文與已列抽樣 | docs/re/015；review/hd/poster/ |
 | 堆疊物品顯示 | #22 | 正式詞表六項數量／加值回歸通過；既有正常物品 UI 的一般／反白 50 支箭 +2 已驗；未修改產品邏輯 | docs/re/016 |
@@ -125,7 +125,7 @@
 
 | 項目 | 值 |
 |---|---|
-| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；目前產品程式`64e734c`，在既有像素命令與單次RGB上新增事件有界的整段字模接管；保存到本 repo 的 `dosgolem/pod`。已驗執行檔SHA為`d3f97dfb97ce3951da6dae880d39cbc5cb22e28532d38dc157a5ed59d93947f7`，Go建置資訊綁定乾淨的64e734c來源；後續分支提交只補規格驗收。舊2b5bdaa版以pod-play-direct保留 |
+| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；目前產品程式`191479d5492fdce1e5d925ea44033d2112f75016`，VGA繪圖與共享記憶體常式接管；保存到本 repo 的 `dosgolem/pod`。已驗執行檔SHA為`2c58d1d8e10f83eabb825e83e87bf781f8f136b50c3c33a8e4d93817049165fd`，Go建置資訊綁定乾淨191479d來源，後續分支提交只補驗收文件。舊d3f97df以pod-play-whole、2b5bdaa以pod-play-direct保留 |
 | Go／image | go1.24.13；`dosgolem-go-ebiten:1.24-r1` `sha256:8ed6bdee2bce…` |
 | 冷啟動 | 0 種缺服務；mode 13h；`START.BAT` 程式鏈；片頭送空白鍵跳過，製作群後送 `p` 進建立隊伍主選單。收據 `tools/g2-startup-receipt.sh`，見 [docs/re/003](docs/re/003-dosgolem-startup.md) |
 | adapter | `apps/pod/`（由 `apps/sosb/` 複製，路徑 A／B／C 換本作常數與 13h 換算）；`cmd/pod-overlay-shot`；自動探索 `cmd/pod-explore`（由 `cmd/sosb-explore` 複製） |

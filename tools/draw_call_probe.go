@@ -9,6 +9,7 @@ import (
 	"flag"
 	"fmt"
 	"github.com/wicanr2/dosgolem/apps/pod"
+	"github.com/wicanr2/dosgolem/apps/pod/drawblocks"
 	"github.com/wicanr2/dosgolem/bootroot"
 	"github.com/wicanr2/dosgolem/host"
 	"github.com/wicanr2/dosgolem/internal/dos"
@@ -29,6 +30,9 @@ type call struct {
 	Memory, MemorySHA256, CodeSHA256 string
 }
 type observer struct {
+	drawEntries                                  map[uint32]uint16
+	drawCaptured                                 map[uint32]bool
+	drawCaptures                                 []call
 	out                                          string
 	calls                                        uint64
 	seen                                         map[byte]bool
@@ -65,6 +69,17 @@ func (o *observer) BeforeStep(v session.StepView) error {
 		o.dosPending = true
 	}
 	if v.CS() != 0x1b2e || v.IP() != 0x11a6 {
+		key := uint32(v.CS())<<16 | uint32(v.IP())
+		if length, ok := o.drawEntries[key]; ok && !o.drawCaptured[key] {
+			o.drawCaptured[key] = true
+			mem := make([]byte, 1<<20)
+			for i := range mem {
+				mem[i] = v.Read8(uint32(i))
+			}
+			name := fmt.Sprintf("draw-%04x-%04x.mem", v.CS(), v.IP())
+			must(os.WriteFile(filepath.Join(o.out, name), mem, 0600))
+			o.drawCaptures = append(o.drawCaptures, call{R: [8]uint16{v.AX(), v.CX(), v.DX(), v.BX(), v.SP(), v.BP(), v.SI(), v.DI()}, Seg: [4]uint16{v.ES(), v.CS(), v.SS(), v.DS()}, IP: v.IP(), Flags: v.Flags(), Step: v.Steps(), Memory: name, MemorySHA256: fmt.Sprintf("%x", sha256.Sum256(mem)), CodeSHA256: fmt.Sprintf("%x", sha256.Sum256(mem[pc:pc+uint32(length)]))})
+		}
 		return nil
 	}
 	o.calls++
@@ -101,9 +116,13 @@ func (o *observer) Frame(idx []byte, pal [256][3]uint8) {
 	}
 	o.frameCount++
 }
-func (o *observer) VideoModeChange(machine.ModeChange)  { o.canvas.Reset() }
-func (o *observer) VideoCommand(c machine.VideoCommand) { must(o.canvas.Apply(c)) }
-func (o *observer) HostCallTargets() []uint32           { return pod.GlyphHostCallTargets() }
+func (o *observer) VideoModeChange(machine.ModeChange)       { o.canvas.Reset() }
+func (o *observer) VideoCommand(c machine.VideoCommand)      { must(o.canvas.Apply(c)) }
+func (o *observer) HostCallTargets() []uint32                { return pod.GlyphHostCallTargets() }
+func (o *observer) HostBlockRanges() []machine.HostCodeRange { return pod.DrawBlockRanges() }
+func (o *observer) PrepareHostBlock(v session.StepView, budget uint64) (*machine.HostWorkPlan, error) {
+	return drawblocks.Plan(v, budget), nil
+}
 func (o *observer) PrepareHostCall(v session.StepView, budget uint64) (*machine.HostWorkPlan, error) {
 	return pod.PlanGlyphCall(v, budget), nil
 }
@@ -120,6 +139,8 @@ func main() {
 	root := flag.String("root", "", "project")
 	out := flag.String("out", "", "new output")
 	whole := flag.Bool("whole-call", false, "enable whole glyph calls")
+	blockFlag := flag.Bool("draw-blocks", false, "enable remaining drawing effects")
+	drawTable := flag.String("draw-table", "", "optional generated function table for real-entry witnesses")
 	flag.Parse()
 	if _, e := os.Stat(*out); !os.IsNotExist(e) {
 		panic("output exists")
@@ -153,7 +174,17 @@ func main() {
 	scale := host.OutputScale2
 	layout := host.MouseLayout{Epoch: 1, Scale: scale, ChromeHeight: 36, Canvas: host.Canvas{Width: 320, Height: 200}, FrameWidth: 640, FrameHeight: 436}
 	o := &observer{out: *out, seen: map[byte]bool{}, canvas: pod.NewDirectCanvas(), video: sha256.New(), audio: sha256.New(), frames: sha256.New(), dosStream: sha256.New()}
-	owner, e := session.New(session.Config{InitialScale: scale, InitialLayout: layout, AdLib: true, ClockPercent: 50, Observer: o, NativeVideoCommands: true, NativeHostCalls: *whole})
+	o.drawEntries = map[uint32]uint16{}
+	o.drawCaptured = map[uint32]bool{}
+	if *drawTable != "" {
+		var table struct{ Functions [][]any }
+		must(json.Unmarshal(read(*drawTable), &table))
+		for _, f := range table.Functions {
+			cs, lo, hi := uint32(f[0].(float64)), uint32(f[1].(float64)), uint32(f[2].(float64))
+			o.drawEntries[cs<<16|lo] = uint16(hi - lo)
+		}
+	}
+	owner, e := session.New(session.Config{InitialScale: scale, InitialLayout: layout, AdLib: true, ClockPercent: 50, Observer: o, NativeVideoCommands: true, NativeHostCalls: *whole, NativeHostBlocks: *blockFlag})
 	must(e)
 	defer owner.Close()
 	exe := read(filepath.Join(orig, "ADLIB.COM"))
@@ -164,6 +195,7 @@ func main() {
 	must(pprof.StartCPUProfile(profile))
 	start := time.Now()
 	hostCalls, hostInstructions := uint64(0), uint64(0)
+	hostBlocks, blockInstructions := uint64(0), uint64(0)
 	for i := 1; i <= 7400; i++ {
 		v, e := owner.View()
 		must(e)
@@ -178,6 +210,8 @@ func main() {
 		must(tick.RawError)
 		hostCalls += tick.HostCalls
 		hostInstructions += tick.HostInstructions
+		hostBlocks += tick.HostBlocks
+		blockInstructions += tick.BlockInstructions
 		if i%2000 == 0 {
 			fmt.Printf("frame%d calls%d captures%d\n", i, o.calls, len(o.captures))
 		}
@@ -188,6 +222,8 @@ func main() {
 	must(e)
 	b, e := json.MarshalIndent(struct {
 		Calls                                             uint64
+		DrawCaptures                                      []call
+		HostBlocks, BlockInstructions                     uint64
 		Captures                                          []call
 		Digest                                            session.StateDigest
 		Seconds                                           float64
@@ -196,7 +232,7 @@ func main() {
 		VideoCount, AudioCount, FrameCount, DOSCount      uint64
 		VideoSHA256, AudioSHA256, FramesSHA256, DOSSHA256 string
 		Commands                                          pod.DirectStats
-	}{o.calls, o.captures, digest, time.Since(start).Seconds(), *whole, hostCalls, hostInstructions, o.videoCount, o.audioCount, o.frameCount, o.dosCount, fmt.Sprintf("%x", o.video.Sum(nil)), fmt.Sprintf("%x", o.audio.Sum(nil)), fmt.Sprintf("%x", o.frames.Sum(nil)), fmt.Sprintf("%x", o.dosStream.Sum(nil)), o.canvas.Stats()}, "", "  ")
+	}{o.calls, o.drawCaptures, hostBlocks, blockInstructions, o.captures, digest, time.Since(start).Seconds(), *whole, hostCalls, hostInstructions, o.videoCount, o.audioCount, o.frameCount, o.dosCount, fmt.Sprintf("%x", o.video.Sum(nil)), fmt.Sprintf("%x", o.audio.Sum(nil)), fmt.Sprintf("%x", o.frames.Sum(nil)), fmt.Sprintf("%x", o.dosStream.Sum(nil)), o.canvas.Stats()}, "", "  ")
 	must(e)
 	must(os.WriteFile(filepath.Join(*out, "calls.json"), append(b, '\n'), 0600))
 }
