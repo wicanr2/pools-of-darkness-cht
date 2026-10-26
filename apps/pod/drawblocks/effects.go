@@ -61,6 +61,9 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 	if p := planLine(v, budget); p != nil {
 		return p
 	}
+	if p := planEllipseBounded(v, budget); p != nil {
+		return p
+	}
 	if p := planSurfaceCopy(v, budget); p != nil {
 		return p
 	}
@@ -205,7 +208,7 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 		instr, cycles, lastCS, lastIP := e.p.Instructions, e.p.Cycles, e.p.LastCS, e.p.LastIP
 		nw, nt := len(e.p.Writes), len(e.p.Transfers)
 		b.run(e)
-		if e.bad {
+		if e.bad || ellipseFixedPixelWrites(e.p.Writes[nw:]) {
 			e.s = before
 			e.p.Instructions, e.p.Cycles, e.p.LastCS, e.p.LastIP = instr, cycles, lastCS, lastIP
 			e.p.Writes = e.p.Writes[:nw]
@@ -225,6 +228,8 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 func algorithmBoundary(cs, ip uint16) bool {
 	if cs == 0x48a1 {
 		switch ip {
+		case 0x346a, 0x35f4, 0x37f6, 0x3660, 0x36b6, 0x370c, 0x3762, 0x384e, 0x38a4, 0x38fa, 0x3950:
+			return true
 		case 0x3f5e, 0x415e, 0x309c, 0x30b9, 0x3206, 0x321c, 0x2cfc, 0x3418, 0x3338, 0x2b10, 0x2c04, 0x4b0b, 0x4b8d, 0x4b91, 0x4bc6, 0x4944, 0x4971, 0x4a91, 0x4aa4, 0x4aad, 0x4abd, 0x4ae3, 0x4af6:
 			return true
 		case 0x2aeb, 0x4a31, 0x4a72, 0x4b55:
