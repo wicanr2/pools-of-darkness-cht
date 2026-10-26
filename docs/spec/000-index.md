@@ -1,6 +1,6 @@
 # 規格索引
 
-- [025 直接攔截繪圖與前端命令](025-direct-render-commands.md)：#45–#47的固定區塊與函式輸出一致性CONFORMED；#49限定Go矩形與圖片RLE像素循環CONFORMED，使用色號掃描CONFORMED，鏡像像素對READY。完整事件、四路DEMO、39對介面及6對存讀檔通過。其餘Go演算法尚未完成，整體閘門DRAFT；固定x86語意區塊不計入原生演算法覆蓋率。
+- [025 直接攔截繪圖與前端命令](025-direct-render-commands.md)：#45–#47的固定區塊與函式輸出一致性CONFORMED；#49限定Go矩形與圖片RLE像素循環CONFORMED，使用色號掃描CONFORMED，未裁切區塊CONFORMED，鏡像像素對CONFORMED受控呼叫。完整事件、四路DEMO、39對介面及6對存讀檔通過。其餘Go演算法尚未完成，整體閘門DRAFT；固定x86語意區塊不計入原生演算法覆蓋率。
 
 - [024 片頭字幕覆繪](024-intro-subtitles.md)：#10，八組台詞、雙語／倍率／原版切換及正常5100格閃現0，局部CONFORMED。
 - [023 左右海報](023-side-posters.md)：#21，固定加寬與語系文字，繁中／英文及 2／3 倍 CONFORMED。

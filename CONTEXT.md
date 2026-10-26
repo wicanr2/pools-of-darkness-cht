@@ -45,12 +45,12 @@
 
 ## 待定
 
-目前工作：#49續接`48A1:6C9E／6D42／6DF3`鏡像像素對，原型804個合成與144個受控原圖中途計畫比較通過，規格READY，接入後待正常驗收。
-正式版本已為Go矩形、RLE及使用色號掃描的d21dec5，來源75113ac；鏡像候選未驗完前不切換正式版本。
+目前工作：#49續接淡出的色差與插值陣列原型，合成原版計畫通過；補擷取正常插值入口，尚未接入產品。
+正式版本為已驗圖片區塊解析與鏡像像素對的faf0899，來源a8184cc。鏡像限受控原圖驗證，正常DEMO未觀測該新入口。
 
-最新繪圖成果：#49新增`48A1:4A67`使用色號掃描，由Go直接遍歷線性畫面，保留所有色號標記與有序寫入。
-目前產品來源`75113ac`，正式執行檔`d21dec5`，前版`0a0fa8b`以pod-play-nativerle保留，較早491e336及2c58d1d備份仍在，776檔主題未改。
-252個獨立原版計畫、全部有序事件、四路DEMO、39對介面及6對新存B／冷讀B通過，固定[019-native-palette-runtime.json](docs/re/019-native-palette-runtime.json)。既有Go矩形與RLE收據保留。其餘Go演算法仍待#49續作。
+最新繪圖成果：#49新增`48A1:689E`圖片區塊解析，以及三段鏡像像素對反向複製；幾何與像素循環不呼叫CPU.Step或原指令效果器。
+目前產品來源`a8184cc`，正式執行檔`faf0899`，前版`d21dec5`以pod-play-nativepalette保留，較早0a0fa8b、491e336及2c58d1d備份仍在，776檔主題未改。
+區塊82個、鏡像948個獨立原版計畫及24個鏡像完整受控呼叫通過。完整事件、四路DEMO、39對介面及6對新存B／冷讀B同基準，固定[019-native-image-runtime.json](docs/re/019-native-image-runtime.json)。其餘Go演算法仍待#49續作。
 
 HD最新完成批次：[#48](https://github.com/wicanr2/pools-of-darkness-cht/issues/48)補齊DUNGCOM第5組地形。
 23張新手繪通過數值、目視與來源回退診斷；已驗@3／@13沿用，第22格是純色，保留原色，共25張非純色地形。
@@ -59,13 +59,13 @@ HD最新完成批次：[#48](https://github.com/wicanr2/pools-of-darkness-cht/is
 其他地下城圖組、野外地形及未觀測正常遭遇仍未完成，不重新開啟G6探索。
 
 繪圖目前是混合實作。#45–#47已完成像素命令、限定函式及固定Go區塊的替換與一致性驗收；使用者本輪要求的「全部以Go繪圖演算法處理」尚未達成，由[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)追蹤。
-字模、限定共享搬移／填色／清零、VGA限定矩形、未裁切圖片RLE像素循環、使用色號掃描與畫面合成有Go演算法；其餘VGA及保守退回主要仍用1432個固定Go區塊，按原x86的暫存器、IP、旗標與分支語意運算。
+字模、限定共享搬移／填色／清零、VGA限定矩形、未裁切圖片區塊與RLE、使用色號掃描、鏡像像素對與畫面合成有Go演算法；其餘VGA及保守退回主要仍用1432個固定Go區塊，按原x86的暫存器、IP、旗標與分支語意運算。
 成功區塊跳過通用x86解碼與CPU.Step，但不能以此稱為全部原生Go繪圖；來源或預算失配仍回原x86。
-先前2c58d1d的[來源分類查核](docs/re/019-native-go-audit.json)保留為歷史基準；新75113ac已有Go矩形、RLE、色號掃描與Algorithmic分類，沒有宣稱其餘VGA也完成。
+先前2c58d1d的[來源分類查核](docs/re/019-native-go-audit.json)保留為歷史基準；新a8184cc已有上述Go演算法與Algorithmic分類，沒有宣稱其餘VGA也完成。
 原盤點的VGA驅動與共享常式共90項函式／helper、1432區塊仍是來源索引，不能當作Go演算法完成數。三支共享函式、8×8字模與單次RGB保留。
-最新機器DEMO的89718個Go演算法計畫共2806373個虛擬指令，固定語意區塊另544319個。此為已提交主機效果的分類，不把普通遊戲CPU指令算成繪圖回退，也不冒稱全遊戲覆蓋率。
+最新機器DEMO的94809個Go演算法計畫共2938739個虛擬指令，固定語意區塊另411953個。鏡像正常計畫0，受控169780個鏡像計畫另列。此分類不把普通遊戲CPU指令算成繪圖回退，也不冒稱全遊戲覆蓋率。
 完整事件、CPU／RAM與DOS檔案一致；四路DEMO、讀檔／片頭／封面39對畫面、另存B後冷讀6對畫面與全部存檔相同，槽A五個檔案未改。
-已切換正式入口，最新固定收據為[019-native-palette-runtime.json](docs/re/019-native-palette-runtime.json)；舊[019-all-render-runtime.json](docs/re/019-all-render-runtime.json)保留。規格025的既有一致性、Go矩形、RLE及色號掃描子集CONFORMED，全部Go演算法閘門仍DRAFT。
+已切換正式入口，最新固定收據為[019-native-image-runtime.json](docs/re/019-native-image-runtime.json)；舊[019-all-render-runtime.json](docs/re/019-all-render-runtime.json)保留。規格025的上述已列子集CONFORMED，鏡像限受控呼叫，全部Go演算法閘門仍DRAFT。
 I/O、POPF、未驗寬指令、B000及其他模式保留原版；GPU／SIMD、動畫HD、片尾及未列玩家路線不外推完成。小型RAM呼叫未全部更快，成對成本與FPS限制見[研究019](docs/re/019-draw-interception.md#47-vga繪圖接管完成)。
 
 | 項目 | 何時決定 |
@@ -86,9 +86,9 @@ I/O、POPF、未驗寬指令、B000及其他模式保留原版；GPU／SIMD、�
 | G6 覆繪接入 | #7 | 完成：冷開機、建角、存讀檔、選單收據；自動探索兩輪（使用者指示到此為止） | docs/re/007、010 |
 | G7 手札與查驗題 | #8 | 完成：查驗題 54 題 CONFORMED；手札實機觸發第 57 則、面板自動開出 | docs/re/008、009 |
 | G8 攻略與地圖 | #9 | 攻略 78 段，地名與已定專名對齊；32 塊 GEO 雜湊、24 個 GEO 名稱、東西菲蘭 5 個攻略點共 7 格。兩城 2／3 倍 A/B 通過；已有正常冷開機讀檔與面板切換收據。其餘 8 個名稱、未觀測地點與共用場景未驗，#9 保持開啟 | docs/re/011–013；規格 008、009 READY |
-| G9 HD | #10、#18–#20、#23、#24、#26–#44、#48 | PIC81狀態／78項、238張怪物、7張BIGPIC、地下城第5組25張地形及菲蘭121格街景已接入。CPIC244個來源由238張重畫與六組別名涵蓋；本組純色格保留。現行776檔同b26受測主題，未觀測遇怪與其他圖組仍未知。BIGPIC244、開場雙語、街景及片頭字幕有正常抽樣；其餘天空仍為素材，動畫HD與片尾未完成。最新Go演算法版本另有完整正常回歸，主題未改 | docs/re/014、017、018；[b26收據](docs/re/017-b26-runtime.json)、[最新程式回歸](docs/re/019-native-palette-runtime.json)；規格010局部CONFORMED |
+| G9 HD | #10、#18–#20、#23、#24、#26–#44、#48 | PIC81狀態／78項、238張怪物、7張BIGPIC、地下城第5組25張地形及菲蘭121格街景已接入。CPIC244個來源由238張重畫與六組別名涵蓋；本組純色格保留。現行776檔同b26受測主題，未觀測遇怪與其他圖組仍未知。BIGPIC244、開場雙語、街景及片頭字幕有正常抽樣；其餘天空仍為素材，動畫HD與片尾未完成。最新Go演算法版本另有完整正常回歸，主題未改 | docs/re/014、017、018；[b26收據](docs/re/017-b26-runtime.json)、[最新程式回歸](docs/re/019-native-image-runtime.json)；規格010局部CONFORMED |
 | README | #17 | 故事背景、原版 BIGPIC、HD 預覽與兩組繁中＋HD 實際 DEMO 截圖已寫 | README.md |
-| 直接繪圖 | #45–#47、#49 | Go字模／共享函式／限定VGA矩形／RLE／色號掃描、固定x86語意區塊及原x86回退的混合實作，全部Go演算法尚未完成。已驗Go演算法通過全部事件、四路DEMO、39對介面、6對新存讀檔及全部存檔；Algorithmic分開記錄已提交Go計畫 | [最新Go演算法收據](docs/re/019-native-palette-runtime.json)、規格025子集CONFORMED／整體DRAFT |
+| 直接繪圖 | #45–#47、#49 | Go字模／共享函式／限定VGA矩形／區塊解析／RLE／色號掃描／受控鏡像、固定x86語意區塊及原x86回退的混合實作，全部Go演算法尚未完成。已驗Go演算法通過全部事件、四路DEMO、39對介面、6對新存讀檔及全部存檔；Algorithmic分開記錄已提交Go計畫 | [最新Go演算法收據](docs/re/019-native-image-runtime.json)、規格025子集CONFORMED／整體DRAFT |
 | README 補圖 | #25、#26、#30、#44、#48 | 地圖、工具列與下拉選單、原版／HD街景、遊戲封面、雙語海報、代表怪物及新增地形素材圖鑑、BIGPIC244正常對照共34張直接顯示；素材預覽與正常遊戲截圖分開標示，禮服及標題同核准預覽 | [街景](docs/screenshots/wall-receipt.json)、[封面](docs/screenshots/title-receipt.json)、[怪物](docs/screenshots/monster-hd-preview.json)、[地形](docs/screenshots/dungeon-terrain-hd-preview.json)、[BIGPIC](docs/re/014-bigpic-runtime.json) |
 | 左右海報 | #21 | 固定加寬已接入，文字隨語系；中央與定版兩側逐像素一致，2／3 倍及 F12、原版狀態與 127 個 DOS 檔案比較通過。規格 023 CONFORMED，範圍為繁中／英文與已列抽樣 | docs/re/015；review/hd/poster/ |
 | 堆疊物品顯示 | #22 | 正式詞表六項數量／加值回歸通過；既有正常物品 UI 的一般／反白 50 支箭 +2 已驗；未修改產品邏輯 | docs/re/016 |

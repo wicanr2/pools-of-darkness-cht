@@ -1,6 +1,6 @@
 # 025 直接攔截繪圖與前端命令
 
-狀態：既有固定區塊、字模、共享函式與單次RGB輸出一致性CONFORMED；#49限定Go矩形及RLE像素循環CONFORMED，使用色號掃描CONFORMED，鏡像像素對READY。全部Go繪圖演算法尚未完成，整體新增閘門DRAFT。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)、[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)。其他模式與未列路線不外推完成。
+狀態：既有固定區塊、字模、共享函式與單次RGB輸出一致性CONFORMED；#49限定Go矩形及RLE像素循環CONFORMED，使用色號掃描CONFORMED，未裁切區塊CONFORMED，鏡像像素對CONFORMED受控呼叫。全部Go繪圖演算法尚未完成，整體新增閘門DRAFT。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)、[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)。其他模式與未列路線不外推完成。
 
 使用者於2026-10-25要求完全攔截繪圖函數，避免先畫原版底圖再覆畫HD，並指定參考`/home/anr2/cht/mm3`。
 方向已授權；本規格先補本作輸出契約，未達READY的原型不接正式路徑。
@@ -241,7 +241,7 @@ mode13h的Machine.Read8與Peek8同讀線性RAM，不載入平面latch；有讀�
 
 ### 鏡像圖片反向像素對的Go演算法
 
-狀態：READY，#49，2026-10-26。涵蓋未裁切、右側裁切後及左側尾段的像素對複製，不外推整個鏡像解碼器。
+狀態：CONFORMED受控呼叫，#49，2026-10-26。涵蓋未裁切、右側裁切後及左側尾段的像素對複製，不外推整個鏡像解碼器；正常DEMO未觀測此入口。
 執行期起點為`48A1:6C9E／6D42／6DF3`，每段50 bytes／25道指令，IDA9.4與Capstone5.0.3逐bytes相同。
 三段原檔bytes完全相同，SHA-256皆為`71ffb9fb40b99437973306c9ef582b52f24b0014fb32e1feed59703a7ce12575`。
 原檔offset同各IP；執行期實體基底48A10，不能把offset當實體位址。
@@ -255,3 +255,19 @@ Go直接把每對來源像素反序，按目的從右到左產生word COPY；保
 每對六步、一般成本22；最後條件跳轉加5成本，每四對未完另有一步及7成本。DOSBoxCost為步數加每對一次來源讀取迭代。
 804個合成獨立原版計畫比較與九種拒絕通過；另以真正原圖資料、受控鏡像旗標及x=0／7／−7取得24個中途狀態，三條路徑各八份、144個比較通過。
 這些改旗標／座標的案例明列為受控原版呼叫，不當正常玩家證據。原型至此達READY，接產品後仍須正常事件、介面及存讀檔回歸。
+接入後另跑24個完整受控原圖呼叫，169780個Go鏡像計畫真正提交，所有CPU／RAM、返回及時間同原版；正常完整事件、四路DEMO、介面與真存讀檔回歸通過。
+固定[019-native-image-runtime.json](../re/019-native-image-runtime.json)列出正常與受控範圍，未混算鏡像正常覆蓋率。
+
+### 48A1:689E未裁切圖片區塊解析
+
+狀態：CONFORMED，#49，2026-10-26。原檔offset689E–68F3共86 bytes／28道指令，未裁切分支實際走26道。
+IDA9.4與Capstone5.0.3逐bytes核對相同，SHA-256為`56ecc68cd838cf71e5de2da105cf370ccd3c2f7656159bdb2de14800a9c888a1`。
+已證實四byte標頭依序為x低位、x高位含列末旗標、展開像素數、壓縮資料長度。x加呼叫的水平座標後，依左界與本列位移算目的。
+
+Go直接解析此資料與幾何，寫回原版1250標記，產生SI、BX資料界線及AX、DX、DI幾何供RLE接續。
+限定mode13h、A000目的、DF=0、上一個標記未結束本列、已驗86 bytes、普通RAM來源與參數、非零長度、無裁切且目的同一320像素列。
+來源／參數與標記寫入別名、16位環繞、未知來源、模式、程式及不足預算拒絕；新列、裁切、鏡像和函式收尾仍沿既有路徑。
+相容效果為26步、既有成本115、DOSBoxCost27；最後IP68F2，續行68F4，旗標由最後的右界比較產生。
+18個合成及32個真正中途狀態的64個獨立原版計畫比較通過，另有16種拒絕條件；READY後才加入產品分流。
+正常路線真正提交5091個Go區塊解析計畫／132366步；完整狀態、事件、四路DEMO、39對介面及6對真存讀檔通過，固定[019-native-image-runtime.json](../re/019-native-image-runtime.json)。
+乾淨來源a8184cc、正式faf0899，前版d21dec5保存在pod-play-nativepalette；其他圖片控制與未驗裁切仍保留固定語意區塊，#49未全數完成。

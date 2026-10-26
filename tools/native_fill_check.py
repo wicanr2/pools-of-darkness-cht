@@ -1,4 +1,4 @@
-"""驗#49 Go矩形、RLE與色號掃描的原版串流及正常路線。"""
+"""驗#49 Go矩形、圖片與色號掃描的原版串流及正常路線。"""
 import argparse
 import hashlib
 import importlib.util
@@ -32,13 +32,14 @@ def main():
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--stage', choices=('trace', 'full'), default='full')
     ap.add_argument('--commit', required=True)
-    ap.add_argument('--family', choices=('fill', 'rle', 'palette'), default='fill')
+    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image'), default='fill')
     a = ap.parse_args()
     assert not a.out.exists(), '保留既有收據，請另定輸出檔名'
     p = a.project
     rle = a.family != 'fill'
-    palette = a.family == 'palette'
-    stem = 'nativepalette' if palette else ('nativerle' if rle else 'nativefill')
+    image = a.family == 'image'
+    palette = a.family in ('palette', 'image')
+    stem = 'native'+a.family
     root = p/f'workplace/probe/draw-intercept-v1/native-{a.family}-v1'
     previous = p/'workplace/probe/draw-intercept-v1/all-functions-v1/trace-v2-legacy'
     current = root/('trace-native' if rle else 'trace-native-v2')
@@ -67,6 +68,8 @@ def main():
         assert any(counts.get(key, [0])[0] > 0 for key in ('48a1:6918', '48a1:691a'))
     if palette:
         assert counts['48a1:4a70'][0] > 0
+    if image:
+        assert counts['48a1:68f2'][0] > 0
     fixed = new['HostInstructions'] + new['BlockInstructions'] - new['AlgorithmicInstructions']
     assert fixed > 0, '其餘固定區塊仍存在，不能稱全部Go演算法完成'
     assert new['Commands']['Mismatches'] == 0
@@ -74,7 +77,17 @@ def main():
     assert sha(code) == 'eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f'
     assert hashlib.sha256(code.read_bytes()[0x41af:0x42b3]).hexdigest() == 'c7db9b7b119f14464a7e76d35125922a3559d10fef36624f79f5120dd0d02f00'
     test_log = p/f'workplace/dosgolem/workplace/native-{a.family}-product-tests.log'
-    if palette:
+    if image:
+        assert hashlib.sha256(code.read_bytes()[0x689e:0x68f4]).hexdigest() == '56ecc68cd838cf71e5de2da105cf370ccd3c2f7656159bdb2de14800a9c888a1'
+        for base in (0x6c9e, 0x6d42, 0x6df3):
+            assert hashlib.sha256(code.read_bytes()[base:base+50]).hexdigest() == '71ffb9fb40b99437973306c9ef582b52f24b0014fb32e1feed59703a7ce12575'
+        log = test_log.read_text()
+        for line in ('image span synthetic original comparisons 18', 'image span normal original comparisons 64',
+                     'mirror pair independent original comparisons 804', 'image mirror state comparisons 144 states 24'):
+            assert line in log, line
+        whole = re.search(r'controlled whole mirror original cases 24 committed mirror plans (\d+)', log)
+        assert whole and int(whole[1]) > 0
+    elif palette:
         assert hashlib.sha256(code.read_bytes()[0x4a67:0x4a72]).hexdigest() == '3c8934166cf6cd8d1ecdf79eac51b0cb33bb1bb3e545b883578dcb85971e1b5a'
         assert 'palette synthetic original plan comparisons 60' in test_log.read_text()
         assert 'palette normal original plan comparisons 192' in test_log.read_text()
@@ -85,13 +98,18 @@ def main():
     else:
         assert '18 independent plan comparisons 194' in test_log.read_text()
     assert '\nPASS\n' in test_log.read_text()
-    tests = (dict(synthetic_plan_comparisons=60, normal_scan_states=32,
+    tests = (dict(span_synthetic_plan_comparisons=18, span_normal_states=32, span_normal_plan_comparisons=64,
+                  span_refusal_cases=16, mirror_synthetic_plan_comparisons=804, mirror_controlled_image_states=24,
+                  mirror_controlled_state_plan_comparisons=144, mirror_refusal_cases=9,
+                  controlled_whole_mirror_cases=24, controlled_whole_mirror_committed_plans=int(whole[1])) if image else
+             dict(synthetic_plan_comparisons=60, normal_scan_states=32,
                   normal_state_plan_comparisons=192, refusal_cases=9) if palette else
              dict(packet_cases=22, packet_plan_comparisons=110, normal_image_states=32,
                   normal_state_plan_comparisons=192, refusal_cases=9) if rle else
              dict(geometries=9, cost_models=2, cases=18, plan_comparisons=194, refusal_cases=8))
     tests['log_sha256'] = sha(test_log)
-    result = dict(scope=('Go矩形、未裁切RLE像素及使用色號掃描；圖片控制、裁切及鏡像等固定區塊仍保留，#49未全部完成' if palette else
+    result = dict(scope=('Go未裁切圖片區塊解析、既有RLE與鏡像像素對；鏡像以受控原圖驗證，其他圖片控制、裁切與固定區塊仍保留，#49未全部完成' if image else
+                        'Go矩形、未裁切RLE像素及使用色號掃描；圖片控制、裁切及鏡像等固定區塊仍保留，#49未全部完成' if palette else
                         'Go矩形與未裁切RLE像素循環；圖片控制、裁切及鏡像等固定區塊仍保留，#49未全部完成' if rle else
                          '首批Go矩形填色與相容續做；其他VGA固定區塊仍保留，#49未全部完成'),
                   program_commit=a.commit,
@@ -199,6 +217,20 @@ def main():
         result['dispatch_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/effects.go')
     if palette:
         result['palette_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/native_palette.go')
+    if image:
+        result['image_span_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/native_image_span.go')
+        result['mirror_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/native_mirror.go')
+        result['native_go_source_review'] = dict(
+            scope='planImageSpan, planMirrorPairs and planRLERuns; source inspection with the above SHA-256 bindings',
+            asset_geometry_and_pixel_loops_call_cpu_step=False,
+            asset_geometry_and_pixel_loops_dispatch_guest_opcodes=False,
+            pixel_generation_uses_instruction_effect_helpers=False,
+            legacy_addresses_role='entry/resume boundaries and ordered compatibility metadata',
+            remaining_fixed_semantic_paths=True)
+        mirror_exits = {key: row for key, row in counts.items() if key.startswith('48a1:') and
+                        any(base <= int(key.split(':')[1], 16) < base+50 for base in (0x6c9e, 0x6d42, 0x6df3))}
+        result['normal_machine_mirror_by_exit'] = mirror_exits
+        result['mirror_normal_player_scope'] = 'Only exits explicitly recorded here are observed; controlled calls are not normal player evidence'
     a.out.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({k: result[k] for k in ('algorithmic_plans', 'algorithmic_instructions', 'fixed_semantic_instructions', 'guest_files')}, ensure_ascii=False))
 

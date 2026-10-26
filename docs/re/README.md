@@ -1,5 +1,7 @@
 # 研究索引
 
+- [Go圖片區塊與鏡像像素對](019-draw-interception.md#2026-10-26-go圖片區塊與鏡像像素對接入)：#49，[固定收據](019-native-image-runtime.json)。區塊解析82個原版計畫比較及正常路線通過；鏡像948個原版計畫、24個受控完整呼叫通過，正常DEMO未觀測鏡像新入口。
+
 - [Go使用色號掃描接入](019-draw-interception.md#2026-10-26-go使用色號掃描接入)：#49，252個獨立原版計畫、完整事件與正常回歸；[固定收據](019-native-palette-runtime.json)。鏡像像素對原型948次比較通過，READY後待接入。
 
 - [Go圖片RLE像素循環接入](019-draw-interception.md#2026-10-26-go圖片rle像素循環接入)：#49，302個獨立原版計畫比較、完整事件、四路DEMO、39對介面與6對存讀檔；[固定收據](019-native-rle-runtime.json)。裁切、鏡像及其他固定區塊仍待Go演算法。

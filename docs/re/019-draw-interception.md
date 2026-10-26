@@ -303,3 +303,28 @@ Go直接掃描線性畫面，依色號標記CS:1772表。每次重複寫入、�
 固定[019-native-palette-runtime.json](019-native-palette-runtime.json)。重生沿同一`tools/native_fill_check.py`，選`--family palette`，仍須全新輸出與完整正常路線。
 原始收據在`workplace/probe/draw-intercept-v1/native-palette-v1`及`workplace/probe/g9-hd/nativepalette-{play,ui,save}-v1`。
 鏡像像素對原型另以804個合成及144個受控原圖計畫比較通過，三段50 bytes已逐bytes核對。規格025已READY，未在本次d21dec5接入，不外推正式鏡像完成。
+
+## 2026-10-26 Go圖片區塊與鏡像像素對接入
+
+本次續接`48A1:689E`的圖片區塊解析，以及`48A1:6C9E／6D42／6DF3`的鏡像像素對複製。VGA.DRV輸入沿本研究前節。
+區塊解析的原檔offset689E–68F3共86 bytes／28道指令，未裁切分支走26道；SHA-256為`56ecc68cd838cf71e5de2da105cf370ccd3c2f7656159bdb2de14800a9c888a1`。
+三段鏡像原檔offset同各IP，各50 bytes／25道指令，bytes完全相同，SHA-256皆為`71ffb9fb40b99437973306c9ef582b52f24b0014fb32e1feed59703a7ce12575`。
+以上位移來自IDA9.4二進位段匯出，Capstone5.0.3逐bytes核對；執行期實體基底為48A10，不把原檔位移當實體位址。
+
+Go區塊解析直接讀四byte標頭，計算x、展開長度、壓縮長度及目的範圍，再交既有RLE。Go鏡像按來源像素對反序，從右到左建立COPY。
+像素與幾何循環不呼叫CPU.Step、opcode派送或原指令效果器。舊位址只作入口／續做及有序相容通知；保存狀態、旗標與時間另算。
+區塊的新列與裁切、鏡像外層與PUSHF／POPF、其他固定區塊及原版回退仍保留，沒有宣稱整支6733或全部VGA均已改為Go演算法。
+
+區塊18個合成及64個真正中途狀態計畫比較、16種拒絕通過；鏡像804個合成及144個受控原圖中途計畫比較、九種拒絕通過。
+另以原圖資料、x=−7／0／7、鏡像旗標1／3、兩種成本及6／1024步預算跑24個完整原版呼叫，169780個鏡像Go計畫真正提交，返回、完整RAM與時間全部相同。
+改旗標／座標的案例明列為受控呼叫，不當正常玩家路徑。上述證據先達READY才接入，核心、session、pod、drawblocks、Xvfb前端及go vet通過。
+
+正常7400更新的完整CPU／RAM、有序像素／回掃／音訊／DOS事件、127檔與45份入口見證同獨立原版。
+本次區塊解析新增5091個Go計畫／132366步；全部Go計畫94809個／2938739步，固定語意區塊411953步。這條DEMO未觀測鏡像新入口，不能把受控鏡像計畫加進正常分類。
+四路DEMO、39對介面及6對正常新存B／冷讀B畫面相同，全部SAVE bytes及槽A五檔相同。非預期閃現0，封面998筆F2主動切換另列。
+
+產品來源`a8184cc2c48790b59a71af65d9d02dcca7ca7da3`，Go1.24.13乾淨建置`faf0899063cb527dd29b5deef9f3fe106822910d23799c6f6a37a351b7e2ebb7`。
+全門檻通過後原子啟用，d21dec5保存在pod-play-nativepalette，較早備份保留；776檔主題、字型與譯文未改。
+6733七組交錯、每組32次完整呼叫成本約原版1.68倍速度，含資格、相容寫入與通知，未含Owner／視窗，不外推FPS；小型RAM函式未全部更快。
+固定[019-native-image-runtime.json](019-native-image-runtime.json)綁定來源、工具、完整驗收及Go演算法來源審查。重生沿`tools/native_fill_check.py --family image`，其他參數與前節相同。
+原始收據在`workplace/probe/draw-intercept-v1/native-image-v1`及`workplace/probe/g9-hd/nativeimage-{play,ui,save}-v1`，#49保持開啟。
