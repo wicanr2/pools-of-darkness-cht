@@ -41,6 +41,7 @@ type observer struct {
 	video, audio, frames, dosStream              hash.Hash
 	videoCount, audioCount, frameCount, dosCount uint64
 	dosPending                                   bool
+	algorithmicPrepared                          map[string][2]uint64
 }
 
 func must(e error) {
@@ -121,10 +122,27 @@ func (o *observer) VideoCommand(c machine.VideoCommand)      { must(o.canvas.App
 func (o *observer) HostCallTargets() []uint32                { return pod.GlyphHostCallTargets() }
 func (o *observer) HostBlockRanges() []machine.HostCodeRange { return pod.DrawBlockRanges() }
 func (o *observer) PrepareHostBlock(v session.StepView, budget uint64) (*machine.HostWorkPlan, error) {
-	return drawblocks.Plan(v, budget), nil
+	p := drawblocks.Plan(v, budget)
+	o.recordAlgorithmic(p)
+	return p, nil
 }
 func (o *observer) PrepareHostCall(v session.StepView, budget uint64) (*machine.HostWorkPlan, error) {
-	return pod.PlanGlyphCall(v, budget), nil
+	p := pod.PlanGlyphCall(v, budget)
+	o.recordAlgorithmic(p)
+	return p, nil
+}
+func (o *observer) recordAlgorithmic(p *machine.HostWorkPlan) {
+	if p == nil || !p.Algorithmic {
+		return
+	}
+	if o.algorithmicPrepared == nil {
+		o.algorithmicPrepared = map[string][2]uint64{}
+	}
+	key := fmt.Sprintf("%04x:%04x", p.LastCS, p.LastIP)
+	row := o.algorithmicPrepared[key]
+	row[0]++
+	row[1] += p.Instructions
+	o.algorithmicPrepared[key] = row
 }
 func (o *observer) OPLWrite(w machine.OPLWrite) { fmt.Fprintf(o.audio, "O%+v\n", w); o.audioCount++ }
 func (o *observer) SpeakerSample(w machine.SpeakerSample) {
@@ -196,6 +214,7 @@ func main() {
 	start := time.Now()
 	hostCalls, hostInstructions := uint64(0), uint64(0)
 	hostBlocks, blockInstructions := uint64(0), uint64(0)
+	algorithmicPlans, algorithmicInstructions := uint64(0), uint64(0)
 	for i := 1; i <= 7400; i++ {
 		v, e := owner.View()
 		must(e)
@@ -212,6 +231,8 @@ func main() {
 		hostInstructions += tick.HostInstructions
 		hostBlocks += tick.HostBlocks
 		blockInstructions += tick.BlockInstructions
+		algorithmicPlans += tick.AlgorithmicPlans
+		algorithmicInstructions += tick.AlgorithmicInstructions
 		if i%2000 == 0 {
 			fmt.Printf("frame%d calls%d captures%d\n", i, o.calls, len(o.captures))
 		}
@@ -224,6 +245,8 @@ func main() {
 		Calls                                             uint64
 		DrawCaptures                                      []call
 		HostBlocks, BlockInstructions                     uint64
+		AlgorithmicPlans, AlgorithmicInstructions         uint64
+		AlgorithmicPreparedByExit                         map[string][2]uint64
 		Captures                                          []call
 		Digest                                            session.StateDigest
 		Seconds                                           float64
@@ -232,7 +255,7 @@ func main() {
 		VideoCount, AudioCount, FrameCount, DOSCount      uint64
 		VideoSHA256, AudioSHA256, FramesSHA256, DOSSHA256 string
 		Commands                                          pod.DirectStats
-	}{o.calls, o.drawCaptures, hostBlocks, blockInstructions, o.captures, digest, time.Since(start).Seconds(), *whole, hostCalls, hostInstructions, o.videoCount, o.audioCount, o.frameCount, o.dosCount, fmt.Sprintf("%x", o.video.Sum(nil)), fmt.Sprintf("%x", o.audio.Sum(nil)), fmt.Sprintf("%x", o.frames.Sum(nil)), fmt.Sprintf("%x", o.dosStream.Sum(nil)), o.canvas.Stats()}, "", "  ")
+	}{o.calls, o.drawCaptures, hostBlocks, blockInstructions, algorithmicPlans, algorithmicInstructions, o.algorithmicPrepared, o.captures, digest, time.Since(start).Seconds(), *whole, hostCalls, hostInstructions, o.videoCount, o.audioCount, o.frameCount, o.dosCount, fmt.Sprintf("%x", o.video.Sum(nil)), fmt.Sprintf("%x", o.audio.Sum(nil)), fmt.Sprintf("%x", o.frames.Sum(nil)), fmt.Sprintf("%x", o.dosStream.Sum(nil)), o.canvas.Stats()}, "", "  ")
 	must(e)
 	must(os.WriteFile(filepath.Join(*out, "calls.json"), append(b, '\n'), 0600))
 }

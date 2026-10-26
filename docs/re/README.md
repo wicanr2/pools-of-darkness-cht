@@ -1,5 +1,7 @@
 # 研究索引
 
+- [Go矩形填色首批接入](019-draw-interception.md#2026-10-26-go矩形填色首批接入)：#49，18組原版條件、194個計畫比較，完整事件、四路DEMO及正常介面／存讀檔；[固定收據](019-native-fill-runtime.json)。其餘VGA仍保留固定語意區塊，不稱全部Go演算法完成。
+
 - [Go繪圖實作分類查核](019-draw-interception.md#2026-10-26-原生go繪圖要求的查核與勘誤)：#49，[正式執行檔與來源查核](019-native-go-audit.json)。目前為Go字模／共享搬移填色、VGA固定x86語意區塊及原版回退的混合實作，全部原生Go繪圖演算法尚未完成。
 
 - [019 直接繪圖攔截](019-draw-interception.md)：#45–#47，VGA繪圖、字模、搬移、填色、裁切、鏡像與動畫；[完整狀態與事件](019-native-runtime.json)、[四路DEMO](019-demo-runtime.json)、[39對前端截圖](019-ui-runtime.json)、[填色與成本](019-rgb-cost.json)、[字模完整接管](019-whole-call-runtime.json)、[VGA全部繪圖、正常介面與新存檔往返](019-all-render-runtime.json)。B000、其他模式與未列玩家路線不外推完成。

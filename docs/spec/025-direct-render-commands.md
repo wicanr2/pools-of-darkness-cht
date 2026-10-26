@@ -1,6 +1,6 @@
 # 025 直接攔截繪圖與前端命令
 
-狀態：既有VGA固定Go區塊、8×8字模、共享搬移／填色／清零及單次RGB合成的輸出一致性CONFORMED；全部Go繪圖演算法尚未完成，新增閘門DRAFT。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)、[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)。其他模式與未列路線不外推完成。
+狀態：既有固定區塊、字模、共享函式與單次RGB輸出一致性CONFORMED；#49首批Go矩形填色及續做CONFORMED，全部Go繪圖演算法尚未完成，整體新增閘門DRAFT。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)、[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)。其他模式與未列路線不外推完成。
 
 使用者於2026-10-25要求完全攔截繪圖函數，避免先畫原版底圖再覆畫HD，並指定參考`/home/anr2/cht/mm3`。
 方向已授權；本規格先補本作輸出契約，未達READY的原型不接正式路徑。
@@ -165,3 +165,36 @@ HD與讀檔／片頭的原始閃現0；封面的998筆均為既有F2主動切換
 接入後分開統計函式層級Go、固定語意區塊及原x86回退；不可用HostBytes、區塊數或編譯成Go本身證明完成。
 驗收保留完整CPU／RAM、有序事件與索引讀回，再走既有正常DEMO、介面及存讀檔，成本量測含相容效果。
 本輪只有來源與二進位核實，沒有改動正式執行檔、撤除舊區塊或完成此新增閘門。
+
+### 48A1:41AF矩形填色的Go演算法
+
+狀態：CONFORMED，2026-10-26，#49；先以獨立原版審查至READY，再接入與正常驗收，其餘全部Go演算法閘門仍DRAFT。
+原版`VGA.DRV` SHA-256為`eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f`。
+IDA9.4原檔位移`0x41AF–0x42B2`共260 bytes，95道指令，函式SHA-256為`c7db9b7b119f14464a7e76d35125922a3559d10fef36624f79f5120dd0d02f00`。
+原始位移與IDA位址在此檔相同；執行期入口為`48A1:41AF`，逐列續做點`48A1:4268`。Capstone5.0.3逐bytes交叉核對通過。
+
+已證實參數為far返回後的兩個word：表面索引與填色值。索引乘2查七組256項word表，起點`CS:00BD`，每組相距512 bytes。
+表面包含目的段、保留值、左／上／右／下界及旗標；旗標0x40沿首欄的byte offset追父表面。
+原函式把選取與根表面複製到`CS:0EBD–0EDF`，填色、左右界另寫`CS:1129／113B／113D`。
+矩形含右下界，目的位移為`(y-rootTop)*stride+(left-rootLeft)`；本函式不使用表面的保留值作額外目的位移。
+
+限定mode13h、完整260 bytes指紋、目的段A000、0≤左右<320、0≤上下<200、子矩形包含於根表面，父連結至多8層且無未知offset。
+其他目的表面、越界、循環、程式改寫、堆疊別名與預算不足保持原版。原版並非只有這些輸入；此為先接入的已驗子集。
+
+Go直接解析矩形，逐列產生HostTransfer填色，不經opcode、CS:IP區塊表或算術指令派送。每列保留原版word後byte的寫入順序與時間標記。
+ABI相容寫入單獨產生，保留保存區殘值、工作欄位、返回暫存器／旗標、堆疊及虛擬步數；不影響原版資料、規則、字型、主題或存檔。
+每個計畫只含預算內的完整列；未完回到4268，下次依原版RAM與暫存器重新建立列範圍，適配器不持有可變續做狀態。
+
+零父連結前置為59步、238個既有CPU成本單位；L>0層為59+4L步、238+21L−10成本。
+stride320每列24步、87+5×ceil(width/2)成本，其他stride為22步、97+5×ceil(width/2)。
+最後返回加5步、淨增35成本；DOSBoxCost為總步數加各列word／byte迭代數。
+這些是既有dosgolem虛擬時間契約，不宣稱硬體wall-clock。返回及相容效果須由獨立原版CPU核對。
+
+研究原型的9種幾何／兩種成本共18組、194個分段計畫與八種拒絕條件通過獨立原版比較。READY審查時原型只在測試檔，正式接入後再驗完整狀態、正常DEMO與介面／存讀檔。
+新增Algorithmic診斷標記將Go函式演算法與固定區塊分開計數，通用契約見隔離clone的`docs/spec/436-host-call-effects.md`。
+
+正式來源`7cd6f7a2d437f27074f46fb7337337b7f3b04637`，乾淨Go1.24.13建置`491e3363f57753c28796d9a1782595fcdb6dcd662282d278d93caf510b8f0fe8`。
+正常7400更新的全部CPU／RAM、3343240次像素、8633次回掃、79012筆音訊與1827984筆DOS事件同原版，127檔相同。
+其中兩個已提交Go矩形計畫共4840步，列邊界一次續做；預算不足仍保留原語意路徑，不宣稱這次原版填色的每一步均已替換。
+四路DEMO、39對介面與6對正常新存B／冷讀B畫面同固定基準，存檔全部相同，既有F2主動切換外的非預期閃現0。
+固定[019-native-fill-runtime.json](../re/019-native-fill-runtime.json)。全部通過後才原子切換正式pod-play，舊2c58d1d保存在pod-play-all，776檔主題未改。
