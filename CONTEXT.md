@@ -50,7 +50,9 @@
 最新產品來源`5a87f57d87e5f5afbf9bc03444a6fc1d3b6d7af8`，正式執行檔`dc8b977ceb420e128241bda019f0ede1d75f52d322eb90913d5bb8a42e0e1fc5`。前版0abeee0以pod-play-nativescale保留，較早備份及776檔主題未改。
 翻轉160組像素、320次初始化、656次成對列與656次位址、63952次單步、320次完整Go、160次短預算、64次邊界／父表面與174種拒絕通過。短預算分列8022個Go演算法、1722個固定控制計畫與33254個CPU控制步，沒有固定或CPU翻轉scratch／畫面寫入。
 完整正常CPU／RAM、有序事件與127檔、四路DEMO、39對介面、六對新存B／冷讀B與十個SAVE檔同基準，固定[019-native-surfaceflip-runtime.json](docs/re/019-native-surfaceflip-runtime.json)。新增翻轉出口在目前DEMO未觀測，正常111710個Go計畫／3398106步與固定2576步維持，不把受控比較當正常玩家路線。全部Go閘門仍DRAFT，#49保持開啟。
-下一段4337表面像素轉場仍在研究副本：9組固定呈現種子的有序像素、72次初始化、432次游標、1584次單步像素、2242次控制與44次完整機器比較通過。完整比較分列13272個Go轉場計畫、1404個既有Go等待計畫及2808個CPU控制步，像素不落回CPU；短預算、拒絕及邊界仍待驗，DRAFT不接產品。
+下一段4337表面像素轉場已達READY，尚未接產品。研究副本另完成680次批次、40次短預算、16次DF、32次完整畫布／邊界／父表面、86種拒絕及4次一萬步的1×1延續比較。批次整合後44次完整比較分列3028個Go轉場、1404個共享等待計畫與2808個CPU控制步；短預算39378個Go計畫含等待、7148個固定控制計畫與50084個CPU控制步，沒有CPU或固定像素輸出。初始未知與舊數量在規格025保留並回鏈，目前以其[接入契約](docs/spec/025-direct-render-commands.md#dissolve-4337-ready)為準。
+
+本輪依使用者要求先整理提交並停工。下次從4337 READY接入開始：分離研究fixture、接正式selector、補固定收據檢查器的dissolve族別與回鏈檢查，再跑完整回歸；通過前維持正式dc8b977。研究原型及原始log仍在本機gitignore的`workplace/dosgolem/workplace/palette-advance-research/dissolve4337-*.go`與同clone的`workplace/dissolve4337-*.log`，未推送；已驗收正式程式已在本專案`dosgolem/pod`分支。
 BMHD／BODY查找與來源資料準備保留原版，不稱Go解析器完成。斜線舊固定收據的1280個選取計畫已追加[分類勘誤](docs/re/019-draw-interception.md#斜線計畫分類勘誤)：898個Go演算法與382個固定相容前綴。原始收據保留，後續收據分列，不把控制前綴當原生繪圖。
 
 HD最新完成批次：[#48](https://github.com/wicanr2/pools-of-darkness-cht/issues/48)補齊DUNGCOM第5組地形。
