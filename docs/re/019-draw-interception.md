@@ -556,3 +556,16 @@ Go先解表面及父鏈，以選取表面裁切，再按根表面的原點與列
 四路DEMO、39對介面與六對真存讀檔、十個SAVE檔相同，槽A五檔未改。非預期閃現0，998筆F2主動切換另列；新斜線出口在目前DEMO未觀測，正常Go計數與固定2576步維持。受控比較不外推正常玩家路線或FPS。
 全部通過後原子啟用9e45287，63cb5b3以pod-play-nativeaxis保留。固定[019-native-line-runtime.json](019-native-line-runtime.json)綁定來源及啟用；重生入口為Docker內`tools/native_fill_check.py --family line`，原始收據在`workplace/probe/draw-intercept-v1/native-line-v1`及`workplace/probe/g9-hd/nativeline-{play,ui,save}-v1`。
 矩形搬移仍在獨立研究副本，其他非相交與未驗繪圖保留，全部Go閘門仍DRAFT，#49開啟。
+
+### 斜線計畫分類勘誤
+
+前段及019-native-line-runtime.json沿正式selector測試的訊息，將108次裁切呼叫選取的1280個計畫全標為Go演算法計畫。此標籤不精確。以同一602b79e來源綁定的觀測副本、空額外入口表，逐筆檢查HostWorkPlan.Algorithmic後，結果是898個Go演算法計畫與382個固定相容前綴。原始收據保留，不改寫歷史。
+獨立CPU／完整RAM、有序像素、模型時間及SaveState比較仍通過。勘誤不改正式執行檔、像素演算法或正常路線的111710個Go計畫；後者原本即以Algorithmic計數。分類原型與log在workplace/dosgolem/workplace/palette-advance-research/clipped-plan-class-audit_test.go及同clone的workplace/plan-class-audit.log，新版驗收工具綁定其SHA-256。
+
+## 2026-10-27 Go表面矩形搬移接入
+
+VGA.DRV原檔SHA及IDA9.4定位沿用前節。3F5E–41AE共593 bytes的SHA為559f234ab6f1b97b5c6970fc84c40982e5525fdcac06436fd355bf5ec8c8d4fa。Go解析兩個typed表面，取較小寬高，依相對位置選上下及左右方向，透過區間與列游標搬移word及奇數尾byte；影子讀寫保留重疊相依。415E只選已驗的列交接，不派送x86指令。
+1120次列計畫、168次前綴、64次父表面／不同尺寸、192次完整機器及44種列／16種初始化拒絕通過。正式selector選取1040個計畫；同一來源綁定副本依Algorithmic分類後，448個為Go演算法，592個為固定相容前綴。測試原有「Go plans」訊息涵蓋所有選取計畫，固定收據已分開列出，不據此聲稱全部接管。
+來源943064ee8dbb24a051b1c279da0dc1a54733a827，乾淨Go1.24.13候選a33036d07896dbeb4542730df138e16a4ecf0afa939247fb23ae66bfd4d63cba。核心、session、pod、drawblocks、前端與go vet通過；完整正常CPU／RAM、有序像素／回掃／音訊／DOS及127檔同原版，46份直接加一份分割補證同47份原版。
+四路DEMO、39對介面、六對真存讀檔與十個SAVE檔同基準，槽A五檔未改。非預期閃現0，998筆F2主動切換另列；搬移出口在目前DEMO未觀測，正常111710個Go計畫／3398106步與固定2576步維持。受控比較不外推正常路線或FPS。
+全部通過後原子啟用a33036d，9e45287以pod-play-nativeline保留。[固定收據](019-native-copy-runtime.json)綁定來源、測試分類及啟用；重生入口為Docker內`tools/native_fill_check.py --family copy`，原始收據在`workplace/probe/draw-intercept-v1/native-copy-v1`及`workplace/probe/g9-hd/nativecopy-{play,ui,save}-v1`。其他root、複製函式、橢圓與未驗路徑仍保留，#49開啟，全部Go閘門DRAFT。

@@ -32,23 +32,24 @@ def main():
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--stage', choices=('trace', 'full'), default='full')
     ap.add_argument('--commit', required=True)
-    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line'), default='fill')
+    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy'), default='fill')
     a = ap.parse_args()
     assert not a.out.exists(), '保留既有收據，請另定輸出檔名'
     p = a.project
     rle = a.family != 'fill'
-    axis = a.family in ('axis', 'line')
-    line = a.family == 'line'
-    primitive = a.family in ('primitive', 'axis', 'line')
-    control = a.family in ('control', 'primitive', 'axis', 'line')
-    clip = a.family in ('clip', 'control', 'primitive', 'axis', 'line')
-    output = a.family in ('output', 'clip', 'control', 'primitive', 'axis', 'line')
-    row = a.family in ('row', 'output', 'clip', 'control', 'primitive', 'axis', 'line')
-    setup = a.family in ('setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line')
-    color = a.family in ('color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line')
-    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line')
-    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line')
-    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line')
+    axis = a.family in ('axis', 'line', 'copy')
+    line = a.family in ('line', 'copy')
+    surface_copy = a.family == 'copy'
+    primitive = a.family in ('primitive', 'axis', 'line', 'copy')
+    control = a.family in ('control', 'primitive', 'axis', 'line', 'copy')
+    clip = a.family in ('clip', 'control', 'primitive', 'axis', 'line', 'copy')
+    output = a.family in ('output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy')
+    row = a.family in ('row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy')
+    setup = a.family in ('setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy')
+    color = a.family in ('color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy')
+    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy')
+    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy')
+    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy')
     stem = 'native'+a.family
     root = p/f'workplace/probe/draw-intercept-v1/native-{a.family}-v1'
     original_root = p/'workplace/probe/draw-intercept-v1/native-fade-v1' if color else root
@@ -520,9 +521,37 @@ def main():
             interior_plans=480,interior_refusals=40,interior_committed_machine_comparisons=32,
             cursor_plans=424,cursor_refusals=44,prefix_comparisons=32,bounded_whole_calls=128,bounded_go_plans=848,
             clip_pixel_cases=5020,clip_seed=11516,clip_cursor_plans=1114,clip_cursor_refusals=44,
-            clip_prefix_comparisons=534,clip_production_whole_calls=108,clip_production_go_plans=1280,
+            clip_prefix_comparisons=534,clip_production_whole_calls=108,clip_production_selected_plans=1280,
+            clip_production_go_plans=898,clip_production_fixed_plans=382,
             scope='Controlled original ABI states and cursors; full CPU/RAM/ordered writes/model-time and complete SaveState comparisons; not new normal-player-route evidence')
         result['native_go_source_review']['line_scope']='Go coordinate/error arithmetic generates pixels. Typed counters retain the original narrow-tall clip behavior. Source positions label ABI/scratch/model-time notices only; no guest opcode dispatch in geometry or pixel generation.'
+    if line:
+        audit_log=module/'workplace/plan-class-audit.log'
+        assert 'clipped class audit comparisons 108 algorithmic 898 fixed 382' in audit_log.read_text()
+        result['plan_class_audit']=dict(log_sha256=sha(audit_log),
+            clipped_test_sha256=sha(module/'workplace/palette-advance-research/clipped-plan-class-audit_test.go'),
+            copy_test_sha256=sha(module/'workplace/palette-advance-research/copy-plan-class-audit_test.go'),
+            scope='Audits exact source-bound observed copies with empty extra-entry map; original selected-plan test labels included compatibility plans. Pixel/full-machine comparisons remain independent.')
+    if surface_copy:
+        for marker in ('copy row independent comparisons 1120',
+                       'copy parent and unequal surface comparisons 64',
+                       'copy row refusals 44', 'copy prefix independent comparisons 168',
+                       'copy prefix refusals 16', 'copy whole machine comparisons 192 Go plans 1040'):
+            assert marker in test_log.read_text(),marker
+        assert 'copy class audit comparisons 192 algorithmic 448 fixed 592' in audit_log.read_text()
+        result['scope']='Go表面矩形搬移，包含重疊、四方向與奇數尾byte；新增路徑限受控原版比較，完整正常回歸保留，其他固定／未驗路徑仍保留，#49未全部完成'
+        names=('native_surface_copy.go','native_surface_copy_prefix.go','native_surface_copy_test.go',
+               'surface_copy_boundary_test.go','surface_copy_commit_test.go','surface_copy_prefix_test.go','surface_copy_refusal_test.go')
+        result['surface_copy_sources']={name:sha(module/'apps/pod/drawblocks'/name) for name in names}
+        for name in names[:2]:
+            source=(module/'apps/pod/drawblocks'/name).read_text()
+            assert '.Step(' not in source and 'effect{' not in source and 'b.run(' not in source
+        result['prototype_and_original_tests']['surface_copy']=dict(
+            row_plans=1120,prefix_plans=168,parent_and_unequal_plans=64,row_refusals=44,prefix_refusals=16,
+            controlled_whole_calls=192,algorithmic_plans=448,fixed_compatibility_plans=592,selected_plans=1040,
+            scope='Original full CPU/RAM/ordered writes/model-time and SaveState; selected-plan label corrected by Algorithmic audit; not new normal-player-route evidence')
+        result['normal_machine_surface_copy_by_exit']={'48a1:41ae':counts.get('48a1:41ae',[0,0])}
+        result['native_go_source_review']['surface_copy_scope']='Typed source/destination rectangles and row direction generate word/byte transfers. Go shadow reads preserve overlap dependencies. Fixed IP/step labels preserve notices only; geometry does not dispatch guest instructions.'
     a.out.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({k: result[k] for k in ('algorithmic_plans', 'algorithmic_instructions', 'fixed_semantic_instructions', 'guest_files')}, ensure_ascii=False))
 
