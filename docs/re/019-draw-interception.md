@@ -607,3 +607,11 @@ VGA.DRV的5615–5885共625 bytes，SHA-256為6d9aac63d38f8b0e5ddd9bdbdfcfdda914
 全套drawblocks 113.541秒、核心、session、pod、前端與go vet通過。完整正常CPU／RAM、有序事件、127檔與47份入口同原版；四路DEMO、39對介面、六對真存讀檔與十個SAVE檔同基準，槽A未改。非預期閃現0，998筆主動F2另列。新增縮放出口在目前DEMO未觀測，正常111710個Go計畫／3398106步與固定2576步維持，不外推正常路線或FPS。
 全部通過後原子啟用0abeee0，前版2e45f31保留。[固定收據](019-native-scale-runtime.json)綁定來源及啟用；重生入口為Docker內`tools/native_fill_check.py --family scale`，原始收據在`workplace/probe/draw-intercept-v1/native-scale-v1`及`workplace/probe/g9-hd/nativescale-{play,ui,save}-v1`。
 5886原地翻轉已在獨立研究副本通過完整原版與短預算比較並達READY，尚未接產品；同列倒序的中途讀寫相依與奇數高度中間列已由原版反例確認，不能用一般圖形庫取代。其他轉場、字形與未驗入口仍保留，全部Go閘門DRAFT，#49開啟。
+
+## 2026-10-27 Go表面原地翻轉接入
+
+VGA.DRV的5886–5A27共418 bytes，SHA-256為2ff20b76959b7f3972f76530c6142c8337d0f935893752f9a23d417dde2eac36，沿既有IDA9.4位址基準。Go以typed表面與成對列處理倒序取樣、暫存與兩階段回寫。同列倒序的中途讀寫相依與奇數高度中間列皆保留原版；首版整列預取假說由寬2高1反例否定，沒有改原版來配合模型。
+正式來源5a87f57d87e5f5afbf9bc03444a6fc1d3b6d7af8，乾淨Go1.24.13執行檔dc8b977ceb420e128241bda019f0ede1d75f52d322eb90913d5bb8a42e0e1fc5。160組像素、320次初始化、656次成對列與656次位址、63952次單步、320次完整Go、160次短預算、64次邊界／父表面及174種拒絕通過，固定與CPU沒有翻轉scratch／畫面寫入。
+全套drawblocks 178.167秒、核心、session、pod、前端與go vet通過。完整正常狀態、有序事件、127檔與47份入口同原版；四路DEMO、39對介面、六對真存讀檔與十個SAVE檔同基準，槽A未改。非預期閃現0，998筆主動F2另列。新翻轉出口在目前DEMO未觀測，正常Go計數與固定2576步維持，不外推新正常路線或FPS。
+全部通過後原子啟用dc8b977，前版0abeee0保留。[固定收據](019-native-surfaceflip-runtime.json)綁定來源及啟用；重生入口為Docker內`tools/native_fill_check.py --family surfaceflip`，原始收據在`workplace/probe/draw-intercept-v1/native-surfaceflip-v1`及`workplace/probe/g9-hd/nativesurfaceflip-{play,ui,save}-v1`。
+4337像素轉場已在獨立研究副本通過44次完整機器比較，尚DRAFT。等待採既有Go服務契約；研究副本先因函式名稱缺項，再因舊原型helper同名而建置失敗。只替副本服務加獨立前綴後乾淨重跑通過，沒有調整產品或CPU。其他轉場、字形與未驗入口仍保留，#49開啟。

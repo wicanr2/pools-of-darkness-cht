@@ -1,5 +1,7 @@
 # 研究索引
 
+- [Go表面原地翻轉](019-draw-interception.md#2026-10-27-go表面原地翻轉接入)：#49，[固定收據](019-native-surfaceflip-runtime.json)。成對列與短預算輸出已驗收啟用，保留同列相依及奇數高度行為；像素轉場研究中，全部Go閘門仍DRAFT。
+
 - [Go表面整數縮放](019-draw-interception.md#2026-10-27-go表面整數縮放接入)：#49，[固定收據](019-native-scale-runtime.json)。取樣、補色與重複列及短預算輸出已驗收啟用；原地翻轉READY待接入，全部Go閘門仍DRAFT。
 
 - [Go圖像列](019-draw-interception.md#2026-10-27-go圖像列輸出接入)：#49，[固定收據](019-native-bitmap-runtime.json)。八平面組色、直接色號列與單步輸出已驗收啟用；原版資料準備及其他未驗路徑保留，全部Go閘門仍DRAFT。

@@ -711,3 +711,15 @@ Go先暫存來源列，再依原版順序把另一列寫入目前列，最後把
 5886初始化、5947位址與59A9成對列為typed交接。八個STOS／MOVS出口可在一步預算重建取樣／來源／目的，含零尾byte；固定區塊含實際翻轉scratch或畫面寫入即回退，CPU及固定區塊只能接續控制。原IP用於通知與模型成本，不派送opcode。
 已證實（受控條件）：160組有序像素、320次初始化、656次成對列、656次位址及63952次單步span，同原版完整CPU／RAM／有序寫入及兩成本。320次完整Go呼叫共1392個演算法計畫；64次邊界／八層父表面共3336個計畫，整台SaveState相同。160次短預算交接含8022個Go演算法、1722個固定控制計畫及33254個CPU控制步，沒有固定或CPU的翻轉scratch／畫面寫入，174種錯誤狀態拒絕通過。
 原型與log在同clone的`workplace/palette-advance-research/flip5886-*.go`與`workplace/flip5886-{pixels-second,prefix-first,rows-first,whole-first,spans-first,selector-first,ready-first}.log`。READY允許分離fixture與接正式selector，完整回歸及正常路線前不升CONFORMED，不外推其他root或全部Go完成。
+
+### 表面像素轉場（4337）
+
+狀態：DRAFT，#49，2026-10-27。VGA.DRV之4337–45DF共681 bytes，SHA-256 `6888a66a54dd072b40f5c95f990d81d53f75257852bce465c95dff15e1168796`，沿既有IDA9.4位址基準。表面像素次序由1167／1169的32位元LFSR與42B3起的四張byte表控制，初值固定1／0，屬強推論。這是呈現轉場，不改遊戲RND。先以小型受控表面比較有序像素，首點、總次數與小尺寸終止仍待確認，不接產品。
+
+### 表面原地翻轉整批驗收
+
+產品5a87f57、乾淨Go1.24.13候選dc8b977完成整批驗收並啟用，見[固定收據](../re/019-native-surfaceflip-runtime.json)。原地翻轉在上節READY守衛內升局部CONFORMED，其他root與未知狀態不外推。全套drawblocks、核心、session、pod、前端及go vet通過。
+完整正常CPU／RAM、有序事件、127檔與47份入口同原版；四路DEMO、39對介面、六對真存讀檔與十個SAVE檔同基準，槽A五檔未改。非預期閃現0，998筆主動F2另列。新翻轉出口在目前DEMO未觀測，正常Go計數與固定2576步維持，不外推新正常路線或FPS。
+全部通過後原子啟用dc8b977，前版0abeee0保留，776檔主題與34張README直接圖片未改，全部Go閘門仍DRAFT。
+
+像素轉場研究進度：9組有序像素、72次初始化、432次游標、1584次單步像素、2242次控制及44次完整機器比較通過。44次完整比較分列13272個Go轉場計畫、1404個既有Go等待計畫及2808個CPU控制步。CPU僅執行等待呼叫前的PUSH CS／CALL，像素仍由Go輸出；尚待短預算、拒絕及邊界，維持DRAFT，不接產品。原型與log在同clone的`workplace/palette-advance-research/dissolve4337-*.go`與`workplace/dissolve4337-{pixels-first,prefix-first,cursors-first,controls-first,whole-third}.log`。
