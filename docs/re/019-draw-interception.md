@@ -530,3 +530,17 @@ Go先解表面及父鏈，以選取表面裁切，再按根表面的原點與列
 全部驗收通過後原子啟用6e62028，前版b369dea以pod-play-nativecontrol保留。[固定收據](019-native-primitive-runtime.json)綁定來源、工具與啟用；重生入口是Docker內tools/native_fill_check.py --family primitive，原始收據在workplace/probe/draw-intercept-v1/native-primitive-v1及workplace/probe/g9-hd/nativeprimitive-{play,ui,save}-v1。
 
 並行研究的矩形逐列續行已通過92個計畫、48個前綴與48個完整受控原版呼叫、15種拒絕，共858個Go計畫。完整CPU／RAM與SaveState bytes一致，規格READY，尚未接產品。其他固定與未驗入口仍待接管，#49保持開啟。
+
+## 2026-10-27 Go軸向直線與矩形續行接入
+
+沿同SHA的VGA.DRV與IDA9.4位址，2CFC的已驗水平／垂直線用Go排序與裁切、span及列游標產生像素。原版八個垂直位置只保存通知與模型成本；2F29 LOOP沿既有CPU模型兩成本，不加條件跳轉五成本。斜線、非相交及有號差值溢位仍回原路徑。
+3338矩形可在3418依SS／SP、scratch、原始參數與Go列游標分批接續。Go完整計畫提供已驗ABI前綴，前綴不重複提交像素；每回合重新驗證狀態與預算，完整CPU／RAM、旗標、模型時間及SaveState同原版。
+
+軸線144組資料共288個預算／成本／旗標計畫及24個父表面／偏移計畫、18種拒絕通過；提交層16個整台機器比較相同。矩形92個列計畫、48個前綴、48個完整受控呼叫及15種續行拒絕通過，共858個Go計畫。正式selector另12個完整呼叫與674個列計畫通過；小矩形可在足夠預算一次完成，不要求每次都分批。
+首版selector測試誤把小矩形一次完成判為未續行；修正測試覆蓋條件，產品行為不改。全套核心、session、pod、drawblocks、前端及go vet通過，失敗與修正log保留。
+
+程式7c6cf01ae37a33a488ae1a367410714780d2ea3a，乾淨Go1.24.13候選63cb5b395571b97093d0e4ecd91e69e6cf28d352ef093c31af19e2470214e51e。完整正常CPU／RAM、有序像素／回掃／音訊／DOS與127檔同原版；46份直接加一份分割補證同47份原版。
+四路DEMO、39對介面、六對新存B／冷讀B與十個SAVE檔同基準，槽A五檔未改；非預期閃現0，998筆F2主動切換另列。新出口在目前DEMO未觀測，111710個Go計畫／3398106步與固定2576步維持，不能以受控輸入冒稱新正常路線。
+全部驗收完成後原子啟用63cb5b3，前版6e62028以pod-play-nativeprimitive保留，776檔主題與34張README直接圖片未改。[固定收據](019-native-axis-runtime.json)綁定來源、工具及啟用；重生入口為Docker內tools/native_fill_check.py --family axis，原始收據在workplace/probe/draw-intercept-v1/native-axis-v1及workplace/probe/g9-hd/nativeaxis-{play,ui,save}-v1。
+
+並行研究的表面內陡／緩斜線各240次獨立原版計畫、20種拒絕通過，規格READY，尚未接產品。兩者用Go整數誤差累加，緩斜線保留31EB對EC7的RAM暫存效果；其XCHG六成本只計一次ModRM記憶體成本，原型誤算已依原服務修正，沒有改CPU模型。裁切及其他未驗繪圖仍待接管，#49保持開啟。

@@ -32,21 +32,22 @@ def main():
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--stage', choices=('trace', 'full'), default='full')
     ap.add_argument('--commit', required=True)
-    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive'), default='fill')
+    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis'), default='fill')
     a = ap.parse_args()
     assert not a.out.exists(), '保留既有收據，請另定輸出檔名'
     p = a.project
     rle = a.family != 'fill'
-    primitive = a.family == 'primitive'
-    control = a.family in ('control', 'primitive')
-    clip = a.family in ('clip', 'control', 'primitive')
-    output = a.family in ('output', 'clip', 'control', 'primitive')
-    row = a.family in ('row', 'output', 'clip', 'control', 'primitive')
-    setup = a.family in ('setup', 'row', 'output', 'clip', 'control', 'primitive')
-    color = a.family in ('color', 'setup', 'row', 'output', 'clip', 'control', 'primitive')
-    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive')
-    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive')
-    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive')
+    axis = a.family == 'axis'
+    primitive = a.family in ('primitive', 'axis')
+    control = a.family in ('control', 'primitive', 'axis')
+    clip = a.family in ('clip', 'control', 'primitive', 'axis')
+    output = a.family in ('output', 'clip', 'control', 'primitive', 'axis')
+    row = a.family in ('row', 'output', 'clip', 'control', 'primitive', 'axis')
+    setup = a.family in ('setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis')
+    color = a.family in ('color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis')
+    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis')
+    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis')
+    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis')
     stem = 'native'+a.family
     root = p/f'workplace/probe/draw-intercept-v1/native-{a.family}-v1'
     original_root = p/'workplace/probe/draw-intercept-v1/native-fade-v1' if color else root
@@ -467,6 +468,30 @@ def main():
             ('48a1:2c03','48a1:2cfb','48a1:3469')}
         result['primitive_normal_player_scope']='Controlled whole routines validate new inputs; counts above identify which exits, if any, occur in this fixed normal DEMO. No new normal-route coverage is inferred.'
         result['native_go_source_review']['primitive_scope']='Point coordinates are clipped to the selected surface and indexed through root origin/stride; rectangle pixels are clipped Go intervals and row spans. Source IP tables only preserve ABI/scratch notices, not guest opcode dispatch.'
+    if axis:
+        for marker in ('axis original cases 144 independent plan comparisons 288',
+                       'axis parent original comparisons 24', 'axis refusals 18',
+                       'axis committed machine original comparisons 16',
+                       'region row original comparisons 92', 'region row refusals 15',
+                       'region bounded prefix original comparisons 48',
+                       'bounded rectangle whole original comparisons 48 Go plans 858'):
+            assert marker in test_log.read_text(), marker
+        assert re.search(r'production bounded region whole comparisons 12 row plans [1-9]\d*',test_log.read_text())
+        result['scope']='Go水平／垂直線與指定矩形逐列續行；新增路徑限受控原版比較，保留完整正常回歸與既有Go演算法，斜線及其他固定／未驗路徑仍保留，#49未全部完成'
+        result['axis_and_rows_sources']={name:sha(module/'apps/pod/drawblocks'/name) for name in
+            ('native_axis.go','native_axis_test.go','axis_commit_test.go','native_region_rows.go',
+             'native_region_rows_test.go','region_selector_test.go')}
+        for name in ('native_axis.go','native_region_rows.go'):
+            source=(module/'apps/pod/drawblocks'/name).read_text()
+            assert '.Step(' not in source and 'effect{' not in source and 'b.run(' not in source
+        result['prototype_and_original_tests']['axis_and_rows']=dict(
+            axis_plan_comparisons=312,axis_refusals=18,axis_committed_machine_comparisons=16,
+            row_plan_comparisons=92,row_refusals=15,prefix_comparisons=48,
+            bounded_whole_calls=48,bounded_go_plans=858,production_selector_whole_calls=12,
+            scope='Controlled source entries and budget continuations; independent CPU/full RAM/ordered writes/model-time and complete SaveState comparisons')
+        result['normal_machine_axis_and_rows_by_exit']={key:counts.get(key,[0,0]) for key in
+            ('48a1:3235','48a1:3463','48a1:3469')}
+        result['native_go_source_review']['axis_and_rows_scope']='Go coordinate sorting/clipping emits horizontal spans and a vertical pixel cursor; original eight positions only label ordered notices. Bounded rectangles resume a validated typed row cursor and retain ABI metadata separately; no guest instruction dispatch in geometry or pixels.'
     a.out.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({k: result[k] for k in ('algorithmic_plans', 'algorithmic_instructions', 'fixed_semantic_instructions', 'guest_files')}, ensure_ascii=False))
 

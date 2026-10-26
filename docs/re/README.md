@@ -1,6 +1,8 @@
 # 研究索引
 
-- [Go單點與指定範圍矩形](019-draw-interception.md#2026-10-26-go單點與指定範圍矩形接入)：#49，[固定收據](019-native-primitive-runtime.json)。548個受控原版計畫、32個整台機器提交比較與完整正常回歸通過並啟用；新入口未在正常DEMO觀測。逐列續行READY，全部Go閘門仍DRAFT。
+- [Go軸向直線與矩形續行](019-draw-interception.md#2026-10-27-go軸向直線與矩形續行接入)：#49，[固定收據](019-native-axis-runtime.json)。312次軸線計畫、16次機器提交、92次列計畫與完整受控呼叫及正常回歸通過並啟用；陡／緩斜線原型各240次比較READY，全部Go閘門仍DRAFT。
+
+- [Go單點與指定範圍矩形](019-draw-interception.md#2026-10-26-go單點與指定範圍矩形接入)：#49，[固定收據](019-native-primitive-runtime.json)。548個受控原版計畫、32個整台機器提交比較與完整正常回歸通過並啟用；新入口未在正常DEMO觀測。全部Go閘門仍DRAFT。
 
 - [Go色盤資料流程與回掃等待](019-draw-interception.md#2026-10-26-go色盤資料流程與回掃等待接入)：#49，[固定收據](019-native-control-runtime.json)。完整事件、四路DEMO、39對介面及六對存讀檔通過並啟用；固定語意區塊2576步，全部Go閘門仍DRAFT。
 
