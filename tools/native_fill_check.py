@@ -32,18 +32,20 @@ def main():
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--stage', choices=('trace', 'full'), default='full')
     ap.add_argument('--commit', required=True)
-    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade'), default='fill')
+    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color'), default='fill')
     a = ap.parse_args()
     assert not a.out.exists(), '保留既有收據，請另定輸出檔名'
     p = a.project
     rle = a.family != 'fill'
-    fade = a.family == 'fade'
-    image = a.family in ('image', 'fade')
-    palette = a.family in ('palette', 'image', 'fade')
+    color = a.family == 'color'
+    fade = a.family in ('fade', 'color')
+    image = a.family in ('image', 'fade', 'color')
+    palette = a.family in ('palette', 'image', 'fade', 'color')
     stem = 'native'+a.family
     root = p/f'workplace/probe/draw-intercept-v1/native-{a.family}-v1'
+    original_root = p/'workplace/probe/draw-intercept-v1/native-fade-v1' if color else root
     canonical = p/'workplace/probe/draw-intercept-v1/all-functions-v1/trace-v2-legacy'
-    previous = root/'trace-original-entries' if fade else canonical
+    previous = original_root/'trace-original-entries' if fade else canonical
     current = root/('trace-native' if rle else 'trace-native-v2')
     old, new = read(previous/'calls.json'), read(current/'calls.json')
     if fade:
@@ -93,6 +95,8 @@ def main():
         assert counts['48a1:68f2'][0] > 0
     if fade:
         assert counts['48a1:4b38'][0] > 0 and counts['48a1:4b8b'][0] > 0
+    if color:
+        assert counts['48a1:4bbe'][0] > 0 and counts['48a1:4b9d'][0] > 0
     fixed = new['HostInstructions'] + new['BlockInstructions'] - new['AlgorithmicInstructions']
     assert fixed > 0, '其餘固定區塊仍存在，不能稱全部Go演算法完成'
     assert new['Commands']['Mismatches'] == 0
@@ -100,7 +104,10 @@ def main():
     assert sha(code) == 'eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f'
     assert hashlib.sha256(code.read_bytes()[0x41af:0x42b3]).hexdigest() == 'c7db9b7b119f14464a7e76d35125922a3559d10fef36624f79f5120dd0d02f00'
     test_log = p/f'workplace/dosgolem/workplace/native-{a.family}-product-tests.log'
-    if fade:
+    if color:
+        assert hashlib.sha256(code.read_bytes()[0x4b9a:0x4bc6]).hexdigest() == '548776df6fec7df3ebb2f57ade4412c8704fee225a928411593571d6c7c3b525'
+        assert 'fade color original job comparisons 32' in test_log.read_text()
+    elif fade:
         for lo, hi, expected in ((0x4b19, 0x4b3a, '426b9c7bab4ee58a83495f6ee251ade3d04d01ce17e57c163cfdcd18c4b00f86'),
                                  (0x4b6c, 0x4b8d, '391005d80b86b978189cde8e392fbfbca279480fda3f7f3a175cb9c14ed2f2ae')):
             assert hashlib.sha256(code.read_bytes()[lo:hi]).hexdigest() == expected
@@ -129,7 +136,8 @@ def main():
     else:
         assert '18 independent plan comparisons 194' in test_log.read_text()
     assert '\nPASS\n' in test_log.read_text()
-    tests = (dict(difference_synthetic_plan_comparisons=72, blend_synthetic_plan_comparisons=40,
+    tests = (dict(original_color_job_comparisons=32, refusal_cases=13) if color else
+             dict(difference_synthetic_plan_comparisons=72, blend_synthetic_plan_comparisons=40,
                   normal_entry_states=64, normal_state_plan_comparisons=384, refusal_cases=23) if fade else
              dict(span_synthetic_plan_comparisons=18, span_normal_states=32, span_normal_plan_comparisons=64,
                   span_refusal_cases=16, mirror_synthetic_plan_comparisons=804, mirror_controlled_image_states=24,
@@ -141,7 +149,8 @@ def main():
                   normal_state_plan_comparisons=192, refusal_cases=9) if rle else
              dict(geometries=9, cost_models=2, cases=18, plan_comparisons=194, refusal_cases=8))
     tests['log_sha256'] = sha(test_log)
-    result = dict(scope=('Go淡出色差與插值，保留既有Go圖像演算法；其餘控制、硬體I/O及固定區塊仍保留，#49未全部完成' if fade else
+    result = dict(scope=('Go逐色RGB工作與完成交接，保留既有Go圖像演算法；其餘控制、硬體I/O及固定區塊仍保留，#49未全部完成' if color else
+                        'Go淡出色差與插值，保留既有Go圖像演算法；其餘控制、硬體I/O及固定區塊仍保留，#49未全部完成' if fade else
                         'Go未裁切圖片區塊解析、既有RLE與鏡像像素對；鏡像以受控原圖驗證，其他圖片控制、裁切與固定區塊仍保留，#49未全部完成' if image else
                         'Go矩形、未裁切RLE像素及使用色號掃描；圖片控制、裁切及鏡像等固定區塊仍保留，#49未全部完成' if palette else
                         'Go矩形與未裁切RLE像素循環；圖片控制、裁切及鏡像等固定區塊仍保留，#49未全部完成' if rle else
@@ -311,7 +320,7 @@ def main():
         result['mirror_normal_player_scope'] = 'Only exits explicitly recorded here are observed; controlled calls are not normal player evidence'
     if fade:
         result['fade_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/native_fade.go')
-        result['fade_entry_table_sha256'] = sha(root/'fade-entries.json')
+        result['fade_entry_table_sha256'] = sha(original_root/'fade-entries.json')
         fixtures = [row for row in old['DrawCaptures'] if row['IP'] in (0x4b19, 0x4b6c)]
         assert len(fixtures) == 2
         assert {row['MemorySHA256'] for row in fixtures} == {
@@ -319,6 +328,10 @@ def main():
             'f41e7c00aa01f10eab55e982e7e5bdfedf7e57dd4936e09355751768c2979b00'}
         result['fade_original_entry_fixtures'] = fixtures
         result['native_go_source_review']['fade_scope'] = 'planFadeDifference and planFadeBlend traverse RGB arrays directly; hardware palette reads/writes and waits remain outside these algorithms'
+    if color:
+        result['fade_color_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/native_fade_color.go')
+        result['native_go_source_review']['color_scope'] = 'planFadeColor reads a typed palette index and RGB triplet, builds compatibility arguments and yields at the hardware output boundary; no instruction-effect dispatcher'
+        result['color_benchmark_scope'] = 'The existing first-4944 fresh-VGA fixture does not independently measure the normal color-job sequence; no color-job speed or FPS claim'
     a.out.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({k: result[k] for k in ('algorithmic_plans', 'algorithmic_instructions', 'fixed_semantic_instructions', 'guest_files')}, ensure_ascii=False))
 

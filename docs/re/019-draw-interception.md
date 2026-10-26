@@ -363,3 +363,24 @@ Go直接遍歷五組RGB陣列，算方向、絕對差、最大距離與累加誤
 固定[019-native-fade-runtime.json](019-native-fade-runtime.json)綁定正式／分割探針、全部來源、工具與原版新增入口；`tools/native_fill_check.py --family fade`重生。
 原始收據在`workplace/probe/draw-intercept-v1/native-fade-v1`與`workplace/probe/g9-hd/nativefade-{play,ui,save}-v1`。
 其他色盤工作準備、圖片控制、裁切及固定區塊仍待後續Go演算法，#49保持開啟。
+
+## 2026-10-26 Go逐色RGB工作接入
+
+`48A1:4B9A／4BC1`依使用色表與RGB游標準備下一筆色盤工作，或交回本輪完成處理。
+原檔offset4B9A–4BC5共44 bytes／17道指令，IDA9.4與Capstone5.0.3逐bytes一致，SHA-256為`548776df6fec7df3ebb2f57ade4412c8704fee225a928411593571d6c7c3b525`。
+Go直接取得色盤索引與RGB三byte，準備原版工作欄位、參數與呼叫框架，在2AA8交給既有硬體輸出；不逐指令派送色盤工作。
+相容返回位置、旗標、堆疊殘值與虛擬時間另算。來源指紋、數值、索引、游標、模式、方向、別名或預算未知時保持原路徑。
+
+32個獨立原版工作比較與13種拒絕通過，先READY才接入。第一版漏算六個word堆疊寫入的12個成本，查明e.push契約後修正，失敗保留，未改測試期望。
+核心、session、pod、drawblocks、Xvfb前端及go vet通過。正常路線真正接手6865筆RGB工作與63次完成交接，共116831步；有條件拒絕及固定路徑仍存在，不宣稱每次工作都已替換。
+全部Go計畫101808個／3233276步，固定語意區塊117416步；只是主機繪圖效果分類，不是全遊戲覆蓋率或FPS。
+
+正式未分割版完整CPU／RAM、有序像素／回掃／音訊／DOS事件、127檔及44份直接見證同原版。
+研究分割版另補三個內部helper，全部47份CPU／完整RAM見證同原版；分割版分類不取代正式數字，來源與二進位SHA另列。
+四路DEMO、39對介面及6對正常新存B／冷讀B畫面通過，全部SAVE bytes與槽A五檔相同。非預期閃現0，封面998筆F2主動切換仍另列。
+776檔主題、字型與譯文未改，沒有新增G6探索。
+
+產品來源`8c2c383b747b5a0e9ec8bae2fe035c6f48fe91e3`，Go1.24.13乾淨建置`340660d02c2e8c49c49fd3d5fc602245500b8d3ce94f590b97a466eeafa75423`。
+全門檻通過後原子啟用，014392d保存在pod-play-nativefade，較早備份保留。成對成本沿既有孤立入口夾具，未據此宣稱逐色RGB工作的正常路線加速。
+固定[019-native-color-runtime.json](019-native-color-runtime.json)，重生使用`tools/native_fill_check.py --family color`；原始收據在`workplace/probe/draw-intercept-v1/native-color-v1`及`workplace/probe/g9-hd/nativecolor-{play,ui,save}-v1`。
+剩餘圖片控制、裁切／鏡像外層、初始化與其他固定區塊仍待逐項補證；全部Go演算法閘門仍DRAFT，#49保持開啟。

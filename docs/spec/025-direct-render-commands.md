@@ -1,6 +1,6 @@
 # 025 直接攔截繪圖與前端命令
 
-狀態：既有固定區塊、字模、共享函式與單次RGB輸出一致性CONFORMED；#49限定Go矩形及RLE像素循環CONFORMED，使用色號掃描CONFORMED，未裁切區塊CONFORMED，鏡像像素對CONFORMED受控呼叫，淡出色差／插值CONFORMED，逐色RGB工作READY。全部Go繪圖演算法尚未完成，整體新增閘門DRAFT。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)、[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)。其他模式與未列路線不外推完成。
+狀態：既有輸出一致性及已列Go演算法子集CONFORMED；鏡像限受控原圖呼叫，全部Go演算法閘門仍DRAFT。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)、[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)。其他模式與未列路線不外推完成。
 
 使用者於2026-10-25要求完全攔截繪圖函數，避免先畫原版底圖再覆畫HD，並指定參考`/home/anr2/cht/mm3`。
 方向已授權；本規格先補本作輸出契約，未達READY的原型不接正式路徑。
@@ -297,13 +297,16 @@ Go色差直接算絕對差、方向及最大值；Go插值累加距離，超過�
 
 ### 逐色RGB工作準備
 
-狀態：READY，#49，2026-10-26。原檔offset4B9A–4BC5共44 bytes／17道指令，IDA9.4與Capstone5.0.3逐bytes相同。
+狀態：CONFORMED，#49，2026-10-26。原檔offset4B9A–4BC5共44 bytes／17道指令，IDA9.4與Capstone5.0.3逐bytes相同。
 SHA-256為`548776df6fec7df3ebb2f57ade4412c8704fee225a928411593571d6c7c3b525`，執行期入口`48A1:4B9A／4BC1`。
 Go依使用色數、剩餘索引與RGB游標，取得下一組色盤索引／RGB，準備原版資料與呼叫框架，交2AA8的硬體輸出邊界。
 完成時交回4B55，不在這裡重寫DAC。這是色盤工作序列的資料處理，原位址只作交接與相容事件定位。
 
-限定mode13h、DS=CS=48A1、DF=0、使用色1–256、有效偶數索引與三byte對齊游標、RGB0–63、色盤索引0–255及普通RAM堆疊。
+限定mode13h、DS=CS=48A1、DF=0、使用色1–256、有效偶數索引與三byte對齊游標、RGB0–63、色盤索引0–255；工作寫入需普通RAM堆疊。
 拒絕未知指紋、範圍、模式、方向、游標、堆疊環繞與驅動區別名。每次交付完整工作，不在資料寫入途中切事件。
 不含清理前綴時15步／80成本，4BC1前綴另加2步／9成本；DOSBoxCost為步數加三次來源讀取迭代。
 完成分支2步／9成本，前綴同樣另加2步／9成本。六個word的堆疊寫入各加2個正常模型成本，不能漏算。
 32個獨立原版工作比較與13種拒絕條件通過；第一版漏算12個堆疊成本的失敗保留，查明e.push契約後修正。READY後才接產品，正常驗收未過前保留014392d。
+正式來源8c2c383、乾淨Go1.24.13產品340660d。正常6865筆工作與63次完成交接真正提交，完整狀態／事件、四路DEMO、39對介面及6對真存讀檔通過。
+全門檻通過後原子啟用，前版014392d保留；固定[019-native-color-runtime.json](../re/019-native-color-runtime.json)，44份直接見證加三份分割補證同原版47份。
+正常固定語意區塊仍117416步，其他控制與未驗入口不外推完成；本節不把硬體輸出邊界稱為Go像素演算法。
