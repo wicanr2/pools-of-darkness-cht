@@ -45,8 +45,14 @@
 
 ## 待定
 
+HD最新完成批次：[#48](https://github.com/wicanr2/pools-of-darkness-cht/issues/48)補齊DUNGCOM第5組地形。
+23張新手繪通過數值、目視與來源回退診斷；已驗@3／@13沿用，第22格是純色，保留原色，共25張非純色地形。
+正常7400格同目前四路基準的原版終點、127檔與最終合成，閃現0。776檔主題已原子啟用，全部舊素材與730檔備份保留。
+固定[017-b26-runtime.json](docs/re/017-b26-runtime.json)；產品來源與執行檔維持191479d／2c58d1d，`dosgolem/pod`另以8a0c26b保存新增地形診斷。
+其他地下城圖組、野外地形及未觀測正常遭遇仍未完成，不重新開啟G6探索。
+
 使用者要求的VGA繪圖接管已完成，見[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)。
-目前程式`191479d`，正式執行檔`2c58d1d`，主題仍730檔。VGA驅動與共享常式共90項函式／helper、1432區塊，三支搬移／填色／清零另有完整呼叫計畫；8×8字模與單次RGB保留。
+目前程式`191479d`，正式執行檔`2c58d1d`，主題為上述776檔。VGA驅動與共享常式共90項函式／helper、1432區塊，三支搬移／填色／清零另有完整呼叫計畫；8×8字模與單次RGB保留。
 正常DEMO全部十個像素出口均有主機效果，3306104／3343240個像素寫入由完整效果產生，其餘受事件預算限制仍沿原生像素指令。
 完整事件、CPU／RAM與DOS檔案一致；四路DEMO、讀檔／片頭／封面39對畫面、另存B後冷讀6對畫面與全部存檔相同，槽A五個檔案未改。
 已切換正式入口，固定收據為[019-all-render-runtime.json](docs/re/019-all-render-runtime.json)，規格025在上述VGA範圍CONFORMED。

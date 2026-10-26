@@ -355,3 +355,29 @@ Go1.24.13從乾淨提交建置，執行檔SHA-256為`5e5ec39fe6ffd66909580263934
 固定[017-b24-runtime.json](017-b24-runtime.json)。b22／b23由最終累積主題的四路收據涵蓋，沒有各自正常遇怪證據。
 715檔正式主題與受測版本逐檔一致，全部舊圖保留，238個候選及新執行檔已啟用，舊執行檔留本機備查。
 素材與條件式呈現來源完整；未觀測正常遭遇仍未知，其他圖族與全遊戲HD未完成，沒有新增G6探索。
+
+## b26 地下城第5組地形
+
+Issue [#48](https://github.com/wicanr2/pools-of-darkness-cht/issues/48)。沿規格010與本研究已驗的第5塊色盤，不新增繪圖位址或資料格式。
+原檔SHA見上方輸入表；壓縮資料起點41837為原始DAX的file byte offset，來源解碼與色盤仍沿盤點清單固定。
+26格中第3／13格保留舊成品，第22格為RGB(81,89,105)純色，原樣保留，其餘23格以內建image_gen逐張重畫成72×72不透明RGBA。
+共31次生成；構圖或色相未過的版本保留本機，改用384×384原圖參考重畫，沒有調整驗收門檻或套色濾鏡。
+最終結構0.400–0.925、色相中位差0.3–23.9度，正式尺寸逐張目視通過。
+原版並列、完整提示詞與各輸入／成品SHA見[b26審閱](../../review/hd/b26-terrain/README.md)。
+
+原有730檔主題保存在`workplace/hd/theme-b26-baseline/`，staging只新增23組PNG／idx及必要地形清單。
+既有怪物清單逐位元組不變，238個怪物與全部舊素材保留。
+`dosgolem/pod`的`8a0c26b`只新增來源診斷，不改產品程式；正式執行檔仍為`191479d`建置的`2c58d1d`。
+`TestVGATerrainExpandedSourceTemplates`逐張插入實際色號，驗完整成品像素、改色、缺點、非戰場、2倍與F12，11.458秒通過。
+這是呈現診斷，不能當成新增正常遇怪證據。
+
+可重跑方式：於既有Go容器設定`POD_TERRAIN_BASE=/hd/theme-b26-baseline`、`POD_TERRAIN_THEME=/hd/theme-b26-stage`、
+`POD_TERRAIN_CAPTURE=/capture`，唯讀掛載`workplace/hd/`至`/hd`及`all-play-v2/hd`至`/capture`，
+於隔離clone執行`go test ./apps/pod -run '^TestVGATerrainExpandedSourceTemplates$' -count=1 -v`。
+正常路徑沿`vga-battle-play-receipt.sh hd b26-play-v1 workplace/hd/theme-b26-stage pod-play-all`，維持既有7400格冷啟動與兩次空白鍵。
+`vga_battle_play_check.py`增加`--terrain`選擇`combat.json`增量，仍核對相同執行檔、全部舊素材、原版終點、DOS檔案與最終合成。
+
+正常原版CPU、完整記憶體、色號、色盤及127個DOS檔案同`all-play-v2`固定四路基準，最終HD合成相同，閃現0。
+比較器另以CPU、色號與DOS檔案改動作負對照，三項均拒絕。
+776檔正式主題與受測staging完全相同，以Linux完整目錄原子交換啟用；舊730檔主題保留，不留下半套素材。
+固定[017-b26-runtime.json](017-b26-runtime.json)。25張非純色地形與原色填充格涵蓋本組素材，其他圖組、全遊戲HD與未觀測正常事件不在完成聲明內。
