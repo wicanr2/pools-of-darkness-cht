@@ -95,7 +95,7 @@ PortLog保留原步數及模型成本；不能用批次開始時間代替個別I
 四路DEMO、39對正常介面與六對新存B／冷讀B及全部存檔相同。RGB命令依本節已列mode13h範圍CONFORMED，不外推其他模式或任意埠。
 消費端來源、資料、正式啟用及固定收據見主專案[研究019](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-draw-interception.md)與[RGB輸出收據](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-native-output-runtime.json)。
 
-## 唯讀CPU機型查詢（READY）
+## 唯讀CPU機型查詢（CONFORMED）
 
 StepView新增CPUModel回傳目前16位CPU機型及有效布林值，沿live／token生命週期；過期查詢回零／false並記錄誤用。
 只讀取既有CPU.Model，不寫設定、狀態或存檔。消費端需要恢復旗標的保留位元時，依既有CPU.SetFlags契約選用機型，未知機型拒絕。
@@ -105,7 +105,7 @@ StepView新增CPUModel回傳目前16位CPU機型及有效布林值，沿live／t
 消費端正常7400更新的84408個演算法計畫／2322651個虛擬指令與逐出口提案總數完全相等；固定語意區塊另有1028041步，未把它們算成Go演算法。
 四路DEMO、39對介面與6對新存讀檔驗收通過，完整狀態與有序事件同原版。詳見消費端[固定收據](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-native-fill-runtime.json)。
 
-## 有界RGB讀取工作（READY）
+## 有界RGB讀取工作（CONFORMED）
 
 擬新增預設空的PaletteReads，每筆只有色號、預期RGB及選色／三分量四個步數與模型成本。另有期限受控的唯讀RGB快照查詢，不改DAC相位或埠計數。
 候選限定mode13h線性表面及六位元RGB；提交前確認目前DAC內容同預期快照。RGB輸出與讀取不混入同一計畫；讀取時間點不與RAM或搬移同時。
@@ -115,17 +115,19 @@ StepView新增CPUModel回傳目前16位CPU機型及有效布林值，沿live／t
 審查READY後允許新增PaletteReads及StepView.PaletteRGB。每筆RGB是預期快照，直接按值保存；快照查詢不改裝置，過期視圖回零／false並記誤用。
 驗收仍須含核心拒絕／資料擁有權／事件邊界及消費端完整正常機器與玩家路線，不因原型通過就稱CONFORMED。
 
-## VGA狀態唯讀快照（READY）
+## VGA狀態唯讀快照（CONFORMED）
 
 StepView擬提供VGAStatusSnapshot，按值返回目前Steps、讀取計數及既有狀態模型參數，沿期限／token生命週期；過期返回零／false並記誤用。
 快照只供預測有界未來讀取，不讀I/O、不改埠統計或AC flip-flop。只支援mode13h線性表面、既有讀取次數模型及Mode13Phase；後者沿mode13InputStatus的hardware-spec approximation，不重新標定硬體時鐘。
 CRTCTiming生效且未被Mode13Phase優先分支覆蓋時拒絕。At(relativeStep, readNumber)按既有In8順序計入第N次讀取，零序號／步數或讀取計數溢位拒絕；不提供任意I/O或硬體設定。
 此唯讀入口依已實作的平台契約READY。需以相同初始狀態的In8比較各模式、相位及讀取次數，驗快照不改整台SaveState、生命週期與未知模式拒絕；它不授權主機提交讀取效果。
 
-## 有界VGA狀態讀取（READY）
+## 有界VGA狀態讀取（CONFORMED）
 
 擬新增預設空的VideoStatusReads，每筆只有預期狀態byte及相對Step／Cycles，限定3DA。不得與RGB讀寫混用，同指令RAM／Transfer衝突拒絕。
 提交前依當前唯讀快照檢查第N次狀態讀取及全部時間點；不支援模型、數值失配、溢位或事件不足皆不改機器。先按值複製，再與RAM／Transfer依步數合併。
 實際讀取仍交In8，保留PortsIn、portTicks與AC flip-flop。Mode13Phase使用該筆相對Step的既有mode13InputStatus；其他I/O及普通CPU讀取不受影響。內部有界VGA I/O helper返回實際讀值供核心對照，不增加任意埠入口。
 消費端隔離服務原型已通過392次獨立原版CPU／完整RAM／VGA／埠及整台SaveState比較，14種拒絕通過；唯讀快照240次服務比較及期限測試通過，准予READY接入。
 核心仍須驗實際服務讀值、兩模型、資料擁有權、時間／模式／衝突／事件拒絕及完整正常玩家路線，不能把模型成本當實機逐週期證據。
+
+上述快照與有界讀取已隨15fd65a消費端正常驗收CONFORMED，限本節列出的mode13h線性模式。核心拒絕、生命週期、有序I/O與整台SaveState比較通過；正常CPU／RAM及完整事件、四路DEMO、39對介面及六對真存讀檔同原版。消費端正式程式b369dea、來源15fd65a及啟用綁定見[固定收據](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-native-control-runtime.json)。本次文件收尾不改已驗Go來源與二進位。
