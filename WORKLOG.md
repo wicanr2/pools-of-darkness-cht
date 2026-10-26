@@ -988,3 +988,24 @@
 - 收尾路由複查仍命中復古重製驗收、規格閘門及README規範，沿用本輪已載入的技能／入口。正式二進位、八份繪圖來源、工具、44+3份見證、34張README圖片及文件連結通過。
   兩份原始壓縮檔SHA-256同G1。正式go version -m為8c2c383、vcs.modified=false；隔離clone乾淨，已推本專案dosgolem/pod，未推上游或其他專案。
   專案相關執行中／已停止容器0，沒有新建映像。擁有權僅既有font目錄為root，新增來源、工具、收據與執行檔均1000:1000；workplace約6.9GiB，磁碟約219GiB可用。
+
+## 2026-10-26 Go色盤陣列準備（#49）
+
+- 開工main 68ca925、clone 8c2c383、正式340660d及776檔主題；主機gh憑證回讀正常，#49仍開啟。
+  命中復古遊戲逆向、規格閘門及驗收路由，沿用reverse-engineer-retro-game-remake技能；文件職責另依project-document-responsibilities。
+- 選實際4944路徑的4A83使用色清單、4AFD目標RGB、4B3A誤差初始化。IDA9.4與Capstone5.0.3逐bytes核對兩段14 bytes／七道指令、一段27 bytes／九道指令。
+  先寫DRAFT與未接入原型，530個獨立原版計畫、21種拒絕通過後升READY，再接正式來源。65個孤立中途狀態使用新建VGA，沒有冒稱完整正常色盤狀態。
+- 來源eb5e49b26f8113a1f678601800668b00999b5fa2；核心、session、pod、drawblocks、Xvfb前端及go vet通過。
+  Go1.24.13乾淨候選5dc0b2977b13dda1c2b955b77f7a374cd0b91884decf1ce52269ab5f4d0cc26b，vcs.modified=false。
+- 正常三個已提交Go計畫共2270步，清單1498、目標763、誤差9；全部Go計畫101811個／3235546步，固定語意區塊115146步。
+  正式完整CPU／RAM、全部有序像素／回掃／音訊／DOS事件與127檔同原版；44份直接見證加三份分割補證，全部47份相同。
+- 四路DEMO、39對正常介面與6對正常新存B／冷讀B畫面通過，全部SAVE bytes與槽A五檔相同。非預期閃現0，封面既有998筆F2主動切換另列。
+  全部完成才原子啟用5dc0b29，340660d以pod-play-nativecolor保留；776檔主題、字型與譯文未改，沒有新增G6探索，不外推FPS。
+- 觀測建置第一份manifest的長提交值填錯，保留observed-build-wrong-commit.json；工具新增module HEAD相等檢查，負對照確認錯誤提交在建立目錄前拒絕，v2才用於驗收。
+  一次過早讀取尚未產生的觀測JSON、一次過早讀取完整驗收檔均因等待順序失敗，檔案生成後用同一命令重跑通過，未改產品判定。
+  搬移未啟用的JSON時跨Docker bind mount的rename回EXDEV；改為複製、SHA比對後移除原副本，正式二進位仍在同一掛載目錄內原子替換。
+- 固定019-native-setup-runtime.json與研究、規格、README、CONTEXT同步；硬體色盤服務與剩餘固定路徑仍保留，#49不關閉。
+  下一個窄任務是48A1:6850–689E圖片列控制，尚未建立READY契約；收尾與提交／推送以下列紀錄為準。
+- 收尾：正式／備份二進位、九份繪圖來源及工具SHA、44+3份見證、34張README圖片與文件連結通過；兩個原始壓縮檔SHA同G1。
+  clone乾淨且已推至本專案dosgolem/pod，未推上游或其他專案。相關執行中／已停止容器0，未新建映像，沒有清理其他專案資源。
+  擁有權只有既有font目錄為root，新來源、工具、收據與執行檔均1000:1000；workplace約7.2GiB，磁碟約215GiB可用。main提交及Issue現況回讀以下次Git／gh結果為準。

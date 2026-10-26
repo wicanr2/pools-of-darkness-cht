@@ -384,3 +384,25 @@ Go直接取得色盤索引與RGB三byte，準備原版工作欄位、參數與�
 全門檻通過後原子啟用，014392d保存在pod-play-nativefade，較早備份保留。成對成本沿既有孤立入口夾具，未據此宣稱逐色RGB工作的正常路線加速。
 固定[019-native-color-runtime.json](019-native-color-runtime.json)，重生使用`tools/native_fill_check.py --family color`；原始收據在`workplace/probe/draw-intercept-v1/native-color-v1`及`workplace/probe/g9-hd/nativecolor-{play,ui,save}-v1`。
 剩餘圖片控制、裁切／鏡像外層、初始化與其他固定區塊仍待逐項補證；全部Go演算法閘門仍DRAFT，#49保持開啟。
+
+## 2026-10-26 Go色盤陣列準備接入
+
+續接4944內的三段資料工作：`48A1:4A83`整理使用色號、`48A1:4AFD`填入目標RGB、`48A1:4B3A`初始化插值誤差。
+VGA.DRV輸入沿本研究固定SHA；原檔offset同IP，兩段14 bytes／七道指令及一段27 bytes／九道指令，由IDA9.4與Capstone5.0.3逐bytes交叉核對。
+三段SHA-256依序為`1814a41894eea9e581384ac7c8a316353039634bf747a66ceb5ec19aff3361af`、`343202170a7507bd27ba58e074710568546eac5f1fc99691bcac8d8e11a98349`、`592b32248b4af06920a2979be064570ce726975b43eae84d9591126394638a7d`。
+
+Go直接過濾256項使用標記，按降序建立word色號表；按RGB三byte元素填入目標陣列；再把三倍使用色數的誤差陣列填為最大距離的一半。
+資料循環沒有CPU.Step、opcode或指令效果器派送；旗標、暫存器、原IP與虛擬時間另作相容效果。普通RAM區間、對齊、模式、方向、計數與指紋不符時回原路徑，硬體讀寫不變。
+36個清單、72個目標、32個誤差合成計畫，加孤立原版4944呼叫65個中途狀態的390個計畫，共530次獨立原版比較及21種拒絕通過。
+孤立呼叫使用新建VGA狀態，只證明其條件下的函式效果；正常狀態由以下完整機器重播另驗。先達READY才加入產品，核心、session、pod、drawblocks、Xvfb前端與go vet通過。
+
+正常7400更新實際接手三個Go計畫，清單1498步、目標763步、誤差9步，共2270步。正式Go計畫101811個／3235546步，固定語意區塊115146步。
+完整CPU／RAM、有序像素／回掃／音訊／DOS事件、127檔及44份直接入口見證同原版；三個區塊內部helper以分割觀測補證，全部47份CPU／完整RAM相同。
+四路DEMO、39對介面及6對正常另存B／冷讀B畫面相同，全部SAVE bytes及槽A五檔未改。非預期閃現0，既有998筆F2主動切換仍另列。
+776檔主題、字型與譯文未動，未新增G6探索，未把這份分類稱為全遊戲覆蓋率或FPS。
+
+產品來源`eb5e49b26f8113a1f678601800668b00999b5fa2`，Go1.24.13乾淨建置`5dc0b2977b13dda1c2b955b77f7a374cd0b91884decf1ce52269ab5f4d0cc26b`。
+全部門檻通過後原子啟用，前版340660d保存在pod-play-nativecolor，較早備份保留。
+固定[019-native-setup-runtime.json](019-native-setup-runtime.json)，重生選`tools/native_fill_check.py --family setup`；原始收據在`workplace/probe/draw-intercept-v1/native-setup-v1`與`workplace/probe/g9-hd/nativesetup-{play,ui,save}-v1`。
+觀測建置器新增module HEAD相等檢查，來源標籤填錯時在建立目錄前拒絕；不符標籤的早期manifest保留在工作區，驗收只使用正確重建的v2。
+其餘圖片控制、裁切／鏡像外層與未驗入口仍待Go演算法，#49保持開啟。

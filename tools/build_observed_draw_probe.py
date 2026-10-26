@@ -21,6 +21,8 @@ def main():
     a = ap.parse_args()
     assert re.fullmatch(r'[a-z0-9-]+', a.name)
     assert re.fullmatch(r'[0-9a-f]{40}', a.program_commit)
+    actual_commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=a.module, text=True).strip()
+    assert actual_commit == a.program_commit, '來源提交與module HEAD不符，拒絕建立觀測產物'
     assert not a.out.exists()
     folder = a.module/'workplace'/f'{a.name}-blocks'
     probe = a.module/'workplace'/f'{a.name}-probe'

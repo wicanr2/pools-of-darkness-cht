@@ -1,6 +1,6 @@
 # 規格索引
 
-- [025 直接攔截繪圖與前端命令](025-direct-render-commands.md)：#45–#47的輸出一致性及#49已列Go演算法子集CONFORMED，鏡像限受控呼叫；最新[逐色RGB工作收據](../re/019-native-color-runtime.json)涵蓋完整事件、四路DEMO、39對介面與6對存讀檔。其他固定語意區塊及未驗入口仍保留，全部Go演算法閘門DRAFT。
+- [025 直接攔截繪圖與前端命令](025-direct-render-commands.md)：#45–#47的輸出一致性及#49已列Go演算法子集CONFORMED，鏡像限受控呼叫；最新[色盤陣列準備收據](../re/019-native-setup-runtime.json)涵蓋完整事件、四路DEMO、39對介面與6對存讀檔。其他固定語意區塊及未驗入口仍保留，全部Go演算法閘門DRAFT。
 
 - [024 片頭字幕覆繪](024-intro-subtitles.md)：#10，八組台詞、雙語／倍率／原版切換及正常5100格閃現0，局部CONFORMED。
 - [023 左右海報](023-side-posters.md)：#21，固定加寬與語系文字，繁中／英文及 2／3 倍 CONFORMED。
