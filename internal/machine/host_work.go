@@ -20,6 +20,7 @@ type HostWorkPlan struct {
 	LastCS, LastIP       uint16
 	Writes               []HostWrite
 	Transfers            []HostTransfer
+	PaletteWrites        []HostPaletteWrite
 }
 
 // HostTransfer is an owned, nonwrapping string-write effect. Data==nil means
@@ -166,7 +167,7 @@ func (m *Machine) ValidateHostWork(p *HostWorkPlan) error {
 			return fmt.Errorf("machine: ambiguous host write order")
 		}
 	}
-	return nil
+	return m.validateHostPaletteWrites(p)
 }
 func (m *Machine) CommitHostWork(p *HostWorkPlan) error {
 	return m.commitHostWork(p, false)
@@ -181,6 +182,7 @@ func (m *Machine) commitHostWork(p *HostWorkPlan, block bool) error {
 	owned := *p
 	owned.Writes = append([]HostWrite(nil), p.Writes...)
 	owned.Transfers = append([]HostTransfer(nil), p.Transfers...)
+	owned.PaletteWrites = append([]HostPaletteWrite(nil), p.PaletteWrites...)
 	for i := range owned.Transfers {
 		if owned.Transfers[i].Data != nil {
 			owned.Transfers[i].Data = append([]byte{}, owned.Transfers[i].Data...)
@@ -190,8 +192,16 @@ func (m *Machine) commitHostWork(p *HostWorkPlan, block bool) error {
 	if err := m.ValidateHostWork(p); err != nil {
 		return err
 	}
-	defer func() { m.hostEffect = nil; m.inVideoCommand = false }()
-	for i, ti := 0, 0; i < len(p.Writes) || ti < len(p.Transfers); {
+	palette := hostPaletteBytes(p.PaletteWrites)
+	defer func() { m.hostEffect = nil; m.inVideoCommand = false; m.hostPalette = nil }()
+	for i, ti, pi := 0, 0, 0; i < len(p.Writes) || ti < len(p.Transfers) || pi < len(palette); {
+		if pi < len(palette) && (i == len(p.Writes) || palette[pi].step < p.Writes[i].Step) && (ti == len(p.Transfers) || palette[pi].step < p.Transfers[ti].Step) {
+			m.hostPalette = &palette[pi]
+			m.Out8(palette[pi].port, palette[pi].value)
+			m.hostPalette = nil
+			pi++
+			continue
+		}
 		if ti < len(p.Transfers) && (i == len(p.Writes) || p.Transfers[ti].Step < p.Writes[i].Step) {
 			m.commitHostTransfer(p.Transfers[ti])
 			ti++

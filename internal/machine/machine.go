@@ -320,6 +320,7 @@ type Machine struct {
 	AlgorithmicPlans, AlgorithmicInstructions uint64
 	hostCallTargets                           []uint32
 	hostEffect                                *HostWrite
+	hostPalette                               *hostPaletteByte
 	HostCallCommits, HostCallInstructions     uint64
 	onVideoWrite                              func(VideoWrite)
 	onVideoCommand                            func(VideoCommand)
@@ -1145,7 +1146,12 @@ func (m *Machine) In8(port uint16) uint8 {
 
 func (m *Machine) Out8(p uint16, v uint8) {
 	m.Ports[p] = v
-	m.PortLog = append(m.PortLog, PortWrite{Port: p, Val: v, Step: m.Steps, Cycles: m.CPU.Cycles})
+	step, cycles := m.Steps, m.CPU.Cycles
+	if clock := m.hostPalette; clock != nil {
+		step += clock.step
+		cycles += clock.cycles
+	}
+	m.PortLog = append(m.PortLog, PortWrite{Port: p, Val: v, Step: step, Cycles: cycles})
 
 	if m.soundBlasterPresent {
 		if m.soundBlaster.Out8(p, v) {

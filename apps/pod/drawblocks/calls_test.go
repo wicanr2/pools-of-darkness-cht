@@ -7,6 +7,7 @@ import (
 	"github.com/wicanr2/dosgolem/internal/machine"
 	"os"
 	"path/filepath"
+	"reflect"
 	"sort"
 	"testing"
 	"time"
@@ -108,6 +109,9 @@ func TestActualWholeDrawingCalls(t *testing.T) {
 			runCall(t, b, v, true)
 			if a.CPU.R != b.CPU.R || a.CPU.Seg != b.CPU.Seg || a.CPU.IP != b.CPU.IP || a.CPU.Flags != b.CPU.Flags || a.CPU.Cycles != b.CPU.Cycles || a.Steps != b.Steps || !bytes.Equal(a.Mem, b.Mem) {
 				t.Fatalf("whole call differs %04x:%04x", v.CS(), v.IP())
+			}
+			if a.DAC != b.DAC || !reflect.DeepEqual(a.VGA, b.VGA) || !reflect.DeepEqual(a.Ports, b.Ports) || !reflect.DeepEqual(a.PortLog, b.PortLog) {
+				t.Fatalf("whole call device state/port log differs %04x:%04x", v.CS(), v.IP())
 			}
 			cases++
 		}

@@ -72,6 +72,24 @@ HostWorkPlan新增預設false的Algorithmic標記，僅供計數。消費端須�
 驗收須含預設false、true／false分流、拒絕不累加及回合差值，另由消費端正常路徑證明分類有使用。
 消費端的幾何、來源與Go演算法契約見主專案規格025的48A1:41AF小節，通用層不保存其位址。
 
+## 有界RGB調色盤命令（READY）
+
+現有HostWorkPlan只提交RAM及線性顯存效果。擬新增預設空的PaletteWrites，元素包含一個色號、RGB三個6-bit值，以及選色號／三個分量各自的相對步數與模型成本。
+這是型別化RGB工作，不提供任意I/O埠或opcode入口；通用層以既有Machine.Out8交VGA服務，不能直接改DAC而漏掉VGA狀態、Ports及PortLog。
+VGA契約取自[FreeVGA Color Registers](https://www.scs.stanford.edu/10wi-cs140/pintos/specs/freevga/vga/colorreg.htm)：3C8選寫入索引，3C9依RGB寫入三分量並自動前進。這次不改硬體模擬、不研究硬體時序。
+
+候選只限mode13h線性表面，RGB0–63，四個時點嚴格遞增且在完整計畫內，成本非零／遞增且不超總成本。與RAM／Transfer同一指令時點衝突則拒絕。
+沿既有HostWorkBudget限制，不能跨IRQ、畫面、callback或回合邊界。全部先驗證再提交，拒絕不改RAM、CPU、DAC、VGA、Ports及PortLog。
+所有PaletteWrites先按值複製；與RAM／Transfer按相對步數合併，不提前更新色盤，原子批次之內沒有新的觀測回呼。
+PortLog保留原步數及模型成本；不能用批次開始時間代替個別I/O時間。不得將模型成本稱為硬體逐週期精確。
+
+驗收須含獨立原版RGB函式的完整CPU／RAM、原有VGA／DAC及有序PortLog；兩成本模型、色號端點、非零初始DAC相位、事件恰好／不足、非法命令及資料擁有權。
+只有RGB命令消費端通過自己的READY及正常玩家路線，才能聲稱該遊戲路徑已接管。其餘平台及既有空PaletteWrites行為不變。
+
+審查：既有Out8的VGA／DAC、Ports及PortLog效果已定位，時間來源為本分支模型，沒有新增硬體語意。
+未接產品的消費端RGB原型通過192個合成、六個真正入口隔離比較及14種拒絕，完整CPU／RAM、VGA／DAC及逐筆PortLog相同。
+因此允許新增上述命令與拒絕／擁有權／事件測試；核心測試及消費端完整正常驗收前不標CONFORMED。原型fixture的新建VGA不當完整正常硬體快照。
+
 程式7cd6f7a。預設false、提交成功後分類、拒絕不計數與Owner跨回合差值測試通過；核心、session、pod、繪圖及前端套件與靜態檢查通過。
 消費端正常7400更新的84408個演算法計畫／2322651個虛擬指令與逐出口提案總數完全相等；固定語意區塊另有1028041步，未把它們算成Go演算法。
 四路DEMO、39對介面與6對新存讀檔驗收通過，完整狀態與有序事件同原版。詳見消費端[固定收據](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-native-fill-runtime.json)。
