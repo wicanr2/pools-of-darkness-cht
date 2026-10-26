@@ -1,6 +1,6 @@
 # 025 直接攔截繪圖與前端命令
 
-狀態：本作VGA繪圖、8×8字模、共享搬移／填色／清零與單次RGB合成CONFORMED。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)。其他模式與未列路線不外推完成。
+狀態：既有VGA固定Go區塊、8×8字模、共享搬移／填色／清零及單次RGB合成的輸出一致性CONFORMED；全部Go繪圖演算法尚未完成，新增閘門DRAFT。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)、[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)。其他模式與未列路線不外推完成。
 
 使用者於2026-10-25要求完全攔截繪圖函數，避免先畫原版底圖再覆畫HD，並指定參考`/home/anr2/cht/mm3`。
 方向已授權；本規格先補本作輸出契約，未達READY的原型不接正式路徑。
@@ -151,3 +151,17 @@ HD與讀檔／片頭的原始閃現0；封面的998筆均為既有F2主動切換
 固定收據為[019-all-render-runtime.json](../re/019-all-render-runtime.json)。所有已列gate通過後，正式入口才原子切換，舊版d3f97df以pod-play-whole保留。
 成對成本限函式CPU工作，包含來源守衛、相容寫入及畫布命令；48A1:6733／4944／41AF約1.27／1.24／1.06倍，小型RAM呼叫約1.03／0.99／0.84倍。
 不以局部量測宣稱所有呼叫更快或整體FPS提升；GPU／SIMD與其他HD圖族不在本項完成範圍。
+
+## 全部Go繪圖演算法的新增閘門
+
+狀態：DRAFT，2026-10-26，#49。使用者要求確認繪圖由Go演算法處理，不把x86繪圖語意重播當成完成。
+目前正式程式仍為混合實作，分類與二進位查核見[研究019勘誤](../re/019-draw-interception.md#2026-10-26-原生go繪圖要求的查核與勘誤)。
+
+`apps/pod/glyph_call.go:PlanGlyphCall`的8×8字模迴圈與`apps/pod/drawblocks/transfer_calls.go:planSmallCall`的完整搬移／填色效果提供函式層級起點。
+它們保留返回暫存器、旗標、堆疊與虛擬時間的ABI相容計算，不需在像素熱迴圈按原指令逐條派送。
+其餘`apps/pod/drawblocks/effects.go:Plan`與`blocks_generated.go`沿CS:IP執行固定區塊，仍保留逐指令語意，不能計入此新增閘門的Go演算法完成數。
+
+後續每個入口須先有原版參數、來源、目的、裁切、鏡像、透明、返回及時間證據，審查至READY才接Go演算法。
+接入後分開統計函式層級Go、固定語意區塊及原x86回退；不可用HostBytes、區塊數或編譯成Go本身證明完成。
+驗收保留完整CPU／RAM、有序事件與索引讀回，再走既有正常DEMO、介面及存讀檔，成本量測含相容效果。
+本輪只有來源與二進位核實，沒有改動正式執行檔、撤除舊區塊或完成此新增閘門。

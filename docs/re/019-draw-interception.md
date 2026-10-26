@@ -194,3 +194,30 @@ CopyRAM僅複製普通低RAM，不暴露可變客體slice。原版索引讀回�
 產生器在`sc-cht-disasm:capstone5.0.3-r1`執行，使用`--project . --out workplace/dosgolem/apps/pod/drawblocks`；Go1.24.13再gofmt與建置。
 正常探針以`-whole-call=false/true -draw-blocks=false/true -draw-table <blocks.json>`在全新輸出重生trace-v2-legacy／native。
 `all_render_check.py --project . --commit <程式提交> --out <全新收據>`檢查全部門檻；正式GUI與存讀檔路線由既有收據腳本執行，不注入遊戲狀態。
+
+## 2026-10-26 原生Go繪圖要求的查核與勘誤
+
+使用者要求確認繪圖接手由Go處理，不以x86繪圖語意重播當成完成。本輪核實正式執行檔及實際來源，結論為混合實作，全部Go繪圖演算法尚未完成。
+前述#47「完成」指既有固定區塊替換與同狀態驗收，不能解讀成所有VGA常式都已改為函式層級Go演算法。
+補正由[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)追蹤，規格025新增閘門為DRAFT。本輪沒有實作剩餘演算法。
+
+| 分類 | 實作與可回查位置 | 結論 |
+|---|---|---|
+| Go字模演算法 | `apps/pod/glyph_call.go:PlanGlyphCall`第91行起，8列×8欄直接依字模位元算前景／背景像素 | 已有函式層級替換；ABI與時間另算 |
+| Go共享函式效果 | `apps/pod/drawblocks/transfer_calls.go:planSmallCall`，讀參數後產生擁有資料的HostTransfer搬移／填色效果 | 限定Move／Fill／清零已有完整效果；拒絕時仍落回固定區塊 |
+| 固定x86語意Go區塊 | `apps/pod/drawblocks/effects.go:Plan`第54行、`blocks_generated.go`的1432個函式與7594次mark | 成功時不呼叫通用CPU.Step，也不重新解碼；仍以CS:IP派送並逐條重現暫存器、旗標、分支與記憶體語意，未達全部Go演算法要求 |
+| Go畫面合成 | `apps/pod/live.go:Compose`第318行起 | 已由Go選HD／文字與最終RGB；不能證明上游VGA常式都已重寫 |
+| 原x86回退 | `apps/pod/draw_blocks.go:PrepareHostBlock`及通用HostWork預算拒絕 | 來源、模式、事件預算等失配仍執行原版 |
+
+例：`blocks_generated.go`第41937行的`block_48a1_6733`仍依次執行`e.mark`、`e.push`、暫存器賦值與`e.s.IP`推進。
+`effects.go`第66行沿當前CS:IP找區塊、第87行呼叫`b.run(e)`，第200行的`alu`仍計算x86算術旗標。
+這是固定程式的指令語意轉寫，不能只因檔案是Go或繞過通用解碼器，就稱為圖像／裁切／鏡像的Go演算法。
+相容返回暫存器、旗標、堆疊及時間本身仍有必要；新增閘門要移除的是繪圖熱迴圈對逐條原指令語意的依賴。
+
+正式`pod-play` SHA-256仍為`2c58d1d8e10f83eabb825e83e87bf781f8f136b50c3c33a8e4d93817049165fd`。
+Go1.24.13的`go version -m`回讀`191479d5492fdce1e5d925ea44033d2112f75016`與`vcs.modified=false`；
+`go tool nm`確認字模、固定區塊Plan、6733區塊及共享完整效果符號確實連結。現行相關來源與191479d差異0，排除讀到未啟用原型。
+固定[分類查核](019-native-go-audit.json)記錄上述來源SHA、正式符號及判定。本輪是靜態來源／二進位核實，沒有新增執行期或效能聲明。
+
+原[完整狀態與畫面收據](019-all-render-runtime.json)及[b26純資料增量](017-b26-runtime.json)仍有效。
+HostBytes與接管指令數混合了函式效果和固定區塊，不是原生Go演算法覆蓋率。後續需按實際入口分開統計Go演算法、固定區塊及原x86回退。

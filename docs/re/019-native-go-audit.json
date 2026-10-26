@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-26",
+  "issue": 49,
+  "scope": "static audit of active binary and unchanged renderer source; no new runtime or performance claim",
+  "binary_sha256": "2c58d1d8e10f83eabb825e83e87bf781f8f136b50c3c33a8e4d93817049165fd",
+  "go_version": "go1.24.13",
+  "product_source_commit": "191479d5492fdce1e5d925ea44033d2112f75016",
+  "current_clone_commit": "8a0c26b9fef266e5863d5651b0d0ed448f189f3e",
+  "renderer_diff_from_product_commit": false,
+  "symbols_confirmed": [
+    "github.com/wicanr2/dosgolem/apps/pod.PlanGlyphCall",
+    "github.com/wicanr2/dosgolem/apps/pod/drawblocks.Plan",
+    "github.com/wicanr2/dosgolem/apps/pod/drawblocks.block_48a1_6733",
+    "github.com/wicanr2/dosgolem/apps/pod/drawblocks.planSmallCall"
+  ],
+  "source_sha256": {
+    "apps/pod/glyph_call.go": "d33e8d61f8c5672e95b2c060eec708c1e922549bd4d25b35383f2377458b611d",
+    "apps/pod/drawblocks/transfer_calls.go": "f84885b0368e4fe80d1ea97ad4aa28f3389e5e9ae3ee62ac31d0e3697f7c0c01",
+    "apps/pod/drawblocks/effects.go": "db83422628b947e8bad8cb761f762727d3d2642f642cd6a6ef035a5beb932813",
+    "apps/pod/drawblocks/blocks_generated.go": "fe44bf3985e28261ab80400b3fbbfea011a1981bf4957de17c1b822c1c974cae",
+    "apps/pod/draw_blocks.go": "07d2e0c37f087bbbd77d0e7c51a88c8112a7ddebf382c0b17a0952237c9ddd85",
+    "internal/machine/host_work.go": "d9ea2df910aed20f8ff666c77dd357f36ed20c2dcd899aeebcf3b53cd82d50f0",
+    "apps/pod/live.go": "9ab50b6bbd67abcaf240612492b7b0a8f35e7769a0987442f9c2462cb309f12e",
+    "cmd/pod-play/main.go": "6956dec4daacc5e8e42e47c7552825fcdcc9181fbe493ca08ccf0a28e3c3fee6"
+  },
+  "categories": [
+    {
+      "kind": "algorithmic Go",
+      "scope": "8x8 glyph pixels",
+      "entry": "apps/pod/glyph_call.go:PlanGlyphCall",
+      "evidence": "nested row/column loops compute fg/bg pixel values from glyph bits; ABI and time effects calculated separately"
+    },
+    {
+      "kind": "algorithmic Go",
+      "scope": "eligible complete shared Move/Fill/zero effects",
+      "entry": "apps/pod/drawblocks/transfer_calls.go:planSmallCall",
+      "evidence": "parameters produce owned HostTransfer copy/fill effects; registers and timing retained for compatibility; uncertain cases fall through to blocks"
+    },
+    {
+      "kind": "fixed x86-semantics Go blocks",
+      "scope": "remaining supported VGA drawing blocks",
+      "entry": "apps/pod/drawblocks/effects.go:Plan",
+      "evidence": "dispatch by CS:IP; generated b.run updates emulated registers, IP, flags, memory and original branches; no generic CPU.Step or runtime instruction decode on accepted blocks",
+      "generated_blocks": 1432,
+      "per_instruction_marks": 7594
+    },
+    {
+      "kind": "Go presentation",
+      "scope": "HD selection and final RGB",
+      "entry": "apps/pod/live.go:Compose",
+      "evidence": "Go composition path; not proof that upstream VGA routines are algorithmic Go"
+    },
+    {
+      "kind": "original x86 fallback",
+      "scope": "unsupported code, mode, event budget and fingerprints",
+      "entry": "apps/pod/draw_blocks.go:PrepareHostBlock",
+      "evidence": "nil plans retain original execution"
+    }
+  ],
+  "conclusions": {
+    "all_rendering_runs_generic_x86": false,
+    "all_rendering_is_algorithmic_go": false,
+    "successful_block_path_skips_generic_decoder": true,
+    "host_bytes_prove_algorithmic_go_coverage": false,
+    "prior_state_and_image_receipts_remain_valid": true,
+    "new_algorithmic_go_gate": "DRAFT, not completed"
+  },
+  "prior_receipts": [
+    "docs/re/019-all-render-runtime.json",
+    "docs/re/017-b26-runtime.json"
+  ]
+}

@@ -51,11 +51,14 @@ HD最新完成批次：[#48](https://github.com/wicanr2/pools-of-darkness-cht/is
 固定[017-b26-runtime.json](docs/re/017-b26-runtime.json)；產品來源與執行檔維持191479d／2c58d1d，`dosgolem/pod`另以8a0c26b保存新增地形診斷。
 其他地下城圖組、野外地形及未觀測正常遭遇仍未完成，不重新開啟G6探索。
 
-使用者要求的VGA繪圖接管已完成，見[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)。
+繪圖目前是混合實作。#45–#47已完成像素命令、限定函式及固定Go區塊的替換與一致性驗收；使用者本輪要求的「全部以Go繪圖演算法處理」尚未達成，由[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)追蹤。
+字模、限定共享搬移／填色／清零與畫面合成有Go演算法；其餘VGA主要是1432個固定Go區塊，仍按原x86的暫存器、IP、旗標與分支語意運算。
+成功區塊跳過通用x86解碼與CPU.Step，但不能以此稱為全部原生Go繪圖；來源或預算失配仍回原x86。
+查核正式2c58d1d執行檔、Go建置資訊及來源相同，見[019-native-go-audit.json](docs/re/019-native-go-audit.json)。本輪只核實並修正標示，未實作剩餘演算法。
 目前程式`191479d`，正式執行檔`2c58d1d`，主題為上述776檔。VGA驅動與共享常式共90項函式／helper、1432區塊，三支搬移／填色／清零另有完整呼叫計畫；8×8字模與單次RGB保留。
-正常DEMO全部十個像素出口均有主機效果，3306104／3343240個像素寫入由完整效果產生，其餘受事件預算限制仍沿原生像素指令。
+正常DEMO全部十個像素出口均有主機效果，3306104／3343240個像素寫入由函式或固定區塊效果產生，其餘受事件預算限制仍沿原x86像素指令。該計數不代表原生Go演算法覆蓋率。
 完整事件、CPU／RAM與DOS檔案一致；四路DEMO、讀檔／片頭／封面39對畫面、另存B後冷讀6對畫面與全部存檔相同，槽A五個檔案未改。
-已切換正式入口，固定收據為[019-all-render-runtime.json](docs/re/019-all-render-runtime.json)，規格025在上述VGA範圍CONFORMED。
+已切換正式入口，固定收據為[019-all-render-runtime.json](docs/re/019-all-render-runtime.json)，規格025的既有輸出一致性範圍CONFORMED，新增全部Go演算法閘門為DRAFT。
 I/O、POPF、未驗寬指令、B000及其他模式保留原版；GPU／SIMD、動畫HD、片尾及未列玩家路線不外推完成。小型RAM呼叫未全部更快，成對成本與FPS限制見[研究019](docs/re/019-draw-interception.md#47-vga繪圖接管完成)。
 
 | 項目 | 何時決定 |
@@ -78,7 +81,7 @@ I/O、POPF、未驗寬指令、B000及其他模式保留原版；GPU／SIMD、�
 | G8 攻略與地圖 | #9 | 攻略 78 段，地名與已定專名對齊；32 塊 GEO 雜湊、24 個 GEO 名稱、東西菲蘭 5 個攻略點共 7 格。兩城 2／3 倍 A/B 通過；已有正常冷開機讀檔與面板切換收據。其餘 8 個名稱、未觀測地點與共用場景未驗，#9 保持開啟 | docs/re/011–013；規格 008、009 READY |
 | G9 HD | #10、#18–#20、#23、#24、#26–#44 | PIC81狀態／78項主題、238張VGA怪物候選、7張BIGPIC、2張地形與菲蘭起點121格街景已接入。CPIC原始244個來源狀態去重238組全部有重畫，六組別名由相同來源匹配涵蓋，未觀測正常遇怪事件仍未知。BIGPIC244正常DEMO位置及用色已證實，3650格逐像素成品、2倍與F12通過，其他六張為條件式來源。現行730檔主題同b25受測版本，舊素材保留。來源f77eac3、獨立用色守衛與原格式主題；重建後完整7400格四路通過，原版終點與127個DOS檔案同固定基準、閃現0。三張TITLE繁中／英文及海報、4800格街景讀檔已驗；其餘三張天空／地面仍為素材。片頭八組雙語字幕、2／3倍及F8／F12通過正常5100格，原版狀態與127檔一致、閃現0；動畫HD與片尾未完成 | docs/re/014、017、018；[完整CPIC覆蓋](docs/re/017-cpic-coverage.json)、[b24四路收據](docs/re/017-b24-runtime.json)、[BIGPIC四路收據](docs/re/014-bigpic-runtime.json)；規格010局部CONFORMED |
 | README | #17 | 故事背景、原版 BIGPIC、HD 預覽與兩組繁中＋HD 實際 DEMO 截圖已寫 | README.md |
-| 直接繪圖 | #45–#47 | VGA圖像、字模、搬移、填色、清除、裁切、鏡像與動畫接管；事件／指紋失配回原版。全部有序事件、四路DEMO、39對前端與6對新存讀檔畫面相同，全部存檔一致；局部成本不外推FPS | [研究019](docs/re/019-draw-interception.md)、[全部繪圖固定收據](docs/re/019-all-render-runtime.json)、規格025的VGA範圍CONFORMED |
+| 直接繪圖 | #45–#47、#49 | Go字模／限定共享函式、VGA固定x86語意Go區塊及原x86回退的混合實作，全部Go繪圖演算法尚未完成。既有全部事件、四路DEMO、39對介面與6對新存讀檔及全部存檔一致性驗收仍有效；HostBytes不代表演算法覆蓋率 | [實作分類查核](docs/re/019-native-go-audit.json)、[既有固定收據](docs/re/019-all-render-runtime.json)、規格025的新增演算法閘門DRAFT |
 | README 補圖 | #25、#26、#30、#44 | 地圖、上方工具列與下拉選單沿既有正常讀檔路線刷新，另有原版／HD街景。原版封面與實際HD繁中／英文、完整海報視窗、工具列選單、八張代表怪物的素材圖鑑，以及BIGPIC244正常DEMO原版／HD，共33張展示圖全部直接顯示；素材預覽與正常遊戲截圖分開標示，禮服及標題同使用者核准預覽 | docs/re/014；docs/screenshots/wall-receipt.json、title-receipt.json、[素材圖鑑來源](docs/screenshots/monster-hd-preview.json)、[BIGPIC收據](docs/re/014-bigpic-runtime.json) |
 | 左右海報 | #21 | 固定加寬已接入，文字隨語系；中央與定版兩側逐像素一致，2／3 倍及 F12、原版狀態與 127 個 DOS 檔案比較通過。規格 023 CONFORMED，範圍為繁中／英文與已列抽樣 | docs/re/015；review/hd/poster/ |
 | 堆疊物品顯示 | #22 | 正式詞表六項數量／加值回歸通過；既有正常物品 UI 的一般／反白 50 支箭 +2 已驗；未修改產品邏輯 | docs/re/016 |
