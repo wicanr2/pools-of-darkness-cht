@@ -55,10 +55,13 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 	if budget == 0 || v.Read8(0x449) != 0x13 {
 		return nil
 	}
+	if p := planSmallCall(v, budget); p != nil {
+		return p
+	}
 	if p := planRectangle(v, budget); p != nil {
 		return p
 	}
-	if p := planSmallCall(v, budget); p != nil {
+	if p := planRLERuns(v, budget); p != nil {
 		return p
 	}
 	at := uint32(v.CS())*16 + uint32(v.IP())
@@ -67,6 +70,9 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 	}
 	e := &effect{v: v, dos: v.DOSBoxCost(), budget: budget, shadow: make(map[uint32]byte), s: machine.HostRegisters{R: [8]uint16{v.AX(), v.CX(), v.DX(), v.BX(), v.SP(), v.BP(), v.SI(), v.DI()}, Seg: [4]uint16{v.ES(), v.CS(), v.SS(), v.DS()}, IP: v.IP(), Flags: v.Flags()}}
 	for e.p.Instructions < budget {
+		if e.p.Instructions > 0 && algorithmBoundary(e.s.Seg[1], e.s.IP) {
+			break
+		}
 		at = uint32(e.s.Seg[1])*16 + uint32(e.s.IP)
 		b, ok := blocks[at]
 		if !ok || b.cs != e.s.Seg[1] || b.n > budget-e.p.Instructions || len(e.p.Writes) >= 131072 || e.payload >= 131072 {
@@ -101,6 +107,12 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 	}
 	e.p.After = e.s
 	return &e.p
+}
+
+// Stop a fixed-effects prefix before an algorithm's entry, so its pixel
+// work is offered to the typed Go path using the committed guest state.
+func algorithmBoundary(cs, ip uint16) bool {
+	return cs == 0x48a1 && (ip == 0x41af || ip == 0x4268 || ip == 0x68f4)
 }
 func (e *effect) mark(ip uint16, cost uint64) {
 	e.p.Instructions++
