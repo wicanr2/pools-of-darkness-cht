@@ -1,4 +1,4 @@
-"""驗#49首批Go矩形：獨立原版串流、分類、四路視窗及正常存讀檔。"""
+"""驗#49 Go矩形、RLE與色號掃描的原版串流及正常路線。"""
 import argparse
 import hashlib
 import importlib.util
@@ -32,13 +32,14 @@ def main():
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--stage', choices=('trace', 'full'), default='full')
     ap.add_argument('--commit', required=True)
-    ap.add_argument('--family', choices=('fill', 'rle'), default='fill')
+    ap.add_argument('--family', choices=('fill', 'rle', 'palette'), default='fill')
     a = ap.parse_args()
     assert not a.out.exists(), '保留既有收據，請另定輸出檔名'
     p = a.project
-    rle = a.family == 'rle'
-    stem = 'nativerle' if rle else 'nativefill'
-    root = p/('workplace/probe/draw-intercept-v1/native-rle-v1' if rle else 'workplace/probe/draw-intercept-v1/native-fill-v1')
+    rle = a.family != 'fill'
+    palette = a.family == 'palette'
+    stem = 'nativepalette' if palette else ('nativerle' if rle else 'nativefill')
+    root = p/f'workplace/probe/draw-intercept-v1/native-{a.family}-v1'
     previous = p/'workplace/probe/draw-intercept-v1/all-functions-v1/trace-v2-legacy'
     current = root/('trace-native' if rle else 'trace-native-v2')
     old, new = read(previous/'calls.json'), read(current/'calls.json')
@@ -64,25 +65,34 @@ def main():
     if rle:
         assert any(counts.get(key, [0])[0] > 0 for key in ('48a1:6907', '48a1:6909'))
         assert any(counts.get(key, [0])[0] > 0 for key in ('48a1:6918', '48a1:691a'))
+    if palette:
+        assert counts['48a1:4a70'][0] > 0
     fixed = new['HostInstructions'] + new['BlockInstructions'] - new['AlgorithmicInstructions']
     assert fixed > 0, '其餘固定區塊仍存在，不能稱全部Go演算法完成'
     assert new['Commands']['Mismatches'] == 0
     code = p/'workplace/input/dos/pod/VGA.DRV'
     assert sha(code) == 'eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f'
     assert hashlib.sha256(code.read_bytes()[0x41af:0x42b3]).hexdigest() == 'c7db9b7b119f14464a7e76d35125922a3559d10fef36624f79f5120dd0d02f00'
-    test_log = p/('workplace/dosgolem/workplace/native-rle-product-tests.log' if rle else 'workplace/dosgolem/workplace/native-fill-product-tests.log')
-    if rle:
+    test_log = p/f'workplace/dosgolem/workplace/native-{a.family}-product-tests.log'
+    if palette:
+        assert hashlib.sha256(code.read_bytes()[0x4a67:0x4a72]).hexdigest() == '3c8934166cf6cd8d1ecdf79eac51b0cb33bb1bb3e545b883578dcb85971e1b5a'
+        assert 'palette synthetic original plan comparisons 60' in test_log.read_text()
+        assert 'palette normal original plan comparisons 192' in test_log.read_text()
+    elif rle:
         assert hashlib.sha256(code.read_bytes()[0x68f4:0x691c]).hexdigest() == '1926d07bb1c1e91594b6a388138e57b204d8efb327addc7cebf32d0dd7ec5818'
         assert '22 plan comparisons 110' in test_log.read_text()
         assert 'normal original image RLE state comparisons 192' in test_log.read_text()
     else:
         assert '18 independent plan comparisons 194' in test_log.read_text()
     assert '\nPASS\n' in test_log.read_text()
-    tests = (dict(packet_cases=22, packet_plan_comparisons=110, normal_image_states=32,
+    tests = (dict(synthetic_plan_comparisons=60, normal_scan_states=32,
+                  normal_state_plan_comparisons=192, refusal_cases=9) if palette else
+             dict(packet_cases=22, packet_plan_comparisons=110, normal_image_states=32,
                   normal_state_plan_comparisons=192, refusal_cases=9) if rle else
              dict(geometries=9, cost_models=2, cases=18, plan_comparisons=194, refusal_cases=8))
     tests['log_sha256'] = sha(test_log)
-    result = dict(scope=('Go矩形與未裁切RLE像素循環；圖片控制、裁切及鏡像等固定區塊仍保留，#49未全部完成' if rle else
+    result = dict(scope=('Go矩形、未裁切RLE像素及使用色號掃描；圖片控制、裁切及鏡像等固定區塊仍保留，#49未全部完成' if palette else
+                        'Go矩形與未裁切RLE像素循環；圖片控制、裁切及鏡像等固定區塊仍保留，#49未全部完成' if rle else
                          '首批Go矩形填色與相容續做；其他VGA固定區塊仍保留，#49未全部完成'),
                   program_commit=a.commit,
                   binary_sha256=sha(p/f'workplace/dosgolem/workplace/bin/pod-play-{stem}'),
@@ -187,6 +197,8 @@ def main():
     if rle:
         result['rle_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/native_rle.go')
         result['dispatch_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/effects.go')
+    if palette:
+        result['palette_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/native_palette.go')
     a.out.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({k: result[k] for k in ('algorithmic_plans', 'algorithmic_instructions', 'fixed_semantic_instructions', 'guest_files')}, ensure_ascii=False))
 

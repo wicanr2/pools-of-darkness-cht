@@ -283,3 +283,23 @@ SHA-256為`1926d07bb1c1e91594b6a388138e57b204d8efb327addc7cebf32d0dd7ec5818`，�
 固定[019-native-rle-runtime.json](019-native-rle-runtime.json)綁定上述來源、工具與正常驗收。
 重生使用`tools/native_fill_check.py --project . --family rle --commit <來源提交> --out <全新JSON>`，在Docker內執行；`--stage trace`只查機器串流，不代替完整正常路線。
 原始收據在`workplace/probe/draw-intercept-v1/native-rle-v1`與`workplace/probe/g9-hd/nativerle-{play,ui,save}-v1`，均不入Git。
+
+## 2026-10-26 Go使用色號掃描接入
+
+`48A1:4A67`屬4944的使用色號掃描，不能把4944誤稱為文字圖片常式。原檔offset4A67–4A71共11 bytes／四道指令，IDA9.4與Capstone5.0.3逐bytes一致。
+程式SHA-256為`3c8934166cf6cd8d1ecdf79eac51b0cb33bb1bb3e545b883578dcb85971e1b5a`；VGA.DRV輸入沿本研究前節。
+Go直接掃描線性畫面，依色號標記CS:1772表。每次重複寫入、完整暫存器、旗標及本模型時間保留；色盤I/O與淡出控制仍由原有邊界處理。
+
+60個合成計畫、32個真正中途狀態的192個計畫與九種拒絕通過獨立原版比較，先READY才接入。
+正常7400更新的完整CPU／RAM、全部像素／回掃／音訊／DOS事件、127檔與45份真正入口見證同原版。
+本次掃描新增209個已提交Go計畫／255968步，全部Go計畫89718個／2806373步，固定語意區塊另544319步。
+預算不足時保留原路徑，不能宣稱這次原版掃描的每一步均被替換。分類只涵蓋主機繪圖效果，不把普通遊戲CPU算作繪圖回退。
+
+四路DEMO、39對正常介面、6對正常另存B／冷讀B畫面通過，全部SAVE bytes相同，槽A五檔未改。非預期閃現0，封面998筆F2主動切換仍另列。
+產品來源`75113aca7f41999eb9e2fc8f2a886fddae8a3842`，Go1.24.13乾淨建置`d21dec5deb0aff6c556937febddae99aa3632a702cb332832df87070bbbbae98`。
+全門檻通過才原子切換pod-play，前版0a0fa8b保存在pod-play-nativerle，較早備份未動；776檔主題、譯文與字型未改。
+4944七組交錯、每組32次完整呼叫成本約原版1.79倍速度，含來源檢查、相容寫入與通知，未含Owner／視窗，未外推FPS；小型RAM函式未全部更快。
+
+固定[019-native-palette-runtime.json](019-native-palette-runtime.json)。重生沿同一`tools/native_fill_check.py`，選`--family palette`，仍須全新輸出與完整正常路線。
+原始收據在`workplace/probe/draw-intercept-v1/native-palette-v1`及`workplace/probe/g9-hd/nativepalette-{play,ui,save}-v1`。
+鏡像像素對原型另以804個合成及144個受控原圖計畫比較通過，三段50 bytes已逐bytes核對。規格025已READY，未在本次d21dec5接入，不外推正式鏡像完成。

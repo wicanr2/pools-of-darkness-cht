@@ -1,6 +1,6 @@
 # 025 直接攔截繪圖與前端命令
 
-狀態：既有固定區塊、字模、共享函式與單次RGB輸出一致性CONFORMED；#49限定Go矩形及RLE像素循環CONFORMED，使用色號掃描READY。全部Go繪圖演算法尚未完成，整體新增閘門DRAFT。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)、[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)。其他模式與未列路線不外推完成。
+狀態：既有固定區塊、字模、共享函式與單次RGB輸出一致性CONFORMED；#49限定Go矩形及RLE像素循環CONFORMED，使用色號掃描CONFORMED，鏡像像素對READY。全部Go繪圖演算法尚未完成，整體新增閘門DRAFT。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)、[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)。其他模式與未列路線不外推完成。
 
 使用者於2026-10-25要求完全攔截繪圖函數，避免先畫原版底圖再覆畫HD，並指定參考`/home/anr2/cht/mm3`。
 方向已授權；本規格先補本作輸出契約，未達READY的原型不接正式路徑。
@@ -223,7 +223,7 @@ DOSBoxCost為步數加控制／色號讀取迭代及word／byte像素迭代。�
 
 ### 48A1:4A67使用色號掃描的Go演算法
 
-狀態：READY，#49，2026-10-26。此為4944色盤處理中的資料掃描，色盤讀寫與淡出控制仍在既有邊界。
+狀態：CONFORMED，#49，2026-10-26。此為4944色盤處理中的資料掃描，色盤讀寫與淡出控制仍在既有邊界。
 原版VGA.DRV沿上節固定輸入，原檔offset4A67–4A71共11 bytes／四道指令，IDA9.4與Capstone5.0.3逐bytes相同。
 程式SHA-256為`3c8934166cf6cd8d1ecdf79eac51b0cb33bb1bb3e545b883578dcb85971e1b5a`，執行期入口`48A1:4A67`。
 
@@ -235,4 +235,23 @@ mode13h的Machine.Read8與Peek8同讀線性RAM，不載入平面latch；有讀�
 不把此小節稱為整個4944或全部色盤演算法重寫。未知模式、程式、方向、來源、越列、計數與預算不足保留原路徑。
 
 六種列寬、兩種成本、五種預算共60個合成原版比較，加32個真正中途狀態的192個比較及九種拒絕條件通過。
-以上原型尚未加入產品分流；READY後才接入，正常事件、畫面及存讀檔未驗前不切正式版本。
+以上原型先達READY才接入，完整事件、四路DEMO、39對介面及6對真存讀檔通過後原子啟用。
+乾淨Go1.24.13產品來源`75113aca7f41999eb9e2fc8f2a886fddae8a3842`，正式SHA-256為`d21dec5deb0aff6c556937febddae99aa3632a702cb332832df87070bbbbae98`。
+正常路線新增209個Go掃描計畫／255968步；完整分類、來源雜湊與啟用狀態見[019-native-palette-runtime.json](../re/019-native-palette-runtime.json)。
+
+### 鏡像圖片反向像素對的Go演算法
+
+狀態：READY，#49，2026-10-26。涵蓋未裁切、右側裁切後及左側尾段的像素對複製，不外推整個鏡像解碼器。
+執行期起點為`48A1:6C9E／6D42／6DF3`，每段50 bytes／25道指令，IDA9.4與Capstone5.0.3逐bytes相同。
+三段原檔bytes完全相同，SHA-256皆為`71ffb9fb40b99437973306c9ef582b52f24b0014fb32e1feed59703a7ce12575`。
+原檔offset同各IP；執行期實體基底48A10，不能把offset當實體位址。
+
+已證實：DS:SI是普通RAM像素，ES:DI是A000目的像素對的左位址，CX為剩餘word數。
+Go直接把每對來源像素反序，按目的從右到左產生word COPY；保留word內先低位址再高位址的寫入順序。
+四組展開位置只決定相容事件的原IP及步數；像素計算不派送opcode或指令效果器。預算內只做完整像素對。
+限定DF=0、1≤CX≤64、來源不跨16位段界且低於A0000，目的只在同一320像素列且不超64000；未知條件拒絕。
+保留AX最後反序word、SI前進、DI反向及CX減少、DEC旗標與DI減法的CF。包圍此段的PUSHF／POPF仍由原有邊界處理。
+
+每對六步、一般成本22；最後條件跳轉加5成本，每四對未完另有一步及7成本。DOSBoxCost為步數加每對一次來源讀取迭代。
+804個合成獨立原版計畫比較與九種拒絕通過；另以真正原圖資料、受控鏡像旗標及x=0／7／−7取得24個中途狀態，三條路徑各八份、144個比較通過。
+這些改旗標／座標的案例明列為受控原版呼叫，不當正常玩家證據。原型至此達READY，接產品後仍須正常事件、介面及存讀檔回歸。
