@@ -32,18 +32,19 @@ def main():
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--stage', choices=('trace', 'full'), default='full')
     ap.add_argument('--commit', required=True)
-    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output'), default='fill')
+    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip'), default='fill')
     a = ap.parse_args()
     assert not a.out.exists(), '保留既有收據，請另定輸出檔名'
     p = a.project
     rle = a.family != 'fill'
-    output = a.family == 'output'
-    row = a.family in ('row', 'output')
-    setup = a.family in ('setup', 'row', 'output')
-    color = a.family in ('color', 'setup', 'row', 'output')
-    fade = a.family in ('fade', 'color', 'setup', 'row', 'output')
-    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output')
-    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output')
+    clip = a.family == 'clip'
+    output = a.family in ('output', 'clip')
+    row = a.family in ('row', 'output', 'clip')
+    setup = a.family in ('setup', 'row', 'output', 'clip')
+    color = a.family in ('color', 'setup', 'row', 'output', 'clip')
+    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip')
+    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip')
+    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip')
     stem = 'native'+a.family
     root = p/f'workplace/probe/draw-intercept-v1/native-{a.family}-v1'
     original_root = p/'workplace/probe/draw-intercept-v1/native-fade-v1' if color else root
@@ -117,7 +118,7 @@ def main():
         assert hashlib.sha256(code.read_bytes()[0x2aa8:0x2ac3]).hexdigest() == '7134f5f3fbaf2adf007afa01632ff5ec980bd4c127a095defaa954fd831b4801'
         for line in ('RGB job original comparisons 192', 'RGB job original entry comparisons 6'):
             assert line in test_log.read_text(), line
-        core_log = p/'workplace/dosgolem/workplace/native-output-core-tests.log'
+        core_log = p/f'workplace/dosgolem/workplace/native-{a.family}-core-tests.log'
         assert '\nPASS\n' in core_log.read_text()
     elif row:
         assert hashlib.sha256(code.read_bytes()[0x6850:0x689e]).hexdigest() == '1c4ab9672accc6ec8dcd86e8703b26cf877efa2ca54e8afa5268d2c5fed7a62b'
@@ -163,6 +164,20 @@ def main():
     else:
         assert '18 independent plan comparisons 194' in test_log.read_text()
     assert '\nPASS\n' in test_log.read_text()
+    if clip:
+        for lo, hi, expected in (
+            (0x6733, 0x6832, 'd9ebc163f106be514229472090f2497771df8e36ab5aeca61681f758d32baa54'),
+            (0x6832, 0x6850, 'a8b2dbb0dbf04e34cca2aca89962a68329389b7bdfa17bf485b5feba3fec1383'),
+            (0x691c, 0x6a0c, 'e6e2c71563b3b8b991f450d0c1184b02acfd37ec8245bff32009f7d03ac1f23d'),
+            (0x6a0c, 0x6e63, 'e95a2f6e11b374a9faa3b42a3936665692a05d289ce55e5718c2e58179c43048'),
+        ):
+            assert hashlib.sha256(code.read_bytes()[lo:hi]).hexdigest() == expected
+        for marker in ('mirror full packet original comparisons 160', 'mirror clipped packet original comparisons 1440',
+                       'controlled flip state comparisons 266 states 133', 'flip geometry original comparisons 388',
+                       'source/surface initialization original comparisons 20',
+                       'surface chain / frame address original comparisons 96'):
+            assert marker in test_log.read_text(), marker
+        assert re.search(r'controlled whole mirror original cases 48 committed mirror plans [1-9]\d*', test_log.read_text())
     tests = (dict(rgb_synthetic_plan_comparisons=192, isolated_original_entry_plan_comparisons=6,
                   refusal_cases=14, device_comparison='CPU/full RAM/VGA/DAC/Ports/ordered PortLog values, steps and model cycles',
                   initial_dac_write_phases=[0, 1, 2], generic_core_refusal_cases=15,
@@ -185,6 +200,12 @@ def main():
                   normal_state_plan_comparisons=192, refusal_cases=9) if rle else
              dict(geometries=9, cost_models=2, cases=18, plan_comparisons=194, refusal_cases=8))
     tests['log_sha256'] = sha(test_log)
+    if clip:
+        tests['image_control'] = dict(forward_original_comparisons=942, forward_refusals=26,
+            mirror_packet_original_comparisons=160, clipped_mirror_original_comparisons=1440,
+            flip_geometry_original_comparisons=388, controlled_flip_states=133, controlled_state_original_comparisons=266,
+            cpu_model_original_comparisons=12, mirror_refusals=17, exhausted_clip_original_comparisons=8,
+            initialization_original_comparisons=116, initialization_refusals=16, controlled_whole_image_cases=48)
     result = dict(scope=('Go完整RGB工作交VGA服務，以有界調色盤命令保留埠時序，保留既有Go圖像演算法；其他裁切／鏡像控制及固定區塊仍保留，#49未全部完成' if output else
                         'Go圖片列標頭、上下界判斷與列位置，保留既有Go圖像演算法；其他裁切／鏡像控制及固定區塊仍保留，#49未全部完成' if row else
                         'Go使用色清單、目標RGB與誤差陣列準備，保留既有Go圖像演算法；其餘控制、硬體I/O及固定區塊仍保留，#49未全部完成' if setup else
@@ -210,6 +231,8 @@ def main():
                   digest=new['Digest'], source_reports={str(d.relative_to(p)): sha(d/'calls.json') for d in (previous, current)},
                   benchmark=read(root/'function-cost-v1.json'),
                   benchmark_scope='seven interleaved groups, 32 complete calls each, two-CPU Docker; memory-only entry fixtures with freshly initialized VGA; 4944 is not full-state normal fade timing; includes source guards, compatibility writes and notifications; not FPS')
+    if clip:
+        result['scope'] = 'Go圖片來源／表面初始化、列控制、正反向RLE、水平／垂直翻轉與裁切及ABI返回；其他VGA固定區塊仍保留，#49未全部完成'
     result['direct_witness_count'] = len(witnesses)
     result['missing_direct_entries'] = [dict(cs=cs, ip=ip) for cs, ip in sorted(missing_entries)]
     result['direct_witness_scope'] = 'BeforeStep does not visit the three entries inside fused fixed plans; witnesses above are only the directly observed subset'
@@ -357,6 +380,13 @@ def main():
                         any(base <= int(key.split(':')[1], 16) < base+50 for base in (0x6c9e, 0x6d42, 0x6df3))}
         result['normal_machine_mirror_by_exit'] = mirror_exits
         result['mirror_normal_player_scope'] = 'Only exits explicitly recorded here are observed; controlled calls are not normal player evidence'
+    if clip:
+        module = p/'workplace/dosgolem'
+        result['image_control_sources'] = {name: sha(module/'apps/pod/drawblocks'/name) for name in
+            ('native_image_clip.go', 'native_image_flip.go', 'native_image_init.go',
+             'image_clip_cases_test.go', 'image_flip_cases_test.go', 'image_init_cases_test.go', 'native_mirror_test.go')}
+        result['cpu_model_query_source_sha256'] = sha(module/'session/observer.go')
+        result['native_go_source_review']['image_control_scope'] = 'Typed surface/frame lookup and Go span arithmetic decode, clip and reverse asset packets; CPU model query only normalizes ABI flags. No CPU.Step, opcode dispatcher or effect helper in asset geometry/pixel generation.'
     if fade:
         result['fade_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/native_fade.go')
         result['fade_entry_table_sha256'] = sha(original_root/'fade-entries.json')

@@ -2,7 +2,7 @@
 
 日期：2026-10-25／26。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)。狀態：本作VGA繪圖、字模、共享搬移／填色／清零及單次RGB CONFORMED。
 
-## 目前狀態
+## 初期基準
 
 | 項目 | 本輪基準 |
 |---|---|
@@ -477,3 +477,28 @@ Go直接解析成RGB工作，交通用HostPaletteWrite；通用層只支援這�
 
 下一個窄任務是689E圖片區塊標頭的水平裁切分支與691C銜接，先補來源、幾何與ABI證據；未READY不接產品。
 2A9E／2AA3回掃等待沿既有VGA平台契約，不開逐週期硬體RE。其他圖片裁切、鏡像外層、初始化與未驗入口仍保留，#49保持開啟。
+
+## 2026-10-26 Go圖片來源、裁切與翻轉接入
+
+本批完成前節列出的圖片窄任務，來源為固定SHA的VGA.DRV及既有IDA9.4匯出，位址仍以原檔offset和執行期CS:IP分列。
+6733先用Go解析表面父鏈及畫格索引，6832／689E處理列標記與左右裁切，691C及翻轉分支直接解碼RLE並計算可見像素。
+6A0C以圖頭寬高及旗標決定末列／末欄，水平鏡像由Go反排每對像素；ABI堆疊、旗標、返回及有序寫入另行保留。
+不以CPU.Step、opcode派送或固定指令效果器生成圖片。來源與幾何未知、別名或不足事件預算時，仍保留原路徑。
+
+前向控制與裁切942次、翻轉與鏡像2254次、三種CPU機型12次、零可見數八次及初始化116次獨立原版計畫比較通過。
+另有48個受控完整原圖呼叫，前向26種、鏡像17種及初始化16種拒絕；未知機型與短預算另驗。受控呼叫改變位置／翻轉測試參數，不當正常玩家路徑證據；兩種成本、CPU、完整RAM、旗標、逐筆像素及模型時間各自比較。
+這些只是已驗資料與模型條件，未觀測的來源、畫格及模式不外推。
+
+原型查明三項差異，失敗資料保留在clone的workplace。數個條件跳轉的成本先由原版逐段核對後訂正；鏡像literal的零可見數由6DEF直接跳到6E29，仍輸出一個byte；圖片返回的40成本不能套用41AF已扣除分支成本後的35增量。
+StepView新增唯讀CPUModel供鏡像PUSHF／POPF恢復保留位元，沿436的期限與token；未知機型拒絕。三種機型及過期視圖、獨立原版旗標恢復均通過。
+
+程式`ed004f9c49fb405290e3919fdc0fac29882c787c`已推本專案dosgolem/pod。Go1.24.13候選為乾淨來源，SHA-256 `994d498c735e232819819ade8c138cebb7799ccf80d2353519d8e08d2a80434b`。
+正常新增24個來源初始化、24個返回及635個列標記計畫，共3622步。全部Go計畫110750個／3375445步，固定語意區塊20829步；全部遊戲虛擬步數仍712250000。
+完整CPU／RAM、有序像素3343240筆、回掃8633筆、音訊79012筆、DOS1827984筆及127檔同獨立原版；44份直接見證與三份分割補證同47份原版，分類不混算。
+
+四路DEMO、39對介面及六對真存讀檔、全部十個SAVE檔相同，槽A五檔未改。非預期閃現0，既有998筆F2切換另列；776檔主題、字型與譯文未改。
+全部驗收通過後原子啟用994d498，前版874d5d8以pod-play-nativeoutput保留。固定[019-native-clip-runtime.json](019-native-clip-runtime.json)保存來源、比較範圍及啟用綁定。
+重生入口是Docker內的`tools/native_fill_check.py --family clip`，原始收據在`workplace/probe/draw-intercept-v1/native-clip-v1`及`workplace/probe/g9-hd/nativeclip-{play,ui,save}-v1`。
+
+本批另在獨立研究副本解出4A72／4A31色盤列推進及4B55循環控制，分別212與72次比較、18與14種拒絕通過，規格025已READY，尚未接產品。
+剩餘固定區塊主要為色盤其他外層、表面初始化、回掃／ABI及短預算續行。色盤標準沿[FreeVGA色彩介面](https://www.scs.stanford.edu/10wi-cs140/pintos/specs/freevga/vga/colorreg.htm)，回掃沿既有VGA服務，不增加逐週期硬體考古；#49仍開啟。

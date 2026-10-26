@@ -1,5 +1,7 @@
 # 研究索引
 
+- [Go圖片來源、裁切與翻轉](019-draw-interception.md#2026-10-26-go圖片來源裁切與翻轉接入)：#49，[固定收據](019-native-clip-runtime.json)。完整正常事件、四路DEMO、39對介面及六對新存讀檔通過並啟用；鏡像另有受控原圖比較，固定語意區塊仍20829步，全部Go閘門DRAFT。
+
 - [Go完整RGB輸出](019-draw-interception.md#2026-10-26-go完整rgb輸出接入)：#49，[固定收據](019-native-output-runtime.json)。198次原版隔離比較、14種拒絕、通用15種拒絕及完整正常回歸通過，已啟用；固定語意區塊仍24451步，全部Go閘門DRAFT。
 
 - [Go圖片列控制](019-draw-interception.md#2026-10-26-go圖片列控制接入)：#49，[固定收據](019-native-row-runtime.json)。558個獨立原版計畫、22種拒絕及完整正常回歸通過，已啟用；固定語意區塊仍100421步，全部Go閘門DRAFT。
