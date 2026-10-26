@@ -58,6 +58,12 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 	if p := planSmallCall(v, budget); p != nil {
 		return p
 	}
+	if p := planRegion(v, budget); p != nil {
+		return p
+	}
+	if p := planPoint(v, budget); p != nil {
+		return p
+	}
 	if p := planWait(v, budget); p != nil {
 		return p
 	}
@@ -213,7 +219,7 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 func algorithmBoundary(cs, ip uint16) bool {
 	if cs == 0x48a1 {
 		switch ip {
-		case 0x4b0b, 0x4b8d, 0x4b91, 0x4bc6, 0x4944, 0x4971, 0x4a91, 0x4aa4, 0x4aad, 0x4abd, 0x4ae3, 0x4af6:
+		case 0x3338, 0x2b10, 0x2c04, 0x4b0b, 0x4b8d, 0x4b91, 0x4bc6, 0x4944, 0x4971, 0x4a91, 0x4aa4, 0x4aad, 0x4abd, 0x4ae3, 0x4af6:
 			return true
 		case 0x2aeb, 0x4a31, 0x4a72, 0x4b55:
 			return true
