@@ -517,3 +517,16 @@ StepView新增唯讀CPUModel供鏡像PUSHF／POPF恢復保留位元，沿436的�
 七組交錯完整呼叫夾具中6733約1.77倍、4944約1.65倍原版，小型RAM呼叫仍可能較慢。4944夾具是新建VGA，不能代表完整正常淡出耗時，亦不外推FPS。
 
 後續單點2B10／2C04在未接產品的研究區完成456次原版比較及26種拒絕，規格READY；3338範圍填色原型80次比較通過，仍DRAFT。未觀測入口、其他固定與短預算續行仍待接管，#49保持開啟。
+
+## 2026-10-26 Go單點與指定範圍矩形接入
+
+原檔VGA.DRV offset2B10／2C04為單點寫入／讀回，3338為指定範圍矩形。IDA9.4輸入及位址基準同前節；三份函式指紋與範圍見規格025，不改原名或運算元。
+Go先解表面及父鏈，以選取表面裁切，再按根表面的原點與列寬計算像素。矩形先取有序座標的區間交集，再逐列發FILL；範圍外點讀回FFFF，寫入不產生像素。ABI、scratch、有序寫入及模型成本另存，像素生成不派送opcode或固定指令效果器。
+未知程式、表面、模式、堆疊／來源別名或不足預算拒絕。指定矩形尚以完整計畫為原子單位，反向座標拒絕，保留原路徑。
+
+點384個邊界／旗標／成本計畫及72個父鏈／偏移計畫、矩形80個邊界及12個父鏈計畫同原版，另有26／15種拒絕。提交層各16次整台SaveState比較一致，矩形另驗RunLimit不足不改狀態；核心、session、pod、drawblocks、前端與go vet通過。
+程式ac2ec6fbf57ca5424471151d7fdab48a8c6a1c6d已推dosgolem/pod，乾淨Go1.24.13候選6e6202864d80223c09d8c8ad2540fc948c2d9c362de734cb3d40eb7df8c70b1f。正常機器、四路DEMO、39對介面、六對新存B／冷讀B及十個SAVE檔同基準，槽A五檔未改；非預期閃現0，998筆F2切換另列，776檔主題與34張README直接圖片維持。
+新三個出口在正常DEMO未觀測，111710個Go計畫／3398106步與固定2576步維持。正式46份直接加一份分割補證同原版47份；新增路徑的正確性限受控原版入口，不寫成正常玩家覆蓋。
+全部驗收通過後原子啟用6e62028，前版b369dea以pod-play-nativecontrol保留。[固定收據](019-native-primitive-runtime.json)綁定來源、工具與啟用；重生入口是Docker內tools/native_fill_check.py --family primitive，原始收據在workplace/probe/draw-intercept-v1/native-primitive-v1及workplace/probe/g9-hd/nativeprimitive-{play,ui,save}-v1。
+
+並行研究的矩形逐列續行已通過92個計畫、48個前綴與48個完整受控原版呼叫、15種拒絕，共858個Go計畫。完整CPU／RAM與SaveState bytes一致，規格READY，尚未接產品。其他固定與未驗入口仍待接管，#49保持開啟。

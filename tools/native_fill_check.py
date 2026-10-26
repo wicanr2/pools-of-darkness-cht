@@ -32,20 +32,21 @@ def main():
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--stage', choices=('trace', 'full'), default='full')
     ap.add_argument('--commit', required=True)
-    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control'), default='fill')
+    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive'), default='fill')
     a = ap.parse_args()
     assert not a.out.exists(), '保留既有收據，請另定輸出檔名'
     p = a.project
     rle = a.family != 'fill'
-    control = a.family == 'control'
-    clip = a.family in ('clip', 'control')
-    output = a.family in ('output', 'clip', 'control')
-    row = a.family in ('row', 'output', 'clip', 'control')
-    setup = a.family in ('setup', 'row', 'output', 'clip', 'control')
-    color = a.family in ('color', 'setup', 'row', 'output', 'clip', 'control')
-    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip', 'control')
-    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control')
-    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control')
+    primitive = a.family == 'primitive'
+    control = a.family in ('control', 'primitive')
+    clip = a.family in ('clip', 'control', 'primitive')
+    output = a.family in ('output', 'clip', 'control', 'primitive')
+    row = a.family in ('row', 'output', 'clip', 'control', 'primitive')
+    setup = a.family in ('setup', 'row', 'output', 'clip', 'control', 'primitive')
+    color = a.family in ('color', 'setup', 'row', 'output', 'clip', 'control', 'primitive')
+    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive')
+    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive')
+    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive')
     stem = 'native'+a.family
     root = p/f'workplace/probe/draw-intercept-v1/native-{a.family}-v1'
     original_root = p/'workplace/probe/draw-intercept-v1/native-fade-v1' if color else root
@@ -445,6 +446,27 @@ def main():
         result['native_go_source_review']['palette_control_scope'] = 'Typed surface/color arrays, index cursors and RGB jobs; retrace is a two-state bounded data loop using a readonly VGA snapshot; no CPU.Step, guest-opcode dispatch or generated effect block in accepted data processing.'
         result['hardware_contract']['status_source'] = 'https://www.scs.stanford.edu/10wi-cs140/pintos/specs/freevga/vga/extreg.htm'
         result['hardware_contract']['status_scope'] = 'Existing mode13 input-status approximation reused; no physical-cycle timing claim'
+    if primitive:
+        for marker in ('point independent original comparisons 384', 'point surface original comparisons 72',
+                       'point refusals 26', 'point committed machine original comparisons 16',
+                       'region original comparisons 80', 'region parent comparisons 12',
+                       'region refusals 15', 'region committed machine original comparisons 16'):
+            assert marker in test_log.read_text(), marker
+        result['scope'] = 'Go單點寫入／讀回與有序座標矩形區間填色；新增路徑限受控原版比較，保留正常原版事件與既有Go演算法，其他固定及未驗路徑仍保留，#49未全部完成'
+        names=('native_point.go','native_point_test.go','point_commit_test.go',
+               'native_region.go','native_region_test.go','region_commit_test.go')
+        result['primitive_sources']={name:sha(module/'apps/pod/drawblocks'/name) for name in names}
+        for name in ('native_point.go','native_region.go'):
+            source=(module/'apps/pod/drawblocks'/name).read_text()
+            assert '.Step(' not in source and 'effect{' not in source and 'b.run(' not in source
+        result['prototype_and_original_tests']['primitives']=dict(
+            point_original_comparisons=456, point_refusals=26, point_committed_machine_comparisons=16,
+            region_original_comparisons=92, region_refusals=15, region_committed_machine_comparisons=16,
+            scope='Controlled source-code entry states, full CPU/RAM/ordered writes/model-time; complete SaveState bytes after commit; region also rejects insufficient run budget without mutation')
+        result['normal_machine_primitive_by_exit']={key:counts.get(key,[0,0]) for key in
+            ('48a1:2c03','48a1:2cfb','48a1:3469')}
+        result['primitive_normal_player_scope']='Controlled whole routines validate new inputs; counts above identify which exits, if any, occur in this fixed normal DEMO. No new normal-route coverage is inferred.'
+        result['native_go_source_review']['primitive_scope']='Point coordinates are clipped to the selected surface and indexed through root origin/stride; rectangle pixels are clipped Go intervals and row spans. Source IP tables only preserve ABI/scratch notices, not guest opcode dispatch.'
     a.out.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({k: result[k] for k in ('algorithmic_plans', 'algorithmic_instructions', 'fixed_semantic_instructions', 'guest_files')}, ensure_ascii=False))
 

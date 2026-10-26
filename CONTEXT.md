@@ -46,9 +46,10 @@
 
 ## 待定
 
-目前工作：#49色盤列控制、表面與工作陣列初始化、RGB讀取、回掃兩狀態等待及階段交接已完成整批驗收並啟用。單點寫入／讀回已在研究區通過456個獨立原版比較及26種拒絕，規格READY；指定範圍矩形填色原型已通過80個比較，仍DRAFT。
-最新產品來源`15fd65ad9510c0cea4dd852fdcc288c05d6c3f9e`，正式執行檔`b369deaad3a8dcd253a0083ee02519dd6401d84bcea371a14633f5422fe2c7bd`。前版994d498以pod-play-nativeclip保留，較早備份及776檔主題未改。
-Go直接處理圖像與色盤資料；回掃使用既有VGA服務及有界快照，不新增硬體逐週期假說。完整事件、四路DEMO、39對介面及六對新存B／冷讀B同基準，固定[019-native-control-runtime.json](docs/re/019-native-control-runtime.json)。其他固定區塊與未驗入口仍待Go演算法；鏡像限受控原圖，不當作正常遭遇。
+目前工作：#49單點寫入／讀回及指定範圍矩形已接入並通過整批驗收，新增路徑限受控原版比較。逐列矩形續行已在獨立研究副本通過92個列計畫、48個前綴、48個完整原版呼叫及15種拒絕，規格READY，尚未接產品。
+最新產品來源`ac2ec6fbf57ca5424471151d7fdab48a8c6a1c6d`，正式執行檔`6e6202864d80223c09d8c8ad2540fc948c2d9c362de734cb3d40eb7df8c70b1f`。前版b369dea以pod-play-nativecontrol保留，較早備份及776檔主題未改。
+單點以Go座標與表面原點／列寬讀寫像素，矩形以Go區間交集與橫向span填色；ABI及scratch另保留。456個點計畫、92個矩形計畫、41種拒絕與32個整台機器提交比較通過。新入口在目前DEMO未觀測，不把受控測試寫成正常玩家覆蓋。
+完整正常CPU／RAM與事件、四路DEMO、39對介面及六對新存B／冷讀B同基準，固定[019-native-primitive-runtime.json](docs/re/019-native-primitive-runtime.json)。其他固定區塊與未驗入口仍待Go演算法；指定矩形目前只接受能容納完整計畫的預算，逐列續行留待下一批。
 
 HD最新完成批次：[#48](https://github.com/wicanr2/pools-of-darkness-cht/issues/48)補齊DUNGCOM第5組地形。
 23張新手繪通過數值、目視與來源回退診斷；已驗@3／@13沿用，第22格是純色，保留原色，共25張非純色地形。
@@ -57,14 +58,14 @@ HD最新完成批次：[#48](https://github.com/wicanr2/pools-of-darkness-cht/is
 其他地下城圖組、野外地形及未觀測正常遭遇仍未完成，不重新開啟G6探索。
 
 繪圖目前是混合實作。#45–#47已完成像素命令、限定函式及固定Go區塊的替換與一致性驗收；使用者本輪要求的「全部以Go繪圖演算法處理」尚未達成，由[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)追蹤。
-字模、限定共享搬移／填色／清零、VGA限定矩形、圖片來源與列控制、正反向RLE、裁切及翻轉、使用色號掃描與清單、目標RGB與誤差初始化、淡出色差／插值、逐色RGB工作準備、完整RGB輸出／讀取、色盤初始化／列控制／階段交接、回掃兩狀態等待與畫面合成有Go演算法；其餘VGA及保守退回主要仍用1432個固定Go區塊，按原x86的暫存器、IP、旗標與分支語意運算。
+字模、限定共享搬移／填色／清零、VGA限定矩形、單點寫入／讀回、指定範圍矩形、圖片來源與列控制、正反向RLE、裁切及翻轉、使用色號掃描與清單、目標RGB與誤差初始化、淡出色差／插值、逐色RGB工作準備、完整RGB輸出／讀取、色盤初始化／列控制／階段交接、回掃兩狀態等待與畫面合成有Go演算法；其餘VGA及保守退回主要仍用1432個固定Go區塊，按原x86的暫存器、IP、旗標與分支語意運算。
 成功區塊跳過通用x86解碼與CPU.Step，但不能以此稱為全部原生Go繪圖；來源或預算失配仍回原x86。
-先前2c58d1d的[來源分類查核](docs/re/019-native-go-audit.json)保留為歷史基準；新15fd65a已有上述Go演算法與Algorithmic分類，沒有宣稱其餘VGA也完成。
+先前2c58d1d的[來源分類查核](docs/re/019-native-go-audit.json)保留為歷史基準；新ac2ec6f已有上述Go演算法與Algorithmic分類，沒有宣稱其餘VGA也完成。
 原盤點的VGA驅動與共享常式共90項函式／helper、1432區塊仍是來源索引，不能當作Go演算法完成數。三支共享函式、8×8字模與單次RGB保留。
 最新機器DEMO的111710個Go演算法計畫共3398106個虛擬指令，固定語意區塊另2576個。翻轉正常計畫0，48個受控完整圖片呼叫另列。此分類不把普通遊戲CPU指令算成繪圖回退，也不冒稱全遊戲覆蓋率。
 2AA8完整工作已接手，不足預算仍保留舊邊界。2A90及續行由Go等待狀態機接手，沿既有VGA平台模型，不新增逐週期硬體RE。
 完整事件、CPU／RAM與DOS檔案一致；四路DEMO、讀檔／片頭／封面39對畫面、另存B後冷讀6對畫面與全部存檔相同，槽A五個檔案未改。
-已切換正式入口，最新固定收據為[019-native-control-runtime.json](docs/re/019-native-control-runtime.json)；舊[019-all-render-runtime.json](docs/re/019-all-render-runtime.json)保留。規格025及通用436的上述已列子集CONFORMED，鏡像限受控呼叫，全部Go演算法閘門仍DRAFT。
+已切換正式入口，最新固定收據為[019-native-primitive-runtime.json](docs/re/019-native-primitive-runtime.json)；舊[019-all-render-runtime.json](docs/re/019-all-render-runtime.json)保留。規格025及通用436的上述已列子集CONFORMED，鏡像限受控呼叫，全部Go演算法閘門仍DRAFT。
 入口見證：正式46份直接見證與一份分割補證同原版47份。原版2772仍在固定計畫內；更早的42／44份紀錄與勘誤保留於研究019，歷史JSON未改。
 已列RGB工作及鏡像旗標恢復以外的I/O、POPF、未驗寬指令、B000及其他模式保留原路徑；GPU／SIMD、動畫HD、片尾及未列玩家路線不外推完成。小型RAM呼叫未全部更快，成對成本與FPS限制見[研究019](docs/re/019-draw-interception.md#47-vga繪圖接管完成)。
 
