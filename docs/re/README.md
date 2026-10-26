@@ -1,5 +1,7 @@
 # 研究索引
 
+- [Go色盤資料流程與回掃等待](019-draw-interception.md#2026-10-26-go色盤資料流程與回掃等待接入)：#49，[固定收據](019-native-control-runtime.json)。完整事件、四路DEMO、39對介面及六對存讀檔通過並啟用；固定語意區塊2576步，單點繪圖READY，全部Go閘門仍DRAFT。
+
 - [Go圖片來源、裁切與翻轉](019-draw-interception.md#2026-10-26-go圖片來源裁切與翻轉接入)：#49，[固定收據](019-native-clip-runtime.json)。完整正常事件、四路DEMO、39對介面及六對新存讀檔通過並啟用；鏡像另有受控原圖比較，固定語意區塊仍20829步，全部Go閘門DRAFT。
 
 - [Go完整RGB輸出](019-draw-interception.md#2026-10-26-go完整rgb輸出接入)：#49，[固定收據](019-native-output-runtime.json)。198次原版隔離比較、14種拒絕、通用15種拒絕及完整正常回歸通過，已啟用；固定語意區塊仍24451步，全部Go閘門DRAFT。

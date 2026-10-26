@@ -502,3 +502,18 @@ StepView新增唯讀CPUModel供鏡像PUSHF／POPF恢復保留位元，沿436的�
 
 本批另在獨立研究副本解出4A72／4A31色盤列推進及4B55循環控制，分別212與72次比較、18與14種拒絕通過，規格025已READY，尚未接產品。
 剩餘固定區塊主要為色盤其他外層、表面初始化、回掃／ABI及短預算續行。色盤標準沿[FreeVGA色彩介面](https://www.scs.stanford.edu/10wi-cs140/pintos/specs/freevga/vga/colorreg.htm)，回掃沿既有VGA服務，不增加逐週期硬體考古；#49仍開啟。
+
+## 2026-10-26 Go色盤資料流程與回掃等待接入
+
+沿固定VGA.DRV及IDA9.4原始位址，Go直接解析表面父鏈、掃描游標、來源色號清單與RGB陣列，建立有界RGB讀取工作，並以兩個等待狀態沿既有VGA模型等待回掃。幾何與資料迴圈不派送opcode或固定指令效果器，ABI、旗標、有序scratch與模型時間另存。
+通用436新增受期限約束的PaletteRGB／VGAStatusSnapshot快照，以及有界RGB／3DA讀取，仍使用既有In8／Out8服務。只開放列出的mode13h線性表面與模型；未知快照、來源、模式、別名或事件預算拒絕。硬體模型沿FreeVGA契約及既有近似，不聲稱實機逐週期一致。
+
+研究與產品測試涵蓋色盤列212次、循環216次、RGB36次、等待392次、來源清單351次、初始化42次、階段交接144次獨立比較；快照另240次服務比較。核心、session、pod、drawblocks、前端及go vet通過。
+原版正常循環會由2A90令ES=0040，4B55不讀ES，故移除不必要的ES=CS限制前先以三種ES重驗。等待初始化31成本含段載入及前綴；RGB讀取只令三次In8增加portTicks，選色Out8不加。研究失敗及修正log保留，沒有修改原硬體服務來迎合測試。
+
+程式來源15fd65ad9510c0cea4dd852fdcc288c05d6c3f9e，乾淨Go1.24.13候選b369deaad3a8dcd253a0083ee02519dd6401d84bcea371a14633f5422fe2c7bd。正式正常重播為111710個Go計畫／3398106步，固定區塊2576步；完整CPU、RAM、3343240筆像素、8633次回掃、79012筆音訊、1827984筆DOS與127檔同原版。
+正式46份直接入口與一份分割補證同47份原版。四路DEMO、39對介面及六對新存B／冷讀B、十個SAVE檔同基準，槽A五檔未改；非預期閃現0，998筆F2主動切換另列，776檔主題與README的34張直接圖片保持。
+全部通過後原子啟用b369dea，前版994d498以pod-play-nativeclip保留。[固定收據](019-native-control-runtime.json)綁定來源、程式、工具、事件與啟用；重生入口是Docker內的tools/native_fill_check.py --family control，原始資料在workplace/probe/draw-intercept-v1/native-control-v1及workplace/probe/g9-hd/nativecontrol-{play,ui,save}-v1。
+七組交錯完整呼叫夾具中6733約1.77倍、4944約1.65倍原版，小型RAM呼叫仍可能較慢。4944夾具是新建VGA，不能代表完整正常淡出耗時，亦不外推FPS。
+
+後續單點2B10／2C04在未接產品的研究區完成456次原版比較及26種拒絕，規格READY；3338範圍填色原型80次比較通過，仍DRAFT。未觀測入口、其他固定與短預算續行仍待接管，#49保持開啟。

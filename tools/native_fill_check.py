@@ -32,19 +32,20 @@ def main():
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--stage', choices=('trace', 'full'), default='full')
     ap.add_argument('--commit', required=True)
-    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip'), default='fill')
+    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control'), default='fill')
     a = ap.parse_args()
     assert not a.out.exists(), '保留既有收據，請另定輸出檔名'
     p = a.project
     rle = a.family != 'fill'
-    clip = a.family == 'clip'
-    output = a.family in ('output', 'clip')
-    row = a.family in ('row', 'output', 'clip')
-    setup = a.family in ('setup', 'row', 'output', 'clip')
-    color = a.family in ('color', 'setup', 'row', 'output', 'clip')
-    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip')
-    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip')
-    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip')
+    control = a.family == 'control'
+    clip = a.family in ('clip', 'control')
+    output = a.family in ('output', 'clip', 'control')
+    row = a.family in ('row', 'output', 'clip', 'control')
+    setup = a.family in ('setup', 'row', 'output', 'clip', 'control')
+    color = a.family in ('color', 'setup', 'row', 'output', 'clip', 'control')
+    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip', 'control')
+    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control')
+    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control')
     stem = 'native'+a.family
     root = p/f'workplace/probe/draw-intercept-v1/native-{a.family}-v1'
     original_root = p/'workplace/probe/draw-intercept-v1/native-fade-v1' if color else root
@@ -70,7 +71,7 @@ def main():
     assert new['Digest']['Steps'] == 712250000 and new['VideoCount'] == 3343240
     assert tree(previous/'save') == tree(current/'save')
     witnesses = []
-    missing_entries = {(0x48a1, ip) for ip in (0x2772, 0x2aeb, 0x2a90)}
+    missing_entries = {(0x48a1, ip) for ip in ((0x2772,) if control else (0x2772, 0x2aeb, 0x2a90))}
     for field in ('Captures', 'DrawCaptures'):
         if field == 'Captures':
             assert len(new[field]) == len(old[field]), ('entry witness count', field)
@@ -235,7 +236,7 @@ def main():
         result['scope'] = 'Go圖片來源／表面初始化、列控制、正反向RLE、水平／垂直翻轉與裁切及ABI返回；其他VGA固定區塊仍保留，#49未全部完成'
     result['direct_witness_count'] = len(witnesses)
     result['missing_direct_entries'] = [dict(cs=cs, ip=ip) for cs, ip in sorted(missing_entries)]
-    result['direct_witness_scope'] = 'BeforeStep does not visit the three entries inside fused fixed plans; witnesses above are only the directly observed subset'
+    result['direct_witness_scope'] = 'BeforeStep omits the entries listed in missing_direct_entries inside fused plans; witnesses above are only the directly observed subset'
     if fade:
         manifest = read(root/'observed-build.json')
         assert manifest['program_commit'] == a.commit
@@ -268,7 +269,7 @@ def main():
                 assert row == sources[filename]
                 assert sha(observed_root/filename) == sha(previous/filename) == row['MemorySHA256']
                 supplemental.append(dict(cs=row['Seg'][1], ip=row['IP'], memory_sha256=row['MemorySHA256']))
-        assert len(supplemental) == 47 and len(witnesses) == 44
+        assert len(supplemental) == 47 and len(witnesses) == (46 if control else 44)
         result['instrumented_entry_observation'] = dict(
             scope='research-only boundaries before registered entries; not a production execution-count substitute',
             build_manifest=manifest, calls_sha256=sha(observed_root/'calls.json'),
@@ -419,6 +420,31 @@ def main():
             scope='accepted complete RGB output calls; insufficient-budget calls retain original device/ABI boundaries')
         result['hardware_contract'] = dict(source='https://www.scs.stanford.edu/10wi-cs140/pintos/specs/freevga/vga/colorreg.htm',
             scope='standard VGA DAC index and RGB ordering reused through Machine.Out8; pinned model timing, not physical-cycle parity')
+    if control:
+        for marker in ('source palette original entry-state comparisons 14', 'source boundary comparisons 337',
+                       'source refusals 68', 'init original comparisons 24', 'init surface comparisons 18',
+                       'palette stage comparisons 144', 'stage refusals 24',
+                       'RGB read independent original comparisons 36',
+                       'wait independent original plan comparisons 112',
+                       'wait resume independent original plan comparisons 280'):
+            assert marker in test_log.read_text(), marker
+        result['scope'] = 'Go色盤列控制、來源與工作陣列初始化、RGB讀取、回掃兩狀態等待及階段交接；保留既有Go圖片演算法，其他固定與未驗路徑仍保留，#49未全部完成'
+        result['palette_control_sources'] = {str(q.relative_to(module)): sha(q)
+            for pattern in ('apps/pod/drawblocks/native_palette_*.go', 'apps/pod/drawblocks/native_wait*.go',
+                            'internal/machine/host_palette_read*.go', 'internal/machine/host_video_status*.go')
+            for q in sorted(module.glob(pattern))}
+        result['palette_control_sources'].update({name: sha(module/name) for name in
+            ('session/observer.go','session/observer_test.go','internal/machine/host_work.go',
+             'internal/machine/host_palette.go','internal/machine/machine.go', 'apps/pod/drawblocks/effects.go')})
+        result['prototype_and_original_tests']['palette_control'] = dict(
+            source_original=14, source_boundary_comparisons=337, source_refusals=68,
+            initialization_comparisons=42, initialization_refusals=27,
+            stage_comparisons=144, stage_refusals=24, rgb_read_comparisons=36,
+            wait_entry_comparisons=112, wait_resume_comparisons=280, wait_refusals=14,
+            scope='Independent CPU/full RAM/ordered writes/model-time; RGB and wait also compare complete SaveState bytes')
+        result['native_go_source_review']['palette_control_scope'] = 'Typed surface/color arrays, index cursors and RGB jobs; retrace is a two-state bounded data loop using a readonly VGA snapshot; no CPU.Step, guest-opcode dispatch or generated effect block in accepted data processing.'
+        result['hardware_contract']['status_source'] = 'https://www.scs.stanford.edu/10wi-cs140/pintos/specs/freevga/vga/extreg.htm'
+        result['hardware_contract']['status_scope'] = 'Existing mode13 input-status approximation reused; no physical-cycle timing claim'
     a.out.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({k: result[k] for k in ('algorithmic_plans', 'algorithmic_instructions', 'fixed_semantic_instructions', 'guest_files')}, ensure_ascii=False))
 
