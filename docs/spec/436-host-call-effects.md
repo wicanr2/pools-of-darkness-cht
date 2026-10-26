@@ -1,11 +1,11 @@
 # 436 CALL後的有界主機效果
 
-狀態：CONFORMED，限16位CALL後有界CPU／RAM效果與已列驗收。參考mm3已驗HostWorkBudget／CommitHostWork方法，依本分支Step、CALL、IRQ及RunUntilObserved契約重新審查後達READY再實作。
+狀態：CONFORMED，含16位CALL後效果、可重入區塊、緊湊搬移及已列驗收。參考mm3已驗HostWorkBudget／CommitHostWork方法，依本分支Step、CALL、IRQ及RunUntilObserved契約重新審查後達READY再實作。
 
 ## 範圍與控制權
 
 新增預設關閉的16位CALL後通知，涵蓋9A、E8及FF /2、/3。正常CALL的堆疊、暫存器、IP、週期先完成，才通知持有機器的Owner。
-不在普通指令增加資格輪詢，不處理32位CALL、硬體中斷或非CALL轉移。
+CALL分支不在普通指令增加資格輪詢，不處理32位CALL、硬體中斷或非CALL轉移；可選指令前區塊入口另見下文。
 可選入口表先篩選CALL，表以值複製、撤除callback時一併清除；空表維持全部CALL通知，適配器仍必須驗證真正入口。
 前端的可選HostCallProvider只取得限期唯讀StepView及預算，回傳完整暫存器／旗標、最後指令定位、步數／週期與有序RAM byte writes。
 每次寫入附相對步數與原CS:IP，語意通知的定位不代表該opcode重新執行；寫入者不能取得Machine。
@@ -40,7 +40,7 @@ session需明確啟用並驗provider，callback僅Advance內有效，結束後�
 成對完整CALL成本包含資格檢查、計畫、相容寫入及通知，約4.2–4.9倍，不換算全遊戲FPS。
 具體遊戲位址、輸入、雜湊與正常驗收入口保存在消費端[研究019](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-draw-interception.md)與[固定收據](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-whole-call-runtime.json)。
 
-## 可重入繪圖區塊擴充（READY）
+## 可重入繪圖區塊擴充（CONFORMED）
 
 新增預設關閉的NativeHostBlocks。持有者於Machine.Step先依原版順序處理tick與鍵盤，再於真正指令執行前按值複製的程式範圍篩選。
 provider仍只取得限期StepView與HostWorkBudget，回傳相同的純效果計畫。拒絕時原指令照常，接受時本Step以該計畫的原虛擬步數計入配額。
@@ -52,9 +52,13 @@ provider仍只取得限期StepView與HostWorkBudget，回傳相同的純效果�
 不跨指令合併；向後word維持每個word低byte在前。未連續、單點或未知序列沿PIXEL。命令Host標記與HostBytes只記已提交效果，不記資格提案。
 驗收須含預設關閉、錯誤／拒絕原子性、事件先於計畫、回合邊界、回呼撤除、範圍值複製及正常消費端獨立原版串流。
 
-緊湊HostTransfer（READY）與Writes按原步數合併，兩種類型不能佔同一指令。每個transfer是段內不環繞的普通RAM／mode13h線性表面搬移或填色，寬1／2，次數非零。
+緊湊HostTransfer（CONFORMED）與Writes按原步數合併，兩種類型不能佔同一指令。每個transfer是段內不環繞的普通RAM／mode13h線性表面搬移或填色，寬1／2，次數非零。
 驗證來源長度、目的範圍、模式、觀測器、時間及順序後才寫入；提交先複製提案資料，回呼不能修改後續來源。
 逐byte VideoWrite維持原順序與時間，前端只收到一次擁有資料的COPY／FILL。區塊計畫可以含完整已驗前綴，未知後續區塊由適配器退回其原入口。
 任意RunUntil predicate會停用主機效果，不能跨過未宣告的停止條件。範圍可加精確CS篩選，避免overlay重用實體位址時支付提案成本。
 
 StepView.CopyRAM只複製0–A0000以下的普通RAM到呼叫者緩衝區，不回傳客體slice，期限與Read8相同。超出範圍返回false；畫面、ROM與HMA仍由既有介面處理。
+
+擴充程式`191479d5492fdce1e5d925ea44033d2112f75016`。核心、生命週期、事件／回合／predicate、範圍值複製、拒絕、資料壽命與前後向word測試通過。
+消費端12010組獨立原版區塊、12組真實完整呼叫與192組邊界通過；正常機器全部有序事件及完整CPU／RAM、四路DEMO、39對介面與6對新存讀檔相同。
+具體資料與限制見消費端[全部繪圖收據](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-all-render-runtime.json)。源程式、工具及固定收據不含原版EXE或原始RAM。
