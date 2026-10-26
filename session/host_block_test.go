@@ -8,9 +8,10 @@ import (
 
 type blockObserver struct {
 	recordingObserver
-	mode     string
-	prepared int
-	held     StepView
+	mode        string
+	prepared    int
+	held        StepView
+	algorithmic bool
 }
 
 func (o *blockObserver) HostBlockRanges() []machine.HostCodeRange {
@@ -41,7 +42,35 @@ func (o *blockObserver) PrepareHostBlock(v StepView, budget uint64) (*machine.Ho
 	if o.mode == "invalid" {
 		p.Writes = []machine.HostWrite{{Address: 0x449, Step: 1}}
 	}
+	p.Algorithmic = o.algorithmic
 	return p, nil
+}
+
+func TestHostAlgorithmicReceiptUsesTurnDifferences(t *testing.T) {
+	for _, mode := range []string{"good", "invalid"} {
+		o := startSyntheticOwner(t, []byte{0x90, 0x90, 0xeb, 0xfe})
+		o.observer = &blockObserver{mode: mode, algorithmic: true}
+		o.nativeHostBlocks = true
+		first, err := runTurn(t, o, 11)
+		if err != nil {
+			t.Fatal(err)
+		}
+		want := uint64(1)
+		if mode == "invalid" {
+			want = 0
+		}
+		if first.AlgorithmicPlans != want || first.AlgorithmicInstructions != want*2 {
+			t.Fatal("classification differential", mode, first)
+		}
+		second, err := runTurn(t, o, 11)
+		if err != nil {
+			t.Fatal(err)
+		}
+		if second.AlgorithmicPlans != 0 || second.AlgorithmicInstructions != 0 {
+			t.Fatal("prior turn counted again")
+		}
+		o.Close()
+	}
 }
 func TestHostBlockOwnerLifecycle(t *testing.T) {
 	if _, e := New(Config{NativeHostBlocks: true, Observer: &recordingObserver{}}); e == nil {

@@ -69,9 +69,10 @@ type TickReceipt struct {
 	Phase              Phase
 	Reason             StopReason
 	// Accelerated 是本回合 TP Delay 快轉的步數（dosgolem `docs/spec/429` §2.3），已含在 Steps 內。
-	Accelerated                   uint64
-	HostCalls, HostInstructions   uint64 // spec436, already included in Steps
-	HostBlocks, BlockInstructions uint64
+	Accelerated                               uint64
+	HostCalls, HostInstructions               uint64 // spec436, already included in Steps
+	HostBlocks, BlockInstructions             uint64
+	AlgorithmicPlans, AlgorithmicInstructions uint64
 }
 
 // CapturedUpdate is the value-only input captured for one future frontend
@@ -594,6 +595,7 @@ func (o *Owner) Advance(budget InstructionBudget) (TickReceipt, error) {
 	accelBefore := o.machine.DelayAccelerated
 	hostCallsBefore, hostInstructionsBefore := o.machine.HostCallCommits, o.machine.HostCallInstructions
 	hostBlocksBefore, blockInstructionsBefore := o.machine.HostBlockCommits, o.machine.HostBlockInstructions
+	algorithmsBefore, algorithmInstructionsBefore := o.machine.AlgorithmicPlans, o.machine.AlgorithmicInstructions
 	o.machine.RunLimit = o.machine.Steps + uint64(budget)
 	var rawStop machine.Stop
 	var rawErr, observerErr error
@@ -608,6 +610,8 @@ func (o *Owner) Advance(budget InstructionBudget) (TickReceipt, error) {
 	receipt.HostInstructions = o.machine.HostCallInstructions - hostInstructionsBefore
 	receipt.HostBlocks = o.machine.HostBlockCommits - hostBlocksBefore
 	receipt.BlockInstructions = o.machine.HostBlockInstructions - blockInstructionsBefore
+	receipt.AlgorithmicPlans = o.machine.AlgorithmicPlans - algorithmsBefore
+	receipt.AlgorithmicInstructions = o.machine.AlgorithmicInstructions - algorithmInstructionsBefore
 	receipt.HasRawStop = true
 	receipt.RawStop = rawStop
 	receipt.RawError = rawErr

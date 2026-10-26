@@ -121,7 +121,7 @@ func planSmallCall(v CPUView, budget uint64) *machine.HostWorkPlan {
 	if n > budget {
 		return nil
 	}
-	p := &machine.HostWorkPlan{After: e.s, Instructions: n, Cycles: cycles, LastCS: b.Seg[1], LastIP: last}
+	p := &machine.HostWorkPlan{Algorithmic: true, After: e.s, Instructions: n, Cycles: cycles, LastCS: b.Seg[1], LastIP: last}
 	if v.DOSBoxCost() {
 		iterations := uint64(count)
 		if key == 0x1d1f046e {

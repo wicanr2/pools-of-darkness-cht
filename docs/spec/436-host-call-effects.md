@@ -62,3 +62,12 @@ StepView.CopyRAM只複製0–A0000以下的普通RAM到呼叫者緩衝區，不�
 擴充程式`191479d5492fdce1e5d925ea44033d2112f75016`。核心、生命週期、事件／回合／predicate、範圍值複製、拒絕、資料壽命與前後向word測試通過。
 消費端12010組獨立原版區塊、12組真實完整呼叫與192組邊界通過；正常機器全部有序事件及完整CPU／RAM、四路DEMO、39對介面與6對新存讀檔相同。
 具體資料與限制見消費端[全部繪圖收據](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-all-render-runtime.json)。源程式、工具及固定收據不含原版EXE或原始RAM。
+
+## 函式演算法診斷分類（READY）
+
+HostWorkPlan新增預設false的Algorithmic標記，僅供計數。消費端須先以獨立原版證據及來源審查確認函式層級演算法，才標true；固定指令語意區塊維持false。
+提交成功後Machine分別累加Algorithmic計畫及虛擬指令數，Owner每回合收據傳遞差值；既有HostCalls／HostBlocks與原步數仍原樣累加。
+拒絕或只有提案時不計數。標記不改資格、預算、事件、CPU、RAM或提交順序，也不自動證明消費端演算法正確。
+此計數是既有HostWork總數的子集，不能把非繪圖的普通CPU指令算成繪圖回退；實際回退仍以消費端已觀測入口說明。
+驗收須含預設false、true／false分流、拒絕不累加及回合差值，另由消費端正常路徑證明分類有使用。
+消費端的幾何、來源與Go演算法契約見主專案規格025的48A1:41AF小節，通用層不保存其位址。

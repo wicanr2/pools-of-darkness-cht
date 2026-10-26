@@ -74,7 +74,7 @@ func PlanGlyphCall(v HostCallCPU, budget uint64) *machine.HostWorkPlan {
 		return nil
 	}
 	dest := (int(y)*320 + int(x)) * 8
-	p := &machine.HostWorkPlan{After: b, Instructions: instructions, Cycles: uint64(2620 - 2*ones), LastCS: b.Seg[cpu.CS], LastIP: 0x1200, Writes: make([]machine.HostWrite, 0, 84)}
+	p := &machine.HostWorkPlan{Algorithmic: true, After: b, Instructions: instructions, Cycles: uint64(2620 - 2*ones), LastCS: b.Seg[cpu.CS], LastIP: 0x1200, Writes: make([]machine.HostWrite, 0, 84)}
 	if v.DOSBoxCost() {
 		p.Cycles = instructions + 64
 	}

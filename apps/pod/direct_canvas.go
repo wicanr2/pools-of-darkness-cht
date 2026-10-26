@@ -13,6 +13,7 @@ type DirectStats struct {
 	RGBFrames, OriginalRGBPixels, SelectedRGBPixels, LegacyRGBFrames          uint64
 	HostCalls, HostInstructions                                               uint64
 	HostBlocks, BlockInstructions                                             uint64
+	AlgorithmicPlans, AlgorithmicInstructions                                 uint64
 	Writers                                                                   map[uint32]DrawWriterCount
 }
 
@@ -34,6 +35,13 @@ func (d *DirectCanvas) RecordHostBlocks(blocks, instructions uint64) {
 	if d != nil {
 		d.stats.HostBlocks += blocks
 		d.stats.BlockInstructions += instructions
+	}
+}
+
+func (d *DirectCanvas) RecordAlgorithms(plans, instructions uint64) {
+	if d != nil {
+		d.stats.AlgorithmicPlans += plans
+		d.stats.AlgorithmicInstructions += instructions
 	}
 }
 

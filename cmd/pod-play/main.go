@@ -420,6 +420,7 @@ func (g *game) Update() error {
 		g.lastSteps, g.accelSteps = tick.MachineStepsAfter, g.accelSteps+tick.Accelerated
 		g.live.Direct.RecordHostWork(tick.HostCalls, tick.HostInstructions)
 		g.live.Direct.RecordHostBlocks(tick.HostBlocks, tick.BlockInstructions)
+		g.live.Direct.RecordAlgorithms(tick.AlgorithmicPlans, tick.AlgorithmicInstructions)
 		g.samples = g.mix.Render(g.samples[:0], tick.MachineStepsBefore, tick.MachineStepsAfter)
 		g.music.Mix(g.samples)
 		if g.ring != nil {

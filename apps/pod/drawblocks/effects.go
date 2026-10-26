@@ -55,6 +55,9 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 	if budget == 0 || v.Read8(0x449) != 0x13 {
 		return nil
 	}
+	if p := planRectangle(v, budget); p != nil {
+		return p
+	}
 	if p := planSmallCall(v, budget); p != nil {
 		return p
 	}

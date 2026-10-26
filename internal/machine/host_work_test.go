@@ -6,6 +6,33 @@ import (
 	"testing"
 )
 
+func TestHostAlgorithmicClassificationOnlyCountsCommittedWork(t *testing.T) {
+	m := New()
+	m.IRQ0Every = 0
+	m.VGAFrameEvery = 0
+	p := &HostWorkPlan{Instructions: 2, Cycles: 4, After: HostRegisters{R: m.CPU.R, Seg: m.CPU.Seg, IP: m.CPU.IP, Flags: m.CPU.Flags}}
+	if err := m.CommitHostBlock(p); err != nil {
+		t.Fatal(err)
+	}
+	if m.AlgorithmicPlans != 0 || m.AlgorithmicInstructions != 0 || m.HostBlockInstructions != 2 {
+		t.Fatal("default classification changed")
+	}
+	p.Algorithmic = true
+	if err := m.CommitHostBlock(p); err != nil {
+		t.Fatal(err)
+	}
+	if m.AlgorithmicPlans != 1 || m.AlgorithmicInstructions != 2 || m.HostBlockInstructions != 4 {
+		t.Fatal("algorithmic subset not recorded")
+	}
+	p.Instructions = 0
+	if err := m.CommitHostBlock(p); err == nil {
+		t.Fatal("invalid plan accepted")
+	}
+	if m.AlgorithmicPlans != 1 || m.AlgorithmicInstructions != 2 || m.HostBlockInstructions != 4 {
+		t.Fatal("rejected plan counted")
+	}
+}
+
 func TestHostCallTargetsAreOwnedAndScoped(t *testing.T) {
 	m := New()
 	m.IRQ0Every = 0

@@ -14,6 +14,7 @@ type HostWrite struct {
 	CS, IP  uint16
 }
 type HostWorkPlan struct {
+	Algorithmic          bool
 	After                HostRegisters
 	Instructions, Cycles uint64
 	LastCS, LastIP       uint16
@@ -217,6 +218,10 @@ func (m *Machine) commitHostWork(p *HostWorkPlan, block bool) error {
 	m.CPU.Cycles += p.Cycles
 	m.CPU.ApplyHostRegisters(p.After.R, p.After.Seg, p.After.IP, p.After.Flags, p.LastCS, p.LastIP)
 	m.insnCS, m.insnIP = p.LastCS, p.LastIP
+	if p.Algorithmic {
+		m.AlgorithmicPlans++
+		m.AlgorithmicInstructions += p.Instructions
+	}
 	if block {
 		m.HostBlockCommits++
 		m.HostBlockInstructions += p.Instructions
