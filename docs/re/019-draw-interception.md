@@ -259,3 +259,27 @@ Owner傳遞每回合差值，前端draw-report分開呈現。預設、拒絕不�
 來源探針為`draw_call_probe.go`，新增Algorithmic逐出口提案統計，須與真正提交的計畫／指令總數相等才接受。
 正常路線沿既有DEMO、direct-ui與whole-call-save腳本，均在既有Docker image與全新輸出目錄執行，不注入狀態、不增加G6探索。
 其他VGA固定區塊仍待後續Go演算法，#49保持開啟。
+
+## 2026-10-26 Go圖片RLE像素循環接入
+
+沿用相同VGA.DRV與IDA9.4匯出，Capstone5.0.3逐bytes核對原檔offset`68F4–691B`共40 bytes、21道指令。
+SHA-256為`1926d07bb1c1e91594b6a388138e57b204d8efb327addc7cebf32d0dd7ec5818`，執行期入口`48A1:68F4`。
+已證實控制byte右移一位加一為長度，最低位選連續像素或重複色段；Go按資料封包解碼，產生COPY／FILL。
+像素循環不經opcode或CS:IP派送。圖片外層、裁切、鏡像及其他VGA固定區塊仍保留，不稱整個6733完成。
+
+22組封包條件的110個計畫與32個真正圖片中途狀態的192個計畫由獨立原版CPU比較，完整RAM、暫存器、旗標、時間與寫入順序相同，九種拒絕條件通過。
+先審查規格025為READY，再接產品。固定語意前綴在Go入口結束提案，讓下一次計畫從已提交狀態接手；拒絕仍可循原路徑前進。
+來源、模式、表面、方向、資料邊界或預算未知時保守回退，不改原版檔案、規則、亂數或存檔。
+
+正常7400更新的全部CPU／RAM、3343240次像素、8633次回掃、79012筆音訊及1827984筆DOS事件同獨立原版，127檔與45份入口見證相同。
+89509個已提交Go計畫共2550405步，固定語意區塊另800287步；其中新RLE為5101個計畫、227754步，提案與真正提交總數相等。
+四路DEMO的原版終點、BIGPIC及戰鬥獨立像素、39對正常介面與6對新存B／冷讀B畫面通過。全部SAVE bytes相同，槽A五檔未改，非預期閃現0。
+封面原始998筆仍為既有F2主動切換。主題776檔、字型與譯文未改，未新增G6探索。
+
+產品來源`dabb188bdb551a072cc95c799392da78a3bc6634`，Go1.24.13乾淨建置`0a0fa8b47ab5ca903b2116bb2893a45577b7279264fc16c78f351a3ae603707c`。
+所有門檻通過後原子啟用pod-play，前版491e336保存於pod-play-nativefill，較早2c58d1d仍在pod-play-all。
+七組交錯、每組32次完整呼叫的6733成本約原版1.29倍速度，含檢查、相容寫入與通知，未包含Owner／視窗，未外推FPS；小型RAM函式未全部更快。
+
+固定[019-native-rle-runtime.json](019-native-rle-runtime.json)綁定上述來源、工具與正常驗收。
+重生使用`tools/native_fill_check.py --project . --family rle --commit <來源提交> --out <全新JSON>`，在Docker內執行；`--stage trace`只查機器串流，不代替完整正常路線。
+原始收據在`workplace/probe/draw-intercept-v1/native-rle-v1`與`workplace/probe/g9-hd/nativerle-{play,ui,save}-v1`，均不入Git。

@@ -32,12 +32,15 @@ def main():
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--stage', choices=('trace', 'full'), default='full')
     ap.add_argument('--commit', required=True)
+    ap.add_argument('--family', choices=('fill', 'rle'), default='fill')
     a = ap.parse_args()
     assert not a.out.exists(), '保留既有收據，請另定輸出檔名'
     p = a.project
-    root = p/'workplace/probe/draw-intercept-v1/native-fill-v1'
+    rle = a.family == 'rle'
+    stem = 'nativerle' if rle else 'nativefill'
+    root = p/('workplace/probe/draw-intercept-v1/native-rle-v1' if rle else 'workplace/probe/draw-intercept-v1/native-fill-v1')
     previous = p/'workplace/probe/draw-intercept-v1/all-functions-v1/trace-v2-legacy'
-    current = root/'trace-native-v2'
+    current = root/('trace-native' if rle else 'trace-native-v2')
     old, new = read(previous/'calls.json'), read(current/'calls.json')
     for key in ('Calls', 'Digest', 'VideoCount', 'AudioCount', 'FrameCount', 'DOSCount',
                 'VideoSHA256', 'AudioSHA256', 'FramesSHA256', 'DOSSHA256'):
@@ -58,20 +61,33 @@ def main():
     assert sum(row[0] for row in counts.values()) == new['AlgorithmicPlans']
     assert sum(row[1] for row in counts.values()) == new['AlgorithmicInstructions']
     assert counts['48a1:42ac'][0] > 0 and counts['48a1:42b2'][0] > 0
+    if rle:
+        assert any(counts.get(key, [0])[0] > 0 for key in ('48a1:6907', '48a1:6909'))
+        assert any(counts.get(key, [0])[0] > 0 for key in ('48a1:6918', '48a1:691a'))
     fixed = new['HostInstructions'] + new['BlockInstructions'] - new['AlgorithmicInstructions']
     assert fixed > 0, '其餘固定區塊仍存在，不能稱全部Go演算法完成'
     assert new['Commands']['Mismatches'] == 0
     code = p/'workplace/input/dos/pod/VGA.DRV'
     assert sha(code) == 'eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f'
     assert hashlib.sha256(code.read_bytes()[0x41af:0x42b3]).hexdigest() == 'c7db9b7b119f14464a7e76d35125922a3559d10fef36624f79f5120dd0d02f00'
-    test_log = p/'workplace/dosgolem/workplace/native-fill-product-tests.log'
-    assert '18 independent plan comparisons 194' in test_log.read_text() and '\nPASS\n' in test_log.read_text()
-    result = dict(scope='首批Go矩形填色與相容續做；其他VGA固定區塊仍保留，#49未全部完成',
+    test_log = p/('workplace/dosgolem/workplace/native-rle-product-tests.log' if rle else 'workplace/dosgolem/workplace/native-fill-product-tests.log')
+    if rle:
+        assert hashlib.sha256(code.read_bytes()[0x68f4:0x691c]).hexdigest() == '1926d07bb1c1e91594b6a388138e57b204d8efb327addc7cebf32d0dd7ec5818'
+        assert '22 plan comparisons 110' in test_log.read_text()
+        assert 'normal original image RLE state comparisons 192' in test_log.read_text()
+    else:
+        assert '18 independent plan comparisons 194' in test_log.read_text()
+    assert '\nPASS\n' in test_log.read_text()
+    tests = (dict(packet_cases=22, packet_plan_comparisons=110, normal_image_states=32,
+                  normal_state_plan_comparisons=192, refusal_cases=9) if rle else
+             dict(geometries=9, cost_models=2, cases=18, plan_comparisons=194, refusal_cases=8))
+    tests['log_sha256'] = sha(test_log)
+    result = dict(scope=('Go矩形與未裁切RLE像素循環；圖片控制、裁切及鏡像等固定區塊仍保留，#49未全部完成' if rle else
+                         '首批Go矩形填色與相容續做；其他VGA固定區塊仍保留，#49未全部完成'),
                   program_commit=a.commit,
-                  binary_sha256=sha(p/'workplace/dosgolem/workplace/bin/pod-play-nativefill'),
-                  trace_binary_sha256=sha(p/'workplace/dosgolem/workplace/bin/draw-call-probe-nativefill-v2'),
-                  prototype_and_original_tests=dict(geometries=9, cost_models=2, cases=18, plan_comparisons=194,
-                                                   refusal_cases=8, log_sha256=sha(test_log)),
+                  binary_sha256=sha(p/f'workplace/dosgolem/workplace/bin/pod-play-{stem}'),
+                  trace_binary_sha256=sha(p/(f'workplace/dosgolem/workplace/bin/draw-call-probe-{stem}'+('-v2' if not rle else ''))),
+                  prototype_and_original_tests=tests,
                   virtual_steps=new['Digest']['Steps'], original_state_equal=True,
                   ordered_video_writes=new['VideoCount'], ordered_video_sha256=new['VideoSHA256'],
                   retraces=new['FrameCount'], retraces_sha256=new['FramesSHA256'],
@@ -85,7 +101,7 @@ def main():
                   benchmark=read(root/'function-cost-v1.json'),
                   benchmark_scope='seven interleaved groups, 32 complete calls each, two-CPU Docker; includes source guards, compatibility writes and notifications; not FPS')
     if a.stage == 'full':
-        demo = p/'workplace/probe/g9-hd/nativefill-play-v1'
+        demo = p/f'workplace/probe/g9-hd/{stem}-play-v1'
         summary = read(demo/'bigpic-summary.json')
         assert summary['binary_sha256'] == result['binary_sha256']
         assert summary['prior_original_state_equal'] and summary['prior_sample_composite_equal']
@@ -100,7 +116,7 @@ def main():
                     'pod-lang.txt', 'pod-speed.txt', 'pod-barfont.txt'}
         rows = []
         for route in ('wall', 'movie', 'title'):
-            folder = p/f'workplace/probe/g9-hd/nativefill-ui-v1/{route}-direct'
+            folder = p/f'workplace/probe/g9-hd/{stem}-ui-v1/{route}-direct'
             baseline = p/f'workplace/probe/g9-hd/all-ui-v2/{route}-direct'
             assert ui.endpoint(folder) == ui.endpoint(baseline)
             ci, bi = read(folder/'inputs.json'), read(baseline/'inputs.json')
@@ -123,7 +139,7 @@ def main():
                              draw_report_sha256=sha(folder/'draw-report.json')))
         result['normal_ui'] = rows
         before = p/'workplace/probe/g9-hd/all-save-v2/native'
-        after = p/'workplace/probe/g9-hd/nativefill-save-v1/native'
+        after = p/f'workplace/probe/g9-hd/{stem}-save-v1/native'
         inputs = [read(d/'before.json') for d in (before, after)]
         for value in inputs:
             value.pop('binary_sha256')
@@ -162,11 +178,15 @@ def main():
             activation = read(root/'activation.json')
             assert activation['candidate_sha256'] == result['binary_sha256']
             assert sha(p/'workplace/dosgolem/workplace/bin/pod-play') == result['binary_sha256']
-            assert sha(p/'workplace/dosgolem/workplace/bin/pod-play-all') == activation['previous_sha256']
+            previous_name = activation.get('previous_binary', 'pod-play-all')
+            assert sha(p/f'workplace/dosgolem/workplace/bin/{previous_name}') == activation['previous_sha256']
             result['activation'] = activation
     result['tools'] = {name: sha(p/name) for name in ('tools/native_fill_check.py', 'tools/draw_call_probe.go',
                        'tools/vga_battle_play_check.py', 'tools/direct-ui-receipt.sh', 'tools/whole-call-save-receipt.sh')}
     result['native_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/native_fill.go')
+    if rle:
+        result['rle_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/native_rle.go')
+        result['dispatch_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/effects.go')
     a.out.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({k: result[k] for k in ('algorithmic_plans', 'algorithmic_instructions', 'fixed_semantic_instructions', 'guest_files')}, ensure_ascii=False))
 

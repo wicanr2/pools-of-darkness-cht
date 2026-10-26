@@ -1,6 +1,6 @@
 # 025 直接攔截繪圖與前端命令
 
-狀態：既有固定區塊、字模、共享函式與單次RGB輸出一致性CONFORMED；#49首批Go矩形填色及續做CONFORMED，全部Go繪圖演算法尚未完成，整體新增閘門DRAFT。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)、[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)。其他模式與未列路線不外推完成。
+狀態：既有固定區塊、字模、共享函式與單次RGB輸出一致性CONFORMED；#49限定Go矩形及RLE像素循環CONFORMED，使用色號掃描READY。全部Go繪圖演算法尚未完成，整體新增閘門DRAFT。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)、[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)。其他模式與未列路線不外推完成。
 
 使用者於2026-10-25要求完全攔截繪圖函數，避免先畫原版底圖再覆畫HD，並指定參考`/home/anr2/cht/mm3`。
 方向已授權；本規格先補本作輸出契約，未達READY的原型不接正式路徑。
@@ -198,3 +198,41 @@ stride320每列24步、87+5×ceil(width/2)成本，其他stride為22步、97+5×
 其中兩個已提交Go矩形計畫共4840步，列邊界一次續做；預算不足仍保留原語意路徑，不宣稱這次原版填色的每一步均已替換。
 四路DEMO、39對介面與6對正常新存B／冷讀B畫面同固定基準，存檔全部相同，既有F2主動切換外的非預期閃現0。
 固定[019-native-fill-runtime.json](../re/019-native-fill-runtime.json)。全部通過後才原子切換正式pod-play，舊2c58d1d保存在pod-play-all，776檔主題未改。
+
+### 48A1:68F4圖片RLE像素循環的Go演算法
+
+狀態：CONFORMED，#49，2026-10-26；不外推整個6733函式、裁切或鏡像分支。
+原版VGA.DRV沿上節固定輸入，原檔offset68F4–691B共40 bytes／21道指令，IDA9.4與Capstone5.0.3逐bytes相同。
+程式SHA-256為`1926d07bb1c1e91594b6a388138e57b204d8efb327addc7cebf32d0dd7ec5818`，入口為執行期`48A1:68F4`。
+
+已證實資產封包格式：控制byte右移1再加1是長度1–128，低位0接該長度的連續像素，低位1接一個重複色號。
+SI是本封包游標、BX是span壓縮資料終點、ES:DI是目的；跨度之外的行標記、裁切與鏡像仍由既有路徑處理。
+Go按影像封包直接產生COPY／FILL，保留word後byte的順序、來源擁有權、暫存器與原虛擬時間。它解碼資產資料，不按x86 opcode執行。
+
+限定mode13h、40 bytes指紋、ES=A000、DF=0、CH=0，SI<BX，來源普通RAM且span不跨16位段界，目的不超過64000。
+資料截斷、模式／方向／表面／程式失配或預算不足不接入。每個計畫只含完整已驗封包，未完回68F4，span結束回689E。
+固定區塊在已處理前綴後遇Go入口時結束提案，讓下一次主機計畫採Go演算法；拒絕時仍能沿原語意前進，不產生無進度迴圈。
+此為函式演算法邊界分流，像素熱迴圈不作CS:IP或opcode派送；BeforeStep的DOS、文字與地圖觀測仍依原事件／取樣邊界核對。
+
+連續像素未結束span時11步、34+5×ceil(n/2)成本；重複色13步、48+5×ceil(n/2)。結束span各加1步與2成本。
+DOSBoxCost為步數加控制／色號讀取迭代及word／byte像素迭代。相容旗標由封包末端SI與BX的比較計算，不逐條模擬像素迴圈。
+22組合成封包條件的110個計畫及32個真正圖片中途狀態的192個計畫由獨立原版CPU通過，另有九種拒絕條件。
+以上證據先達READY才接產品，完整事件、正常四路DEMO、39對介面及6對真存讀檔通過後，正式版本切至0a0fa8b。
+乾淨產品來源`dabb188bdb551a072cc95c799392da78a3bc6634`；完整建置與啟用雜湊見[019-native-rle-runtime.json](../re/019-native-rle-runtime.json)。
+正常路線89509個Go計畫／2550405步，固定語意區塊另800287步，所有CPU／RAM、事件與127個客體檔案仍同原版。
+
+### 48A1:4A67使用色號掃描的Go演算法
+
+狀態：READY，#49，2026-10-26。此為4944色盤處理中的資料掃描，色盤讀寫與淡出控制仍在既有邊界。
+原版VGA.DRV沿上節固定輸入，原檔offset4A67–4A71共11 bytes／四道指令，IDA9.4與Capstone5.0.3逐bytes相同。
+程式SHA-256為`3c8934166cf6cd8d1ecdf79eac51b0cb33bb1bb3e545b883578dcb85971e1b5a`，執行期入口`48A1:4A67`。
+
+已證實：DS:SI指向mode13h線性畫面，CX為本列剩餘像素，BH=0；每個像素色號使`CS:1772+色號`寫1。
+Go按像素資料掃描，保留每次相同色號的重複寫入與原有順序，旗標保持原值；來源只接受A000、單列不越320且總範圍不越64000。
+mode13h的Machine.Read8與Peek8同讀線性RAM，不載入平面latch；有讀取監看時沿通用HostWork拒絕契約回原版。
+每個像素四步、既有成本18、DOSBoxCost為5；獨立原版比較確認LOOP在本模型不另增加taken成本。
+每次最多處理budget/4個像素，未完回4A67，CX歸零回4A72；AX低位與BX保留最後色號，SI及CX按像素數推進。
+不把此小節稱為整個4944或全部色盤演算法重寫。未知模式、程式、方向、來源、越列、計數與預算不足保留原路徑。
+
+六種列寬、兩種成本、五種預算共60個合成原版比較，加32個真正中途狀態的192個比較及九種拒絕條件通過。
+以上原型尚未加入產品分流；READY後才接入，正常事件、畫面及存讀檔未驗前不切正式版本。

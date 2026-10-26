@@ -45,9 +45,12 @@
 
 ## 待定
 
-最新繪圖成果：#49首批`48A1:41AF`矩形填色已改為Go逐列演算法，支援事件邊界續做並通過正常驗收。
-目前產品來源`7cd6f7a`，正式執行檔`491e336`，舊`2c58d1d`以pod-play-all保留，776檔主題未改。
-18組原版條件／194個計畫、全部有序事件、四路DEMO、39對介面及6對新存B／冷讀B通過，固定[019-native-fill-runtime.json](docs/re/019-native-fill-runtime.json)。其餘Go演算法仍待#49續作。
+目前工作：#49續接`48A1:4A67`使用色號掃描，原型252個獨立原版計畫與九種拒絕通過，規格READY，接入後待正常驗收。
+正式版本已為Go矩形加RLE的0a0fa8b，來源dabb188；使用色號掃描未驗完前不切換正式版本。
+
+最新繪圖成果：#49新增`48A1:68F4`圖片RLE像素循環，由Go直接解碼連續像素與重複色段，像素循環不派送x86指令。
+目前產品來源`dabb188`，正式執行檔`0a0fa8b`，前版`491e336`以pod-play-nativefill保留，舊`2c58d1d`仍在pod-play-all，776檔主題未改。
+302個獨立原版計畫、全部有序事件、四路DEMO、39對介面及6對新存B／冷讀B通過，固定[019-native-rle-runtime.json](docs/re/019-native-rle-runtime.json)。Go矩形的既有[首批收據](docs/re/019-native-fill-runtime.json)保留。其餘Go演算法仍待#49續作。
 
 HD最新完成批次：[#48](https://github.com/wicanr2/pools-of-darkness-cht/issues/48)補齊DUNGCOM第5組地形。
 23張新手繪通過數值、目視與來源回退診斷；已驗@3／@13沿用，第22格是純色，保留原色，共25張非純色地形。
@@ -56,13 +59,13 @@ HD最新完成批次：[#48](https://github.com/wicanr2/pools-of-darkness-cht/is
 其他地下城圖組、野外地形及未觀測正常遭遇仍未完成，不重新開啟G6探索。
 
 繪圖目前是混合實作。#45–#47已完成像素命令、限定函式及固定Go區塊的替換與一致性驗收；使用者本輪要求的「全部以Go繪圖演算法處理」尚未達成，由[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)追蹤。
-字模、限定共享搬移／填色／清零、VGA限定矩形填色與畫面合成有Go演算法；其餘VGA及保守退回主要仍用1432個固定Go區塊，按原x86的暫存器、IP、旗標與分支語意運算。
+字模、限定共享搬移／填色／清零、VGA限定矩形、未裁切圖片RLE像素循環與畫面合成有Go演算法；其餘VGA及保守退回主要仍用1432個固定Go區塊，按原x86的暫存器、IP、旗標與分支語意運算。
 成功區塊跳過通用x86解碼與CPU.Step，但不能以此稱為全部原生Go繪圖；來源或預算失配仍回原x86。
-先前2c58d1d的[來源分類查核](docs/re/019-native-go-audit.json)保留為歷史基準；新7cd6f7a已增加Go矩形與Algorithmic分類，沒有宣稱其餘VGA也完成。
+先前2c58d1d的[來源分類查核](docs/re/019-native-go-audit.json)保留為歷史基準；新dabb188已有Go矩形、RLE與Algorithmic分類，沒有宣稱其餘VGA也完成。
 原盤點的VGA驅動與共享常式共90項函式／helper、1432區塊仍是來源索引，不能當作Go演算法完成數。三支共享函式、8×8字模與單次RGB保留。
-最新機器DEMO的84408個Go演算法計畫共2322651個虛擬指令，固定語意區塊另1028041個。此為已提交主機效果的分類，不把普通遊戲CPU指令算成繪圖回退，也不冒稱全遊戲覆蓋率。
+最新機器DEMO的89509個Go演算法計畫共2550405個虛擬指令，固定語意區塊另800287個。此為已提交主機效果的分類，不把普通遊戲CPU指令算成繪圖回退，也不冒稱全遊戲覆蓋率。
 完整事件、CPU／RAM與DOS檔案一致；四路DEMO、讀檔／片頭／封面39對畫面、另存B後冷讀6對畫面與全部存檔相同，槽A五個檔案未改。
-已切換正式入口，最新固定收據為[019-native-fill-runtime.json](docs/re/019-native-fill-runtime.json)；舊[019-all-render-runtime.json](docs/re/019-all-render-runtime.json)保留。規格025的既有一致性與Go矩形子集CONFORMED，全部Go演算法閘門仍DRAFT。
+已切換正式入口，最新固定收據為[019-native-rle-runtime.json](docs/re/019-native-rle-runtime.json)；舊[019-all-render-runtime.json](docs/re/019-all-render-runtime.json)保留。規格025的既有一致性、Go矩形與RLE子集CONFORMED，全部Go演算法閘門仍DRAFT。
 I/O、POPF、未驗寬指令、B000及其他模式保留原版；GPU／SIMD、動畫HD、片尾及未列玩家路線不外推完成。小型RAM呼叫未全部更快，成對成本與FPS限制見[研究019](docs/re/019-draw-interception.md#47-vga繪圖接管完成)。
 
 | 項目 | 何時決定 |
