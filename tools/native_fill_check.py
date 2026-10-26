@@ -32,25 +32,46 @@ def main():
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--stage', choices=('trace', 'full'), default='full')
     ap.add_argument('--commit', required=True)
-    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image'), default='fill')
+    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade'), default='fill')
     a = ap.parse_args()
     assert not a.out.exists(), '保留既有收據，請另定輸出檔名'
     p = a.project
     rle = a.family != 'fill'
-    image = a.family == 'image'
-    palette = a.family in ('palette', 'image')
+    fade = a.family == 'fade'
+    image = a.family in ('image', 'fade')
+    palette = a.family in ('palette', 'image', 'fade')
     stem = 'native'+a.family
     root = p/f'workplace/probe/draw-intercept-v1/native-{a.family}-v1'
-    previous = p/'workplace/probe/draw-intercept-v1/all-functions-v1/trace-v2-legacy'
+    canonical = p/'workplace/probe/draw-intercept-v1/all-functions-v1/trace-v2-legacy'
+    previous = root/'trace-original-entries' if fade else canonical
     current = root/('trace-native' if rle else 'trace-native-v2')
     old, new = read(previous/'calls.json'), read(current/'calls.json')
+    if fade:
+        baseline = read(canonical/'calls.json')
+        for key in ('Calls', 'Digest', 'VideoCount', 'AudioCount', 'FrameCount', 'DOSCount',
+                    'VideoSHA256', 'AudioSHA256', 'FramesSHA256', 'DOSSHA256'):
+            assert old[key] == baseline[key], ('original entry extension', key)
+        assert old['HostCalls'] == old['HostBlocks'] == old['AlgorithmicPlans'] == 0
+        assert tree(previous/'save') == tree(canonical/'save')
+        for field in ('Captures', 'DrawCaptures'):
+            extended = {row['Memory']: row for row in old[field]}
+            for row in baseline[field]:
+                assert extended[row['Memory']] == row
+                assert sha(previous/row['Memory']) == sha(canonical/row['Memory'])
     for key in ('Calls', 'Digest', 'VideoCount', 'AudioCount', 'FrameCount', 'DOSCount',
                 'VideoSHA256', 'AudioSHA256', 'FramesSHA256', 'DOSSHA256'):
         assert old[key] == new[key], key
     assert new['Digest']['Steps'] == 712250000 and new['VideoCount'] == 3343240
     assert tree(previous/'save') == tree(current/'save')
     witnesses = []
+    missing_entries = {(0x48a1, ip) for ip in (0x2772, 0x2aeb, 0x2a90)}
     for field in ('Captures', 'DrawCaptures'):
+        if field == 'Captures':
+            assert len(new[field]) == len(old[field]), ('entry witness count', field)
+        else:
+            old_entries = {(row['Seg'][1], row['IP']) for row in old[field]}
+            new_entries = {(row['Seg'][1], row['IP']) for row in new[field]}
+            assert new_entries <= old_entries and old_entries-new_entries == missing_entries, 'unexpected missing fixed-plan entry'
         sources = {(c['Seg'][1], c['IP']): c for c in old[field]}
         if field == 'Captures':
             sources = {(c['Seg'][1], c['IP'], c['Memory']): c for c in old[field]}
@@ -70,6 +91,8 @@ def main():
         assert counts['48a1:4a70'][0] > 0
     if image:
         assert counts['48a1:68f2'][0] > 0
+    if fade:
+        assert counts['48a1:4b38'][0] > 0 and counts['48a1:4b8b'][0] > 0
     fixed = new['HostInstructions'] + new['BlockInstructions'] - new['AlgorithmicInstructions']
     assert fixed > 0, '其餘固定區塊仍存在，不能稱全部Go演算法完成'
     assert new['Commands']['Mismatches'] == 0
@@ -77,7 +100,15 @@ def main():
     assert sha(code) == 'eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f'
     assert hashlib.sha256(code.read_bytes()[0x41af:0x42b3]).hexdigest() == 'c7db9b7b119f14464a7e76d35125922a3559d10fef36624f79f5120dd0d02f00'
     test_log = p/f'workplace/dosgolem/workplace/native-{a.family}-product-tests.log'
-    if image:
+    if fade:
+        for lo, hi, expected in ((0x4b19, 0x4b3a, '426b9c7bab4ee58a83495f6ee251ade3d04d01ce17e57c163cfdcd18c4b00f86'),
+                                 (0x4b6c, 0x4b8d, '391005d80b86b978189cde8e392fbfbca279480fda3f7f3a175cb9c14ed2f2ae')):
+            assert hashlib.sha256(code.read_bytes()[lo:hi]).hexdigest() == expected
+        log = test_log.read_text()
+        for line in ('fade difference synthetic original comparisons 72', 'fade blend synthetic original comparisons 40',
+                     'fade normal original comparisons 384'):
+            assert line in log, line
+    elif image:
         assert hashlib.sha256(code.read_bytes()[0x689e:0x68f4]).hexdigest() == '56ecc68cd838cf71e5de2da105cf370ccd3c2f7656159bdb2de14800a9c888a1'
         for base in (0x6c9e, 0x6d42, 0x6df3):
             assert hashlib.sha256(code.read_bytes()[base:base+50]).hexdigest() == '71ffb9fb40b99437973306c9ef582b52f24b0014fb32e1feed59703a7ce12575'
@@ -98,7 +129,9 @@ def main():
     else:
         assert '18 independent plan comparisons 194' in test_log.read_text()
     assert '\nPASS\n' in test_log.read_text()
-    tests = (dict(span_synthetic_plan_comparisons=18, span_normal_states=32, span_normal_plan_comparisons=64,
+    tests = (dict(difference_synthetic_plan_comparisons=72, blend_synthetic_plan_comparisons=40,
+                  normal_entry_states=64, normal_state_plan_comparisons=384, refusal_cases=23) if fade else
+             dict(span_synthetic_plan_comparisons=18, span_normal_states=32, span_normal_plan_comparisons=64,
                   span_refusal_cases=16, mirror_synthetic_plan_comparisons=804, mirror_controlled_image_states=24,
                   mirror_controlled_state_plan_comparisons=144, mirror_refusal_cases=9,
                   controlled_whole_mirror_cases=24, controlled_whole_mirror_committed_plans=int(whole[1])) if image else
@@ -108,7 +141,8 @@ def main():
                   normal_state_plan_comparisons=192, refusal_cases=9) if rle else
              dict(geometries=9, cost_models=2, cases=18, plan_comparisons=194, refusal_cases=8))
     tests['log_sha256'] = sha(test_log)
-    result = dict(scope=('Go未裁切圖片區塊解析、既有RLE與鏡像像素對；鏡像以受控原圖驗證，其他圖片控制、裁切與固定區塊仍保留，#49未全部完成' if image else
+    result = dict(scope=('Go淡出色差與插值，保留既有Go圖像演算法；其餘控制、硬體I/O及固定區塊仍保留，#49未全部完成' if fade else
+                        'Go未裁切圖片區塊解析、既有RLE與鏡像像素對；鏡像以受控原圖驗證，其他圖片控制、裁切與固定區塊仍保留，#49未全部完成' if image else
                         'Go矩形、未裁切RLE像素及使用色號掃描；圖片控制、裁切及鏡像等固定區塊仍保留，#49未全部完成' if palette else
                         'Go矩形與未裁切RLE像素循環；圖片控制、裁切及鏡像等固定區塊仍保留，#49未全部完成' if rle else
                          '首批Go矩形填色與相容續做；其他VGA固定區塊仍保留，#49未全部完成'),
@@ -127,7 +161,49 @@ def main():
                   prepared_equals_committed=True, classification_scope='HostWork only; ordinary game CPU instructions are not drawing fallback',
                   digest=new['Digest'], source_reports={str(d.relative_to(p)): sha(d/'calls.json') for d in (previous, current)},
                   benchmark=read(root/'function-cost-v1.json'),
-                  benchmark_scope='seven interleaved groups, 32 complete calls each, two-CPU Docker; includes source guards, compatibility writes and notifications; not FPS')
+                  benchmark_scope='seven interleaved groups, 32 complete calls each, two-CPU Docker; memory-only entry fixtures with freshly initialized VGA; 4944 is not full-state normal fade timing; includes source guards, compatibility writes and notifications; not FPS')
+    result['direct_witness_count'] = len(witnesses)
+    result['missing_direct_entries'] = [dict(cs=cs, ip=ip) for cs, ip in sorted(missing_entries)]
+    result['direct_witness_scope'] = 'BeforeStep does not visit the three entries inside fused fixed plans; witnesses above are only the directly observed subset'
+    if fade:
+        manifest = read(root/'observed-build.json')
+        assert manifest['program_commit'] == a.commit
+        assert manifest['original_probe_sha256'] == sha(p/'tools/draw_call_probe.go')
+        assert manifest['builder_sha256'] == sha(p/'tools/build_observed_draw_probe.py')
+        module = p/'workplace/dosgolem'
+        name = manifest['binary'].removeprefix('draw-call-probe-')
+        assert sha(module/'workplace/bin'/manifest['binary']) == manifest['binary_sha256']
+        assert sha(module/f'workplace/{name}-probe/main.go') == manifest['observed_probe_sha256']
+        for filename, identities in manifest['source_files'].items():
+            assert sha(module/'apps/pod/drawblocks'/filename) == identities['original_sha256']
+            assert sha(module/f'workplace/{name}-blocks'/filename) == identities['observed_sha256']
+            if filename != 'effects.go':
+                assert identities['original_sha256'] == identities['observed_sha256']
+        observed_root = root/'trace-observed'
+        observed = read(observed_root/'calls.json')
+        for key in ('Calls', 'Digest', 'VideoCount', 'AudioCount', 'FrameCount', 'DOSCount',
+                    'VideoSHA256', 'AudioSHA256', 'FramesSHA256', 'DOSSHA256'):
+            assert observed[key] == old[key], ('observed fixed-plan boundaries', key)
+        assert tree(observed_root/'save') == tree(previous/'save')
+        assert observed['Commands']['Mismatches'] == 0
+        assert sum(row[0] for row in observed['AlgorithmicPreparedByExit'].values()) == observed['AlgorithmicPlans']
+        assert sum(row[1] for row in observed['AlgorithmicPreparedByExit'].values()) == observed['AlgorithmicInstructions']
+        supplemental = []
+        for field in ('Captures', 'DrawCaptures'):
+            sources = {row['Memory']: row for row in old[field]}
+            rows = {row['Memory']: row for row in observed[field]}
+            assert rows.keys() == sources.keys(), ('observed entry count', field)
+            for filename, row in rows.items():
+                assert row == sources[filename]
+                assert sha(observed_root/filename) == sha(previous/filename) == row['MemorySHA256']
+                supplemental.append(dict(cs=row['Seg'][1], ip=row['IP'], memory_sha256=row['MemorySHA256']))
+        assert len(supplemental) == 47 and len(witnesses) == 44
+        result['instrumented_entry_observation'] = dict(
+            scope='research-only boundaries before registered entries; not a production execution-count substitute',
+            build_manifest=manifest, calls_sha256=sha(observed_root/'calls.json'),
+            original_baseline_sha256=sha(canonical/'calls.json'), all_47_entry_witnesses_equal=True,
+            witnesses=supplemental, algorithmic_plans=observed['AlgorithmicPlans'],
+            algorithmic_instructions=observed['AlgorithmicInstructions'])
     if a.stage == 'full':
         demo = p/f'workplace/probe/g9-hd/{stem}-play-v1'
         summary = read(demo/'bigpic-summary.json')
@@ -211,6 +287,8 @@ def main():
             result['activation'] = activation
     result['tools'] = {name: sha(p/name) for name in ('tools/native_fill_check.py', 'tools/draw_call_probe.go',
                        'tools/vga_battle_play_check.py', 'tools/direct-ui-receipt.sh', 'tools/whole-call-save-receipt.sh')}
+    if fade:
+        result['tools']['tools/build_observed_draw_probe.py'] = sha(p/'tools/build_observed_draw_probe.py')
     result['native_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/native_fill.go')
     if rle:
         result['rle_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/native_rle.go')
@@ -231,6 +309,16 @@ def main():
                         any(base <= int(key.split(':')[1], 16) < base+50 for base in (0x6c9e, 0x6d42, 0x6df3))}
         result['normal_machine_mirror_by_exit'] = mirror_exits
         result['mirror_normal_player_scope'] = 'Only exits explicitly recorded here are observed; controlled calls are not normal player evidence'
+    if fade:
+        result['fade_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/native_fade.go')
+        result['fade_entry_table_sha256'] = sha(root/'fade-entries.json')
+        fixtures = [row for row in old['DrawCaptures'] if row['IP'] in (0x4b19, 0x4b6c)]
+        assert len(fixtures) == 2
+        assert {row['MemorySHA256'] for row in fixtures} == {
+            '5e678ca10eb2f14cdc70220830009de5b2a081da8b80eccb0a1123f1b3a70581',
+            'f41e7c00aa01f10eab55e982e7e5bdfedf7e57dd4936e09355751768c2979b00'}
+        result['fade_original_entry_fixtures'] = fixtures
+        result['native_go_source_review']['fade_scope'] = 'planFadeDifference and planFadeBlend traverse RGB arrays directly; hardware palette reads/writes and waits remain outside these algorithms'
     a.out.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({k: result[k] for k in ('algorithmic_plans', 'algorithmic_instructions', 'fixed_semantic_instructions', 'guest_files')}, ensure_ascii=False))
 

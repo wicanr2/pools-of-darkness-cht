@@ -1,6 +1,6 @@
 # 025 直接攔截繪圖與前端命令
 
-狀態：既有固定區塊、字模、共享函式與單次RGB輸出一致性CONFORMED；#49限定Go矩形及RLE像素循環CONFORMED，使用色號掃描CONFORMED，未裁切區塊CONFORMED，鏡像像素對CONFORMED受控呼叫。全部Go繪圖演算法尚未完成，整體新增閘門DRAFT。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)、[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)。其他模式與未列路線不外推完成。
+狀態：既有固定區塊、字模、共享函式與單次RGB輸出一致性CONFORMED；#49限定Go矩形及RLE像素循環CONFORMED，使用色號掃描CONFORMED，未裁切區塊CONFORMED，鏡像像素對CONFORMED受控呼叫，淡出色差／插值CONFORMED，逐色RGB工作READY。全部Go繪圖演算法尚未完成，整體新增閘門DRAFT。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)、[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)。其他模式與未列路線不外推完成。
 
 使用者於2026-10-25要求完全攔截繪圖函數，避免先畫原版底圖再覆畫HD，並指定參考`/home/anr2/cht/mm3`。
 方向已授權；本規格先補本作輸出契約，未達READY的原型不接正式路徑。
@@ -271,3 +271,39 @@ Go直接解析此資料與幾何，寫回原版1250標記，產生SI、BX資料�
 18個合成及32個真正中途狀態的64個獨立原版計畫比較通過，另有16種拒絕條件；READY後才加入產品分流。
 正常路線真正提交5091個Go區塊解析計畫／132366步；完整狀態、事件、四路DEMO、39對介面及6對真存讀檔通過，固定[019-native-image-runtime.json](../re/019-native-image-runtime.json)。
 乾淨來源a8184cc、正式faf0899，前版d21dec5保存在pod-play-nativepalette；其他圖片控制與未驗裁切仍保留固定語意區塊，#49未全數完成。
+
+### 淡出的色差與插值陣列
+
+狀態：CONFORMED，#49，2026-10-26。原檔offset4B19–4B39的色差為33 bytes／13道指令，SHA-256為`426b9c7bab4ee58a83495f6ee251ade3d04d01ce17e57c163cfdcd18c4b00f86`。
+原檔offset4B6C–4B8C的插值為33 bytes／10道指令，SHA-256為`391005d80b86b978189cde8e392fbfbca279480fda3f7f3a175cb9c14ed2f2ae`。
+IDA9.4與Capstone5.0.3逐bytes一致，執行期入口為`48A1:4B19／4B6C`。
+
+已證實五組RGB陣列：1872起始／目前色、1B72目標色、1E72誤差、2172距離、2472方向，各768 bytes；1173為最大距離。
+Go色差直接算絕對差、方向及最大值；Go插值累加距離，超過門檻時調整一級色彩，再保存餘差。未超過時保留該級色彩。
+每次只處理預算內完整色彩元素，不以opcode或指令效果器執行陣列循環。原版暫存器、旗標、元素寫入次序與虛擬時間另行產生。
+限定mode13h、DS=CS=48A1、DF=0、1≤CX且SI+CX≤768，參與計算的RGB／距離／誤差／最大值0–63，調整方向1或255且不越RGB端點。
+未知模式、指紋、範圍、方向、數值或不足預算回原路徑；硬體色盤讀寫、回掃等待及其餘4944控制不在本節替換。
+
+色差每元素11步，負差加2步，低於舊最大值減1步；既有成本43，負差減1，低於舊最大值加3。
+插值不調色7步／35成本，調色10步／48成本；兩種DOSBoxCost均為步數。SI遞增旗標及前一色彩計算的CF另核對。
+色差72個、插值40個合成計畫及兩個真正入口各32個中途狀態的384個計畫比較通過，另有23種拒絕條件。
+
+真正入口來自未開主機函式／區塊接管的正常7400更新：CPU／RAM與全部有序事件同舊原版基準，新增兩份完整RAM見證。
+4B19見證SHA-256為`5e678ca10eb2f14cdc70220830009de5b2a081da8b80eccb0a1123f1b3a70581`，4B6C為`f41e7c00aa01f10eab55e982e7e5bdfedf7e57dd4936e09355751768c2979b00`。
+第一版從孤立4944的RAM快照重跑，未保留當時VGA色盤狀態，因此未走插值；此為夾具缺口，失敗保留，不能稱正常原版沒有淡出。
+新中途比較在硬體讀取已完成的RGB陣列入口開始，沒有猜補DAC狀態；READY後才加入產品分流，正常回歸未過前保留faf0899。
+完整正常狀態、事件、四路DEMO、39對介面及6對新存B／冷讀B通過，原子切換至014392d，來源df24a24；固定[019-native-fade-runtime.json](../re/019-native-fade-runtime.json)。
+正式44份直接見證，三份分割補證，與原版47份相同；正式Go分類3116445步，固定區塊另234247步，不稱全部Go演算法完成。
+
+### 逐色RGB工作準備
+
+狀態：READY，#49，2026-10-26。原檔offset4B9A–4BC5共44 bytes／17道指令，IDA9.4與Capstone5.0.3逐bytes相同。
+SHA-256為`548776df6fec7df3ebb2f57ade4412c8704fee225a928411593571d6c7c3b525`，執行期入口`48A1:4B9A／4BC1`。
+Go依使用色數、剩餘索引與RGB游標，取得下一組色盤索引／RGB，準備原版資料與呼叫框架，交2AA8的硬體輸出邊界。
+完成時交回4B55，不在這裡重寫DAC。這是色盤工作序列的資料處理，原位址只作交接與相容事件定位。
+
+限定mode13h、DS=CS=48A1、DF=0、使用色1–256、有效偶數索引與三byte對齊游標、RGB0–63、色盤索引0–255及普通RAM堆疊。
+拒絕未知指紋、範圍、模式、方向、游標、堆疊環繞與驅動區別名。每次交付完整工作，不在資料寫入途中切事件。
+不含清理前綴時15步／80成本，4BC1前綴另加2步／9成本；DOSBoxCost為步數加三次來源讀取迭代。
+完成分支2步／9成本，前綴同樣另加2步／9成本。六個word的堆疊寫入各加2個正常模型成本，不能漏算。
+32個獨立原版工作比較與13種拒絕條件通過；第一版漏算12個堆疊成本的失敗保留，查明e.push契約後修正。READY後才接產品，正常驗收未過前保留014392d。

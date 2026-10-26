@@ -328,3 +328,38 @@ Go區塊解析直接讀四byte標頭，計算x、展開長度、壓縮長度及�
 6733七組交錯、每組32次完整呼叫成本約原版1.68倍速度，含資格、相容寫入與通知，未含Owner／視窗，不外推FPS；小型RAM函式未全部更快。
 固定[019-native-image-runtime.json](019-native-image-runtime.json)綁定來源、工具、完整驗收及Go演算法來源審查。重生沿`tools/native_fill_check.py --family image`，其他參數與前節相同。
 原始收據在`workplace/probe/draw-intercept-v1/native-image-v1`及`workplace/probe/g9-hd/nativeimage-{play,ui,save}-v1`，#49保持開啟。
+
+## 2026-10-26 入口見證數量與觀測勘誤
+
+追加核對發現，前四批Go演算法的固定JSON各保存42份直接入口見證，原版基準45份；前文與WORKLOG的「45份真正入口見證相同」應讀為42份已觀測見證相同。
+缺少的`48A1:2772／2AEB／2A90`由固定主機區塊內部進入，沒有逐原指令呼叫BeforeStep，因此原探針未擷取。這項缺口在#47的固定區塊接入後即已存在。
+JSON原始明細保留，不改寫成45份；原有完整CPU／RAM終點、全部有序像素／回掃／音訊／DOS事件、正常介面與存檔比較仍有效，未將觀測缺口寫成產品狀態錯誤。
+
+新的[build_observed_draw_probe.py](../../tools/build_observed_draw_probe.py)只在Docker內複製當前繪圖來源至隔離clone的workplace。
+研究版固定計畫在已登錄函式入口前交回控制，再由原有探針擷取；不更動正式Plan、原始資料、玩家輸入或客體狀態，也不補猜中途CPU。
+產生器綁定原／研究版各Go檔、探針、工具與二進位SHA-256；此為分割觀測版，須與正式未分割版分開記錄。
+重生參數為`--project <專案根> --module <隔離clone> --name <全新名稱> --program-commit <來源提交> --out <全新manifest>`，需既有Go image、快取與唯讀專案輸入。
+正式版的已提交Go分類以未分割trace為準；補充入口須另對原版完整RAM、CPU、順序事件與檔案核對，不以補充版取代正式分類。
+
+## 2026-10-26 Go淡出色差與插值接入
+
+`48A1:4B19`色差及`48A1:4B6C`插值各33 bytes，IDA9.4與Capstone5.0.3逐bytes一致；原檔offset同IP，仍以VGA.DRV固定輸入為準。
+色差SHA-256為`426b9c7bab4ee58a83495f6ee251ade3d04d01ce17e57c163cfdcd18c4b00f86`，插值為`391005d80b86b978189cde8e392fbfbca279480fda3f7f3a175cb9c14ed2f2ae`。
+Go直接遍歷五組RGB陣列，算方向、絕對差、最大距離與累加誤差調色；不派送opcode或指令效果器。硬體讀寫與回掃等待仍留原邊界。
+
+72個色差、40個插值合成計畫及兩個真正入口各32個狀態的384個計畫由獨立原版CPU比較通過，另有23種拒絕。
+原版正常7400更新增取兩份入口，完整狀態／事件同舊原版。第一版孤立4944夾具缺少當時VGA色盤狀態，未走插值，該失敗保留；新測試直接從真正RGB陣列入口開始。
+這也限制舊4944成對成本：它使用新建VGA狀態，不能當正常完整淡出耗時。未重寫舊量測數字，最新收據明列限制。
+
+先READY才接入，核心、session、pod、drawblocks、Xvfb前端與go vet通過。正式未分割正常路線有94880個Go計畫／3116445步，固定語意區塊234247步。
+其中色差一個計畫3287步、插值70個計畫174419步；只是主機繪圖效果分類，不是全遊戲覆蓋率或FPS。
+正式版的44份直接見證與原版相同；分割觀測版另補齊三個內部helper，全部47份CPU／完整RAM見證相同。正式分類與補充觀測數字分開保存，見前節勘誤。
+
+正式與分割版的完整CPU／RAM、有序像素／回掃／音訊／DOS事件、127檔同原版；四路DEMO、39對介面及6對正常新存B／冷讀B畫面通過。
+所有SAVE bytes與槽A五檔相同，非預期閃現0，封面998筆F2主動切換仍另列。未增加G6探索，776檔主題、字型與譯文未改。
+產品來源`df24a242074b835079f0bb1a6a4c095bad444bec`，Go1.24.13乾淨建置`014392d55bfb2d5280559aedc240adcb1c8d198ba1307873b7704c02588cecc6`。
+全門檻通過後原子啟用，前版faf0899保存在pod-play-nativeimage，較早備份保留。
+
+固定[019-native-fade-runtime.json](019-native-fade-runtime.json)綁定正式／分割探針、全部來源、工具與原版新增入口；`tools/native_fill_check.py --family fade`重生。
+原始收據在`workplace/probe/draw-intercept-v1/native-fade-v1`與`workplace/probe/g9-hd/nativefade-{play,ui,save}-v1`。
+其他色盤工作準備、圖片控制、裁切及固定區塊仍待後續Go演算法，#49保持開啟。
