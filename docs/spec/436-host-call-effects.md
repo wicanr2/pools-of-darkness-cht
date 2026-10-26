@@ -72,7 +72,7 @@ HostWorkPlan新增預設false的Algorithmic標記，僅供計數。消費端須�
 驗收須含預設false、true／false分流、拒絕不累加及回合差值，另由消費端正常路徑證明分類有使用。
 消費端的幾何、來源與Go演算法契約見主專案規格025的48A1:41AF小節，通用層不保存其位址。
 
-## 有界RGB調色盤命令（READY）
+## 有界RGB調色盤命令（CONFORMED）
 
 現有HostWorkPlan只提交RAM及線性顯存效果。擬新增預設空的PaletteWrites，元素包含一個色號、RGB三個6-bit值，以及選色號／三個分量各自的相對步數與模型成本。
 這是型別化RGB工作，不提供任意I/O埠或opcode入口；通用層以既有Machine.Out8交VGA服務，不能直接改DAC而漏掉VGA狀態、Ports及PortLog。
@@ -89,6 +89,11 @@ PortLog保留原步數及模型成本；不能用批次開始時間代替個別I
 審查：既有Out8的VGA／DAC、Ports及PortLog效果已定位，時間來源為本分支模型，沒有新增硬體語意。
 未接產品的消費端RGB原型通過192個合成、六個真正入口隔離比較及14種拒絕，完整CPU／RAM、VGA／DAC及逐筆PortLog相同。
 因此允許新增上述命令與拒絕／擁有權／事件測試；核心測試及消費端完整正常驗收前不標CONFORMED。原型fixture的新建VGA不當完整正常硬體快照。
+
+程式來源c0519513309b0ac2ddc3260cee714ee5b0b4cf9d，Go1.24.13。核心15種拒絕、資料擁有權／有序合併、事件恰好／不足與既有套件通過。
+消費端正常機器實際提交7597個完整RGB工作，全部CPU／RAM、有序像素／回掃／音訊／DOS事件與127檔同獨立原版；44份直接見證加三份分割補證同原版47份。
+四路DEMO、39對正常介面與六對新存B／冷讀B及全部存檔相同。RGB命令依本節已列mode13h範圍CONFORMED，不外推其他模式或任意埠。
+消費端來源、資料、正式啟用及固定收據見主專案[研究019](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-draw-interception.md)與[RGB輸出收據](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-native-output-runtime.json)。
 
 程式7cd6f7a。預設false、提交成功後分類、拒絕不計數與Owner跨回合差值測試通過；核心、session、pod、繪圖及前端套件與靜態檢查通過。
 消費端正常7400更新的84408個演算法計畫／2322651個虛擬指令與逐出口提案總數完全相等；固定語意區塊另有1028041步，未把它們算成Go演算法。
