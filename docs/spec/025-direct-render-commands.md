@@ -628,3 +628,30 @@ VGA.DRV原始2F7B會扣除上方裁切移動的水平數，2FDD側邊起點重�
 全部通過後原子啟用a33036d，前版9e45287保留，776檔主題與34張README直接圖片未改。全部Go閘門仍DRAFT。
 
 橢圓研究進度：同SHA的346A–39B1共1352 bytes，SHA-256 `4b118914e4b4a0f6286f6b8be0eb508710457be02e61eb9887f6dc2c5a9548d5`。Go中點幾何的321例有序像素、316次第一段游標、180次第二段游標、24次段間轉換及24次初始化，同獨立原版CPU／完整RAM／有序寫入與兩成本。原型在workplace/dosgolem/workplace/palette-advance-research/ellipse-*.go，log在同clone的workplace/ellipse-*.log。範圍暫限正半徑160／100以內及完整VGA root；短預算交接、零半徑、拒絕與完整機器鏈尚未驗完，狀態維持DRAFT，不接產品。
+
+### 正半徑橢圓外框的接入契約
+
+狀態：READY，#49，2026-10-27。沿上述346A原檔與SHA，ABI為返回IP／CS，SS:SP+4表面slot、+6中心X、+8中心Y、+10水平半徑、+12垂直半徑、+14色號。輸入限完整320×200的A000 root及合法非空子表面，父表面最多八層；水平半徑1–160、垂直半徑1–100，中心X為−160至479、Y為−100至299。零半徑、其他root或未知形狀保留原路徑。
+Go以32位整數中點誤差及兩段梯度產生四象限有序像素，保留軸上重複點。初始化保留原始scratch與暫存器，首段35F4、轉換37BD及次段37F6為typed交接。只有一步預算時，在八個已驗像素位置依同一Go幾何重建座標，核對DI／色號後提交一個像素；不以原版暫存器取代幾何計算。
+固定相容計畫若包含八個橢圓像素寫入，回退該區塊至執行前，不提交其中任何寫入。已有的純控制前綴可保留；預算不足的控制資料由CPU接續，像素交給Go。此為實作選擇，不改原版輸入、事件時間、規則或存檔。
+已證實（受控條件）：72次完整Go呼叫共1632個演算法計畫、32次中心／半徑邊界呼叫共3832個演算法計畫、方向旗標已設定時72次完整呼叫，整台SaveState bytes同原版。96次1／7／27／128預算的完整交接，含3772個Go演算法、9250個固定控制計畫及63780個CPU控制步，所有像素均由Go輸出，無固定或CPU像素寫入。另有912次單步像素比較、57種游標／像素拒絕、18種初始化拒絕及8次父表面前綴／機器比較。
+原型首次完整提交因初始化清單未按步序排列而被機器拒絕；依提交契約穩定排序後，前綴及完整呼叫乾淨重跑通過，沒有放寬機器限制。研究log為同clone的`workplace/ellipse-{whole-second,short-whole-first,selector-first,pixel-cursor-first,frame-first,boundaries-second,df-first,parents-first}.log`；失敗log保留。
+READY允許分離研究fixture、改用共享來源指紋並接入上述typed流程與固定區塊停止條件。正式selector、完整繪圖回歸與正常路線通過前不升CONFORMED；此契約不外推零半徑、填滿橢圓或全部Go完成。
+
+### 填滿橢圓
+
+狀態：DRAFT，#49，2026-10-27。原始VGA.DRV之39B2–3DFC共1099 bytes，SHA-256 `ee2f7dba367fe53d107b8dc0a5fc8ac1e426f7946a63699a9b2f06059d592e8c`，來源與IDA9.4位址基準沿前節。3DFD以後為相鄰helper，不併入本函式的覆蓋聲明。
+靜態資料流與外框共用兩段中點誤差，輸出改為對稱兩列的水平span；目前為強推論。先比較有序像素與初始化，保留同列重複寫入、左右裁切與奇數尾byte。未完成獨立原版與完整機器比較前不接產品。
+
+### 正半徑填滿橢圓的接入契約
+
+狀態：READY，#49，2026-10-27。沿上述39B2–3DFC及SHA，ABI、表面、正半徑與中心範圍同外框契約。原版3A54先清除DF；游標及span只接受DF為0的已建立狀態。零半徑、其他root、半徑或未知狀態保留原路徑。
+Go以同一中點誤差生成兩條對稱水平區間，按原版順序裁切並輸出word與尾byte，保留同列重複寫入、零次數搬移及113B／113D的中間相容資料。首段3B3D、轉換3C87與次段3CC0只選typed流程；八個STOS位置依Go幾何重建區間，核對DI、CX及AX後可在一步預算提交。固定區塊若含實際的填滿橢圓像素搬移，回退至區塊前，由Go接手。
+已證實（受控條件）：321例有序像素，316次首段、180次次段、24次轉換、24次初始化、1184次單步span比較通過。72次完整Go呼叫、32次中心／半徑邊界、72次初始DF已設定及8次父表面前綴／機器比較，整台SaveState同原版。96次短預算selector含4150個Go演算法、6260個固定控制計畫及54510個CPU控制步，沒有固定或CPU實際像素搬移；拒絕另有60種游標／span、18種初始化與6種span數量／位址／色號。
+原型及log位於同clone的`workplace/palette-advance-research/filled-ellipse-*.go`與`workplace/filled-ellipse-{pixels-first,prefix-first,cursors-first,whole-first,spans-first,short-first,ready-first,extra-first}.log`。READY允許分離fixture、共用來源指紋及接正式selector。完整繪圖回歸與正常路線前不升CONFORMED，不外推全部Go完成。
+
+### 正半徑橢圓外框整批驗收
+
+產品eddd4df、乾淨Go1.24.13候選d5bb3c0完成整批驗收並啟用，見[固定收據](../re/019-native-ellipse-runtime.json)。外框在上節READY守衛內升局部CONFORMED，零半徑、填滿橢圓與其他範圍不外推。全部繪圖、核心、session、pod、前端及go vet通過；96次正式短預算selector仍分列Go演算法、固定控制及CPU控制，沒有固定或CPU像素寫入。
+完整正常CPU／RAM、有序事件、127檔與47份入口證據同原版；四路DEMO、39對介面、六對真存讀檔及十個SAVE檔同基準，槽A五檔未改。非預期閃現0，998筆主動F2另列；新增外框出口在目前DEMO未觀測，正常Go計數與固定2576步維持。
+全部通過後原子啟用d5bb3c0，前版a33036d保留，776檔主題與34張README直接圖片未改，全部Go閘門仍DRAFT。

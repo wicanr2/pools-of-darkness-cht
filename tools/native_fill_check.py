@@ -32,24 +32,25 @@ def main():
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--stage', choices=('trace', 'full'), default='full')
     ap.add_argument('--commit', required=True)
-    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy'), default='fill')
+    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse'), default='fill')
     a = ap.parse_args()
     assert not a.out.exists(), '保留既有收據，請另定輸出檔名'
     p = a.project
     rle = a.family != 'fill'
-    axis = a.family in ('axis', 'line', 'copy')
-    line = a.family in ('line', 'copy')
-    surface_copy = a.family == 'copy'
-    primitive = a.family in ('primitive', 'axis', 'line', 'copy')
-    control = a.family in ('control', 'primitive', 'axis', 'line', 'copy')
-    clip = a.family in ('clip', 'control', 'primitive', 'axis', 'line', 'copy')
-    output = a.family in ('output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy')
-    row = a.family in ('row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy')
-    setup = a.family in ('setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy')
-    color = a.family in ('color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy')
-    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy')
-    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy')
-    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy')
+    axis = a.family in ('axis', 'line', 'copy', 'ellipse')
+    line = a.family in ('line', 'copy', 'ellipse')
+    surface_copy = a.family in ('copy', 'ellipse')
+    ellipse = a.family == 'ellipse'
+    primitive = a.family in ('primitive', 'axis', 'line', 'copy', 'ellipse')
+    control = a.family in ('control', 'primitive', 'axis', 'line', 'copy', 'ellipse')
+    clip = a.family in ('clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse')
+    output = a.family in ('output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse')
+    row = a.family in ('row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse')
+    setup = a.family in ('setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse')
+    color = a.family in ('color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse')
+    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse')
+    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse')
+    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse')
     stem = 'native'+a.family
     root = p/f'workplace/probe/draw-intercept-v1/native-{a.family}-v1'
     original_root = p/'workplace/probe/draw-intercept-v1/native-fade-v1' if color else root
@@ -552,6 +553,40 @@ def main():
             scope='Original full CPU/RAM/ordered writes/model-time and SaveState; selected-plan label corrected by Algorithmic audit; not new normal-player-route evidence')
         result['normal_machine_surface_copy_by_exit']={'48a1:41ae':counts.get('48a1:41ae',[0,0])}
         result['native_go_source_review']['surface_copy_scope']='Typed source/destination rectangles and row direction generate word/byte transfers. Go shadow reads preserve overlap dependencies. Fixed IP/step labels preserve notices only; geometry does not dispatch guest instructions.'
+    if ellipse:
+        for marker in ('ellipse ordered pixel comparisons 321 seed 13418',
+                       'ellipse first cursor original comparisons 316',
+                       'ellipse second cursor original comparisons 180',
+                       'ellipse transition cursor original comparisons 24',
+                       'ellipse prefix original comparisons 24',
+                       'ellipse whole machine comparisons 72 algorithmic plans 1632',
+                       'ellipse boundary whole comparisons 32 algorithmic plans 3832',
+                       'ellipse DF whole comparisons 72 algorithmic plans 1632',
+                       'ellipse one-step Go pixel comparisons 912',
+                       'ellipse cursor and pixel refusals 57', 'ellipse prefix refusals 18',
+                       'ellipse parent prefix and machine comparisons 8',
+                       'ellipse production-shape selector comparisons 96 algorithmic plans 3772 CPU metadata steps 63780 fixed metadata plans 9250'):
+            assert marker in test_log.read_text(),marker
+        result['scope']='Go正半徑橢圓外框、兩段中點幾何及單步像素；新增路徑限受控原版比較，完整正常回歸保留，零半徑、填滿橢圓及其他未驗路徑仍保留，#49未全部完成'
+        names=sorted(f.name for f in (module/'apps/pod/drawblocks').glob('*.go')
+                     if f.name.startswith('native_ellipse') or f.name.startswith('ellipse_'))
+        assert len(names)==19
+        result['ellipse_sources']={name:sha(module/'apps/pod/drawblocks'/name) for name in names}
+        for name in names:
+            if name.endswith('_test.go'):continue
+            source=(module/'apps/pod/drawblocks'/name).read_text()
+            assert '.Step(' not in source and 'effect{' not in source and 'b.run(' not in source
+        result['prototype_and_original_tests']['ellipse']=dict(
+            pixel_cases=321,first_cursor_plans=316,second_cursor_plans=180,transition_plans=24,prefix_plans=24,
+            full_native_calls=72,full_native_plans=1632,boundary_calls=32,boundary_plans=3832,
+            df_calls=72,df_plans=1632,single_step_pixels=912,cursor_pixel_refusals=57,prefix_refusals=18,
+            parent_comparisons=8,short_selector_calls=96,short_algorithmic_plans=3772,
+            short_fixed_metadata_plans=9250,short_cpu_metadata_steps=63780,
+            scope='Controlled original full CPU/RAM/ordered pixels/model-time and SaveState; short budgets retain CPU/fixed metadata but no emulated ellipse pixel writes; not new normal-player-route evidence')
+        result['normal_machine_ellipse_by_exit']={key:counts.get(key,[0,0]) for key in
+            ('48a1:35f1','48a1:37ba','48a1:37f5','48a1:39aa','48a1:39b1',
+             '48a1:3660','48a1:36b6','48a1:370c','48a1:3762','48a1:384e','48a1:38a4','48a1:38fa','48a1:3950')}
+        result['native_go_source_review']['ellipse_scope']='Go midpoint error/gradient arithmetic generates four ordered quadrants. Source positions preserve ABI/scratch/model-time notices. Single-step fallback recomputes positions from the same Go geometry; fixed blocks with ellipse pixel writes are rolled back before commit, metadata may continue through CPU. No guest opcode dispatcher in geometry.'
     a.out.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({k: result[k] for k in ('algorithmic_plans', 'algorithmic_instructions', 'fixed_semantic_instructions', 'guest_files')}, ensure_ascii=False))
 

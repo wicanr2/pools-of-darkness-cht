@@ -569,3 +569,11 @@ VGA.DRV原檔SHA及IDA9.4定位沿用前節。3F5E–41AE共593 bytes的SHA為55
 來源943064ee8dbb24a051b1c279da0dc1a54733a827，乾淨Go1.24.13候選a33036d07896dbeb4542730df138e16a4ecf0afa939247fb23ae66bfd4d63cba。核心、session、pod、drawblocks、前端與go vet通過；完整正常CPU／RAM、有序像素／回掃／音訊／DOS及127檔同原版，46份直接加一份分割補證同47份原版。
 四路DEMO、39對介面、六對真存讀檔與十個SAVE檔同基準，槽A五檔未改。非預期閃現0，998筆F2主動切換另列；搬移出口在目前DEMO未觀測，正常111710個Go計畫／3398106步與固定2576步維持。受控比較不外推正常路線或FPS。
 全部通過後原子啟用a33036d，9e45287以pod-play-nativeline保留。[固定收據](019-native-copy-runtime.json)綁定來源、測試分類及啟用；重生入口為Docker內`tools/native_fill_check.py --family copy`，原始收據在`workplace/probe/draw-intercept-v1/native-copy-v1`及`workplace/probe/g9-hd/nativecopy-{play,ui,save}-v1`。其他root、複製函式、橢圓與未驗路徑仍保留，#49開啟，全部Go閘門DRAFT。
+
+## 2026-10-27 Go正半徑橢圓外框接入
+
+VGA.DRV原檔SHA及IDA9.4位址沿用前節。346A–39B1共1352 bytes，SHA為4b118914e4b4a0f6286f6b8be0eb508710457be02e61eb9887f6dc2c5a9548d5。Go中點誤差與梯度生成四象限有序像素，保留重複點；35F4、37BD與37F6只選typed流程，原位置保存相容通知及模型成本。單步預算時仍由同一Go幾何重建位置，固定區塊若包含外框像素即回退至區塊前，不把x86語意繪製混入計畫。
+321例有序像素、316／180次游標、24次轉換、24次初始化、912次單步像素與75種拒絕通過。72次完整Go、32次中心／半徑邊界、72次DF已設定與8次父表面前綴／機器比較同原版。96次短預算selector含3772個Go演算法、9250個固定控制計畫及63780個CPU控制步，整台SaveState同原版，沒有固定或CPU像素寫入。
+來源eddd4df044d0a7426842d3301f18be0dc9aa0cb0，乾淨Go1.24.13候選d5bb3c0797ed11491b9649d0b1902eb0d11bcd0c97fa98e8ce83afa2159e917a。完整正常CPU／RAM、有序像素／回掃／音訊／DOS與127檔、47份入口證據相同；四路DEMO、39對介面、六對真存讀檔與十個SAVE檔同基準，槽A五檔未改。
+非預期閃現0，998筆F2主動切換另列。新增外框出口在目前DEMO未觀測，正常111710個Go計畫／3398106步與固定2576步維持，受控比較不外推正常路線或FPS。全部通過後原子啟用d5bb3c0，a33036d以pod-play-nativecopy保留。
+[固定收據](019-native-ellipse-runtime.json)綁定來源、分類及啟用；重生入口為Docker內`tools/native_fill_check.py --family ellipse`，原始收據在`workplace/probe/draw-intercept-v1/native-ellipse-v1`與`workplace/probe/g9-hd/nativeellipse-{play,ui,save}-v1`。零半徑、填滿橢圓與其他未驗路徑仍保留，#49開啟，全部Go閘門DRAFT。
