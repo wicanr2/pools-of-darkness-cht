@@ -46,11 +46,11 @@
 
 ## 待定
 
-目前工作：#49正半徑橢圓外框已接入並通過整批驗收，兩段中點幾何與單步像素由Go處理，限已列VGA表面與範圍。零半徑、填滿橢圓及其他固定／未驗繪圖仍未全部接管。
-最新產品來源`eddd4df044d0a7426842d3301f18be0dc9aa0cb0`，正式執行檔`d5bb3c0797ed11491b9649d0b1902eb0d11bcd0c97fa98e8ce83afa2159e917a`。前版a33036d以pod-play-nativecopy保留，較早備份及776檔主題未改。
-外框321例有序像素、兩段游標316／180次、轉換及初始化各24次、912次單步像素及75種拒絕通過。72次完整Go、32次邊界、72次DF已設定與8次父表面前綴／機器比較同原版；96次短預算selector含3772個Go演算法、9250個固定控制計畫與63780個CPU控制步，沒有固定或CPU像素寫入。
-完整正常CPU／RAM、有序事件與127檔、四路DEMO、39對介面、六對新存B／冷讀B與十個SAVE檔同基準，固定[019-native-ellipse-runtime.json](docs/re/019-native-ellipse-runtime.json)。新增外框出口在目前DEMO未觀測，正常111710個Go計畫／3398106步與固定2576步維持，不把受控比較當正常玩家路線。全部Go閘門仍DRAFT，#49保持開啟。
-填滿橢圓39B2–3DFC在獨立研究副本通過321例像素、316／180次游標、24次轉換／初始化、1184次單步span、72次完整Go、32次邊界、72次DF及8次父表面比較。短預算selector96次、4150個Go演算法、6260個固定控制計畫及54510個CPU控制步同原版，84種拒絕另驗。規格READY，尚未接產品。
+目前工作：#49正半徑填滿橢圓已接入並通過整批驗收，對稱水平區間與單步搬移由Go處理，限已列VGA表面與範圍。零半徑及其他圖像、固定／未驗路徑仍未全部接管。
+最新產品來源`e16b4d4796444a93cc1f11d573082f81d6545d3e`，正式執行檔`5034a1cc1220ce1e90094d0069c55edd56b7fac7d3d559cac2bf426776eec87a`。前版d5bb3c0以pod-play-nativeellipse保留，較早備份及776檔主題未改。
+填滿橢圓321例有序像素、316／180次游標、24次轉換與初始化、1184次單步搬移、84種拒絕通過。72次完整Go、32次邊界、72次初始DF已設定及8次父表面前綴／機器比較同原版；96次短預算selector含4150個Go演算法、6260個固定控制計畫與54510個CPU控制步，沒有固定或CPU實際像素搬移。
+完整正常CPU／RAM、有序事件與127檔、四路DEMO、39對介面、六對新存B／冷讀B與十個SAVE檔同基準，固定[019-native-ellipsefill-runtime.json](docs/re/019-native-ellipsefill-runtime.json)。新增填滿橢圓出口在目前DEMO未觀測，正常111710個Go計畫／3398106步與固定2576步維持，不把受控比較當正常玩家路線。全部Go閘門仍DRAFT，#49保持開啟。
+51CC圖像列在獨立研究副本：直接色號列80次原版比較通過，位元平面列與完整交接仍DRAFT，尚未接產品。區塊查找與來源資料準備先保持原版，不能稱Go解析器已完成。
 斜線舊固定收據的1280個選取計畫已追加[分類勘誤](docs/re/019-draw-interception.md#斜線計畫分類勘誤)：898個Go演算法與382個固定相容前綴。原始收據保留，後續收據分開列出，不把控制前綴當作原生繪圖。
 
 HD最新完成批次：[#48](https://github.com/wicanr2/pools-of-darkness-cht/issues/48)補齊DUNGCOM第5組地形。
@@ -62,12 +62,12 @@ HD最新完成批次：[#48](https://github.com/wicanr2/pools-of-darkness-cht/is
 繪圖目前是混合實作。#45–#47已完成像素命令、限定函式及固定Go區塊的替換與一致性驗收；使用者本輪要求的「全部以Go繪圖演算法處理」尚未達成，由[#49](https://github.com/wicanr2/pools-of-darkness-cht/issues/49)追蹤。
 字模、限定共享搬移／填色／清零、VGA限定矩形、單點寫入／讀回、指定範圍矩形及逐列續行、水平／垂直線、圖片來源與列控制、正反向RLE、裁切及翻轉、使用色號掃描與清單、目標RGB與誤差初始化、淡出色差／插值、逐色RGB工作準備、完整RGB輸出／讀取、色盤初始化／列控制／階段交接、回掃兩狀態等待與畫面合成有Go演算法；其餘VGA及保守退回主要仍用1432個固定Go區塊，按原x86的暫存器、IP、旗標與分支語意運算。
 成功區塊跳過通用x86解碼與CPU.Step，但不能以此稱為全部原生Go繪圖；來源或預算失配仍回原x86。
-先前2c58d1d的[來源分類查核](docs/re/019-native-go-audit.json)保留為歷史基準；新eddd4df已有上述Go演算法與Algorithmic分類，沒有宣稱其餘VGA也完成。
+先前2c58d1d的[來源分類查核](docs/re/019-native-go-audit.json)保留為歷史基準；新e16b4d4已有上述Go演算法與Algorithmic分類，沒有宣稱其餘VGA也完成。
 原盤點的VGA驅動與共享常式共90項函式／helper、1432區塊仍是來源索引，不能當作Go演算法完成數。三支共享函式、8×8字模與單次RGB保留。
 最新機器DEMO的111710個Go演算法計畫共3398106個虛擬指令，固定語意區塊另2576個。翻轉正常計畫0，48個受控完整圖片呼叫另列。此分類不把普通遊戲CPU指令算成繪圖回退，也不冒稱全遊戲覆蓋率。
 2AA8完整工作已接手，不足預算仍保留舊邊界。2A90及續行由Go等待狀態機接手，沿既有VGA平台模型，不新增逐週期硬體RE。
 完整事件、CPU／RAM與DOS檔案一致；四路DEMO、讀檔／片頭／封面39對畫面、另存B後冷讀6對畫面與全部存檔相同，槽A五個檔案未改。
-已切換正式入口，最新固定收據為[019-native-ellipse-runtime.json](docs/re/019-native-ellipse-runtime.json)；舊[019-all-render-runtime.json](docs/re/019-all-render-runtime.json)保留。規格025及通用436的上述已列子集CONFORMED，鏡像、單點、矩形及軸線限受控呼叫，全部Go演算法閘門仍DRAFT。
+已切換正式入口，最新固定收據為[019-native-ellipsefill-runtime.json](docs/re/019-native-ellipsefill-runtime.json)；舊[019-all-render-runtime.json](docs/re/019-all-render-runtime.json)保留。規格025及通用436的上述已列子集CONFORMED，鏡像、單點、矩形及軸線限受控呼叫，全部Go演算法閘門仍DRAFT。
 入口見證：正式46份直接見證與一份分割補證同原版47份。原版2772仍在固定計畫內；更早的42／44份紀錄與勘誤保留於研究019，歷史JSON未改。
 已列RGB工作及鏡像旗標恢復以外的I/O、POPF、未驗寬指令、B000及其他模式保留原路徑；GPU／SIMD、動畫HD、片尾及未列玩家路線不外推完成。小型RAM呼叫未全部更快，成對成本與FPS限制見[研究019](docs/re/019-draw-interception.md#47-vga繪圖接管完成)。
 

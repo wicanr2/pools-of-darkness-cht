@@ -32,25 +32,26 @@ def main():
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--stage', choices=('trace', 'full'), default='full')
     ap.add_argument('--commit', required=True)
-    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse'), default='fill')
+    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill'), default='fill')
     a = ap.parse_args()
     assert not a.out.exists(), '保留既有收據，請另定輸出檔名'
     p = a.project
     rle = a.family != 'fill'
-    axis = a.family in ('axis', 'line', 'copy', 'ellipse')
-    line = a.family in ('line', 'copy', 'ellipse')
-    surface_copy = a.family in ('copy', 'ellipse')
-    ellipse = a.family == 'ellipse'
-    primitive = a.family in ('primitive', 'axis', 'line', 'copy', 'ellipse')
-    control = a.family in ('control', 'primitive', 'axis', 'line', 'copy', 'ellipse')
-    clip = a.family in ('clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse')
-    output = a.family in ('output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse')
-    row = a.family in ('row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse')
-    setup = a.family in ('setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse')
-    color = a.family in ('color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse')
-    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse')
-    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse')
-    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse')
+    axis = a.family in ('axis', 'line', 'copy', 'ellipse', 'ellipsefill')
+    line = a.family in ('line', 'copy', 'ellipse', 'ellipsefill')
+    surface_copy = a.family in ('copy', 'ellipse', 'ellipsefill')
+    ellipse = a.family in ('ellipse', 'ellipsefill')
+    ellipsefill = a.family == 'ellipsefill'
+    primitive = a.family in ('primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill')
+    control = a.family in ('control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill')
+    clip = a.family in ('clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill')
+    output = a.family in ('output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill')
+    row = a.family in ('row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill')
+    setup = a.family in ('setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill')
+    color = a.family in ('color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill')
+    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill')
+    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill')
+    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill')
     stem = 'native'+a.family
     root = p/f'workplace/probe/draw-intercept-v1/native-{a.family}-v1'
     original_root = p/'workplace/probe/draw-intercept-v1/native-fade-v1' if color else root
@@ -587,6 +588,42 @@ def main():
             ('48a1:35f1','48a1:37ba','48a1:37f5','48a1:39aa','48a1:39b1',
              '48a1:3660','48a1:36b6','48a1:370c','48a1:3762','48a1:384e','48a1:38a4','48a1:38fa','48a1:3950')}
         result['native_go_source_review']['ellipse_scope']='Go midpoint error/gradient arithmetic generates four ordered quadrants. Source positions preserve ABI/scratch/model-time notices. Single-step fallback recomputes positions from the same Go geometry; fixed blocks with ellipse pixel writes are rolled back before commit, metadata may continue through CPU. No guest opcode dispatcher in geometry.'
+    if ellipsefill:
+        for marker in ('filled ellipse ordered pixel comparisons 321 seed 14770',
+                       'filled ellipse first cursor original comparisons 316',
+                       'filled ellipse second cursor original comparisons 180',
+                       'filled ellipse transition cursor original comparisons 24',
+                       'filled ellipse prefix original comparisons 24',
+                       'filled ellipse whole machine comparisons 72 algorithmic plans 1632',
+                       'filled ellipse boundary whole comparisons 32 algorithmic plans 3832',
+                       'filled ellipse DF whole comparisons 72 algorithmic plans 1632',
+                       'filled ellipse one-step span comparisons 1184',
+                       'filled ellipse cursor and span refusals 60',
+                       'filled ellipse prefix refusals 18',
+                       'filled ellipse count/address/color refusals 6',
+                       'filled ellipse parent prefix and machine comparisons 8',
+                       'filled ellipse selector comparisons 96 algorithmic plans 4150 CPU metadata steps 54510 fixed metadata plans 6260'):
+            assert marker in test_log.read_text(),marker
+        result['scope']='Go正半徑填滿橢圓、對稱水平區間及單步span；新增路徑限受控原版比較，完整正常回歸保留，零半徑及其他未驗路徑仍保留，#49未全部完成'
+        names=sorted(f.name for f in (module/'apps/pod/drawblocks').glob('*.go')
+                     if f.name.startswith('native_filled_ellipse') or f.name.startswith('filled_ellipse_'))
+        assert len(names)==19
+        result['filled_ellipse_sources']={name:sha(module/'apps/pod/drawblocks'/name) for name in names}
+        for name in names:
+            if name.endswith('_test.go'):continue
+            source=(module/'apps/pod/drawblocks'/name).read_text()
+            assert '.Step(' not in source and 'effect{' not in source and 'b.run(' not in source
+        result['prototype_and_original_tests']['filled_ellipse']=dict(
+            pixel_cases=321,first_cursor_plans=316,second_cursor_plans=180,transition_plans=24,prefix_plans=24,
+            full_native_calls=72,full_native_plans=1632,boundary_calls=32,boundary_plans=3832,
+            df_calls=72,df_plans=1632,single_step_spans=1184,cursor_span_refusals=60,prefix_refusals=18,
+            span_count_address_color_refusals=6,parent_comparisons=8,short_selector_calls=96,
+            short_algorithmic_plans=4150,short_fixed_metadata_plans=6260,short_cpu_metadata_steps=54510,
+            scope='Original CPU/full RAM/ordered pixels/model-time and SaveState; short budgets retain control metadata, all actual filled-ellipse pixel transfers generated by Go. Zero-count transfers preserve model-time; not new normal-player-route evidence.')
+        result['normal_machine_filled_ellipse_by_exit']={key:counts.get(key,[0,0]) for key in
+            ('48a1:3b3a','48a1:3c84','48a1:3cbf','48a1:3df5','48a1:3dfc',
+             '48a1:3bd8','48a1:3bdc','48a1:3c2a','48a1:3c2e','48a1:3d47','48a1:3d4b','48a1:3d99','48a1:3d9d')}
+        result['native_go_source_review']['filled_ellipse_scope']='Go midpoint arithmetic generates two clipped ordered horizontal intervals, including duplicate rows and odd tails. Single-step spans derive counts and positions from the same geometry. Fixed pixel-transfer blocks are rolled back; CPU/fixed control metadata separately counted. Source IPs label notices, not an opcode dispatcher.'
     a.out.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({k: result[k] for k in ('algorithmic_plans', 'algorithmic_instructions', 'fixed_semantic_instructions', 'guest_files')}, ensure_ascii=False))
 

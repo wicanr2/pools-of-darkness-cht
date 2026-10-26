@@ -1,5 +1,7 @@
 # 研究索引
 
+- [Go正半徑填滿橢圓](019-draw-interception.md#2026-10-27-go正半徑填滿橢圓接入)：#49，[固定收據](019-native-ellipsefill-runtime.json)。對稱區間及單步搬移通過受控原版比較與完整正常回歸並啟用；其他圖像列研究中，全部Go閘門仍DRAFT。
+
 - [Go正半徑橢圓外框](019-draw-interception.md#2026-10-27-go正半徑橢圓外框接入)：#49，[固定收據](019-native-ellipse-runtime.json)。兩段中點幾何及單步像素通過受控原版比較與完整正常回歸並啟用；填滿橢圓READY待接，全部Go閘門仍DRAFT。
 
 - [Go表面矩形搬移](019-draw-interception.md#2026-10-27-go表面矩形搬移接入)：#49，[固定收據](019-native-copy-runtime.json)。重疊、四方向與奇數尾byte通過受控原版比較及完整正常回歸並啟用；[斜線計畫分類勘誤](019-draw-interception.md#斜線計畫分類勘誤)另列，全部Go閘門仍DRAFT。
