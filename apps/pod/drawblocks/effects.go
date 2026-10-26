@@ -64,7 +64,13 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 	if p := planRLERuns(v, budget); p != nil {
 		return p
 	}
+	if p := planImageSpan(v, budget); p != nil {
+		return p
+	}
 	if p := planPaletteScan(v, budget); p != nil {
+		return p
+	}
+	if p := planMirrorPairs(v, budget); p != nil {
 		return p
 	}
 	at := uint32(v.CS())*16 + uint32(v.IP())
@@ -115,7 +121,7 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 // Stop a fixed-effects prefix before an algorithm's entry, so its pixel
 // work is offered to the typed Go path using the committed guest state.
 func algorithmBoundary(cs, ip uint16) bool {
-	return cs == 0x48a1 && (ip == 0x41af || ip == 0x4268 || ip == 0x68f4 || ip == 0x4a67)
+	return cs == 0x48a1 && (ip == 0x41af || ip == 0x4268 || ip == 0x68f4 || ip == 0x689e || ip == 0x4a67 || mirrorPairBase(ip) != 0)
 }
 func (e *effect) mark(ip uint16, cost uint64) {
 	e.p.Instructions++
