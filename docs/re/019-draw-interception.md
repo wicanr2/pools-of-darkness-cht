@@ -441,3 +441,39 @@ Capstone5.0.3逐bytes相同，區間SHA-256為`1c4ab9672accc6ec8dcd86e8703b26cf8
 其中2AA8／2AAC／2AB3／2AB8／2ABC／2AC1入口合計75996步，主要是硬體色盤輸出的ABI與控制邊界。
 這些是前綴入口的計數，不當完整函式成本；下一步先核對2AA8硬體輸出契約，不能僅把暫存器／IP轉寫換個名稱就當成Go演算法。
 圖片其他裁切、鏡像外層、初始化與未驗入口仍保留；#49及全部Go演算法閘門尚未完成。
+
+## 2026-10-26 Go完整RGB輸出接入
+
+原檔VGA.DRV的2AA8–2AC2共27 bytes／16道指令，執行期CS48A1、實體基底48A10；IDA9.4二進位匯出base0，以檔案位移核對，Capstone5.0.3逐bytes相同。
+輸入SHA沿前節，程式區間SHA-256為`7134f5f3fbaf2adf007afa01632ff5ec980bd4c127a095defaa954fd831b4801`。
+已證實：遠返回之後的四個word依序是色號、紅、綠、藍，2AA8負責關中斷、選色號、寫RGB、開中斷及返回。
+Go直接解析成RGB工作，交通用HostPaletteWrite；通用層只支援這筆VGA工作，沿現有Machine.Out8更新DAC、VGA、Ports與PortLog，不提供任意I/O或逐opcode效果派送。
+標準索引及RGB順序引用[FreeVGA Color Registers](https://www.scs.stanford.edu/10wi-cs140/pintos/specs/freevga/vga/colorreg.htm)，沒有重做DAC硬體或週期考古。
+
+通用命令先驗mode13h、RGB、所有步數／成本及RAM／搬移順序，再按值複製、合併提交。四筆I/O保留各自時間，不能全記在批次起點。
+原生工作限定已驗指紋、普通RAM堆疊／參數、色號0–255、RGB0–63及足夠事件預算；保留原BP、AX藍色、DX3C9、旗標、遠返回與第一步的BP保存寫入。
+16步／130模型成本，四次I/O在第6／9／11／13步，成本32／56／78／100；DOSBoxCost為16及對應步數。這是固定dosgolem模型，不是實體硬體逐週期對拍。
+初版誤把RETF再加一次近返回成本，獨立原版拒絕138；沿CPU的RETF分支核對後修正130。失敗log與原型來源快照留在clone的workplace。
+
+未接產品原型及正式計畫各通過192個合成、六個真實入口隔離比較及14種拒絕；含DAC初始0／1／2分量相位、兩成本、色號／RGB端點與旗標。
+完整CPU／RAM、VGA／DAC、Ports及有序PortLog的值／步數／成本相同。真實入口來自原版正常DEMO，但隔離比較使用新建VGA，完整正常狀態仍另驗。
+通用層15種拒絕、擁有權／影像寫入合併／事件恰好及不足通過；六支完整原版函式兩成本比較再加入VGA、DAC、Ports與逐筆PortLog，全部相同。
+規格025及通用436先READY才接產品；核心、session、pod、drawblocks、Xvfb前端與go vet通過。
+
+產品來源`c0519513309b0ac2ddc3260cee714ee5b0b4cf9d`，Go1.24.13乾淨候選`874d5d8b990073436554e14011acd62eb2986aa827d6b25aa86e1626e6055bce`。
+完整正常範圍與啟用狀態見[019-native-output-runtime.json](019-native-output-runtime.json)，重生入口為Docker內的`tools/native_fill_check.py --family output`。
+原始收據在`workplace/probe/draw-intercept-v1/native-output-v1`與`workplace/probe/g9-hd/nativeoutput-{play,ui,save}-v1`。
+
+正常7400更新實際提交7597個完整RGB工作／121552步。全部Go計畫110067個／3371823步，固定語意區塊24451步。
+此前普通CPU執行的四筆I/O及CLI／STI也交主機，因此HostWork總數由3350692增至3396274；全部遊戲虛擬步數仍為712250000，兩者不可混算。
+完整CPU／RAM、有序像素3343240筆、回掃8633筆、音訊79012筆、DOS1827984筆及127檔同獨立原版。
+44份直接入口見證與三份固定區塊內部入口分割補證，全部47份CPU／完整RAM相同；正式與研究分割版分類分開保存。
+
+四路DEMO、39對正常介面及6對真存讀檔相同；空槽B正常建立及冷啟動讀回，全部10個SAVE檔同基準，槽A五檔未改。
+非預期閃現0，既有998筆F2主動切換另列；776檔主題、字型與譯文未改，README保留34張圖片，沒有新增G6探索。
+全部門檻通過後原子啟用874d5d8，前版9c3e652保存在pod-play-nativerow，較早備份保留。
+通用[436規格收尾](https://github.com/wicanr2/pools-of-darkness-cht/blob/700872d8428152cc8dd11d82d451744399491c49/docs/spec/436-host-call-effects.md)只改文件，Go來源與程式提交c051951完全相同，不為文件狀態改寫已驗二進位。
+本次整支6733孤立函式約1.81倍原版速度，包含既有Go演算法；不能歸因於單一RGB工作，三支小型RAM呼叫仍較慢，不外推整體FPS。
+
+下一個窄任務是689E圖片區塊標頭的水平裁切分支與691C銜接，先補來源、幾何與ABI證據；未READY不接產品。
+2A9E／2AA3回掃等待沿既有VGA平台契約，不開逐週期硬體RE。其他圖片裁切、鏡像外層、初始化與未驗入口仍保留，#49保持開啟。

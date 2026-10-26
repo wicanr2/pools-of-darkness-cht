@@ -32,17 +32,18 @@ def main():
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--stage', choices=('trace', 'full'), default='full')
     ap.add_argument('--commit', required=True)
-    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row'), default='fill')
+    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output'), default='fill')
     a = ap.parse_args()
     assert not a.out.exists(), '保留既有收據，請另定輸出檔名'
     p = a.project
     rle = a.family != 'fill'
-    row = a.family == 'row'
-    setup = a.family in ('setup', 'row')
-    color = a.family in ('color', 'setup', 'row')
-    fade = a.family in ('fade', 'color', 'setup', 'row')
-    image = a.family in ('image', 'fade', 'color', 'setup', 'row')
-    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row')
+    output = a.family == 'output'
+    row = a.family in ('row', 'output')
+    setup = a.family in ('setup', 'row', 'output')
+    color = a.family in ('color', 'setup', 'row', 'output')
+    fade = a.family in ('fade', 'color', 'setup', 'row', 'output')
+    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output')
+    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output')
     stem = 'native'+a.family
     root = p/f'workplace/probe/draw-intercept-v1/native-{a.family}-v1'
     original_root = p/'workplace/probe/draw-intercept-v1/native-fade-v1' if color else root
@@ -104,13 +105,21 @@ def main():
     fixed = new['HostInstructions'] + new['BlockInstructions'] - new['AlgorithmicInstructions']
     if row:
         assert counts['48a1:6899'][0] > 0
+    if output:
+        assert counts['48a1:2ac2'][0] > 0
     assert fixed > 0, '其餘固定區塊仍存在，不能稱全部Go演算法完成'
     assert new['Commands']['Mismatches'] == 0
     code = p/'workplace/input/dos/pod/VGA.DRV'
     assert sha(code) == 'eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f'
     assert hashlib.sha256(code.read_bytes()[0x41af:0x42b3]).hexdigest() == 'c7db9b7b119f14464a7e76d35125922a3559d10fef36624f79f5120dd0d02f00'
     test_log = p/f'workplace/dosgolem/workplace/native-{a.family}-product-tests.log'
-    if row:
+    if output:
+        assert hashlib.sha256(code.read_bytes()[0x2aa8:0x2ac3]).hexdigest() == '7134f5f3fbaf2adf007afa01632ff5ec980bd4c127a095defaa954fd831b4801'
+        for line in ('RGB job original comparisons 192', 'RGB job original entry comparisons 6'):
+            assert line in test_log.read_text(), line
+        core_log = p/'workplace/dosgolem/workplace/native-output-core-tests.log'
+        assert '\nPASS\n' in core_log.read_text()
+    elif row:
         assert hashlib.sha256(code.read_bytes()[0x6850:0x689e]).hexdigest() == '1c4ab9672accc6ec8dcd86e8703b26cf877efa2ca54e8afa5268d2c5fed7a62b'
         for line in ('image row synthetic original comparisons 174', 'image row original entry-state comparisons 384'):
             assert line in test_log.read_text(), line
@@ -154,7 +163,11 @@ def main():
     else:
         assert '18 independent plan comparisons 194' in test_log.read_text()
     assert '\nPASS\n' in test_log.read_text()
-    tests = (dict(row_synthetic_plan_comparisons=174, original_entry_states=64,
+    tests = (dict(rgb_synthetic_plan_comparisons=192, isolated_original_entry_plan_comparisons=6,
+                  refusal_cases=14, device_comparison='CPU/full RAM/VGA/DAC/Ports/ordered PortLog values, steps and model cycles',
+                  initial_dac_write_phases=[0, 1, 2], generic_core_refusal_cases=15,
+                  generic_core_test_log_sha256=sha(core_log)) if output else
+             dict(row_synthetic_plan_comparisons=174, original_entry_states=64,
                   original_entry_state_plan_comparisons=384, refusal_cases=22) if row else
              dict(list_synthetic_plan_comparisons=36, target_synthetic_plan_comparisons=72,
                   error_synthetic_plan_comparisons=32, isolated_entry_states=65,
@@ -172,7 +185,8 @@ def main():
                   normal_state_plan_comparisons=192, refusal_cases=9) if rle else
              dict(geometries=9, cost_models=2, cases=18, plan_comparisons=194, refusal_cases=8))
     tests['log_sha256'] = sha(test_log)
-    result = dict(scope=('Go圖片列標頭、上下界判斷與列位置，保留既有Go圖像演算法；其他裁切／鏡像控制及固定區塊仍保留，#49未全部完成' if row else
+    result = dict(scope=('Go完整RGB工作交VGA服務，以有界調色盤命令保留埠時序，保留既有Go圖像演算法；其他裁切／鏡像控制及固定區塊仍保留，#49未全部完成' if output else
+                        'Go圖片列標頭、上下界判斷與列位置，保留既有Go圖像演算法；其他裁切／鏡像控制及固定區塊仍保留，#49未全部完成' if row else
                         'Go使用色清單、目標RGB與誤差陣列準備，保留既有Go圖像演算法；其餘控制、硬體I/O及固定區塊仍保留，#49未全部完成' if setup else
                         'Go逐色RGB工作與完成交接，保留既有Go圖像演算法；其餘控制、硬體I/O及固定區塊仍保留，#49未全部完成' if color else
                         'Go淡出色差與插值，保留既有Go圖像演算法；其餘控制、硬體I/O及固定區塊仍保留，#49未全部完成' if fade else
@@ -364,6 +378,17 @@ def main():
         result['image_row_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/native_image_row.go')
         result['native_go_source_review']['row_scope'] = 'planImageRow parses a row index, compares signed vertical bounds and calculates the destination using Go geometry; ABI registers, timing and ordered RAM notices are separate; no opcode or instruction-effect dispatcher'
         result['normal_machine_row_by_exit'] = {key: value for key, value in counts.items() if key in ('48a1:685c', '48a1:6866', '48a1:686d', '48a1:6899')}
+    if output:
+        result['palette_output_source_sha256'] = sha(p/'workplace/dosgolem/apps/pod/drawblocks/native_palette_output.go')
+        result['native_go_source_review']['output_scope'] = 'planPaletteOutput decodes one typed index/RGB job and emits HostPaletteWrite for the existing VGA DAC service; generic commit merges device and memory moments without guest opcode dispatch; no CPU.Step in RGB generation'
+        result['device_service_sources'] = {name: sha(p/'workplace/dosgolem'/name) for name in (
+            'internal/machine/host_palette.go', 'internal/machine/host_work.go', 'internal/machine/machine.go',
+            'internal/machine/host_palette_test.go', 'apps/pod/drawblocks/native_palette_output_test.go',
+            'apps/pod/drawblocks/calls_test.go')}
+        result['normal_machine_palette_output'] = dict(plans=counts['48a1:2ac2'][0], instructions=counts['48a1:2ac2'][1],
+            scope='accepted complete RGB output calls; insufficient-budget calls retain original device/ABI boundaries')
+        result['hardware_contract'] = dict(source='https://www.scs.stanford.edu/10wi-cs140/pintos/specs/freevga/vga/colorreg.htm',
+            scope='standard VGA DAC index and RGB ordering reused through Machine.Out8; pinned model timing, not physical-cycle parity')
     a.out.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({k: result[k] for k in ('algorithmic_plans', 'algorithmic_instructions', 'fixed_semantic_instructions', 'guest_files')}, ensure_ascii=False))
 

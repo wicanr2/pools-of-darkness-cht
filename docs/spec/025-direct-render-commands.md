@@ -361,3 +361,23 @@ READY後才接產品；正式切換仍須完整事件、既有正常介面及真
 完整CPU／RAM、有序像素／回掃／音訊／DOS事件及127檔同原版，44份直接見證加三份分割補證同原版47份。
 四路DEMO、39對正常介面及6對新存B／冷讀B、全部SAVE bytes通過後原子啟用9c3e652，來源7a4f168；前版5dc0b29保存在pod-play-nativesetup。
 固定[019-native-row-runtime.json](../re/019-native-row-runtime.json)綁定來源、工具與正式入口，其他固定區塊及全部Go閘門仍DRAFT。
+
+### 完整RGB輸出工作
+
+狀態：CONFORMED，#49，2026-10-26。原檔VGA.DRV offset2AA8–2AC2共27 bytes／16道指令，IDA9.4與Capstone5.0.3逐bytes相同，SHA-256為`7134f5f3fbaf2adf007afa01632ff5ec980bd4c127a095defaa954fd831b4801`。
+執行期入口48A1:2AA8；SS:SP的遠返回後，SP+4／6／8／10依序是色號與RGB word。Go直接讀取這筆RGB工作，交436的型別化調色盤命令；未達READY前只研究原型。
+VGA標準語意引用[FreeVGA Color Registers](https://www.scs.stanford.edu/10wi-cs140/pintos/specs/freevga/vga/colorreg.htm)，沿用現有Machine.Out8及VGA服務，不逐週期逆向硬體。
+候選限定mode13h、完整指紋、普通RAM參數與堆疊、色號0–255、RGB0–63，堆疊不環繞且保存BP位置不與程式／輸入別名。未知條件／不足預算沿原路徑。
+ABI保留AX=原藍色word、DX=3C9、原BP、SP前進四bytes及原遠返回。算術旗標依INC DX，CF保留，IF在STI後設置；事件預算內無IRQ或畫面事件。
+候選16步／130模型成本，DOSBoxCost16；選色號與RGB的I/O在第6／9／11／13步，模型成本32／56／78／100，DOSBoxCost同各步數。堆疊BP寫入第一步，最後定位2AC2。
+原型初版把遠返回再加一次近返回成本，獨立原版拒絕138；沿CPU的RETF契約核對後修正為130，失敗log保留。
+須先以獨立原版核對CPU／完整RAM、VGA／DAC及有序埠記錄，再升READY；正式接入後仍驗完整事件、既有正常介面與真存讀檔。原資料、規則、亂數與存檔不改。
+未接產品的原型已通過192個合成與六個真實入口隔離比較及14種拒絕，含DAC初始0／1／2分量相位、兩成本與旗標端點。
+完整CPU／RAM、VGA／DAC、Ports及每筆PortLog的值／步數／成本相同；該隔離入口使用新建VGA，不當完整正常硬體快照。審查READY後才允許接入，正式入口仍保留已驗圖片列控制版本直到全部正常回歸通過。
+
+正常機器真正提交7597個完整RGB工作共121552步，全部Go計畫110067個／3371823步，固定語意區塊24451步。
+新命令也接手原來由普通CPU執行的I/O及CLI／STI，因此HostWork總數增加45582步；不能把前後HostWork的變化誤算為全遊戲指令數改變。
+完整CPU／RAM、有序像素／回掃／音訊／DOS事件及127檔同原版，44份直接見證加三份分割補證同47份原版入口。
+四路DEMO、39對介面、6對新存B／冷讀B及全部SAVE bytes通過後原子啟用874d5d8，程式來源c051951，前版9c3e652以pod-play-nativerow保留。
+固定[019-native-output-runtime.json](../re/019-native-output-runtime.json)綁定遊戲及通用層Go來源；通用436的700872d收尾只改文件，不改候選程式。
+其他裁切／鏡像控制及未驗入口仍保留，全部Go演算法閘門DRAFT。

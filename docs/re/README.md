@@ -1,5 +1,7 @@
 # 研究索引
 
+- [Go完整RGB輸出](019-draw-interception.md#2026-10-26-go完整rgb輸出接入)：#49，[固定收據](019-native-output-runtime.json)。198次原版隔離比較、14種拒絕、通用15種拒絕及完整正常回歸通過，已啟用；固定語意區塊仍24451步，全部Go閘門DRAFT。
+
 - [Go圖片列控制](019-draw-interception.md#2026-10-26-go圖片列控制接入)：#49，[固定收據](019-native-row-runtime.json)。558個獨立原版計畫、22種拒絕及完整正常回歸通過，已啟用；固定語意區塊仍100421步，全部Go閘門DRAFT。
 
 - [Go色盤陣列準備](019-draw-interception.md#2026-10-26-go色盤陣列準備接入)：#49，[固定收據](019-native-setup-runtime.json)。530次原版計畫比較、21種拒絕與正常回歸通過；已啟用使用色整理、目標RGB填入及誤差初始化，其他固定路徑仍保留。
