@@ -95,6 +95,12 @@ PortLog保留原步數及模型成本；不能用批次開始時間代替個別I
 四路DEMO、39對正常介面與六對新存B／冷讀B及全部存檔相同。RGB命令依本節已列mode13h範圍CONFORMED，不外推其他模式或任意埠。
 消費端來源、資料、正式啟用及固定收據見主專案[研究019](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-draw-interception.md)與[RGB輸出收據](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-native-output-runtime.json)。
 
+## 唯讀CPU機型查詢（READY）
+
+StepView新增CPUModel回傳目前16位CPU機型及有效布林值，沿live／token生命週期；過期查詢回零／false並記錄誤用。
+只讀取既有CPU.Model，不寫設定、狀態或存檔。消費端需要恢復旗標的保留位元時，依既有CPU.SetFlags契約選用機型，未知機型拒絕。
+預設執行與CPU模型不變。驗收包括三種機型、過期view及消費端獨立原版PUSHF／POPF寫入與返回旗標。
+
 程式7cd6f7a。預設false、提交成功後分類、拒絕不計數與Owner跨回合差值測試通過；核心、session、pod、繪圖及前端套件與靜態檢查通過。
 消費端正常7400更新的84408個演算法計畫／2322651個虛擬指令與逐出口提案總數完全相等；固定語意區塊另有1028041步，未把它們算成Go演算法。
 四路DEMO、39對介面與6對新存讀檔驗收通過，完整狀態與有序事件同原版。詳見消費端[固定收據](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-native-fill-runtime.json)。

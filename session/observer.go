@@ -132,6 +132,13 @@ func (v StepView) DOSBoxCost() bool {
 	}
 	return v.o.machine.CPU.DOSBoxCost
 }
+
+func (v StepView) CPUModel() (cpu.Model, bool) {
+	if !v.live() {
+		return 0, false
+	}
+	return v.o.machine.CPU.Model, true
+}
 func (v StepView) DS() uint16 { return v.seg(cpu.DS) }
 func (v StepView) ES() uint16 { return v.seg(cpu.ES) }
 func (v StepView) SS() uint16 { return v.seg(cpu.SS) }

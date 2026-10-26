@@ -130,11 +130,11 @@ func TestNativeMirrorPairRefusals(t *testing.T) {
 	}
 }
 
-func TestNativeMirrorControlledWholeCalls(t *testing.T) {
+func TestNativeImageControlledWholeCalls(t *testing.T) {
 	seed := rleSeed(t)
 	cases, plans := 0, 0
 	for _, x := range []int16{-7, 0, 7} {
-		for _, flags := range []byte{1, 3} {
+		for _, flags := range []byte{0, 1, 2, 3} {
 			for _, dos := range []bool{false, true} {
 				v := &view{mem: append([]byte(nil), seed.mem...), s: seed.s, dos: dos}
 				stack := uint32(v.SS())*16 + uint32(v.SP())
@@ -151,7 +151,7 @@ func TestNativeMirrorControlledWholeCalls(t *testing.T) {
 						}
 						w := &view{mem: newer.Mem, s: machine.HostRegisters{R: newer.CPU.R, Seg: newer.CPU.Seg, IP: newer.CPU.IP, Flags: newer.CPU.Flags}, dos: dos}
 						if p := Plan(w, budget); p != nil {
-							if p.Algorithmic && mirrorPairBase(w.IP()) != 0 {
+							if p.Algorithmic && w.CS() == 0x48a1 && w.IP() >= 0x6733 && w.IP() < 0x6e63 {
 								used++
 							}
 							if err := newer.CommitHostBlock(p); err != nil {
@@ -162,7 +162,7 @@ func TestNativeMirrorControlledWholeCalls(t *testing.T) {
 						}
 					}
 					if used == 0 || newer.CPU.R != old.CPU.R || newer.CPU.Seg != old.CPU.Seg || newer.CPU.IP != old.CPU.IP || newer.CPU.Flags != old.CPU.Flags || newer.Steps != old.Steps || newer.CPU.Cycles != old.CPU.Cycles || !bytes.Equal(newer.Mem, old.Mem) {
-						t.Fatalf("controlled whole mirror differs x%d flags%d dos%v budget%d used%d", x, flags, dos, budget, used)
+						t.Fatalf("controlled whole mirror differs x%d flags%d dos%v budget%d used%d R want%v got%v Seg want%v got%v IP want%x got%x F want%x got%x N want%d got%d C want%d got%d", x, flags, dos, budget, used, old.CPU.R, newer.CPU.R, old.CPU.Seg, newer.CPU.Seg, old.CPU.IP, newer.CPU.IP, old.CPU.Flags, newer.CPU.Flags, old.Steps, newer.Steps, old.CPU.Cycles, newer.CPU.Cycles)
 					}
 					cases++
 					plans += used

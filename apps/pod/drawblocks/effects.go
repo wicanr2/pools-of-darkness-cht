@@ -58,6 +58,12 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 	if p := planSmallCall(v, budget); p != nil {
 		return p
 	}
+	if p := planImageInitialize(v, budget); p != nil {
+		return p
+	}
+	if p := planImageReturn(v, budget); p != nil {
+		return p
+	}
 	if p := planRectangle(v, budget); p != nil {
 		return p
 	}
@@ -68,6 +74,39 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 		return p
 	}
 	if p := planImageRow(v, budget); p != nil {
+		return p
+	}
+	if p := planImageControl(v, budget); p != nil {
+		return p
+	}
+	if p := planClipSetup(v, budget); p != nil {
+		return p
+	}
+	if p := planClippedRun(v, budget); p != nil {
+		return p
+	}
+	if p := planFlipInitialize(v, budget); p != nil {
+		return p
+	}
+	if p := planFlipRow(v, budget); p != nil {
+		return p
+	}
+	if p := planFlipHeader(v, budget); p != nil {
+		return p
+	}
+	if p := planFlipControl(v, budget); p != nil {
+		return p
+	}
+	if p := planMirrorSpan(v, budget); p != nil {
+		return p
+	}
+	if p := planMirrorPacket(v, budget); p != nil {
+		return p
+	}
+	if p := planMirrorClipSetup(v, budget); p != nil {
+		return p
+	}
+	if p := planMirrorClippedPacket(v, budget); p != nil {
 		return p
 	}
 	if p := planPaletteScan(v, budget); p != nil {
@@ -145,6 +184,15 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 // Stop a fixed-effects prefix before an algorithm's entry, so its pixel
 // work is offered to the typed Go path using the committed guest state.
 func algorithmBoundary(cs, ip uint16) bool {
+	if cs == 0x48a1 {
+		switch ip {
+		case 0x6733, 0x682d, 0x6e5e, 0x6a0c, 0x6a3a, 0x6a48, 0x6a50, 0x6a58, 0x6abe, 0x6b33, 0x6b5d, 0x6b71, 0x6bea, 0x6bee, 0x6bfe, 0x6c4d, 0x6c50, 0x6c53, 0x6c8f, 0x6cf6, 0x6cf9, 0x6d08, 0x6dc0, 0x6dc4, 0x6dd2:
+			return true
+		}
+	}
+	if cs == 0x48a1 && (ip == 0x6832 || ip == 0x6840 || ip == 0x6848 || ip == 0x691c || ip == 0x6930 || ip == 0x69a9 || ip == 0x69ad || ip == 0x69bd) {
+		return true
+	}
 	return cs == 0x48a1 && (ip == 0x41af || ip == 0x4268 || ip == 0x68f4 || ip == 0x689e || ip == 0x6850 || ip == 0x2aa8 || ip == 0x4a67 || ip == 0x4b19 || ip == 0x4b6c || ip == 0x4b9a || ip == 0x4bc1 || ip == 0x4a83 || ip == 0x4afd || ip == 0x4b3a || mirrorPairBase(ip) != 0)
 }
 func (e *effect) mark(ip uint16, cost uint64) {

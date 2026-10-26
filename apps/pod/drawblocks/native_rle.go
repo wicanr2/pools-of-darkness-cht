@@ -8,16 +8,24 @@ import (
 )
 
 var rleCode = smallFingerprint(40, "1926d07bb1c1e91594b6a388138e57b204d8efb327addc7cebf32d0dd7ec5818")
+var flippedRLECode = smallFingerprint(42, "674e9d2236f6de2d9da5e9a1ff2e2bd26fa8833d9dc5e6f5502ee3e5ba3cf676")
 
 // planRLERuns decodes the asset's length/repeat packets. The loop traverses
 // compressed image runs, with no x86 opcode or instruction-address dispatch.
 func planRLERuns(v CPUView, budget uint64) *machine.HostWorkPlan {
-	if v.CS() != 0x48a1 || v.IP() != 0x68f4 || v.ES() != 0xa000 || v.Flags()&cpu.DF != 0 || v.CX()&0xff00 != 0 || v.Read8(0x449) != 0x13 {
+	return planRLERunsProgram(v, budget, v.IP() == 0x6b33)
+}
+func planRLERunsProgram(v CPUView, budget uint64, flipped bool) *machine.HostWorkPlan {
+	entry, header, fp := uint16(0x68f4), uint16(0x689e), rleCode
+	if flipped {
+		entry, header, fp = 0x6b33, 0x6abe, flippedRLECode
+	}
+	if v.CS() != 0x48a1 || v.IP() != entry || v.ES() != 0xa000 || v.Flags()&cpu.DF != 0 || v.CX()&0xff00 != 0 || v.Read8(0x449) != 0x13 {
 		return nil
 	}
-	var code [40]byte
-	copyView(v, 0x48a10+0x68f4, code[:])
-	if sha256.Sum256(code[:]) != rleCode.sum {
+	var code [42]byte
+	copyView(v, 0x48a10+uint32(entry), code[:fp.size])
+	if sha256.Sum256(code[:fp.size]) != fp.sum {
 		return nil
 	}
 	si, end, di := uint32(v.SI()), uint32(v.BX()), uint32(v.DI())
@@ -25,7 +33,7 @@ func planRLERuns(v CPUView, budget uint64) *machine.HostWorkPlan {
 	if si >= end || srcBase+end > 0xa0000 {
 		return nil
 	}
-	p := &machine.HostWorkPlan{Algorithmic: true, After: machine.HostRegisters{R: [8]uint16{v.AX(), v.CX(), v.DX(), v.BX(), v.SP(), v.BP(), v.SI(), v.DI()}, Seg: [4]uint16{v.ES(), v.CS(), v.SS(), v.DS()}, IP: 0x68f4, Flags: v.Flags()}, LastCS: 0x48a1}
+	p := &machine.HostWorkPlan{Algorithmic: true, After: machine.HostRegisters{R: [8]uint16{v.AX(), v.CX(), v.DX(), v.BX(), v.SP(), v.BP(), v.SI(), v.DI()}, Seg: [4]uint16{v.ES(), v.CS(), v.SS(), v.DS()}, IP: entry, Flags: v.Flags()}, LastCS: 0x48a1}
 	for si < end {
 		control := v.Read8(srcBase + si)
 		count := uint32(control>>1) + 1
@@ -57,6 +65,21 @@ func planRLERuns(v CPUView, budget uint64) *machine.HostWorkPlan {
 				exitIP = 0x691a
 			} else {
 				exitIP = 0x6909
+			}
+		}
+		if flipped {
+			if repeat {
+				wordIP, byteIP = 0x6b50, 0x6b54
+				exitIP = 0x6b58
+				if last {
+					exitIP = 0x6b5a
+				}
+			} else {
+				wordIP, byteIP = 0x6b3e, 0x6b42
+				exitIP = 0x6b46
+				if last {
+					exitIP = 0x6b48
+				}
 			}
 		}
 		iterations := uint64(count/2 + count%2)
@@ -102,7 +125,7 @@ func planRLERuns(v CPUView, budget uint64) *machine.HostWorkPlan {
 		p.After.R[cpu.CX] = 0
 		p.After.Flags = nativeCompareFlags(v.Flags(), uint16(si), uint16(end))
 		if last {
-			p.After.IP = 0x689e
+			p.After.IP = header
 			break
 		}
 	}

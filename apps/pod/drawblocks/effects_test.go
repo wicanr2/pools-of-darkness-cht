@@ -20,24 +20,25 @@ type view struct {
 	dos bool
 }
 
-func (v *view) Read8(a uint32) byte    { return v.mem[a&0xfffff] }
-func (v *view) Read16(a uint32) uint16 { return uint16(v.Read8(a)) | uint16(v.Read8(a+1))<<8 }
-func (v *view) Steps() uint64          { return 0 }
-func (v *view) AX() uint16             { return v.s.R[0] }
-func (v *view) CX() uint16             { return v.s.R[1] }
-func (v *view) DX() uint16             { return v.s.R[2] }
-func (v *view) BX() uint16             { return v.s.R[3] }
-func (v *view) SP() uint16             { return v.s.R[4] }
-func (v *view) BP() uint16             { return v.s.R[5] }
-func (v *view) SI() uint16             { return v.s.R[6] }
-func (v *view) DI() uint16             { return v.s.R[7] }
-func (v *view) ES() uint16             { return v.s.Seg[0] }
-func (v *view) CS() uint16             { return v.s.Seg[1] }
-func (v *view) SS() uint16             { return v.s.Seg[2] }
-func (v *view) DS() uint16             { return v.s.Seg[3] }
-func (v *view) IP() uint16             { return v.s.IP }
-func (v *view) Flags() uint16          { return v.s.Flags }
-func (v *view) DOSBoxCost() bool       { return v.dos }
+func (v *view) Read8(a uint32) byte         { return v.mem[a&0xfffff] }
+func (v *view) Read16(a uint32) uint16      { return uint16(v.Read8(a)) | uint16(v.Read8(a+1))<<8 }
+func (v *view) Steps() uint64               { return 0 }
+func (v *view) AX() uint16                  { return v.s.R[0] }
+func (v *view) CX() uint16                  { return v.s.R[1] }
+func (v *view) DX() uint16                  { return v.s.R[2] }
+func (v *view) BX() uint16                  { return v.s.R[3] }
+func (v *view) SP() uint16                  { return v.s.R[4] }
+func (v *view) BP() uint16                  { return v.s.R[5] }
+func (v *view) SI() uint16                  { return v.s.R[6] }
+func (v *view) DI() uint16                  { return v.s.R[7] }
+func (v *view) ES() uint16                  { return v.s.Seg[0] }
+func (v *view) CS() uint16                  { return v.s.Seg[1] }
+func (v *view) SS() uint16                  { return v.s.Seg[2] }
+func (v *view) DS() uint16                  { return v.s.Seg[3] }
+func (v *view) IP() uint16                  { return v.s.IP }
+func (v *view) Flags() uint16               { return v.s.Flags }
+func (v *view) DOSBoxCost() bool            { return v.dos }
+func (v *view) CPUModel() (cpu.Model, bool) { return cpu.Model80386, true }
 func (v *view) CopyRAM(a uint32, dst []byte) bool {
 	if uint64(a)+uint64(len(dst)) > 0xa0000 {
 		return false
@@ -85,9 +86,12 @@ func original(v *view) *machine.Machine {
 	m.CPU.Model = cpu.Model80386
 	return m
 }
-func compare(t *testing.T, v *view, p *machine.HostWorkPlan) {
+func compare(t *testing.T, v *view, p *machine.HostWorkPlan, models ...cpu.Model) {
 	t.Helper()
 	m := original(v)
+	if len(models) > 0 {
+		m.CPU.Model = models[0]
+	}
 	var writes []machine.HostWrite
 	m.WatchWrite(0, 0xfffff, func(m *machine.Machine, a uint32, old, val byte) {
 		cs, ip := m.CPU.OpAddr()

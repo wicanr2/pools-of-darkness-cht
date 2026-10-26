@@ -5,6 +5,7 @@ import (
 	"errors"
 	"testing"
 
+	"github.com/wicanr2/dosgolem/internal/cpu"
 	"github.com/wicanr2/dosgolem/internal/machine"
 )
 
@@ -19,6 +20,25 @@ type recordingObserver struct {
 	panicVW   int
 	keep      *StepView
 	readStale bool
+}
+
+func TestStepViewCPUModelLifetime(t *testing.T) {
+	for _, model := range []cpu.Model{cpu.Model8086, cpu.Model80186, cpu.Model80386} {
+		o := startSyntheticOwner(t, observerLoopCOM)
+		o.machine.CPU.Model = model
+		o.viewOpen = true
+		v := StepView{o: o, token: o.viewToken}
+		if got, ok := v.CPUModel(); !ok || got != model {
+			t.Fatalf("CPUModel=%v/%v, want %v", got, ok, model)
+		}
+		if o.machine.CPU.Model != model || o.viewMisuse {
+			t.Fatal("valid query changed state")
+		}
+		o.viewOpen = false
+		if got, ok := v.CPUModel(); ok || got != 0 || !o.viewMisuse {
+			t.Fatal("expired query accepted")
+		}
+	}
 }
 
 func (r *recordingObserver) BeforeStep(v StepView) error {
