@@ -1,5 +1,7 @@
 # 研究索引
 
+- [Go圖像列](019-draw-interception.md#2026-10-27-go圖像列輸出接入)：#49，[固定收據](019-native-bitmap-runtime.json)。八平面組色、直接色號列與單步輸出已驗收啟用；原版資料準備及其他未驗路徑保留，全部Go閘門仍DRAFT。
+
 - [Go正半徑填滿橢圓](019-draw-interception.md#2026-10-27-go正半徑填滿橢圓接入)：#49，[固定收據](019-native-ellipsefill-runtime.json)。對稱區間及單步搬移通過受控原版比較與完整正常回歸並啟用；其他圖像列研究中，全部Go閘門仍DRAFT。
 
 - [Go正半徑橢圓外框](019-draw-interception.md#2026-10-27-go正半徑橢圓外框接入)：#49，[固定收據](019-native-ellipse-runtime.json)。兩段中點幾何及單步像素通過受控原版比較與完整正常回歸並啟用；填滿橢圓READY待接，全部Go閘門仍DRAFT。

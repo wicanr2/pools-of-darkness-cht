@@ -586,3 +586,11 @@ VGA.DRV原檔SHA及IDA9.4位址沿用前節。346A–39B1共1352 bytes，SHA為4
 來源e16b4d4796444a93cc1f11d573082f81d6545d3e，乾淨Go1.24.13候選5034a1cc1220ce1e90094d0069c55edd56b7fac7d3d559cac2bf426776eec87a。完整正常CPU／RAM、有序事件、127檔與47份入口證據相同；四路DEMO、39對介面、六對真存讀檔與十個SAVE檔同基準，槽A五檔未改。非預期閃現0，998筆F2主動切換另列。
 新增填滿橢圓出口在目前DEMO未觀測，正常111710個Go計畫／3398106步與固定2576步維持，不外推正常路線或FPS。全部通過後原子啟用5034a1c，d5bb3c0以pod-play-nativeellipse保留。[固定收據](019-native-ellipsefill-runtime.json)綁定來源及啟用，重生入口為Docker內`tools/native_fill_check.py --family ellipsefill`，原始收據在`workplace/probe/draw-intercept-v1/native-ellipsefill-v1`及`workplace/probe/g9-hd/nativeellipsefill-{play,ui,save}-v1`。
 51CC的資料標記為BMHD／CMAP／BODY；後續研究將列輸出與來源準備分開記錄，直接色號列已有80次原版比較，尚未接產品。其他圖像與未驗路徑仍保留，#49開啟，全部Go閘門DRAFT。
+
+## 2026-10-27 Go圖像列輸出接入
+
+原檔VGA.DRV之51CC–5413共584 bytes，SHA-256為dd209e837a213ee07c0b9602563167e0eed60702d8a96f4c20d98f27ebb157a2，沿既有IDA9.4匯出與位址基準。Go從typed來源列直接搬移色號，或組合八個位元平面的目前bit；5373初始化、53C5分組及53FC推進保留ABI與模型成本。一步預算仍依同一來源重建資料，固定像素區塊回退後交Go，不派送原版繪圖opcode。
+80次直接列、80次平面初始化、336次平面分組、4576次單步輸出與160次列推進，同原版CPU／完整RAM／有序寫入及兩成本。400次完整呼叫含兩種列形狀、壓縮／直接來源及五種預算，32492個Go演算法、154444個固定控制計畫與499008個CPU控制步分列，整台SaveState相同，沒有固定或CPU實際像素輸出。另有64次邊界／裁切／DF及150種錯誤狀態拒絕通過。
+來源519ac6389d5264f628f52745efc3140e3769efd5，乾淨Go1.24.13執行檔2e45f31d19263699fe7df5ed0053c9365923108f72e191c9949dd87ae54b689e。全部繪圖、核心、session、pod、前端與go vet通過。完整正常狀態、有序事件、127檔與47份入口同原版；四路DEMO、39對介面、六對真存讀檔及十個SAVE檔同基準，槽A未改。非預期閃現0，998筆主動F2另列。
+新圖像列出口在目前DEMO未觀測，正常111710個Go計畫／3398106步與固定2576步維持；受控比較不當新玩家路線或FPS證據。全部通過後原子啟用2e45f31，前版5034a1c保留。[固定收據](019-native-bitmap-runtime.json)綁定來源與啟用；重生入口為Docker內`tools/native_fill_check.py --family bitmap`，原始收據在`workplace/probe/draw-intercept-v1/native-bitmap-v1`與`workplace/probe/g9-hd/nativebitmap-{play,ui,save}-v1`。
+BMHD／BODY查找、壓縮來源列準備與5196的CMAP資料轉換保留原版，不宣稱Go檔案解析器。5615–5885整數縮放原型的125組像素與250次初始化比較通過；列準備尚有DOSBox成本與有序寫入差異，保留失敗log並繼續研究，未接產品。全部Go閘門仍DRAFT，#49開啟。
