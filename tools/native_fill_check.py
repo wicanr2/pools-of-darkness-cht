@@ -32,27 +32,28 @@ def main():
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--stage', choices=('trace', 'full'), default='full')
     ap.add_argument('--commit', required=True)
-    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap'), default='fill')
+    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale'), default='fill')
     a = ap.parse_args()
     assert not a.out.exists(), '保留既有收據，請另定輸出檔名'
     p = a.project
     rle = a.family != 'fill'
-    axis = a.family in ('axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap')
-    line = a.family in ('line', 'copy', 'ellipse', 'ellipsefill', 'bitmap')
-    surface_copy = a.family in ('copy', 'ellipse', 'ellipsefill', 'bitmap')
-    ellipse = a.family in ('ellipse', 'ellipsefill', 'bitmap')
-    ellipsefill = a.family in ('ellipsefill', 'bitmap')
-    bitmap = a.family == 'bitmap'
-    primitive = a.family in ('primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap')
-    control = a.family in ('control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap')
-    clip = a.family in ('clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap')
-    output = a.family in ('output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap')
-    row = a.family in ('row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap')
-    setup = a.family in ('setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap')
-    color = a.family in ('color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap')
-    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap')
-    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap')
-    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap')
+    axis = a.family in ('axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale')
+    line = a.family in ('line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale')
+    surface_copy = a.family in ('copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale')
+    ellipse = a.family in ('ellipse', 'ellipsefill', 'bitmap', 'scale')
+    ellipsefill = a.family in ('ellipsefill', 'bitmap', 'scale')
+    bitmap = a.family in ('bitmap', 'scale')
+    scale = a.family == 'scale'
+    primitive = a.family in ('primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale')
+    control = a.family in ('control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale')
+    clip = a.family in ('clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale')
+    output = a.family in ('output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale')
+    row = a.family in ('row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale')
+    setup = a.family in ('setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale')
+    color = a.family in ('color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale')
+    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale')
+    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale')
+    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale')
     stem = 'native'+a.family
     root = p/f'workplace/probe/draw-intercept-v1/native-{a.family}-v1'
     original_root = p/'workplace/probe/draw-intercept-v1/native-fade-v1' if color else root
@@ -652,6 +653,36 @@ def main():
         result['normal_machine_bitmap_by_exit']={key:counts.get(key,[0,0]) for key in
             ('48a1:53c3','48a1:53ed','48a1:53d8','48a1:53f6','48a1:53fa','48a1:5408','48a1:5413')}
         result['native_go_source_review']['bitmap_row_scope']='Typed source row and surface cursor; direct Go copies and eight-plane bit composition. One-step output reconstructs data from the same source. Fixed raster blocks roll back before commit. CPU/fixed source preparation and metadata are counted separately. Original IPs label ABI notices and model costs; no opcode dispatcher.'
+    if scale:
+        for marker in ('scale5615 ordered pixel comparisons 125',
+                       'scale5615 prefix comparisons 250',
+                       'scale5615 prepared row comparisons 930',
+                       'scale5615 output group comparisons 930',
+                       'scale5615 single-step span comparisons 10488',
+                       'scale5615 full Go machine comparisons 250 algorithmic plans 2110',
+                       'scale5615 short selector comparisons 1000 algorithmic plans 38610 fixed metadata plans 34268 CPU metadata steps 320562',
+                       'scale5615 boundary parent whole comparisons 144 algorithmic plans 576',
+                       'scale5615 invalid state refusals 88'):
+            assert marker in test_log.read_text(), marker
+        assert hashlib.sha256(code.read_bytes()[0x5615:0x5886]).hexdigest() == '6d9aac63d38f8b0e5ddd9bdbdfcfdda9144318a34398436b6b468c52f0271106'
+        result['scope']='Go表面整數縮放、置中取樣、補色、重複列及短預算scratch與畫面輸出；新增路徑限受控原版比較，其他未驗範圍保留，#49未全部完成'
+        names=sorted(f.name for f in (module/'apps/pod/drawblocks').glob('native_scale5615*.go'))
+        assert len(names)==15
+        result['surface_scale_sources']={name:sha(module/'apps/pod/drawblocks'/name) for name in names}
+        for name in names:
+            if name.endswith('_test.go'): continue
+            source=(module/'apps/pod/drawblocks'/name).read_text()
+            assert '.Step(' not in source and 'effect{' not in source and 'b.run(' not in source
+        result['prototype_and_original_tests']['surface_scale']=dict(
+            ordered_pixels=125,prefixes=250,prepared_rows=930,output_groups=930,
+            single_step_spans=10488,full_go_calls=250,full_go_plans=2110,
+            short_calls=1000,short_algorithmic_plans=38610,short_fixed_metadata_plans=34268,
+            short_cpu_metadata_steps=320562,boundary_parent_calls=144,
+            boundary_parent_plans=576,refusals=88,
+            scope='Controlled full original CPU/RAM/ordered output/model-time and SaveState. Source row sampled before overlapping output; five integer repeat factors and four short budgets. No CPU/fixed scaling scratch or display writes; not new normal-player-route evidence.')
+        result['normal_machine_scale_by_exit']={key:counts.get(key,[0,0]) for key in
+            ('48a1:5798','48a1:5819','48a1:587f','48a1:586b','48a1:5885','48a1:5813','48a1:5879','48a1:587d','48a1:5856','48a1:585a')}
+        result['native_go_source_review']['surface_scale_scope']='Typed source/destination surfaces and centered integer sampling grid. Go prepares clipped/fill samples and repeats rows, preserving overlap order and extra scratch writes. One-step plans derive the same samples/copy geometry. Fixed pixel blocks roll back before commit; CPU/fixed control metadata separately counted. Source IPs label notices/costs, no opcode dispatcher.'
     a.out.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({k: result[k] for k in ('algorithmic_plans', 'algorithmic_instructions', 'fixed_semantic_instructions', 'guest_files')}, ensure_ascii=False))
 

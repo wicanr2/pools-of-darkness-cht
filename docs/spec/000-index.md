@@ -1,6 +1,6 @@
 # 規格索引
 
-- [025 直接攔截繪圖與前端命令](025-direct-render-commands.md)：#45–#47輸出一致性及#49已列Go子集通過；新增圖形路徑限受控原版入口。最新[圖像列收據](../re/019-native-bitmap-runtime.json)涵蓋完整正常回歸、四路DEMO、39對介面及6對存讀檔。5615縮放研究中，其他固定及未驗入口仍保留，全部Go閘門DRAFT。
+- [025 直接攔截繪圖與前端命令](025-direct-render-commands.md)：#45–#47輸出一致性及#49已列Go子集通過；新增圖形路徑限受控原版入口。最新[整數縮放收據](../re/019-native-scale-runtime.json)涵蓋完整正常回歸、四路DEMO、39對介面及6對存讀檔。5886翻轉READY待接入，其他固定及未驗入口保留，全部Go閘門DRAFT。
 
 - [024 片頭字幕覆繪](024-intro-subtitles.md)：#10，八組台詞、雙語／倍率／原版切換及正常5100格閃現0，局部CONFORMED。
 - [023 左右海報](023-side-posters.md)：#21，固定加寬與語系文字，繁中／英文及 2／3 倍 CONFORMED。

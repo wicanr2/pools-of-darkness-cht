@@ -594,3 +594,16 @@ VGA.DRV原檔SHA及IDA9.4位址沿用前節。346A–39B1共1352 bytes，SHA為4
 來源519ac6389d5264f628f52745efc3140e3769efd5，乾淨Go1.24.13執行檔2e45f31d19263699fe7df5ed0053c9365923108f72e191c9949dd87ae54b689e。全部繪圖、核心、session、pod、前端與go vet通過。完整正常狀態、有序事件、127檔與47份入口同原版；四路DEMO、39對介面、六對真存讀檔及十個SAVE檔同基準，槽A未改。非預期閃現0，998筆主動F2另列。
 新圖像列出口在目前DEMO未觀測，正常111710個Go計畫／3398106步與固定2576步維持；受控比較不當新玩家路線或FPS證據。全部通過後原子啟用2e45f31，前版5034a1c保留。[固定收據](019-native-bitmap-runtime.json)綁定來源與啟用；重生入口為Docker內`tools/native_fill_check.py --family bitmap`，原始收據在`workplace/probe/draw-intercept-v1/native-bitmap-v1`與`workplace/probe/g9-hd/nativebitmap-{play,ui,save}-v1`。
 BMHD／BODY查找、壓縮來源列準備與5196的CMAP資料轉換保留原版，不宣稱Go檔案解析器。5615–5885整數縮放原型的125組像素與250次初始化比較通過；列準備尚有DOSBox成本與有序寫入差異，保留失敗log並繼續研究，未接產品。全部Go閘門仍DRAFT，#49開啟。
+
+### 縮放研究成本勘誤
+
+前段「有序寫入差異」是失敗訊息將原版展開寫入與計畫未展開清單並列造成的誤讀。實際完整有序寫入相同，失敗是列準備漏算每次LODSB的DOSBox額外成本。輸出另外少計RETF的遠返回成本；依既有CPU的base2、cycFar18及兩次stack讀取4訂正。沒有調整CPU，也沒有以常數或放寬比較補過。
+修正後930次列準備、930次列輸出、10488次單步、250次完整Go及144次邊界／八層父表面同原版；1000次短預算完整交接含38610個Go演算法、34268個固定控制計畫及320562個CPU控制步，沒有固定或CPU的縮放scratch／畫面像素寫入。88種錯誤狀態拒絕通過，規格升READY後接開發分支；正式產品仍519ac63／2e45f31，未完成整批驗收前不替換。
+
+## 2026-10-27 Go表面整數縮放接入
+
+VGA.DRV的5615–5885共625 bytes，SHA-256為6d9aac63d38f8b0e5ddd9bdbdfcfdda9144318a34398436b6b468c52f0271106，沿既有IDA9.4位址基準。Go以置中整數取樣格處理補色、重複樣本與重複列，保留來源重疊及額外scratch寫入。短預算仍由同一取樣格重建資料，固定像素區塊回退，沒有opcode派送。
+正式來源f4f2838797bf1f967ceb7d98f58f8d029ac997bd，乾淨Go1.24.13執行檔0abeee0e50bd4f407150f4e671979f828f5a3a0a42944e68993ccd97cc1186e9。250次完整Go、1000次短預算、144次邊界／父表面及88種拒絕同原版，計畫分類及初版成本勘誤見規格025與前段，不把固定控制前綴當Go演算法。
+全套drawblocks 113.541秒、核心、session、pod、前端與go vet通過。完整正常CPU／RAM、有序事件、127檔與47份入口同原版；四路DEMO、39對介面、六對真存讀檔與十個SAVE檔同基準，槽A未改。非預期閃現0，998筆主動F2另列。新增縮放出口在目前DEMO未觀測，正常111710個Go計畫／3398106步與固定2576步維持，不外推正常路線或FPS。
+全部通過後原子啟用0abeee0，前版2e45f31保留。[固定收據](019-native-scale-runtime.json)綁定來源及啟用；重生入口為Docker內`tools/native_fill_check.py --family scale`，原始收據在`workplace/probe/draw-intercept-v1/native-scale-v1`及`workplace/probe/g9-hd/nativescale-{play,ui,save}-v1`。
+5886原地翻轉已在獨立研究副本通過完整原版與短預算比較並達READY，尚未接產品；同列倒序的中途讀寫相依與奇數高度中間列已由原版反例確認，不能用一般圖形庫取代。其他轉場、字形與未驗入口仍保留，全部Go閘門DRAFT，#49開啟。
