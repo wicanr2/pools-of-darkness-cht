@@ -773,3 +773,108 @@ Go以32位元LFSR與四張原始byte表計算樣本，固定呈現初值1／0；
 通過全部驗收後原子啟用，前版b484851以pod-play-demo-control保留，776檔主題與README圖片未改。
 新轉場在這條正常demo未觀測，新增入口只宣稱受控原版條件下完成；正常111710個Go計畫／3398106步、
 固定語意2576步是目前路線的分類，不是全遊戲覆蓋率。其他色盤控制、字模及未驗條件仍待接管，整體Go閘門DRAFT。
+
+<a id="bounded-memory-initial"></a>
+
+### 短預算共享跨度與 RLE 續行
+
+初始狀態：DRAFT，#49，2026-10-28。正式來源 b11290c 的正常探針仍有 2576 個固定語意步。
+唯讀盤點得到 32 種入口／出口組合，包含共享清除、共享複製及 RLE 的實際像素寫入。
+整個呼叫或封包不合目前預算時，先前的完整 Go 演算法拒絕，後續固定區塊再接續。
+盤點與擷取原版 CPU／RAM、有序事件均同原正式探針，原始資料在
+`workplace/probe/draw-intercept-v1/native-remainder-{audit,capture}-v1/`。
+初始化及色盤控制另外分類，不因固定步數存在就推論全部是像素。
+
+勘誤標記 `BOUNDED-MEMORY-READY-20261028`：共享清除、複製與兩個 RLE 核心的短預算問題，
+已由[接入契約](#bounded-memory-ready)解出。其餘 32 種形狀不因此宣稱完成。
+
+<a id="bounded-memory-ready"></a>
+
+### 有界清除、複製與封包的接入契約
+
+狀態：局部CONFORMED，#49，2026-10-28；以下保留接入前的READY契約。輸入為原版 GAME.EXE
+`35ad635e558852925b7028a921aacafc2df8e84be24a8a1136c6267471948d69`、GAME.OVR
+`885d6a07a3658f0688dc9d0630dfa984683a3d1d1e515a8e9909d29f62012485`，以及 VGA.DRV
+`eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f`。
+沿既有 IDA Pro 9.4 資料庫與證據；VGA 檔案位址基準為 0，共享常式採固定載入配置的 dosgolem 執行期段址。
+
+| 不可變定位 | 範圍 | 區段 SHA-256 | 純 Go 工作 |
+|---|---|---|---|
+| DOS/GAME.EXE+GAME.OVR/runtime:1D1F:046E | 25 bytes 至 0486 | ebe07354f00d07b7c388ccbf5a4bd13a2fd9a5ba8aff103883d64463f7d936dd | 零色號 byte／word 跨度 |
+| DOS/GAME.EXE+GAME.OVR/runtime:1ED4:1A5C | 35 bytes 至 1A7E | 1941e7e4eafb9300636ac7ff777605d8ea0b96654893d1198ca3d5f0bfd93972 | 有序 byte 複製 |
+| DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x68F4 | 40 bytes | 1926d07bb1c1e91594b6a388138e57b204d8efb327addc7cebf32d0dd7ec5818 | RLE 原色列封包 |
+| DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x6B33 | 42 bytes | 674e9d2236f6de2d9da5e9a1ff2e2bd26fa8833d9dc5e6f5502ee3e5ba3cf676 | 翻轉呈現路徑的原色列封包 |
+
+已證實，限以下受控條件。共享工作先從不變的遠呼叫框架解出來源、目的、長度及返回位置。
+清除保留奇數前導 byte，再輸出 word 跨度；複製沿原版按來源 offset 與目的 offset 選方向，
+保留安全重疊與 DF、DS 的恢復。來源／目的 offset 不環繞，目的不能覆蓋 driver 程式或呼叫框架，
+不能跨普通 RAM 與 A000 邊界。共享複製拒絕原版方向會造成逐次覆寫來源的別名情況，沿用既有保守範圍。
+零長度不產生像素，仍保留完整 ABI。兩個共享工作可於表列範圍內任一原指令邊界接續，
+但必須由同一參數重建的完整暫存器與旗標吻合，不能只憑 IP 接手。
+
+RLE 使用 `control >> 1` 加 1 的長度與最低位 repeat 旗標，解成自有資料的複製跨度或填色跨度。
+兩個核心的實際跨度均向前，外層翻轉處理不變。來源限定普通 RAM 且不越封包結尾；
+目的限定 A000 的 64000 bytes、DF 為 0、CX 高位為 0。每個接續點從來源位置與色號／跨度計數重建候選封包，
+核對完整 ABI 後才接手；未知、簽章失配或越界時不改輸入並拒絕。
+
+像素由 typed 跨度與 Go 封包解析產生，沒有 CPU.Step、opcode 解碼或 effect.run。
+ABI 檢查點只投影排程可中斷的位置、有序通知及既有 dosgolem 模型成本；不是實機逐週期聲明。
+一次工作不超過呼叫者預算，最低一個步數也能處理真正像素。既有完整呼叫／多封包快速路徑保留。
+
+原型在 `workplace/dosgolem/workplace/native-bounds-research/bounded_*_research*.go`。
+清除共 204 個游標、2448 個有界計畫；複製共 842 個游標、14314 個計畫；
+兩種 RLE 核心共 682 個游標、3410 個計畫，均比較完整 CPU、RAM、模型成本及有序寫入。
+另有 240 次共享完整呼叫、200 次雙封包工作，整台 SaveState 相同，分別使用 1232 與 2200 個 Go 計畫，
+沒有固定區塊或 CPU 像素回退。整張畫面的清除／複製另有 4 次原版比較；18 種負對照拒絕且不改輸入。
+log 為同 clone 的 `workplace/native-bounds-{zero,copy,rle,whole,refusals}-tests*.log`。
+早期 RLE 測試資料未提供正常入口，及測試未設定 CS 造成零次比較，均屬測試問題；
+以非零比較護欄及明確原版輸入重跑，舊 log 保留，正式程式與原版 CPU 均未改。
+
+垂直鏈為原始呼叫／壓縮資料 → typed 跨度／封包 → Go 索引寫入 → direct 畫布及 HD → 原存檔。
+規則、亂數與序列化不變。READY 允許拆出正式 fixture、接 selector 與拒絕條件；
+完整繪圖回歸、正常原版機器串流及 GUI／存讀檔通過前不升 CONFORMED。
+字模、色盤、零半徑、寬 1 縮放及其他未驗範圍仍待完成。
+
+本批 resolution 回鏈帳：上述四個不可變定位均以本[READY 契約](#bounded-memory-ready)為新證據，
+舊狀態為[短預算盤點](#bounded-memory-initial)，必要勘誤標記均為 `BOUNDED-MEMORY-READY-20261028`。
+收據檢查器須核對四個原始定位、兩個 anchor 與標記；缺任一項即失敗。
+
+驗證入口為 `tools/native_bounded_check.py`，在 Go 工具容器內以
+`python3 -I /project/tools/native_bounded_check.py --project /project --commit <完整來源提交> --stage full --out <新的收據路徑>`
+執行。`--stage trace` 只驗原版機器與來源契約，不代表 GUI／存讀檔完成。
+收據另核對正常 demo 中斷、重播與返回，沿規格018，不另改玩家操作。
+
+### 有界共享跨度與RLE正式驗收
+
+2026-10-28，來源 b97bc21、乾淨 Go 1.24.13 執行檔 913a029 已驗收啟用。
+固定[019-native-bounded-runtime.json](../re/019-native-bounded-runtime.json)綁定三份演算法、
+五份測試、selector、完整來源提交、四個不可變定位與新舊回鏈。
+完整 drawblocks、machine、session、pod、前端及 go vet 通過。
+
+正常原版機器的 712250000 步、CPU／RAM、有序視訊／回掃／音訊／DOS 事件、127檔與47份入口均相同。
+Go 計畫 112012、演算法步數 3400397；固定語意從2576降至1062，剩21種入口／出口組合，
+本條路線不再出現共享清除、共享複製或上述RLE核心的固定像素寫入。
+固定語意仍含初始化、色盤與圖像列資料控制，不因步數降低宣稱全遊戲接管完成。
+
+四路明確按D的正常demo、39對介面、六對另存B／冷讀B、全部十個SAVE檔通過，槽A五檔不變。
+正常HD閃現0，主動封面F2的998筆另列。選單不逾時、對話／戰鬥中斷、重播及返回後正常進入，
+原版CPU／RAM、畫面、截圖與中斷計數同固定020；最近返回仍為1510／4884步。
+原子啟用後保留前版7d51351於pod-play-nativedissolve-v2，776檔主題與README34張直接圖片未改。
+其他色盤、變寬字模及未驗條件仍待完成，整體Go閘門維持DRAFT。
+
+### 變寬字模（5AA4）
+
+狀態：DRAFT，#49，2026-10-28。VGA.DRV 之 5AA4–5C76 共 467 bytes，SHA-256
+`0ac343cdf83afd9cff35de6fa8dc5d42035e3be7f885c6da18e090dd2c2906aa`，沿既有 IDA Pro 9.4
+檔案位址基準 0 及原始名稱 sub_5AA4。與已接管的 8×8 字模分開，不以名稱相近推論完成。
+
+已證實，限受控原版輸入：字型 header 提供字元數、高度與映射旗標；
+256-byte 色號表位於字型 +8，字形 offset 目錄位於 +108h，字形記錄為寬度 word 及逐列原色 bytes。
+旗標為 0 時 5C02 直接搬列，否則 5C27 映射色號，FF 透明，5C2C 寫不透明像素。
+透明位置保留原畫面；直接模式的 FF 則是正常色號。
+30 組寬 1／2／3／7／9、高 1／2／5 的原色／映射模式有序像素與游標前進同原版。
+原型為 `workplace/dosgolem/workplace/native-bounds-research/glyph5aa4_pixels_research_test.go`，
+通過 log 為同 clone 的 `workplace/glyph5aa4-pixels-second.log`；第一份因少了原版入口 fixture 而 skip，未當通過。
+
+換列、回車、超出字形範圍、子表面／邊界、短預算接續、完整 ABI 及 SaveState 尚未驗證。
+目前只有原版像素規則研究，沒有正式 Go 字形實作，不接產品路徑。

@@ -648,3 +648,37 @@ demo對話、戰鬥中斷、再次播放及正常進入的終點、截圖與中�
 原始資料在`workplace/probe/draw-intercept-v1/native-dissolve-v2/`、`workplace/probe/g9-hd/nativedissolve-{play,ui,save}-v2/`
 與`workplace/probe/dissolve-demo-control-v2/`；完整重播命令及環境見WORKLOG與各入口工具。
 其他色盤控制、字模、root與未驗條件仍保留，全部Go閘門DRAFT，#49保持開啟。
+## 2026-10-28 有界共享跨度與RLE續行
+
+來源 b11290c 的唯讀盤點確認，正常探針的 2576 個固定語意步中，
+共享清除 1D1F:046E、共享複製 1ED4:1A5C 及 RLE 68F4／6B33
+會在短預算後以固定區塊寫出像素。完整工作原本已有 Go 跨度，缺口在中途接續。
+原始位址、完整輸入與區段 SHA-256、已證實範圍及拒絕條件見
+[規格025](../spec/025-direct-render-commands.md#bounded-memory-ready)。
+
+以穩定遠呼叫框架重建共享工作，以壓縮來源與游標重建 RLE 封包。
+Go 產生自有資料的複製／填色跨度，ABI 檢查點保留排程中斷及有序通知，
+不解碼 guest opcode，也不呼叫 CPU.Step 或固定 effect.run。
+清除、複製與 RLE 共 20172 次有界原版比較，另有 440 次完整 SaveState、
+4 次整張畫面跨度與 18 種拒絕通過。早期 RLE 測試缺 fixture 與 CS 的 log 保留，
+補上明確輸入及非零比較護欄後重跑；沒有改產品行為來通過測試。
+
+依 READY 契約接入候選 b97bc21，執行檔 SHA-256
+`913a0291f307d284ea16e6b2e9b1c59530602e912f3d669a51b08b30a0db2b75`。
+正式 selector 的原版比較通過；完整 drawblocks 354.368 秒、machine／session／pod／前端及 go vet 通過。
+正常機器探針的完整 CPU／RAM、有序視訊、音訊、回掃及 DOS 事件同原版。
+Go 計畫由 111710 增至 112012，演算法步數為 3400397，固定語意由 2576 降至 1062。
+這是已走路線的分類，不能當作全遊戲覆蓋率或 FPS。
+
+研究原型與 log 在 clone 的 `workplace/native-bounds-research/`、
+`workplace/native-bounds-*-tests*.log`，正式測試在 `apps/pod/drawblocks/native_bounded*_test.go`。
+完整機器與 GUI 收據根為 `workplace/probe/draw-intercept-v1/native-bounded-v1/`
+及 `workplace/probe/g9-hd/nativebounded-{play,ui,save}-v1/`。
+四路明確按D的正常demo、39對介面與六對真存讀檔全部通過；十個SAVE檔同基準，槽A五檔不變。
+HD閃現0；demo選單不逾時、對話與戰鬥中斷、重播與返回後正常進入同固定020。
+總檢查通過後原子啟用913a029，前版7d51351以pod-play-nativedissolve-v2保留。
+固定[019-native-bounded-runtime.json](019-native-bounded-runtime.json)綁定來源、驗收與啟用。
+21種剩餘固定形狀另列，整體Go接管仍DRAFT。
+
+下一批變寬字模5AA4的30組原色／映射有序像素研究已通過；詳[規格025的DRAFT](../spec/025-direct-render-commands.md#變寬字模5aa4)。
+這是原版規則研究，尚未接入Go實作，不當成正常玩家路線完成。
