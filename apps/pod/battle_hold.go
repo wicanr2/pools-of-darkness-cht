@@ -3,7 +3,10 @@ package pod
 import "github.com/wicanr2/dosgolem/xlate"
 
 // 主專案規格010／研究017：戰場像素可能先於色盤，怪物也可能跨畫格畫完。
-// 已證實的6690–6692局部繪製最多保留三格；未知來源不等待，不更動原版執行。
+// 規格010四格修正：明確按D的6619–6622局部繪製需四格，6623完整。
+// 未知來源不等待，不更動原版執行；第五格仍強制回退。
+const battleHoldFrames = 4
+
 type battleHold struct {
 	prev, current                 []byte
 	prevIndex, currentIndex       []byte
@@ -39,7 +42,7 @@ func (h *battleHold) applySource(indexed, base, out []byte, palette uint64, elig
 		for cy := 0; cy < 21; cy++ {
 			for cx := 0; cx < 21; cx++ {
 				n := cy*21 + cx
-				if !eligible[n] || h.prevHeld[n] >= 3 {
+				if !eligible[n] || h.prevHeld[n] >= battleHoldFrames {
 					continue
 				}
 				x, y := 8+cx*8, 8+cy*8

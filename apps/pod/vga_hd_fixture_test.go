@@ -151,19 +151,19 @@ func TestVGABattleHoldBound(t *testing.T) {
 	previous := vgaBaseRGBA(idx, pal, 3)
 	h.apply(idx, previous, previous, 1, eligible)
 	offset, pixel := 100*320+100, (300*960+300)*4
-	for frame := 0; frame < 8; frame++ {
+	for frame := 0; frame < 10; frame++ {
 		h.commit()
 		changed := append([]byte(nil), idx...)
 		changed[offset] = byte(9 + frame)
 		base := vgaBaseRGBA(changed, pal, 3)
 		got := append([]byte(nil), base...)
 		h.apply(changed, base, got, 1, eligible)
-		if frame%4 < 3 {
+		if frame%5 < 4 {
 			if !bytes.Equal(got[pixel:pixel+4], previous[pixel:pixel+4]) {
-				t.Fatal("未按已證實的三格間隔保留")
+				t.Fatal("未按已證實的四格間隔保留")
 			}
 		} else if !bytes.Equal(got[pixel:pixel+4], base[pixel:pixel+4]) {
-			t.Fatal("連續變化超過三格未回退")
+			t.Fatal("連續變化超過四格未回退")
 		}
 		previous = got
 	}
