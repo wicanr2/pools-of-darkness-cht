@@ -1,5 +1,7 @@
 # 研究索引
 
+- [Go像素轉場](019-draw-interception.md#2026-10-28-go像素轉場與hd逐格呈現接入)：#49，[正式收據](019-native-dissolve-runtime.json)。Go表面／LFSR及有界像素批次、HD辨識快取與四格保留已驗收啟用，正常閃現0；其他色盤、字模與未驗條件仍待完成，全部Go閘門DRAFT。
+
 - [021 HD逐格呈現](021-hd-frame-presentation.json)：明確按D的demo顯示三格保留不足；完整逐格來源重現一格閃現，四格原型為0。HD辨識快取前後原版狀態及共有截圖相同；正式驗收尚待完成。
 
 - [020 Demo控制驗收](020-demo-control-runtime.json)：本作簽章、A7CE／A7CF、等待取消與返回還原，正常冷開機、戰鬥中斷、重播及F12／2倍通過；[規格018](../spec/018-demo-control.md#demo-conformed) CONFORMED。

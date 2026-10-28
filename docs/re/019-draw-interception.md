@@ -615,3 +615,36 @@ VGA.DRV的5886–5A27共418 bytes，SHA-256為2ff20b76959b7f3972f76530c6142c8337
 全套drawblocks 178.167秒、核心、session、pod、前端與go vet通過。完整正常狀態、有序事件、127檔與47份入口同原版；四路DEMO、39對介面、六對真存讀檔與十個SAVE檔同基準，槽A未改。非預期閃現0，998筆主動F2另列。新翻轉出口在目前DEMO未觀測，正常Go計數與固定2576步維持，不外推新正常路線或FPS。
 全部通過後原子啟用dc8b977，前版0abeee0保留。[固定收據](019-native-surfaceflip-runtime.json)綁定來源及啟用；重生入口為Docker內`tools/native_fill_check.py --family surfaceflip`，原始收據在`workplace/probe/draw-intercept-v1/native-surfaceflip-v1`及`workplace/probe/g9-hd/nativesurfaceflip-{play,ui,save}-v1`。
 4337像素轉場已在獨立研究副本通過44次完整機器比較，尚DRAFT。等待採既有Go服務契約；研究副本先因函式名稱缺項，再因舊原型helper同名而建置失敗。只替副本服務加獨立前綴後乾淨重跑通過，沒有調整產品或CPU。其他轉場、字形與未驗入口仍保留，#49開啟。
+
+## 2026-10-28 Go像素轉場與HD逐格呈現接入
+
+來源為VGA.DRV，SHA-256 `eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f`。
+IDA9.4以檔案位址基準0匯出4337–45DF共681 bytes，切片SHA-256為
+`6888a66a54dd072b40f5c95f990d81d53f75257852bce465c95dff15e1168796`。
+原始sub_4337名稱、入口表slot29及執行期48A1:4337保留，受控語意已證實。
+Go從typed表面與32位LFSR計算樣本，逐次保留重疊讀回及原有寫入順序；沒有在像素循環派送guest opcode。
+共享等待與CPU呼叫控制另列，1×1不返回的原版行為只驗固定一萬步區間，不修改終止條件。
+
+正式來源b11290cb7d8754decf0924e1513b48aa17a783ea，乾淨Go1.24.13執行檔
+`7d51351c24d07ab6f1ec97d4a3dde7a663670dbec118a47843a246610b59f0af`。
+6份演算法與11份測試通過原版比較；44次完整比較分列3028個Go轉場、1404個共享等待與2808個CPU控制步。
+正式40次短預算為39682個Go計畫含等待、7148個固定控制與50084個CPU控制步。
+原型39378的計數保留，來源對照、DF、完整畫布／父表面、拒絕與有界1×1結果見[規格025](../spec/025-direct-render-commands.md#dissolve-4337-conformed)。
+
+完整機器CPU／RAM、有序像素、回掃、音訊、DOS事件、127檔及47份入口同原版。
+四路正常demo、39對介面、六對真存讀檔與十個SAVE檔同前版，槽A五檔未改。
+正常demo未觀測4337，新入口只宣稱受控條件；正常111710個Go計畫／3398106步及固定2576步不當全遊戲覆蓋率。
+
+同次接入HD辨識快取，只重用相同來源索引與完整色盤的辨識結果，呈現保留仍逐格提交。
+明確按D的新路線證實局部CPIC102需要四格，三格上限提早退回一次。
+完整逐格負對照重現1次，四格修正後直接／舊合成各11格均為0，差異只在一格一幀；
+未知來源、色盤改變、非戰場、2倍、F12與第五格回退通過。正常HD為0，主動F2的998筆另列。
+同一6640格快取前後的CPU／RAM、索引、色盤與共有截圖相同，耗時392.7與188.3秒僅為本次共享主機觀察。
+
+全部通過後原子啟用7d51351，前版b484851以pod-play-demo-control保留，776檔主題不變。
+demo對話、戰鬥中斷、再次播放及正常進入的終點、截圖與中斷計數同原正式版。
+[正式固定收據](019-native-dissolve-runtime.json)包含啟用驗證；[021](021-hd-frame-presentation.json)保留READY研究，未覆寫歷史證據。
+重生入口為Docker內`tools/native_fill_check.py --family dissolve --run-id v2 --frontend-baseline demo-control-baseline`。
+原始資料在`workplace/probe/draw-intercept-v1/native-dissolve-v2/`、`workplace/probe/g9-hd/nativedissolve-{play,ui,save}-v2/`
+與`workplace/probe/dissolve-demo-control-v2/`；完整重播命令及環境見WORKLOG與各入口工具。
+其他色盤控制、字模、root與未驗條件仍保留，全部Go閘門DRAFT，#49保持開啟。

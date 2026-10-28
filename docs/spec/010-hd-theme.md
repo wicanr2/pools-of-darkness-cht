@@ -374,7 +374,7 @@ README新增正常大圖原版／HD對照；其他六張正常出圖事件仍未
 
 ### 明確選擇demo後的四格保留修正
 
-狀態：READY，#10、#16，2026-10-28。不可變鍵為
+狀態：局部CONFORMED，#10、#16，2026-10-28。不可變鍵為
 `Go/a83043c02b28b7dc07db41a62a81300c0f0351f3/apps/pod/battle_hold.go:battleHold.applySource`。
 這是前端呈現契約，不是原版DOS規則。證據見[逐格呈現021](../re/021-hd-frame-presentation.json)。
 
@@ -400,6 +400,13 @@ README新增正常大圖原版／HD對照；其他六張正常出圖事件仍未
 | 不可變鍵 | 新證據 | 舊證據 | 必須勘誤標記 |
 |---|---|---|---|
 | Go/a83043c02b28b7dc07db41a62a81300c0f0351f3/apps/pod/battle_hold.go:battleHold.applySource | [四格契約](#battle-hold-four-ready) | [原三格契約](#battle-hold-three-initial) | BATTLE-HOLD-4-20261028 |
+
+2026-10-28正式驗收通過並啟用b11290c／7d51351。
+四路正常demo的CPU、RAM、原版索引、色盤及127檔同明確按D的前版基準，HD閃現由1降為0。
+BIGPIC244、七個人物位置與六格地形逐像素通過，戰場外差異0，F12及2倍回原版。
+39對介面、六對存讀檔及demo中斷回歸通過，776檔主題不變。
+正式證據併入[像素轉場整合收據](../re/019-native-dissolve-runtime.json)；
+[021](../re/021-hd-frame-presentation.json)保留原始READY研究，不覆寫其歷史狀態與雜湊。
 比較器另驗CPU、來源色號與DOS檔案遭改均拒絕，沒有放寬既有增量門檻。
 776檔正式主題與受測staging逐檔相同，以完整目錄原子交換啟用；730檔舊主題留本機。
 固定[017-b26-runtime.json](../re/017-b26-runtime.json)。產品執行檔與字型／譯文不變；新來源診斷保存於`dosgolem/pod`的`8a0c26b`，未觀測正常遭遇仍未知。
