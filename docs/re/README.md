@@ -1,5 +1,7 @@
 # 研究索引
 
+- [變寬字模像素核心](../spec/025-direct-render-commands.md#glyph-5aa4-ready)：#49，[正式收據](019-native-glyph-runtime.json)。Go字形列與透明映射已在受控原版條件驗收啟用；正常HD及地圖工具列11對截圖相同，新入口在此正常demo未觀測，其他繪圖仍DRAFT。
+
 - [有界共享跨度與RLE續行](019-draw-interception.md#2026-10-28-有界共享跨度與rle續行)：#49，[契約](../spec/025-direct-render-commands.md#bounded-memory-ready)、[正式收據](019-native-bounded-runtime.json)。一步預算的清除、複製與封包輸出已驗收啟用；正常固定語意2576降至1062，四路demo、39對介面、6對存讀檔與demo中斷通過，整體Go仍DRAFT。
 
 - [Go像素轉場](019-draw-interception.md#2026-10-28-go像素轉場與hd逐格呈現接入)：#49，[正式收據](019-native-dissolve-runtime.json)。Go表面／LFSR及有界像素批次、HD辨識快取與四格保留已驗收啟用，正常閃現0；其他色盤、字模與未驗條件仍待完成，全部Go閘門DRAFT。

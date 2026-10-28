@@ -1,0 +1,107 @@
+{
+  "scope": "Go變寬字模像素核心；來源準備、換列與回車控制保留原版，其他繪圖未全部完成",
+  "program_commit": "829396eb0cd4e77d37d60c7dd494c52686f99a54",
+  "parent_commit": "b97bc217f065691fef14882452c8e68649e1a9e9",
+  "binary_sha256": "6ff4a869b083bd7ccbc8d01f946eea45fcbbe374f0c38f6ce43752e00fe14c13",
+  "original_state_and_ordered_events_equal": true,
+  "virtual_steps": 712250000,
+  "guest_files": 127,
+  "guest_files_equal": true,
+  "direct_original_witnesses": 46,
+  "original_witnesses_equal": true,
+  "normal_glyph_plans": 0,
+  "normal_scope": "新字模入口在此正常demo未觀測；新增像素語意的完成聲明只限受控原版條件",
+  "algorithmic_plans": 112012,
+  "algorithmic_instructions": 3400397,
+  "fixed_semantic_instructions": 1062,
+  "controlled_original": {
+    "ordered_pixels": 30,
+    "single_step_spans": 572,
+    "row_cursors": 2418,
+    "whole_calls": 300,
+    "whole_go_plans": 1298,
+    "whole_fixed_control": 1840,
+    "whole_cpu_control": 23640,
+    "boundary_calls": 20,
+    "boundary_go_plans": 824,
+    "refusals": 54,
+    "cpu_or_fixed_glyph_pixels": 0
+  },
+  "source_sha256": {
+    "native_glyph5aa4_boundaries_test.go": "104f7765e0a13c1aff8ef3028f9312efc6072bc1dd1a4e84846279e3db4d9a72",
+    "native_glyph5aa4_pixels_test.go": "c66eaa1a0a8d9e92d70a1081c9dee98fb70852083ebcfe787f948fff9de438de",
+    "native_glyph5aa4_rows.go": "23cf60f778261959b563e24767527a6bc0a2e53a9dcbac3c3eccb50a55ddf65d",
+    "native_glyph5aa4_rows_test.go": "7fcceb770b4b92e3538dfe11c652c788a26bb06968233e9a1aca11f716ccf909",
+    "native_glyph5aa4_spans.go": "3ebdc1c16f85ed6a85399ec2fbc92d6163d61a1cb63187872a9b27678b843754",
+    "native_glyph5aa4_spans_test.go": "7c985290feffcdcc2d6b610601fcc6aae2d19aad7724c179b20d6ed47acfb515",
+    "native_glyph5aa4_whole_test.go": "3631a8ac78e4c89193c13a523aafa034861408446ff175b62ad638eac663db42",
+    "effects.go": "0d6a1ef71b59bcd21035a29a7d13f6cb7aa9917427f84ba8198e37ed3e155147"
+  },
+  "product_test_log_sha256": "1872fd2079acf01e9b3db363095f2517827bd711e49fc915896d3352a4d0b94f",
+  "resolution_backlinks": {
+    "key": "DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x5AA4",
+    "correction": "GLYPH5AA4-READY-20261028",
+    "spec_sha256": "20002e004e454506ca4021ea270ea9932565ba672f634b06911bd38cc7777145"
+  },
+  "prior_full_receipt_sha256": "c1797533567a21bc55a942e2253f72c4f928855b99553555dc6b4864f91021b6",
+  "build_info_sha256": "dce10e1461665009c61854067f2d12b20cc404a4d81cdcd40c3b1c75d2899a1c",
+  "trace_binary_sha256": "45afd5e27d0dadd950a557134f88a54ded0ff826fd83e1d0314b5dce026ceef1",
+  "source_reports": {
+    "workplace/probe/draw-intercept-v1/native-glyph-v1/trace-native": "7235351a85b28c72c3090f34cff26f7eee8f0b3e282fa404a079d4cf86198083",
+    "workplace/probe/draw-intercept-v1/native-bounded-v1/trace-native": "f20c4e8d81f808ba3db2e279137b4ceb73853260466076fd60e86aaa176193d9",
+    "workplace/probe/draw-intercept-v1/native-fade-v1/trace-original-entries": "342b032b63617080c1880888fb6b45bfc74b6460dd1349f6c003e0461ada6f1c"
+  },
+  "prior_gates_note": "前版四路demo、39對介面、6對真存讀檔及demo中斷完整驗收保留於前版收據；本批不冒稱重跑這些全部路線",
+  "normal_samples": [
+    {
+      "route": "hd",
+      "endpoint": [
+        "7400",
+        "712250000",
+        "92378aa1b9a421f5f2b2b93c504aed1f80dbd06e627fd1d9f297932fbacbf540",
+        "e77dd084128cf4f20ecce7cd104b1bb0a68f008da864490d926e338386abb7bf",
+        "c2b1ab7e95b942a904842f53eced383f6e0c39b111a0d6c1b65e8ac740694c47",
+        "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3"
+      ],
+      "screenshot_pairs": 1,
+      "screenshots_and_original_state_equal": true,
+      "unexpected_flash_count": 0
+    },
+    {
+      "route": "wall",
+      "endpoint": [
+        "4800",
+        "462000000",
+        "bbed4498180096ffd6b209f4e4183a6fa73974c0d35f5a70f50d1164cfe64091",
+        "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+        "e51ff0161b303165fcb9d5265b133bda27d0ac67a7972cb0e96dd2880cc48c00",
+        "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde"
+      ],
+      "screenshot_pairs": 10,
+      "screenshots_and_original_state_equal": true,
+      "unexpected_flash_count": 0
+    }
+  ],
+  "regression_logs": {
+    "native-glyph-all-drawblocks.log": "e88f0923949e5540e2508b13194a454983cc2de477f62a61740e98a917ab7a66",
+    "native-glyph-core-tests.log": "2b0a56286e636270f8d5dd16b2ecb3f3a7846f3b1f02afeadfbc8daaf9d41360",
+    "native-glyph-vet.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "activation": {
+    "program_commit": "829396eb0cd4e77d37d60c7dd494c52686f99a54",
+    "candidate_sha256": "6ff4a869b083bd7ccbc8d01f946eea45fcbbe374f0c38f6ce43752e00fe14c13",
+    "previous_binary": "pod-play-nativebounded",
+    "previous_sha256": "913a0291f307d284ea16e6b2e9b1c59530602e912f3d669a51b08b30a0db2b75",
+    "preactivation_receipt_sha256": "29c1d5d7ba08346cbda077d9b8d889dbce04c888a5647f6ddb31d0631bdaf5b3",
+    "activation_script_sha256": "09144b6e444d3f18d049d4083e799121c2d45168133123afd537948334218f91",
+    "activated_utc": "2026-10-28T12:12:13.456638+00:00",
+    "method": "Verified candidate copied and atomically renamed; previous accepted binary retained"
+  },
+  "tool_sha256": "bb719d83b1946e058f4714f63e283261f1e7c9d57cfc7b99bdc29f4a21d350ba",
+  "tools": {
+    "tools/draw_call_probe.go": "f8b1541dbc8736603241a883a7116bed6281eef6e611b89c9983104178f91d6d",
+    "tools/direct_ui_check.py": "017202aee17e0abc3c84aa60d597722492cf3daf026ad97f672ceac4d32b062c",
+    "tools/vga-battle-play-receipt.sh": "72a07859f3f38ff6733bb9fa12a242802f2efd3beb5a270cadb2f109931d5027",
+    "tools/direct-ui-receipt.sh": "d849401a6e593b297e6898d935a5729392fbe45908bde675d59d076fbeab9c24"
+  }
+}
