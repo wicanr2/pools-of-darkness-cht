@@ -1,13 +1,18 @@
 package pod
 
+import "bytes"
+
 // HDLayers 是逐幀的牆面、戰鬥與遭遇圖呈現層。主專案規格 010 §6、§7。
 // 它只讀原版色號，呼叫端在既有文字與面板之前繪製。
 type HDLayers struct {
-	combat     *combatHD
-	actors     *actorHD
-	encounters *encounterHD
-	walls      *wallHD
-	exact      *exactHD
+	combat      *combatHD
+	actors      *actorHD
+	encounters  *encounterHD
+	walls       *wallHD
+	exact       *exactHD
+	classified  bool
+	lastIndex   []byte
+	lastPalette [256][3]uint8
 }
 
 func LoadHDLayers(dir string) (*HDLayers, int, error) {
@@ -67,6 +72,22 @@ func (h *HDLayers) Frame(indexed []byte, pal [256][3]uint8) {
 	if h == nil {
 		return
 	}
+	if len(indexed) != 320*200 {
+		h.classified = false
+		h.classify(indexed, pal)
+		return
+	}
+	if h.classified && pal == h.lastPalette && bytes.Equal(indexed, h.lastIndex) {
+		return
+	}
+	h.classify(indexed, pal)
+	h.lastIndex = append(h.lastIndex[:0], indexed...)
+	h.lastPalette, h.classified = pal, true
+}
+
+// classify depends only on the immutable theme, source indices and palette.
+// Presentation holds advance in Live.Frame, outside this classification cache.
+func (h *HDLayers) classify(indexed []byte, pal [256][3]uint8) {
 	h.combat.frame(indexed, pal)
 	guard := h.combat != nil && len(h.combat.matches) >= 3
 	if h.actors != nil {
