@@ -1,0 +1,170 @@
+{
+  "scope": "Go淡入共用色盤算法、指定16個單步寫入及分段DAC；其他繪圖仍待完成",
+  "program_commit": "f525cd35e3c332b828379a825b956b12463ed1a4",
+  "parent_commit": "829396eb0cd4e77d37d60c7dd494c52686f99a54",
+  "binary_sha256": "a7579a001fab966d7a117d49c00d2e48c6068eb5a65bee80f476fa155362f330",
+  "original_state_and_ordered_events_equal": true,
+  "virtual_steps": 712250000,
+  "guest_files": 127,
+  "guest_files_equal": true,
+  "direct_original_witnesses": 46,
+  "original_witnesses_equal": true,
+  "normal_fade_in_entries": {},
+  "normal_rgb_output_exit_counts": {
+    "48a1:2aab": [
+      1,
+      3
+    ],
+    "48a1:2aac": [
+      1,
+      4
+    ],
+    "48a1:2aaf": [
+      1,
+      5
+    ],
+    "48a1:2ac1": [
+      1,
+      15
+    ],
+    "48a1:2ac2": [
+      7601,
+      121569
+    ]
+  },
+  "normal_rgb_output_exit_delta": {
+    "48a1:2aab": [
+      1,
+      3
+    ],
+    "48a1:2aac": [
+      1,
+      4
+    ],
+    "48a1:2aaf": [
+      1,
+      5
+    ],
+    "48a1:2ac1": [
+      1,
+      15
+    ],
+    "48a1:2ac2": [
+      4,
+      17
+    ]
+  },
+  "normal_scope": "新增入口只在下列實際觀測數內成立；受控比較不外推未走的玩家場景",
+  "algorithmic_plans": 112037,
+  "algorithmic_instructions": 3400458,
+  "fixed_semantic_instructions": 1018,
+  "controlled_original": {
+    "difference_plans": 96,
+    "blend_plans": 176,
+    "setup_plans": 112,
+    "single_phase_plans": 116,
+    "colorful_whole_calls": 6,
+    "short_budget_whole_calls": 20,
+    "zero_distance_whole_calls": 4,
+    "palette_refusals": 110,
+    "selected_palette_write_phases": 16,
+    "cpu_or_fixed_selected_palette_writes": 0,
+    "cpu_dac_output": 0,
+    "dac_prefix_comparisons": 1152,
+    "dac_whole_calls": 108,
+    "dac_whole_go_plans": 774,
+    "dac_refusals": 23
+  },
+  "source_sha256": {
+    "apps/pod/drawblocks/effects.go": "d5de35c1e0ea0becac9d2b2312eaa9377e3135d148b1cf90ca9952fc32f33ec9",
+    "apps/pod/drawblocks/native_fade.go": "99c1005e58461bf184cb3380155a5455b32c57d31a886ea1cf7b3b03bffd20a3",
+    "apps/pod/drawblocks/native_palette.go": "f3a458a63c5bb1508e4b9e83c2ccc943f8494cd6947b6219baa750382ef59293",
+    "apps/pod/drawblocks/native_palette_in_core_test.go": "6d41304d04f894907546bb14a0fb32092c6ef86f17891c65235ec98b9a5a3d45",
+    "apps/pod/drawblocks/native_palette_in_guards_test.go": "bf9bc5ab0dc4e53da6bdf925471bb189a5062a23f16ee6f727489dcf0fb121a6",
+    "apps/pod/drawblocks/native_palette_in_shared_test.go": "7f68fcbdb7c3f559d0b9aa1b5855b1b4f06861147b79ac57cfece32b9458c839",
+    "apps/pod/drawblocks/native_palette_in_short_test.go": "a6d40bf2169b323b0603d80f7cc71c6d5cc5f178e249e89e63ac68273391bc59",
+    "apps/pod/drawblocks/native_palette_in_single_test.go": "13701e6de12786c289fa572d82f067ce1ba5f291d57fb1889c0f9a627ef16700",
+    "apps/pod/drawblocks/native_palette_in_whole_test.go": "e66f4c04c0c35181792a64b69b8790266759266b19d5a87da7599d7e0d342034",
+    "apps/pod/drawblocks/native_palette_output_bounded.go": "922c6e847f7a6e9459dedc71150bd17389d1978b105d610cb4a711a81fb2abb8",
+    "apps/pod/drawblocks/native_palette_output_bounded_guards_test.go": "f3a4570ab112879e855e442d703a094bb7f6a74aaa6fe54dd8f98e1b5ebda2e0",
+    "apps/pod/drawblocks/native_palette_output_bounded_test.go": "20c9dc130bf16e2287b4f84f4d51d5debb41890b549a808234f322eb626c151b",
+    "apps/pod/drawblocks/native_palette_setup.go": "dd4812e01704732df15d8de5a7eac3e3495be7d41ab69cb60799f1cb712e9153",
+    "apps/pod/drawblocks/native_palette_single.go": "1c335b9436d3388d2ce7b18ffb17efe378b726216332de5d967beb3220530d27",
+    "docs/spec/000-index.md": "aad18b26cbf5d919a20524b75060c76c88334dc7b3f041f8753c7dea41c87440",
+    "docs/spec/436-host-call-effects.md": "caa8bec74a6b99afe3eb5d8de3b0374af44a89a3130c3dd03869a0c5498767a8",
+    "internal/machine/host_palette_command.go": "3e9f8a698b6e0ac654c783add238ef2d590700532cb33addb57a7bb32714b01a",
+    "internal/machine/host_palette_command_test.go": "4c669199afb6bcebe7f00d6d58f9e6e5a6665440e4d774f21527ccb872d58742",
+    "internal/machine/host_palette_read.go": "def6450c7af6457e9c89e885ddc049cb483d4b5afc393d4a411b8ee49eb97ace",
+    "internal/machine/host_video_status_read.go": "3c83d89619156feff07cc116eb25f93a7e67b39fc1ea3c5d0f24dcee3101bdb7",
+    "internal/machine/host_work.go": "146f3827c8a63a99063f3b90764865a58cc97fb1d5dac9788e9c800be1f5867a"
+  },
+  "product_test_log_sha256": "b2ce3b89fa797204f29f4fc2be6ff227a4723e9f19fdf853de0bab4ce2491b6a",
+  "resolution_backlinks": {
+    "rows": [
+      {
+        "key": "DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x2AA8",
+        "correction": "RGB-OUTPUT-BOUNDED-READY-20261028"
+      },
+      {
+        "key": "DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x45E0",
+        "correction": "PALETTE-IN-READY-20261028"
+      }
+    ],
+    "spec_sha256": "07d0fa57f4c9e8bed8a026f5a8add0511d4f490180f304d6fa9fdc91d9890786"
+  },
+  "prior_full_receipt_sha256": "a1c49dc2fb174ff68c24d76d4e2cb600ac77f04bba33eb55f2edf89f27c2d8fd",
+  "build_info_sha256": "59f29a26a0f6f6426f309d5b727fc03f013ee7b22aa850de01cf7621a1038a25",
+  "trace_binary_sha256": "11ec7bcc12df1ab275a38b871fb37dab9e474d75f9769f06125d76b0a4044d1c",
+  "source_reports": {
+    "workplace/probe/draw-intercept-v1/native-palettein-v1/trace-native": "8f581d915b6f6b19cced517515633eeb0d1be38d89ee716ea0fa74f35df16670",
+    "workplace/probe/draw-intercept-v1/native-glyph-v1/trace-native": "7235351a85b28c72c3090f34cff26f7eee8f0b3e282fa404a079d4cf86198083",
+    "workplace/probe/draw-intercept-v1/native-fade-v1/trace-original-entries": "342b032b63617080c1880888fb6b45bfc74b6460dd1349f6c003e0461ada6f1c"
+  },
+  "prior_gates_note": "前版完整四路demo、39對介面、6對存讀檔及demo中斷另存原收據，本批正常抽樣另列",
+  "normal_samples": [
+    {
+      "route": "hd",
+      "endpoint": [
+        "7400",
+        "712250000",
+        "92378aa1b9a421f5f2b2b93c504aed1f80dbd06e627fd1d9f297932fbacbf540",
+        "e77dd084128cf4f20ecce7cd104b1bb0a68f008da864490d926e338386abb7bf",
+        "c2b1ab7e95b942a904842f53eced383f6e0c39b111a0d6c1b65e8ac740694c47",
+        "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3"
+      ],
+      "screenshot_pairs": 1,
+      "screenshots_and_original_state_equal": true,
+      "unexpected_flash_count": 0
+    },
+    {
+      "route": "wall",
+      "endpoint": [
+        "4800",
+        "462000000",
+        "bbed4498180096ffd6b209f4e4183a6fa73974c0d35f5a70f50d1164cfe64091",
+        "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+        "e51ff0161b303165fcb9d5265b133bda27d0ac67a7972cb0e96dd2880cc48c00",
+        "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde"
+      ],
+      "screenshot_pairs": 10,
+      "screenshots_and_original_state_equal": true,
+      "unexpected_flash_count": 0
+    }
+  ],
+  "regression_logs": {
+    "native-palettein-all-drawblocks.log": "0e38b0ddb59872d944c0f07f9b088d64b1738ebdb1587b8b76e2547b72630fe9",
+    "native-palettein-core-tests-display.log": "a010b978fcb7c139698392f1d5c8084e0cbd3305c90ddea7a739c1d5c7786474",
+    "native-palettein-vet-display.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "activation": {
+    "program_commit": "f525cd35e3c332b828379a825b956b12463ed1a4",
+    "candidate_sha256": "a7579a001fab966d7a117d49c00d2e48c6068eb5a65bee80f476fa155362f330",
+    "previous_binary": "pod-play-nativeglyph",
+    "previous_sha256": "6ff4a869b083bd7ccbc8d01f946eea45fcbbe374f0c38f6ce43752e00fe14c13",
+    "preactivation_receipt_sha256": "471e4c587a57f67ba76d2d5e6348d45d3fe8dcff82dd31d072bebf77219ee8d3",
+    "activation_script_sha256": "1ea2e0bb3bb0c394e01b3d1ef98cc5a92b72073046d4c8e19c4c130e7e8da059",
+    "activated_utc": "2026-10-28T14:03:42.681305+00:00",
+    "method": "Verified candidate copied and atomically renamed; previous accepted binary retained"
+  },
+  "tool_sha256": "8fd45ff39656768af155c0c5f36edf4b9a62c9e88dbac04a01aad902a7d412ce"
+}

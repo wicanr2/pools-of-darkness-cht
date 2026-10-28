@@ -362,12 +362,15 @@ READY後才接產品；正式切換仍須完整事件、既有正常介面及真
 四路DEMO、39對正常介面及6對新存B／冷讀B、全部SAVE bytes通過後原子啟用9c3e652，來源7a4f168；前版5dc0b29保存在pod-play-nativesetup。
 固定[019-native-row-runtime.json](../re/019-native-row-runtime.json)綁定來源、工具與正式入口，其他固定區塊及全部Go閘門仍DRAFT。
 
+<a id="rgb-output-full-initial"></a>
+
 ### 完整RGB輸出工作
 
 狀態：CONFORMED，#49，2026-10-26。原檔VGA.DRV offset2AA8–2AC2共27 bytes／16道指令，IDA9.4與Capstone5.0.3逐bytes相同，SHA-256為`7134f5f3fbaf2adf007afa01632ff5ec980bd4c127a095defaa954fd831b4801`。
 執行期入口48A1:2AA8；SS:SP的遠返回後，SP+4／6／8／10依序是色號與RGB word。Go直接讀取這筆RGB工作，交436的型別化調色盤命令；未達READY前只研究原型。
 VGA標準語意引用[FreeVGA Color Registers](https://www.scs.stanford.edu/10wi-cs140/pintos/specs/freevga/vga/colorreg.htm)，沿用現有Machine.Out8及VGA服務，不逐週期逆向硬體。
 候選限定mode13h、完整指紋、普通RAM參數與堆疊、色號0–255、RGB0–63，堆疊不環繞且保存BP位置不與程式／輸入別名。未知條件／不足預算沿原路徑。
+勘誤標記`RGB-OUTPUT-BOUNDED-READY-20261028`：完整工作的16步契約保留；不足預算與中途續行已由[分段RGB契約](#rgb-output-bounded-ready)補驗，不再單獨作未知清單。
 ABI保留AX=原藍色word、DX=3C9、原BP、SP前進四bytes及原遠返回。算術旗標依INC DX，CF保留，IF在STI後設置；事件預算內無IRQ或畫面事件。
 候選16步／130模型成本，DOSBoxCost16；選色號與RGB的I/O在第6／9／11／13步，模型成本32／56／78／100，DOSBoxCost同各步數。堆疊BP寫入第一步，最後定位2AC2。
 原型初版把遠返回再加一次近返回成本，獨立原版拒絕138；沿CPU的RETF契約核對後修正為130，失敗log保留。
@@ -946,3 +949,104 @@ machine／session／pod／前端及go vet通過，字形像素沒有CPU或固定
 `tools/native_glyph_check.py`為驗證入口，使用Go工具容器，參數同本規格的有界跨度檢查器；
 `--stage trace`不代表GUI完成。六種缺定位／回鏈負對照均拒絕。
 其他色盤、退化圖元與未驗條件仍待接管，整體Go閘門維持DRAFT。
+
+<a id="palette-in-initial"></a>
+
+### 色盤淡入（45E0）
+
+狀態：DRAFT，#49，2026-10-28。VGA.DRV 45E0–4943共868 bytes，SHA-256
+`d6173666ef045fadd9565b60f25e0bafb8dbe721494143c513f91529387ecbda`，沿既有IDA9.4檔案位址基準0，原始名稱sub_45E0。
+來源先取目的角落RGB，將來源使用色號暫設成該RGB，搬移索引圖後再插值回原來源色盤，屬強推論。
+Go像素搬移與RGB裝置服務已有既定核心，本批先研究色號掃描及插值，不深挖硬體時序。
+
+47BA的11 bytes、47D6的14 bytes、4867的14 bytes及48B3的27 bytes，分別與已驗淡出4A67、4A83、4AFD、4B3A逐byte相同。
+這只證明區段相同，不證明整個呼叫的輸入及狀態相同。
+4892的33-byte差距工作SHA-256為`bc07e0842a1185593545ee7c72bc73c057e40a608eb467e3c1ff421c167922c9`，
+48E5的33-byte插值工作為`edd016c91a19d12007eea94e49dc216286ccf3009c9b52ff4022adcf83a0bbbc`。
+與既有淡出核心相比，current／target的1872與1B72緩衝角色相反，來源／通知位址不同。
+先以共用Go色彩算法的可丟棄原型對拍，未完成受控原版與完整狀態前不接正式路徑。
+
+勘誤`PALETTE-IN-READY-20261028`：本段保留初始研究狀態；後續原版完整狀態與拒絕證據已見[READY契約](#palette-in-ready)。
+
+<a id="rgb-output-bounded-ready"></a>
+
+### RGB輸出的一步預算與續行契約
+
+狀態：READY，#49，2026-10-28。不可變鍵
+`DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x2AA8`；
+來源27 bytes、SHA-256、IDA9.4基準與48A1:2AA8定位沿[完整工作](#rgb-output-full-initial)。
+已知呼叫者包括45E0的4858／4937及既有4944色彩工作；新服務只依此呼叫ABI，不改呼叫者規則。
+
+Go從穩定遠呼叫框架解析索引與RGB，保留既有完整16步快速工作，另於同一常式16個原邊界按預算續行。
+每次按同一框架重建全部暫存器、保存BP、SP、CLI／STI及INC旗標後，比對實際入口。
+色號0–255、三分量word皆0–63；堆疊在普通RAM、不環繞且與driver程式／資料分離。
+只接已知80386模型及現行原生／DOSBox兩種成本；未知模型、模式、簽章、框架或游標拒絕，不改輸入。
+DF照原版保留，原程式沒有CLD。CF保留，IF依CLI／STI時點改變，非最終才一次覆寫。
+
+索引與分量交436的PaletteCommands受限DAC服務，步數與成本依原OUT時點記錄，沒有opcode解碼或CPU.Step。
+服務保留實際DAC相位，未知先前相位也不重置成預期RGB位置；原版與Go都交同一Out8平台服務。
+不足一個完整RGB工作仍能提交預算內的索引／分量，最低一步，不先完成原版OUT才重送。
+
+原型為workplace/dosgolem/workplace/pod-palette-call-research/palette_call.go，
+經隔離核心1152次原版前綴／相位比較、72次完整與36次CF／IF／DF完整快照，
+774個Go計畫且CPU回退0；兩側SaveState與有序PortLog均相同。另23種拒絕不改機器。
+實測原生模型16道成本為4、2、2、6、2、16、2、6、16、6、16、6、16、2、4、24，合計130；
+DOSBox成本皆1。這是既有軟體模型，不宣稱實機硬體時序。
+通用核心驗證與原型入口見clone的docs/spec/436-host-call-effects.md之「分段DAC命令」。
+
+垂直鏈為原版RGB框架→typed索引／分量→Go DAC命令→既有VGA／DAC／色盤畫布；
+遊戲語意、亂數、存檔及原始資料不改。READY允許接正式服務與selector；完整回歸與正常玩家抽樣前不升CONFORMED。
+回鏈帳的新證據為本[READY契約](#rgb-output-bounded-ready)，舊證據為[完整工作](#rgb-output-full-initial)，
+必要勘誤標記`RGB-OUTPUT-BOUNDED-READY-20261028`；檢查器須核對上述原始鍵、兩個anchor與雙向連結。
+
+<a id="palette-in-ready"></a>
+
+### 淡入色盤與指定單步寫入契約
+
+狀態：READY，#49，2026-10-28。不可變鍵
+`DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x45E0`。
+來源、原始名稱、IDA9.4位址基準與各區段SHA沿[初始研究](#palette-in-initial)。
+勘誤標記`PALETTE-IN-READY-20261028`。
+
+垂直鏈為來源表面索引→使用色號位圖1772→降序色號1572→原RGB快照1872與角落RGB1179／117B／117D→
+目前RGB1B72、差距2172、方向2472、誤差1E72→Go插值→2AA8受限DAC服務。
+45E0呼叫框架的來源／目的槽在+4／+6，Go不改表面描述、存檔或輸入。
+RGB原始準備及控制分支保留原版；像素搬移沿既有3F5E，硬體服務沿436。
+
+准予把47BA掃描、47D6色號清單、4867填色、4892差距、48B3誤差初始化、48E5插值接入共用Go核心。
+與淡出相同的bytes只共用已驗算法，current／target、原通知與後續邊界以具名布局參數傳入。
+沒有opcode解碼、CPU.Step、effect.run或先做原版像素再覆繪。
+
+另接單步位置4B82／4B86／48FB／48FF、4A6A／47BD、4A8D／47E0、
+4B00／4B04／4B08／486A／486E／4872及4B53／48CC。
+由typed色盤緩衝、色號、方向及誤差重建寫入，驗實際游標、來源與旗標；固定效果不得代做這16個位置。
+這些條件外仍回退原版並保留缺口，不宣稱全部色盤內部常式已接管。
+分段RGB另依[READY契約](#rgb-output-bounded-ready)，最低一步，保留當前DAC相位。
+
+隔離原型證據：差距96、插值176、共用準備112次原版工作比較；116次單步比較覆蓋16個位置。
+6次彩色色盤淡入完整呼叫、20次淡入／淡出小預算與4次零色差完整呼叫的SaveState及PortLog相同。
+20次小預算取1／2／7／27／1024、兩種成本，101682個Go計畫、10050個固定控制工作、168042道CPU控制指令；
+指定16位置的CPU／固定寫入0，DAC OUT的CPU回退0。輸入準備與其他未列位置不算在此零值中。
+另從原版自然抵達的22個邊界取得正對照，來源／模式／DF／預算共110次拒絕不改輸入。
+研究在workplace/dosgolem/workplace/native-palettein-research，主要log為palettein-formal-dac-research.log及palettein-guards-research.log。
+本次正式接入需重跑全部Go回歸、正常原版機器及HD／地圖前端抽樣後才升CONFORMED。
+
+2026-10-28驗收補記：上述淡入與分段DAC的READY範圍局部CONFORMED，正式來源f525cd3。
+所有繪圖回歸463.971秒，核心／session／遊戲／前端及vet通過；前端需Xvfb，未設DISPLAY的失敗屬驗證環境，修正後同映像重跑通過。
+正常712250000步的CPU／RAM、有序畫面、音訊、回掃與DOS事件及127檔同原版，46個直接入口見證同前版。
+HD demo與讀檔後地圖／攻略／工具列11對截圖、原版終點及遊戲檔案相同，閃現0。
+正常Go計畫112037、演算法3400441步，固定工作1062降至1018步。
+正常淡入入口未觀測，不能把受控淡入對拍宣稱為正常場景覆蓋；RGB既有完整工作與本批續行增量分開記錄。
+正式驗證入口`tools/native_palette_check.py`，固定收據由研究索引連入；其他未驗位置與全部Go閘門仍DRAFT。
+
+### 表面搬移短預算補充
+
+狀態：DRAFT，#49，2026-10-28。原始VGA.DRV 3F5E的593 bytes與IDA9.4基準沿既有表面搬移契約，
+SHA-256為`559f234ab6f1b97b5c6970fc84c40982e5525fdcac06436fd355bf5ec8c8d4fa`。
+新隔離診斷`workplace/dosgolem/workplace/native-surface-short-research`取寬3高2、四方向、兩種成本及預算1／7／17／24／1024。
+40次完整SaveState相同，但統計有120 bytes由Go、24 bytes由固定工作、64道CPU像素寫入。
+固定與CPU的位置為IDA原檔offset／執行期IP 4169及4177，分別是列內word與奇數尾byte搬移。
+研究log為`workplace/dosgolem/workplace/native-surface-short-audit.log`。
+舊整列工作有最低17–24步門檻，未涵蓋短預算續行，這是接管範圍缺口，不是畫面狀態差異。
+擬用穩定表面／列框架解析來源與目的跨度，以Go處理有序重疊搬移，最低一步。
+先驗證與舊整列同一資格及原版REP邊界，不以固定語意重放替代Go；未審查READY前只在隔離副本研究。

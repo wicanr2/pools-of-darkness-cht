@@ -1,5 +1,7 @@
 # 研究索引
 
+- [Go淡入與分段DAC](../spec/025-direct-render-commands.md#palette-in-ready)：#49，[固定收據](019-native-palettein-runtime.json)、[色盤檢查器](../../tools/native_palette_check.py)。原版對拍、全部回歸、正常HD與地圖工具列11對截圖通過並啟用；固定工作1062降至1018步，淡入新入口正常未觀測，全部Go仍DRAFT。
+
 - [變寬字模像素核心](../spec/025-direct-render-commands.md#glyph-5aa4-ready)：#49，[正式收據](019-native-glyph-runtime.json)。Go字形列與透明映射已在受控原版條件驗收啟用；正常HD及地圖工具列11對截圖相同，新入口在此正常demo未觀測，其他繪圖仍DRAFT。
 
 - [有界共享跨度與RLE續行](019-draw-interception.md#2026-10-28-有界共享跨度與rle續行)：#49，[契約](../spec/025-direct-render-commands.md#bounded-memory-ready)、[正式收據](019-native-bounded-runtime.json)。一步預算的清除、複製與封包輸出已驗收啟用；正常固定語意2576降至1062，四路demo、39對介面、6對存讀檔與demo中斷通過，整體Go仍DRAFT。
