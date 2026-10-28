@@ -600,6 +600,8 @@ VGA.DRV原始2F7B會扣除上方裁切移動的水平數，2FDD側邊起點重�
 研究入口在`workplace/dosgolem/workplace/palette-advance-research/`的`clip-cursor-candidate_test.go`、`steep-clip-prefix_test.go`、`shallow-clip-prefix_test.go`；收據log在該clone的`workplace/clip-cursor-first.log`、`steep-clip-prefix-second.log`、`shallow-clip-prefix-first.log`、`clip-whole-first.log`與`clip-ready.log`。陡線原型曾多計一次未採用分支的五成本，獨立比較拒絕後訂正，首版log保留，原CPU模型未改。
 狀態升READY，限已相交的非軸線、signed座標差值不超過32767、合法線性A000表面、八層以內父表面及上述游標守衛。允許將兩種初始化的共用段整併為一個typed函式，像素仍由Go誤差游標產生。非相交及未知狀態繼續拒絕；提交層、正式selector與整批正常回歸通過前不升CONFORMED。
 
+<a id="surface-copy-initial"></a>
+
 ### 表面矩形搬移
 
 狀態：DRAFT，#49，2026-10-27。原始VGA.DRV之3F5E–41AE建立來源與目的表面，取兩者寬高的較小值，依左右與上下位置選擇搬移方向。415E為候選逐列邊界，4169與4177為word及尾byte的搬移通知。
@@ -610,6 +612,8 @@ VGA.DRV原始2F7B會扣除上方裁切移動的水平數，2FDD側邊起點重�
 原型通過1120次逐列原版比較、168次初始化前綴、64次父表面／不同尺寸、192次完整機器存態與448個Go計畫，另有44種列拒絕及16種初始化拒絕。完整呼叫的像素搬移沒有落回CPU。收據在`workplace/dosgolem/workplace/copy-{row-first,prefix-fourth,boundaries-first,whole-first,prefix-refusals-first}.log`，原型入口在同clone的`workplace/palette-advance-research/copy-*.go`。
 模型成本已由獨立原版逐階段記錄核對。4154／4159的段暫存器載入各包含既有模型的18個遠載入成本；不是修改硬體時間。初始化初版的最小值分支步數、段載入成本與反向起點BX錯誤已訂正，失敗log保留。
 狀態升READY，限上述完整VGA root、合法子表面、兩種成本、四方向及有界整列交接。來源／目的slot、完整表面scratch、目前SI／DI、剩餘列與DF須一致；未知狀態或不足一個整列／返回的預算拒絕。允許分離研究fixture並接正式selector，提交層與正常回歸前不升CONFORMED。其他root、列寬、複製函式與未知狀態不外推完成。
+
+勘誤`SURFACE-COPY-SPAN-READY-20261028`：以上沒有CPU像素回退的結論限當時整列預算抽樣；短預算缺口與補證見[一步跨度契約](#surface-copy-span-ready)。
 
 ### 斜線與裁切游標整批驗收
 
@@ -1039,6 +1043,8 @@ HD demo與讀檔後地圖／攻略／工具列11對截圖、原版終點及遊�
 正常淡入入口未觀測，不能把受控淡入對拍宣稱為正常場景覆蓋；RGB既有完整工作與本批續行增量分開記錄。
 正式驗證入口`tools/native_palette_check.py`，固定收據由研究索引連入；其他未驗位置與全部Go閘門仍DRAFT。
 
+<a id="surface-copy-span-initial"></a>
+
 ### 表面搬移短預算補充
 
 狀態：DRAFT，#49，2026-10-28。原始VGA.DRV 3F5E的593 bytes與IDA9.4基準沿既有表面搬移契約，
@@ -1050,3 +1056,54 @@ SHA-256為`559f234ab6f1b97b5c6970fc84c40982e5525fdcac06436fd355bf5ec8c8d4fa`。
 舊整列工作有最低17–24步門檻，未涵蓋短預算續行，這是接管範圍缺口，不是畫面狀態差異。
 擬用穩定表面／列框架解析來源與目的跨度，以Go處理有序重疊搬移，最低一步。
 先驗證與舊整列同一資格及原版REP邊界，不以固定語意重放替代Go；未審查READY前只在隔離副本研究。
+
+勘誤`SURFACE-COPY-SPAN-READY-20261028`：原型補證已通過，見[READY契約](#surface-copy-span-ready)。
+
+<a id="surface-copy-span-ready"></a>
+
+### 表面搬移的一步跨度契約
+
+狀態：READY，#49，2026-10-28。不可變鍵
+`DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x3F5E`。
+原始名稱sub_3F5E、IDA9.4基準0、593 bytes與SHA沿[原契約](#surface-copy-initial)。
+原始4169 bytes為F3A5，4177為F3A4；4167的SHR留奇數尾數於CF，416B的RCL重建尾數，416D／4172調整反向byte起點。
+這些是已證實的IDA bytes與受控原版狀態，不以助記符派送實作。
+
+typed輸入沿原表面描述、來源／目的slot、完整scratch及剩餘列。
+舊415E整列與新4169／4177共用幾何驗證；逐列AX／BX保存原始行起點，SI／DI為當前word或尾byte位置。
+兩root限完整A000、320×200，合法非空子表面及最多八層父表面。未知來源、框架、幾何、游標、DF及兩階段算術旗標拒絕。
+新跨度限已知80386及原有兩種成本，最低一步，CX必須等於width/2或width%2。
+Go以有序影子讀取保留重疊；word兩byte先讀再寫，反向也保持小端順序。來源或目的跨出64000 bytes時拒絕；零計數不讀寫。
+零起點反向寬1可能先產生FFFF的零word游標，原版尾byte繞回0；只在完整幾何資格與零計數時接受此狀態。
+REP消費一個軟體模型步數，成本原生3+5×count、DOSBox 1+count；保留完整旗標，依方向更新SI／DI並將CX歸零。
+固定效果在4169／4177邊界停下，不能代做這兩個像素跨度。
+
+原型最初把舊copyAddFlags返回的DF清除誤當原版ADD效果，導致反向尾像素被拒絕。
+IDA及實際旗標顯示ADD保留DF；現在只核對ADD改動的六個算術旗標，輸出DF保持輸入。此修正沒有更改CPU或原版規則。
+垂直鏈為原表面描述→共用typed幾何→Go有序跨度→既有顯存／索引畫布→HD合成；遊戲狀態與存檔不改。
+
+隔離原型證據：320次原版自然抵達的有序邊界比較含96次零計數；184種來源／框架／旗標／模型拒絕不改輸入。
+400次四方向、奇偶寬、五預算完整SaveState與PortLog相同，1360個Go計畫、2380個固定控制工作及42960道CPU控制指令，兩個像素位置CPU／固定回退0。
+另12次整張畫布、八層父表面與零起點反向完整快照相同。
+先前40次診斷重跑為240 bytes全部Go、固定0、CPU像素0，保留初始與中間log供回查。
+原型入口`workplace/dosgolem/workplace/native-surface-short-research`，log為native-surface-short-research-full.log。
+准予抽出共用幾何、接入一步跨度與固定回退防線；完整既有回歸、正常原版機器及HD／地圖抽樣前不升CONFORMED。
+回鏈勘誤標記`SURFACE-COPY-SPAN-READY-20261028`，舊證據為[整列契約](#surface-copy-initial)及[缺口診斷](#surface-copy-span-initial)，新證據為本節。
+
+2026-10-28驗收補記：上述一步跨度局部CONFORMED，來源d170e03。完整繪圖回歸425.998秒，核心／session／遊戲／前端及vet通過。
+正常原版712250000步、CPU／RAM、有序事件與127檔相同，46個直接入口同前版；HD demo與地圖工具列11對截圖相同，閃現0。
+本條正常demo未觀測3F5E新入口，語意完成限上述受控原版條件。正常Go112037計畫／3400441步、固定1018不變，不宣稱全遊戲覆蓋或FPS。
+驗證入口`tools/native_surface_spans_check.py`及固定收據由研究索引連入；其他root與未驗條件及全部Go閘門仍DRAFT。
+
+### 退化圖元與窄縮放的後續診斷
+
+狀態：DRAFT，#49，2026-10-28。只跑原版的26次診斷在`workplace/dosgolem/workplace/native-degenerate-research`，log為degenerate-original-audit.log，報告為同clone的workplace/degenerate-original-report.json。
+外框346A及填滿39B2遇零半徑會轉成單點或橫直線；rx／ry為0／0、0／2、2／0、0／100、160／0，兩種成本都正常返回。
+對應點／線寫入數為1、5、5、200、320，包含原版裁切。這是受控原版結果，不是改用通用數學定義猜補。
+寬1高3的5615縮放在factor1／2／8皆寫3個像素並正常返回，兩種成本同順序。
+另18次現行Go對拍的完整SaveState相同，但零半徑在預算1仍回退CPU，在1024則由既有Go橫直線接手。
+CPU像素定位為2E6D／2E71、2ED4／2EDF／2EEA／2EF5／2F00，沿原始axisLineCode 1338 bytes，SHA-256
+`06d69c6ecaffd16f3d050756a9485ea703e3bb67821f3f9c6f62f45772b46fba`；未知的其他unroll位置待取最小證據。
+寬1縮放在1／1024預算皆由585A寫像素，沿原始5615的625 bytes，SHA-256
+`6d9aac63d38f8b0e5ddd9bdbdfcfdda9144318a34398436b6b468c52f0271106`。
+log為degenerate-current-go-audit.log。下一步為橫直線單步輸出與寬1的typed邊界，不重新實作正半徑橢圓，不因此改原版規則；尚未READY不接正式路徑。

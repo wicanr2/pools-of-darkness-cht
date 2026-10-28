@@ -1,0 +1,100 @@
+{
+  "scope": "Go表面矩形搬移的一步word／尾byte跨度；完整VGA root與合法子表面，其他繪圖仍待完成",
+  "program_commit": "d170e03ec4c7b4c39906458431eebd48684482e8",
+  "parent_commit": "f525cd35e3c332b828379a825b956b12463ed1a4",
+  "binary_sha256": "b6ca329096e89f939fb5e7f47bdc6c1962fc5487f2b3246abe64d1d067015687",
+  "original_state_and_ordered_events_equal": true,
+  "virtual_steps": 712250000,
+  "guest_files": 127,
+  "guest_files_equal": true,
+  "direct_original_witnesses": 46,
+  "original_witnesses_equal": true,
+  "normal_surface_entries": {},
+  "algorithmic_plans": 112037,
+  "algorithmic_instructions": 3400458,
+  "fixed_semantic_instructions": 1018,
+  "controlled_original": {
+    "ordered_boundary_comparisons": 320,
+    "zero_count_comparisons": 96,
+    "refusals": 184,
+    "whole_calls": 400,
+    "whole_go_plans": 1360,
+    "whole_fixed_control": 2380,
+    "whole_cpu_control": 42960,
+    "boundary_calls": 12,
+    "diagnostic_calls": 40,
+    "cpu_or_fixed_surface_pixels": 0
+  },
+  "source_sha256": {
+    "apps/pod/drawblocks/effects.go": "373f04dc58d24fc49a6a2950d4881e71242badc112f4bfecb2af0a9f96770d55",
+    "apps/pod/drawblocks/native_surface_copy.go": "d7dcb88e432420cb5a131999322306db067255c40a5aaf0f2926805e467f335b",
+    "apps/pod/drawblocks/native_surface_copy_short_test.go": "038961b1456fb7b114921b173c92149a5ec3be5cd0480780f69d077eae83402c",
+    "apps/pod/drawblocks/native_surface_copy_spans.go": "d5bbaeb9b75597d8ef6c9834808c3f477c09e3e4bc9f926664c20aac2645d32b",
+    "apps/pod/drawblocks/native_surface_copy_spans_test.go": "a44ef9ae209e60fe76c4d266eaadbcdc15ecde7b7e73dae83b05a5a75a096cd0",
+    "apps/pod/drawblocks/native_surface_copy_spans_whole_test.go": "5d3ec1651f6b887292cc5bf281b93d4899c52cf9bdcc5e22627a28bf2953627b",
+    "docs/spec/000-index.md": "d14fd8de5138e56e7adaab97a183edb3cef308fb290d7956bfa348a460b45fc1",
+    "docs/spec/436-host-call-effects.md": "ad64f041432686c3879aef8c180fa0ff0b56b237e1b7547fe43c7324af579c42"
+  },
+  "product_test_log_sha256": "cf4a0f1d1bb2fd145c6d245b7d9ec682b1d67e58c25807f4119a93ed5f9180dc",
+  "resolution_backlinks": {
+    "key": "DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x3F5E",
+    "correction": "SURFACE-COPY-SPAN-READY-20261028"
+  },
+  "spec_sha256": "843222eaf894d80e7485d6a6574f162a3e120a9e9fcb7e93153d9c678150740d",
+  "prior_full_receipt_sha256": "bd31ddf261abfc79d32b4dd0e3eed655ae72e2a5b05d0eb4623beefa2248d80f",
+  "build_info_sha256": "ce32d92cb73c213e3021ac45bb2f9424c436e13d6a03cf0d147fdb949dd6d35c",
+  "trace_binary_sha256": "f7025137581fa29873cc4b1460649a6510f8f40487e194e38d288fe364b95ee9",
+  "source_reports": {
+    "workplace/probe/draw-intercept-v1/native-surface-spans-v1/trace-native": "6dd2dcecf1f21b20dbcded76764032de38f1e6655682356eb02ef3b26daec975",
+    "workplace/probe/draw-intercept-v1/native-palettein-v1/trace-native": "8f581d915b6f6b19cced517515633eeb0d1be38d89ee716ea0fa74f35df16670",
+    "workplace/probe/draw-intercept-v1/native-fade-v1/trace-original-entries": "342b032b63617080c1880888fb6b45bfc74b6460dd1349f6c003e0461ada6f1c"
+  },
+  "prior_gates_note": "前批完整四路demo、39對介面、6對存讀檔及demo中斷另存原收據，本批正常抽樣另列",
+  "normal_samples": [
+    {
+      "route": "hd",
+      "endpoint": [
+        "7400",
+        "712250000",
+        "92378aa1b9a421f5f2b2b93c504aed1f80dbd06e627fd1d9f297932fbacbf540",
+        "e77dd084128cf4f20ecce7cd104b1bb0a68f008da864490d926e338386abb7bf",
+        "c2b1ab7e95b942a904842f53eced383f6e0c39b111a0d6c1b65e8ac740694c47",
+        "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3"
+      ],
+      "screenshot_pairs": 1,
+      "screenshots_and_original_state_equal": true,
+      "unexpected_flash_count": 0
+    },
+    {
+      "route": "wall",
+      "endpoint": [
+        "4800",
+        "462000000",
+        "bbed4498180096ffd6b209f4e4183a6fa73974c0d35f5a70f50d1164cfe64091",
+        "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+        "e51ff0161b303165fcb9d5265b133bda27d0ac67a7972cb0e96dd2880cc48c00",
+        "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde"
+      ],
+      "screenshot_pairs": 10,
+      "screenshots_and_original_state_equal": true,
+      "unexpected_flash_count": 0
+    }
+  ],
+  "regression_logs": {
+    "native-surface-spans-all-drawblocks.log": "11d6f9a9fafc8db59497e475e2abfee1b165d49d04a92449980b06be12213d29",
+    "native-surface-spans-core-tests.log": "0a1bfc25f20d9ece7aa536bed21256fa6d640034394548526b6d4f9599a286ff",
+    "native-surface-spans-vet.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "activation": {
+    "program_commit": "d170e03ec4c7b4c39906458431eebd48684482e8",
+    "candidate_sha256": "b6ca329096e89f939fb5e7f47bdc6c1962fc5487f2b3246abe64d1d067015687",
+    "previous_binary": "pod-play-nativepalettein",
+    "previous_sha256": "a7579a001fab966d7a117d49c00d2e48c6068eb5a65bee80f476fa155362f330",
+    "preactivation_receipt_sha256": "a9bff04a9283d061f6f4969972fa4c702dc0f115030e647a58ee76831ca51894",
+    "activation_script_sha256": "ab1093af0fd0809b40e098f08d9e8d2d1aadd9576146479b1a90bda6bfd2bc48",
+    "activated_utc": "2026-10-28T14:32:15.618214+00:00",
+    "method": "Verified candidate copied and atomically renamed; previous accepted binary retained"
+  },
+  "tool_sha256": "28cef1d49cdece47357a62c4875e36adec4e44af99a90c14d678baa603337315",
+  "helper_sha256": "8fd45ff39656768af155c0c5f36edf4b9a62c9e88dbac04a01aad902a7d412ce"
+}

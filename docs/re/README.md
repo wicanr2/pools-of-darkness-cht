@@ -1,5 +1,7 @@
 # 研究索引
 
+- [表面搬移的一步跨度](../spec/025-direct-render-commands.md#surface-copy-span-ready)：#49，[固定收據](019-native-surface-spans-runtime.json)、[跨度檢查器](../../tools/native_surface_spans_check.py)。400次完整原版、320次邊界比較、12次畫布／父表面邊界、完整回歸及11對正常截圖通過並啟用；像素回退0限受控條件，新入口正常未觀測，全部Go仍DRAFT。
+
 - [Go淡入與分段DAC](../spec/025-direct-render-commands.md#palette-in-ready)：#49，[固定收據](019-native-palettein-runtime.json)、[色盤檢查器](../../tools/native_palette_check.py)。原版對拍、全部回歸、正常HD與地圖工具列11對截圖通過並啟用；固定工作1062降至1018步，淡入新入口正常未觀測，全部Go仍DRAFT。
 
 - [變寬字模像素核心](../spec/025-direct-render-commands.md#glyph-5aa4-ready)：#49，[正式收據](019-native-glyph-runtime.json)。Go字形列與透明映射已在受控原版條件驗收啟用；正常HD及地圖工具列11對截圖相同，新入口在此正常demo未觀測，其他繪圖仍DRAFT。

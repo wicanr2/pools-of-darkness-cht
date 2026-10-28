@@ -1,6 +1,6 @@
 # 規格索引
 
-- [025 直接攔截繪圖與前端命令](025-direct-render-commands.md)：#45–#47輸出一致性及#49已列Go子集通過。最新[淡入與分段DAC收據](../re/019-native-palettein-runtime.json)含原版完整狀態、全部回歸與11對正常HD／地圖工具列截圖；正常固定工作1062降至1018，淡入新入口正常未觀測。前批[有界跨度收據](../re/019-native-bounded-runtime.json)保留四路demo、存讀檔與中斷完整驗收。已列子集局部CONFORMED，表面搬移短預算、退化圖元及未驗條件保留，全部Go閘門DRAFT。
+- [025 直接攔截繪圖與前端命令](025-direct-render-commands.md)：#45–#47輸出一致性及#49已列Go子集通過。最新[表面一步跨度收據](../re/019-native-surface-spans-runtime.json)含400次完整原版、320次有序邊界、12次畫布／父表面邊界、全部回歸及11對正常HD／地圖工具列截圖；新入口正常未觀測，固定1018不變。前批[有界跨度收據](../re/019-native-bounded-runtime.json)保留四路demo、存讀檔及中斷完整驗收。橫直線一步輸出、寬1縮放、其他root及未驗條件待完成，全部Go閘門DRAFT。
 
 - [024 片頭字幕覆繪](024-intro-subtitles.md)：#10，八組台詞、雙語／倍率／原版切換及正常5100格閃現0，局部CONFORMED。
 - [023 左右海報](023-side-posters.md)：#21，固定加寬與語系文字，繁中／英文及 2／3 倍 CONFORMED。
