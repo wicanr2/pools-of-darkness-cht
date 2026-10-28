@@ -52,6 +52,12 @@ type block struct {
 }
 
 func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
+	if p := planGlyph5aa4Rows(v, budget); p != nil {
+		return p
+	}
+	if p := planGlyph5aa4Spans(v, budget); p != nil {
+		return p
+	}
 	if p := dissolve4337(v, budget); p != nil {
 		return p
 	}
@@ -232,7 +238,7 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 		instr, cycles, lastCS, lastIP := e.p.Instructions, e.p.Cycles, e.p.LastCS, e.p.LastIP
 		nw, nt := len(e.p.Writes), len(e.p.Transfers)
 		b.run(e)
-		if e.bad || dissolve4337FixedPixels(e.p.Writes[nw:], e.p.Transfers[nt:]) || flip5886FixedRaster(e.p.Writes[nw:], e.p.Transfers[nt:]) || scale5615FixedRaster(e.p.Writes[nw:], e.p.Transfers[nt:]) || bitmap51FixedRaster(e.p.Writes[nw:], e.p.Transfers[nt:]) || ellipseFixedPixelWrites(e.p.Writes[nw:]) || filledEllipseFixedTransfers(e.p.Transfers[nt:]) {
+		if e.bad || glyph5aa4FixedPixels(e.p.Writes[nw:], e.p.Transfers[nt:]) || dissolve4337FixedPixels(e.p.Writes[nw:], e.p.Transfers[nt:]) || flip5886FixedRaster(e.p.Writes[nw:], e.p.Transfers[nt:]) || scale5615FixedRaster(e.p.Writes[nw:], e.p.Transfers[nt:]) || bitmap51FixedRaster(e.p.Writes[nw:], e.p.Transfers[nt:]) || ellipseFixedPixelWrites(e.p.Writes[nw:]) || filledEllipseFixedTransfers(e.p.Transfers[nt:]) {
 			e.s = before
 			e.p.Instructions, e.p.Cycles, e.p.LastCS, e.p.LastIP = instr, cycles, lastCS, lastIP
 			e.p.Writes = e.p.Writes[:nw]
@@ -250,6 +256,9 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 // Stop a fixed-effects prefix before an algorithm's entry, so its pixel
 // work is offered to the typed Go path using the committed guest state.
 func algorithmBoundary(cs, ip uint16) bool {
+	if cs == 0x48a1 && (ip == 0x5c00 || ip == 0x5c02 || ip == 0x5c26 || ip == 0x5c2c || ip == 0x5c2f) {
+		return true
+	}
 	if cs == 0x48a1 {
 		switch ip {
 		case 0x4337, 0x456c, 0x45c4, 0x45ce, 0x4569, 0x45bb:
