@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 已有的7400格冷啟動DEMO路徑，驗VGA戰鬥HD與前端切換。
+# 已有的7400格冷啟動DEMO路徑，明確按D開始，驗VGA戰鬥HD與前端切換。
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 MODE="${1:-hd}"
@@ -9,6 +9,8 @@ BINARY="${4:-pod-play-vga}"
 RECEIPT_TIMEOUT="${POD_RECEIPT_TIMEOUT:-900}"
 BIGPIC_SAMPLE="${POD_BIGPIC_SAMPLE:-0}"
 DIRECT_REPORT="${POD_DIRECT_REPORT:-0}"
+DEMO_SELECT="${POD_DEMO_SELECT:-explicit}"
+case "$DEMO_SELECT" in explicit|legacy-space) ;; *) echo 'demo選擇只接受explicit或legacy-space' >&2; exit 2;; esac
 case "$DIRECT_REPORT" in 0|1) ;; *) echo '繪圖命令收據只接受0或1' >&2; exit 2;; esac
 case "$BIGPIC_SAMPLE" in 0|1) ;; *) echo 'BIGPIC抽樣只接受0或1' >&2; exit 2;; esac
 case "$RECEIPT_TIMEOUT" in *[!0-9]*|'') echo '收據逾時須為60至3600秒' >&2; exit 2;; esac
@@ -25,13 +27,14 @@ mkdir -p "$OUT"
 test ! -e "$OUT/save" || { echo '保留既有收據，請另定輸出位置' >&2; exit 2; }
 timeout "${RECEIPT_TIMEOUT}s" docker run --rm --init --label pod.task=vga-battle-play --network none \
   --memory 2g --cpus 2 --pids-limit 256 --log-opt max-size=10m --log-opt max-file=3 \
-  --user "$(id -u):$(id -g)" -e HOME=/tmp -e POD_NO_DIALOG=1 -e GOMAXPROCS=2 -e MODE="$MODE" -e BINARY="$BINARY" -e BIGPIC_SAMPLE="$BIGPIC_SAMPLE" -e DIRECT_REPORT="$DIRECT_REPORT" \
+  --user "$(id -u):$(id -g)" -e HOME=/tmp -e POD_NO_DIALOG=1 -e GOMAXPROCS=2 -e MODE="$MODE" -e BINARY="$BINARY" -e BIGPIC_SAMPLE="$BIGPIC_SAMPLE" -e DIRECT_REPORT="$DIRECT_REPORT" -e DEMO_SELECT="$DEMO_SELECT" \
   -v "$ROOT/workplace/dosgolem/workplace/bin:/app:ro" -v "$ROOT/workplace/input/dos/pod:/orig:ro" \
   -v "$ROOT/workplace/font:/font:ro" -v "$ROOT/text:/text:ro" -v "$ROOT/$THEME:/theme:ro" \
   -v "$ROOT/tools:/tools:ro" -v "$OUT:/out" dosgolem-go-ebiten:1.24-r1 sh -eu -c '
     test "$(stat -c %u:%g /out)" = "$(id -u):$(id -g)"
     python3 -I /tools/vga_battle_play_check.py --record /out/inputs.json --record-binary "/app/$BINARY"
-    script="900: ,1800: "
+    script="900: ,1800:d"
+    if test "$DEMO_SELECT" = legacy-space; then script="900: ,1800: "; fi
     theme="-hd /theme"
     audit=""
     capture=""
@@ -51,6 +54,7 @@ timeout "${RECEIPT_TIMEOUT}s" docker run --rm --init --label pod.task=vga-battle
       english) script="$script,7390:toggle" ;;
       twox) script="$script,7390:scale" ;;
     esac
+    printf "%s\n" "$script" > /out/script.txt
     xvfb-run -a "/app/$BINARY" -original /orig -save /out/save -text-dir /text \
       -font /font/pod-rounded.golemfnt -scale 3 -audio=false -frames 7400 -script "$script" \
       $draw_report \

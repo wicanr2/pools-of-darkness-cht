@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "status": "READY evidence; not final product acceptance",
+  "key": "Go/a83043c02b28b7dc07db41a62a81300c0f0351f3/apps/pod/battle_hold.go:battleHold.applySource",
+  "correction": "BATTLE-HOLD-4-20261028",
+  "scenario": "normal cold boot, 900 space, 1800 D, 6640 frames, 60 TPS; only diagnostic screenshots added",
+  "source_frame_offset": "Screenshot f captures original source f-1",
+  "original_input_manifests": {
+    "workplace/probe/hd-flash-explicit-v1": "90890dcd05516bcad4458a390606035dc7fc9258aa6ebaf366849a94c422cf8f",
+    "workplace/probe/hd-flash-explicit-v2": "c4fc4f4b82ee40dc679836fc7de2259759e76ec0ec440f444a129511cdc7a6a8"
+  },
+  "original_cpu_ram_indices_palette_equal": true,
+  "common_four_source_frames_and_screenshots_equal": true,
+  "before_binary_sha256": "b48485151486b0f2513820bbd85e49332aff2100511dbd45156729b6f1cf159b",
+  "cached_binary_sha256": "af9f00f07eab87c3e432f19965ebbc91157b8af3f6f82f2712a0d3d512b20f2e",
+  "normal_logs": {
+    "workplace/probe/hd-flash-explicit-v1": "65297c8fc3ba14423e25e90c3266f10a0063096389a9fa4bddcb65ed22babd60",
+    "workplace/probe/hd-flash-explicit-v2": "7773d9f3e57c76e5bcaf5a886905628ede8c8028050feedd18306734c9b378f8"
+  },
+  "cache_timing_observations_seconds": [
+    392.7,
+    188.3
+  ],
+  "timing_scope": "same 6640-update input, shared host load; observational elapsed time, not a physical FPS guarantee",
+  "source_frames": {
+    "pod-f006614": {
+      "idx": "ae7c4032a8ced448ba119ddfd32b2aeb6aec5942fa7519c4fbaae74469f71c22",
+      "pal": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3"
+    },
+    "pod-f006615": {
+      "idx": "ae7c4032a8ced448ba119ddfd32b2aeb6aec5942fa7519c4fbaae74469f71c22",
+      "pal": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3"
+    },
+    "pod-f006616": {
+      "idx": "ae7c4032a8ced448ba119ddfd32b2aeb6aec5942fa7519c4fbaae74469f71c22",
+      "pal": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3"
+    },
+    "pod-f006617": {
+      "idx": "bb302d344360d2fe07434fbf4c25fbb1fabf4148daea27c468ff50af498462b3",
+      "pal": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3"
+    },
+    "pod-f006618": {
+      "idx": "bb302d344360d2fe07434fbf4c25fbb1fabf4148daea27c468ff50af498462b3",
+      "pal": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3"
+    },
+    "pod-f006619": {
+      "idx": "a8f0cc072e1a3f67080d3aa939869c80fc11be175d7a641d251cfba38186ad27",
+      "pal": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3"
+    },
+    "pod-f006620": {
+      "idx": "ddd4d05a92e172c2abd89216565aa58dd910eb1edda4369f601b69c7707b1d88",
+      "pal": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3"
+    },
+    "pod-f006621": {
+      "idx": "2116f682320d788fe8cfa4ec8c57960b19c08143b7cdde18de34cba792fcf602",
+      "pal": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3"
+    },
+    "pod-f006622": {
+      "idx": "32e6ea4eb8932d23b448733d7d7f4da98d4c36f2574fb2ff794d4dd7723b5d22",
+      "pal": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3"
+    },
+    "pod-f006623": {
+      "idx": "32e6ea4eb8932d23b448733d7d7f4da98d4c36f2574fb2ff794d4dd7723b5d22",
+      "pal": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3"
+    },
+    "pod-f006624": {
+      "idx": "f2c1cfaf3aec21701ab439710095f748b38a21a88c364911fa26e980104ba063",
+      "pal": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3"
+    }
+  },
+  "presentation_frames": {
+    "pod-f006614": "278cf32ba6be019ab10b49da33d06c174389625c7e171315a92f3375161c3545",
+    "pod-f006615": "278cf32ba6be019ab10b49da33d06c174389625c7e171315a92f3375161c3545",
+    "pod-f006616": "278cf32ba6be019ab10b49da33d06c174389625c7e171315a92f3375161c3545",
+    "pod-f006617": "98f174e68581a9a7b8c8a42a32d7c372673c4e2569411defa5b1d80b7f35946a",
+    "pod-f006618": "98f174e68581a9a7b8c8a42a32d7c372673c4e2569411defa5b1d80b7f35946a",
+    "pod-f006619": "8689649b869bf8ea1b918adf14c3c8cb4acc5f2dc9febfb8ee0b04d383b8a9b2",
+    "pod-f006620": "c9ebca318aa80ce4135f05924a628f6797a1b9164de81aa08e358ac8b23b6f0a",
+    "pod-f006621": "6b87b0799181ba1076471cefbb3cf4d305eabc17b709517968cbda9114e191a1",
+    "pod-f006622": "53d176a00dfdb7de5a974ca7c98984d62d8464070b8d9fc1d90ab6917f0c4275",
+    "pod-f006623": "4ff0b6530ef5c54528f185be5dd034aae618f8e8708b5d28acea6a05d341c231",
+    "pod-f006624": "355b8375e673a414063e2e63b455a6a16686dea65fbc951aad0f6c1162efea1d"
+  },
+  "pending_interval": [
+    6619,
+    6622
+  ],
+  "complete_at": 6623,
+  "old_hold_limit": 3,
+  "old_controlled_flashes": 1,
+  "old_flash": {
+    "shown": 6622,
+    "replaced": 6623,
+    "cx": 7,
+    "cy": 4
+  },
+  "proposed_hold_limit": 4,
+  "prototype_flashes": 0,
+  "research_logs": {
+    "workplace/dosgolem/workplace/explicit-flash-contiguous-research.log": "e1ef699f11f8cd6181cb4e15e58fa10fa14fff59f04d6bb2dcb2dc2e1ed19c51",
+    "workplace/dosgolem/workplace/explicit-flash-four-frame-research.log": "a2c84d9f0fe3ed13233e0d3d65d781e719ce7cb9c680ca5d3ad4e82535135f54"
+  },
+  "original_host_source_sha256": "662b8308945bc3e4df90dbe0a99431bfebb33f29e3c80d562ad5bfb75b87ea98",
+  "prototype_host_source_sha256": "bc803518f5cbc6f5f05bd917105e0b5a2ce79c2ff6976e26d9ffd956c30466c5",
+  "acceptance_required": [
+    "Product contiguous-frame test with source unchanged and repeated composition equality",
+    "Unknown source, changed palette, non-battlefield, F12 and 2x refusal tests",
+    "Hard fallback after four held frames",
+    "Normal GUI flash zero, original CPU/RAM/output and save comparisons"
+  ]
+}

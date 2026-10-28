@@ -1,5 +1,7 @@
 # 研究索引
 
+- [021 HD逐格呈現](021-hd-frame-presentation.json)：明確按D的demo顯示三格保留不足；完整逐格來源重現一格閃現，四格原型為0。HD辨識快取前後原版狀態及共有截圖相同；正式驗收尚待完成。
+
 - [020 Demo控制驗收](020-demo-control-runtime.json)：本作簽章、A7CE／A7CF、等待取消與返回還原，正常冷開機、戰鬥中斷、重播及F12／2倍通過；[規格018](../spec/018-demo-control.md#demo-conformed) CONFORMED。
 
 - [Go表面原地翻轉](019-draw-interception.md#2026-10-27-go表面原地翻轉接入)：#49，[固定收據](019-native-surfaceflip-runtime.json)。成對列與短預算輸出已驗收啟用，保留同列相依及奇數高度行為；像素轉場研究中，全部Go閘門仍DRAFT。

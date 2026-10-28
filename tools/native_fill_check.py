@@ -26,37 +26,71 @@ def load(path):
     return module
 
 
+def verify_dissolve_resolution(spec):
+    text = spec.read_text()
+    initial = '<a id="dissolve-4337-initial"></a>'
+    ready = '<a id="dissolve-4337-ready"></a>'
+    assert text.count(initial) == text.count(ready) == 1, '4337回鏈anchor缺失或重複'
+    before, after = text.split(initial)[1].split(ready)
+    key = 'DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x4337'
+    marker = '4337-READY-20261027'
+    assert marker in before and '(#dissolve-4337-ready)' in before, '初始未知缺勘誤或前向連結'
+    assert key in after and '48A1:4337' in after, '接入契約缺不可變原始定位'
+    assert marker in after and '(#dissolve-4337-initial)' in after, '接入契約缺回鏈帳'
+    return dict(key=key, correction=marker, spec_sha256=sha(spec))
+
+
+def verify_hd_resolution(spec):
+    text = spec.read_text()
+    initial = '<a id="battle-hold-three-initial"></a>'
+    ready = '<a id="battle-hold-four-ready"></a>'
+    assert text.count(initial) == text.count(ready) == 1, 'HD回鏈anchor缺失或重複'
+    before, after = text.split(initial)[1].split(ready)
+    marker = 'BATTLE-HOLD-4-20261028'
+    key = 'Go/a83043c02b28b7dc07db41a62a81300c0f0351f3/apps/pod/battle_hold.go:battleHold.applySource'
+    assert marker in before and '(#battle-hold-four-ready)' in before
+    assert key in after and marker in after and '(#battle-hold-three-initial)' in after
+    return dict(key=key, correction=marker, spec_sha256=sha(spec))
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--project', type=Path, required=True)
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--stage', choices=('trace', 'full'), default='full')
     ap.add_argument('--commit', required=True)
-    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip'), default='fill')
+    ap.add_argument('--family', choices=('fill', 'rle', 'palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip', 'dissolve'), default='fill')
+    ap.add_argument('--frontend-baseline', help='已驗收demo版本的GUI基準名稱前綴')
+    ap.add_argument('--run-id', default='v1', help='另存新一輪候選收據，不覆寫先前失敗或完成的資料')
     a = ap.parse_args()
+    assert re.fullmatch(r'v[1-9][0-9]*', a.run_id), '收據輪次不合法'
+    if a.frontend_baseline:
+        assert re.fullmatch(r'[a-z0-9_-]+', a.frontend_baseline), '基準名稱不合法'
     assert not a.out.exists(), '保留既有收據，請另定輸出檔名'
     p = a.project
     rle = a.family != 'fill'
-    axis = a.family in ('axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip')
-    line = a.family in ('line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip')
-    surface_copy = a.family in ('copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip')
-    ellipse = a.family in ('ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip')
-    ellipsefill = a.family in ('ellipsefill', 'bitmap', 'scale', 'surfaceflip')
-    bitmap = a.family in ('bitmap', 'scale', 'surfaceflip')
-    scale = a.family in ('scale', 'surfaceflip')
-    surfaceflip = a.family == 'surfaceflip'
-    primitive = a.family in ('primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip')
-    control = a.family in ('control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip')
-    clip = a.family in ('clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip')
-    output = a.family in ('output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip')
-    row = a.family in ('row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip')
-    setup = a.family in ('setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip')
-    color = a.family in ('color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip')
-    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip')
-    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip')
-    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip')
+    axis = a.family in ('axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip', 'dissolve')
+    line = a.family in ('line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip', 'dissolve')
+    surface_copy = a.family in ('copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip', 'dissolve')
+    ellipse = a.family in ('ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip', 'dissolve')
+    ellipsefill = a.family in ('ellipsefill', 'bitmap', 'scale', 'surfaceflip', 'dissolve')
+    bitmap = a.family in ('bitmap', 'scale', 'surfaceflip', 'dissolve')
+    scale = a.family in ('scale', 'surfaceflip', 'dissolve')
+    surfaceflip = a.family in ('surfaceflip', 'dissolve')
+    dissolve = a.family == 'dissolve'
+    primitive = a.family in ('primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip', 'dissolve')
+    control = a.family in ('control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip', 'dissolve')
+    clip = a.family in ('clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip', 'dissolve')
+    output = a.family in ('output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip', 'dissolve')
+    row = a.family in ('row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip', 'dissolve')
+    setup = a.family in ('setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip', 'dissolve')
+    color = a.family in ('color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip', 'dissolve')
+    fade = a.family in ('fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip', 'dissolve')
+    image = a.family in ('image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip', 'dissolve')
+    palette = a.family in ('palette', 'image', 'fade', 'color', 'setup', 'row', 'output', 'clip', 'control', 'primitive', 'axis', 'line', 'copy', 'ellipse', 'ellipsefill', 'bitmap', 'scale', 'surfaceflip', 'dissolve')
     stem = 'native'+a.family
-    root = p/f'workplace/probe/draw-intercept-v1/native-{a.family}-v1'
+    artifact_stem = stem if a.run_id == 'v1' else stem+'-'+a.run_id
+    root = p/f'workplace/probe/draw-intercept-v1/native-{a.family}-{a.run_id}'
     original_root = p/'workplace/probe/draw-intercept-v1/native-fade-v1' if color else root
     canonical = p/'workplace/probe/draw-intercept-v1/all-functions-v1/trace-v2-legacy'
     previous = original_root/'trace-original-entries' if fade else canonical
@@ -226,8 +260,8 @@ def main():
                         'Go矩形與未裁切RLE像素循環；圖片控制、裁切及鏡像等固定區塊仍保留，#49未全部完成' if rle else
                          '首批Go矩形填色與相容續做；其他VGA固定區塊仍保留，#49未全部完成'),
                   program_commit=a.commit,
-                  binary_sha256=sha(p/f'workplace/dosgolem/workplace/bin/pod-play-{stem}'),
-                  trace_binary_sha256=sha(p/(f'workplace/dosgolem/workplace/bin/draw-call-probe-{stem}'+('-v2' if not rle else ''))),
+                  binary_sha256=sha(p/f'workplace/dosgolem/workplace/bin/pod-play-{artifact_stem}'),
+                  trace_binary_sha256=sha(p/(f'workplace/dosgolem/workplace/bin/draw-call-probe-{artifact_stem}'+('-v2' if not rle else ''))),
                   prototype_and_original_tests=tests,
                   virtual_steps=new['Digest']['Steps'], original_state_equal=True,
                   ordered_video_writes=new['VideoCount'], ordered_video_sha256=new['VideoSHA256'],
@@ -286,7 +320,7 @@ def main():
             witnesses=supplemental, algorithmic_plans=observed['AlgorithmicPlans'],
             algorithmic_instructions=observed['AlgorithmicInstructions'])
     if a.stage == 'full':
-        demo = p/f'workplace/probe/g9-hd/{stem}-play-v1'
+        demo = p/f'workplace/probe/g9-hd/{stem}-play-{a.run_id}'
         summary = read(demo/'bigpic-summary.json')
         assert summary['binary_sha256'] == result['binary_sha256']
         assert summary['prior_original_state_equal'] and summary['prior_sample_composite_equal']
@@ -301,8 +335,8 @@ def main():
                     'pod-lang.txt', 'pod-speed.txt', 'pod-barfont.txt'}
         rows = []
         for route in ('wall', 'movie', 'title'):
-            folder = p/f'workplace/probe/g9-hd/{stem}-ui-v1/{route}-direct'
-            baseline = p/f'workplace/probe/g9-hd/all-ui-v2/{route}-direct'
+            folder = p/f'workplace/probe/g9-hd/{stem}-ui-{a.run_id}/{route}-direct'
+            baseline = p/(f'workplace/probe/g9-hd/{a.frontend_baseline}-ui-v1/{route}-direct' if a.frontend_baseline else f'workplace/probe/g9-hd/all-ui-v2/{route}-direct')
             assert ui.endpoint(folder) == ui.endpoint(baseline)
             ci, bi = read(folder/'inputs.json'), read(baseline/'inputs.json')
             for key in ('orig', 'font', 'text'):
@@ -323,8 +357,8 @@ def main():
                              algorithmic_plans=draw['AlgorithmicPlans'], algorithmic_instructions=draw['AlgorithmicInstructions'],
                              draw_report_sha256=sha(folder/'draw-report.json')))
         result['normal_ui'] = rows
-        before = p/'workplace/probe/g9-hd/all-save-v2/native'
-        after = p/f'workplace/probe/g9-hd/{stem}-save-v1/native'
+        before = p/(f'workplace/probe/g9-hd/{a.frontend_baseline}-save-v1/native' if a.frontend_baseline else 'workplace/probe/g9-hd/all-save-v2/native')
+        after = p/f'workplace/probe/g9-hd/{stem}-save-{a.run_id}/native'
         inputs = [read(d/'before.json') for d in (before, after)]
         for value in inputs:
             value.pop('binary_sha256')
@@ -713,6 +747,81 @@ def main():
         result['normal_machine_surface_flip_by_exit']={key:counts.get(key,[0,0]) for key in
             ('48a1:597a','48a1:59a7','48a1:5a20','48a1:5a27','48a1:59c8','48a1:59cf','48a1:59d3','48a1:59f1','48a1:59f8','48a1:59fc','48a1:5a0c','48a1:5a10')}
         result['native_go_source_review']['surface_flip_scope']='Typed surface/row pair; Go reads and mirrors samples with ordered shadow reads for aliasing, saves a row and performs both output phases. One-step plans reconstruct sources and destinations. Fixed pixel blocks roll back before commit; CPU/fixed control metadata counted separately. Source IPs label notices and model costs; no opcode dispatcher.'
+    if dissolve:
+        for marker in ('dissolve4337 ordered pixel comparisons 9 seed 1',
+                       'dissolve4337 prefix comparisons 72',
+                       'dissolve4337 cursor comparisons 432',
+                       'dissolve4337 bounded batch comparisons 680',
+                       'dissolve4337 single-step pixel comparisons 1584 control plans 2242',
+                       'dissolve4337 whole machine comparisons 44 algorithmic plans 3028 shared VGA wait plans 1404 CPU control steps 2808',
+                       'dissolve4337 selector comparisons 40 algorithmic plans including shared wait 39682 fixed metadata plans 7148 CPU control steps 50084',
+                       'dissolve4337 DF prefix and machine comparisons 16',
+                       'dissolve4337 boundary parent machine comparisons 32 algorithmic plans 15480 shared wait plans 2336 CPU control steps 4672',
+                       'dissolve4337 invalid state refusals 86',
+                       'dissolve4337 one-pixel bounded continuation comparisons 4 cutoff 10000 seed 1'):
+            assert marker in test_log.read_text(), marker
+        assert hashlib.sha256(code.read_bytes()[0x4337:0x45e0]).hexdigest() == '6888a66a54dd072b40f5c95f990d81d53f75257852bce465c95dff15e1168796'
+        result['scope'] = 'Go表面像素轉場、LFSR樣本、有序重疊讀回與短預算輸出；新增路徑限受控原版比較，正常未觀測入口與其他範圍不外推，#49未全部完成'
+        names = sorted(f.name for f in (module/'apps/pod/drawblocks').glob('native_dissolve4337*.go'))
+        assert len(names) == 17 and sum(not n.endswith('_test.go') for n in names) == 6
+        result['dissolve_sources'] = {n: sha(module/'apps/pod/drawblocks'/n) for n in names}
+        for name in names:
+            if name.endswith('_test.go'):
+                continue
+            source = (module/'apps/pod/drawblocks'/name).read_text()
+            assert '.Step(' not in source and 'effect{' not in source and 'b.run(' not in source
+        result['resolution_backlinks'] = verify_dissolve_resolution(p/'docs/spec/025-direct-render-commands.md')
+        build = (root/'build.txt').read_text()
+        assert f'vcs.revision={a.commit}' in build and 'vcs.modified=false' in build
+        result['build_info_sha256'] = sha(root/'build.txt')
+        result['prototype_and_original_tests']['dissolve'] = dict(
+            pixel_cases=9, pixel_seed=1, prefixes=72, cursors=432, batches=680,
+            single_step_pixels=1584, single_step_control_plans=2242,
+            full_calls=44, full_dissolve_plans=3028, full_shared_wait_plans=1404,
+            full_cpu_control_steps=2808, short_calls=40,
+            short_algorithmic_plans_including_wait=39682, short_fixed_control_plans=7148,
+            short_cpu_control_steps=50084, df_calls=16, boundary_calls=32,
+            boundary_dissolve_plans=15480, boundary_shared_wait_plans=2336,
+            boundary_cpu_control_steps=4672, refusals=86,
+            one_pixel_bounded_cases=4, one_pixel_step_limit=10000,
+            scope='Controlled original full CPU/RAM/ordered writes/model-time/SaveState. Go samples the original LFSR with immediate ordered readback for overlap. Shared wait and fixed/CPU call control counted separately; no CPU/fixed dissolve pixels. Original one-pixel nontermination retained within the bounded interval; not normal-player-route evidence.')
+        result['normal_machine_dissolve_by_exit'] = {k: v for k, v in counts.items()
+            if k.startswith('48a1:') and 0x4337 <= int(k.split(':')[1], 16) < 0x45e0}
+        result['native_go_source_review']['dissolve_scope'] = 'Typed surfaces and 32-bit LFSR sample selection generate pixels in Go, with ordered shadow reads and bounded batches. One-step plans derive the same sample. Source IPs label ABI/model-time notices; no guest opcode or instruction-effect dispatcher in raster generation.'
+        result['tools']['tools/vga-battle-play-receipt.sh'] = sha(p/'tools/vga-battle-play-receipt.sh')
+        if a.run_id != 'v1':
+            result['hd_resolution_backlinks'] = verify_hd_resolution(p/'docs/spec/010-hd-theme.md')
+            result['presentation_sources'] = {name: sha(module/name) for name in (
+                'apps/pod/hd_layers.go', 'apps/pod/hd_frame_cache_test.go',
+                'apps/pod/battle_hold.go', 'apps/pod/vga_hd_fixture_test.go',
+                'apps/pod/explicit_demo_hd_test.go')}
+            product_log = module/'workplace/hd-presentation-product-tests-v2.log'
+            for marker in (
+                'direct=false original flashes=1 fixed flashes=0 frames=11 changed frames=1 changed cells=1',
+                'direct=true original flashes=1 fixed flashes=0 frames=11 changed frames=1 changed cells=1',
+                'HD cached/uncached original output comparisons 22',
+                '--- PASS: TestVGABattleTransitionFixture',
+                '--- PASS: TestVGABattleHoldUnknownBoundAndPalette',
+                '--- PASS: TestVGABattleHoldBound'):
+                assert marker in product_log.read_text(), marker
+            assert '\nPASS\n' in product_log.read_text()
+            result['presentation_test_log_sha256'] = sha(product_log)
+            result['presentation_source_proof_sha256'] = sha(p/'docs/re/021-hd-frame-presentation.json')
+        if a.stage == 'full':
+            assert a.frontend_baseline, '新demo必須指定已驗收版本的GUI基準'
+            gui = p/'workplace/probe/g9-hd'
+            old_demo = gui/f'{a.frontend_baseline}-play-v1'
+            expected = read(p/'docs/re/020-demo-control-runtime.json')['binary_sha256']
+            for mode in ('hd', 'base', 'english', 'twox'):
+                assert read(old_demo/mode/'inputs.json')['binary_sha256'] == expected
+                assert (demo/mode/'script.txt').read_bytes() == (old_demo/mode/'script.txt').read_bytes()
+                assert '1800:d' in (demo/mode/'script.txt').read_text()
+            for route in ('wall', 'movie', 'title'):
+                assert read(gui/f'{a.frontend_baseline}-ui-v1/{route}-direct/inputs.json')['binary_sha256'] == expected
+            assert read(gui/f'{a.frontend_baseline}-save-v1/native/before.json')['binary_sha256'] == expected
+            result['frontend_baseline'] = dict(prefix=a.frontend_baseline,
+                binary_sha256=expected, demo_observation_sha256=sha(old_demo/'baseline-observation.json'),
+                scope='Current accepted demo controls with explicit D; earlier timeout-driven GUI receipts remain historical evidence.')
     a.out.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({k: result[k] for k in ('algorithmic_plans', 'algorithmic_instructions', 'fixed_semantic_instructions', 'guest_files')}, ensure_ascii=False))
 

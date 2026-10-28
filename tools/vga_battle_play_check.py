@@ -21,10 +21,12 @@ def record(path, binary='/app/pod-play-vga'):
     Path(path).write_text(json.dumps(inputs, ensure_ascii=False, indent=2) + '\n')
 
 
-def check(root, theme, original_baseline=None):
+def check(root, theme, original_baseline=None, record_baseline=False):
     import numpy as np
     from PIL import Image
 
+    script_file = root / 'hd/script.txt'
+    explicit_demo = script_file.exists() and '1800:d' in script_file.read_text()
     cases = {}
     for name in ('hd', 'base', 'english', 'twox'):
         folder = root / name
@@ -91,15 +93,21 @@ def check(root, theme, original_baseline=None):
                             assert np.array_equal(two[mask2], base[mask2]), '2倍仍畫HD怪物'
                         matches.append(dict(key=item['key'], x=x, y=y, flip=flip))
                         count += 1
-        assert count == (8 if foreground else 5), f'{manifest}: 比對件數{count}不同'
+        expected_count = (7 if foreground else 6) if explicit_demo else (8 if foreground else 5)
+        assert count == expected_count, f'{manifest}: 比對件數{count}不同，預期{expected_count}'
     log = (root / 'hd/run.log').read_text()
     audit = re.search(r'pod-play: 閃現 (\d+) 次', log)
     assert audit, '缺少閃現量尺'
     # 量尺的摘要格式由pod-play固定；保留全文供證據審查。
-    assert int(audit[1]) == 0, '閃現量尺未通過'
+    if not record_baseline:
+        assert int(audit[1]) == 0, '閃現量尺未通過'
     actors = json.loads((theme / 'actors.json').read_text())['items']
     observed = {r['key'] for r in matches if r['key'].startswith('cpic1-')}
-    report = dict(scope='7400格既有冷啟動DEMO；八個CPIC鏡像位置／兩張地形；未觀測狀態保持條件式候選',
+    report = dict(scope=('7400格明確按D的冷啟動DEMO；七個CPIC位置／六個地形位置；未觀測狀態保持條件式候選' if explicit_demo else
+                        '7400格既有冷啟動DEMO；八個CPIC鏡像位置／兩張地形；未觀測狀態保持條件式候選'),
+                  scenario='explicit-D-v1' if explicit_demo else 'legacy-timeout-v1',
+                  status='baseline observation, not acceptance' if record_baseline else 'accepted within listed scope',
+                  flash_count=int(audit[1]),
                   registered_actor_states=len(actors),
                   actors_manifest_sha256=sha((theme / 'actors.json').read_bytes()), theme_files=len(first['inputs']['theme']),
                   unobserved_actor_keys=[r['key'] for r in actors if r['key'] not in observed],
@@ -126,11 +134,21 @@ def check(root, theme, original_baseline=None):
         old_inputs = json.loads((previous / 'inputs.json').read_text())
         for key in ('orig', 'font', 'text'):
             assert first['inputs'][key] == old_inputs[key], f'{key}與原版終點基準不同'
+        baseline_proof = original_baseline / 'summary.json'
+        if not baseline_proof.exists():
+            baseline_proof = original_baseline / 'baseline-observation.json'
+            observation = json.loads(baseline_proof.read_text())
+            assert observation['status'] == 'baseline observation, not acceptance'
+            assert observation['binary_sha256'] == old_inputs['binary_sha256']
+            report['prior_baseline_observation_sha256'] = sha(baseline_proof.read_bytes())
+            report['prior_baseline_flash_count'] = observation['flash_count']
+        else:
+            report['prior_baseline_summary_sha256'] = sha(baseline_proof.read_bytes())
         report.update(prior_original_state_equal=True,
                       prior_baseline_binary_sha256=old_inputs['binary_sha256'],
-                      prior_baseline_summary_sha256=sha((original_baseline / 'summary.json').read_bytes()),
                       prior_sample_composite_equal=(root / 'hd/frame.png').read_bytes() == (previous / 'frame.png').read_bytes())
-    (root / 'summary.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+    name = 'baseline-observation.json' if record_baseline else 'summary.json'
+    (root / name).write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps(report, ensure_ascii=False, indent=2))
 
 
@@ -199,6 +217,7 @@ if __name__ == '__main__':
     parser.add_argument('--baseline', type=Path)
     parser.add_argument('--baseline-theme', type=Path)
     parser.add_argument('--original-baseline', type=Path, help='四路完整驗收後，另比先前執行檔的原版終點；不取代四路')
+    parser.add_argument('--record-baseline-observation', action='store_true', help='只保存既有版本的觀察報告，不輸出通過收據；候選驗收仍要求閃現0')
     parser.add_argument('--added', nargs='+')
     parser.add_argument('--terrain', action='store_true', help='純資料增量比較combat.json；仍要求最終合成完全相同')
     args = parser.parse_args()
@@ -206,9 +225,10 @@ if __name__ == '__main__':
         record(args.record, args.record_binary)
     else:
         assert args.out and args.theme
+        assert not args.record_baseline_observation or not (args.baseline or args.original_baseline)
         assert not (args.baseline and args.original_baseline), '純資料增量與新執行檔四路驗收不能混用'
         if args.baseline:
             assert args.baseline_theme
             check_incremental(args.out, args.theme, args.baseline, args.baseline_theme, args.added, args.terrain)
         else:
-            check(args.out, args.theme, args.original_baseline)
+            check(args.out, args.theme, args.original_baseline, args.record_baseline_observation)
