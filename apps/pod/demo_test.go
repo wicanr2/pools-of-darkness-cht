@@ -1,16 +1,27 @@
 package pod
 
-import "testing"
+import (
+	"bytes"
+	"encoding/hex"
+	"testing"
+)
 
 func (m fakeMem) Peek8(a uint32) uint8    { return m[a] }
 func (m fakeMem) Poke8(a uint32, v uint8) { m[a] = v }
 
-// demoMem 放一份主程式簽章在線性 0x124A（任意位置），兩個遠呼叫點為 9A。
 func demoMem(t *testing.T) (fakeMem, *DemoControl) {
 	t.Helper()
-	m := make(fakeMem, 0xA0000)
-	copy(m[0x124A:], demoMainSignature.Bytes)
-	m[0x124A+demoEnterOffset], m[0x124A+demoReturnOffset] = 0x9A, 0x9A
+	m := make(fakeMem, 0xa0000)
+	copy(m[0x124a:], demoMainSignature.Bytes)
+	copy(m[0x124a+demoEnterOffset:], []byte{0x9a, 0x25, 0, 0xef, 0x16})
+	copy(m[0x124a+demoReturnOffset:], []byte{0x9a, 0x2a, 0, 0x28, 0x17})
+	raw, err := hex.DecodeString("8bdc368b57040bd27416b840008ec033ff268a058b1e82fb8bcbe806004a75f8ca0200263a057502e2f9c3")
+	if err != nil {
+		t.Fatal(err)
+	}
+	copy(m[0x4000:], raw)
+	copy(m[0x5000:], demoSoundSignature.Bytes)
+	copy(m[0x50a3:], []byte{0x89, 0xec, 0x5d, 0xca, 2, 0})
 	d, err := NewDemoControl(m)
 	if err != nil {
 		t.Fatal(err)
@@ -20,107 +31,127 @@ func demoMem(t *testing.T) (fakeMem, *DemoControl) {
 
 func TestDemoControlLocatesMainCalls(t *testing.T) {
 	_, d := demoMem(t)
-	if d.enter != 0x1360 || d.ret != 0x1365 {
-		t.Fatalf("進入點 %05X、返回點 %05X，要 01360、01365", d.enter, d.ret)
+	if d.enter != 0x1310 || d.ret != 0x1315 {
+		t.Fatalf("enter=%x ret=%x", d.enter, d.ret)
 	}
-	m := make(fakeMem, 0xA0000)
-	copy(m[0x124A:], demoMainSignature.Bytes)
-	m[0x124A+demoReturnOffset] = 0x9A
+	for _, at := range []uint32{d.enter, d.enter + 3, d.ret, 0x4009, 0x5006, 0x50a3} {
+		m, _ := demoMem(t)
+		m[at] ^= 1
+		if _, err := NewDemoControl(m); err == nil {
+			t.Fatalf("接受來源失配%x", at)
+		}
+	}
+	m, _ := demoMem(t)
+	copy(m[0x6000:], demoMainSignature.Bytes)
 	if _, err := NewDemoControl(m); err == nil {
-		t.Fatal("進入點不是遠呼叫仍綁定")
-	}
-	m[0x124A+demoEnterOffset], m[0x124A+demoReturnOffset] = 0x9A, 0x80 // 本作返回點是 cmp
-	if _, err := NewDemoControl(m); err != nil {
-		t.Fatal(err)
-	}
-	m[0x124A+demoEnterOffset] = 0
-	copy(m[0x5000:], demoMainSignature.Bytes)
-	if _, err := NewDemoControl(m); err == nil {
-		t.Fatal("簽章兩處命中仍綁定")
+		t.Fatal("接受主簽章雙重命中")
 	}
 }
 
 func TestDemoRunningOnlyInsideDemo(t *testing.T) {
 	m, d := demoMem(t)
-	if d.Running() {
-		t.Fatal("開機時不應在 demo")
+	var none *DemoControl
+	if none.Running() || d.Running() {
+		t.Fatal("開機被當成demo")
 	}
-	d.Before(0, d.enter, m) // 67E9＝0：正式遊戲
-	if d.Running() {
-		t.Fatal("正式遊戲被當成 demo")
+	d.Before(0, d.enter, m)
+	d.RequestAbort()
+	before := append([]byte(nil), m...)
+	if lo, hi := d.GuardRange(m); lo <= hi {
+		t.Fatal("正式遊戲仍監看demo欄位")
+	}
+	if !bytes.Equal(before, m) || d.request || d.GuardWrite(demoMenuTimeout, 0, 1) {
+		t.Fatal("正式遊戲被修改")
 	}
 	d.Before(0, d.ret, m)
 	m[demoFlag] = 1
-	d.Before(0, d.enter, m)
+	d.Before(1, d.enter, m)
 	if !d.Running() {
-		t.Fatal("demo 進入點後應在 demo")
+		t.Fatal("未辨識demo")
 	}
-	d.Before(0, d.ret, m)
+	d.Before(2, d.ret, m)
 	if d.Running() {
-		t.Fatal("返回點後（標題、選單）不應在 demo")
-	}
-	var none *DemoControl
-	if none.Running() {
-		t.Fatal("未綁定時不應在 demo")
+		t.Fatal("返回後仍在demo")
 	}
 }
 
 func TestDemoBlocksMenuTimeout(t *testing.T) {
 	m, d := demoMem(t)
-	m[demoMenuTimeout], m[demoMenuTimeout+1] = 0xB8, 0x0B // 綁定前留下的 3000
+	m[demoMenuTimeout] = 0xb8
+	m[demoMenuTimeout+1] = 0xb
 	lo, hi := d.GuardRange(m)
 	if lo != demoMenuTimeout || hi != demoMenuTimeout+3 {
-		t.Fatalf("平時監看 %05X..%05X，要只有選單逾時", lo, hi)
+		t.Fatal(lo, hi)
 	}
-	for a := demoMenuTimeout; a <= demoMenuTimeout+3; a++ {
+	for a := lo; a <= hi; a++ {
 		if m[a] != 0 {
-			t.Fatalf("%05X=%d，逾時應清為 0", a, m[a])
+			t.Fatal("選單逾時未清除")
 		}
 	}
-	// 主程式寫 8A63=3000（低位元組先寫）：兩個位元組都擋下，清零照放行。
-	if !d.GuardWrite(demoMenuTimeout, 0, 0xB8) || !d.GuardWrite(demoMenuTimeout+1, 0, 0x0B) || d.GuardWrite(demoMenuTimeout, 0xB8, 0) {
-		t.Fatal("選單逾時的非零寫入要擋、歸零要放行")
-	}
-	if d.GuardWrite(demoSideCounts, 0, 1) {
-		t.Fatal("沒有中止時不應擋存活數")
-	}
-	if d.TimeoutsCleared != 1 || d.Err != nil {
-		t.Fatalf("擋下 %d 次、錯誤 %v", d.TimeoutsCleared, d.Err)
+	if !d.GuardWrite(lo, 0, 1) || !d.GuardWrite(lo+1, 0, 1) || d.GuardWrite(lo, 1, 0) || d.GuardWrite(demoSideCounts, 0, 1) {
+		t.Fatal("監看範圍錯誤")
 	}
 }
 
-func TestDemoAbortWritesAndGuards(t *testing.T) {
+func TestDemoAbortWritesAndRestoresWaits(t *testing.T) {
 	m, d := demoMem(t)
-	d.RequestAbort() // 不在 demo：無效
 	m[demoFlag] = 1
-	d.Before(0, d.enter, m)
+	d.Before(100, d.enter, m)
 	m[demoSideCounts], m[demoSideCounts+1] = 3, 4
-	m[bdaKeyHead], m[bdaKeyTail] = 0x24, 0x28
-	if lo, _ := d.GuardRange(m); lo != demoMenuTimeout {
-		t.Fatal("沒有要求時就開始中止")
-	}
+	m[bdaKeyHead], m[bdaKeyTail], m[bdaKeyTail+1] = 0x24, 0x28, 1
+	d.RequestAbort()
 	d.RequestAbort()
 	lo, hi := d.GuardRange(m)
-	if lo != demoSideCounts || hi != demoMenuTimeout+3 {
-		t.Fatalf("監看 %05X..%05X", lo, hi)
+	if lo != demoECLStop || hi != demoSideCounts+1 {
+		t.Fatal(lo, hi)
 	}
-	if m[demoECLStop] != 1 || m[demoSideCounts] != 0 || m[demoSideCounts+1] != 0 || m[bdaKeyTail] != 0x24 {
-		t.Fatalf("59B4=%d 87CC=%d 87CD=%d 尾=%#x", m[demoECLStop], m[demoSideCounts], m[demoSideCounts+1], m[bdaKeyTail])
+	if d.Aborts != 1 || m[demoECLStop] != 1 || m[demoGameStop] != 1 || m[demoSideCounts] != 0 || m[demoSideCounts+1] != 0 || m[bdaKeyTail] != 0x24 || m[bdaKeyTail+1] != 0 {
+		t.Fatal("停止或佇列不符")
 	}
-	if !d.GuardWrite(demoSideCounts, 0, 1) || d.GuardWrite(demoSideCounts, 1, 0) {
-		t.Fatal("中止期間要擋非 0 寫入、放行歸零")
+	for _, p := range d.patches {
+		if !demoBytesMatch(m.Read8, p.at, p.after) {
+			t.Fatalf("等待補丁未套入%x", p.at)
+		}
 	}
-	m[demoECLStop] = 0 // ECL 迴圈進入時清掉
+	d.RequestAbort()
 	d.GuardRange(m)
-	if m[demoECLStop] != 1 {
-		t.Fatal("中止期間每回合都要重寫停止旗標")
+	if d.Aborts != 1 {
+		t.Fatal("重複按鍵重啟中斷")
 	}
-	d.Before(0, d.ret, m)
-	if d.Aborts != 1 || d.AbortReturns != 1 || d.Err != nil {
-		t.Fatalf("中止 %d、返回 %d、錯誤 %v", d.Aborts, d.AbortReturns, d.Err)
+	if !d.GuardWrite(demoSideCounts, 0, 2) || d.GuardWrite(demoSideCounts, 2, 0) {
+		t.Fatal("存活數守衛錯誤")
 	}
-	if lo, _ := d.GuardRange(m); lo != demoMenuTimeout || d.GuardWrite(demoSideCounts, 0, 1) {
-		t.Fatal("返回後仍在監看或還原存活數")
+	d.Before(150, d.ret, m)
+	d.GuardRange(m)
+	if d.AbortReturns != 1 || d.LastAbortSteps != 50 || d.patched || d.Err != nil {
+		t.Fatalf("返回／還原不符%+v", d)
+	}
+	for _, p := range d.patches {
+		if !demoBytesMatch(m.Read8, p.at, p.before) {
+			t.Fatalf("未恢復原始碼%x", p.at)
+		}
+	}
+	if d.GuardWrite(demoSideCounts, 0, 1) {
+		t.Fatal("返回後仍守住存活數")
+	}
+	if _, err := NewDemoControl(m); err != nil {
+		t.Fatalf("還原後不能重新辨識%v", err)
+	}
+}
+
+func TestDemoPatchMismatchDoesNotPartiallyPatch(t *testing.T) {
+	m, d := demoMem(t)
+	m[demoFlag] = 1
+	d.Before(1, d.enter, m)
+	bad := d.patches[2].at
+	m[bad] ^= 1
+	before := append([]byte(nil), m[:0x6000]...)
+	d.RequestAbort()
+	d.GuardRange(m)
+	// BIOS queue clearing is outside this code-only comparison.
+	copy(before[bdaKeyTail:bdaKeyTail+2], m[bdaKeyTail:bdaKeyTail+2])
+	if d.Err == nil || d.patched || !bytes.Equal(before, m[:0x6000]) {
+		t.Fatal("失配仍部分修改程式碼")
 	}
 }
 
@@ -128,6 +159,11 @@ func TestDemoRefusesUndeclaredAddress(t *testing.T) {
 	m, d := demoMem(t)
 	d.poke(m, 0x15295, 1)
 	if d.Err == nil || m[0x15295] != 0 {
-		t.Fatal("寫入了未宣告的位址")
+		t.Fatal("寫入未宣告位址")
+	}
+	m, d = demoMem(t)
+	d.poke(m, d.patches[0].at, 0x42)
+	if d.Err == nil || m[d.patches[0].at] != 0x26 {
+		t.Fatal("接受未宣告的程式碼byte")
 	}
 }

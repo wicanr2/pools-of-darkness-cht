@@ -1,6 +1,42 @@
 package tpcrt
 
-import "testing"
+import (
+	"encoding/hex"
+	"testing"
+)
+
+func TestFindDelayBDA(t *testing.T) {
+	// IDA 9.4 的原始切片：1DF0:029C，DS=2096。這份 fixture 不從辨識表生成。
+	raw, err := hex.DecodeString("8bdc368b57040bd27416b840008ec033ff268a058b1e82fb8bcbe806004a75f8ca0200263a057502e2f9c3")
+	if err != nil {
+		t.Fatal(err)
+	}
+	m := make([]byte, searchEnd)
+	copy(m[0x1e19c:], raw)
+	read := func(a uint32) uint8 { return m[a] }
+	loop, count, ok := FindDelay(read, 0x2096)
+	if !ok || loop != 0x1e1bf || count != 0x304e2 {
+		t.Fatalf("loop=%05X count=%05X ok=%v", loop, count, ok)
+	}
+	for i := range raw {
+		if i == 0x16 || i == 0x17 {
+			continue
+		}
+		m[0x1e19c+i] ^= 1
+		if _, _, ok := FindDelay(read, 0x2096); ok {
+			t.Fatalf("接受失配 byte %d", i)
+		}
+		m[0x1e19c+i] ^= 1
+	}
+	for _, f := range delayForms {
+		other := memWithForm(f, 0x40000)
+		copy(m[0x40000:0x40000+len(f.sig)], other[0x40000:0x40000+len(f.sig)])
+		if _, _, ok := FindDelay(read, 0x2096); ok {
+			t.Fatal("接受不同或相同形式的雙重命中")
+		}
+		clear(m[0x40000 : 0x40000+len(f.sig)])
+	}
+}
 
 func memWithForm(f delayForm, at ...uint32) []byte {
 	m := make([]byte, searchEnd)

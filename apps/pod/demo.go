@@ -1,74 +1,83 @@
 package pod
 
-import "fmt"
-
-// 銀色匕首之謎值，本作未驗：下列位址與簽章都是該作 START.EXE 的，本作 #13 重驗前不開 ControlDemo（簽章對不上時 NewDemoControl 回錯誤）。
-//
-// 開場 demo 控制（主專案規格 018，比照幽靈騎士規格 015）：PLAY／DEMO 選單不逾時；demo 中按鍵回選單。
-// 只寫下列位址；經 session.WriteGuard 擋下選單逾時的非零寫入，在回合開頭寫入中止旗標，
-// 並在中止期間把雙方存活數守在 0。
-// 選單逾時必須在寫入當下擋下：幽靈騎士實測選單可能在設定逾時的同一回合內就判定逾時（該作規格 015 §2.1）。
-// 位址與幽靈騎士逐項同構（主專案規格 018 §2）：
-//   - 主程式 START.EXE 0x3B9 設 [8A63]=3000、0x5AF 設 1000，[8A67]='D' 為逾時預設選項；選單後清 0。
-//   - 選單回傳字元存 [59A2]，等於 'D' 時 0x458 設 demo 旗標 [67E9]=1。
-//   - ECL 迴圈（GAME.OVR 0x47FD）每圈檢查 [59B4]、[67F5]，進入與結束都把 [59B4] 清 0。
-//   - 戰鬥雙方存活數 [87CC]、[87CD]：GAME.OVR 0x3AC6D 起歸零重算，0xC445 起與 demo 旗標 [67E9] 一起判斷戰鬥結束。
-const (
-	demoMenuTimeout = uint32(defaultDS)<<4 + 0x8A63 // 8A63..8A66：選單逾時（百分之一秒），0 為不逾時
-	demoECLStop     = uint32(defaultDS)<<4 + 0x59B4 // ECL 迴圈停止旗標
-	demoSideCounts  = uint32(defaultDS)<<4 + 0x87CC // 87CC..87CD：戰鬥雙方存活數
-	demoFlag        = uint32(defaultDS)<<4 + 0x67E9 // 1 ＝ demo（只讀）
-	bdaKeyTail      = 0x41C                         // BIOS 鍵盤緩衝尾；bdaKeyHead 在 live.go
+import (
+	"fmt"
+	"github.com/wicanr2/dosgolem/runtime/tpcrt"
 )
 
-// demoMainSignature 是主程式 `cmp [59A2],'D' / jne / mov [67E9],1`（START.EXE 檔案 0x451）。
-// demo 與正式遊戲都由簽章 +0x116（檔案 0x567）的 `lcall 0050:0025` 進入，返回到 +0x11B；
-// 之後的 `lcall 00A1:002A` 是收尾，與幽靈騎士 `lcall 002F:0025`／`0065:002A` 的配置相同。
-var demoMainSignature = sig(0x80, 0x3E, 0xA2, 0x59, 0x44, 0x75, 0x05, 0xC6, 0x06, 0xE9, 0x67, 0x01)
-
+// 本作v1.10，主專案規格018。位址來自本作正常程式鏈，前作值不再沿用。
 const (
-	demoEnterOffset  = 0x116
-	demoReturnOffset = 0x11B
+	demoMenuTimeout  = uint32(defaultDS)<<4 + 0xAAE8
+	demoECLStop      = uint32(defaultDS)<<4 + 0x7DE6
+	demoGameStop     = uint32(defaultDS)<<4 + 0x8814
+	demoSideCounts   = uint32(defaultDS)<<4 + 0xA7CE
+	demoFlag         = uint32(defaultDS)<<4 + 0x880E
+	bdaKeyTail       = 0x41C
+	demoEnterOffset  = 0xC6
+	demoReturnOffset = 0xCB
 )
 
-// GuardMemory 是 session.GuardMemory 的同形介面，讓本套件不依賴 session。
+// 16AF:01B0：索引1為demo；主迴圈在0276進入、027B返回。
+var demoMainSignature = sig(0x80, 0x3E, 0xDE, 0x7D, 0x01, 0x75, 0x05, 0xC6, 0x06, 0x0E, 0x88, 0x01)
+var demoSoundSignature = sig(0x0e, 0xe8, 0xce, 0x00, 0x08, 0xc0, 0x74, 0x02, 0xeb, 0xf6, 0xbf, 0x6a, 0xfb, 0x1e, 0x57)
+
 type GuardMemory interface {
-	Peek8(addr uint32) uint8
-	Poke8(addr uint32, v uint8)
+	Peek8(uint32) uint8
+	Poke8(uint32, uint8)
 }
 
-// DemoControl 實作主專案規格 018 §3.2。
+type demoCodePatch struct {
+	at            uint32
+	before, after []byte
+}
+
+// DemoControl 只改選單與中斷中的demo，正式遊戲不改等待或角色資料。
 type DemoControl struct {
-	enter, ret uint32
-	inGame     bool // 已過進入點、未到返回點
-	demo       bool // 進入時 67E9＝1
-	request    bool // 前端要求中止，下一回合開頭生效
-	aborting   bool // 已寫入停止旗標，等返回點
-	Err        error
-
-	// 收據用計數：擋下選單逾時寫入、開始中止、中止後回到返回點的次數。
+	enter, ret                            uint32
+	inGame, demo, request, aborting       bool
+	patches                               []demoCodePatch
+	patched, restorePending               bool
+	Err                                   error
 	TimeoutsCleared, Aborts, AbortReturns int
-	// LastAbortSteps 是最近一次從中止要求生效到返回點的指令數。
-	LastAbortSteps uint64
-	abortAt        uint64
-	steps          uint64
+	LastAbortSteps                        uint64
+	abortAt, steps                        uint64
 }
 
-// NewDemoControl 以主程式簽章定位進入點與返回點；不唯一或進入點不是遠呼叫就回錯誤。
+func demoBytesMatch(read func(uint32) uint8, at uint32, want []byte) bool {
+	for i, b := range want {
+		if read(at+uint32(i)) != b {
+			return false
+		}
+	}
+	return true
+}
+
 func NewDemoControl(mem CPUView) (*DemoControl, error) {
 	hits := demoMainSignature.Find(mem.Read8, 0, 0xA0000)
 	if len(hits) != 1 {
-		return nil, fmt.Errorf("pod: demo 主程式簽章命中 %d 處，要恰好 1 處", len(hits))
+		return nil, fmt.Errorf("pod: demo 主程式簽章命中%d處，要恰好1處", len(hits))
 	}
 	d := &DemoControl{enter: hits[0] + demoEnterOffset, ret: hits[0] + demoReturnOffset}
-	// 返回點是遠呼叫的下一道指令（本作為 `cmp [741C],0`，不像幽靈騎士剛好接另一個遠呼叫），只檢查進入點
-	if mem.Read8(d.enter) != 0x9A {
-		return nil, fmt.Errorf("pod: demo 進入點 %05X 不是遠呼叫", d.enter)
+	if !demoBytesMatch(mem.Read8, d.enter, []byte{0x9a, 0x25, 0, 0xef, 0x16}) ||
+		!demoBytesMatch(mem.Read8, d.ret, []byte{0x9a, 0x2a, 0, 0x28, 0x17}) {
+		return nil, fmt.Errorf("pod: demo 主迴圈進出點不符本作")
+	}
+	loop, _, ok := tpcrt.FindDelay(mem.Read8, defaultDS)
+	if !ok || !demoBytesMatch(mem.Read8, loop, []byte{0x26, 0x3a, 5, 0x75, 2, 0xe2, 0xf9, 0xc3}) {
+		return nil, fmt.Errorf("pod: demo CRT等待簽章不唯一或內圈不符")
+	}
+	sound := demoSoundSignature.Find(mem.Read8, 0, 0xA0000)
+	if len(sound) != 1 || !demoBytesMatch(mem.Read8, sound[0]+0xa3, []byte{0x89, 0xec, 0x5d, 0xca, 2, 0}) {
+		return nil, fmt.Errorf("pod: demo音效呼叫端或返回點不符")
+	}
+	d.patches = []demoCodePatch{
+		{loop, []byte{0x26}, []byte{0xc3}},
+		{sound[0] + 6, []byte{0x74}, []byte{0xeb}},
+		{sound[0] + 10, []byte{0xbf, 0x6a, 0xfb}, []byte{0xe9, 0x96, 0}},
 	}
 	return d, nil
 }
 
-// Before 在每道指令前呼叫，追蹤是否在遊戲本體（demo 或正式遊戲）裡。
 func (d *DemoControl) Before(step uint64, at uint32, mem CPUView) {
 	d.steps = step
 	switch at {
@@ -78,26 +87,28 @@ func (d *DemoControl) Before(step uint64, at uint32, mem CPUView) {
 		if d.aborting {
 			d.AbortReturns++
 			d.LastAbortSteps = step - d.abortAt
+			d.restorePending = d.patched
 		}
 		d.inGame, d.demo, d.request, d.aborting = false, false, false, false
 	}
 }
 
-// Running 回 demo 是否正在進行（標題與選單期間為 false）。
 func (d *DemoControl) Running() bool { return d != nil && d.inGame && d.demo }
-
-// RequestAbort 由前端在 demo 中收到按鍵時呼叫。
 func (d *DemoControl) RequestAbort() {
-	if d.Running() {
+	if d.Running() && !d.aborting && d.Err == nil {
 		d.request = true
 	}
 }
 
 var demoWritable = [][2]uint32{
-	{demoMenuTimeout, demoMenuTimeout + 3},
-	{demoECLStop, demoECLStop},
-	{demoSideCounts, demoSideCounts + 1},
-	{bdaKeyTail, bdaKeyTail},
+	{demoMenuTimeout, demoMenuTimeout + 3}, {demoECLStop, demoECLStop},
+	{demoGameStop, demoGameStop}, {demoSideCounts, demoSideCounts + 1}, {bdaKeyTail, bdaKeyTail + 1},
+}
+
+func (d *DemoControl) fail(format string, args ...any) {
+	if d.Err == nil {
+		d.Err = fmt.Errorf(format, args...)
+	}
 }
 
 func (d *DemoControl) poke(mem GuardMemory, addr uint32, v uint8) {
@@ -107,15 +118,63 @@ func (d *DemoControl) poke(mem GuardMemory, addr uint32, v uint8) {
 			return
 		}
 	}
-	d.Err = fmt.Errorf("pod: demo 控制拒絕寫入未宣告位址 %05X", addr)
+	for _, p := range d.patches {
+		if addr >= p.at && addr < p.at+uint32(len(p.before)) {
+			i := addr - p.at
+			if v == p.before[i] || v == p.after[i] {
+				mem.Poke8(addr, v)
+				return
+			}
+		}
+	}
+	d.fail("pod: demo控制拒絕寫入未宣告位址%05X或位元組%02X", addr, v)
 }
 
-// GuardRange 是 session.WriteGuard 的回合開頭：清掉綁定前留下的選單逾時，處理中止要求，
-// 回監看範圍（平時只有選單逾時；中止期間擴到雙方存活數，兩者都在資料段 87CC..8A66 內）。
-func (d *DemoControl) GuardRange(mem GuardMemory) (lo, hi uint32) {
-	for a := demoMenuTimeout; a <= demoMenuTimeout+3; a++ {
-		if mem.Peek8(a) != 0 {
-			d.poke(mem, a, 0)
+func (d *DemoControl) patchWaits(mem GuardMemory) {
+	if d.patched || d.Err != nil {
+		return
+	}
+	// 先全部驗證，避免失配時只改了一半。
+	for _, p := range d.patches {
+		if !demoBytesMatch(mem.Peek8, p.at, p.before) {
+			d.fail("pod: demo等待原始位元組失配%05X", p.at)
+			return
+		}
+	}
+	for _, p := range d.patches {
+		for i, b := range p.after {
+			d.poke(mem, p.at+uint32(i), b)
+		}
+	}
+	d.patched = true
+}
+
+func (d *DemoControl) restoreWaits(mem GuardMemory) {
+	for _, p := range d.patches {
+		for i, b := range p.before {
+			at := p.at + uint32(i)
+			switch mem.Peek8(at) {
+			case p.after[i]:
+				d.poke(mem, at, b)
+			case b: // 已是原始位元組。
+			default:
+				d.fail("pod: demo等待還原位元組失配%05X", at)
+			}
+		}
+	}
+	d.patched, d.restorePending = false, false
+}
+
+// GuardRange 在每次Advance前執行。中斷返回後先還原等待，再讓下一批玩家輸入執行。
+func (d *DemoControl) GuardRange(mem GuardMemory) (uint32, uint32) {
+	if d.restorePending {
+		d.restoreWaits(mem)
+	}
+	if !d.inGame {
+		for a := demoMenuTimeout; a <= demoMenuTimeout+3; a++ {
+			if mem.Peek8(a) != 0 {
+				d.poke(mem, a, 0)
+			}
 		}
 	}
 	if d.request && d.Running() {
@@ -125,22 +184,25 @@ func (d *DemoControl) GuardRange(mem GuardMemory) (lo, hi uint32) {
 		d.poke(mem, demoSideCounts, 0)
 		d.poke(mem, demoSideCounts+1, 0)
 		d.poke(mem, bdaKeyTail, mem.Peek8(bdaKeyHead))
+		d.poke(mem, bdaKeyTail+1, mem.Peek8(bdaKeyHead+1))
 	}
 	if d.aborting {
-		// 每回合重寫：ECL 迴圈進入時（GAME.OVR 0x480F）會把停止旗標清 0，
-		// demo 若有下一段 ECL 也要一併停下。
 		d.poke(mem, demoECLStop, 1)
-		return demoSideCounts, demoMenuTimeout + 3
+		d.poke(mem, demoGameStop, 1)
+		d.patchWaits(mem)
+		return demoECLStop, demoSideCounts + 1
+	}
+	if d.inGame {
+		return 1, 0
 	}
 	return demoMenuTimeout, demoMenuTimeout + 3
 }
 
-// GuardWrite 擋下選單逾時的非零寫入；中止期間另把雙方存活數守在 0，讓進行中的戰鬥經正常收尾結束。
 func (d *DemoControl) GuardWrite(addr uint32, old, new uint8) bool {
 	if new == 0 {
 		return false
 	}
-	if addr >= demoMenuTimeout && addr <= demoMenuTimeout+3 {
+	if !d.inGame && addr >= demoMenuTimeout && addr <= demoMenuTimeout+3 {
 		if addr == demoMenuTimeout {
 			d.TimeoutsCleared++
 		}

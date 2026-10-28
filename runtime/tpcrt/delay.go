@@ -25,20 +25,29 @@ var delaySigTP5 = []int{
 	0x26, 0x3A, 0x05, 0x75, 0x02, 0xE2, 0xF9, 0xC3,
 }
 
+// delaySigBDA 使用同一個三指令內圈，外層先設 ES=0040h、以 BX 保存計數。
+// 僅辨識這個已列形式，不由它推定精確編譯器版本。契約見規格429 §2.4.1。
+var delaySigBDA = []int{
+	0x8B, 0xDC, 0x36, 0x8B, 0x57, 0x04, 0x0B, 0xD2, 0x74, 0x16, 0xB8, 0x40, 0x00, 0x8E, 0xC0, 0x33,
+	0xFF, 0x26, 0x8A, 0x05, 0x8B, 0x1E, -1, -1, 0x8B, 0xCB, 0xE8, 0x06, 0x00, 0x4A, 0x75, 0xF8, 0xCA, 0x02, 0x00,
+	0x26, 0x3A, 0x05, 0x75, 0x02, 0xE2, 0xF9, 0xC3,
+}
+
 type delayForm struct {
-	sig                 []int
+	sig                  []int
 	countOperand, loopAt uint32
 }
 
 var delayForms = []delayForm{
 	{delaySig, 0x16, 0x21},    // TP7：mov cx,[DelayCnt] 的位移欄、DelayLoop
 	{delaySigTP5, 0x13, 0x20}, // TP5：mov bx,[DelayCnt] 的位移欄、DelayLoop
+	{delaySigBDA, 0x16, 0x23}, // ES=0040h、BX 計數；內圈同上
 }
 
 const searchEnd = 0xA0000
 
-// FindDelay 在常規記憶體找 CRT.Delay（TP7 或 TP5 寫法），回 DelayLoop 與 DelayCnt（ds×16＋位移）的線性位址。
-// 兩種寫法合計必須恰好一處命中；否則回 ok=false，不猜位址。
+// FindDelay 在常規記憶體找已列形式的 CRT.Delay，回 DelayLoop 與 DelayCnt（ds×16＋位移）的線性位址。
+// 所有形式合計必須恰好一處命中；否則回 ok=false，不猜位址。
 func FindDelay(read func(addr uint32) uint8, ds uint16) (loop, count uint32, ok bool) {
 	var hit uint32
 	var form delayForm
