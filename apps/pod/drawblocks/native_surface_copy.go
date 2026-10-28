@@ -6,18 +6,24 @@ import (
 	"github.com/wicanr2/dosgolem/internal/machine"
 )
 
-func planSurfaceCopyRows(v CPUView, budget uint64) *machine.HostWorkPlan {
+type surfaceCopyRowCursor struct {
+	stack                          uint32
+	width, remaining, source, dest uint16
+	backX, backY                   bool
+}
+
+func surfaceCopyRowGeometry(v CPUView) (surfaceCopyRowCursor, bool) {
 	if v.CS() != 0x48a1 || v.IP() != 0x415e || v.Read8(0x449) != 0x13 || v.DS() != 0xa000 || v.ES() != 0xa000 {
-		return nil
+		return surfaceCopyRowCursor{}, false
 	}
 	var code [593]byte
 	copyView(v, 0x48a10+0x3f5e, code[:])
 	if sha256.Sum256(code[:]) != surfaceCopyCode {
-		return nil
+		return surfaceCopyRowCursor{}, false
 	}
 	stack, ok := paletteSourceStack(v, 0, 16)
 	if !ok || v.BP() != v.SP()+6 {
-		return nil
+		return surfaceCopyRowCursor{}, false
 	}
 	word := func(off uint16) uint16 { return v.Read16(0x48a10 + uint32(off)) }
 	descriptor := func(index uint16) rectangleSurface {
@@ -26,24 +32,24 @@ func planSurfaceCopyRows(v CPUView, budget uint64) *machine.HostWorkPlan {
 	for _, pair := range [][2]uint16{{v.Read16(stack + 12), 0xebd}, {v.Read16(stack + 14), 0xee1}} {
 		slot, off := pair[0], pair[1]
 		if slot > 255 {
-			return nil
+			return surfaceCopyRowCursor{}, false
 		}
 		s := descriptor(slot * 2)
 		r := s
 		links := 0
 		for r.flags&64 != 0 {
 			if links >= 8 || r.seg > 510 || r.seg&1 != 0 {
-				return nil
+				return surfaceCopyRowCursor{}, false
 			}
 			r = descriptor(r.seg)
 			links++
 		}
 		if s.left > s.right || s.top > s.bottom || s.right > 319 || s.bottom > 199 {
-			return nil
+			return surfaceCopyRowCursor{}, false
 		}
 		for i, value := range []uint16{s.seg, s.extra, s.left, s.top, s.right, s.bottom, s.flags, s.right - s.left + 1, s.bottom - s.top + 1, r.seg, r.extra, r.left, r.top, r.right, r.bottom, r.flags, r.right - r.left + 1, r.bottom - r.top + 1} {
 			if word(off+uint16(i)*2) != value {
-				return nil
+				return surfaceCopyRowCursor{}, false
 			}
 		}
 	}
@@ -58,25 +64,25 @@ func planSurfaceCopyRows(v CPUView, budget uint64) *machine.HostWorkPlan {
 		sw = dw
 	}
 	if width != sw || width == 0 || width > 320 || height == 0 || height > 200 || remaining == 0 || remaining > height {
-		return nil
+		return surfaceCopyRowCursor{}, false
 	}
 	// This prototype admits full VGA roots and in-bounds selected rectangles only.
 	for _, o := range []uint16{0xecf, 0xef3} {
 		if word(o) != 0xa000 {
-			return nil
+			return surfaceCopyRowCursor{}, false
 		}
 	}
 	for _, o := range []uint16{0xed3, 0xef7} {
 		if word(o) != 0 || word(o+2) != 0 || word(o+4) != 319 || word(o+6) != 199 {
-			return nil
+			return surfaceCopyRowCursor{}, false
 		}
 	}
 	if word(0xedd) != 320 || word(0xf01) != 320 {
-		return nil
+		return surfaceCopyRowCursor{}, false
 	}
 	sx, sy, dx, dy := word(0xec1), word(0xec3), word(0xee5), word(0xee7)
 	if sx+width > 320 || dx+width > 320 || sy+height > 200 || dy+height > 200 {
-		return nil
+		return surfaceCopyRowCursor{}, false
 	}
 	backX, backY := sx < dx, sy < dy
 	direction := uint16(1)
@@ -84,14 +90,14 @@ func planSurfaceCopyRows(v CPUView, budget uint64) *machine.HostWorkPlan {
 		direction = 0xffff
 	}
 	if word(0x1147) != direction || word(0x1139) != map[bool]uint16{false: 0, true: 1}[backX] {
-		return nil
+		return surfaceCopyRowCursor{}, false
 	}
 	df := uint16(0)
 	if backX {
 		df = cpu.DF
 	}
 	if v.Flags()&cpu.DF != df {
-		return nil
+		return surfaceCopyRowCursor{}, false
 	}
 	completed := height - remaining
 	firstSX, firstDX, firstSY, firstDY := sx, dx, sy, dy
@@ -112,7 +118,20 @@ func planSurfaceCopyRows(v CPUView, budget uint64) *machine.HostWorkPlan {
 		dest += completed * 320
 	}
 	if v.SI() != source || v.DI() != dest || word(0x113f) != firstSY || word(0x1141) != firstSX || word(0x1143) != firstDY || word(0x1145) != firstDX {
+		return surfaceCopyRowCursor{}, false
+	}
+	return surfaceCopyRowCursor{stack, width, remaining, source, dest, backX, backY}, true
+}
+
+func planSurfaceCopyRows(v CPUView, budget uint64) *machine.HostWorkPlan {
+	row, ok := surfaceCopyRowGeometry(v)
+	if !ok {
 		return nil
+	}
+	stack, width, remaining, source, dest, backX, backY := row.stack, row.width, row.remaining, row.source, row.dest, row.backX, row.backY
+	df := uint16(0)
+	if backX {
+		df = cpu.DF
 	}
 	p := imageBasePlan(v)
 	shadow := map[uint32]byte{}

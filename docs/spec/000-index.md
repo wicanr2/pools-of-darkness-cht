@@ -1,6 +1,6 @@
 # 規格索引
 
-- [436 CALL與區塊的有界主機效果](436-host-call-effects.md)：既有子集CONFORMED；唯讀計畫、緊湊搬移、完整CPU／RAM效果及事件／回合／predicate配額，預設關閉。分段DAC命令延伸READY，正式回歸前不升CONFORMED。
+- [436 CALL與區塊的有界主機效果](436-host-call-effects.md)：既有子集CONFORMED；唯讀計畫、緊湊搬移、完整CPU／RAM效果及事件／回合／predicate配額，預設關閉。分段DAC命令延伸與消費端正常回歸已驗CONFORMED，證據見規格436末節。
   同檔有界RGB調色盤命令擴充CONFORMED，包含核心拒絕／擁有權／事件及正常消費端完整驗收，限定mode13h。
 
 - [434 原生文字串繪圖命令](434-native-video-commands.md)：CONFORMED；可選mode13h命令、相容背板及原指令事件邊界。

@@ -132,7 +132,7 @@ CRTCTiming生效且未被Mode13Phase優先分支覆蓋時拒絕。At(relativeSte
 
 上述快照與有界讀取已隨15fd65a消費端正常驗收CONFORMED，限本節列出的mode13h線性模式。核心拒絕、生命週期、有序I/O與整台SaveState比較通過；正常CPU／RAM及完整事件、四路DEMO、39對介面及六對真存讀檔同原版。消費端正式程式b369dea、來源15fd65a及啟用綁定見[固定收據](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-native-control-runtime.json)。本次文件收尾不改已驗Go來源與二進位。
 
-## 分段DAC命令（READY）
+## 分段DAC命令（CONFORMED）
 
 2026-10-28。既有PaletteWrites必須含完整索引與三分量，四個Step不得為0；其負對照與契約保留。
 消費端剩餘預算不足完整RGB工作時，需要個別提交既有DAC索引或資料服務。
@@ -168,3 +168,8 @@ log依序為workplace/host-dac-command-core-first.log、bounded-dac-call-first.l
 消費端原始定位、來源SHA與ABI約束由本專案規格025記錄，通用核心不收遊戲常數。
 准予接正式PaletteCommands、相應互斥及按值擁有權；此字段只在暫時計畫，不改SaveState格式。
 正式核心、session與消費端正常路線回歸前維持READY。
+
+2026-10-28驗收補記：消費端來源f525cd3及執行檔a7579a0已完成全部drawblocks、machine、session、遊戲、前端與vet。
+正常原版CPU／RAM、有序視訊／音訊／回掃／DOS、127檔及46個直接入口相同，HD demo與地圖工具列11對截圖相同且閃現0。
+分段RGB已在正常路線觀測，整個計畫的既有事件預算與拒絕契約沒有改動。限本節mode13h受限命令升CONFORMED。
+固定證據及實際觀測增量見[消費端收據](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-native-palettein-runtime.json)。
