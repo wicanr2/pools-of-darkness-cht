@@ -70,6 +70,12 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 	if p := planSmallCall(v, budget); p != nil {
 		return p
 	}
+	if p := planBoundedZero(v, budget); p != nil {
+		return p
+	}
+	if p := planBoundedCopy(v, budget); p != nil {
+		return p
+	}
 	if p := planLine(v, budget); p != nil {
 		return p
 	}
@@ -101,6 +107,9 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 		return p
 	}
 	if p := planRLERuns(v, budget); p != nil {
+		return p
+	}
+	if p := planBoundedRLE(v, budget); p != nil {
 		return p
 	}
 	if p := planImageSpan(v, budget); p != nil {
