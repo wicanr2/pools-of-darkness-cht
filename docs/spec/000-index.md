@@ -30,8 +30,8 @@
 | [015 多語系](015-multilingual.md) | 英文前端局部CONFORMED | #11、#26 | 本作問句格式、英文專用字型、開場F8及2210格英文對話抽樣通過；英文手札、攻略及其他語系仍DRAFT | docs/re/014；014-title-runtime.json、014-english-front-runtime.json |
 | 016 推廣影片 | 未開始 | #11 | — | — |
 | 017 作弊：我方無敵 | 停用 | #11 | 位址是前作值，`CheatVerified` 為假 | — |
-| 018 開場 demo 控制 | 未開始 | #13 | `GAME.EXE` 有 `Play Demo` | docs/re/001 |
-| 019 CPU 模擬速度 | 未驗 | #14 | 程式由前作沿用；本作 CRT `Delay` 寫法未驗 | — |
+| [018 開場 demo 控制](018-demo-control.md) | CONFORMED | #13 | 選單不逾時；對話／戰鬥中斷、重播、正常進入、F12與2倍通過。已啟用a83043c | [固定收據](../re/020-demo-control-runtime.json)；`tools/demo-control-receipt.sh` |
+| [019 CPU 模擬速度](019-cpu-speed.md) | DRAFT，CRT 辨識增補 READY | #14 | 已定位 ES=0040h、BX 計數的第三種外層形式；原有三指令內圈可沿用，工具列與倍率待驗 | 規格019；`workplace/probe/demo-control-v1/keywait-1df0-ida.json` |
 | 020 切換列字級 | 未驗 | #15 | 程式由前作沿用 | — |
 | 021 不露原版 | 局部已驗 | #16 | 完整PIC5900格、VGA首批戰鬥7400格及開場三圖1250格正常冷啟動閃現0；不外推其他圖族與未走路徑 | docs/re/014、017 |
 | 022 手札地圖頁 | 未開始 | #8 | 地圖則 5、23、45、98，第 36 則附地圖 | docs/re/005 |

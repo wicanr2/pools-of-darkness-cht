@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "status": "CONFORMED within listed demo controls",
+  "source_commit": "a83043c02b28b7dc07db41a62a81300c0f0351f3",
+  "binary_sha256": "b48485151486b0f2513820bbd85e49332aff2100511dbd45156729b6f1cf159b",
+  "source_files": {
+    "apps/pod/demo.go": "d6a8be0b91383fa56edf090e7dd857387b742ff2314b3cf08e13be94b942eb34",
+    "apps/pod/demo_test.go": "b2a767399699666214ace14d5f65e6f0a8d09e3324a90066da360a0c5f344868",
+    "runtime/tpcrt/delay.go": "74da0b5c2dd6f0b5e7b42567563caf7215c21223c09bef9b2182d6d27c7e4498",
+    "runtime/tpcrt/delay_test.go": "5f46ea5cfaffb99b7e51e0cc34bbc2f21f6f30112bac357a7566d7bc44768455",
+    "docs/spec/429-runtime-clock-and-idle-skip-draft.md": "8294ffd669f4ec87dc991757490a53b34a246382681a612933da51d342e21ddd"
+  },
+  "normal": {
+    "schema": 1,
+    "scope": "normal cold boot, explicit D, host keyboard routing; no state injection",
+    "binary_sha256": "b48485151486b0f2513820bbd85e49332aff2100511dbd45156729b6f1cf159b",
+    "cases": {
+      "menu": {
+        "timeouts_cleared": 1,
+        "aborts": 0,
+        "returns": 0,
+        "last_abort_steps": 0,
+        "hashes": {
+          "memory_sha256": "4fa50cb4bfdc0bb52982ac17a7c887446234f964a0e8d1f1d1a2deeab22b5983",
+          "cpu_sha256": "dbdc5e9656665cdf311ed5e9c7445c2207d0d324f712ac902d218717d802ac5e",
+          "indexed_sha256": "611616b0e583db1f01d182eb9eced9634dc9a71bf10cb1b7197e3f386b02937c",
+          "palette_sha256": "17dc586aa5241390980763e8b5abf9db044d3ad788a2b2bdd5d6d285325b2acf"
+        },
+        "log_sha256": "3502b0dfa793098c30bf033afba219a0b2ecb68fcabcbba575453fa10bb8443f",
+        "screenshots": {
+          "pod-f002050.png": "1b80565c1675652452aa1e35781b0e9a5cf0515a206b31203c120e6e0b6e7a2d",
+          "pod-f006400.png": "1b80565c1675652452aa1e35781b0e9a5cf0515a206b31203c120e6e0b6e7a2d"
+        }
+      },
+      "story": {
+        "timeouts_cleared": 2,
+        "aborts": 1,
+        "returns": 1,
+        "last_abort_steps": 1510,
+        "hashes": {
+          "memory_sha256": "0727dbf5aa4b3b53f6bdf4b5cd0993209465826446b165809ccbc80285181264",
+          "cpu_sha256": "801b81c27668f27d8b0315f18626bcd6b5bf682eb0d7c5387fb420d1f184f253",
+          "indexed_sha256": "912304a614f66cfa5594aee9883549266a2abafe756a20024199c25e72bf9480",
+          "palette_sha256": "d1b501c6d5ade0dcb400c58599838fe787aa5afcf00063029268e574acbe8f6e"
+        },
+        "log_sha256": "4cd88aa1ccd733625fd4d28ef737a0102de2eb87d1ac1800314a5ac06120f145",
+        "screenshots": {
+          "pod-f002050.png": "d3c730d70820f217022f72a9bbaf744e99825e4165b1c6d18b5a14977a528f41",
+          "pod-f002500.png": "ac4a58fde168951f0315053059f4b31b3927e161679064db332b80dec338a5ce",
+          "pod-f003000.png": "1b80565c1675652452aa1e35781b0e9a5cf0515a206b31203c120e6e0b6e7a2d",
+          "pod-f003700.png": "eb97a76d44ac4e49b2b2f2acfd71cea26b8e76be4c5402d4582876ad10066db7"
+        }
+      },
+      "combat-repeat": {
+        "timeouts_cleared": 3,
+        "aborts": 2,
+        "returns": 2,
+        "last_abort_steps": 4884,
+        "hashes": {
+          "memory_sha256": "5768daf91b1e644e9ef64cd2896ec0cdd4d2edc2a15d05195a521d51938f73bb",
+          "cpu_sha256": "ed3699141246b14b9ae6706f054695a0cd9cd1b507ed0c70cd0912dbc3290ee8",
+          "indexed_sha256": "912304a614f66cfa5594aee9883549266a2abafe756a20024199c25e72bf9480",
+          "palette_sha256": "d1b501c6d5ade0dcb400c58599838fe787aa5afcf00063029268e574acbe8f6e"
+        },
+        "log_sha256": "fbc37476db3537e5a25df0bab94f01ef55afe19696d5eda69f02f4ecc6dbd485",
+        "screenshots": {
+          "pod-f006900.png": "d5e8309d80ee045ee9779967b7bfe8a3a413e0dc73ce5fcbe107a59e408add79",
+          "pod-f007900.png": "1b80565c1675652452aa1e35781b0e9a5cf0515a206b31203c120e6e0b6e7a2d",
+          "pod-f008400.png": "1b80565c1675652452aa1e35781b0e9a5cf0515a206b31203c120e6e0b6e7a2d",
+          "pod-f008900.png": "d3c730d70820f217022f72a9bbaf744e99825e4165b1c6d18b5a14977a528f41",
+          "pod-f010000.png": "1b80565c1675652452aa1e35781b0e9a5cf0515a206b31203c120e6e0b6e7a2d",
+          "pod-f010800.png": "eb97a76d44ac4e49b2b2f2acfd71cea26b8e76be4c5402d4582876ad10066db7"
+        }
+      }
+    }
+  },
+  "normal_inputs_sha256": "6c1518dfb3ad7b2cfa38c8fb26422ae4e45229699c7e4f0f0d53ac47ba2685e6",
+  "gui_tps": 60,
+  "no_state_injection_in_normal_receipts": true,
+  "pristine_archive_sha256": {
+    "pools-of-darkness.zip": "a67022ffd89128cc1e35b6fefa79e456fd94ee03ea5ec26c0082f4bebc770483",
+    "珍157-黑暗之池.rar": "3d18ec1b0d588705484f53f16921ed90af9343f3246af8b9f00f99677adcf623"
+  },
+  "original_files_unchanged": true,
+  "theme_files": 776,
+  "mode_switches": {
+    "f12_and_2x_abort": true,
+    "end_cpu_ram_and_palette_equal": true,
+    "unexpected_flash_cells": 0,
+    "intentional_2x_to_hd_cells": 998,
+    "shown_frame": 9501,
+    "replaced_frame": 9502,
+    "log_sha256": "7a4cebc5bc48a5382bbe670beee50dd6d792bb4404018235b34425fcb37f5f39"
+  },
+  "patches": [
+    {
+      "linear": "0x1E1BF",
+      "original": "26",
+      "aborting": "c3"
+    },
+    {
+      "linear": "0x1D7A9",
+      "original": "74",
+      "aborting": "eb"
+    },
+    {
+      "linear": "0x1D7AD",
+      "original": "bf6afb",
+      "aborting": "e99600"
+    }
+  ],
+  "limits": [
+    "Only the supported v1.10 signatures; mismatches disable control.",
+    "Ordinary DOS keys abort; frontend hotkeys retain their presentation actions.",
+    "Intentional abort skips waits and remaining cues; not unchanged-game same-state parity.",
+    "Diagnostic snapshots do not substitute for normal GUI evidence."
+  ],
+  "activation": {
+    "previous_binary": "pod-play-nativesurfaceflip",
+    "previous_sha256": "dc8b977ceb420e128241bda019f0ede1d75f52d322eb90913d5bb8a42e0e1fc5",
+    "active_sha256": "b48485151486b0f2513820bbd85e49332aff2100511dbd45156729b6f1cf159b"
+  }
+}

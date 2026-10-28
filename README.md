@@ -168,6 +168,10 @@ HD、無 HD、F12 原版及 2 倍四路的 CPU、記憶體、色號、色盤與 
 目前開發入口為 `tools/play-smoke.sh`，使用 Docker 與 dosgolem。需自備原版遊戲資料；本儲存庫不附原版遊戲或可直接遊玩的完整包。
 開發工作樹、字型來源及本機輸入的準備位置見 [CONTEXT.md](CONTEXT.md)。
 
+開場選單按 `P` 進入遊戲，按 `D` 播放示範，選單不會自行逾時。
+示範中按一般遊戲鍵可中止並回到選單，包含戰鬥途中；F2、F12 等前端快捷鍵保留呈現操作。
+[中斷與重播驗收](docs/spec/018-demo-control.md#demo-conformed)另列。
+
 現況見 [CONTEXT.md](CONTEXT.md)，工作項目見
 [GitHub Issues](https://github.com/wicanr2/pools-of-darkness-cht/issues)，協作規則見 [AGENTS.md](AGENTS.md)。
 規格與來源證據分別見[規格索引](docs/spec/000-index.md)及[研究索引](docs/re/README.md)。

@@ -1,6 +1,6 @@
 # 目前真相
 
-更新：2026-10-27（Asia/Taipei）。規則見 [AGENTS.md](AGENTS.md)，歷程見 [WORKLOG.md](WORKLOG.md)。
+更新：2026-10-28（Asia/Taipei）。規則見 [AGENTS.md](AGENTS.md)，歷程見 [WORKLOG.md](WORKLOG.md)。
 
 ## 儲存庫
 
@@ -17,6 +17,7 @@
 
 | 日期 | 決策 | 來源 |
 |---|---|---|
+| 2026-10-28 | 收尾須完成原案全部功能與交付，包含 Go 繪圖接管；demo 中按鍵可中斷並回選單是明確必驗項。保留已驗收程式，依規格逐項接入，不以現有繁中＋HD 範圍縮減原案 | 使用者選擇「完成原案全部功能與交付」，並補充「golang 繪圖接管也包含」 |
 | 2026-10-23 | 參考銀色匕首之謎，用 dosgolem 執行原版並覆繪繁中、做 HD；步驟完全比照銀色匕首之謎，定案表見 AGENTS.md 第 1 節 | 使用者指示 |
 | 2026-10-23 | 中文題名「黑暗之池」 | 使用者指示 |
 | 2026-10-23 | 錯譯修正對象是珍157 軟體世界說明書；英文手冊與手札授權上網取得 | 使用者回答 |
@@ -46,13 +47,26 @@
 
 ## 待定
 
+### 收尾目前狀態（2026-10-28）
+
+本表是目前工作入口。下面的 2026-10-26 交接表保留當時驗證範圍，不單獨作為重新開工依據。
+
+| 項目 | 目前狀態 | 下一個驗收點 |
+|---|---|---|
+| 正式程式與 HD | `a83043c`、`b484851`已啟用；776檔主題未改，前版`dc8b977`保留 | 後續Go轉場另建候選，不覆寫已驗版 |
+| demo 中斷 #13 | CONFORMED：選單不逾時；對話、戰鬥中斷與重播、正常進入通過；F12／2倍終點同原流程，非預期閃現0 | 固定證據[020](docs/re/020-demo-control-runtime.json)，入口[規格018](docs/spec/018-demo-control.md#demo-conformed) |
+| Go 繪圖 #49 | 已列子集完成，整體 DRAFT；4337已分離6個正式演算法檔與11個測試，來源410a0bf。受控原版比較、完整套件及核心測試通過，候選建置中，尚未啟用 | 完整機器對拍、固定收據與正常路徑驗收，繼續其餘繪圖 |
+| 攻略、HD、工具列、不露原版 #9、#10、#14–#16 | 既有收據範圍保留，未驗部分仍待驗 | 以目前程式核對缺項，不追加已停止的 G6 自動探索 |
+| 配樂、多語系、作弊、推廣片 #11 | 原案仍須完成 | 按各自規格與試聽閘門完成 |
+| 三平台封包 #12 | 尚未交付 | 乾淨重建、啟動、存檔與 manifest 驗證；平台限制明列 |
+
 目前工作：#49表面原地翻轉5886已接入並通過整批驗收，Go處理暫存列、倒序取樣、成對列與一步預算輸出。保留同列中途讀寫及奇數高度中間列的原版行為；其他轉場、字形、root與固定／未驗路徑尚未全部接管。
-最新產品來源`5a87f57d87e5f5afbf9bc03444a6fc1d3b6d7af8`，正式執行檔`dc8b977ceb420e128241bda019f0ede1d75f52d322eb90913d5bb8a42e0e1fc5`。前版0abeee0以pod-play-nativescale保留，較早備份及776檔主題未改。
+最近一批繪圖驗收基線為`5a87f57d87e5f5afbf9bc03444a6fc1d3b6d7af8`／`dc8b977`。目前正式來源已加上demo修正，為`a83043c02b28b7dc07db41a62a81300c0f0351f3`，已推本專案`dosgolem/pod`；執行檔`b48485151486b0f2513820bbd85e49332aff2100511dbd45156729b6f1cf159b`。舊dc8b977以pod-play-nativesurfaceflip保留。2026-10-28清理已移除0abeee0及較早的過期執行檔，原始碼與驗收紀錄保留；776檔主題未改。
 翻轉160組像素、320次初始化、656次成對列與656次位址、63952次單步、320次完整Go、160次短預算、64次邊界／父表面與174種拒絕通過。短預算分列8022個Go演算法、1722個固定控制計畫與33254個CPU控制步，沒有固定或CPU翻轉scratch／畫面寫入。
 完整正常CPU／RAM、有序事件與127檔、四路DEMO、39對介面、六對新存B／冷讀B與十個SAVE檔同基準，固定[019-native-surfaceflip-runtime.json](docs/re/019-native-surfaceflip-runtime.json)。新增翻轉出口在目前DEMO未觀測，正常111710個Go計畫／3398106步與固定2576步維持，不把受控比較當正常玩家路線。全部Go閘門仍DRAFT，#49保持開啟。
-下一段4337表面像素轉場已達READY，尚未接產品。研究副本另完成680次批次、40次短預算、16次DF、32次完整畫布／邊界／父表面、86種拒絕及4次一萬步的1×1延續比較。批次整合後44次完整比較分列3028個Go轉場、1404個共享等待計畫與2808個CPU控制步；短預算39378個Go計畫含等待、7148個固定控制計畫與50084個CPU控制步，沒有CPU或固定像素輸出。初始未知與舊數量在規格025保留並回鏈，目前以其[接入契約](docs/spec/025-direct-render-commands.md#dissolve-4337-ready)為準。
+下一段4337表面像素轉場已達READY，已接工作樹，尚未啟用。正式selector的40次短預算比較為39682個Go計畫含等待、7148個固定控制與50084個CPU控制步；其餘完整比較數量同研究基線。以下為前次研究收據，原始數字保留。研究副本另完成680次批次、40次短預算、16次DF、32次完整畫布／邊界／父表面、86種拒絕及4次一萬步的1×1延續比較。批次整合後44次完整比較分列3028個Go轉場、1404個共享等待計畫與2808個CPU控制步；短預算39378個Go計畫含等待、7148個固定控制計畫與50084個CPU控制步，沒有CPU或固定像素輸出。初始未知與舊數量在規格025保留並回鏈，目前以其[接入契約](docs/spec/025-direct-render-commands.md#dissolve-4337-ready)為準。
 
-本輪依使用者要求先整理提交並停工。下次從4337 READY接入開始：分離研究fixture、接正式selector、補固定收據檢查器的dissolve族別與回鏈檢查，再跑完整回歸；通過前維持正式dc8b977。研究原型及原始log仍在本機gitignore的`workplace/dosgolem/workplace/palette-advance-research/dissolve4337-*.go`與同clone的`workplace/dissolve4337-*.log`，未推送；已驗收正式程式已在本專案`dosgolem/pod`分支。
+前次2026-10-27停工已保存READY契約。本輪已繼續接入，原交接步驟保留供回查：分離研究fixture、接正式selector、補固定收據檢查器的dissolve族別與回鏈檢查，再跑完整回歸；轉場驗收通過前維持已驗收的正式demo版本b484851。研究原型及原始log仍在本機gitignore的`workplace/dosgolem/workplace/palette-advance-research/dissolve4337-*.go`與同clone的`workplace/dissolve4337-*.log`，未推送；已驗收正式程式已在本專案`dosgolem/pod`分支。
 BMHD／BODY查找與來源資料準備保留原版，不稱Go解析器完成。斜線舊固定收據的1280個選取計畫已追加[分類勘誤](docs/re/019-draw-interception.md#斜線計畫分類勘誤)：898個Go演算法與382個固定相容前綴。原始收據保留，後續收據分列，不把控制前綴當原生繪圖。
 
 HD最新完成批次：[#48](https://github.com/wicanr2/pools-of-darkness-cht/issues/48)補齊DUNGCOM第5組地形。
@@ -99,7 +113,7 @@ HD最新完成批次：[#48](https://github.com/wicanr2/pools-of-darkness-cht/is
 | 堆疊物品顯示 | #22 | 正式詞表六項數量／加值回歸通過；既有正常物品 UI 的一般／反白 50 支箭 +2 已驗；未修改產品邏輯 | docs/re/016 |
 | G10 | #11 | 為開場F8先補英文前端、專用字型及兩個已證實地圖名稱；2210格英文對話無缺字、閃現0，原版狀態與127檔一致。其他語系、英文手札／攻略、配樂、作弊及推廣片未完成 | 規格015局部CONFORMED；docs/re/014 |
 | G11 | #12 | 未開始 | — |
-| 規格 018–021 | #13–#16 | 018–020未正式驗收，019／020程式由前作沿用；021的已列正常路徑抽樣閃現0，其他圖族及路徑仍未驗，#16保持開啟 | docs/spec/000-index.md；docs/re/014、017、018 |
+| 規格 018–021 | #13–#16 | 018已驗收並啟用；019辨識本作CRT形式，工具列倍率待驗；020待正式驗收；021已列路徑非預期閃現0，其餘不外推 | 規格索引；研究014、017、018、020固定收據 |
 
 規格狀態：001–003、006、023、024 已列範圍 CONFORMED；007–009 READY；010戰鬥、BIGPIC與開場、015英文前端局部CONFORMED，PIC局部READY，021局部抽樣已驗；004、005、013 DRAFT；其餘未開始或未驗（docs/spec/000-index.md）。
 
@@ -146,7 +160,7 @@ HD最新完成批次：[#48](https://github.com/wicanr2/pools-of-darkness-cht/is
 
 | 項目 | 值 |
 |---|---|
-| commit | 基底 `a6e0254`（銀色匕首之謎 `dosgolem/sosb`）；目前產品程式`ed004f9c49fb405290e3919fdc0fac29882c787c`保存到本 repo 的 `dosgolem/pod`。已驗執行檔SHA為`994d498c735e232819819ade8c138cebb7799ccf80d2353519d8e08d2a80434b`，Go建置資訊綁定乾淨ed004f9來源。前版874d5d8以pod-play-nativeoutput及其他既有備份保留 |
+| commit | 基底 `a6e0254`；正式 `a83043c02b28b7dc07db41a62a81300c0f0351f3`，已推本專案 `dosgolem/pod`；執行檔 `b48485151486b0f2513820bbd85e49332aff2100511dbd45156729b6f1cf159b` 為乾淨Go 1.24.13建置。前版dc8b977以pod-play-nativesurfaceflip保留 |
 | Go／image | go1.24.13；`dosgolem-go-ebiten:1.24-r1` `sha256:8ed6bdee2bce…` |
 | 冷啟動 | 0 種缺服務；mode 13h；`START.BAT` 程式鏈；片頭送空白鍵跳過，製作群後送 `p` 進建立隊伍主選單。收據 `tools/g2-startup-receipt.sh`，見 [docs/re/003](docs/re/003-dosgolem-startup.md) |
 | adapter | `apps/pod/`（由 `apps/sosb/` 複製，路徑 A／B／C 換本作常數與 13h 換算）；`cmd/pod-overlay-shot`；自動探索 `cmd/pod-explore`（由 `cmd/sosb-explore` 複製） |
