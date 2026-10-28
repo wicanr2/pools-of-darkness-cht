@@ -23,7 +23,12 @@ func paletteSetupInput(v CPUView, ip uint16, code smallCode) bool {
 
 // planPaletteList filters the used-color bitmap into a descending index list.
 func planPaletteList(v CPUView, budget uint64) *machine.HostWorkPlan {
-	if !paletteSetupInput(v, 0x4a83, paletteListCode) || v.BX() > 255 || v.DI() < 0x1572 || v.DI()&1 != 0 || uint32(v.DI())+2*(uint32(v.BX())+1) > 0x1772 {
+	entry, next, store, last := uint16(0x4a83), uint16(0x4a91), uint16(0x4a8d), uint16(0x4a8f)
+	if v.IP() == 0x47d6 {
+		entry, next, store, last = 0x47d6, 0x47e4, 0x47e0, 0x47e2
+	}
+
+	if !paletteSetupInput(v, entry, paletteListCode) || v.BX() > 255 || v.DI() < 0x1572 || v.DI()&1 != 0 || uint32(v.DI())+2*(uint32(v.BX())+1) > 0x1772 {
 		return nil
 	}
 	p := fadePlan(v)
@@ -42,7 +47,7 @@ func planPaletteList(v CPUView, budget uint64) *machine.HostWorkPlan {
 		p.After.R[cpu.AX] = p.After.R[cpu.AX]&0xff00 | uint16(used)
 		if used != 0 {
 			p.After.R[cpu.AX] = uint16(index)
-			p.Transfers = append(p.Transfers, machine.HostTransfer{Address: 0x48a10 + uint32(p.After.R[cpu.DI]), Value: uint16(index), Count: 1, Width: 2, Step: p.Instructions + 5, CS: 0x48a1, IP: 0x4a8d})
+			p.Transfers = append(p.Transfers, machine.HostTransfer{Address: 0x48a10 + uint32(p.After.R[cpu.DI]), Value: uint16(index), Count: 1, Width: 2, Step: p.Instructions + 5, CS: 0x48a1, IP: store})
 			p.After.R[cpu.DI] += 2
 		}
 		p.After.R[cpu.BX]--
@@ -55,20 +60,25 @@ func planPaletteList(v CPUView, budget uint64) *machine.HostWorkPlan {
 			}
 		}
 		p.Cycles += cycles
-		p.LastIP = 0x4a8f
+		p.LastIP = last
 	}
 	if p.Instructions == 0 {
 		return nil
 	}
 	if p.After.R[cpu.BX] == 0xffff {
-		p.After.IP = 0x4a91
+		p.After.IP = next
 	}
 	return p
 }
 
 // planPaletteTarget repeats the three target channels over the color array.
 func planPaletteTarget(v CPUView, budget uint64) *machine.HostWorkPlan {
-	if !paletteSetupInput(v, 0x4afd, paletteTargetCode) || v.CX() == 0 || v.CX() > 256 || v.DI() < 0x1b72 || (v.DI()-0x1b72)%3 != 0 || uint32(v.DI())+3*uint32(v.CX()) > 0x1e72 || budget < 7 {
+	entry, next, store, last := uint16(0x4afd), uint16(0x4b0b), uint16(0x4b00), uint16(0x4b09)
+	if v.IP() == 0x4867 {
+		entry, next, store, last = 0x4867, 0x4875, 0x486a, 0x4873
+	}
+
+	if !paletteSetupInput(v, entry, paletteTargetCode) || v.CX() == 0 || v.CX() > 256 || v.DI() < 0x1b72 || (v.DI()-0x1b72)%3 != 0 || uint32(v.DI())+3*uint32(v.CX()) > 0x1e72 || budget < 7 {
 		return nil
 	}
 	count := uint64(v.CX())
@@ -79,7 +89,7 @@ func planPaletteTarget(v CPUView, budget uint64) *machine.HostWorkPlan {
 	p := fadePlan(v)
 	for x := uint64(0); x < count; x++ {
 		for channel, value := range rgb {
-			p.Writes = append(p.Writes, machine.HostWrite{Address: 0x48a10 + uint32(v.DI()) + uint32(x)*3 + uint32(channel), Value: value, Step: x*7 + uint64(channel*2+2), CS: 0x48a1, IP: uint16(0x4b00 + channel*4)})
+			p.Writes = append(p.Writes, machine.HostWrite{Address: 0x48a10 + uint32(v.DI()) + uint32(x)*3 + uint32(channel), Value: value, Step: x*7 + uint64(channel*2+2), CS: 0x48a1, IP: store + uint16(channel*4)})
 		}
 	}
 	p.Instructions = count * 7
@@ -90,16 +100,21 @@ func planPaletteTarget(v CPUView, budget uint64) *machine.HostWorkPlan {
 	p.After.R[cpu.AX] = v.AX()&0xff00 | uint16(rgb[2])
 	p.After.R[cpu.CX] -= uint16(count)
 	p.After.R[cpu.DI] += uint16(count) * 3
-	p.LastIP = 0x4b09
+	p.LastIP = last
 	if p.After.R[cpu.CX] == 0 {
-		p.After.IP = 0x4b0b
+		p.After.IP = next
 	}
 	return p
 }
 
 // planPaletteError initializes the interpolation accumulator to half its span.
 func planPaletteError(v CPUView, budget uint64) *machine.HostWorkPlan {
-	if !paletteSetupInput(v, 0x4b3a, paletteErrorCode) || budget < 9 || byte(v.BX()) > 63 {
+	entry, next, store, last := uint16(0x4b3a), uint16(0x4b55), uint16(0x4b3e), uint16(0x4b53)
+	if v.IP() == 0x48b3 {
+		entry, next, store, last = 0x48b3, 0x48ce, 0x48b7, 0x48cc
+	}
+
+	if !paletteSetupInput(v, entry, paletteErrorCode) || budget < 9 || byte(v.BX()) > 63 {
 		return nil
 	}
 	count := v.Read16(0x48a10 + 0x116f)
@@ -113,8 +128,8 @@ func planPaletteError(v CPUView, budget uint64) *machine.HostWorkPlan {
 	if v.DOSBoxCost() {
 		p.Cycles = 9 + uint64(n)
 	}
-	p.Writes = []machine.HostWrite{{Address: 0x48a10 + 0x1173, Value: maximum, Step: 1, CS: 0x48a1, IP: 0x4b3a}, {Address: 0x48a10 + 0x1174, Value: maximum, Step: 2, CS: 0x48a1, IP: 0x4b3e}}
-	p.Transfers = []machine.HostTransfer{{Address: 0x48a10 + 0x1e72, Value: uint16(maximum / 2), Count: n, Width: 1, Step: 9, CS: 0x48a1, IP: 0x4b53}}
+	p.Writes = []machine.HostWrite{{Address: 0x48a10 + 0x1173, Value: maximum, Step: 1, CS: 0x48a1, IP: entry}, {Address: 0x48a10 + 0x1174, Value: maximum, Step: 2, CS: 0x48a1, IP: store}}
+	p.Transfers = []machine.HostTransfer{{Address: 0x48a10 + 0x1e72, Value: uint16(maximum / 2), Count: n, Width: 1, Step: 9, CS: 0x48a1, IP: last}}
 	p.After.R[cpu.AX] = v.AX()&0xff00 | uint16(maximum/2)
 	p.After.R[cpu.CX] = 0
 	p.After.R[cpu.DI] = 0x1e72 + n
@@ -125,6 +140,6 @@ func planPaletteError(v CPUView, budget uint64) *machine.HostWorkPlan {
 	if bits.OnesCount8(byte(n))%2 == 0 {
 		p.After.Flags |= cpu.PF
 	}
-	p.After.IP, p.LastIP = 0x4b55, 0x4b53
+	p.After.IP, p.LastIP = next, last
 	return p
 }

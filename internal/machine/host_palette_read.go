@@ -26,7 +26,7 @@ func (m *Machine) validateHostPaletteReads(p *HostWorkPlan) error {
 	if len(p.PaletteReads) == 0 {
 		return nil
 	}
-	if len(p.PaletteWrites) > 0 {
+	if len(p.PaletteWrites) > 0 || len(p.PaletteCommands) > 0 {
 		return fmt.Errorf("machine: mixed host palette read/write jobs")
 	}
 	moments := make(map[uint64]struct{}, 4*len(p.PaletteReads))

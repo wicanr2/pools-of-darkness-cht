@@ -11,7 +11,7 @@ func (m *Machine) validateHostVideoStatusReads(p *HostWorkPlan) error {
 	if len(p.VideoStatusReads) == 0 {
 		return nil
 	}
-	if len(p.PaletteReads) > 0 || len(p.PaletteWrites) > 0 {
+	if len(p.PaletteReads) > 0 || len(p.PaletteWrites) > 0 || len(p.PaletteCommands) > 0 {
 		return fmt.Errorf("machine: mixed host status/palette work")
 	}
 	snapshot, ok := m.VGAStatusSnapshot()

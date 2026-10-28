@@ -131,3 +131,40 @@ CRTCTiming生效且未被Mode13Phase優先分支覆蓋時拒絕。At(relativeSte
 核心仍須驗實際服務讀值、兩模型、資料擁有權、時間／模式／衝突／事件拒絕及完整正常玩家路線，不能把模型成本當實機逐週期證據。
 
 上述快照與有界讀取已隨15fd65a消費端正常驗收CONFORMED，限本節列出的mode13h線性模式。核心拒絕、生命週期、有序I/O與整台SaveState比較通過；正常CPU／RAM及完整事件、四路DEMO、39對介面及六對真存讀檔同原版。消費端正式程式b369dea、來源15fd65a及啟用綁定見[固定收據](https://github.com/wicanr2/pools-of-darkness-cht/blob/main/docs/re/019-native-control-runtime.json)。本次文件收尾不改已驗Go來源與二進位。
+
+## 分段DAC命令（READY）
+
+2026-10-28。既有PaletteWrites必須含完整索引與三分量，四個Step不得為0；其負對照與契約保留。
+消費端剩餘預算不足完整RGB工作時，需要個別提交既有DAC索引或資料服務。
+擬新增預設空的PaletteCommands，元素只有Index／Data型別、byte值及相對Step／Cycles，不開任意埠。
+一份計畫限1–4筆命令。Index接受0–255，Data限0–63，分別交既有Out8的3C8／3C9。
+不直接改DAC、不假設目前分量相位，不新增硬體語意；故任意原有DAC讀寫相位都沿既有Out8處理。
+
+資格仍限mode13h線性表面，時間非零且嚴格遞增、在完整計畫內。
+不得與PaletteWrites、PaletteReads或VideoStatusReads混用，不能與RAM／Transfer同一Step。
+先按值擁有並驗證全部內容，拒絕不改狀態，接受後依原時間與RAM／Transfer合併提交。
+共用HostWorkBudget、observer、IRQ及回合邊界規則不改；空PaletteCommands對其他程式無影響。
+步數與成本沿既有軟體模型，不宣稱實機逐週期時序；硬體契約沿本規格已有FreeVGA與Out8服務。
+
+來源盤點：目前PaletteWrites消費端在apps/pod/drawblocks/native_palette_output.go；
+通用驗證／擁有權／提交在host_work.go、host_palette.go，讀取互斥在host_palette_read.go，
+狀態讀取互斥在host_video_status_read.go。session不另合成命令，經既有HostWorkPlan提交。
+這些接入點必須同步更新，保留完整RGB工作原有拒絕測試，不以放寬Step=0代替分段命令。
+
+先在workplace/host-dac-command-research的可丟棄machine副本驗證有序DAC／VGA／Ports／PortLog、
+兩種原有成本模型、非零初始讀寫相位、非法值／順序／模式／混用／時間衝突、拒絕不變及擁有權。
+再以消費端原版完整呼叫及所有預算比較CPU／RAM、SaveState與PortLog。
+證據審查升READY後才可接正式通用層；正式核心與正常玩家抽樣前不升CONFORMED。
+
+審查READY，2026-10-28：隔離machine副本完整既有套件與新命令測試通過，5.307秒。
+新命令涵蓋12組既有DAC相位／服務對照、16種拒絕不變、值擁有權及分量之間的畫面邊界。
+既有PaletteWrites的Step=0等拒絕仍通過，沒有放寬完整RGB工作契約。
+消費端原版27-byte RGB常式有1152次入口／續行／裝置相位比較，以及108次完整SaveState與PortLog比較，
+後者包含兩種成本及CF／IF／DF，774個Go計畫且CPU回退0；另23種來源、框架、模型及續行拒絕不改機器。
+一份負對照原先把合法9E000堆疊誤認為越界，已修測試輸入為AE000，未更改服務範圍。
+
+核心原型在workplace/host-dac-command-research，消費端原型在workplace/pod-palette-call-research。
+log依序為workplace/host-dac-command-core-first.log、bounded-dac-call-first.log及bounded-dac-flags-refusals-second.log。
+消費端原始定位、來源SHA與ABI約束由本專案規格025記錄，通用核心不收遊戲常數。
+准予接正式PaletteCommands、相應互斥及按值擁有權；此字段只在暫時計畫，不改SaveState格式。
+正式核心、session與消費端正常路線回歸前維持READY。

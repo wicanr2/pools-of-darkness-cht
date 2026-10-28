@@ -21,6 +21,7 @@ type HostWorkPlan struct {
 	Writes               []HostWrite
 	Transfers            []HostTransfer
 	PaletteWrites        []HostPaletteWrite
+	PaletteCommands      []HostPaletteCommand
 	PaletteReads         []HostPaletteRead
 	VideoStatusReads     []HostVideoStatusRead
 }
@@ -172,6 +173,9 @@ func (m *Machine) ValidateHostWork(p *HostWorkPlan) error {
 	if err := m.validateHostPaletteWrites(p); err != nil {
 		return err
 	}
+	if err := m.validateHostPaletteCommands(p); err != nil {
+		return err
+	}
 	if err := m.validateHostPaletteReads(p); err != nil {
 		return err
 	}
@@ -191,6 +195,7 @@ func (m *Machine) commitHostWork(p *HostWorkPlan, block bool) error {
 	owned.Writes = append([]HostWrite(nil), p.Writes...)
 	owned.Transfers = append([]HostTransfer(nil), p.Transfers...)
 	owned.PaletteWrites = append([]HostPaletteWrite(nil), p.PaletteWrites...)
+	owned.PaletteCommands = append([]HostPaletteCommand(nil), p.PaletteCommands...)
 	owned.PaletteReads = append([]HostPaletteRead(nil), p.PaletteReads...)
 	owned.VideoStatusReads = append([]HostVideoStatusRead(nil), p.VideoStatusReads...)
 	for i := range owned.Transfers {
@@ -203,6 +208,9 @@ func (m *Machine) commitHostWork(p *HostWorkPlan, block bool) error {
 		return err
 	}
 	palette := hostPaletteBytes(p.PaletteWrites)
+	if len(p.PaletteCommands) > 0 {
+		palette = hostPaletteCommandBytes(p.PaletteCommands)
+	}
 	if len(p.PaletteReads) > 0 {
 		palette = hostPaletteReadBytes(p.PaletteReads)
 	}
