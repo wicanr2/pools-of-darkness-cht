@@ -1,0 +1,126 @@
+{
+  "scope": "Go橫直線單步與目的寬1整數縮放，含零半徑轉點線；其他繪圖仍待完成",
+  "program_commit": "281368670e7f367573c26406ec1bc213f0d55d3d",
+  "parent_commit": "d170e03ec4c7b4c39906458431eebd48684482e8",
+  "binary_sha256": "a25e9bba88329686c40fc154170ec905d0d09c2413cadf446529514d74025b03",
+  "original_state_and_ordered_events_equal": true,
+  "virtual_steps": 712250000,
+  "guest_files": 127,
+  "guest_files_equal": true,
+  "direct_original_witnesses": 46,
+  "original_witnesses_equal": true,
+  "normal_axis_scale_entries": {},
+  "algorithmic_plans": 112037,
+  "algorithmic_instructions": 3400458,
+  "fixed_semantic_instructions": 1018,
+  "controlled_original": {
+    "axis_ordered_comparisons": 3504,
+    "axis_zero_count": 48,
+    "axis_phases": 10,
+    "axis_whole_calls": 96,
+    "axis_go_plans": 2652,
+    "axis_fixed_control": 466,
+    "axis_cpu_control": 14398,
+    "zero_ellipse_calls": 60,
+    "zero_ellipse_go_plans": 1708,
+    "zero_ellipse_fixed_control": 344,
+    "zero_ellipse_cpu_control": 11450,
+    "axis_parent_calls": 60,
+    "axis_refusals": 202,
+    "cpu_or_fixed_axis_pixels": 0,
+    "narrow_prefix": 72,
+    "narrow_prepare": 180,
+    "narrow_output": 180,
+    "narrow_spans": 924,
+    "narrow_zero_count": 552,
+    "narrow_whole_calls": 288,
+    "narrow_go_plans": 2880,
+    "narrow_fixed_control": 2058,
+    "narrow_cpu_control": 38610,
+    "narrow_edge_calls": 16,
+    "narrow_refusals": 77,
+    "existing_scale_refusals": 88,
+    "cpu_or_fixed_narrow_preparation_pixels": 0
+  },
+  "source_sha256": {
+    "apps/pod/drawblocks/effects.go": "b15f63332cba5debda5473308d7b2bbe2cceeb6d8d56735b8cf4c115f3e8d8e4",
+    "apps/pod/drawblocks/native_axis_spans.go": "a35fced0554bf38ffc812ef640fea39bd766a622eba915d08b109b660542b5dc",
+    "apps/pod/drawblocks/native_axis_spans_test.go": "004353c922605cb980b0f8e31ab63e3581037a67f9d1da90213478d7ef2cee09",
+    "apps/pod/drawblocks/native_axis_spans_guards_test.go": "2e52e2635f006e9ff7afdddec197b1934c3c0c5acec3ad5cca608cadaa49b89e",
+    "apps/pod/drawblocks/native_scale5615_frame.go": "8ea40ca96d5b0f9d87677302ed6a62d70ee2ef140773fcb7e2096bb94d265bb0",
+    "apps/pod/drawblocks/native_scale5615_prefix.go": "49c56e0af30e6ae9ef4240cf7c3507c9af1761561de0ca9f81c82ba9513bd24c",
+    "apps/pod/drawblocks/native_scale5615_prepare.go": "6c27a60090b6a2a35686718356e0680abe3698751ba791d0eff89a58ac14e949",
+    "apps/pod/drawblocks/native_scale5615_refusals_test.go": "2524a71a9e0c13b575c812415ece488300e6a76adff951362815383515f9d555",
+    "apps/pod/drawblocks/native_scale5615_narrow_whole_test.go": "4c896d082400f1c21062c88b77841d9e149301ce2be4fdecd0d2c7f6cb8009b9",
+    "apps/pod/drawblocks/native_scale5615_narrow_boundaries_test.go": "d69d6f64ea86cead4c4e880e7ceefaaeb876336034ca4f659e019f84334693b1",
+    "apps/pod/drawblocks/native_scale5615_narrow_edges_test.go": "d05b9f15a7dfe1d9d42516350592f23aa36088025a60a5c761ccc8ba60abb727"
+  },
+  "product_test_log_sha256": "1d9f318d1ec314c8192562bfe93493608112cd1bbf14db2dced4d037f1c5d65b",
+  "resolution_backlinks": {
+    "axis": {
+      "key": "DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x2CFC",
+      "correction": "AXIS-SPANS-READY-20261029"
+    },
+    "narrow": {
+      "key": "DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x5615",
+      "correction": "NARROW-SCALE-READY-20261029"
+    }
+  },
+  "spec_sha256": "11f7462d18f6eb6958e21af9d5469e958638da1ee6086702653d6d50036daf6b",
+  "prior_full_receipt_sha256": "592043c9e60c1bdf88bb61a72e097a81724c4146c4a633d0ad02fd5bf631f9f8",
+  "build_info_sha256": "cb4346be78fbd1a8aa2f2a6349c8870a1e286ae9dadd41fce000e15a1af6d32b",
+  "trace_binary_sha256": "ccc0a2d10646eb7382abfafc71ec17cddf05dc34d2d94d76e668adde5ef7a5bd",
+  "source_reports": {
+    "workplace/probe/draw-intercept-v1/native-axis-scale-v1/trace-native": "7b97a32775b53c8515944b13ed6c4afa5d58f758b0cb8f19c5e560fcac77be46",
+    "workplace/probe/draw-intercept-v1/native-surface-spans-v1/trace-native": "6dd2dcecf1f21b20dbcded76764032de38f1e6655682356eb02ef3b26daec975",
+    "workplace/probe/draw-intercept-v1/native-fade-v1/trace-original-entries": "342b032b63617080c1880888fb6b45bfc74b6460dd1349f6c003e0461ada6f1c"
+  },
+  "prior_gates_note": "前批完整四路demo、39對介面、6對存讀檔及demo中斷另存原收據，本批正常抽樣另列",
+  "normal_samples": [
+    {
+      "route": "hd",
+      "endpoint": [
+        "7400",
+        "712250000",
+        "92378aa1b9a421f5f2b2b93c504aed1f80dbd06e627fd1d9f297932fbacbf540",
+        "e77dd084128cf4f20ecce7cd104b1bb0a68f008da864490d926e338386abb7bf",
+        "c2b1ab7e95b942a904842f53eced383f6e0c39b111a0d6c1b65e8ac740694c47",
+        "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3"
+      ],
+      "screenshot_pairs": 1,
+      "screenshots_and_original_state_equal": true,
+      "unexpected_flash_count": 0
+    },
+    {
+      "route": "wall",
+      "endpoint": [
+        "4800",
+        "462000000",
+        "bbed4498180096ffd6b209f4e4183a6fa73974c0d35f5a70f50d1164cfe64091",
+        "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+        "e51ff0161b303165fcb9d5265b133bda27d0ac67a7972cb0e96dd2880cc48c00",
+        "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde"
+      ],
+      "screenshot_pairs": 10,
+      "screenshots_and_original_state_equal": true,
+      "unexpected_flash_count": 0
+    }
+  ],
+  "regression_logs": {
+    "native-axis-scale-all-drawblocks.log": "fe42e50a82ffdf89b5e0b30bbf4e3ff6c5cec078b11818f146ab594d33c58afa",
+    "native-axis-scale-core-tests.log": "33c70e7efd0a7a3d4bc7297ba1c0d70d6e392b7c8aed6239e7714a69a5054c5e",
+    "native-axis-scale-vet.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "activation": {
+    "program_commit": "281368670e7f367573c26406ec1bc213f0d55d3d",
+    "candidate_sha256": "a25e9bba88329686c40fc154170ec905d0d09c2413cadf446529514d74025b03",
+    "previous_binary": "pod-play-nativesurfacespans",
+    "previous_sha256": "b6ca329096e89f939fb5e7f47bdc6c1962fc5487f2b3246abe64d1d067015687",
+    "preactivation_receipt_sha256": "1c7afbb8df93179b40cf4dccb12444ae5af6b10b37df71b43eb4ee88feb6179b",
+    "activation_script_sha256": "c6cbb9eb8915b246ee049baab32aed1404f6cd30d1b48bd214b84c4a617400c1",
+    "activated_utc": "2026-10-29T02:45:34.152607+00:00",
+    "method": "Verified candidate copied and atomically renamed; previous accepted binary retained"
+  },
+  "tool_sha256": "9e64ed8c5d92475e6040768dec34fac66fd3d02d40636272735226d6fd932bb7",
+  "helper_sha256": "8fd45ff39656768af155c0c5f36edf4b9a62c9e88dbac04a01aad902a7d412ce"
+}

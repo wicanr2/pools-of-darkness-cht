@@ -692,6 +692,8 @@ Go直接搬移色號列，或依八平面及目前bit mask計算色號。5373初
 全套drawblocks、核心、session、pod、前端與go vet通過；完整正常CPU／RAM、有序事件、127檔與47份入口證據同原版。四路DEMO、39對介面、六對真存讀檔及十個SAVE檔同基準，槽A五檔未改；非預期閃現0，998筆主動F2另列。新圖像列出口在目前DEMO未觀測，正常Go計數與固定2576步維持。
 全部通過後原子啟用2e45f31，前版5034a1c保留，776檔主題與34張README直接圖片未改。5615縮放仍DRAFT，全部Go閘門仍DRAFT。
 
+<a id="scale5615-initial"></a>
+
 ### 表面整數縮放的接入契約
 
 狀態：READY，#49，2026-10-27。沿5615–5885及625 bytes的既有SHA。輸入為兩個表面slot、中心X／Y、補色色號與整數因子；完整遠返回框架不變。限兩個完整320×200 A000 root及合法非空子表面，父表面各最多八層，目的寬2–320、因子1–8，中心X為−160至479、Y為−100至299。零因子、寬1、其他root或未知狀態拒絕。
@@ -701,15 +703,21 @@ Go以目的寬高與因子建立置中的取樣格，超出來源子表面的樣
 研究原型與log在同clone的`workplace/palette-advance-research/scale5615-*.go`及`workplace/scale5615-{pixels-first,prefix-second,prepare-second,output-second,spans-first,whole-second,selector-first,ready-first}.log`。列準備曾漏算LODSB的DOSBox成本，輸出曾將RETF成本視為近返回；依既有CPU契約訂正後乾淨重跑，原CPU不改。初始化的三次DIV與一次MUL亦依既有模型計費。保留所有失敗log。
 READY允許分離fixture與接正式selector，整批繪圖回歸及正常路線前不升CONFORMED，不外推寬1、其他因子或全部Go完成。
 
+勘誤`NARROW-SCALE-READY-20261029`：本段寬1拒絕是當時驗證邊界，現有原版證據及[寬1契約](#narrow-scale-ready)補齊；原來寬2–320的證據保留。
+
 ### 表面原地翻轉（5886）
 
 狀態：DRAFT，#49，2026-10-27。VGA.DRV之5886–5A27共418 bytes，SHA-256 `2ff20b76959b7f3972f76530c6142c8337d0f935893752f9a23d417dde2eac36`，沿既有IDA9.4位址基準。兩個非零旗標分別控制列內倒序與上下列交換，先以CS:1252暫存來源列，屬強推論。垂直翻轉的奇數高度由height/2且最少1決定，不能直接假定等同一般圖形函式庫。先比較有序像素、重複寫入及中間列，不接產品。
+
+<a id="scale5615-conformed-initial"></a>
 
 ### 表面整數縮放整批驗收
 
 產品f4f2838、乾淨Go1.24.13候選0abeee0完成整批驗收並啟用，見[固定收據](../re/019-native-scale-runtime.json)。整數縮放在上節READY守衛內升局部CONFORMED，目的寬1、其他因子／root及未知狀態不外推。
 全部drawblocks、核心、session、pod、前端及go vet通過。完整正常CPU／RAM、有序事件、127檔與47份入口同原版；四路DEMO、39對介面、六對真存讀檔及十個SAVE檔同基準，槽A五檔未改。非預期閃現0，998筆主動F2另列。新增縮放出口在目前DEMO未觀測，正常Go計數與固定2576步維持。
 全部通過後原子啟用0abeee0，前版2e45f31保留，776檔主題與34張README直接圖片未改；全部Go閘門仍DRAFT。
+
+勘誤`NARROW-SCALE-READY-20261029`：上述目的寬1限制保留為歷史抽樣，後續補證見[寬1契約](#narrow-scale-ready)。
 
 ### 表面原地翻轉的接入契約
 
@@ -1095,6 +1103,8 @@ IDA及實際旗標顯示ADD保留DF；現在只核對ADD改動的六個算術旗
 本條正常demo未觀測3F5E新入口，語意完成限上述受控原版條件。正常Go112037計畫／3400441步、固定1018不變，不宣稱全遊戲覆蓋或FPS。
 驗證入口`tools/native_surface_spans_check.py`及固定收據由研究索引連入；其他root與未驗條件及全部Go閘門仍DRAFT。
 
+<a id="degenerate-initial"></a>
+
 ### 退化圖元與窄縮放的後續診斷
 
 狀態：DRAFT，#49，2026-10-28。只跑原版的26次診斷在`workplace/dosgolem/workplace/native-degenerate-research`，log為degenerate-original-audit.log，報告為同clone的workplace/degenerate-original-report.json。
@@ -1107,3 +1117,94 @@ CPU像素定位為2E6D／2E71、2ED4／2EDF／2EEA／2EF5／2F00，沿原始axis
 寬1縮放在1／1024預算皆由585A寫像素，沿原始5615的625 bytes，SHA-256
 `6d9aac63d38f8b0e5ddd9bdbdfcfdda9144318a34398436b6b468c52f0271106`。
 log為degenerate-current-go-audit.log。下一步為橫直線單步輸出與寬1的typed邊界，不重新實作正半徑橢圓，不因此改原版規則；尚未READY不接正式路徑。
+
+勘誤`AXIS-SPANS-READY-20261029`及`NARROW-SCALE-READY-20261029`：本段未接管位置已完成原型補證，分見[橫直線契約](#axis-spans-ready)與[寬1契約](#narrow-scale-ready)。正式驗收前不當作CONFORMED。
+
+<a id="axis-spans-initial"></a>
+
+### 橫直線的一步輸出研究
+
+狀態：DRAFT，#49，2026-10-29。沿原VGA.DRV 2CFC的1338-byte來源與IDA9.4基準0。
+新增定位2F0B、2F16、2F21與前述五個位置構成八次直線寫入，每筆byte store後更新CX及行距，slot為已畫列數mod8。
+2E6D的F3AB及2E71的F3AA分別是橫線word及奇數尾byte填色；2E6B將奇數尾數放CF，2E6F的RCL重建尾數。
+擬在穩定stack與表面描述上解析原端點、裁切、色彩與列游標，最低一步提交Go填色或單點；不改既有整條線段工作。
+可丟棄原型先驗有序寫入、零計數、裁切、root行距、父表面、旗標、預算及完整SaveState。未READY不接正式路徑。
+
+勘誤`AXIS-SPANS-READY-20261029`：原型對拍與拒絕已通過，見[READY契約](#axis-spans-ready)。
+
+<a id="axis-spans-ready"></a>
+
+### 橫直線的一步輸出契約
+
+狀態：READY，#49，2026-10-29。不可變鍵
+`DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x2CFC`。
+1338 bytes、SHA及IDA9.4原檔基準0沿[初始研究](#axis-spans-initial)及[缺口診斷](#degenerate-initial)。
+原版2CFC從slot與兩端點選擇橫線／直線，消費端含346A與39B2的零半徑分支。
+兩個橫向出口2E6D／2E71及八個垂直出口2ED4、2EDF、2EEA、2EF5、2F00、2F0B、2F16、2F21皆由本契約涵蓋。
+
+typed輸入是SS:SP現行框架的+12 slot、+14／16／18／20端點及+22完整色號，返回與保存暫存器不改。
+slot0–255、最多八層父表面；root須A000、非空且座標在320×200內，合法子表面與root起點／行距按實際描述使用。
+只接已知80386、兩種成本及mode13h線性表面，DS=48A1、ES=A000、DF=0。
+原BP已被2DEA–2E0D改作未裁切垂直距離，必須等於原y1−y0；不能當成SP+6框架指標。
+原型初版在這裡誤拒絕，已按IDA及原版正對照訂正，沒有修改CPU或放寬其他資格。
+
+Go按有號端點先交換上下，依表面裁切橫向區間或垂直區間，核對全部scratch與色彩。
+橫向為width/2的word及width%2尾byte填色，AX必須是原色低byte重複，CF／CX與目前DI吻合；最低一步。
+垂直以height−CX推導已畫列、目前DI及mod8通知位置；每次直接寫一點，不派送原指令。
+REP保留旗標、SI不變、CX歸零及DI前進，原生成本3+5×count、DOSBox 1+count；垂直store為7／1成本，旗標與DI不變。
+計畫以既有HostTransfer／HostWrite提交；固定工作若包含上述十位置像素即回到區塊前。
+未知來源、框架、端點、表面、scratch、游標或模型拒絕，不改輸入；其他線段與原版控制分支照舊。
+
+已證實（受控條件）：3504次原版自然抵達的有序邊界比較含48次零計數，涵蓋十個位置與兩種成本。
+96次完整線段、60次零半徑外框／填滿及60次裁切／非零root起點／八層父表面，SaveState與PortLog相同。
+96次分列2652個Go計畫、466個固定控制及14398道CPU控制；零半徑60次為1708／344／11450，十個像素位置CPU／固定回退0。
+另202種來源／框架／游標／模型拒絕不改輸入。垂直store不改算術旗標，不把任意未使用旗標誤作拒絕理由。
+原型`workplace/dosgolem/workplace/native-axis-spans-research`；log為axis-spans-research-second.log及axis-spans-research-guards.log，初版失敗保留。
+垂直鏈為原版端點→typed裁切→Go跨度／列游標→既有顯存與HD畫布；存檔、亂數、遊戲規則不改。
+准予接正式selector與固定像素防線，保留既有整條Go線段快速工作；全部回歸與正常路線前不升CONFORMED。
+回鏈標記`AXIS-SPANS-READY-20261029`，舊證據為[初始研究](#axis-spans-initial)及[退化診斷](#degenerate-initial)，新證據為本節。
+
+<a id="narrow-scale-ready"></a>
+
+### 目的寬1縮放契約
+
+狀態：READY，#49，2026-10-29。不可變鍵
+`DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x5615`。
+625 bytes與SHA、IDA9.4原檔基準0沿[原契約](#scale5615-initial)，較早限制另見[驗收範圍](#scale5615-conformed-initial)。
+本片只把目的寬資格從2–320擴為1–320；其他框架、完整VGA root、父表面、中心及因子1–8限制不改。
+寬1時ceil((width−1)/factor)=0，但原列內inclusive迴圈仍採一個中心樣本，按factor重複至列緩衝。
+來源列越界時原準備count=0，不寫列緩衝，目的輸出仍取其既有首byte。
+這個條件下不能新填背景色。Go保持零計數的步數、模型成本及游標，只省略無資料的HostTransfer。
+5856的word數0及585A的尾byte數1沿既有一步輸出，來源／目的重疊仍依逐組準備與寫入順序。
+原寬1拒絕測試改為真正反轉邊界的寬0無效表面，另以原版寬1作正對照；其他舊負對照保留。
+
+已證實（受控條件）：72次初始化、180次列準備、180次列輸出及924次單步跨度同原版有序寫入與完整CPU／RAM，含552次零計數及五個位置。
+288次寬1完整呼叫涵蓋高度1／3／9、因子1／2／3／8、有效或越界中心、兩成本及四預算，SaveState／PortLog相同。
+分列2880個Go計畫、2058個固定控制及38610道CPU控制，列準備與像素的CPU／固定回退0。
+另77種來源／框架／格點拒絕不改輸入；邊界包括整高、八層父表面、重疊及A5非零舊緩衝正對照。
+原型`workplace/dosgolem/workplace/native-narrow-scale-research`，log為narrow-scale-research-first.log、narrow-scale-research-boundaries.log及narrow-scale-research-edges-v2.log。
+垂直鏈沿原表面→typed取樣格→Go列緩衝→目的單欄→既有畫布／HD，遊戲狀態與存檔不改。
+准予修改兩個寬度資格、零長度Transfer及相關測試；完整既有縮放回歸、全部繪圖與正常路線前不升CONFORMED。
+回鏈標記`NARROW-SCALE-READY-20261029`，舊證據為[原READY契約](#scale5615-initial)、[原驗收](#scale5615-conformed-initial)及[退化診斷](#degenerate-initial)，新證據為本節。
+
+### 橫直線與寬1縮放正式驗收
+
+2026-10-29，上述兩份READY範圍局部CONFORMED，正式來源2813686。
+全部drawblocks569.585秒，machine／session／pod／前端及vet通過，舊縮放88種拒絕保留。
+正常712250000步的CPU／RAM、有序視訊／音訊／回掃／DOS及127檔同原版，46份直接入口同前版。
+HD demo與正常讀檔後地圖／攻略／工具列11對截圖相同，閃現0。這條正常demo未觀測新增橫直線／縮放入口，不把受控結果冒稱正常場景覆蓋。
+正常Go計畫112037、演算法3400441步及固定1018不變，不宣稱全遊戲覆蓋或FPS改善。
+正式檢查入口`tools/native_axis_scale_check.py`，固定收據由研究索引連入；其他圖元短預算與未驗條件保留，全部Go閘門仍DRAFT。
+
+### 基本圖元的剩餘短預算診斷
+
+狀態：DRAFT，#49，2026-10-29。候選2813686的隔離副本在`workplace/dosgolem/workplace/native-short-primitives-research`，log為short-primitives-audit-second.log。
+單點2B10的244 bytes，SHA-256 `5ac8a4f4342f02d70c6cf19c77b91d50002271c85a437fc5830e351be6634705`；
+填滿區域3338的306 bytes，SHA-256 `48c54ccea05f6f319457cf4bcc454a759cb81650a14c89b26b722b3a3fce7a3e`。
+位址基準沿既有IDA9.4原檔0及48A1執行期段，斜線沿2CFC的既有1338-byte指紋。
+點、矩形外框、填滿區域、淺斜線與陡斜線各在預算1／7／1024比較，共15次完整SaveState及PortLog相同。
+原版單點2BFC在預算1由CPU、7由固定語意、1024由Go寫入；填滿9×9區域在1／7由345C／3460寫81個CPU像素，1024為Go。
+淺斜線321C共19點、陡斜線309C共21點，在預算1皆CPU，7混合Go與固定語意，1024皆Go。
+矩形外框的36點在三種預算皆為Go，已由本輪橫直線出口覆蓋，不重開為缺項。
+首次診斷沒有用Unwatch解除具名觀測器，導致後續主機寫入被觀測guard拒絕；修正診斷生命週期後同一副本乾淨重跑，未更改產品。
+下一步補單點、填色跨度與斜線單點的typed續行及固定像素防線，先驗原版，再審查READY，未接正式路徑。
