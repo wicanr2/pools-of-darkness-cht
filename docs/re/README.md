@@ -1,5 +1,10 @@
 # 研究索引
 
+- [CPU速度互動效能與Draw量測修正](../spec/019-cpu-speed.md#效能量測修正與互動驗收ready)：[2CPU固定收據](022-speed-interactive-runtime.json)、[重生入口](../../tools/speed-interactive-receipt.sh)、[檢查器](../../tools/speed_interactive_check.py)。正常讀檔4800格同狀態、六種倍率及關窗通過；2CPU抽樣約14–18fps、實際停於1x，30fps尚未達成，保留效能限制。
+  [4CPU對照](022-speed-interactive-4cpu-runtime.json)沒有CPU節流，仍在繪製低於30fps時提高倍率；修正契約見[繪製回饋](../spec/019-cpu-speed.md#繪製間隔回饋ready)。
+  [修正後3倍HD](022-speed-feedback-hd-runtime.json)保留1x效能限制，已核對完整Draw時間戳與回饋，低於30fps時不再升速。
+  [修正後預設2倍](022-speed-feedback-2x-runtime.json)另驗相同路線；30fps目標與1x下限的限制各自記錄。
+
 - [工具列字級、固定倍率與1x快轉](../spec/020-toolbar-font.md)：#14、#15，[固定收據](021-toolbar-runtime.json)、[重生入口](../../tools/toolbar-acceptance-receipt.sh)、[檢查器](../../tools/toolbar_acceptance_check.py)。2／3倍三級原生字模、英文抽樣、六種倍率、偏好重啟及105875000步的狀態隔離通過；速度的互動效能仍待驗。[README字級並列](../screenshots/toolbar-font-sizes.png)由[擷取工具](../../tools/toolbar_font_preview.py)保留原始像素。
 
 - [圖像、RGB與填色工作短續行](../spec/025-direct-render-commands.md#drawing-job-boundary-ready)：#49，[固定收據](019-native-drawing-jobs-runtime.json)、[檢查器](../../tools/native_drawing_jobs_check.py)。2523次原版邊界、172種拒絕及32次selector通過；正常111步固定與91步CPU準備改Go，僅剩14步BIOS控制。完整回歸、狀態事件與30張正常PNG相同並啟用，全部Go仍DRAFT。

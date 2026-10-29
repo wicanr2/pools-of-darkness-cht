@@ -1406,3 +1406,16 @@
 - 驗證腳本先修正空存檔根目錄與終點original.rgba仍含工具列的假設，再用相同工具鏈重跑。這些是驗證工具問題，沒有修改遊戲行為。固定收據docs/re/021-toolbar-runtime.json SHA-256為855bf2f07e1beb1e9953f6bef50ca9d1f61c57219b88fc7468eb57b18a8888fa，檢查器tools/toolbar_acceptance_check.py通過。
 - README新增六種字級原始像素並列圖，37張直接圖片全部存在。圖片由tools/toolbar_font_preview.py從正常截圖擷取；#15在本作正常前端抽樣及偏好契約範圍CONFORMED。
 - 沿用dosgolem-go-ebiten:1.24-r1及sosb-img:r1，唯讀專案根、窄化可寫輸出、資源限制與逾時均保留。專案標籤容器0，來源clone乾淨；新檔1000:1000，只見既有root-owned font，未chown。兩原始壓縮檔SHA不變，未清理其他專案資源。
+
+## 2026-10-29 CPU速度互動驗收與繪製回饋
+
+- 依目前狀態表與遠端#14接續。路由載入復古收尾、規格閘門與驗證交接；維持BIOS14步平台邊界，不擴大繪圖逆向或已停止的G6探索。
+- 發現原perf.draw只記drawBar，工具列隱藏時顯示零、截圖還會增加計數。ff7dca8將計時移至完整Draw，涵蓋合成、工具列、海報與WritePixels；原收據021的舊drawfps保留，不能解讀為整幅畫面頻率。
+- 正常2CPU及4CPU對照均完成冷開機讀檔與六倍率。4CPU無cgroup節流，但第5103格最近Draw約17.52fps時，舊控制仍從50%提高至62%。證據022-speed-interactive-runtime.json及022-speed-interactive-4cpu-runtime.json保留；先形成READY契約，再修控制。
+- f4d0e0d加入Draw間隔指數平均：低於30fps降速、恢復35fps且CPU有餘裕才升速，中間保持。保留原1x下限、固定自動模式與所有輸入語意。慢繪製／快模擬、恢復升速、遲滯區及1x保護測試、整個pod-play前端與vet通過，紀錄在workplace/probe/interactive-speed-v1/feedback-tests.log及feedback-vet.log。
+- tools/speed-interactive-receipt.sh以真正frames=0走既有正常讀檔路線至街景，再依序取七段各200格的設定1／2／4／8／16／32／回1x。前50格供調節、後150格量測，包含F10成本。隔離副本只附加讀值，另核對原版來源；最後用私人Xvfb的WM_DELETE_WINDOW正常關窗。初次只查舊式視窗名稱的工具失敗已修成WM_PROTOCOLS辨識，短驗及後續兩模式均正常退出。
+- 修正後3倍HD與預設2倍皆在4800格462000000步的CPU、完整RAM、索引畫面與色盤同舊基準；固定1100格的遊戲狀態、DOS檔案、來源及15張PNG同收據021。原版來源在兩倍率均相同，3倍另有十張正常中央PNG同舊基準。
+- 新控制的每筆Update回饋值與獨立Draw時間戳相符，慢畫面升速違例零。固定022-speed-feedback-hd-runtime.json SHA為fec09b48c9ca41b43aa7fd6d139e60b1579a2ca8a98b8a343722ae2a3ecee475；022-speed-feedback-2x-runtime.json為a499340817ba43b6f4a3f4fd59596939ae8a7a83c2b2cc516272d8b7a47805c6。四份收據的程式來源SHA逐檔符合其Git commit。
+- 4CPU／2GiB無頭抽樣3倍HD約8–14fps、2倍約22–33fps，沒有全面達到30fps。功能抽樣CONFORMED，收據為FUNCTIONAL_PASS_WITH_LIMITS；保留已測效能限制，不降低1x或挑有利數字宣稱達標。兩批主機負載會變，數值不用來宣稱效能提升比例或實機GPU呈現。
+- 原子啟用db038fd1d0d4436e68909c650bf92741447756020451c1ca1470a9e6e789ab5e，來源f4d0e0d1d5b855a4ac2bb5d77f4d073a671aceda，pod-play-renderfeedback同檔；前版fb5394a仍以pod-play-nativedrawingjobs保留。Go繪圖演算法、字型及776檔主題未改。來源已推本專案dosgolem/pod，未推上游。
+- CONTEXT、規格019、索引及README同步，37張直接圖片全部存在。沿用既有Go與圖像映像，未建新Docker image；專案標籤容器0，來源clone乾淨，兩原始壓縮檔SHA不變。新產物1000:1000，find只見既有root-owned font，未chown或清理其他專案資源。
