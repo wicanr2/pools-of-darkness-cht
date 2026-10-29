@@ -114,7 +114,7 @@ func planScale5615Prefix(v CPUView) *machine.HostWorkPlan {
 	factor := v.Read16(stack + 14)
 	dw, dh := d.right-d.left+1, d.bottom-d.top+1
 	cx, cy := v.Read16(stack+8), v.Read16(stack+10)
-	if factor == 0 || factor > 8 || dw < 2 || int16(cx) < -160 || int16(cx) > 479 || int16(cy) < -100 || int16(cy) > 299 {
+	if factor == 0 || factor > 8 || dw == 0 || int16(cx) < -160 || int16(cx) > 479 || int16(cy) < -100 || int16(cy) > 299 {
 		return nil
 	}
 	phase := func(steps, cycles uint64) { n += steps; cost += cycles }

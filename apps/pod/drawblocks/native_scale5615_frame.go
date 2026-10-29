@@ -58,7 +58,7 @@ func readScale5615Frame(v CPUView) (f scale5615Frame, ok bool) {
 	f.factor = v.Read16(stack + 22)
 	f.color = v.Read16(stack + 20)
 	cx, cy := int32(int16(v.Read16(stack+16))), int32(int16(v.Read16(stack+18)))
-	if f.width < 2 || f.factor == 0 || f.factor > 8 || cx < -160 || cx > 479 || cy < -100 || cy > 299 {
+	if f.width == 0 || f.factor == 0 || f.factor > 8 || cx < -160 || cx > 479 || cy < -100 || cy > 299 {
 		return f, false
 	}
 	f.samples = (f.width - 1 + f.factor - 1) / f.factor

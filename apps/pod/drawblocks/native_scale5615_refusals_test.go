@@ -21,6 +21,9 @@ func scale5615At(t *testing.T, ip uint16) *view {
 	t.Fatal("missing scaling cursor", ip)
 	return nil
 }
+
+// Width 1 is now proven by the original; the prefix negative uses a reversed
+// destination rectangle instead. Narrow positive cases remain independently tested.
 func TestScale5615Refusals(t *testing.T) {
 	cases := 0
 	for _, ip := range []uint16{0x579c, 0x581a, 0x5813, 0x5856, 0x585a} {
@@ -54,7 +57,7 @@ func TestScale5615Refusals(t *testing.T) {
 	}
 	seed := scale5615Seed(t, 9, 7, 2, 25, 15)
 	stack := uint32(seed.SS())*16 + uint32(seed.SP())
-	mutations := []func(*view){func(v *view) { putRowWord(v, stack+14, 0) }, func(v *view) { putRowWord(v, stack+14, 9) }, func(v *view) { putRowWord(v, stack+8, 480) }, func(v *view) { putRowWord(v, stack+10, 300) }, func(v *view) { putRowWord(v, stack+4, 256) }, func(v *view) { putRowWord(v, stack+6, 256) }, func(v *view) { putRowWord(v, 0x48a10+0x8bd+2, 18) }, func(v *view) { v.mem[0x48a10+0x5615] ^= 1 }}
+	mutations := []func(*view){func(v *view) { putRowWord(v, stack+14, 0) }, func(v *view) { putRowWord(v, stack+14, 9) }, func(v *view) { putRowWord(v, stack+8, 480) }, func(v *view) { putRowWord(v, stack+10, 300) }, func(v *view) { putRowWord(v, stack+4, 256) }, func(v *view) { putRowWord(v, stack+6, 256) }, func(v *view) { putRowWord(v, 0x48a10+0x8bd+2, 17) }, func(v *view) { v.mem[0x48a10+0x5615] ^= 1 }}
 	for i, mutate := range mutations {
 		v := &view{mem: append([]byte(nil), seed.mem...), s: seed.s}
 		mutate(v)

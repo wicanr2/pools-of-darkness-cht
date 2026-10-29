@@ -36,7 +36,9 @@ func planScale5615Prepare(v CPUView, budget uint64) *machine.HostWorkPlan {
 		}
 		count := f.samples * f.factor * 2
 		step := p.Instructions + 5
-		p.Transfers = []machine.HostTransfer{{Address: 0x48a10 + 0x1252, Value: (f.color & 255) * 257, Count: count, Width: 2, Step: step, CS: 0x48a1, IP: 0x5879}}
+		if count > 0 {
+			p.Transfers = []machine.HostTransfer{{Address: 0x48a10 + 0x1252, Value: (f.color & 255) * 257, Count: count, Width: 2, Step: step, CS: 0x48a1, IP: 0x5879}}
+		}
 		charge(8, 31+5*uint64(count), uint64(count))
 		p.After.R[cpu.AX] = (f.color & 255) * 257
 		p.After.R[cpu.CX] = 0
