@@ -7,7 +7,25 @@ import (
 	"github.com/wicanr2/dosgolem/internal/machine"
 )
 
-func planLineCursor(v CPUView, budget uint64) *machine.HostWorkPlan {
+type lineCursorState struct {
+	steep          bool
+	decrease       bool
+	expectedDF     uint16
+	stack          uint32
+	s              rectangleSurface
+	root           rectangleSurface
+	major          uint16
+	minor          uint16
+	err            uint16
+	currentX       int32
+	currentY       int32
+	stride         uint16
+	at             uint32
+	remainingMinor uint16
+	color          uint16
+}
+
+func readLineCursor(v CPUView) (lineCursorState, bool) {
 	steep := false
 	decrease := false
 	switch v.IP() {
@@ -20,30 +38,30 @@ func planLineCursor(v CPUView, budget uint64) *machine.HostWorkPlan {
 	case 0x3206:
 		decrease = true
 	default:
-		return nil
+		return lineCursorState{}, false
 	}
-	if v.CS() != 0x48a1 || v.DS() != 0x48a1 || v.ES() != 0xa000 || v.Read8(0x449) != 0x13 || budget == 0 {
-		return nil
+	if v.CS() != 0x48a1 || v.DS() != 0x48a1 || v.ES() != 0xa000 || v.Read8(0x449) != 0x13 {
+		return lineCursorState{}, false
 	}
 	expectedDF := uint16(0)
 	if !steep && decrease {
 		expectedDF = cpu.DF
 	}
 	if v.Flags()&cpu.DF != expectedDF {
-		return nil
+		return lineCursorState{}, false
 	}
 	var code [1338]byte
 	copyView(v, 0x48a10+0x2cfc, code[:])
 	if sha256.Sum256(code[:]) != axisLineCode.sum {
-		return nil
+		return lineCursorState{}, false
 	}
 	stack, ok := paletteSourceStack(v, 0, 24)
 	if !ok {
-		return nil
+		return lineCursorState{}, false
 	}
 	slot := v.Read16(stack + 12)
 	if slot > 255 {
-		return nil
+		return lineCursorState{}, false
 	}
 	word := func(off uint16) uint16 { return v.Read16(0x48a10 + uint32(off)) }
 	descriptor := func(off uint16) rectangleSurface {
@@ -54,46 +72,46 @@ func planLineCursor(v CPUView, budget uint64) *machine.HostWorkPlan {
 	links := 0
 	for root.flags&64 != 0 {
 		if links >= 8 || root.seg > 510 || root.seg&1 != 0 {
-			return nil
+			return lineCursorState{}, false
 		}
 		root = descriptor(root.seg)
 		links++
 	}
 	if root.seg != 0xa000 || root.left > root.right || root.right >= 320 || root.top > root.bottom || root.bottom >= 200 || s.left < root.left || s.left > s.right || s.right > root.right || s.top < root.top || s.top > s.bottom || s.bottom > root.bottom {
-		return nil
+		return lineCursorState{}, false
 	}
 	x0, y0, x1, y1, color := v.Read16(stack+14), v.Read16(stack+16), v.Read16(stack+18), v.Read16(stack+20), v.Read16(stack+22)
 
 	g, ok := clippedGeometry(x0, y0, x1, y1, s)
 	if !ok || steep != g.steep || decrease != g.decrease {
-		return nil
+		return lineCursorState{}, false
 	}
 	x0, x1, y0, y1 = g.x0, g.x1, g.y0, g.y1
 	dx, dy, major, minor := g.dx, g.dy, g.major, g.minor
 	if v.CX() > major || v.AX() != color || v.DX() != major {
-		return nil
+		return lineCursorState{}, false
 	}
 	done := int32(major) - int32(v.CX()) - g.endExcess
 	if done < g.first || done > int32(major) {
-		return nil
+		return lineCursorState{}, false
 	}
 	moved := (uint32(major/2) + uint32(done)*uint32(minor)) / uint32(major)
 	err := uint16((uint32(major/2) + uint32(done)*uint32(minor)) % uint32(major))
 	if v.BX() != err {
-		return nil
+		return lineCursorState{}, false
 	}
 	currentX, currentY := g.position(done)
 	stride := root.right - root.left + 1
 	at := uint32(uint16((currentY-int32(root.top))*int32(stride) + currentX - int32(root.left)))
 	if v.DI() != uint16(at) {
-		return nil
+		return lineCursorState{}, false
 	}
 	wantSI, wantBP := uint16(int32(s.bottom)-currentY), dy
 	if steep {
 		wantSI, wantBP = dx, y1-s.bottom
 	}
 	if v.SI() != wantSI || v.BP() != wantBP {
-		return nil
+		return lineCursorState{}, false
 	}
 	selectedBottom := s.bottom
 	if !steep {
@@ -102,13 +120,38 @@ func planLineCursor(v CPUView, budget uint64) *machine.HostWorkPlan {
 	}
 	for _, w := range [][2]uint16{{0xebd, s.seg}, {0xebf, s.extra}, {0xec1, s.left}, {0xec3, s.top}, {0xec5, s.right}, {0xec7, selectedBottom}, {0xec9, s.flags}, {0xecb, s.right - s.left + 1}, {0xecd, s.bottom - s.top + 1}, {0xecf, root.seg}, {0xed1, root.extra}, {0xed3, root.left}, {0xed5, root.top}, {0xed7, root.right}, {0xed9, root.bottom}, {0xedb, root.flags}, {0xedd, stride}, {0xedf, root.bottom - root.top + 1}, {0x1129, color}, {0x112b, x0}, {0x112d, x1}, {0x112f, y0}, {0x1131, y1}, {0x1137, major / 2}, {0x1149, x0 - x1}, {0x114d, dx}, {0x1151, dy}} {
 		if word(w[0]) != w[1] {
-			return nil
+			return lineCursorState{}, false
 		}
 	}
 	remainingMinor := uint16(g.horizontal - int32(moved) + g.firstMoved)
 	if steep && (word(0x1139) != uint16(g.topRemaining) || word(0x1133) != remainingMinor) {
+		return lineCursorState{}, false
+	}
+	return lineCursorState{steep, decrease, expectedDF, stack, s, root, major, minor, err, currentX, currentY, stride, at, remainingMinor, color}, true
+}
+func planLineCursor(v CPUView, budget uint64) *machine.HostWorkPlan {
+	if budget == 0 {
 		return nil
 	}
+	c, ok := readLineCursor(v)
+	if !ok {
+		return nil
+	}
+	steep := c.steep
+	decrease := c.decrease
+	expectedDF := c.expectedDF
+	stack := c.stack
+	s := c.s
+	root := c.root
+	major := c.major
+	minor := c.minor
+	err := c.err
+	currentX := c.currentX
+	currentY := c.currentY
+	stride := c.stride
+	at := c.at
+	remainingMinor := c.remainingMinor
+	color := c.color
 	p := imageBasePlan(v)
 	remaining := v.CX()
 	charge := func(n, c, iterations uint64) {
