@@ -1466,3 +1466,66 @@ HD原始閃現0；字型路線同前版121格明示倍率切換，非預期0。�
 固定[019-native-color-fill-runtime.json](../re/019-native-color-fill-runtime.json)，入口tools/native_color_fill_check.py。
 初次重播函式表格式錯誤；第二次用了90項舊表而少兩個helper見證。改用前版正式fade-entries.json的92項表乾淨重跑，46份見證相同，產品未改。
 普通RAM續行、其他來源／context準備及未驗玩家場景不外推；正常HostWork bytes全覆蓋不等於全遊戲Go完成，整體閘門仍DRAFT。
+
+<a id="surface-setup-initial"></a>
+
+### 畫布與子表面初始化研究
+
+狀態：DRAFT，#49，2026-10-29。正常觀測native-fixed-control-v1/trace-audit完整狀態及事件同068ccea，20份固定計畫共1018步。
+其中48A1:2786完整837步、28D5完整56步，合計893步；用途為建立畫布描述與配置子表面，沒有像素輸出。
+原始定位為VGA.DRV檔案0x2786–0x2858共210 bytes，SHA-256 `253f27203f42adc840d848642ff4a1214f0353b26c033ae79a219dcdb4520c14`；
+0x28D5–0x2951共124 bytes，SHA-256 `7af20b90b4bf497b5a4011bedcdc823fd594851237ea59e0faa6fd6b1c0db228`。
+子表面的空slot搜尋另用0x2772–0x2786共20 bytes，SHA-256 `d2e4e2cfc6bf845297c8f699fc5ba9d738f12b64722f250b8f333a0b06512d8c`。
+權威為既有IDA9.4匯出vga-ida.json，輸入VGA.DRV SHA沿本規格eef4e14b；檔案位址基準0，執行期段48A1。
+匯出SHA-256 `810e653c23f5d9e04b1069e40408d34056b4e2d126d7958c1a5e4b5e7731fb44`，三段逐byte與本輪執行期RAM相同。
+root兩個描述、工作區段值與254個未用slot標記，以及空slot搜尋／祖先追蹤／子矩形設定均可寫成typed Go資料操作。
+原型只處理合法普通RAM框架、已知80386與mode13h；子表面限成功配置及有效VGA root。失配、失敗配置與短預算保留原版，未READY不接正式程式。
+工作區長度及段值只記已證實算術投影，不推測DOS配置容量或將16-byte初始參數誤當完整背板容量。
+
+勘誤`SURFACE-SETUP-READY-20261029`：上述原型已審查，接入依[正式契約](#surface-setup-ready)；舊固定計數保留作基準。
+
+<a id="surface-setup-ready"></a>
+
+### 畫布與子表面初始化接入契約
+
+狀態：READY，#49，2026-10-29。不可變鍵為`DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x2786`及同檔`:0x28D5`。
+原始bytes、SHA、IDA9.4檔案基準0及執行期段48A1沿[初始研究](#surface-setup-initial)，另驗20-byte空slot搜尋指紋。
+回鏈標記`SURFACE-SETUP-READY-20261029`。原型在clone的workplace/native-surface-setup-research，log為surface-setup-prototype.log。
+已證實（受控條件）：72次畫布、48次子表面的有序原版寫入及完整SaveState／PortLog相同；28種拒絕不改輸入。
+涵蓋兩成本、DF輸入、未用旗標高byte、對齊／非對齊工作區指標、32位長度算術、最後slot255及最多八層父表面。
+
+垂直鏈為原版far-call參數→typed根畫布／slot／矩形→Go初始化描述表→既有Go幾何與像素→HD呈現。客體輸入、亂數、玩法及存檔格式不改。
+限已知80386、mode13h、完整指紋。整段預算不足或其他不合法條件保留既有固定／CPU回退，不新增短預算續行。
+root框架須能讀SS:SP後12 bytes及保留前12 bytes暫存區，子表面後14 bytes；位於普通RAM，不段環繞且不得別名於驅動整段。
+
+2786的+4／+6為工作區far pointer、+8／+10為32位長度。只接受指標線性位址500h–9FFFFh，不讀取指標指向的內容。
+由線性指標算normalParagraph，first=normalParagraph+1、limit=normalParagraph+low16(length>>4)、next=first+0FA0h，沿原16位結果，不推測配置容量。
+slot0為A000／0FA0／0,0,319,199／20h，slot1段為first、相同大小及旗標0；F05=limit、F07=next、1109=0。
+其餘254個slot只將旗標低byte設80h，保留高byte。ABI及堆疊有序寫入沿原時點；AX=next高byte加80h、BX=512、CX=0、DX=length>>20。
+BP／SI／DI／DS／ES保持，SP加4，far return；旗標為最後510+2之加法投影，DF保持。完整837步，既有原生成本2848、DOSBox837。
+
+28D5依80h旗標找第一個空slot，限2–255。+4為父slot、+6／8／10／12為矩形，須有效且位於320×200及選取表面內。
+依40h父連結追至有效A000 root，原連結是偶數byte offset，最多八層；拒絕空父與循環，不替原版猜補失敗配置或部分寫入。
+子描述保存root byte offset、extra=0、原矩形及40h旗標。回傳AX=freeSlot、CX=256−freeSlot，其餘非SP暫存器／段保持；DF清除，旗標沿最終SHR結果。
+SP加4並far return；完整步數48+4×freeSlot+4×links，既有原生成本281+12×(freeSlot−2)+21×links，DOSBox等於步數。
+計算以typed資料及欄位迴圈完成；原IP與step只供ABI通知，不派送opcode、不呼叫CPU.Step、固定區塊或反編譯器效果函式。
+selector在兩入口優先提出整段Go計畫，固定前綴在入口停下；不改通用CPU或HostWork事件守衛。
+
+准予接入這兩項初始化；正式原版定向、全部繪圖回歸、正常機器狀態／事件／檔案與HD／地圖／字型抽樣通過後才升局部CONFORMED。
+不以初始化取代像素驗收，不把正常固定控制減少外推全遊戲Go完成；其他125步控制及未驗條件另列。
+
+### 畫布與子表面初始化正式驗收
+
+2026-10-29，上述兩項整段初始化局部CONFORMED，來源d84ef3af8686716b302eb55ce1cd13c43c36bb01，
+執行檔SHA-256 `45213b318e98ddb017584f62ddbb76b73929298c6728dc61dafe80aceda2c63d`。
+正式定向72次畫布、48次子表面、28種拒絕通過，完整drawblocks420.047秒；machine／session／pod／bgm／xlate、Xvfb前端及vet通過。
+正常712250000步的CPU／RAM、有序視訊／音訊／回掃／DOS、127檔及46份入口同前版及原版。
+新增2857出口1個837步、2948出口1個56步Go計畫，其他Go出口計數相同；Go總計145784計畫／3435096步。
+剩餘固定控制18份共125步，每份原暫存器、預算、效果、記憶體SHA及計畫逐項同前版；沒有新增像素寫入，原3343240 bytes命令分類不變。
+其中14步是2A66／2A77跨INT10h前後的原版控制；其餘111步為68xx圖像列、4Bxx色盤及4268填色的短預算控制。
+這是正常路線的精確分類，不代替未驗場景、失敗配置及短預算路徑的Go驗收。
+HD及正常讀檔／地圖／攻略／工具列、英文、倍率與F12共14組畫面及視窗、兩張最終畫面，30張PNG、來源色號／色盤／字格metadata與全部客體檔逐項同前版。
+HD原始閃現0；字型路線同前版121格明示倍率切換，非預期0。字型及776檔主題未變。
+總檢查後原子啟用，前版022bee0以pod-play-nativecolorfill保留；固定[019-native-surface-setup-runtime.json](../re/019-native-surface-setup-runtime.json)，入口tools/native_surface_setup_check.py。
+觀測器可由tools/build_fixed_control_probe.py於Docker產生，原始20份及候選18份固定計畫和RAM只留本機workplace/probe/draw-intercept-v1/native-fixed-control-v1。
+本批沿既有IDA9.4匯出並逐byte核對，原始輸入與資料庫未改。全部Go閘門仍DRAFT。

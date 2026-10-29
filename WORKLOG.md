@@ -1361,3 +1361,20 @@
 - 固定收據docs/re/019-native-color-fill-runtime.json，SHA-256為1beccdae599044ea510cee8ea851bec4cdb60829d32a4b3824e6ef8249d9442a，入口tools/native_color_fill_check.py。綁定來源、建置、原版／正常事件、全部GUI雜湊、原始診斷、規格回鏈及啟用記錄。總檢查後原子啟用022bee0；d33254a以pod-play-nativeresidentglyph-v2及較早回復檔保留。
 - CONTEXT目前狀態表、README穩定摘要、規格與研究索引同步。README36張直接圖片全部存在。本批局部CONFORMED，#49整體仍DRAFT／OPEN；其他來源／context準備與未驗玩家場景保留，不將正常bytes全覆蓋當成全遊戲完成。原案其他功能及三平台交付仍待完成。
 - 沿用dosgolem-go-ebiten:1.24-r1，映像ID同前批，未建新映像。兩原始壓縮檔SHA核對相同，字型資產與776檔主題經兩路inputs逐項相同。輸出1000:1000，擁有權檢查只見既有root-owned font。以掛載路徑核對本專案執行中與停止容器0，未動其他專案容器、映像、資料卷或dosgolem上游。
+
+### 2026-10-29　Go根畫布與子表面初始化
+
+- 接續#49，回讀遠端為OPEN，主機gh授權健康。知識路由命中正式實作、證據回鏈與文件職責，沿reverse-engineer-retro-game-remake及use-ida-pro-9-4技能。IDA技能的Codex入口是指向/home/anr2/ida_94_official/skills/use-ida-pro-9-4的symlink；第一次僅掛skills目錄讀不到實體，查明後唯讀掛正確來源，讀入口與工具契約。本輪沿用既有IDA9.4匯出，未啟動IDA或改資料庫。
+- 建立可重現的tools/build_fixed_control_probe.py，產品planner不改，只記正常固定計畫、完整暫存器、預算與RAM。基準正常20份固定計畫共1018步；觀測完整CPU／RAM、有序事件與068ccea完全相同。原始記錄在native-fixed-control-v1/trace-audit，全部原始資料留本機。
+- 已證實48A1:2786是畫布描述初始化、28D5是子表面配置，正常分別837及56步，共893步。VGA.DRV檔案基準0的210／124 bytes與20-byte空slot搜尋逐byte同IDA9.4及執行期RAM，來源雜湊寫入規格025。工作區段值只採原算術投影，不把初始16-byte參數誤認為整張背板容量。
+- 先在workplace/native-surface-setup-research原型驗72次畫布、48次子表面完整有序寫入及SaveState／PortLog，28種拒絕不改輸入。含非對齊指標、32位長度、旗標高byte、slot255、八層父表面、DF及兩成本。原型首次1.544秒通過，審查READY後才接selector、兩項Go資料操作與固定前綴邊界。
+- 正式來源d84ef3af8686716b302eb55ce1cd13c43c36bb01已推本專案dosgolem/pod。直接建立root描述、未用slot標記、尋找空slot與追蹤父表面，不用CPU.Step、opcode派送或固定效果函式。保留合法普通RAM框架及已知80386守衛；短預算、失敗配置與未知條件沿原版，不新增通用CPU行為。
+- 正式定向2.768秒，完整drawblocks420.047秒；machine5.533、session0.148、pod2.692、bgm0.136、xlate0.035、Xvfb前端0.115秒及vet通過。乾淨Go1.24.13候選SHA-256為45213b318e98ddb017584f62ddbb76b73929298c6728dc61dafe80aceda2c63d。
+- 正常探針第一次從module外建置，受Go internal限制阻擋，產品建置已成功。改複製到clone的workplace再建置通過，產品來源未改；正式驗收改用同一可重現觀測器記候選剩餘控制，避免只從總數推論。
+- 正常712250000步的CPU／RAM、有序視訊／音訊／回掃／DOS、127檔及46份入口同前版與原版。新增2857出口1個837步、2948出口1個56步Go計畫；總計145784計畫／3435096步，其他Go出口完全相同。剩餘18份125步固定計畫的入口、暫存器、預算、完整效果與RAM SHA逐筆同基準；原3343240 bytes像素命令分類不變，本批不新增像素。
+- 剩餘125步分開記錄：14步為2A66／2A77跨INT10h前後控制，111步為68xx圖像列、4Bxx色盤與4268填色的短預算控制。固定JSON的remaining_fixed_by_start及本機fixed-records.json是下一個最小研究入口；不深挖硬體時序或無關helper，不以正常單路分類外推全遊戲完成。
+- HD7400格與讀檔4800格沿原腳本驗地圖、攻略、工具列、英文、2／3倍與F12。14組畫面及完整視窗加兩張終點，共30張PNG、來源色號／色盤／字格metadata、原版終點及全部客體檔逐項同前版。HD原始閃現0；字型路線同前版121格明示倍率切換，非預期0。字型資產與776檔主題相同。
+- 總檢查後原子啟用45213b3，前版022bee0以pod-play-nativecolorfill保留，d33254a及較早回復檔仍在。固定docs/re/019-native-surface-setup-runtime.json SHA-256為290384813ced8d9d28ac62097aeade8408bfaae6dd90d2307d74c0f5eae0ecf3，入口tools/native_surface_setup_check.py；綁定原版碼段／IDA、來源、完整回歸、兩側固定記錄、正常狀態與GUI、規格回鏈及啟用記錄。
+- README穩定入口、CONTEXT目前狀態、規格與研究索引同步；README36張直接圖片全部存在。CONTEXT下方舊dosgolem基線不再將b11290c稱現行正式版，改指向唯一目前狀態表，歷史來源仍在原收據與Git。本批局部CONFORMED，整體Go仍DRAFT／#49 OPEN；原案其他功能與三平台交付仍待完成。
+- 核對SHA、UID及用途後，只刪本輪未執行的標準探針draw-call-probe-nativesurfacesetup，SHA14dedb9b6c45bc03815ad11db231479c7d625079bc967c968c9fc63bf01c6a3b，回收8634140 bytes；實際基準／候選觀測器、建置紀錄、原型與回復檔保留。清理記錄在cleanup-unused-probe.json。
+- 沿用dosgolem-go-ebiten:1.24-r1，ID8ed6bdee2bce1f32f804e888f942b25bbf62f2165a43344bb4587f3371de0581，未建新映像。兩原始壓縮檔SHA不變，輸出1000:1000；find只見既有root-owned font，未chown。以掛載路徑核對本專案執行中與停止容器0，其他專案、映像、資料卷及dosgolem上游未動。

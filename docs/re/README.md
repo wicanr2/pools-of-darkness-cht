@@ -1,5 +1,7 @@
 # 研究索引
 
+- [Go畫布與子表面初始化](../spec/025-direct-render-commands.md#surface-setup-ready)：#49，[固定收據](019-native-surface-setup-runtime.json)、[檢查器](../../tools/native_surface_setup_check.py)、[固定控制觀測器產生器](../../tools/build_fixed_control_probe.py)。原版72次畫布、48次子表面與28種拒絕通過，正常893步改為Go，剩餘18份125步控制逐筆不變。完整回歸及30張正常PNG相同並啟用，全部Go仍DRAFT。
+
 - [共享VGA填色一步續行](../spec/025-direct-render-commands.md#color-fill-span-ready)：#49，[固定收據](019-native-color-fill-runtime.json)、[檢查器](../../tools/native_color_fill_check.py)。50次有序跨度、250次完整呼叫及19種拒絕通過；正常新增1920 bytes Go填色，該路線3343240 bytes命令全由HostWork提交。完整回歸、46份原版入口及30張正常PNG通過並啟用，全部Go仍DRAFT。
 
 - [常駐8×8字模與原生16／24像素字型](../spec/025-direct-render-commands.md#resident-glyph-ready)：#49，[固定收據](019-native-resident-glyph-runtime.json)、[總檢查器](../../tools/native_resident_glyph_check.py)、[字格影像檢查器](../../tools/native_resident_glyph_ui_check.py)。192次完整原版與正常33728點Go接管；14組基準截圖差異只在認證ASCII格、13組直接／舊合成相同，含2／3倍、英文與F12。全部Go仍DRAFT。

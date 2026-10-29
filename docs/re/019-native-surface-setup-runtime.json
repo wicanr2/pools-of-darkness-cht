@@ -1,0 +1,176 @@
+{
+  "scope": "根畫布與合法VGA子表面整段Go初始化；短預算與失敗配置保留原版，全部Go仍DRAFT",
+  "program_commit": "d84ef3af8686716b302eb55ce1cd13c43c36bb01",
+  "baseline_commit": "068ccea0442d94fcdec9d8f23fbf91ddb84ab803",
+  "binary_sha256": "45213b318e98ddb017584f62ddbb76b73929298c6728dc61dafe80aceda2c63d",
+  "source_sha256": {
+    "apps/pod/drawblocks/effects.go": "5643387d65addbd503f701e0d8b8a62e2d16e6768810ca9a6caa16e1ef16ed8c",
+    "apps/pod/drawblocks/native_surface_setup.go": "1837818b2d86a9a06e7017fc65e54194b606ce423edb0f8479bf806dde1afc9f",
+    "apps/pod/drawblocks/native_surface_setup_test.go": "0209a20e8ef4d0b8674d9ea55a183ab270459fa37755797ff2421da8cb7ffe9d"
+  },
+  "source_code_sha256": {
+    "0x2786": "253f27203f42adc840d848642ff4a1214f0353b26c033ae79a219dcdb4520c14",
+    "0x28d5": "7af20b90b4bf497b5a4011bedcdc823fd594851237ea59e0faa6fd6b1c0db228",
+    "0x2772": "d2e4e2cfc6bf845297c8f699fc5ba9d738f12b64722f250b8f333a0b06512d8c"
+  },
+  "original_vga_sha256": "eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f",
+  "ida_export_sha256": "810e653c23f5d9e04b1069e40408d34056b4e2d126d7958c1a5e4b5e7731fb44",
+  "original_address_space": "IDA9.4 binary file base 0; runtime CS=48A1",
+  "controlled_original": {
+    "root_ordered_and_whole": 72,
+    "child_ordered_and_whole": 48,
+    "unchanged_refusals": 28
+  },
+  "normal": {
+    "steps": 712250000,
+    "state_events_equal": true,
+    "guest_files": 127,
+    "direct_witnesses": 46,
+    "new_go_plans": 2,
+    "reclassified_go_steps": 893,
+    "algorithmic_plans": 145784,
+    "algorithmic_instructions": 3435096,
+    "previous_fixed_instructions": 1018,
+    "remaining_fixed_plans": 18,
+    "remaining_fixed_instructions": 125,
+    "host_video_bytes": 3343240,
+    "new_pixel_bytes": 0
+  },
+  "remaining_fixed_by_start": {
+    "48a1:2a66-2a73": [
+      1,
+      9
+    ],
+    "48a1:2a77-2a7c": [
+      1,
+      5
+    ],
+    "48a1:689e-68a5": [
+      1,
+      2
+    ],
+    "48a1:68d0-68f2": [
+      1,
+      11
+    ],
+    "48a1:689e-68d5": [
+      2,
+      34
+    ],
+    "48a1:68ed-68f2": [
+      2,
+      4
+    ],
+    "48a1:4b6c-4b78": [
+      4,
+      16
+    ],
+    "48a1:4bc1-4bc4": [
+      2,
+      4
+    ],
+    "48a1:4b9a-4b9d": [
+      2,
+      4
+    ],
+    "48a1:4268-428f": [
+      1,
+      12
+    ],
+    "48a1:68a7-68f2": [
+      1,
+      24
+    ]
+  },
+  "logs_sha256": {
+    "workplace/surface-setup-regression.log": "3bf0afa9789ea482ae1118d9ac4669a246c5f434be2ff938f88817f38d07b5b4",
+    "workplace/surface-setup-related.log": "9e51be94e9905a72dd2f1cd0a32e260ae8d6b385b73a1d6abdf1900c1786b943",
+    "workplace/surface-setup-frontend.log": "5f19d3b6b56cef3720f78476e16fd50515abe3e2267aacee1fd6fa810689fc09",
+    "workplace/surface-setup-vet.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "workplace/surface-setup-product.log": "6fe66f13d37f6ae3dd653fed7fa4f81703d3e7f4fb6b8c0bc5f44da3cdd5c7cf"
+  },
+  "trace_sha256": {
+    "workplace/probe/draw-intercept-v1/native-fixed-control-v1/trace-native": "75e740aa2c956fc0d63a87a90aabffcc40a6faadee3c96119a058fa7a053dd4f",
+    "workplace/probe/draw-intercept-v1/native-fixed-control-v1/trace-audit": "a271526d183760ed39ed606c4a3fa5b16d2185a9cae88d34cc460ad370625c98",
+    "workplace/probe/draw-intercept-v1/native-color-fill-v1/trace-native-v3": "228d3e38841bddbc292fe291c685eabfab6df5d057419fd70198df1165008c4e",
+    "workplace/probe/draw-intercept-v1/native-fade-v1/trace-original-entries": "342b032b63617080c1880888fb6b45bfc74b6460dd1349f6c003e0461ada6f1c"
+  },
+  "fixed_records_sha256": {
+    "workplace/probe/draw-intercept-v1/native-fixed-control-v1/trace-native": "74169929b7167fef03724cf0ab899391fdd9e0943f4d95051ef1f5e2f6887365",
+    "workplace/probe/draw-intercept-v1/native-fixed-control-v1/trace-audit": "175abf7b8cfd7f89d47f0fc3a079e7c933adfd60d579b78588a4d7ee90329bf1"
+  },
+  "builder_sha256": "b2f853b089478e12eee40eef8588789beafbc288e3e72ba305dd7b4a39b32634",
+  "audit_source_sha256": "aef5b9de89a29728eccec1924c721b43d31e2489facfe72b0e74431bec348e17",
+  "probe_sha256": "14900102e7f099145b4aaf094323f844b5a8631a0643d31fa907b2908c4e448d",
+  "build_sha256": {
+    "build.txt": "bafb3ca12cca6679c184b40af332bbe01bf8f88071662cb0d6eb698fdae883fd",
+    "audit-candidate-build.txt": "f645d287b9426b54fe247f223e17dbdb8162628eecee18c9808361ac3c4c0842"
+  },
+  "prior_receipt_sha256": "1beccdae599044ea510cee8ea851bec4cdb60829d32a4b3824e6ef8249d9442a",
+  "spec_sha256": "6cf741db846896001ab6bb7c42460aa835c532d279ff8a38be4dd1dca5dc4fd8",
+  "correction": "SURFACE-SETUP-READY-20261029",
+  "frontend": [
+    {
+      "route": "nativesurfacesetup-play-v1/hd",
+      "pngs": 3,
+      "image_sha256": {
+        "frame.png": "00d6d1692f3fe54151c5111b32b48c8393add16509c7a05c822cb9010ebf25ca",
+        "shots/pod-f003650.png": "24484cebaa05975995c78f6a8c5b1c8506ddb0f41dcfd63c3ef2190d1181e9a5",
+        "window-shots/pod-f003650.png": "6613c506f145c97eae5474fa07f772b58ff19d178d682ff4452e8484759c5585"
+      },
+      "state_and_guest_files_equal": true,
+      "raw_flash": 0,
+      "unexpected_flash": 0,
+      "log_sha256": "eea26577fc46f06babcc81acfead4c6017737ef8ccb2717a3f0841a0022a4d28",
+      "inputs_sha256": "eeee83318dff613c26c5cd5f2a1326cc60c3376f06908421437b119c074c388c",
+      "report_sha256": "d11393c3803b953f4f79d11910300024e31db1cf463df088e22c3f9153f87413"
+    },
+    {
+      "route": "nativesurfacesetup-font-v1/wall-direct",
+      "pngs": 27,
+      "image_sha256": {
+        "frame.png": "df96470dd23b03ec34ff539b528b2e9121706e52071872220e98b06dd0785d9b",
+        "shots/pod-f004720.png": "2e54966dbbd79d14c3be120ce65e4469470f941c209e676a075c8b13bcf537dc",
+        "shots/pod-f004200.png": "2e54966dbbd79d14c3be120ce65e4469470f941c209e676a075c8b13bcf537dc",
+        "shots/pod-f004520.png": "656a447a6795da027fb0a3bcfbaf209d06bdeca6771fada3885f599da15dd3da",
+        "shots/pod-f004750.png": "2e54966dbbd79d14c3be120ce65e4469470f941c209e676a075c8b13bcf537dc",
+        "shots/pod-f004780.png": "2e54966dbbd79d14c3be120ce65e4469470f941c209e676a075c8b13bcf537dc",
+        "shots/pod-f004788.png": "f3a53936cb8b355c00dd18e9d135242b37cf5e48bafd4f74ae9515d1d97ec1b8",
+        "shots/pod-f004785.png": "e3ca5d2a6ebe82d57a153539f0131dd032abdcb8ed05cb8b97147bd1df8a87da",
+        "shots/pod-f004360.png": "656a447a6795da027fb0a3bcfbaf209d06bdeca6771fada3885f599da15dd3da",
+        "shots/pod-f004620.png": "2e54966dbbd79d14c3be120ce65e4469470f941c209e676a075c8b13bcf537dc",
+        "shots/pod-f004420.png": "263aeb5317ac4faa829256e2f9606209a4d40440b3d418febbfe9d1eac7eabdc",
+        "shots/pod-f004320.png": "9300011e98b8a9303b924b312b5382a87c3013ae2137f8997040874576d47e4c",
+        "shots/pod-f004791.png": "a7139b793c8cce4956f433043c2f0101168caae2c9178c3c5728ee09567efd2d",
+        "shots/pod-f003900.png": "5de21f0fe374250973bd8ecdadf0f883187a368416149dff3c5e49bdf030a25f",
+        "window-shots/pod-f004720.png": "bd071846b861fcd3ca9c1e27894394ab6ae5ee44a566b54ee7af4b72b722f09a",
+        "window-shots/pod-f004200.png": "08f164ae8adb9c8d8df5b7f53bea259221860388d5f851dd9b1550842c357a89",
+        "window-shots/pod-f004520.png": "aa9e0402fab715da2460dfd236557b3e57f10800f2fb036c1183d807a83ea56f",
+        "window-shots/pod-f004750.png": "d121823d9281b42532938fecc6b7205e8e12956c473f17fd1500565e8acc75b5",
+        "window-shots/pod-f004780.png": "df96470dd23b03ec34ff539b528b2e9121706e52071872220e98b06dd0785d9b",
+        "window-shots/pod-f004788.png": "c946a505388bfe331ce0b3bf574946eb9fe45f70b1d1cc5ff7a0ca9dc9045cc1",
+        "window-shots/pod-f004785.png": "1f36252af543955635c0a82aea4e9fe344f78d0c3f7dca8ab85f40dfe17e31fd",
+        "window-shots/pod-f004360.png": "aa9e0402fab715da2460dfd236557b3e57f10800f2fb036c1183d807a83ea56f",
+        "window-shots/pod-f004620.png": "08f164ae8adb9c8d8df5b7f53bea259221860388d5f851dd9b1550842c357a89",
+        "window-shots/pod-f004420.png": "1b55edb7dc2e5de02157e76429c8513597775295a7410af20decd6ca1d6bea94",
+        "window-shots/pod-f004320.png": "371d0ed70c2c0fbd935514a1ca5ce735346a392db43cec809abcd9d3bbf4f063",
+        "window-shots/pod-f004791.png": "b819278157d7fa6ce7b104c6f29839f28e3befef167d6489f6a476d9d3f5dc32",
+        "window-shots/pod-f003900.png": "52e2ea5e509c10e76cd4591fe44647eb3f73e11261f5204feb1e3f9bbf5e411e"
+      },
+      "state_and_guest_files_equal": true,
+      "raw_flash": 121,
+      "unexpected_flash": 0,
+      "log_sha256": "368af53f99f9b5a71bcc7c77a931a81691eb441baa951d7e66dea12e1b7bdd24",
+      "inputs_sha256": "eeee83318dff613c26c5cd5f2a1326cc60c3376f06908421437b119c074c388c",
+      "report_sha256": "27c7d8cf7b72214c6f0ac05f02640d3be6b66489278ce9536f783433c4086d50"
+    }
+  ],
+  "activation": {
+    "program_commit": "d84ef3af8686716b302eb55ce1cd13c43c36bb01",
+    "candidate_sha256": "45213b318e98ddb017584f62ddbb76b73929298c6728dc61dafe80aceda2c63d",
+    "previous_binary": "pod-play-nativecolorfill",
+    "previous_sha256": "022bee0c713ff0a152df8237ec4e41e8ac5d2d0e4862406a7fe3dabf320a6f31",
+    "preactivation_sha256": "6f30ea77f7dcc6c700d2d934d1b26b9258370d0580b0784d8290ad8bca02b44b"
+  },
+  "tool_sha256": "cc995d4e83bbae923e5e8e026a92cea1ab6499fd4e032d3c30128d7ffb6887ac"
+}

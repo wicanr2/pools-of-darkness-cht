@@ -54,21 +54,28 @@
 
 | 項目 | 目前狀態 | 下一個驗收點 |
 |---|---|---|
-| 正式程式與 HD | `068ccea`、`022bee0`已啟用；776檔主題未改，前版`d33254a`以pod-play-nativeresidentglyph-v2保留 | 後續繪圖接管另建候選，保留已驗版 |
+| 正式程式與 HD | `d84ef3a`、`45213b3`已啟用；776檔主題未改，前版`022bee0`以pod-play-nativecolorfill保留 | 後續繪圖接管另建候選，保留已驗版 |
 | demo 中斷 #13 | CONFORMED：選單不逾時；對話、戰鬥中斷與重播、正常進入通過；F12／2倍終點同原流程，非預期閃現0 | 固定證據[020](docs/re/020-demo-control-runtime.json)，入口[規格018](docs/spec/018-demo-control.md#demo-conformed) |
-| Go 繪圖 #49 | 共享VGA填色續行局部CONFORMED；正常15個跨度補齊1920 bytes，該路線3343240 bytes命令全由HostWork提交。常駐字模與高解析英數保留 | 其他來源／context準備與未驗條件保留；正常bytes全覆蓋不等於全遊戲Go完成，整體仍DRAFT |
+| Go 繪圖 #49 | 畫布與子表面整段初始化局部CONFORMED；正常893步改為Go，固定控制由1018降至125步。正常3343240 bytes命令仍全HostWork，字模與高解析英數保留 | 剩18份125步控制：14步跨INT10h，111步為圖像列／色盤／填色的短預算控制；其他來源／context與未驗條件仍DRAFT |
 | 高解析字型 | 已認證英數格原生16／24像素呈現通過；圖示不重畫，譯文優先，F12原版保留，README有並列原始像素裁切 | 未識別／搬移後無文字來源的格子保留原版，不猜OCR或當作全遊戲字型覆蓋 |
 | 不露原版 #16 | 正常HD閃現0；字型樣本有121格明示2→3倍HD切換，逐筆分類後非預期0，舊程式同腳本也121 | 已驗範圍見[字模與字型收據](docs/re/019-native-resident-glyph-runtime.json)及[前批完整收據](docs/re/019-native-bounded-runtime.json)；其他HD來源及玩家路線不外推 |
 | 攻略、HD、工具列 #9、#10、#14、#15 | 既有收據範圍保留，未驗部分仍待驗 | 以目前程式核對缺項，不追加已停止的 G6 自動探索 |
 | 配樂、多語系、作弊、推廣片 #11 | 原案仍須完成 | 按各自規格與試聽閘門完成 |
 | 三平台封包 #12 | 尚未交付 | 乾淨重建、啟動、存檔與 manifest 驗證；平台限制明列 |
 
-目前工作：#49共享VGA填色續行已驗收啟用，常駐8×8字模及高解析英數維持已驗版。
-來源為`068ccea`，執行檔SHA-256為
-`022bee0c713ff0a152df8237ec4e41e8ac5d2d0e4862406a7fe3dabf320a6f31`。
-前版d33254a以pod-play-nativeresidentglyph-v2保留，5b7a0d0及較早回復檔仍留；原始資料、字型資產與776檔主題未改。
+目前工作：#49畫布與子表面初始化已驗收啟用；共享填色、常駐8×8字模及高解析英數維持已驗範圍。
+來源為`d84ef3af8686716b302eb55ce1cd13c43c36bb01`，執行檔SHA-256為
+`45213b318e98ddb017584f62ddbb76b73929298c6728dc61dafe80aceda2c63d`。
+前版022bee0以pod-play-nativecolorfill保留，d33254a及較早回復檔仍留；原始資料、字型資產與776檔主題未改。
 
-最新[共享填色收據](docs/re/019-native-color-fill-runtime.json)記錄50次原版有序跨度、250次完整SaveState／PortLog及19種拒絕。
+最新[初始化收據](docs/re/019-native-surface-setup-runtime.json)記錄72次原版畫布、48次子表面完整SaveState／PortLog及28種拒絕。
+完整drawblocks420.047秒及相關套件、前端、vet通過。正常712250000步的CPU／RAM、有序事件、127檔及46份入口同原版，837+56步實際改為Go。
+Go總計145784計畫／3435096步，剩餘18份125步固定控制逐筆同前版，沒有新增像素。HD與讀檔／地圖／攻略／工具列、英文／倍率／F12共30張PNG及來源metadata相同。
+HD閃現0；字型路線同前版121格明示倍率切換，非預期0。入口tools/native_surface_setup_check.py，探針來源由tools/build_fixed_control_probe.py重生。
+下一個最小入口是收據remaining_fixed_by_start及本機trace-native/fixed-records.json的68xx／4Bxx／4268短預算樣本；2A66／2A77跨INT10h控制共14步另外分類，不深挖硬體時序。
+其他來源解析、BMHD／BODY查找、文字context及未驗條件仍保留；全部Go仍DRAFT，不外推全遊戲完成。
+
+前批[共享填色收據](docs/re/019-native-color-fill-runtime.json)記錄50次原版有序跨度、250次完整SaveState／PortLog及19種拒絕。
 完整drawblocks454.811秒、機器／工作階段／遊戲／前端及vet通過。保留完整7步填色工作，只補事件短預算後的1ED4:1A8E Go跨度。
 正常712250000步的CPU／RAM、有序事件、127檔及46份入口同原版，新增15個計畫、1920 bytes，該路線3343240 bytes命令全由HostWork提交。
 Go總計145782計畫／3434203步，固定控制1018步未變。HD及讀檔／地圖／攻略／工具列、英文／倍率／F12的30張PNG及來源metadata逐檔同前版。
@@ -173,7 +180,7 @@ HD最新完成批次：[#48](https://github.com/wicanr2/pools-of-darkness-cht/is
 
 | 項目 | 值 |
 |---|---|
-| commit | 基底 `a6e0254`；正式 `b11290cb7d8754decf0924e1513b48aa17a783ea`，已推本專案 `dosgolem/pod`；執行檔 `7d51351c24d07ab6f1ec97d4a3dde7a663670dbec118a47843a246610b59f0af` 為乾淨Go 1.24.13建置。前版b484851以pod-play-demo-control保留 |
+| commit | 基底 `a6e0254`；現行正式來源與執行檔以本檔「收尾目前狀態」表為準，均推本專案 `dosgolem/pod`。較早demo版本的來源及回復檔留在WORKLOG與固定收據，不當作現行版本 |
 | Go／image | go1.24.13；`dosgolem-go-ebiten:1.24-r1` `sha256:8ed6bdee2bce…` |
 | 冷啟動 | 0 種缺服務；mode 13h；`START.BAT` 程式鏈；片頭送空白鍵跳過，製作群後送 `p` 進建立隊伍主選單。收據 `tools/g2-startup-receipt.sh`，見 [docs/re/003](docs/re/003-dosgolem-startup.md) |
 | adapter | `apps/pod/`（由 `apps/sosb/` 複製，路徑 A／B／C 換本作常數與 13h 換算）；`cmd/pod-overlay-shot`；自動探索 `cmd/pod-explore`（由 `cmd/sosb-explore` 複製） |
