@@ -1,8 +1,11 @@
 # 019 CPU 模擬速度
 
-狀態：CONFORMED，限功能及正常前端抽樣；無頭環境的30fps限制已測並保留。Issue：[#14](https://github.com/wicanr2/pools-of-darkness-cht/issues/14)。
+狀態：CONFORMED，限功能及正常前端抽樣；使用者已取消30fps要求。Issue：[#14](https://github.com/wicanr2/pools-of-darkness-cht/issues/14)。
 
 ## 玩家契約
+
+2026-10-29使用者明確表示「不用30fps」，取消固定畫面更新率的驗收要求。
+保留現行已驗程式與量測。下文30／35fps是既有控制器及當時驗收的記錄，後續交付不以30fps達標為門檻。
 
 工具列選擇 1x、2x、4x、8x、16x、32x，保存上次設定。不增加快速鍵。
 沿 dosgolem 規格429的虛擬時脈與 Delay 加速契約；沒有已確認的 Delay 時不啟用加速。

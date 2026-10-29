@@ -1419,3 +1419,9 @@
 - 4CPU／2GiB無頭抽樣3倍HD約8–14fps、2倍約22–33fps，沒有全面達到30fps。功能抽樣CONFORMED，收據為FUNCTIONAL_PASS_WITH_LIMITS；保留已測效能限制，不降低1x或挑有利數字宣稱達標。兩批主機負載會變，數值不用來宣稱效能提升比例或實機GPU呈現。
 - 原子啟用db038fd1d0d4436e68909c650bf92741447756020451c1ca1470a9e6e789ab5e，來源f4d0e0d1d5b855a4ac2bb5d77f4d073a671aceda，pod-play-renderfeedback同檔；前版fb5394a仍以pod-play-nativedrawingjobs保留。Go繪圖演算法、字型及776檔主題未改。來源已推本專案dosgolem/pod，未推上游。
 - CONTEXT、規格019、索引及README同步，37張直接圖片全部存在。沿用既有Go與圖像映像，未建新Docker image；專案標籤容器0，來源clone乾淨，兩原始壓縮檔SHA不變。新產物1000:1000，find只見既有root-owned font，未chown或清理其他專案資源。
+
+## 2026-10-29 取消30fps要求與剩餘工作核對
+
+- 使用者明確表示「不用30fps」。更新專案定案、CONTEXT、規格019及索引，取消更新率驗收門檻；既有已驗程式與歷史收據保留，本次不改執行檔。
+- 以主機gh核對遠端，尚有#9攻略／地圖、#10HD、#11配樂／多語系／無敵／影片、#12封包、#16不露原版、#49Go繪圖六個未結Issue。舊規格的未驗標記不單獨重開已完成功能，BIOS14步仍是平台邊界。
+- 本輪只讀與文件修正，未建置或修改素材，Docker一次性容器已結束。
