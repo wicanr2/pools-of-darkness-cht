@@ -1,0 +1,724 @@
+{
+  "scope": "常駐8×8字模Go單點與來源認證ASCII原生16／24像素顯示；不外推其他繪圖及未驗路線",
+  "program_commit": "3a9e95e923b1985b78b897245cc9e298df9f4a87",
+  "baseline_commit": "a4fdac626bbd402d47cc10f9b2d9f39b1930f6b6",
+  "parent_commit": "e30160f1b175c74c6efc478e644ccbaa5eaa6920",
+  "binary_sha256": "d33254acd6cb0c36bddad25dddbc179d55643daf762a511b8a06c519b25f7f5f",
+  "original_state_and_ordered_events_equal": true,
+  "virtual_steps": 712250000,
+  "guest_files": 127,
+  "guest_files_equal": true,
+  "direct_original_witnesses": 46,
+  "original_witnesses_equal": true,
+  "algorithmic_plans": 145767,
+  "algorithmic_instructions": 3434188,
+  "fixed_semantic_instructions": 1018,
+  "normal_resident_pixel_exits": {
+    "1b2e:11ea": [
+      22614,
+      22614
+    ],
+    "1b2e:11f1": [
+      11114,
+      11114
+    ]
+  },
+  "new_normal_go_pixel_bytes": 33728,
+  "controlled_original": {
+    "ordered_pixels": 4096,
+    "pixel_phases": 2,
+    "whole_calls": 192,
+    "go_pixels": 8192,
+    "full_glyph_plans": 64,
+    "cpu_control": 72832,
+    "cpu_resident_pixels": 0,
+    "corner_calls": 48,
+    "refusals": 64
+  },
+  "high_resolution_controlled": {
+    "native_sizes": [
+      16,
+      24
+    ],
+    "real_source_draws": 20,
+    "native_detail_cases": 17,
+    "source_icon_frame_cases": 9,
+    "pending_mask": true,
+    "source_invalidation": true,
+    "original_toggle": true,
+    "translation_priority": true,
+    "duplicate_entry_idempotent": true
+  },
+  "source_sha256": {
+    "apps/pod/direct_compose.go": "4fbf36d3d40f171fbeadc73cbc128d8534b0a89dfebed280f0e1f7ace65333c2",
+    "apps/pod/draw_blocks.go": "505cd08832fe8a4d8adf77facc91e1a54368794baeaa656bf56c104c53acfd1b",
+    "apps/pod/live.go": "c880de7e4f40f009be56241476f8c5fd70ced4318b25857dd7d8ff6cc868b5ab",
+    "apps/pod/glyph_text.go": "c19f232df62b7d5df4f796d705efbb204bbe3b04e59f481e05003b206279e3ac",
+    "apps/pod/glyph_text_test.go": "d7c66fe3c9539454b5b6da387575f714f19730f578871969cf744cd54dd005d6",
+    "apps/pod/glyph_text_composition_test.go": "189ea40c8f47535bb9838bf27a59e0f74bbd1ebf67aaed7caf993ef12d11a378",
+    "apps/pod/glyph_text_duplicate_test.go": "6b816275a8180c302055e433c4861dbb56697445a303adc5f55dad11ac541f3f",
+    "apps/pod/resident_glyph_pixel_test.go": "a54807731a2add4ab99b369d85f151cac3259265f53b7e33912b1cf8b2175395",
+    "apps/pod/resident_glyph_guards_test.go": "77d8a702a935e6a2bf9f956d4f5fa65f857c34be6e780b2f7ddb678654203468",
+    "apps/pod/resident_glyph_edges_test.go": "2a6fab2da6163217093f40d302df65b2228dd6fa3dee60e4aa90466adcff6282",
+    "apps/pod/drawblocks/effects.go": "c2cdb7b41e65f16a217938a70bedb3542c6e4b0106f6f121bcf41ae8db537b93",
+    "apps/pod/drawblocks/native_resident_glyph.go": "3277f374702320d048bddc590848570539f6ba7bcd0e908cb5cae99b3bad676a",
+    "cmd/pod-play/main.go": "bee3f954e8249dfb5b8f423005b7e33bcb4293b083efcd9fc623a556461e85da",
+    "cmd/pod-play/source.go": "3a1e828edc041434f174cc2615787111584a96755cf35d55d509856a45b60965"
+  },
+  "resolution_backlinks": {
+    "key": "DOS/GAME.EXE/35ad635e558852925b7028a921aacafc2df8e84be24a8a1136c6267471948d69/runtime:1B2E:11A6",
+    "correction": "RESIDENT-GLYPH-READY-20261029"
+  },
+  "spec_sha256": "20bbe9bc0b8b7d0dd30e69d4eb41906d233d07dd3870289765f661a77bd16995",
+  "regression": {
+    "drawblocks_verified_at": "e30160f1b175c74c6efc478e644ccbaa5eaa6920",
+    "drawblocks_sources_unchanged": true,
+    "inputs_sha256": "b1fca72fbd2011ec1c496ffd00911a77f12cf8b400d4d2d5920a5dca52d35ffa",
+    "full_log_sha256": "66ac210927e7c5933d5206458f95827943ded07e09116bbb63cfef0da2e06870",
+    "final_related_log_sha256": "4d2f276abdbc41ef2717dc924244e3944aa710f72259fb8466d06a0be3ebb927",
+    "final_vet_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "product_log_sha256": "4f2e1ab868a2677d6f5fb7baec240c784e4cf2cc7574208edbd744fe76c63b57"
+  },
+  "build_info_sha256": "a1b52d75458a14b7f155b19a5faaf54daaea1dd6ac0e0b7cd1018f21d1ca4bfd",
+  "trace_binary_sha256": "769f36318eb884f82b7ef9e4d8ec777d7303454ec4bb9e4c3857335911dacce6",
+  "prior_full_receipt_sha256": "139a798ecb72495f8632e477ad0972387a4a7c93ff3afe8c64396def64668513",
+  "source_reports": {
+    "workplace/probe/draw-intercept-v1/native-resident-glyph-v1/trace-native": "26782763fcb980ef7f3cb71156239e110dfefde4563e15ca67df3262c49481fc",
+    "workplace/probe/draw-intercept-v1/native-surface-fill-spans-v1/trace-native": "5aa44af7510373cc5ffc88785f904e5c35afd7eab9136442f51b8ebb05f58ea0",
+    "workplace/probe/draw-intercept-v1/native-fade-v1/trace-original-entries": "342b032b63617080c1880888fb6b45bfc74b6460dd1349f6c003e0461ada6f1c"
+  },
+  "prior_full_route_note": "前批四路demo、39對介面、六對真存讀檔與demo中斷另存原收據，本批正常路線另列",
+  "normal_frontend": {
+    "scope": "既有HD demo、正常讀檔／地圖／工具列加語系、2／3倍及F12；變更限已認證ASCII格，原始狀態及直接／舊合成相同",
+    "rows": [
+      {
+        "route": "hd",
+        "original_state_equal": true,
+        "guest_files_equal": true,
+        "screenshot_pairs": 1,
+        "images": [
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-play-v2/hd/shots/pod-f003650.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 53,
+            "changed_pixels": 0,
+            "outside_cell_changes": 0,
+            "image_sha256": "24484cebaa05975995c78f6a8c5b1c8506ddb0f41dcfd63c3ef2190d1181e9a5",
+            "previous_sha256": "24484cebaa05975995c78f6a8c5b1c8506ddb0f41dcfd63c3ef2190d1181e9a5",
+            "source_sha256": "574d04d380b27999420a4bb0beef732f78124c5322d0dae768d2604eefd1dcb7",
+            "glyph_report_sha256": "eacd635bee5184f53498f7f460488cb7d616b8803581c74e73bddd266fa52bee"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-play-v2/hd/window-shots/pod-f003650.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 53,
+            "changed_pixels": 0,
+            "outside_cell_changes": 0,
+            "image_sha256": "6613c506f145c97eae5474fa07f772b58ff19d178d682ff4452e8484759c5585",
+            "previous_sha256": "6613c506f145c97eae5474fa07f772b58ff19d178d682ff4452e8484759c5585",
+            "source_sha256": "574d04d380b27999420a4bb0beef732f78124c5322d0dae768d2604eefd1dcb7",
+            "glyph_report_sha256": "eacd635bee5184f53498f7f460488cb7d616b8803581c74e73bddd266fa52bee"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-play-v2/hd/frame.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 84,
+            "changed_pixels": 479,
+            "outside_cell_changes": 0,
+            "image_sha256": "00d6d1692f3fe54151c5111b32b48c8393add16509c7a05c822cb9010ebf25ca",
+            "previous_sha256": "eba193c4084756c1d4e0d76ac499c9657b4a2bb355274b873c65710ab9208c40",
+            "source_sha256": "e77dd084128cf4f20ecce7cd104b1bb0a68f008da864490d926e338386abb7bf",
+            "glyph_report_sha256": "2b1c68defd32542c0b2c902e49679481aa0f7abd1ce2ecc3e0384d5685c90544"
+          }
+        ],
+        "raw_flash_count": 0,
+        "intentional_cells": 0,
+        "unexpected_flash_count": 0
+      },
+      {
+        "route": "font",
+        "original_state_equal": true,
+        "guest_files_equal": true,
+        "screenshot_pairs": 13,
+        "images": [
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/shots/pod-f003900.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 184,
+            "changed_pixels": 0,
+            "outside_cell_changes": 0,
+            "image_sha256": "5de21f0fe374250973bd8ecdadf0f883187a368416149dff3c5e49bdf030a25f",
+            "previous_sha256": "5de21f0fe374250973bd8ecdadf0f883187a368416149dff3c5e49bdf030a25f",
+            "source_sha256": "95bafd86afd8bfc33974d8c771228c1c2e668f6c27c511ecffa909176fd53dc3",
+            "glyph_report_sha256": "be197b2903ad7521198558a734638c42f66179831aad7659a82e58d3198ccdb9"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/window-shots/pod-f003900.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 184,
+            "changed_pixels": 0,
+            "outside_cell_changes": 0,
+            "image_sha256": "52e2ea5e509c10e76cd4591fe44647eb3f73e11261f5204feb1e3f9bbf5e411e",
+            "previous_sha256": "52e2ea5e509c10e76cd4591fe44647eb3f73e11261f5204feb1e3f9bbf5e411e",
+            "source_sha256": "95bafd86afd8bfc33974d8c771228c1c2e668f6c27c511ecffa909176fd53dc3",
+            "glyph_report_sha256": "be197b2903ad7521198558a734638c42f66179831aad7659a82e58d3198ccdb9"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/shots/pod-f004200.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 546,
+            "outside_cell_changes": 0,
+            "image_sha256": "2e54966dbbd79d14c3be120ce65e4469470f941c209e676a075c8b13bcf537dc",
+            "previous_sha256": "9086a20c8bfa62000a5ab334d0f095f3ef0f022c3438550b2aba2072b479bfde",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/window-shots/pod-f004200.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 546,
+            "outside_cell_changes": 0,
+            "image_sha256": "08f164ae8adb9c8d8df5b7f53bea259221860388d5f851dd9b1550842c357a89",
+            "previous_sha256": "b7c39ed6341b5c3ff0ea5fe17968b28e1e4ddb6137e8532f7954cb74d9a5cb8f",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/shots/pod-f004320.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 0,
+            "outside_cell_changes": 0,
+            "image_sha256": "9300011e98b8a9303b924b312b5382a87c3013ae2137f8997040874576d47e4c",
+            "previous_sha256": "9300011e98b8a9303b924b312b5382a87c3013ae2137f8997040874576d47e4c",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/window-shots/pod-f004320.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 0,
+            "outside_cell_changes": 0,
+            "image_sha256": "371d0ed70c2c0fbd935514a1ca5ce735346a392db43cec809abcd9d3bbf4f063",
+            "previous_sha256": "371d0ed70c2c0fbd935514a1ca5ce735346a392db43cec809abcd9d3bbf4f063",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/shots/pod-f004360.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 0,
+            "outside_cell_changes": 0,
+            "image_sha256": "656a447a6795da027fb0a3bcfbaf209d06bdeca6771fada3885f599da15dd3da",
+            "previous_sha256": "656a447a6795da027fb0a3bcfbaf209d06bdeca6771fada3885f599da15dd3da",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/window-shots/pod-f004360.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 0,
+            "outside_cell_changes": 0,
+            "image_sha256": "aa9e0402fab715da2460dfd236557b3e57f10800f2fb036c1183d807a83ea56f",
+            "previous_sha256": "aa9e0402fab715da2460dfd236557b3e57f10800f2fb036c1183d807a83ea56f",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/shots/pod-f004420.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 0,
+            "outside_cell_changes": 0,
+            "image_sha256": "263aeb5317ac4faa829256e2f9606209a4d40440b3d418febbfe9d1eac7eabdc",
+            "previous_sha256": "263aeb5317ac4faa829256e2f9606209a4d40440b3d418febbfe9d1eac7eabdc",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/window-shots/pod-f004420.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 0,
+            "outside_cell_changes": 0,
+            "image_sha256": "1b55edb7dc2e5de02157e76429c8513597775295a7410af20decd6ca1d6bea94",
+            "previous_sha256": "1b55edb7dc2e5de02157e76429c8513597775295a7410af20decd6ca1d6bea94",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/shots/pod-f004520.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 0,
+            "outside_cell_changes": 0,
+            "image_sha256": "656a447a6795da027fb0a3bcfbaf209d06bdeca6771fada3885f599da15dd3da",
+            "previous_sha256": "656a447a6795da027fb0a3bcfbaf209d06bdeca6771fada3885f599da15dd3da",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/window-shots/pod-f004520.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 0,
+            "outside_cell_changes": 0,
+            "image_sha256": "aa9e0402fab715da2460dfd236557b3e57f10800f2fb036c1183d807a83ea56f",
+            "previous_sha256": "aa9e0402fab715da2460dfd236557b3e57f10800f2fb036c1183d807a83ea56f",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/shots/pod-f004620.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 546,
+            "outside_cell_changes": 0,
+            "image_sha256": "2e54966dbbd79d14c3be120ce65e4469470f941c209e676a075c8b13bcf537dc",
+            "previous_sha256": "9086a20c8bfa62000a5ab334d0f095f3ef0f022c3438550b2aba2072b479bfde",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/window-shots/pod-f004620.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 546,
+            "outside_cell_changes": 0,
+            "image_sha256": "08f164ae8adb9c8d8df5b7f53bea259221860388d5f851dd9b1550842c357a89",
+            "previous_sha256": "b7c39ed6341b5c3ff0ea5fe17968b28e1e4ddb6137e8532f7954cb74d9a5cb8f",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/shots/pod-f004720.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 546,
+            "outside_cell_changes": 0,
+            "image_sha256": "2e54966dbbd79d14c3be120ce65e4469470f941c209e676a075c8b13bcf537dc",
+            "previous_sha256": "9086a20c8bfa62000a5ab334d0f095f3ef0f022c3438550b2aba2072b479bfde",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/window-shots/pod-f004720.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 546,
+            "outside_cell_changes": 0,
+            "image_sha256": "bd071846b861fcd3ca9c1e27894394ab6ae5ee44a566b54ee7af4b72b722f09a",
+            "previous_sha256": "d050e6a3d1d00946629ab489ef05aa5fbc26f03c1fd1670a2a7954908a2a360a",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/shots/pod-f004750.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 546,
+            "outside_cell_changes": 0,
+            "image_sha256": "2e54966dbbd79d14c3be120ce65e4469470f941c209e676a075c8b13bcf537dc",
+            "previous_sha256": "9086a20c8bfa62000a5ab334d0f095f3ef0f022c3438550b2aba2072b479bfde",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/window-shots/pod-f004750.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 74,
+            "outside_cell_changes": 0,
+            "image_sha256": "d121823d9281b42532938fecc6b7205e8e12956c473f17fd1500565e8acc75b5",
+            "previous_sha256": "0a8221c5aa1d7892999ba2eaa2fc4d31311146ae7c1e79dcc04f680c28d1bf94",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/shots/pod-f004780.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 546,
+            "outside_cell_changes": 0,
+            "image_sha256": "2e54966dbbd79d14c3be120ce65e4469470f941c209e676a075c8b13bcf537dc",
+            "previous_sha256": "9086a20c8bfa62000a5ab334d0f095f3ef0f022c3438550b2aba2072b479bfde",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/window-shots/pod-f004780.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 74,
+            "outside_cell_changes": 0,
+            "image_sha256": "df96470dd23b03ec34ff539b528b2e9121706e52071872220e98b06dd0785d9b",
+            "previous_sha256": "7004e84323066759912517f6c6d8e72c31a938b935040ac73315cdac9e03f2f5",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/shots/pod-f004785.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 546,
+            "outside_cell_changes": 0,
+            "image_sha256": "e3ca5d2a6ebe82d57a153539f0131dd032abdcb8ed05cb8b97147bd1df8a87da",
+            "previous_sha256": "4e7906969c5204c2b63d78795131520602bb74c3e37dff9449e8f3aadb91de2b",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/window-shots/pod-f004785.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 546,
+            "outside_cell_changes": 0,
+            "image_sha256": "1f36252af543955635c0a82aea4e9fe344f78d0c3f7dca8ab85f40dfe17e31fd",
+            "previous_sha256": "10965ca42ea3a96d47a5d08dfe3569a0f2a55a37a98bf38ca8793e4a64290b33",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/shots/pod-f004788.png",
+            "scale": 2,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 224,
+            "outside_cell_changes": 0,
+            "image_sha256": "f3a53936cb8b355c00dd18e9d135242b37cf5e48bafd4f74ae9515d1d97ec1b8",
+            "previous_sha256": "48fce0fed432d9d34790c0d80ad460766c4f72c677c351d5903d60592cc84707",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "35ced369fee66bd353031edbde7729300e23ce023a8861d2d4c2eb53f2c350ac"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/window-shots/pod-f004788.png",
+            "scale": 2,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 224,
+            "outside_cell_changes": 0,
+            "image_sha256": "c946a505388bfe331ce0b3bf574946eb9fe45f70b1d1cc5ff7a0ca9dc9045cc1",
+            "previous_sha256": "589a740778a9cb7294de5cbdc2bcc65e940179d773e505440d451e88c658bcc4",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "35ced369fee66bd353031edbde7729300e23ce023a8861d2d4c2eb53f2c350ac"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/shots/pod-f004791.png",
+            "scale": 2,
+            "overlay": false,
+            "cells": 0,
+            "changed_pixels": 0,
+            "outside_cell_changes": 0,
+            "image_sha256": "a7139b793c8cce4956f433043c2f0101168caae2c9178c3c5728ee09567efd2d",
+            "previous_sha256": "a7139b793c8cce4956f433043c2f0101168caae2c9178c3c5728ee09567efd2d",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "9a95fc844d73cae40118aba52248171b5987aaca0d39f5b749378938a8130dbc"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/window-shots/pod-f004791.png",
+            "scale": 2,
+            "overlay": false,
+            "cells": 0,
+            "changed_pixels": 0,
+            "outside_cell_changes": 0,
+            "image_sha256": "b819278157d7fa6ce7b104c6f29839f28e3befef167d6489f6a476d9d3f5dc32",
+            "previous_sha256": "b819278157d7fa6ce7b104c6f29839f28e3befef167d6489f6a476d9d3f5dc32",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "9a95fc844d73cae40118aba52248171b5987aaca0d39f5b749378938a8130dbc"
+          },
+          {
+            "image": "/project/workplace/probe/g9-hd/nativeresidentglyph-font-v2/wall-direct/frame.png",
+            "scale": 3,
+            "overlay": true,
+            "cells": 139,
+            "changed_pixels": 74,
+            "outside_cell_changes": 0,
+            "image_sha256": "df96470dd23b03ec34ff539b528b2e9121706e52071872220e98b06dd0785d9b",
+            "previous_sha256": "7004e84323066759912517f6c6d8e72c31a938b935040ac73315cdac9e03f2f5",
+            "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+            "glyph_report_sha256": "0db70fb02a407cc68ddb83dbdd9ed8bae2f0830ae3f4033b8efa10074d5d74cf"
+          }
+        ],
+        "raw_flash_count": 121,
+        "intentional_cells": 121,
+        "unexpected_flash_count": 0,
+        "events": [
+          {
+            "shown": 4792,
+            "changed": 4793,
+            "row": 3,
+            "columns": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ]
+          },
+          {
+            "shown": 4792,
+            "changed": 4793,
+            "row": 4,
+            "columns": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ]
+          },
+          {
+            "shown": 4792,
+            "changed": 4793,
+            "row": 5,
+            "columns": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ]
+          },
+          {
+            "shown": 4792,
+            "changed": 4793,
+            "row": 6,
+            "columns": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ]
+          },
+          {
+            "shown": 4792,
+            "changed": 4793,
+            "row": 7,
+            "columns": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ]
+          },
+          {
+            "shown": 4792,
+            "changed": 4793,
+            "row": 8,
+            "columns": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ]
+          },
+          {
+            "shown": 4792,
+            "changed": 4793,
+            "row": 9,
+            "columns": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ]
+          },
+          {
+            "shown": 4792,
+            "changed": 4793,
+            "row": 10,
+            "columns": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ]
+          },
+          {
+            "shown": 4792,
+            "changed": 4793,
+            "row": 11,
+            "columns": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ]
+          },
+          {
+            "shown": 4792,
+            "changed": 4793,
+            "row": 12,
+            "columns": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ]
+          },
+          {
+            "shown": 4792,
+            "changed": 4793,
+            "row": 13,
+            "columns": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ]
+          }
+        ]
+      }
+    ],
+    "direct_legacy_screenshot_pairs": 13,
+    "native_font_sizes": [
+      16,
+      24
+    ],
+    "original_toggle_preserved": true,
+    "current_binary_sha256": "d33254acd6cb0c36bddad25dddbc179d55643daf762a511b8a06c519b25f7f5f",
+    "tool_sha256": "3934c9fa4fa9438b17e438e727998e721d09e74550ff4ad826ab55cfa83f76cd",
+    "image_metadata_negative_controls": 7,
+    "direct_ui_tool_sha256": "04cca55364b7de6fe64c25789be042f42e45f1b41878c47ba258fe2dc9145dc1"
+  },
+  "ui_receipt_sha256": "bdea386dca9658f41cd2a2b753a01d4f7a7fc0877655e2e82d447a284400b376",
+  "readme_preview": {
+    "frame": 4200,
+    "scale": 3,
+    "native_crop": [
+      696,
+      72,
+      960,
+      144
+    ],
+    "codes": [
+      45,
+      52,
+      52,
+      48
+    ],
+    "current_source_sha256": "2e54966dbbd79d14c3be120ce65e4469470f941c209e676a075c8b13bcf537dc",
+    "previous_source_sha256": "9086a20c8bfa62000a5ab334d0f095f3ef0f022c3438550b2aba2072b479bfde",
+    "files": {
+      "glyph-font-hd-3x.png": "dd25b8d390aa5411522e2efea2540d178209badeae23a0abab970770ef962059",
+      "glyph-font-original-3x.png": "93b8c1291326410973eecdbf1db6fec0e9dfbf756d837abd8b5d73dc61e723cc"
+    },
+    "method": "native same-state screenshot crop; no resampling",
+    "manifest_sha256": "6c8f9f4a070c04ed03f00e92b81fb19e382ad4ffa10c1ee9b1337ef95223f594"
+  },
+  "activation": {
+    "program_commit": "3a9e95e923b1985b78b897245cc9e298df9f4a87",
+    "candidate_sha256": "d33254acd6cb0c36bddad25dddbc179d55643daf762a511b8a06c519b25f7f5f",
+    "previous_binary": "pod-play-nativesurfacefillspans",
+    "previous_sha256": "5b7a0d03b9baff71c8fac2a8b5d8bd77b8f4f994d3badd9e8588db2c2b4d2f10",
+    "preactivation_receipt_sha256": "e24cdc7cc4385328eb8fe71e310b812fb1d1c9b9f998b6bfa0ace437a1859531",
+    "activation_script_sha256": "fc58397b83466396d53371d9c7ff3e950ef5992e435df322d9f9e9a652d9bac7",
+    "activated_utc": "2026-10-29T06:01:22.804012+00:00",
+    "method": "Verified candidate copied and atomically renamed; previous accepted binary retained"
+  },
+  "tool_sha256": "9b85bbf20ba31e2dcf3a678c8fde6ae1710968e5306f0766246eb5534cc4c38d"
+}

@@ -1,5 +1,7 @@
 # 研究索引
 
+- [常駐8×8字模與原生16／24像素字型](../spec/025-direct-render-commands.md#resident-glyph-ready)：#49，[固定收據](019-native-resident-glyph-runtime.json)、[總檢查器](../../tools/native_resident_glyph_check.py)、[字格影像檢查器](../../tools/native_resident_glyph_ui_check.py)。192次完整原版與正常33728點Go接管；14組基準截圖差異只在認證ASCII格、13組直接／舊合成相同，含2／3倍、英文與F12。全部Go仍DRAFT。
+
 - [整個表面填色的一步跨度](../spec/025-direct-render-commands.md#surface-fill-spans-ready)：#49，[固定收據](019-native-surface-fill-spans-runtime.json)、[檢查器](../../tools/native_surface_fill_spans_check.py)。原版有序邊界、70次完整呼叫、全部回歸及11對正常截圖通過；正常實際新增兩個Go計畫、320 bytes填色，全部Go仍DRAFT。
 
 - [單點、填色與斜線單步](../spec/025-direct-render-commands.md#primitive-spans-ready)：#49，[固定收據](019-native-primitive-spans-runtime.json)、[檢查器](../../tools/native_primitive_spans_check.py)。原版有序邊界、112次完整呼叫、完整回歸及11對正常截圖通過並啟用；新像素出口正常未觀測，全部Go仍DRAFT。

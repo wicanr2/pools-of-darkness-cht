@@ -1,6 +1,6 @@
 # 規格索引
 
-- [025 直接攔截繪圖與前端命令](025-direct-render-commands.md)：#45–#47輸出一致性及#49已列Go子集通過。最新[整個表面填色收據](../re/019-native-surface-fill-spans-runtime.json)含1056次原版邊界、70次完整呼叫、全部回歸及11對正常HD／地圖工具列截圖；正常新增兩個Go計畫、320 bytes填色，固定1018不變。常駐8×8字模短預算與其他未驗條件待完成，全部Go閘門DRAFT。
+- [025 直接攔截繪圖與前端命令](025-direct-render-commands.md)：#45–#47輸出一致性及#49已列Go子集通過。最新[常駐字模與高解析字型收據](../re/019-native-resident-glyph-runtime.json)含4096次逐點、192次完整原版、正常33728點Go接管，以及原生16／24字模、14組基準截圖與13組直接／舊合成，含語系、倍率及F12。正常剩1920 bytes未標HostWork命令須診斷，全部Go閘門DRAFT。
 
 - [024 片頭字幕覆繪](024-intro-subtitles.md)：#10，八組台詞、雙語／倍率／原版切換及正常5100格閃現0，局部CONFORMED。
 - [023 左右海報](023-side-posters.md)：#21，固定加寬與語系文字，繁中／英文及 2／3 倍 CONFORMED。

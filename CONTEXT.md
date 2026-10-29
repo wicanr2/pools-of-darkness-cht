@@ -17,6 +17,7 @@
 
 | 日期 | 決策 | 來源 |
 |---|---|---|
+| 2026-10-29 | 接續8×8字模Go接管，並提高字型解析度。沿既有字型資產補殘留英數：2倍16×16、3倍24×24；原版索引背板與F12對照保留 | 使用者「8x8 字模 建議也用更好的解析度字體」；既有英文字型接入屬實作選擇 |
 | 2026-10-28 | 收尾須完成原案全部功能與交付，包含 Go 繪圖接管；demo 中按鍵可中斷並回選單是明確必驗項。保留已驗收程式，依規格逐項接入，不以現有繁中＋HD 範圍縮減原案 | 使用者選擇「完成原案全部功能與交付」，並補充「golang 繪圖接管也包含」 |
 | 2026-10-23 | 參考銀色匕首之謎，用 dosgolem 執行原版並覆繪繁中、做 HD；步驟完全比照銀色匕首之謎，定案表見 AGENTS.md 第 1 節 | 使用者指示 |
 | 2026-10-23 | 中文題名「黑暗之池」 | 使用者指示 |
@@ -53,32 +54,33 @@
 
 | 項目 | 目前狀態 | 下一個驗收點 |
 |---|---|---|
-| 正式程式與 HD | `a4fdac6`、`5b7a0d0`已啟用；776檔主題未改，前版`17195e4`以pod-play-nativeprimitivespans保留 | 後續繪圖接管另建候選，保留已驗版 |
+| 正式程式與 HD | `3a9e95e`、`d33254a`已啟用；776檔主題未改，前版`5b7a0d0`以pod-play-nativesurfacefillspans保留 | 後續繪圖接管另建候選，保留已驗版 |
 | demo 中斷 #13 | CONFORMED：選單不逾時；對話、戰鬥中斷與重播、正常進入通過；F12／2倍終點同原流程，非預期閃現0 | 固定證據[020](docs/re/020-demo-control-runtime.json)，入口[規格018](docs/spec/018-demo-control.md#demo-conformed) |
-| Go 繪圖 #49 | 整個表面填色一步跨度局部CONFORMED；1056次原版邊界、70次完整呼叫、全部回歸及正常11對截圖通過，整體仍DRAFT | 正常新增兩個Go計畫、320 bytes填色；接續常駐8×8字模短預算 |
-| 不露原版 #16 | 明確按D新路線的一格閃現已由四格保留修正；直接／舊合成各11格及正常HD均為0，未知與上限拒絕通過 | 已驗範圍見[整個表面填色收據](docs/re/019-native-surface-fill-spans-runtime.json)及[前批完整收據](docs/re/019-native-bounded-runtime.json)；其他HD來源及玩家路線不外推 |
+| Go 繪圖 #49 | 常駐8×8字模單點局部CONFORMED；4096次逐點、192次完整原版、48次邊界與64種拒絕，正常33728點實際改Go | 正常另有1ED4:1A8E的1920 bytes命令未標HostWork，原因須診斷；全部Go仍DRAFT |
+| 高解析字型 | 已認證英數格原生16／24像素呈現通過；圖示不重畫，譯文優先，F12原版保留，README有並列原始像素裁切 | 未識別／搬移後無文字來源的格子保留原版，不猜OCR或當作全遊戲字型覆蓋 |
+| 不露原版 #16 | 正常HD閃現0；字型樣本有121格明示2→3倍HD切換，逐筆分類後非預期0，舊程式同腳本也121 | 已驗範圍見[字模與字型收據](docs/re/019-native-resident-glyph-runtime.json)及[前批完整收據](docs/re/019-native-bounded-runtime.json)；其他HD來源及玩家路線不外推 |
 | 攻略、HD、工具列 #9、#10、#14、#15 | 既有收據範圍保留，未驗部分仍待驗 | 以目前程式核對缺項，不追加已停止的 G6 自動探索 |
 | 配樂、多語系、作弊、推廣片 #11 | 原案仍須完成 | 按各自規格與試聽閘門完成 |
 | 三平台封包 #12 | 尚未交付 | 乾淨重建、啟動、存檔與 manifest 驗證；平台限制明列 |
 
-目前工作：#49整個表面填色的一步跨度已驗收啟用。
-來源為`a4fdac626bbd402d47cc10f9b2d9f39b1930f6b6`，執行檔SHA-256為
-`5b7a0d03b9baff71c8fac2a8b5d8bd77b8f4f994d3badd9e8588db2c2b4d2f10`。
-前版17195e4以pod-play-nativeprimitivespans保留，a25e9bb及較早回復檔仍留；原始資料與776檔主題未改。
+目前工作：#49常駐8×8字模及高解析英數已驗收啟用。
+來源為`3a9e95e923b1985b78b897245cc9e298df9f4a87`，執行檔SHA-256為
+`d33254acd6cb0c36bddad25dddbc179d55643daf762a511b8a06c519b25f7f5f`。
+前版5b7a0d0以pod-play-nativesurfacefillspans保留，17195e4及較早回復檔仍留；原始資料、字型資產與776檔主題未改。
 
-固定[019-native-surface-fill-spans-runtime.json](docs/re/019-native-surface-fill-spans-runtime.json)記錄1056次有序原版邊界，含500次零計數及兩個位置。
-70次完整呼叫的SaveState及PortLog相同，3734個Go計畫、1168個固定控制與31382道CPU控制，兩位置CPU／固定像素回退0。
-18次非零root／八層父表面及46種拒絕通過；舊整列18種幾何／成本、194個計畫及八種拒絕仍相同。
-整列快速工作保留，只有到42A1／42A5才用一步Go跨度，重用既有typed表面及計畫助手。
-完整繪圖回歸445.127秒，machine、session、pod、Xvfb內前端與vet通過。
-正常HD demo與地圖／攻略／工具列11對截圖相同，閃現0。正常712250000步的CPU／RAM、有序事件、127檔及46份直接入口同原版。
-本批兩個出口正常各新增一次Go計畫，42A1實際增加320 bytes Go填色，42A5為零計數尾端。其他Go出口計數不變，總計112039計畫／3400460步、固定1018；不外推全遊戲或FPS。
-前批[基本圖元單步](docs/re/019-native-primitive-spans-runtime.json)、[橫直線與窄縮放](docs/re/019-native-axis-scale-runtime.json)、[表面搬移跨度](docs/re/019-native-surface-spans-runtime.json)、淡入／DAC、字模、RLE及HD逐格呈現均維持已驗版。
+固定[019-native-resident-glyph-runtime.json](docs/re/019-native-resident-glyph-runtime.json)記錄4096次原版有序逐點、192次完整呼叫及48次四角／全前景／全底色。
+完整SaveState及PortLog相同，8192個Go單點、64個完整字模及72832道CPU控制，兩個像素位置CPU回退0；64種來源／框架／游標／旗標／模型拒絕不改輸入。
+保留原完整字模CALL後快速工作；小步數用既有HostBlock的兩個單byte範圍，不改通用CPU或CALL契約。
+高解析層只認證穩定ASCII760 bytes；同表的控制圖示會變，保持原樣。20次16／24字格呈現、17次原生細節、九種來源條件與重複入口冪等、譯文優先及F12測試通過。
+e30160f的全部drawblocks411.316秒通過；後續僅修顯示追蹤，213份drawblocks來源SHA相同。最新字模定向15.521秒、pod／bgm／xlate／session／machine／Xvfb前端與vet通過，兩批來源及log分列。
+正常712250000步的CPU／RAM、有序事件、127檔及46份直接入口同原版。背景22614點與前景11114點實際改Go，共33728點；其他Go出口不變，總計145767計畫／3434188步、固定1018，不外推FPS。
+正常HD與讀檔／地圖／攻略／工具列加英文、倍率、F12共14組基準截圖，差異只在認證ASCII格；另13組直接／舊合成逐張相同。
+HD閃現0；字型路線原始121格全部是4792→4793的2倍切回3倍HD，舊版同腳本也121，非預期0。七種影像／metadata負對照拒絕，README兩張原始像素裁切顯示數值及位置保留。
+前批[整個表面填色](docs/re/019-native-surface-fill-spans-runtime.json)、[基本圖元單步](docs/re/019-native-primitive-spans-runtime.json)、[橫直線與窄縮放](docs/re/019-native-axis-scale-runtime.json)、[表面搬移跨度](docs/re/019-native-surface-spans-runtime.json)、淡入／DAC、字模、RLE及HD逐格呈現均維持已驗版。
 前版B97的四路demo、39對介面、六對真存讀檔與demo中斷完整收據留在[019-native-bounded-runtime.json](docs/re/019-native-bounded-runtime.json)，不冒稱本批全部重跑。
 
-全部Go閘門仍DRAFT。下一項為常駐1B2E:11A6的8×8字模短預算，與VGA.DRV的5AA4變寬字模分開。
-正常原版32份字模入口抽第0及31份，兩成本及預算1／7／1024共12次完整SaveState與PortLog相同；當前正式PlanGlyphCall與drawblocks.Plan在1／7仍由CPU畫64點，1024皆Go。
-這是已確認的覆蓋缺口，診斷檔與log見規格025末節，尚無正式短續行實作。靜態ES／字串寫入候選只供盤點，不當作像素覆蓋證據。
+全部Go閘門仍DRAFT。此正常路線3343240 bytes繪圖命令中3341320標為HostWork，剩1920來自1ED4:1A8E，原因待診斷，不直接當作新實作或完成數。
+小步數常駐字模不再列待辦；原始位址、較早診斷與正式驗收見規格025，靜態ES／字串寫入候選只供盤點，不當作像素覆蓋證據。
 其他色盤位置、root與未驗條件保留；來源、BMHD／BODY查找及字模context準備、換列、回車與載入不冒稱Go解析器或文字排版器完成。
 
 HD最新完成批次：[#48](https://github.com/wicanr2/pools-of-darkness-cht/issues/48)補齊DUNGCOM第5組地形。

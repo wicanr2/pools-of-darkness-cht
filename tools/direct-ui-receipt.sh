@@ -6,6 +6,9 @@ ROUTE="${1:?wall|movie|title}"
 MODE="${2:?direct|legacy}"
 TAG="${3:-direct-ui}"
 BINARY="${4:-pod-play-direct}"
+FONT_SAMPLE="${POD_UI_FONT_SAMPLE:-0}"
+case "$FONT_SAMPLE" in 0|1) ;; *) exit 2;; esac
+if test "$FONT_SAMPLE" = 1 && test "$ROUTE" != wall; then exit 2; fi
 case "$BINARY" in *[!A-Za-z0-9_-]*|'') exit 2;; esac
 case "$ROUTE" in wall|movie|title) ;; *) exit 2;; esac
 case "$MODE" in direct) DIRECT=true;; legacy) DIRECT=false;; *) exit 2;; esac
@@ -19,7 +22,7 @@ test ! -e "$OUT" || { echo '保留既有收據，請換名稱' >&2; exit 2; }
 mkdir -p "$OUT"
 timeout 1800s docker run --rm --init --label pod.task=direct-ui --network none --memory 2g --cpus 2 --pids-limit 256 \
  --user "$(id -u):$(id -g)" --log-opt max-size=10m --log-opt max-file=3 \
- -e HOME=/tmp -e POD_NO_DIALOG=1 -e GOMAXPROCS=2 -e ROUTE="$ROUTE" -e DIRECT="$DIRECT" -e BINARY="$BINARY" \
+ -e HOME=/tmp -e POD_NO_DIALOG=1 -e GOMAXPROCS=2 -e ROUTE="$ROUTE" -e DIRECT="$DIRECT" -e BINARY="$BINARY" -e FONT_SAMPLE="$FONT_SAMPLE" \
  -v "$ROOT/workplace/dosgolem/workplace/bin:/app:ro" -v "$ROOT/workplace/input/dos/pod:/orig:ro" \
  -v "$ROOT/workplace/font:/font:ro" -v "$ROOT/text:/text:ro" -v "$ROOT/workplace/hd/theme:/theme:ro" \
  -v "$ROOT/tools:/tools:ro" -v "$SEED:/seed:ro" -v "$OUT:/out" \
@@ -44,6 +47,10 @@ timeout 1800s docker run --rm --init --label pod.task=direct-ui --network none -
   script="900: ,1000:shot,1100:shot,1200:shot,1005:lang,1006:shot,1050:lang,1105:lang,1106:shot,1110:lang,1205:lang,1206:shot,1210:lang,1211:shot,1215:scale,1216:shot,1220:scale,1221:shot,1225:toggle,1226:shot,1230:toggle,1231:shot"
   ;;
  esac
+ if test "$FONT_SAMPLE" = 1; then
+  script="$script,4781:barfonts,4782:bar,4783:lang,4785:shot,4786:scale,4788:shot,4789:toggle,4791:shot,4792:toggle,4793:scale,4794:lang,4795:bar,4796:barfonts"
+ fi
+ printf "%s\n" "$script" > /out/script.txt
  xvfb-run -a "/app/$BINARY" -original /orig -save /out/save -text-dir /text \
   -font /font/pod-rounded.golemfnt -hd /theme -posters /theme/posters -lang zh-TW -audio=false -scale 3 \
   -frames "$frames" -script "$script" -direct-render="$DIRECT" -draw-report /out/draw-report.json -perf -flash-audit \
