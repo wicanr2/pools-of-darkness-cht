@@ -572,9 +572,6 @@ func (g *game) drawBar(rgba []byte) {
 	if rgba == nil || !g.bar.shown {
 		return
 	}
-	if g.perf.on {
-		defer func(t time.Time) { g.perf.draw = append(g.perf.draw, time.Since(t)) }(time.Now())
-	}
 	items := g.toolbarItems()
 	missing := func(r rune) {
 		if !g.missing[r] {
@@ -595,6 +592,9 @@ func (g *game) drawBar(rgba []byte) {
 }
 
 func (g *game) Draw(screen *ebiten.Image) {
+	if g.perf.on {
+		defer func(t time.Time) { g.perf.draw = append(g.perf.draw, time.Since(t)) }(time.Now())
+	}
 	rgba := g.compose()
 	g.drawBar(rgba)
 	rgba = g.windowRGBA(rgba)
