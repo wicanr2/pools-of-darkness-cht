@@ -52,6 +52,12 @@ type block struct {
 }
 
 func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
+	if p := planPointReadPixel(v, budget); p != nil {
+		return p
+	}
+	if p := planFloodScan(v, budget); p != nil {
+		return p
+	}
 	if p := planSurfaceSetup(v, budget); p != nil {
 		return p
 	}
@@ -260,7 +266,7 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 		}
 		at = uint32(e.s.Seg[1])*16 + uint32(e.s.IP)
 		b, ok := blocks[at]
-		if !ok || b.cs != e.s.Seg[1] || b.n > budget-e.p.Instructions || len(e.p.Writes) >= 131072 || e.payload >= 131072 {
+		if !ok || b.cs != e.s.Seg[1] || fixedFloodScan(e.s.IP, b) || b.n > budget-e.p.Instructions || len(e.p.Writes) >= 131072 || e.payload >= 131072 {
 			break
 		}
 		mask := uint64(1) << (b.id & 63)
@@ -297,6 +303,9 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 // Stop a fixed-effects prefix before an algorithm's entry, so its pixel
 // work is offered to the typed Go path using the committed guest state.
 func algorithmBoundary(cs, ip uint16) bool {
+	if cs == 0x48a1 && (ip == 0x2cf4 || ip == 0x55be || ip == 0x55cd || ip == 0x55f4 || ip == 0x5602) {
+		return true
+	}
 	if cs == 0x48a1 && drawingJobBoundaryIP(ip) {
 		return true
 	}
@@ -374,7 +383,7 @@ func (e *effect) charge(n uint64) {
 }
 func (e *effect) read(seg, off uint16, size int) uint16 {
 	a := uint32(seg)*16 + uint32(off)
-	if a >= 0xafa00 {
+	if a >= 0xa0000 {
 		e.bad = true
 		return 0
 	}
