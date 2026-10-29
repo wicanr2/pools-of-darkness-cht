@@ -24,6 +24,8 @@ const (
 	speedFrameCap = 25 * time.Millisecond // 單格模擬上限：超過就不再跑下一段
 	speedSettle   = 10                    // 兩次調整至少隔幾格
 	maxClockPct   = 1600
+	renderSlow    = time.Second / 30 // 畫面低於30fps時停止加速
+	renderFast    = time.Second / 35 // 恢復至35fps後才重新升速
 )
 
 func validSpeed(m int) bool {
@@ -72,6 +74,25 @@ type speedControl struct {
 	ema            time.Duration // 每格模擬耗時的指數平均
 	settle         int
 	ready          bool // 已登記 TP Delay：沒有它就不能加速（Delay 會跟著縮短）
+	drawAt         time.Time
+	drawInterval   time.Duration
+}
+
+// rendered 觀察完整Draw回呼的開始間距，包含兩次回呼之間的模擬與呈現負擔。
+func (s *speedControl) rendered(now time.Time) {
+	if !s.adaptive {
+		return
+	}
+	if !s.drawAt.IsZero() {
+		if interval := now.Sub(s.drawAt); interval > 0 {
+			if s.drawInterval == 0 {
+				s.drawInterval = interval
+			} else {
+				s.drawInterval += (interval - s.drawInterval) / 8
+			}
+		}
+	}
+	s.drawAt = now
 }
 
 func (s *speedControl) target() int {
@@ -115,9 +136,9 @@ func (s *speedControl) observe(spent time.Duration, capped bool) int {
 	}
 	p := s.pct
 	switch {
-	case s.ema > speedHigh || capped:
+	case s.ema > speedHigh || capped || s.drawInterval > renderSlow:
 		p = p * 4 / 5
-	case s.ema < speedLow:
+	case s.ema < speedLow && (s.drawInterval == 0 || s.drawInterval <= renderFast):
 		p = p * 5 / 4
 	}
 	if p < s.base {

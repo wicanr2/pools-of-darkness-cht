@@ -592,6 +592,7 @@ func (g *game) drawBar(rgba []byte) {
 }
 
 func (g *game) Draw(screen *ebiten.Image) {
+	g.speed.rendered(time.Now())
 	if g.perf.on {
 		defer func(t time.Time) { g.perf.draw = append(g.perf.draw, time.Since(t)) }(time.Now())
 	}
