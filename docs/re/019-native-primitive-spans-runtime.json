@@ -1,0 +1,108 @@
+{
+  "scope": "Go單點、填色與斜線單步像素；其他繪圖與未驗條件仍待盤點",
+  "program_commit": "4d3ad6e721b444fbc539f00229610929865be0c7",
+  "parent_commit": "281368670e7f367573c26406ec1bc213f0d55d3d",
+  "binary_sha256": "17195e498b01b3b0d1e5f5a55def1b13d3f1b7ab28be4825de80f0fc6bdb861d",
+  "original_state_and_ordered_events_equal": true,
+  "virtual_steps": 712250000,
+  "guest_files": 127,
+  "guest_files_equal": true,
+  "direct_original_witnesses": 46,
+  "original_witnesses_equal": true,
+  "normal_primitive_pixel_exit_counts": {},
+  "normal_primitive_pixel_exit_delta": {},
+  "algorithmic_plans": 112037,
+  "algorithmic_instructions": 3400458,
+  "fixed_semantic_instructions": 1018,
+  "controlled_original": {
+    "point_ordered": 28,
+    "region_ordered": 200,
+    "diagonal_ordered": 4176,
+    "zero_count": 60,
+    "pixel_phases": 7,
+    "whole_calls": 112,
+    "whole_go_plans": 1404,
+    "whole_fixed_control": 872,
+    "whole_cpu_control": 14972,
+    "parent_calls": 72,
+    "full_canvas_calls": 4,
+    "original_clip_quirk_calls": 6,
+    "refusals": 146,
+    "existing_line_cursor_plans": 280,
+    "cpu_or_fixed_primitive_pixels": 0
+  },
+  "source_sha256": {
+    "apps/pod/drawblocks/effects.go": "24bb5246657bb6a9c00ede9b04e358acdb2925a5d49960687e8d83dc565d305f",
+    "apps/pod/drawblocks/native_line_cursor.go": "85f28ce31f8f715a930c301d0311e8d90adf4cd377cf586b0ae73ba44e6e013e",
+    "apps/pod/drawblocks/native_primitive_pixels.go": "2aa7d403a6bc9140b535fa3ee9e4ef8da61ef82caeab6479dad08abed11690c1",
+    "apps/pod/drawblocks/native_primitive_spans_test.go": "615080c41da9c814595b6d3e6a80f511fb91256722b8b91923cdc6e8a1b1cf70",
+    "apps/pod/drawblocks/native_primitive_spans_guards_test.go": "d753da7e9921b10ab2c7f6c2cdcb3578b279890a8fffbf7afb9bee2bcd9eb46f",
+    "apps/pod/drawblocks/native_primitive_clip_test.go": "09365853c87d1129b780da2abacca1d22455bc5dc52db7ac107e480fa2e0cc36"
+  },
+  "product_test_log_sha256": "463c039b7d31cea21f397dd7a7d4e3fb3ad5afa7919fe0282db86508cbf59998",
+  "resolution_backlinks": {
+    "keys": [
+      "DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x2B10",
+      "DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x3338",
+      "DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x2CFC"
+    ],
+    "correction": "PRIMITIVE-PIXEL-READY-20261029"
+  },
+  "spec_sha256": "a0292ceeeba486f13b4efc6ebf7d0862c2cc0d2925ab846d8ee7572799a162df",
+  "prior_full_receipt_sha256": "fca96425038c8dc9b8ff9dd0e01aac279c12e75bb11c938f7aa6101e8417e939",
+  "build_info_sha256": "7f018cad84995ec36193777a8cb6319b4458db7a34203c10d7aad25a588218c5",
+  "trace_binary_sha256": "3daf04914f479d0870a93fbe3a7019b662464e8164cdd105ca9760e4ef0f301c",
+  "source_reports": {
+    "workplace/probe/draw-intercept-v1/native-primitive-spans-v1/trace-native": "9780b6a4b310e0d2f92486f3b8b794463b24ed2ee979e20c31c47f8f8c73560a",
+    "workplace/probe/draw-intercept-v1/native-axis-scale-v1/trace-native": "7b97a32775b53c8515944b13ed6c4afa5d58f758b0cb8f19c5e560fcac77be46",
+    "workplace/probe/draw-intercept-v1/native-fade-v1/trace-original-entries": "342b032b63617080c1880888fb6b45bfc74b6460dd1349f6c003e0461ada6f1c"
+  },
+  "prior_gates_note": "前批完整四路demo、39對介面、6對存讀檔及demo中斷另存原收據，本批正常抽樣另列",
+  "normal_samples": [
+    {
+      "route": "hd",
+      "endpoint": [
+        "7400",
+        "712250000",
+        "92378aa1b9a421f5f2b2b93c504aed1f80dbd06e627fd1d9f297932fbacbf540",
+        "e77dd084128cf4f20ecce7cd104b1bb0a68f008da864490d926e338386abb7bf",
+        "c2b1ab7e95b942a904842f53eced383f6e0c39b111a0d6c1b65e8ac740694c47",
+        "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3"
+      ],
+      "screenshot_pairs": 1,
+      "screenshots_and_original_state_equal": true,
+      "unexpected_flash_count": 0
+    },
+    {
+      "route": "wall",
+      "endpoint": [
+        "4800",
+        "462000000",
+        "bbed4498180096ffd6b209f4e4183a6fa73974c0d35f5a70f50d1164cfe64091",
+        "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+        "e51ff0161b303165fcb9d5265b133bda27d0ac67a7972cb0e96dd2880cc48c00",
+        "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde"
+      ],
+      "screenshot_pairs": 10,
+      "screenshots_and_original_state_equal": true,
+      "unexpected_flash_count": 0
+    }
+  ],
+  "regression_logs": {
+    "native-primitive-spans-all-drawblocks-r2.log": "454a22d68d04739b2c75e3e0aa3b3a24498beb46c80269c8baaec9bf313edf79",
+    "native-primitive-spans-core-tests-r2.log": "a5272a0626d4d6f9a67d87c4f2ec11b11b42413c299b20ae374ad2cb52154901",
+    "native-primitive-spans-vet-r2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "activation": {
+    "program_commit": "4d3ad6e721b444fbc539f00229610929865be0c7",
+    "candidate_sha256": "17195e498b01b3b0d1e5f5a55def1b13d3f1b7ab28be4825de80f0fc6bdb861d",
+    "previous_binary": "pod-play-nativeaxisscale",
+    "previous_sha256": "a25e9bba88329686c40fc154170ec905d0d09c2413cadf446529514d74025b03",
+    "preactivation_receipt_sha256": "3a803720114a6a31d039b808b165fef4fd58d47d9d18f712a15ba3f2b84c264b",
+    "activation_script_sha256": "797223abdcd966f2732cbcbc1f059122b87ced077e3b6b8bcaf47b641725f2ad",
+    "activated_utc": "2026-10-29T04:01:05.623706+00:00",
+    "method": "Verified candidate copied and atomically renamed; previous accepted binary retained"
+  },
+  "tool_sha256": "f161afee9aa4c2ec39a8ad8aaef0be4fbe00855794195ebe57823d39c4f59405",
+  "helper_sha256": "8fd45ff39656768af155c0c5f36edf4b9a62c9e88dbac04a01aad902a7d412ce"
+}
