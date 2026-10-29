@@ -2,6 +2,8 @@
 
 日期：2026-10-25／26。Issue：[#45](https://github.com/wicanr2/pools-of-darkness-cht/issues/45)、[#46](https://github.com/wicanr2/pools-of-darkness-cht/issues/46)、[#47](https://github.com/wicanr2/pools-of-darkness-cht/issues/47)。狀態：本作VGA繪圖、字模、共享搬移／填色／清零及單次RGB CONFORMED。
 
+2026-10-29現況：已支援VGA核心的Go繪圖收尾依[規格025](../spec/025-direct-render-commands.md#draw-closure-conformed)CONFORMED，固定[最終收據](023-draw-closure-runtime.json)。下文為各批研究歷史，當時DRAFT及剩餘計數不單獨作為重新開工依據。
+
 ## 初期基準
 
 | 項目 | 本輪基準 |
@@ -196,6 +198,8 @@ CopyRAM僅複製普通低RAM，不暴露可變客體slice。原版索引讀回�
 `all_render_check.py --project . --commit <程式提交> --out <全新收據>`檢查全部門檻；正式GUI與存讀檔路線由既有收據腳本執行，不注入遊戲狀態。
 
 ## 2026-10-26 原生Go繪圖要求的查核與勘誤
+
+勘誤`DRAW-CLOSURE-CONFORMED-20261029`：本節的混合實作結論描述當日程式。已支援VGA核心現已完成逐項Go替換與畫布讀寫守衛，範圍、原版相容界線及驗收見[最終收尾](../spec/025-direct-render-commands.md#draw-closure-conformed)。
 
 使用者要求確認繪圖接手由Go處理，不以x86繪圖語意重播當成完成。本輪核實正式執行檔及實際來源，結論為混合實作，全部Go繪圖演算法尚未完成。
 前述#47「完成」指既有固定區塊替換與同狀態驗收，不能解讀成所有VGA常式都已改為函式層級Go演算法。

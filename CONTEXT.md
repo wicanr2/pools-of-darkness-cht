@@ -55,9 +55,9 @@
 
 | 項目 | 目前狀態 | 下一個驗收點 |
 |---|---|---|
-| 正式程式與 HD | `f4d0e0d`、`db038fd`已啟用；只改前端量測與慢繪製回饋，776檔主題未改，前版`fb5394a`以pod-play-nativedrawingjobs保留 | 後續改動保留已驗版 |
+| 正式程式與 HD | `570f8a3`、`faa68b4`已啟用；Go像素搜尋與讀點短續行、固定畫布讀寫守衛通過，776檔主題未改；前版`db038fd`以pod-play-renderfeedback保留 | 後續改動保留已驗版 |
 | demo 中斷 #13 | CONFORMED：選單不逾時；對話、戰鬥中斷與重播、正常進入通過；F12／2倍終點同原流程，非預期閃現0 | 固定證據[020](docs/re/020-demo-control-runtime.json)，入口[規格018](docs/spec/018-demo-control.md#demo-conformed) |
-| Go 繪圖 #49 | 四類短續行局部CONFORMED；正常111步固定與91步CPU資料準備改Go，固定繪圖資料控制歸零，只剩兩份14步BIOS前後控制。3343240 bytes命令及字型維持已驗結果 | BIOS14步為平台邊界；其他來源／文字context與未驗條件仍DRAFT，依實際玩家交付驗證 |
+| Go 繪圖 #49 | 已支援VGA繪圖核心收尾CONFORMED；六條正常路線15,073,225 bytes全由Go演算法計畫寫入，固定／原x86像素寫入0；補齊填色區段搜尋及讀點短續行 | [收尾規格](docs/spec/025-direct-render-commands.md#draw-closure-conformed)、[固定收據](docs/re/023-draw-closure-runtime.json)。原版內容／字串／呼叫編排與平台服務保留，未知條件安全回退；不按歷史DRAFT重開 |
 | 高解析字型 | 已認證英數格原生16／24像素呈現通過；圖示不重畫，譯文優先，F12原版保留，README有並列原始像素裁切 | 未識別／搬移後無文字來源的格子保留原版，不猜OCR或當作全遊戲字型覆蓋 |
 | 不露原版 #16 | 正常HD閃現0；字型樣本有121格明示2→3倍HD切換，逐筆分類後非預期0，舊程式同腳本也121 | 已驗範圍見[字模與字型收據](docs/re/019-native-resident-glyph-runtime.json)及[前批完整收據](docs/re/019-native-bounded-runtime.json)；其他HD來源及玩家路線不外推 |
 | 攻略、HD #9、#10 | 既有收據範圍保留，未驗部分仍待驗 | 以目前程式核對缺項，不追加已停止的 G6 自動探索 |
@@ -66,7 +66,15 @@
 | 配樂、多語系、作弊、推廣片 #11 | 原案仍須完成 | 按各自規格與試聽閘門完成 |
 | 三平台封包 #12 | 尚未交付 | 乾淨重建、啟動、存檔與 manifest 驗證；平台限制明列 |
 
-目前工作：工具列字級與速度功能已完成，返回原案其餘功能與交付。
+目前工作：Go繪圖收尾已完成，正式來源`570f8a3c14827cdc6fed043f2bfa00bb1f729f77`已推本專案dosgolem/pod。
+正式執行檔SHA-256為`faa68b446a59b8a96273617f9f3d5a75f3a7b694c3a1d8d3b516af5427279c82`，前版db038fd以pod-play-renderfeedback保留。
+標題、完整片頭、讀檔介面、DEMO戰鬥、正常另存B／冷讀B通過，15,073,225 bytes全屬Go演算法，命令與計畫歸屬失配0。
+填色與讀點另有720次原版搜尋、48次讀點邊界及144次完整填色呼叫，882次Go搜尋，短預算CPU讀像素回退0；318種拒絕不改輸入。
+完整drawblocks540.180秒、相關套件、Xvfb前端與vet通過；原版壓縮檔、125檔輸入、7檔字型、36檔文字與776檔主題雜湊不變。
+固定效果不得讀寫可見畫布。原版仍負責內容、文字與呼叫編排；未知來源／模式依原契約安全回退，BIOS14步保留平台邊界，30fps不列要求。
+入口為`tools/draw-closure-receipt.sh`及`tools/draw_closure_check.py`；本輪未重開已停止的G6自動探索。其他原案功能與平台交付依上表續辦。
+
+以下是各批歷史驗收。DRAFT與剩餘計數保留當時範圍，最新Go繪圖狀態以上表及收尾規格為準。
 [3倍HD](docs/re/022-speed-feedback-hd-runtime.json)與[2倍](docs/re/022-speed-feedback-2x-runtime.json)保存正常互動讀檔、七段倍率及關窗驗證。
 來源f4d0e0d，正式執行檔SHA-256為db038fd1d0d4436e68909c650bf92741447756020451c1ca1470a9e6e789ab5e；前版fb5394a保留。
 本輪修正原本只數工具列的繪製計數，並以完整Draw間隔禁止慢畫面升速。1x及繪圖演算法未改；正常4800格與固定1100格狀態同基準。
