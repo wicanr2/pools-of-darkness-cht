@@ -52,6 +52,9 @@ type block struct {
 }
 
 func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
+	if p := planSurfaceSetup(v, budget); p != nil {
+		return p
+	}
 	if p := planColorFillSpan(v, budget); p != nil {
 		return p
 	}
@@ -291,6 +294,9 @@ func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
 // Stop a fixed-effects prefix before an algorithm's entry, so its pixel
 // work is offered to the typed Go path using the committed guest state.
 func algorithmBoundary(cs, ip uint16) bool {
+	if cs == 0x48a1 && (ip == 0x2786 || ip == 0x28d5) {
+		return true
+	}
 	if cs == 0x1ed4 && ip == 0x1a8e {
 		return true
 	}
