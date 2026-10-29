@@ -52,6 +52,9 @@ type block struct {
 }
 
 func Plan(v CPUView, budget uint64) *machine.HostWorkPlan {
+	if p := planResidentGlyphPixel(v, budget); p != nil {
+		return p
+	}
 	if p := planSurfaceFillSpan(v, budget); p != nil {
 		return p
 	}

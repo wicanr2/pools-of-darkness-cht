@@ -21,6 +21,7 @@ func (l *Live) composeDirect(scale int, missing func(rune)) []byte {
 	}
 	l.localized.art(out, scale)
 	l.bigpics.art(out, scale)
+	l.glyphText.draw(out, scale, l.pal)
 	l.Layer.Draw(out, scale, missing)
 	if scale == hdHoldScale {
 		if l.localized != nil && l.localized.hold != nil {

@@ -32,11 +32,12 @@ type Live struct {
 	prevB     []byte // 路徑 B 上一則字串（手札引用分兩則印）
 	Layer     *xlate.Layer
 	// HDItems 是 AddHD 載入的 HD 主題項數（主專案規格 010）；0 表示沒有 HD 素材（規格 011 切換列停用 HD）。
-	HDItems int
-	Font    *xlate.Font
-	A       *PathA
-	B       *PathB
-	C       *PathC
+	HDItems   int
+	Font      *xlate.Font
+	glyphText *glyphText
+	A         *PathA
+	B         *PathB
+	C         *PathC
 
 	// Answers 是查驗題答案表（規格 006）；綁定前設定。
 	Answers     map[QuizKey]string
@@ -96,7 +97,7 @@ func NewLive(font *xlate.Font, ui Lookuper, ecl *Catalog) *Live {
 	if font == nil || font.Scaled[3].Font == nil { // 有外部 3 倍字模（<名稱>-3x.golemfnt）時不從 16×16 放大
 		AddScaledVariants(font)
 	}
-	return &Live{HDLayers: &HDLayers{}, Layer: &xlate.Layer{W: 320, H: 200}, Font: font, ui: ui, ecl: ecl}
+	return &Live{HDLayers: &HDLayers{}, Layer: &xlate.Layer{W: 320, H: 200}, Font: font, ui: ui, ecl: ecl, glyphText: newGlyphText(font)}
 }
 
 const bindRetry = 1_000_000
@@ -162,6 +163,7 @@ func (l *Live) BeforeStep(v StepCPU) error {
 		}
 		l.BindErr, l.BoundAt = nil, v.Steps()
 	}
+	l.glyphText.before(v)
 	if l.Journal.Open() {
 		l.Journal.KeyTaken(v.Read16(bdaKeyHead)) // 規格 007 §2.4 條件 2：先比對再處理進入點
 	}
@@ -206,6 +208,7 @@ func (l *Live) BeforeStep(v StepCPU) error {
 
 // VideoWrite 處理 A000 寫入（offset 相對 A000）。
 func (l *Live) VideoWrite(offset uint32) {
+	l.glyphText.write(offset)
 	if !l.ready {
 		return
 	}
@@ -250,6 +253,7 @@ func (l *Live) journalEntry(text []byte, mem CPUView) {
 
 // ModeChange 在視訊模式改變時呼叫。
 func (l *Live) ModeChange() {
+	l.glyphText.reset()
 	l.Direct.Reset()
 	l.bigpics.reset()
 	if l.localized != nil {
@@ -290,6 +294,7 @@ func (l *Live) Frame(indexed []byte, palette [256][3]uint8) {
 		l.hdLatch.Tick()
 	}
 	l.HDLayers.Frame(indexed, palette)
+	l.glyphText.frame(indexed)
 	l.indexed = append(l.indexed[:0], indexed...)
 	l.pal = palette
 	if len(indexed) != 320*200 {
@@ -349,6 +354,7 @@ func (l *Live) composeLegacy(scale int, overlay bool, missing func(rune)) []byte
 		}
 		l.localized.art(out, scale)
 		l.bigpics.art(out, scale)
+		l.glyphText.draw(out, scale, l.pal)
 		l.Layer.Draw(out, scale, missing)
 		if l.localized != nil && scale == hdHoldScale {
 			if base == nil {

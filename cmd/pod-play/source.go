@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"errors"
 	"os"
 )
@@ -18,5 +19,17 @@ func (g *game) saveSource(prefix string) error {
 	for _, rgb := range pal {
 		flat = append(flat, rgb[:]...)
 	}
-	return os.WriteFile(prefix+".pal", flat, 0600)
+	if err := os.WriteFile(prefix+".pal", flat, 0600); err != nil {
+		return err
+	}
+	report := g.live.GlyphTextReport(g.scale)
+	report.Enabled = g.chinese
+	if !report.Enabled {
+		report.Cells = nil
+	}
+	encoded, err := json.MarshalIndent(report, "", "  ")
+	if err != nil {
+		return err
+	}
+	return os.WriteFile(prefix+".glyphs.json", append(encoded, '\n'), 0600)
 }

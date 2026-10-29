@@ -846,6 +846,11 @@ func main() {
 	if err != nil {
 		fail(err)
 	}
+	for _, pack := range langs {
+		if pack.Code == pod.EnglishLang {
+			live.SetGlyphFont(pack.Font)
+		}
+	}
 	langIdx, err := pickLang(langs, *langFlag, stateDir)
 	if err != nil {
 		fail(err)
