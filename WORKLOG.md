@@ -1395,3 +1395,14 @@
 - CONTEXT目前狀態表、README、規格與研究索引同步，README36張直接圖片全部存在。本批局部CONFORMED，整體仍DRAFT／#49 OPEN；正常固定資料控制歸零不外推所有來源／文字context及未知條件。BIOS14步保留平台邊界，不列新像素缺口或硬體時序任務；原案其他功能與三平台交付仍待完成。
 - 收尾把後續容器可寫掛載收窄：原專案根唯讀，來源接入只額外開workplace/dosgolem/apps/pod/drawblocks，正式收據輸出只額外開docs/re，研究產物只開既有workplace輸出目錄；不使用整個專案根可寫的便捷入口。兩原始壓縮檔SHA核對相同，未改原始資料。
 - 沿用dosgolem-go-ebiten:1.24-r1，ID8ed6bdee2bce1f32f804e888f942b25bbf62f2165a43344bb4587f3371de0581，未建新映像或清理其他專案資源。新產物1000:1000，find只見既有root-owned font，未chown。以掛載路徑核對本專案執行中與停止容器0，原dosgolem工作樹及其他專案未動。
+
+## 2026-10-29 原案工具列字級與固定倍率驗收
+
+- 依目前狀態表及遠端 #14、#15 接續原案收尾，不再擴大 BIOS 14 步。知識路由載入收尾驗證、規格閘門與文件職責；新增規格020及研究收據021同步掛入索引。
+- 實際缺項是兩個原生工具列字模未建置，既有程式會最近鄰縮放。tools/font-dev.sh補產生Medium 12及Bold 22像素，各273字、Unifont補字零；SHA分別89cd27498ae1dea002b3fef714695e433e198269e71f76e50bdeab9b9f4c8976、0d731150caef048b40b60a6baaba1b37dc1f3791c7a442b2ee51a60834f635d5。16／24遊戲字模2843字及原雜湊不變。
+- 正式dosgolem/pod仍1892712，pod-play仍fb5394a，沒有改產品程式。Docker內隔離副本只附加讀值，與正式程式的正常1100格、105875000步、CPU／完整RAM／索引畫面／色盤／DOS檔案及七組中央與完整視窗PNG相同。
+- tools/toolbar-acceptance-receipt.sh toolbar-v2驗證2／3倍全部三級及英文，共七份字級、六份速度讀值。字級變更的底圖來源、中央遊戲像素、遊戲狀態與客體檔案相同；差異只在工具列及下拉選單。正式點擊處理與原生字模測試通過；以互動模式重新啟動，讀回實際保存的大字級與32x，Delay未登記前仍實際1x。
+- 1x快轉開／關正常狀態與七組截圖相同，實際快轉67740／0步。1、2、4、8、16、32x的時脈與逐格步數預算符合，切回1x成功。固定倍率與偏好局部CONFORMED；本輪不是互動30fps測試，#14保留互動效能驗收。
+- 驗證腳本先修正空存檔根目錄與終點original.rgba仍含工具列的假設，再用相同工具鏈重跑。這些是驗證工具問題，沒有修改遊戲行為。固定收據docs/re/021-toolbar-runtime.json SHA-256為855bf2f07e1beb1e9953f6bef50ca9d1f61c57219b88fc7468eb57b18a8888fa，檢查器tools/toolbar_acceptance_check.py通過。
+- README新增六種字級原始像素並列圖，37張直接圖片全部存在。圖片由tools/toolbar_font_preview.py從正常截圖擷取；#15在本作正常前端抽樣及偏好契約範圍CONFORMED。
+- 沿用dosgolem-go-ebiten:1.24-r1及sosb-img:r1，唯讀專案根、窄化可寫輸出、資源限制與逾時均保留。專案標籤容器0，來源clone乾淨；新檔1000:1000，只見既有root-owned font，未chown。兩原始壓縮檔SHA不變，未清理其他專案資源。

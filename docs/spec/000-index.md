@@ -31,8 +31,8 @@
 | 016 推廣影片 | 未開始 | #11 | — | — |
 | 017 作弊：我方無敵 | 停用 | #11 | 位址是前作值，`CheatVerified` 為假 | — |
 | [018 開場 demo 控制](018-demo-control.md) | CONFORMED | #13 | 選單不逾時；對話／戰鬥中斷、重播、正常進入、F12與2倍通過。已啟用a83043c | [固定收據](../re/020-demo-control-runtime.json)；`tools/demo-control-receipt.sh` |
-| [019 CPU 模擬速度](019-cpu-speed.md) | DRAFT，CRT 辨識增補 READY | #14 | 已定位 ES=0040h、BX 計數的第三種外層形式；原有三指令內圈可沿用，工具列與倍率待驗 | 規格019；`workplace/probe/demo-control-v1/keywait-1df0-ida.json` |
-| 020 切換列字級 | 未驗 | #15 | 程式由前作沿用 | — |
+| [019 CPU 模擬速度](019-cpu-speed.md) | 局部 CONFORMED，互動效能待驗 | #14 | 1x快轉開關正常狀態相同；六種固定倍率的實際步數與偏好重啟通過 | [固定收據](../re/021-toolbar-runtime.json)；規格019 |
+| [020 切換列字級](020-toolbar-font.md) | CONFORMED，正常前端抽樣 | #15 | 原生12／22像素字模；2／3倍三級、英文抽樣與偏好重啟通過，遊戲狀態不變 | [固定收據](../re/021-toolbar-runtime.json)；`tools/font-dev.sh` |
 | 021 不露原版 | 局部已驗 | #16 | 完整PIC5900格、VGA首批戰鬥7400格及開場三圖1250格正常冷啟動閃現0；不外推其他圖族與未走路徑 | docs/re/014、017 |
 | 022 手札地圖頁 | 未開始 | #8 | 地圖則 5、23、45、98，第 36 則附地圖 | docs/re/005 |
 

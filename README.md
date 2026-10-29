@@ -158,6 +158,12 @@ HD、無 HD、F12 原版及 2 倍四路的 CPU、記憶體、色號、色盤與 
 |---|---|
 | ![工具列速度選單](docs/screenshots/toolbar-speed-menu.png) | ![工具列字級選單](docs/screenshots/toolbar-font-menu.png) |
 
+工具列可選小、中、大，記住上次選擇。3 倍使用 16／22／24 像素字模，
+2 倍使用 12／16／16 像素字模；不改遊戲文字大小。下圖保留截圖原始像素，
+12、22 像素由源泉圓體直接產生。
+
+![工具列在2倍與3倍下的小、中、大字級](docs/screenshots/toolbar-font-sizes.png)
+
 ### 左右海報
 
 ![正常執行的繁中與 HD，兩側完整海報](docs/screenshots/demo-poster-cht.png)

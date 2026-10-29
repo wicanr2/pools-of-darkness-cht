@@ -1,5 +1,7 @@
 # 研究索引
 
+- [工具列字級、固定倍率與1x快轉](../spec/020-toolbar-font.md)：#14、#15，[固定收據](021-toolbar-runtime.json)、[重生入口](../../tools/toolbar-acceptance-receipt.sh)、[檢查器](../../tools/toolbar_acceptance_check.py)。2／3倍三級原生字模、英文抽樣、六種倍率、偏好重啟及105875000步的狀態隔離通過；速度的互動效能仍待驗。[README字級並列](../screenshots/toolbar-font-sizes.png)由[擷取工具](../../tools/toolbar_font_preview.py)保留原始像素。
+
 - [圖像、RGB與填色工作短續行](../spec/025-direct-render-commands.md#drawing-job-boundary-ready)：#49，[固定收據](019-native-drawing-jobs-runtime.json)、[檢查器](../../tools/native_drawing_jobs_check.py)。2523次原版邊界、172種拒絕及32次selector通過；正常111步固定與91步CPU準備改Go，僅剩14步BIOS控制。完整回歸、狀態事件與30張正常PNG相同並啟用，全部Go仍DRAFT。
 
 - [Go畫布與子表面初始化](../spec/025-direct-render-commands.md#surface-setup-ready)：#49，[固定收據](019-native-surface-setup-runtime.json)、[檢查器](../../tools/native_surface_setup_check.py)、[固定控制觀測器產生器](../../tools/build_fixed_control_probe.py)。原版72次畫布、48次子表面與28種拒絕通過，正常893步改為Go，剩餘18份125步控制逐筆不變。完整回歸及30張正常PNG相同並啟用，全部Go仍DRAFT。

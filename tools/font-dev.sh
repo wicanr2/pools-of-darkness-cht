@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # 由正式譯文（text/*.tsv）與工作區譯文批次重建開發用圓體字型（AGENTS.md 第 1 節：源泉圓體，2 倍 Medium、3 倍 Bold）。
-# 改寫自銀色匕首之謎 tools/font-dev.sh；切換列字級（規格 020）與多語系字型等對應的表建立後再加。
-# 輸出 workplace/font/pod-rounded.golemfnt（16×16）與 pod-rounded-3x.golemfnt（24×24）。
+# 改寫自銀色匕首之謎 tools/font-dev.sh；規格020的工具列另產生原生12／22像素字模。
+# 輸出 workplace/font/pod-rounded.golemfnt（16×16）、pod-rounded-3x.golemfnt（24×24）及 -bar12／-bar22。
 # 字型來源：workplace/fonts-src/rounded（GenSenRounded2 TW v2.100，OFL）、workplace/fonts-src/unifont（GNU Unifont 17.0.05，補字），
 # 由銀色匕首之謎 workplace/fonts-src 複製，雜湊記在 WORKLOG。
 set -euo pipefail
@@ -28,6 +28,8 @@ timeout 900 docker run --rm --network none -u "$(id -u):$(id -g)" --memory 2g --
   sha256sum /out/pod-rounded*.golemfnt
   python -I /tools/rounded_font.py "${cats[@]}" --otf /f/GenSenRounded2TW-M.otf --cell 16 --fallback /uni/unifont_t-17.0.05.hex --out /out/pod-rounded.golemfnt
   python -I /tools/rounded_font.py "${cats[@]}" --otf /f/GenSenRounded2TW-B.otf --cell 24 --fallback /uni/unifont_t-17.0.05.hex --out /out/pod-rounded-3x.golemfnt
+  python -I /tools/rounded_font.py /text/host-text.zh-TW.tsv /text/host-text.en.tsv --otf /f/GenSenRounded2TW-M.otf --cell 12 --fallback /uni/unifont_t-17.0.05.hex --out /out/pod-rounded-bar12.golemfnt
+  python -I /tools/rounded_font.py /text/host-text.zh-TW.tsv /text/host-text.en.tsv --otf /f/GenSenRounded2TW-B.otf --cell 22 --fallback /uni/unifont_t-17.0.05.hex --out /out/pod-rounded-bar22.golemfnt
   sha256sum /out/pod-rounded*.golemfnt
   find /out -user root -o -type d -name "*.md"
   '
