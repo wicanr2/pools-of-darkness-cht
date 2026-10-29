@@ -132,6 +132,10 @@ Owner開啟只讀StepView給適配器產生計畫，再核對原版入口通知�
 此為區塊原子性，前綴仍須完整驗證與原子提交；不得保留失配區塊的暫存器、旗標、時間或部分寫入。
 除錯predicate、監看與事件仍禁止越過。緊湊表示須另以原版完整RAM、有序寫入、重疊讀回、資料壽命與成對成本驗證。
 
+<a id="shared-fill-whole-initial"></a>
+
+勘誤`COLOR-FILL-SPAN-READY-20261029`：完整呼叫不足預算時的VGA填色續行，另依[一步契約](#color-fill-span-ready)接入；以下原完整呼叫證據保留。
+
 三支小型共享常式增加完整呼叫快速計畫，先達READY並已通過下列正式驗收。原始定位為1ED4:1A5C–1A7F、1A7F–1A93及1D1F:046E–0487，沿IDA同一份bytes。
 Move指令數向前11、向後16；標準週期119／124加5N，DOSBox成本為指令數加N。Fill為7道、70+5N週期。
 清零N偶數9道、74+5floor(N/2)；N=1時10道75週期；其餘奇數11道、78+5floor(N/2)。DOSBox另加實際byte／word迭代次數。
@@ -1418,3 +1422,47 @@ HD路線閃現0。字型切換路線的原始量尺121格，全在使用者腳�
 七種影像／字格metadata負對照拒絕；正常圖像的原生16／24尺寸、F12原版、語系與變更範圍另存固定收據。README放同一正常畫面的3倍原始像素裁切，數值字格−4與40保持原值，沒有再縮放或濾鏡。
 驗收入口tools/native_resident_glyph_check.py及tools/native_resident_glyph_ui_check.py；重播沿tools/direct-ui-receipt.sh，POD_UI_FONT_SAMPLE=1才附加已記錄的字型切換腳本。
 正式收據由[研究索引](../re/README.md)連入。全體Go仍DRAFT；此正常路線仍有1ED4:1A8E共1920 bytes繪圖命令未標HostWork，原因待診斷，不能由這個計數自行推論新實作或全部接管完成。
+
+<a id="color-fill-span-ready"></a>
+
+### 共享填色的VGA一步續行契約
+
+狀態：READY，#49，2026-10-29。回鏈`COLOR-FILL-SPAN-READY-20261029`，舊證據為[完整共享呼叫](#shared-fill-whole-initial)。
+不可變鍵為`DOS/GAME.EXE/35ad635e558852925b7028a921aacafc2df8e84be24a8a1136c6267471948d69/runtime:1ED4:1A7F`。
+定位採dosgolem解包後執行期記憶體，1A7F–1A93共20 bytes，SHA-256為
+`f1c5fade96970aa1dd1a9ffc2d876c7aea57bef8680d929d9f65d6c5190e17f7`，bytes為`8bdc36c47f08368b4f06368a4704fcf3aaca0800`。
+原版oracle為dosgolem、Go1.24.13，輸入沿既有legacy-demo及native-fade-v1/trace-original-entries原版RAM。
+
+已證實：正常診斷native-color-fill-v1/trace-audit有15筆非HostWork的VGA填色，每筆128 bytes，合計1920。
+逐筆依SS、SP及四個參數回查被拒的完整入口，其預算為1／4／6，皆小於完整7步；到像素處相隔5或24個虛擬步。
+24步的額外控制流未研究為硬體時序結論。診斷CPU／RAM與有序事件同前版，其他16筆普通RAM續行不列本批繪圖範圍。
+隔離原型在workplace/native-color-fill-research；color-fill-prototype-final.log保存50次有序原版跨度、250次完整SaveState與PortLog及19種拒絕，VGA像素CPU／固定語意回退0。
+測試含兩種模型成本、零長度、最後一byte、128／257／64000 bytes、段別名、五種含高byte的色號及1／2／6／7／1024步預算。
+
+垂直鏈為原版far-call參數→typed色號／數量／目的位址→Go填色跨度→既有顯存與HD呈現；遊戲狀態、輸入、亂數與存檔不改。
+保留1A7F的完整7步快速工作；只在1ED4:1A8E的F3 AA出口補一個跨度，不解碼opcode或呼叫CPU.Step。
+限已知80386、mode13h、DF=0、完整20-byte指紋。SS:SP的12-byte框架須在普通RAM且不段環繞，BX=SP。
+參數+4為色號、+6為數量、+8／+10為目的far pointer；AL須吻合色號低byte，CX、DI及ES須逐項相同。
+目的線性位址須完整落在A0000–AFA00，位移加數量不超過65536。零計數不讀寫，不擴張普通RAM helper的接管範圍。
+Go直接提交一個byte跨度，保留其他暫存器及旗標；CX歸零、DI加數量、IP=1A90，步數1。
+既有虛擬成本為原生3+5×數量、DOSBox 1+數量，不宣稱硬體wall-clock一致。
+固定區塊在此入口停下，若含此位置VGA像素則整塊退回；失配、未知模式／模型或不合法框架拒絕且不改輸入。
+既有HostWork事件、監看與提交守衛保持原樣。
+
+准予接入上述限定續行。正式繪圖回歸、正常原版狀態／有序事件／檔案及HD、地圖、工具列、字型切換抽樣通過後才升局部CONFORMED。
+正常HostWork bytes覆蓋只描述該條路線，不能代替全遊戲入口與條件驗收；全部Go仍DRAFT。
+
+### 共享VGA填色續行正式驗收
+
+2026-10-29，上述一步續行局部CONFORMED，來源068ccea，執行檔SHA-256為
+`022bee0c713ff0a152df8237ec4e41e8ac5d2d0e4862406a7fe3dabf320a6f31`。
+50次有序原版跨度、250次完整SaveState與PortLog及19種拒絕通過；完整drawblocks454.811秒、machine／session／pod／bgm／xlate、Xvfb前端及vet通過。
+正常712250000步的CPU／RAM、有序視訊／音訊／回掃／DOS、127檔及46份直接入口同前版與原版。
+新增15個Go跨度、1920 bytes；這條正常路線的3343240 bytes繪圖命令全部由HostWork提交，回退bytes與合成失配0。
+Go總計145782計畫／3434203步，固定控制1018步未變；所有已驗其他Go出口計數相同。
+HD與讀檔／地圖／攻略／工具列加英文、2／3倍及F12，共14組畫面與視窗、兩張最終畫面，共30張PNG及全部來源metadata逐檔同前版。
+HD原始閃現0；字型路線同前版121格明示倍率切換，非預期0。原始資料、字型與776檔主題未變。
+總檢查後原子啟用，前版d33254a以pod-play-nativeresidentglyph-v2保留。
+固定[019-native-color-fill-runtime.json](../re/019-native-color-fill-runtime.json)，入口tools/native_color_fill_check.py。
+初次重播函式表格式錯誤；第二次用了90項舊表而少兩個helper見證。改用前版正式fade-entries.json的92項表乾淨重跑，46份見證相同，產品未改。
+普通RAM續行、其他來源／context準備及未驗玩家場景不外推；正常HostWork bytes全覆蓋不等於全遊戲Go完成，整體閘門仍DRAFT。

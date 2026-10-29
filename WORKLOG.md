@@ -1347,3 +1347,17 @@
 - 刪除本輪未啟用的首版候選609b9d6與未使用探針，先核對各別來源、SHA及UID，再只移除這兩檔，回收26074402 bytes。保留初版建置紀錄、Git來源、最終候選及正式回退檔；沒有刪交付物或使用者資料。
 - CONTEXT唯一目前狀態表、規格、README及研究索引同步。本批局部CONFORMED，#49仍OPEN／整體DRAFT。此正常路線3343240 bytes命令中3341320標HostWork，剩1920來自1ED4:1A8E，原因待診斷，不用計數猜實作。前批完整四路demo、39對介面、六對真存讀檔及demo中斷收據保留，未冒稱本輪全部重跑；原案其他功能與三平台交付仍待完成。
 - 沿用dosgolem-go-ebiten:1.24-r1（8ed6bdee2bce1f32f804e888f942b25bbf62f2165a43344bb4587f3371de0581）與sosb-img:r1（8b9012adb991ebd1714725cf122ac052462d2993a17dd7b3ec2504e213ae9cf3），未新增映像。兩原始壓縮檔SHA、原字型資產及776檔主題不變；輸出1000:1000，find只見既有root-owned font，未改擁有權。專案執行中及停止容器0，沒有全域清理、改上游或其他專案。
+
+### 2026-10-29　共享VGA填色短預算續行
+
+- 接續#49。知識路由命中復古遊戲正式實作，載入spec閘門；形成結論與更新文件前再查路由及文件職責。主機gh授權健康，遠端#49回讀為OPEN。保留既有原案及停止G6探索的決定。
+- 先在未改產品的觀測探針診斷1ED4:1A8E。正常15筆非HostWork VGA命令各128 bytes，共1920；依SS、SP及四參數回查原入口，預算1／4／6皆不足完整7步。其餘16筆普通RAM續行不列本批繪圖範圍。兩個早期診斷把像素step硬接入口+5而失敗；回查既有HostWork步數預算及提交契約後，改依同一框架的最近入口比對，實際間距5或24，不將額外控制流猜成硬體時序證據。
+- 原20-byte指紋、參數與既有完整呼叫公式足以建立DRAFT原型。在workplace/native-color-fill-research驗50次有序跨度、250次完整SaveState／PortLog及19種拒絕，包含零長度、末byte、段別名、整張64000 bytes、兩成本及1／2／6／7／1024步。先審查READY，再接正式selector、一步跨度及固定像素防線。
+- 來源068ccea0442d94fcdec9d8f23fbf91ddb84ab803已提交並推送本專案dosgolem/pod。新增Go由typed色號、數量、目的far pointer直接產生跨度，不用CPU.Step、opcode派送或固定語意代畫。完整7步快速工作保留，通用CPU／HostWork守衛未改。
+- 正式定向2.164秒，完整drawblocks454.811秒；machine6.643、session0.143、pod1.503、bgm0.084、xlate0.024、Xvfb前端0.033秒及vet通過。以乾淨Go1.24.13來源建置022bee0c713ff0a152df8237ec4e41e8ac5d2d0e4862406a7fe3dabf320a6f31。
+- 原版正常機器712250000步的CPU／RAM、有序視訊／音訊／回掃／DOS、127檔及46份直接入口同前版與原版。新增15個Go計畫、1920 bytes，該路線3343240 bytes命令全部標HostWork，回退bytes及合成失配0。Go145782計畫／3434203步，固定控制1018步未變；其他演算法出口計數逐項相同，提案總數亦吻合提交統計，不外推FPS或全遊戲覆蓋。
+- 首次重播誤把slices.json當函式表而中止。第二次使用90項舊blocks.json，終點與事件相同但少兩份helper見證。改用前版正式92項fade-entries.json，在新目錄trace-native-v3乾淨重跑，46份見證全同；前兩次輸出與失敗log保留，沒有更改產品來通過。
+- HD7400格與讀檔4800格的地圖、攻略、工具列、英文、2／3倍及F12，共14組畫面與完整視窗、兩張最終畫面，30張PNG及來源色號／色盤／字格metadata逐檔同前版；原版終點與全部客體檔相同。兩路線命令HostBytes皆等於NativeBytes，失配與回退0。HD原始閃現0；字型路線仍為前版同一121格明示倍率切換，非預期0。
+- 固定收據docs/re/019-native-color-fill-runtime.json，SHA-256為1beccdae599044ea510cee8ea851bec4cdb60829d32a4b3824e6ef8249d9442a，入口tools/native_color_fill_check.py。綁定來源、建置、原版／正常事件、全部GUI雜湊、原始診斷、規格回鏈及啟用記錄。總檢查後原子啟用022bee0；d33254a以pod-play-nativeresidentglyph-v2及較早回復檔保留。
+- CONTEXT目前狀態表、README穩定摘要、規格與研究索引同步。README36張直接圖片全部存在。本批局部CONFORMED，#49整體仍DRAFT／OPEN；其他來源／context準備與未驗玩家場景保留，不將正常bytes全覆蓋當成全遊戲完成。原案其他功能及三平台交付仍待完成。
+- 沿用dosgolem-go-ebiten:1.24-r1，映像ID同前批，未建新映像。兩原始壓縮檔SHA核對相同，字型資產與776檔主題經兩路inputs逐項相同。輸出1000:1000，擁有權檢查只見既有root-owned font。以掛載路徑核對本專案執行中與停止容器0，未動其他專案容器、映像、資料卷或dosgolem上游。

@@ -1,6 +1,6 @@
 # 規格索引
 
-- [025 直接攔截繪圖與前端命令](025-direct-render-commands.md)：#45–#47輸出一致性及#49已列Go子集通過。最新[常駐字模與高解析字型收據](../re/019-native-resident-glyph-runtime.json)含4096次逐點、192次完整原版、正常33728點Go接管，以及原生16／24字模、14組基準截圖與13組直接／舊合成，含語系、倍率及F12。正常剩1920 bytes未標HostWork命令須診斷，全部Go閘門DRAFT。
+- [025 直接攔截繪圖與前端命令](025-direct-render-commands.md)：#45–#47輸出一致性及#49已列Go子集通過。最新[共享VGA填色續行](../re/019-native-color-fill-runtime.json)補齊正常1920 bytes差額，該路線3343240 bytes命令全由HostWork提交；50次原版跨度、250次完整呼叫、完整回歸與30張正常PNG通過。既有[常駐字模與高解析字型](../re/019-native-resident-glyph-runtime.json)維持原生16／24字模、語系、倍率及F12。全部Go閘門仍DRAFT。
 
 - [024 片頭字幕覆繪](024-intro-subtitles.md)：#10，八組台詞、雙語／倍率／原版切換及正常5100格閃現0，局部CONFORMED。
 - [023 左右海報](023-side-posters.md)：#21，固定加寬與語系文字，繁中／英文及 2／3 倍 CONFORMED。

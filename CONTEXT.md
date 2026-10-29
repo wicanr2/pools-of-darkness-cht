@@ -54,19 +54,25 @@
 
 | 項目 | 目前狀態 | 下一個驗收點 |
 |---|---|---|
-| 正式程式與 HD | `3a9e95e`、`d33254a`已啟用；776檔主題未改，前版`5b7a0d0`以pod-play-nativesurfacefillspans保留 | 後續繪圖接管另建候選，保留已驗版 |
+| 正式程式與 HD | `068ccea`、`022bee0`已啟用；776檔主題未改，前版`d33254a`以pod-play-nativeresidentglyph-v2保留 | 後續繪圖接管另建候選，保留已驗版 |
 | demo 中斷 #13 | CONFORMED：選單不逾時；對話、戰鬥中斷與重播、正常進入通過；F12／2倍終點同原流程，非預期閃現0 | 固定證據[020](docs/re/020-demo-control-runtime.json)，入口[規格018](docs/spec/018-demo-control.md#demo-conformed) |
-| Go 繪圖 #49 | 常駐8×8字模單點局部CONFORMED；4096次逐點、192次完整原版、48次邊界與64種拒絕，正常33728點實際改Go | 正常另有1ED4:1A8E的1920 bytes命令未標HostWork，原因須診斷；全部Go仍DRAFT |
+| Go 繪圖 #49 | 共享VGA填色續行局部CONFORMED；正常15個跨度補齊1920 bytes，該路線3343240 bytes命令全由HostWork提交。常駐字模與高解析英數保留 | 其他來源／context準備與未驗條件保留；正常bytes全覆蓋不等於全遊戲Go完成，整體仍DRAFT |
 | 高解析字型 | 已認證英數格原生16／24像素呈現通過；圖示不重畫，譯文優先，F12原版保留，README有並列原始像素裁切 | 未識別／搬移後無文字來源的格子保留原版，不猜OCR或當作全遊戲字型覆蓋 |
 | 不露原版 #16 | 正常HD閃現0；字型樣本有121格明示2→3倍HD切換，逐筆分類後非預期0，舊程式同腳本也121 | 已驗範圍見[字模與字型收據](docs/re/019-native-resident-glyph-runtime.json)及[前批完整收據](docs/re/019-native-bounded-runtime.json)；其他HD來源及玩家路線不外推 |
 | 攻略、HD、工具列 #9、#10、#14、#15 | 既有收據範圍保留，未驗部分仍待驗 | 以目前程式核對缺項，不追加已停止的 G6 自動探索 |
 | 配樂、多語系、作弊、推廣片 #11 | 原案仍須完成 | 按各自規格與試聽閘門完成 |
 | 三平台封包 #12 | 尚未交付 | 乾淨重建、啟動、存檔與 manifest 驗證；平台限制明列 |
 
-目前工作：#49常駐8×8字模及高解析英數已驗收啟用。
-來源為`3a9e95e923b1985b78b897245cc9e298df9f4a87`，執行檔SHA-256為
-`d33254acd6cb0c36bddad25dddbc179d55643daf762a511b8a06c519b25f7f5f`。
-前版5b7a0d0以pod-play-nativesurfacefillspans保留，17195e4及較早回復檔仍留；原始資料、字型資產與776檔主題未改。
+目前工作：#49共享VGA填色續行已驗收啟用，常駐8×8字模及高解析英數維持已驗版。
+來源為`068ccea`，執行檔SHA-256為
+`022bee0c713ff0a152df8237ec4e41e8ac5d2d0e4862406a7fe3dabf320a6f31`。
+前版d33254a以pod-play-nativeresidentglyph-v2保留，5b7a0d0及較早回復檔仍留；原始資料、字型資產與776檔主題未改。
+
+最新[共享填色收據](docs/re/019-native-color-fill-runtime.json)記錄50次原版有序跨度、250次完整SaveState／PortLog及19種拒絕。
+完整drawblocks454.811秒、機器／工作階段／遊戲／前端及vet通過。保留完整7步填色工作，只補事件短預算後的1ED4:1A8E Go跨度。
+正常712250000步的CPU／RAM、有序事件、127檔及46份入口同原版，新增15個計畫、1920 bytes，該路線3343240 bytes命令全由HostWork提交。
+Go總計145782計畫／3434203步，固定控制1018步未變。HD及讀檔／地圖／攻略／工具列、英文／倍率／F12的30張PNG及來源metadata逐檔同前版。
+HD閃現0；字型路線同前版121格明示倍率切換，非預期0。入口tools/native_color_fill_check.py；全體Go仍DRAFT，不外推其他場景與FPS。
 
 固定[019-native-resident-glyph-runtime.json](docs/re/019-native-resident-glyph-runtime.json)記錄4096次原版有序逐點、192次完整呼叫及48次四角／全前景／全底色。
 完整SaveState及PortLog相同，8192個Go單點、64個完整字模及72832道CPU控制，兩個像素位置CPU回退0；64種來源／框架／游標／旗標／模型拒絕不改輸入。
@@ -79,7 +85,7 @@ HD閃現0；字型路線原始121格全部是4792→4793的2倍切回3倍HD，�
 前批[整個表面填色](docs/re/019-native-surface-fill-spans-runtime.json)、[基本圖元單步](docs/re/019-native-primitive-spans-runtime.json)、[橫直線與窄縮放](docs/re/019-native-axis-scale-runtime.json)、[表面搬移跨度](docs/re/019-native-surface-spans-runtime.json)、淡入／DAC、字模、RLE及HD逐格呈現均維持已驗版。
 前版B97的四路demo、39對介面、六對真存讀檔與demo中斷完整收據留在[019-native-bounded-runtime.json](docs/re/019-native-bounded-runtime.json)，不冒稱本批全部重跑。
 
-全部Go閘門仍DRAFT。此正常路線3343240 bytes繪圖命令中3341320標為HostWork，剩1920來自1ED4:1A8E，原因待診斷，不直接當作新實作或完成數。
+全部Go閘門仍DRAFT。前批正常路線剩餘1920 bytes已依共享填色續行契約補齊，最新收據的3343240 bytes命令全部標HostWork；不外推未驗條件或整個遊戲。
 小步數常駐字模不再列待辦；原始位址、較早診斷與正式驗收見規格025，靜態ES／字串寫入候選只供盤點，不當作像素覆蓋證據。
 其他色盤位置、root與未驗條件保留；來源、BMHD／BODY查找及字模context準備、換列、回車與載入不冒稱Go解析器或文字排版器完成。
 
