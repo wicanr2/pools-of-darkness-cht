@@ -54,25 +54,31 @@
 
 | 項目 | 目前狀態 | 下一個驗收點 |
 |---|---|---|
-| 正式程式與 HD | `d84ef3a`、`45213b3`已啟用；776檔主題未改，前版`022bee0`以pod-play-nativecolorfill保留 | 後續繪圖接管另建候選，保留已驗版 |
+| 正式程式與 HD | `1892712`、`fb5394a`已啟用；776檔主題未改，前版`45213b3`以pod-play-nativesurfacesetup保留 | 後續改動保留已驗版 |
 | demo 中斷 #13 | CONFORMED：選單不逾時；對話、戰鬥中斷與重播、正常進入通過；F12／2倍終點同原流程，非預期閃現0 | 固定證據[020](docs/re/020-demo-control-runtime.json)，入口[規格018](docs/spec/018-demo-control.md#demo-conformed) |
-| Go 繪圖 #49 | 畫布與子表面整段初始化局部CONFORMED；正常893步改為Go，固定控制由1018降至125步。正常3343240 bytes命令仍全HostWork，字模與高解析英數保留 | 剩18份125步控制：14步跨INT10h，111步為圖像列／色盤／填色的短預算控制；其他來源／context與未驗條件仍DRAFT |
+| Go 繪圖 #49 | 四類短續行局部CONFORMED；正常111步固定與91步CPU資料準備改Go，固定繪圖資料控制歸零，只剩兩份14步BIOS前後控制。3343240 bytes命令及字型維持已驗結果 | BIOS14步為平台邊界；其他來源／文字context與未驗條件仍DRAFT，依實際玩家交付驗證 |
 | 高解析字型 | 已認證英數格原生16／24像素呈現通過；圖示不重畫，譯文優先，F12原版保留，README有並列原始像素裁切 | 未識別／搬移後無文字來源的格子保留原版，不猜OCR或當作全遊戲字型覆蓋 |
 | 不露原版 #16 | 正常HD閃現0；字型樣本有121格明示2→3倍HD切換，逐筆分類後非預期0，舊程式同腳本也121 | 已驗範圍見[字模與字型收據](docs/re/019-native-resident-glyph-runtime.json)及[前批完整收據](docs/re/019-native-bounded-runtime.json)；其他HD來源及玩家路線不外推 |
 | 攻略、HD、工具列 #9、#10、#14、#15 | 既有收據範圍保留，未驗部分仍待驗 | 以目前程式核對缺項，不追加已停止的 G6 自動探索 |
 | 配樂、多語系、作弊、推廣片 #11 | 原案仍須完成 | 按各自規格與試聽閘門完成 |
 | 三平台封包 #12 | 尚未交付 | 乾淨重建、啟動、存檔與 manifest 驗證；平台限制明列 |
 
-目前工作：#49畫布與子表面初始化已驗收啟用；共享填色、常駐8×8字模及高解析英數維持已驗範圍。
-來源為`d84ef3af8686716b302eb55ce1cd13c43c36bb01`，執行檔SHA-256為
-`45213b318e98ddb017584f62ddbb76b73929298c6728dc61dafe80aceda2c63d`。
-前版022bee0以pod-play-nativecolorfill保留，d33254a及較早回復檔仍留；原始資料、字型資產與776檔主題未改。
+目前工作：#49圖像header、RGB插值、下一色工作與填色幾何短續行已驗收啟用；較早Go像素、畫布初始化及高解析字型維持已驗範圍。
+來源為`18927120914774783278c52db9ed50360b0d4ea7`，執行檔SHA-256為
+`fb5394a8cc5985ff466e4e7c7c728756cfb98d3b5edd93670a3f8986100d69d1`。
+前版45213b3以pod-play-nativesurfacesetup保留，022bee0及較早回復檔仍留；原始資料、字型資產與776檔主題未改。
 
-最新[初始化收據](docs/re/019-native-surface-setup-runtime.json)記錄72次原版畫布、48次子表面完整SaveState／PortLog及28種拒絕。
+最新[繪圖工作短續行收據](docs/re/019-native-drawing-jobs-runtime.json)記錄2523次原版邊界、172種拒絕與32次selector。
+完整drawblocks420.725秒、相關套件、前端及vet通過。正常712250000步的CPU／RAM、有序事件、127檔及46份入口同前版與原版，111步固定及91步CPU準備實際改Go。
+Go總計145806計畫／3435298步，只剩兩份14步BIOS前後控制，兩份完整內容逐筆同前版。六份舊色盤單步合併進新工作，未少做寫入；其他類別出口不變。
+HD與讀檔／地圖／攻略／工具列、英文、倍率及F12共30張PNG與來源metadata相同；HD閃現0，字型路線121格明示倍率切換同前版，非預期0。
+入口tools/native_drawing_jobs_check.py；正常固定資料控制歸零不外推全遊戲Go完成。其他來源與文字context、未知條件仍保留，BIOS14步不列新的像素或硬體時序待辦。
+
+前批[初始化收據](docs/re/019-native-surface-setup-runtime.json)記錄72次原版畫布、48次子表面完整SaveState／PortLog及28種拒絕。
 完整drawblocks420.047秒及相關套件、前端、vet通過。正常712250000步的CPU／RAM、有序事件、127檔及46份入口同原版，837+56步實際改為Go。
 Go總計145784計畫／3435096步，剩餘18份125步固定控制逐筆同前版，沒有新增像素。HD與讀檔／地圖／攻略／工具列、英文／倍率／F12共30張PNG及來源metadata相同。
 HD閃現0；字型路線同前版121格明示倍率切換，非預期0。入口tools/native_surface_setup_check.py，探針來源由tools/build_fixed_control_probe.py重生。
-下一個最小入口是收據remaining_fixed_by_start及本機trace-native/fixed-records.json的68xx／4Bxx／4268短預算樣本；2A66／2A77跨INT10h控制共14步另外分類，不深挖硬體時序。
+該批remaining_fixed_by_start的68xx／4Bxx／4268短預算樣本已由最新短續行閉合；2A66／2A77跨INT10h控制共14步另列平台邊界，不深挖硬體時序。
 其他來源解析、BMHD／BODY查找、文字context及未驗條件仍保留；全部Go仍DRAFT，不外推全遊戲完成。
 
 前批[共享填色收據](docs/re/019-native-color-fill-runtime.json)記錄50次原版有序跨度、250次完整SaveState／PortLog及19種拒絕。

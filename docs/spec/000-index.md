@@ -1,6 +1,6 @@
 # 規格索引
 
-- [025 直接攔截繪圖與前端命令](025-direct-render-commands.md)：#45–#47輸出一致性及#49已列Go子集通過。最新[畫布與子表面初始化](../re/019-native-surface-setup-runtime.json)正常893步改為Go，剩餘18份125步控制逐筆不變；72次畫布、48次子表面、28種拒絕、完整回歸與30張正常PNG通過。既有[共享填色](../re/019-native-color-fill-runtime.json)維持3343240 bytes正常命令全HostWork，[高解析字型](../re/019-native-resident-glyph-runtime.json)維持原生16／24字模、語系、倍率及F12。全部Go閘門仍DRAFT。
+- [025 直接攔截繪圖與前端命令](025-direct-render-commands.md)：#45–#47輸出一致性及#49已列Go子集通過。最新[繪圖工作短續行](../re/019-native-drawing-jobs-runtime.json)正常111步固定與91步CPU資料準備改Go，只剩兩份14步BIOS控制；2523次原版邊界、172種拒絕、完整回歸與30張正常PNG通過。既有[畫布初始化](../re/019-native-surface-setup-runtime.json)、[共享填色](../re/019-native-color-fill-runtime.json)及[原生16／24字模](../re/019-native-resident-glyph-runtime.json)維持已驗範圍。全部Go閘門仍DRAFT，不外推未知條件。
 
 - [024 片頭字幕覆繪](024-intro-subtitles.md)：#10，八組台詞、雙語／倍率／原版切換及正常5100格閃現0，局部CONFORMED。
 - [023 左右海報](023-side-posters.md)：#21，固定加寬與語系文字，繁中／英文及 2／3 倍 CONFORMED。

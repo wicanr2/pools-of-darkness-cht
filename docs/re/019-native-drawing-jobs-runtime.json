@@ -1,0 +1,242 @@
+{
+  "scope": "四類typed繪圖資料工作最低一步續行；BIOS及未驗條件保留，全部Go仍DRAFT",
+  "program_commit": "18927120914774783278c52db9ed50360b0d4ea7",
+  "baseline_commit": "d84ef3af8686716b302eb55ce1cd13c43c36bb01",
+  "binary_sha256": "fb5394a8cc5985ff466e4e7c7c728756cfb98d3b5edd93670a3f8986100d69d1",
+  "source_sha256": {
+    "apps/pod/drawblocks/effects.go": "fe52399862511b7c6ad912a53689c2d5f4039f725e4964013386003d7f1e6ccd",
+    "apps/pod/drawblocks/native_job_boundaries.go": "ee0d89b9fa6d70a140a16c9f185581cfe3c5590c2a50cb7c5965c8ab10c7ba40",
+    "apps/pod/drawblocks/native_image_header_boundary.go": "de83187e413bced31ff8d50eaf937c55ed9fcfcc13959b14afe33e3c3bd57b84",
+    "apps/pod/drawblocks/native_rgb_job_boundaries.go": "b96850660b6f147086eb78d939c612395beb105b85df3bae8e11a61811766d90",
+    "apps/pod/drawblocks/native_fill_row_boundary.go": "7b9f3d83a84986b5d56630417f536d20dad448e1f76f426454d8567dbfcc52b8",
+    "apps/pod/drawblocks/drawing_job_boundaries_test.go": "7b0002138cf9187444c1e09baab0bc1b3285088501139b933215fc3911652403",
+    "apps/pod/drawblocks/drawing_job_guards_test.go": "5165530e2e65f0d2f0b77e0fa1a0087123effd476cb6aab5b4b52d3dfad0ce57"
+  },
+  "original_vga_sha256": "eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f",
+  "ida_export_sha256": "810e653c23f5d9e04b1069e40408d34056b4e2d126d7958c1a5e4b5e7731fb44",
+  "source_code_sha256": {
+    "0x689e": "56ecc68cd838cf71e5de2da105cf370ccd3c2f7656159bdb2de14800a9c888a1",
+    "0x4b6c": "391005d80b86b978189cde8e392fbfbca279480fda3f7f3a175cb9c14ed2f2ae",
+    "0x4b9a": "548776df6fec7df3ebb2f57ade4412c8704fee225a928411593571d6c7c3b525",
+    "0x41af": "c7db9b7b119f14464a7e76d35125922a3559d10fef36624f79f5120dd0d02f00"
+  },
+  "source_address_space": "IDA9.4 binary file base 0; runtime CS=48A1",
+  "controlled_original": {
+    "boundary_comparisons": 2523,
+    "main_paths": 58,
+    "normal_samples": 16,
+    "refusals": 172,
+    "unused_payload_positives": 3,
+    "resumed_positive_rejection_pairs": 8,
+    "selector_cases": 32
+  },
+  "normal": {
+    "steps": 712250000,
+    "original_state_events_equal": true,
+    "guest_files": 127,
+    "direct_witnesses": 46,
+    "algorithmic_plans": 145806,
+    "algorithmic_instructions": 3435298,
+    "previous_fixed_instructions": 125,
+    "fixed_instructions": 14,
+    "reclassified_fixed_steps": 111,
+    "cpu_steps_moved_to_go": 91,
+    "net_new_go_steps": 202,
+    "host_video_bytes": 3343240,
+    "new_pixel_bytes": 0
+  },
+  "algorithmic_exit_delta": {
+    "48a1:4291": [
+      1,
+      13
+    ],
+    "48a1:429f": [
+      1,
+      5
+    ],
+    "48a1:4b70": [
+      1,
+      2
+    ],
+    "48a1:4b74": [
+      2,
+      6
+    ],
+    "48a1:4b78": [
+      1,
+      4
+    ],
+    "48a1:4b7a": [
+      1,
+      5
+    ],
+    "48a1:4b82": [
+      -2,
+      -2
+    ],
+    "48a1:4b86": [
+      -6,
+      -6
+    ],
+    "48a1:4b8a": [
+      2,
+      12
+    ],
+    "48a1:4b8b": [
+      7,
+      25
+    ],
+    "48a1:4ba5": [
+      1,
+      6
+    ],
+    "48a1:4bbd": [
+      1,
+      14
+    ],
+    "48a1:4bbe": [
+      2,
+      10
+    ],
+    "48a1:4bc4": [
+      2,
+      4
+    ],
+    "48a1:689e": [
+      1,
+      1
+    ],
+    "48a1:68c0": [
+      1,
+      11
+    ],
+    "48a1:68da": [
+      1,
+      18
+    ],
+    "48a1:68dd": [
+      1,
+      19
+    ],
+    "48a1:68f2": [
+      4,
+      55
+    ]
+  },
+  "job_delta": {
+    "header": [
+      8,
+      104
+    ],
+    "blend": [
+      6,
+      46
+    ],
+    "color": [
+      6,
+      34
+    ],
+    "fill": [
+      2,
+      18
+    ]
+  },
+  "remaining_bios_plans": [
+    {
+      "entry": "48a1:2a66",
+      "steps": 9
+    },
+    {
+      "entry": "48a1:2a77",
+      "steps": 5
+    }
+  ],
+  "logs_sha256": {
+    "workplace/drawing-jobs-regression.log": "e1c778fe536c65e5982520129e9bc844192a9b3ca909bc56b1786e1880161dbc",
+    "workplace/drawing-jobs-related.log": "72b542a076959601501f071af79f2b4473e3c544697d3ef49b2511a5158d211b",
+    "workplace/drawing-jobs-frontend.log": "9814617bf255c33cb6759f2acc91534a55fc37d786c59e64d0ddeb366705c45e",
+    "workplace/drawing-jobs-vet.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "workplace/drawing-jobs-product.log": "e9c418f306ac18f347124b5cd4cf71c4e8e6e6363c708de5aa9370366953e436"
+  },
+  "trace_sha256": {
+    "workplace/probe/draw-intercept-v1/native-drawing-jobs-v1/trace-native": "01c5879a844c74793c4e0851e1a39baa580310caa43638a988c51fa3b67fbf27",
+    "workplace/probe/draw-intercept-v1/native-fixed-control-v1/trace-native": "75e740aa2c956fc0d63a87a90aabffcc40a6faadee3c96119a058fa7a053dd4f",
+    "workplace/probe/draw-intercept-v1/native-fade-v1/trace-original-entries": "342b032b63617080c1880888fb6b45bfc74b6460dd1349f6c003e0461ada6f1c"
+  },
+  "fixed_records_sha256": {
+    "workplace/probe/draw-intercept-v1/native-drawing-jobs-v1/trace-native": "6ee5f5b7e3733ef0feceb4bab2d72c96e8f1da2c22d8a04dc5795ccea53cabc4",
+    "workplace/probe/draw-intercept-v1/native-fixed-control-v1/trace-native": "74169929b7167fef03724cf0ab899391fdd9e0943f4d95051ef1f5e2f6887365"
+  },
+  "build_sha256": {
+    "build.txt": "f44c8f9b0f468427e65d92259d5b95c545f18f6d37854ea13c722657c735bf2a",
+    "probe-build.txt": "e6a717f40d15c1c6260a868a96088e822440a971fce1233ff223218ac030f405"
+  },
+  "probe_sha256": "2d6f7e22398790f08f31fb87f7723e97c3b1be2c4c6b868f77d258feedbcc647",
+  "prior_receipt_sha256": "290384813ced8d9d28ac62097aeade8408bfaae6dd90d2307d74c0f5eae0ecf3",
+  "spec_sha256": "4fd5d4a682f05c1f76377b82c63e631aac7ef05d97e2e4e7b4957d878be89cfa",
+  "correction": "DRAWING-JOB-BOUNDARY-READY-20261029",
+  "frontend": [
+    {
+      "route": "nativedrawingjobs-play-v1/hd",
+      "pngs": 3,
+      "image_sha256": {
+        "frame.png": "00d6d1692f3fe54151c5111b32b48c8393add16509c7a05c822cb9010ebf25ca",
+        "shots/pod-f003650.png": "24484cebaa05975995c78f6a8c5b1c8506ddb0f41dcfd63c3ef2190d1181e9a5",
+        "window-shots/pod-f003650.png": "6613c506f145c97eae5474fa07f772b58ff19d178d682ff4452e8484759c5585"
+      },
+      "state_and_guest_files_equal": true,
+      "raw_flash": 0,
+      "unexpected_flash": 0,
+      "inputs_sha256": "ec0c8246b2b71cdcb0952602c7263c0e02d008127b5342b9c2c13a179dffb4c0",
+      "log_sha256": "eea26577fc46f06babcc81acfead4c6017737ef8ccb2717a3f0841a0022a4d28",
+      "report_sha256": "5f357d2f1865375d942a74de69766ac68d5f32f6647ab56f9d4db8ebb3ad85ce"
+    },
+    {
+      "route": "nativedrawingjobs-font-v1/wall-direct",
+      "pngs": 27,
+      "image_sha256": {
+        "frame.png": "df96470dd23b03ec34ff539b528b2e9121706e52071872220e98b06dd0785d9b",
+        "shots/pod-f004720.png": "2e54966dbbd79d14c3be120ce65e4469470f941c209e676a075c8b13bcf537dc",
+        "shots/pod-f004200.png": "2e54966dbbd79d14c3be120ce65e4469470f941c209e676a075c8b13bcf537dc",
+        "shots/pod-f004520.png": "656a447a6795da027fb0a3bcfbaf209d06bdeca6771fada3885f599da15dd3da",
+        "shots/pod-f004750.png": "2e54966dbbd79d14c3be120ce65e4469470f941c209e676a075c8b13bcf537dc",
+        "shots/pod-f004780.png": "2e54966dbbd79d14c3be120ce65e4469470f941c209e676a075c8b13bcf537dc",
+        "shots/pod-f004788.png": "f3a53936cb8b355c00dd18e9d135242b37cf5e48bafd4f74ae9515d1d97ec1b8",
+        "shots/pod-f004785.png": "e3ca5d2a6ebe82d57a153539f0131dd032abdcb8ed05cb8b97147bd1df8a87da",
+        "shots/pod-f004360.png": "656a447a6795da027fb0a3bcfbaf209d06bdeca6771fada3885f599da15dd3da",
+        "shots/pod-f004620.png": "2e54966dbbd79d14c3be120ce65e4469470f941c209e676a075c8b13bcf537dc",
+        "shots/pod-f004420.png": "263aeb5317ac4faa829256e2f9606209a4d40440b3d418febbfe9d1eac7eabdc",
+        "shots/pod-f004320.png": "9300011e98b8a9303b924b312b5382a87c3013ae2137f8997040874576d47e4c",
+        "shots/pod-f004791.png": "a7139b793c8cce4956f433043c2f0101168caae2c9178c3c5728ee09567efd2d",
+        "shots/pod-f003900.png": "5de21f0fe374250973bd8ecdadf0f883187a368416149dff3c5e49bdf030a25f",
+        "window-shots/pod-f004720.png": "bd071846b861fcd3ca9c1e27894394ab6ae5ee44a566b54ee7af4b72b722f09a",
+        "window-shots/pod-f004200.png": "08f164ae8adb9c8d8df5b7f53bea259221860388d5f851dd9b1550842c357a89",
+        "window-shots/pod-f004520.png": "aa9e0402fab715da2460dfd236557b3e57f10800f2fb036c1183d807a83ea56f",
+        "window-shots/pod-f004750.png": "d121823d9281b42532938fecc6b7205e8e12956c473f17fd1500565e8acc75b5",
+        "window-shots/pod-f004780.png": "df96470dd23b03ec34ff539b528b2e9121706e52071872220e98b06dd0785d9b",
+        "window-shots/pod-f004788.png": "c946a505388bfe331ce0b3bf574946eb9fe45f70b1d1cc5ff7a0ca9dc9045cc1",
+        "window-shots/pod-f004785.png": "1f36252af543955635c0a82aea4e9fe344f78d0c3f7dca8ab85f40dfe17e31fd",
+        "window-shots/pod-f004360.png": "aa9e0402fab715da2460dfd236557b3e57f10800f2fb036c1183d807a83ea56f",
+        "window-shots/pod-f004620.png": "08f164ae8adb9c8d8df5b7f53bea259221860388d5f851dd9b1550842c357a89",
+        "window-shots/pod-f004420.png": "1b55edb7dc2e5de02157e76429c8513597775295a7410af20decd6ca1d6bea94",
+        "window-shots/pod-f004320.png": "371d0ed70c2c0fbd935514a1ca5ce735346a392db43cec809abcd9d3bbf4f063",
+        "window-shots/pod-f004791.png": "b819278157d7fa6ce7b104c6f29839f28e3befef167d6489f6a476d9d3f5dc32",
+        "window-shots/pod-f003900.png": "52e2ea5e509c10e76cd4591fe44647eb3f73e11261f5204feb1e3f9bbf5e411e"
+      },
+      "state_and_guest_files_equal": true,
+      "raw_flash": 121,
+      "unexpected_flash": 0,
+      "inputs_sha256": "ec0c8246b2b71cdcb0952602c7263c0e02d008127b5342b9c2c13a179dffb4c0",
+      "log_sha256": "b53b3120b0e9a85c9135ff4ae7a687ab2aa063009cfd5db01dc1b1b72c81562a",
+      "report_sha256": "4896c2f09f8f0432b0d14655d244f244535affd0e6a35bb1f71869c51e6f4606"
+    }
+  ],
+  "activation": {
+    "program_commit": "18927120914774783278c52db9ed50360b0d4ea7",
+    "candidate_sha256": "fb5394a8cc5985ff466e4e7c7c728756cfb98d3b5edd93670a3f8986100d69d1",
+    "previous_binary": "pod-play-nativesurfacesetup",
+    "previous_sha256": "45213b318e98ddb017584f62ddbb76b73929298c6728dc61dafe80aceda2c63d",
+    "preactivation_sha256": "cf48ff85749f9022f2d76b0be1f0c8a7482c8e101f36a4d4f89134eb773eb7f0"
+  },
+  "tool_sha256": "de7eecdee9dda98e9b22aa0620938e7d7725e381246eda71a7c26f71c55fdd68"
+}

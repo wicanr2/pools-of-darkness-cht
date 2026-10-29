@@ -1,5 +1,7 @@
 # 研究索引
 
+- [圖像、RGB與填色工作短續行](../spec/025-direct-render-commands.md#drawing-job-boundary-ready)：#49，[固定收據](019-native-drawing-jobs-runtime.json)、[檢查器](../../tools/native_drawing_jobs_check.py)。2523次原版邊界、172種拒絕及32次selector通過；正常111步固定與91步CPU準備改Go，僅剩14步BIOS控制。完整回歸、狀態事件與30張正常PNG相同並啟用，全部Go仍DRAFT。
+
 - [Go畫布與子表面初始化](../spec/025-direct-render-commands.md#surface-setup-ready)：#49，[固定收據](019-native-surface-setup-runtime.json)、[檢查器](../../tools/native_surface_setup_check.py)、[固定控制觀測器產生器](../../tools/build_fixed_control_probe.py)。原版72次畫布、48次子表面與28種拒絕通過，正常893步改為Go，剩餘18份125步控制逐筆不變。完整回歸及30張正常PNG相同並啟用，全部Go仍DRAFT。
 
 - [共享VGA填色一步續行](../spec/025-direct-render-commands.md#color-fill-span-ready)：#49，[固定收據](019-native-color-fill-runtime.json)、[檢查器](../../tools/native_color_fill_check.py)。50次有序跨度、250次完整呼叫及19種拒絕通過；正常新增1920 bytes Go填色，該路線3343240 bytes命令全由HostWork提交。完整回歸、46份原版入口及30張正常PNG通過並啟用，全部Go仍DRAFT。

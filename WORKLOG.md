@@ -1378,3 +1378,20 @@
 - README穩定入口、CONTEXT目前狀態、規格與研究索引同步；README36張直接圖片全部存在。CONTEXT下方舊dosgolem基線不再將b11290c稱現行正式版，改指向唯一目前狀態表，歷史來源仍在原收據與Git。本批局部CONFORMED，整體Go仍DRAFT／#49 OPEN；原案其他功能與三平台交付仍待完成。
 - 核對SHA、UID及用途後，只刪本輪未執行的標準探針draw-call-probe-nativesurfacesetup，SHA14dedb9b6c45bc03815ad11db231479c7d625079bc967c968c9fc63bf01c6a3b，回收8634140 bytes；實際基準／候選觀測器、建置紀錄、原型與回復檔保留。清理記錄在cleanup-unused-probe.json。
 - 沿用dosgolem-go-ebiten:1.24-r1，ID8ed6bdee2bce1f32f804e888f942b25bbf62f2165a43344bb4587f3371de0581，未建新映像。兩原始壓縮檔SHA不變，輸出1000:1000；find只見既有root-owned font，未chown。以掛載路徑核對本專案執行中與停止容器0，其他專案、映像、資料卷及dosgolem上游未動。
+
+### 2026-10-29　圖像、RGB與填色工作短續行
+
+- 接續#49，主機gh授權健康，遠端回讀OPEN及d84ef3a／45213b3現況。知識路由命中正式實作、RE回鏈與文件職責，先對照目前收據，不重開已完成的初始化或已停止的G6探索。
+- 剩餘18份125步中，16份111步是689E圖像header、4B6C RGB插值、4B9A／4BC1下一色工作及4268填色列幾何；另兩份14步跨INT10h。從現有Go parser／插值／表面幾何及IDA9.4原始指令核對，四段86／33／44／260 bytes與原VGA.DRV、正常RAM逐byte相同，原始定位與SHA保存在規格025。
+- 原型在workplace/native-drawing-jobs-research，保留原整段快速工作，新增typed資料工作與有序ABI投影。圖像處理列尾、左右排除、左右裁切及未裁切交接；RGB計算誤差與通道方向、下一色call frame；填色重用slot／父表面與scratch驗證，支援320及其他合法stride。最低一步，沒有opcode派送、CPU.Step、固定效果代畫或可變續行快取。
+- 原型及正式測試記錄160次正常樣本比較與2352次分支邊界，加三次未用payload正對照、八次真實中途正對照，共2523次原版CPU／完整RAM／有序寫入及SaveState／PortLog相同。172種來源／框架／游標／模型拒絕不改輸入；八個中途負例先由原版走到合法交接、確認正例後才改一欄位。另32次正式selector最低一步比對通過。log分列drawing-jobs-prototype-final.log及drawing-jobs-prototype-selector.log。
+- 審查READY後才接正式fallback selector及固定前綴邊界。來源18927120914774783278c52db9ed50360b0d4ea7已推本專案dosgolem/pod，僅改drawblocks內四類工作、共享ABI投影、selector及測試。通用CPU、HostWork事件守衛、HD合成與字型未改。
+- 完整drawblocks420.725秒、正式定向20.547秒；machine4.803、session0.108、pod1.466、bgm0.062、xlate0.022、Xvfb前端0.036秒及vet通過。乾淨Go1.24.13候選SHA-256為fb5394a8cc5985ff466e4e7c7c728756cfb98d3b5edd93670a3f8986100d69d1。
+- 沿既有92項入口表及可重現固定控制觀測器跑正常712250000步。CPU／RAM、有序視訊／音訊／回掃／DOS、127檔及46份直接入口同前版與原版；像素命令3343240 bytes分類完全相同，本批不新增像素。
+- 正常非BIOS固定控制111步改Go，另有91步原CPU準備改Go，演算法淨增202步，總計145806計畫／3435298步。僅剩2A66／2A77兩份14步BIOS前後控制，完整計畫、暫存器、預算、效果與RAM SHA逐項同前版。提案加總吻合已提交計數，沒有用準備計畫冒充提交。
+- 4B86舊Go單步少6份／6步，是其工作合併至較大Go計畫；已核對原native_palette_single.go與新工作有序效果。四類工作之外的Go出口逐項相同，不將出口計數減少寫成回退或漏畫，也不外推FPS。
+- 正常7400格HD與4800格讀檔沿原腳本驗地圖、攻略、工具列、英文、2／3倍與F12。14組畫面及完整視窗加兩張終點，共30張PNG、來源色號／色盤／字格metadata、原版終點與客體檔逐項同前版。HD原始閃現0；字型路線同前版121格明示倍率切換，非預期0。776檔主題及原生16／24字型未變。
+- 總檢查後原子啟用fb5394a，前版45213b3以pod-play-nativesurfacesetup保留，較早回復檔仍留。固定docs/re/019-native-drawing-jobs-runtime.json SHA-256為4c320256f78246acadb801f175fb7221f44b8d53d6674c984c6443daf3fed356，入口tools/native_drawing_jobs_check.py；綁定來源、四段原始碼與IDA雜湊、五處舊規格回鏈、全部回歸、正常事件及GUI、出口合併差額與啟用記錄。
+- CONTEXT目前狀態表、README、規格與研究索引同步，README36張直接圖片全部存在。本批局部CONFORMED，整體仍DRAFT／#49 OPEN；正常固定資料控制歸零不外推所有來源／文字context及未知條件。BIOS14步保留平台邊界，不列新像素缺口或硬體時序任務；原案其他功能與三平台交付仍待完成。
+- 收尾把後續容器可寫掛載收窄：原專案根唯讀，來源接入只額外開workplace/dosgolem/apps/pod/drawblocks，正式收據輸出只額外開docs/re，研究產物只開既有workplace輸出目錄；不使用整個專案根可寫的便捷入口。兩原始壓縮檔SHA核對相同，未改原始資料。
+- 沿用dosgolem-go-ebiten:1.24-r1，ID8ed6bdee2bce1f32f804e888f942b25bbf62f2165a43344bb4587f3371de0581，未建新映像或清理其他專案資源。新產物1000:1000，find只見既有root-owned font，未chown。以掛載路徑核對本專案執行中與停止容器0，原dosgolem工作樹及其他專案未動。

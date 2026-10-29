@@ -176,6 +176,8 @@ HD與讀檔／片頭的原始閃現0；封面的998筆均為既有F2主動切換
 
 <a id="surface-fill-whole-initial"></a>
 
+勘誤`DRAWING-JOB-BOUNDARY-READY-20261029`：4268列幾何的短續行另依[工作邊界契約](#drawing-job-boundary-ready)，本節完整列證據不變。
+
 ### 48A1:41AF矩形填色的Go演算法
 
 勘誤`SURFACE-FILL-SPAN-READY-20261029`：小步數的42A1／42A5像素出口另有[一步跨度契約](#surface-fill-spans-ready)，本節完整列證據仍有效。
@@ -270,6 +272,10 @@ Go直接把每對來源像素反序，按目的從右到左產生word COPY；保
 接入後另跑24個完整受控原圖呼叫，169780個Go鏡像計畫真正提交，所有CPU／RAM、返回及時間同原版；正常完整事件、四路DEMO、介面與真存讀檔回歸通過。
 固定[019-native-image-runtime.json](../re/019-native-image-runtime.json)列出正常與受控範圍，未混算鏡像正常覆蓋率。
 
+<a id="image-header-whole-initial"></a>
+
+勘誤`DRAWING-JOB-BOUNDARY-READY-20261029`：header短預算與中途續行依[工作邊界契約](#drawing-job-boundary-ready)，原整段與裁切路徑保留。
+
 ### 48A1:689E未裁切圖片區塊解析
 
 狀態：CONFORMED，#49，2026-10-26。原檔offset689E–68F3共86 bytes／28道指令，未裁切分支實際走26道。
@@ -283,6 +289,10 @@ Go直接解析此資料與幾何，寫回原版1250標記，產生SI、BX資料�
 18個合成及32個真正中途狀態的64個獨立原版計畫比較通過，另有16種拒絕條件；READY後才加入產品分流。
 正常路線真正提交5091個Go區塊解析計畫／132366步；完整狀態、事件、四路DEMO、39對介面及6對真存讀檔通過，固定[019-native-image-runtime.json](../re/019-native-image-runtime.json)。
 乾淨來源a8184cc、正式faf0899，前版d21dec5保存在pod-play-nativepalette；其他圖片控制與未驗裁切仍保留固定語意區塊，#49未全數完成。
+
+<a id="fade-blend-whole-initial"></a>
+
+勘誤`DRAWING-JOB-BOUNDARY-READY-20261029`：4B6C插值的短續行依[工作邊界契約](#drawing-job-boundary-ready)，完整批次仍優先。
 
 ### 淡出的色差與插值陣列
 
@@ -306,6 +316,10 @@ Go色差直接算絕對差、方向及最大值；Go插值累加距離，超過�
 新中途比較在硬體讀取已完成的RGB陣列入口開始，沒有猜補DAC狀態；READY後才加入產品分流，正常回歸未過前保留faf0899。
 完整正常狀態、事件、四路DEMO、39對介面及6對新存B／冷讀B通過，原子切換至014392d，來源df24a24；固定[019-native-fade-runtime.json](../re/019-native-fade-runtime.json)。
 正式44份直接見證，三份分割補證，與原版47份相同；正式Go分類3116445步，固定區塊另234247步，不稱全部Go演算法完成。
+
+<a id="fade-color-whole-initial"></a>
+
+勘誤`DRAWING-JOB-BOUNDARY-READY-20261029`：4B9A／4BC1的短續行依[工作邊界契約](#drawing-job-boundary-ready)，完整呼叫準備保留。
 
 ### 逐色RGB工作準備
 
@@ -1529,3 +1543,67 @@ HD原始閃現0；字型路線同前版121格明示倍率切換，非預期0。�
 總檢查後原子啟用，前版022bee0以pod-play-nativecolorfill保留；固定[019-native-surface-setup-runtime.json](../re/019-native-surface-setup-runtime.json)，入口tools/native_surface_setup_check.py。
 觀測器可由tools/build_fixed_control_probe.py於Docker產生，原始20份及候選18份固定計畫和RAM只留本機workplace/probe/draw-intercept-v1/native-fixed-control-v1。
 本批沿既有IDA9.4匯出並逐byte核對，原始輸入與資料庫未改。全部Go閘門仍DRAFT。
+
+<a id="drawing-job-short-initial"></a>
+
+### 圖像與RGB工作短預算研究
+
+狀態：DRAFT，#49，2026-10-29。原版樣本沿native-fixed-control-v1/trace-native/fixed-records.json，16份非BIOS固定控制共111步。
+來源為VGA.DRV的689E圖像跨度header、4B6C淡出RGB插值、4B9A／4BC1下一色工作及4268填色列幾何；IDA9.4檔案基準0，執行期段48A1。
+完整來源指紋沿既有imageSpanCode、fadeBlendCode、fadeColorCode、rectangleCode及原收據，不能從固定步數推論像素缺口。
+擬保留既有整段Go快速工作，短預算以同一份header／RGB／表面資料算出typed工作，再投影至已證實ABI邊界。
+最低一步，逐邊界驗目前暫存器、旗標、來源、框架及已寫欄位；未知或失配不改輸入。像素仍交既有Go跨度，INT10h前後14步另保留。
+先用可丟棄原型驗原版有序效果與完整狀態，再審查READY；未達READY不接正式程式。
+
+勘誤`DRAWING-JOB-BOUNDARY-READY-20261029`：原型已通過原版與拒絕審查，接入依[正式契約](#drawing-job-boundary-ready)。
+
+<a id="drawing-job-boundary-ready"></a>
+
+### 圖像、RGB與填色工作短續行契約
+
+狀態：READY，#49，2026-10-29。來源VGA.DRV SHA-256 `eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f`。
+不可變鍵為上述DOS/VGA.DRV映像的`:0x689E`、`:0x4B6C`、`:0x4B9A`及`:0x41AF`；列準備入口是`:0x4268`，執行期段48A1。
+86／33／44／260 bytes及SHA沿[header](#image-header-whole-initial)、[RGB插值](#fade-blend-whole-initial)、[下一色工作](#fade-color-whole-initial)與[整列填色](#surface-fill-whole-initial)。
+本輪逐byte核對既有IDA9.4檔案基準0、原始VGA.DRV及正常RAM一致；IDA匯出SHA沿[初始化研究](#surface-setup-initial)。
+回鏈標記`DRAWING-JOB-BOUNDARY-READY-20261029`，原先缺口見[短預算研究](#drawing-job-short-initial)。
+
+已證實（受控條件）：16份正常樣本在兩成本及1／2／6／13／128步預算有160次原版比較。
+另16條header、14條插值、16條下一色及12條填色幾何路徑共2352次邊界比較，均有序寫入、完整CPU／RAM、SaveState與PortLog相同。
+加三次未用資料正對照及八個真實中途狀態正對照，共2523次原版邊界比較；128種基本、36種來源／框架與八種續行失配拒絕，共172種不改輸入。
+正式selector另32次最低一步選到typed路徑。原型在clone的workplace/native-drawing-jobs-research；log為drawing-jobs-prototype-final.log及drawing-jobs-prototype-selector.log。
+
+垂直鏈為原版header／RGB陣列／表面描述→typed工作與幾何／插值結果→有序ABI投影→既有Go像素跨度與色盤輸出→HD。
+原字串、玩法、亂數、輸入、原版檔案及存檔不變。最低一步，限已知80386、mode13h、DF=0及各段完整指紋；原整段快速工作優先，失配仍回原版。
+每次從現在的來源與框架算工作，再核對目前IP、所有暫存器與旗標是否吻合已證實交接；沒有常駐可變游標，不執行opcode或固定效果函式。
+原IP與虛擬步／成本只記ABI時點，未驗分支不猜補，不宣稱硬體wall-clock。
+
+689E的列結束旗標直接導至6850，不讀未用payload。其餘由原DS:SI四byte讀rawX、width及compressedLength，位移+來源均在普通RAM且不段環繞；原BP+8是X偏移。
+保存marker後，現在SI須吻合已消耗0／2／4 bytes。來源及X參數不別名於1250 marker；中途marker須等於原rawX。
+X採rawX低15位加有號偏移，限−255至574；width及compressedLength非零，left≤right<320。計算span末端、目的列位址、可見交集及payload尾端。
+有效可見區間須在64000 bytes與320像素列內；全右／全左導向6840／6848，左右裁切導向691C，未裁切導向68F4。保留原8位低端進位與16位旗標投影，不改原幾何。
+
+4B6C由已用色數1–256及SI+CX=3×used識別RGB工作。error、distance及threshold各≤63，Go直接算sum及是否跨threshold。
+需推進時以原direction±1更新0–63色值，並寫新誤差；沒有推進時不讀未用色號或direction。中途已更新色值可反推來源，後段只驗已寫error與typed游標。
+4B9A／4BC1由BP−6還原固定caller框架，SP與已用色數、偶數DI及RGB游標逐項吻合。讀下一個palette index與三個0–63通道，生成原三個scratch word及六個stack word。
+已寫scratch必須吻合來源；DI為0直接結束而不讀下一色，清理8-byte參數只處理原call-frame。字串載入成本與清理SP旗標沿原版。
+
+4268重用primitiveSurface的slot、父表面與十八個scratch驗證，另驗框架、原色、目前列與左右界。
+Go算root相對X／Y、stride與目的位址；320寬快速形式及其他合法寬度的ABI皆驗。接至42A1時色號、word count、DI及奇偶carry吻合既有Go跨度。
+新工作只寫header／RGB準備RAM，不新增像素或硬體命令。BIOS查詢前後14步、其他字型context與未驗條件保留。
+
+准予接入四類短續行及固定前綴邊界。正式定向、全部繪圖回歸、正常原版CPU／RAM／有序事件／檔案、直接入口及HD／地圖／字型介面抽樣通過後才升局部CONFORMED。
+正常固定步數減少不得當作全遊戲完成率；完整Go閘門仍DRAFT。
+
+### 四類繪圖工作短續行正式驗收
+
+2026-10-29，上述已列短續行局部CONFORMED，來源18927120914774783278c52db9ed50360b0d4ea7，執行檔SHA-256
+`fb5394a8cc5985ff466e4e7c7c728756cfb98d3b5edd93670a3f8986100d69d1`。
+正式2523次原版邊界、172種拒絕、32次selector通過；完整drawblocks420.725秒，相關機器／工作階段／遊戲／前端及vet通過。
+正常712250000步的CPU／RAM、有序視訊／音訊／回掃／DOS、127檔及46份入口同前版及原版。
+111步非BIOS固定控制與91步原CPU資料準備改Go，Go淨增202步，總計145806計畫／3435298步。
+僅餘2A66／2A77兩份BIOS前後控制，共14步；兩份完整計畫、暫存器、預算、效果及RAM SHA逐項同前版。
+六份4B86舊Go單步合併進較大工作，該出口計數少6份／6步；四類工作以外的Go出口不變。有序效果與3343240 bytes像素命令完全相同，本批不新增像素。
+HD與正常讀檔／地圖／攻略／工具列、英文、2／3倍及F12的30張PNG、來源色號／色盤／字格metadata與全部客體檔逐項同前版。
+HD原始閃現0；字型路線同前版121格明示倍率切換，非預期0，字型及776檔主題未改。
+總檢查後原子啟用，前版45213b3以pod-play-nativesurfacesetup保留。固定[019-native-drawing-jobs-runtime.json](../re/019-native-drawing-jobs-runtime.json)，入口tools/native_drawing_jobs_check.py。
+正常固定控制分類只代表已走路線；其他來源／文字context與未知條件保留，全部Go仍DRAFT。BIOS14步維持平台邊界，不當作像素缺口或硬體時序研究入口。
