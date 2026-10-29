@@ -15,6 +15,7 @@ type glyphTextCell struct {
 	pending    bool
 }
 type glyphTextCall struct {
+	step   uint64
 	ret    uint32
 	ss, sp uint16
 	key    int
@@ -106,6 +107,9 @@ func (g *glyphText) before(v StepCPU) {
 	if at != 0x1c486 || v.Read8(0x449) != 0x13 {
 		return
 	}
+	if g.call != nil && g.call.step == v.Steps() && g.call.ss == v.SS() && g.call.sp == v.SP()+14 {
+		return
+	}
 	if g.call != nil {
 		delete(g.cells, g.call.key)
 		g.call = nil
@@ -157,7 +161,7 @@ func (g *glyphText) before(v StepCPU) {
 			cell.source[row*8+col] = value
 		}
 	}
-	g.call = &glyphTextCall{ret: uint32(v.Read16(stack+2))*16 + uint32(v.Read16(stack)), ss: v.SS(), sp: v.SP() + 14, key: int(y)*40 + int(x), cell: cell}
+	g.call = &glyphTextCall{step: v.Steps(), ret: uint32(v.Read16(stack+2))*16 + uint32(v.Read16(stack)), ss: v.SS(), sp: v.SP() + 14, key: int(y)*40 + int(x), cell: cell}
 }
 func (g *glyphText) write(offset uint32) {
 	if g == nil || offset >= 64000 || g.call == nil {
