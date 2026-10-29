@@ -1,5 +1,7 @@
 # 研究索引
 
+- [整個表面填色的一步跨度](../spec/025-direct-render-commands.md#surface-fill-spans-ready)：#49，[固定收據](019-native-surface-fill-spans-runtime.json)、[檢查器](../../tools/native_surface_fill_spans_check.py)。原版有序邊界、70次完整呼叫、全部回歸及11對正常截圖通過；正常實際新增兩個Go計畫、320 bytes填色，全部Go仍DRAFT。
+
 - [單點、填色與斜線單步](../spec/025-direct-render-commands.md#primitive-spans-ready)：#49，[固定收據](019-native-primitive-spans-runtime.json)、[檢查器](../../tools/native_primitive_spans_check.py)。原版有序邊界、112次完整呼叫、完整回歸及11對正常截圖通過並啟用；新像素出口正常未觀測，全部Go仍DRAFT。
 
 - [橫直線單步與寬1縮放](../spec/025-direct-render-commands.md#axis-spans-ready)：#49，[固定收據](019-native-axis-scale-runtime.json)、[檢查器](../../tools/native_axis_scale_check.py)。3504次線段邊界、零半徑與寬1完整狀態、全部回歸及11對正常截圖通過並啟用；新入口正常未觀測，全部Go仍DRAFT。

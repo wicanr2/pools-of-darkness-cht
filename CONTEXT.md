@@ -53,32 +53,32 @@
 
 | 項目 | 目前狀態 | 下一個驗收點 |
 |---|---|---|
-| 正式程式與 HD | `4d3ad6e`、`17195e4`已啟用；776檔主題未改，前版`a25e9bb`以pod-play-nativeaxisscale保留 | 後續繪圖接管另建候選，保留已驗版 |
+| 正式程式與 HD | `a4fdac6`、`5b7a0d0`已啟用；776檔主題未改，前版`17195e4`以pod-play-nativeprimitivespans保留 | 後續繪圖接管另建候選，保留已驗版 |
 | demo 中斷 #13 | CONFORMED：選單不逾時；對話、戰鬥中斷與重播、正常進入通過；F12／2倍終點同原流程，非預期閃現0 | 固定證據[020](docs/re/020-demo-control-runtime.json)，入口[規格018](docs/spec/018-demo-control.md#demo-conformed) |
-| Go 繪圖 #49 | 單點、指定區域填色與斜線單步局部CONFORMED並啟用；原版有序邊界、112次完整呼叫、全部回歸及正常11對截圖通過，整體仍DRAFT | 新像素入口正常未觀測；接續整個表面填色的短預算及其他未驗條件 |
-| 不露原版 #16 | 明確按D新路線的一格閃現已由四格保留修正；直接／舊合成各11格及正常HD均為0，未知與上限拒絕通過 | 已驗範圍見[基本圖元單步收據](docs/re/019-native-primitive-spans-runtime.json)及[前批完整收據](docs/re/019-native-bounded-runtime.json)；其他HD來源及玩家路線不外推 |
+| Go 繪圖 #49 | 整個表面填色一步跨度局部CONFORMED；1056次原版邊界、70次完整呼叫、全部回歸及正常11對截圖通過，整體仍DRAFT | 正常新增兩個Go計畫、320 bytes填色；接續常駐8×8字模短預算 |
+| 不露原版 #16 | 明確按D新路線的一格閃現已由四格保留修正；直接／舊合成各11格及正常HD均為0，未知與上限拒絕通過 | 已驗範圍見[整個表面填色收據](docs/re/019-native-surface-fill-spans-runtime.json)及[前批完整收據](docs/re/019-native-bounded-runtime.json)；其他HD來源及玩家路線不外推 |
 | 攻略、HD、工具列 #9、#10、#14、#15 | 既有收據範圍保留，未驗部分仍待驗 | 以目前程式核對缺項，不追加已停止的 G6 自動探索 |
 | 配樂、多語系、作弊、推廣片 #11 | 原案仍須完成 | 按各自規格與試聽閘門完成 |
 | 三平台封包 #12 | 尚未交付 | 乾淨重建、啟動、存檔與 manifest 驗證；平台限制明列 |
 
-目前工作：#49單點、指定區域填色與斜線的單步像素已驗收啟用。
-正式來源為`4d3ad6e721b444fbc539f00229610929865be0c7`，執行檔SHA-256為
-`17195e498b01b3b0d1e5f5a55def1b13d3f1b7ab28be4825de80f0fc6bdb861d`。
-前版a25e9bb以pod-play-nativeaxisscale保留，b6ca329及較早回復檔仍留；原始資料與776檔主題未改。
+目前工作：#49整個表面填色的一步跨度已驗收啟用。
+來源為`a4fdac626bbd402d47cc10f9b2d9f39b1930f6b6`，執行檔SHA-256為
+`5b7a0d03b9baff71c8fac2a8b5d8bd77b8f4f994d3badd9e8588db2c2b4d2f10`。
+前版17195e4以pod-play-nativeprimitivespans保留，a25e9bb及較早回復檔仍留；原始資料與776檔主題未改。
 
-固定[019-native-primitive-spans-runtime.json](docs/re/019-native-primitive-spans-runtime.json)記錄單點28、填色200、斜線4176次有序原版邊界，含60次零計數及七個位置。
-112次完整呼叫的SaveState及PortLog相同，1404個Go計畫、872個固定控制與14972道CPU控制，七位置CPU／固定像素回退0。
-72次非零root／八層父表面、4次整張填色畫布與146種拒絕通過，另6次保留原版斜線裁切計數特例：選取右界10仍畫62點、最大X20。
-斜線整段與單步共用typed幾何，完整工作仍優先，預算不足才用單步。280個既有游標計畫同原版。
-完整繪圖回歸615.745秒，machine、session、pod、前端與vet通過。首輪14分鐘上限停在未修改的縮放測試；保留逾時紀錄，取消本批GUI併行後同來源完整重跑通過，沒有改產品規則。
+固定[019-native-surface-fill-spans-runtime.json](docs/re/019-native-surface-fill-spans-runtime.json)記錄1056次有序原版邊界，含500次零計數及兩個位置。
+70次完整呼叫的SaveState及PortLog相同，3734個Go計畫、1168個固定控制與31382道CPU控制，兩位置CPU／固定像素回退0。
+18次非零root／八層父表面及46種拒絕通過；舊整列18種幾何／成本、194個計畫及八種拒絕仍相同。
+整列快速工作保留，只有到42A1／42A5才用一步Go跨度，重用既有typed表面及計畫助手。
+完整繪圖回歸445.127秒，machine、session、pod、Xvfb內前端與vet通過。
 正常HD demo與地圖／攻略／工具列11對截圖相同，閃現0。正常712250000步的CPU／RAM、有序事件、127檔及46份直接入口同原版。
-本批七像素入口在此正常demo未觀測，受控語意不外推正常場景或FPS；正常Go112037計畫、演算法3400458步、固定1018不變。
-前批[橫直線與窄縮放](docs/re/019-native-axis-scale-runtime.json)、[表面搬移跨度](docs/re/019-native-surface-spans-runtime.json)、淡入／DAC、字模、RLE及HD逐格呈現均維持已驗版。
+本批兩個出口正常各新增一次Go計畫，42A1實際增加320 bytes Go填色，42A5為零計數尾端。其他Go出口計數不變，總計112039計畫／3400460步、固定1018；不外推全遊戲或FPS。
+前批[基本圖元單步](docs/re/019-native-primitive-spans-runtime.json)、[橫直線與窄縮放](docs/re/019-native-axis-scale-runtime.json)、[表面搬移跨度](docs/re/019-native-surface-spans-runtime.json)、淡入／DAC、字模、RLE及HD逐格呈現均維持已驗版。
 前版B97的四路demo、39對介面、六對真存讀檔與demo中斷完整收據留在[019-native-bounded-runtime.json](docs/re/019-native-bounded-runtime.json)，不冒稱本批全部重跑。
 
-全部Go閘門仍DRAFT。下一項為整個表面41AF填色的42A1／42A5短預算；它與指定範圍3338分開，原整列Go工作已在。
-新6次診斷完整狀態相同，預算1／7仍有81個CPU像素，1024皆Go；隔離原型另有1056次原版邊界、70次完整呼叫、18次非零root／八層父表面及46種拒絕通過。
-該原型兩位置像素回退0，仍DRAFT、未接正式路徑，入口與log見規格025末節。靜態ES／字串寫入候選只供盤點，不當作像素覆蓋證據。
+全部Go閘門仍DRAFT。下一項為常駐1B2E:11A6的8×8字模短預算，與VGA.DRV的5AA4變寬字模分開。
+正常原版32份字模入口抽第0及31份，兩成本及預算1／7／1024共12次完整SaveState與PortLog相同；當前正式PlanGlyphCall與drawblocks.Plan在1／7仍由CPU畫64點，1024皆Go。
+這是已確認的覆蓋缺口，診斷檔與log見規格025末節，尚無正式短續行實作。靜態ES／字串寫入候選只供盤點，不當作像素覆蓋證據。
 其他色盤位置、root與未驗條件保留；來源、BMHD／BODY查找及字模context準備、換列、回車與載入不冒稱Go解析器或文字排版器完成。
 
 HD最新完成批次：[#48](https://github.com/wicanr2/pools-of-darkness-cht/issues/48)補齊DUNGCOM第5組地形。

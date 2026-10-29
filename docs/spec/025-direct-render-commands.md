@@ -166,7 +166,11 @@ HD與讀檔／片頭的原始閃現0；封面的998筆均為既有F2主動切換
 驗收保留完整CPU／RAM、有序事件與索引讀回，再走既有正常DEMO、介面及存讀檔，成本量測含相容效果。
 本輪只有來源與二進位核實，沒有改動正式執行檔、撤除舊區塊或完成此新增閘門。
 
+<a id="surface-fill-whole-initial"></a>
+
 ### 48A1:41AF矩形填色的Go演算法
+
+勘誤`SURFACE-FILL-SPAN-READY-20261029`：小步數的42A1／42A5像素出口另有[一步跨度契約](#surface-fill-spans-ready)，本節完整列證據仍有效。
 
 狀態：CONFORMED，2026-10-26，#49；先以獨立原版審查至READY，再接入與正常驗收，其餘全部Go演算法閘門仍DRAFT。
 原版`VGA.DRV` SHA-256為`eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f`。
@@ -1288,7 +1292,11 @@ HD demo與正常讀檔後地圖／攻略／工具列11對截圖、原版終點�
 勘誤：先前三批驗收敘述的3400441少記17步。淡入／DAC、表面搬移及橫直線／窄縮放的固定JSON與原始計數均為3400458，歷史收據不改。
 正式入口tools/native_primitive_spans_check.py，固定收據由研究索引連入；整個表面填色及其他未驗條件仍待完成，全部Go閘門DRAFT。
 
+<a id="surface-fill-short-initial"></a>
+
 ### 整個表面填色的短預算診斷
+
+勘誤`SURFACE-FILL-SPAN-READY-20261029`：下述隔離原型已完成審查，見[一步跨度契約](#surface-fill-spans-ready)；正式回歸完成前不升CONFORMED。
 
 狀態：DRAFT，#49，2026-10-29。VGA.DRV原41AF–42B2共260 bytes，SHA-256
 `c7db9b7b119f14464a7e76d35125922a3559d10fef36624f79f5120dd0d02f00`，沿既有IDA9.4原檔基準0與48A1執行期段。
@@ -1305,3 +1313,51 @@ log為surface-fill-span-research-first.log及surface-fill-span-research-guards.l
 
 另由既有IDA匯出盤點ES及字串寫入候選，保存在同clone的workplace/primitive-writer-candidates.json。
 它只列靜態候選，不能據此計算Go像素覆蓋率；文字context、字型或其他資料準備須與顯存寫入分開查證。
+
+<a id="surface-fill-spans-ready"></a>
+
+### 整個表面填色的一步跨度契約
+
+狀態：READY，#49，2026-10-29。不可變鍵為
+`DOS/VGA.DRV/eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f:0x41AF`。
+來源、260 bytes、SHA及IDA9.4原檔基準0沿[完整列契約](#surface-fill-whole-initial)，新增邊界是執行期48A1:42A1的F3 AB與42A5的F3 AA。
+已證實（受控條件）：原型1056次有序原版邊界比較、70次完整呼叫、18次非零root／八層父表面及46種不改輸入的拒絕通過，原始log沿[短預算診斷](#surface-fill-short-initial)。
+
+垂直鏈為原版slot／表面／色號→typed表面及列游標→Go填色跨度→既有顯存／HD畫布。
+呼叫者、原版控制分支、遊戲狀態、亂數、輸入及存檔保持原樣。初始41AF及4268整列快速工作保留，只有到達兩個像素出口才用最低一步跨度。
+限已知80386、兩種既有模型成本、mode13h、DS=48A1、ES=A000、DF=0與完整來源指紋。
+現行SS:SP框架+12為slot、+14為色號，BP=SP+6。框架不別名於程式／scratch，表面slot0–255，父連結至多八層。
+重用primitiveSurface的typed描述及十八個scratch word驗證：A000 root含有效320×200內矩形、選取表面包含於root，行距和非零root原點來自資料。
+BX為選取表面內的目前列，1129色號、113B左界及113D右界須一致；目的位移為(BX−rootTop)×rootWidth+(left−rootLeft)。
+
+42A1按width/2填word，CF=width%2；42A5從word尾端按width%2填byte，CF=0。
+AX須為原色低byte重複兩次，CX、DI及邊界須與typed幾何一致。Go直接建立有序填色跨度，零計數不讀寫。
+輸出保持旗標、BX及其他暫存器，CX歸零、DI前進count×unit、IP加2。步數1，成本原生3+5×count、DOSBox 1+count，沿既有虛擬時間契約，不推論硬體時間。
+兩位置的固定語意像素回退禁止；未知來源、模式、框架、模型或游標拒絕且不改輸入。沒有opcode解碼、CPU.Step或固定效果代畫。
+原型70次完整呼叫涵蓋七種幾何（1×1至320×200）、預算1／2／7／27／1024及兩成本，SaveState與PortLog相同；3734個Go計畫、1168個固定控制與31382道CPU控制，兩位置CPU／固定像素回退0。
+1056次有序比較含500次零計數；18次非零root及1／3／8層父表面的完整呼叫皆同原版。
+
+准予接入上述一步跨度及固定像素防線，沿既有Go助手，不改完整列快速演算法。
+正式定向、舊完整列與全部繪圖回歸、正常原版機器及HD／地圖介面抽樣後才升CONFORMED；正常未觀測的新出口須另列，不將受控結果冒稱正常路線或FPS。
+原始來源與RAM留本機，正式提交只含原創程式、測試、規格與雜湊收據。
+回鏈標記`SURFACE-FILL-SPAN-READY-20261029`；舊證據為[完整列](#surface-fill-whole-initial)及[短預算診斷](#surface-fill-short-initial)，新證據為本節。
+
+### 整個表面填色一步跨度的正式驗收
+
+2026-10-29，[一步跨度契約](#surface-fill-spans-ready)的42A1／42A5局部CONFORMED，來源a4fdac626bbd402d47cc10f9b2d9f39b1930f6b6。
+定向原版測試3.882秒，舊整列18種幾何／成本、194個計畫與八種拒絕0.938秒通過。完整drawblocks445.127秒，machine12.680、session0.277、pod3.197、Xvfb內前端0.083秒與vet通過。
+正常原版712250000步的CPU／RAM、有序視訊／音訊／回掃／DOS及127檔相同，46份直接入口同前版。
+正常新增42A1 word跨度與42A5零計數尾端各一個Go計畫，實際新增320 bytes Go填色；其他Go出口計數不變。
+Go總計112039計畫／3400460步，固定1018步。這是實際正常抽樣入口證據，不推論全遊戲覆蓋或FPS。
+HD demo與正常讀檔後地圖／攻略／工具列11對截圖、原版終點與遊戲檔案相同，HD閃現0；前批四路demo、39對介面、六對真存讀檔與demo中斷完整證據另留，未冒稱本批全部重跑。
+固定收據由[研究索引](../re/README.md)連入，驗收入口tools/native_surface_fill_spans_check.py。既有整列工作與較早接管維持已驗範圍，全部Go仍DRAFT，下一項為下述常駐字模短預算。
+
+### 常駐8×8字模的短預算診斷
+
+狀態：DRAFT，#49，2026-10-29。原始入口1B2E:11A6共93 bytes，SHA-256
+`d1c978b914f28d1a978a2cae1b7a1c52f4b5d233176e8bd6c3029b05c9b4958b`，基準為dosgolem解包後執行期記憶體；它與VGA.DRV的5AA4變寬字模分開。
+原版入口來自既有正常原版收據native-fade-v1/trace-original-entries的32份glyph擷取。本輪抽第0及31份、兩種成本及預算1／7／1024，共12次完整SaveState及PortLog相同。
+直接使用當前正式來源a4fdac6的pod.PlanGlyphCall與drawblocks.Plan。預算1／7的每個呼叫仍由CPU寫64個像素；1024則64點全由既有Go整字工作產生。
+這是已確認的Go覆蓋缺口，不能由其他函式的七個像素出口回退0或固定語意1018步推論為完成。
+研究在既有隔離副本workplace/dosgolem/workplace/native-surface-fill-short-research/resident_glyph_short_audit_test.go，log為resident-glyph-short-audit-v1.log，0.302秒通過。
+下一步保留完整字模快速工作，補足原字形、前景／背景及列／位元游標的typed短續行。先驗原版與拒絕條件，再審查READY；本輪未接正式路徑。

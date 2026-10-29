@@ -1316,3 +1316,16 @@
 - 下一項整個表面41AF填色與指定區域3338不同。六次診斷完整狀態相同，但預算1／7仍有81個CPU像素。隔離原型補42A1／42A5後，1056次有序邊界、70次完整呼叫、18次非零root／八層父表面及46種拒絕通過，兩位置像素回退0；仍DRAFT，未接正式路徑。既有IDA匯出的ES／字串寫入靜態候選只供後續盤點，不當作動態像素覆蓋率。
 - CONTEXT唯一目前狀態表、規格與研究索引同步。七個位置局部CONFORMED，#49整體仍DRAFT／OPEN，原案其他功能與三平台交付仍待完成。
 - 沿用dosgolem-go-ebiten:1.24-r1，ID 8ed6bdee2bce1f32f804e888f942b25bbf62f2165a43344bb4587f3371de0581，沒有新增映像。兩份原始壓縮檔SHA不變，776檔主題與README34張直接圖片完整；輸出1000:1000，find只見既有root-owned font，未更動。本專案執行中與停止容器皆0，沒有全域清理、改上游或其他專案。
+
+## 2026-10-29 整個表面填色的一步Go跨度驗收啟用
+
+- 接續#49，讀取復古逆向技能、規格閘門、結論回鏈及文件職責入口。原41AF整個表面填色與3338指定區域填色分開；沿既有IDA9.4的260-byte定位與原始SHA補READY契約，再接正式四個Go檔案，來源a4fdac626bbd402d47cc10f9b2d9f39b1930f6b6。
+- 42A1 word跨度與42A5尾byte由typed表面、原色及BX列游標直接產生，最低一步。重用primitiveSurface及primitivePlan；框架、十八個scratch word、父表面、CF／DF／CX／DI及已知80386均核對。既有41AF／4268整列快速工作保留，固定語意不得代畫兩位置，沒有opcode解碼或CPU.Step。
+- 正式定向3.882秒：1056次有序原版比較含500次零計數，70次七種幾何、兩成本與五預算的完整SaveState及PortLog相同，3734個Go計畫、1168個固定控制及31382道CPU控制，兩位置CPU／固定像素回退0。另18次非零root／八層父表面與46種不改輸入的拒絕通過。
+- 舊完整列18種幾何／成本、194個原版計畫與八種拒絕0.938秒通過；明示匯出用的TestOriginalRectangleEvidence維持原本skip，未把它算成新證據。全部drawblocks445.127秒，machine12.680、session0.277、pod3.197、同映像Xvfb內前端0.083秒與vet通過，沒有重跑已通過的產品測試來湊覆蓋。
+- 正常原版712250000步、CPU／RAM、有序視訊／回掃／音訊／DOS及127檔相同，46份直接入口同前版。本批兩個出口在正常路線各新增一次Go計畫，42A1實際新增320 bytes Go填色，42A5為零計數尾端；其他Go出口計數不變。總計112039計畫／3400460步、固定1018步；正常增量與受控測試分列，不宣稱FPS或全遊戲覆蓋。
+- 正常HD demo7400格與讀檔後地圖／攻略／工具列4800格，共11對截圖、原版終點及遊戲檔案相同，HD閃現0。B97四路demo、39對介面、六對真存讀檔及demo中斷完整證據另留，未冒稱本批全部重跑。兩個GUI入口原先直接執行因腳本非executable而拒絕，改以bash呼叫同一腳本後正常執行，產品及檔案權限未改。
+- 完整總檢查後原子啟用5b7a0d03b9baff71c8fac2a8b5d8bd77b8f4f994d3badd9e8588db2c2b4d2f10，前版17195e4以pod-play-nativeprimitivespans保留，較早回復檔仍留。固定019-native-surface-fill-spans-runtime.json SHA為139a798ecb72495f8632e477ad0972387a4a7c93ff3afe8c64396def64668513，入口tools/native_surface_fill_spans_check.py；七種缺原始定位／marker／回鏈負對照皆拒絕。收據保留來源、正常增量、回歸、GUI與原子啟用。
+- 下一項依目前程式確認為常駐1B2E:11A6的8×8字模短預算，並非VGA.DRV的5AA4變寬字模。從正常原版32份入口抽第0及31份，兩成本、三預算共12次完整SaveState及PortLog相同；直接呼叫當前正式pod.PlanGlyphCall及drawblocks.Plan，預算1／7仍由CPU畫64點，1024則全Go。診斷0.302秒通過，原始log在resident-glyph-short-audit-v1.log；只補DRAFT，未猜補正式續行或外推全Go完成。
+- 唯一目前狀態表、規格與研究索引同步；本批兩位置局部CONFORMED，#49仍OPEN／整體DRAFT。靜態ES候選不當作像素完成率，文字context與其他資料準備另列，不重開與玩家無關的helper。原案多語系、配樂、作弊、推廣片與三平台交付仍待完成。
+- 沿用dosgolem-go-ebiten:1.24-r1，ID 8ed6bdee2bce1f32f804e888f942b25bbf62f2165a43344bb4587f3371de0581，未新增映像。兩原始壓縮檔SHA、776檔主題與README34張直接圖片完整；輸出1000:1000，find只見既有root-owned font，未改擁有權。專案執行中及停止容器0，沒有全域清理、改上游或其他專案。
