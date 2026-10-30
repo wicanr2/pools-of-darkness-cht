@@ -1552,3 +1552,4 @@
 - README直接新增第1組原尺寸拼圖，更新研究／規格／目前狀態及SETUP；固定[收據](docs/re/017-b32-runtime.json)，[研究](docs/re/017-vga-battle-hd.md#b32-terrain)。正常遭遇、其他圖組及動畫仍未知，不新增G6探索。
 - Docker沿用sosb-img:r1與dosgolem-go-ebiten:1.24-r1，全部一次性、無網路、1000:1000與資源上限；未建立新映像、未碰其他專案資源。最後驗證與推送回讀後追加。
 - 最後重生收據一致，SHA-256 `c9255b9d1b2cb68529b05e4d6f7e3f0a7fd0106339ace493b8d306a6b484b21e`；README 43張直接顯示圖片及542個本機文件連結通過，變更檔案皆1000:1000。原始ZIP／RAR未變，dosgolem工作樹乾淨、長期Go快取空，工作根掃描無root-owned檔案或誤建.md目錄；本專案標記容器0。
+- `b293205`已推main，#56驗收留言後關閉並回讀CLOSED；#10已追加目前125張地形素材、976檔主題與乾淨Git重建結果，保持開啟。未推dosgolem上游、未公開發行；原版索引、raw與存檔未入Git。
