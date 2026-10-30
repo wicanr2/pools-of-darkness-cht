@@ -5,10 +5,12 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 	"encoding/json"
+	"fmt"
 	"image"
 	"image/png"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 
 	"github.com/wicanr2/dosgolem/xlate"
@@ -187,5 +189,59 @@ func TestCombatHDRejects(t *testing.T) {
 				t.Fatal("失敗留下部分主題")
 			}
 		})
+	}
+}
+
+// 規格010 b37：完整來源去重後150個地下城及116個野外候選。
+func TestCombatHDCountBoundary(t *testing.T) {
+	dir, _ := writeCombatFixture(t, 255)
+	path := filepath.Join(dir, "combat.json")
+	data, err := os.ReadFile(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	var manifest map[string]any
+	if err := json.Unmarshal(data, &manifest); err != nil {
+		t.Fatal(err)
+	}
+	template := manifest["items"].([]any)[0].(map[string]any)
+	items := make([]map[string]any, 266)
+	for n := range items {
+		ref := bytes.Repeat([]byte{8}, 24*24)
+		ref[0], ref[1], ref[2] = byte(n&15), byte((n>>4)&15), byte((n>>8)&15)
+		name := fmt.Sprintf("boundary-%d.idx", n)
+		if err := os.WriteFile(filepath.Join(dir, name), ref, 0o644); err != nil {
+			t.Fatal(err)
+		}
+		row := map[string]any{}
+		for k, v := range template {
+			row[k] = v
+		}
+		digest := sha256.Sum256(ref)
+		row["key"], row["indexed"], row["indexed_sha256"] = name, name, hex.EncodeToString(digest[:])
+		items[n] = row
+	}
+	write := func(rows []map[string]any) {
+		t.Helper()
+		manifest["items"] = rows
+		b, err := json.Marshal(manifest)
+		if err != nil {
+			t.Fatal(err)
+		}
+		if err := os.WriteFile(path, b, 0o644); err != nil {
+			t.Fatal(err)
+		}
+	}
+	write(items)
+	theme, err := loadCombatHD(dir)
+	if err != nil || theme == nil || len(theme.tiles) != 266 {
+		t.Fatalf("266項載入失敗：%v", err)
+	}
+	for _, rows := range [][]map[string]any{nil, append(items, items[0])} {
+		write(rows)
+		theme, err = loadCombatHD(dir)
+		if theme != nil || err == nil || !strings.Contains(err.Error(), "件數") {
+			t.Fatalf("件數%d未在讀取素材前拒絕：%v", len(rows), err)
+		}
 	}
 }

@@ -65,7 +65,7 @@ func loadCombatHD(dir string) (*combatHD, error) {
 		return nil, fmt.Errorf("combat.json：%w", err)
 	}
 	if manifest.Version != 1 || manifest.Scale != 3 || manifest.Kind != "combat-terrain" ||
-		manifest.Grid != [5]int{8, 8, 7, 7, 24} || len(manifest.Items) == 0 || len(manifest.Items) > 256 {
+		manifest.Grid != [5]int{8, 8, 7, 7, 24} || len(manifest.Items) == 0 || len(manifest.Items) > 266 {
 		return nil, fmt.Errorf("combat.json：版本、倍率、類型、格線或件數不符規格 010 §6.2")
 	}
 	theme := &combatHD{lookup: make(map[[32]byte]int), vgaLookup: make(map[vgaTerrainSignature]int), vgaGeometry: make(map[[32]byte]bool)}
