@@ -2528,6 +2528,413 @@
       "png_sha256": "030830f6cd5ddcc62b2aa453aa3628fd746b5f134a2369ba74cd66caefc78334",
       "indexed": "wildcom-002@39.idx",
       "indexed_sha256": "263ba418b90238e73fabeb8c5aac10bbf7719bbb3681c5569931bde01902c092"
+    },
+    {
+      "key": "wildcom-001@0",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@0.png",
+      "png_sha256": "bf133379f374d8af081bfd136c314fa9c6ebe6ea1dcc7914eb93bddc0d9361dc",
+      "indexed": "wildcom-001@0.idx",
+      "indexed_sha256": "b02be269ab63dfbe9f6e297fedd60a114d31682690f9185a6a5973764ae4b92e"
+    },
+    {
+      "key": "wildcom-001@1",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@1.png",
+      "png_sha256": "5bc13fdd399159520401b935ff828e2ea5b4a934c69fa3479fae2bcd1e68f260",
+      "indexed": "wildcom-001@1.idx",
+      "indexed_sha256": "43406541a4f0ac93efa7b04daa53c44f17e126c96b225faf57d7c32a889c9a82"
+    },
+    {
+      "key": "wildcom-001@2",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@2.png",
+      "png_sha256": "b9d7403918ec83271abcb49167a75aa781e9bfbc9eb25468866d102c74e9087f",
+      "indexed": "wildcom-001@2.idx",
+      "indexed_sha256": "e3de22b018a52b75cf8486517a84acbe60c19b48578940c9835e34758db3163b"
+    },
+    {
+      "key": "wildcom-001@3",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@3.png",
+      "png_sha256": "9479251e158796829e8b3739a64ac318c557eda4a4a4271cc66ba55bf04447ac",
+      "indexed": "wildcom-001@3.idx",
+      "indexed_sha256": "f2768b0b237d39a6db4599f08c3e96f9b9ca2e41a6a5ee2c64122e0aaa97c65e"
+    },
+    {
+      "key": "wildcom-001@4",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@4.png",
+      "png_sha256": "7029643ba0cd235b6ef15582471cdeba2081b97166958536d2e724f050119202",
+      "indexed": "wildcom-001@4.idx",
+      "indexed_sha256": "a675e693e1e2331d28f28afb22990b499117ec3491e02c711643b3ae31fba6d7"
+    },
+    {
+      "key": "wildcom-001@5",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@5.png",
+      "png_sha256": "ac084ee34e6c2088f4d4856deab797672e763c52c696829fd50e5d786bf81398",
+      "indexed": "wildcom-001@5.idx",
+      "indexed_sha256": "40c1f89b92ea4283677345fe24d97ef7aac1ffdcd225be9415c374d9ece5b271"
+    },
+    {
+      "key": "wildcom-001@6",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@6.png",
+      "png_sha256": "f51ae205a480603ace3d89e903e6310be4d32819669c23c327994de6ad4333be",
+      "indexed": "wildcom-001@6.idx",
+      "indexed_sha256": "ad7292afd45ae5d386705c15cb9eded6f2b2de0aa7a2a78467285978bf25fd3a"
+    },
+    {
+      "key": "wildcom-001@7",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@7.png",
+      "png_sha256": "c27ce25a764b0d575bc5177eb0bbd21f412b4ba9099d56219edd5bca405c2a67",
+      "indexed": "wildcom-001@7.idx",
+      "indexed_sha256": "153cadd039a904ea07a15fe91b10eb36ecc3b2df13f6e068c4e08f9131808c11"
+    },
+    {
+      "key": "wildcom-001@8",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@8.png",
+      "png_sha256": "6c0553daf4d0c5a67d75ec037079ca2c1f6404c854254b05f45846e968f3ce49",
+      "indexed": "wildcom-001@8.idx",
+      "indexed_sha256": "0db2e3d8ea06e485b61b15971454566a862bd25da4e539941da342ce0ce75512"
+    },
+    {
+      "key": "wildcom-001@10",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@10.png",
+      "png_sha256": "af8591a2de6cae5ac241ed3607b38b27e6dca427c52cc2278481938835cccec5",
+      "indexed": "wildcom-001@10.idx",
+      "indexed_sha256": "1c9d821d46de1fdd1cabbf79b7902b1c80f3cb9ca29275f350f227e2bc86570f"
+    },
+    {
+      "key": "wildcom-001@11",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@11.png",
+      "png_sha256": "3314e7b62f55b5510bfdd5f86adecf2539b34d10a09ac0a39e90b97595d0ffc5",
+      "indexed": "wildcom-001@11.idx",
+      "indexed_sha256": "fe7300a603585be3cb4b5ddeb43d4b6031d34f23b26ccac639a1980b49730ae0"
+    },
+    {
+      "key": "wildcom-001@12",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@12.png",
+      "png_sha256": "13973268259ef184963782482b513cffefe95e8859b923acc2f57116b1100a72",
+      "indexed": "wildcom-001@12.idx",
+      "indexed_sha256": "d2e6129c10c17036311eb4924728cb2fba0c2cc6269fb9a856c2e4aa13f49fb2"
+    },
+    {
+      "key": "wildcom-001@13",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@13.png",
+      "png_sha256": "6df38c0342457fbb63e5a7afa63083d9aa49e6d88a036d513c95d4b8fcff7acd",
+      "indexed": "wildcom-001@13.idx",
+      "indexed_sha256": "e70b74c43c64a14b8099130990006512d88ec51a9479f217123310acdea6cb00"
+    },
+    {
+      "key": "wildcom-001@14",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@14.png",
+      "png_sha256": "0b86e3add6cd59167456104d12255273f3188a0f533cb8c01f4ec5ecf62f58da",
+      "indexed": "wildcom-001@14.idx",
+      "indexed_sha256": "8a8b3f78afaa7bcbdf4bef371dfb308253dda91f70bd5e19533ccb82a8dfd0b4"
+    },
+    {
+      "key": "wildcom-001@15",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@15.png",
+      "png_sha256": "ccbc81ad6af302ae8334ea050de4719b8905da4e460af72fa831f6eb919438e9",
+      "indexed": "wildcom-001@15.idx",
+      "indexed_sha256": "fe5b19f32344b033e7d1083f26b8f0f0bcd7d4aaaac8001dd0a448d5126416a5"
+    },
+    {
+      "key": "wildcom-001@16",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@16.png",
+      "png_sha256": "2fab91eef711384e0f68983c352a5fe8019096b9ccd9802812c9d9cbc1aef3fd",
+      "indexed": "wildcom-001@16.idx",
+      "indexed_sha256": "c734995bd50693d3159175b2aafc919f0d9976f2dc21aca98a27d98db6641d60"
+    },
+    {
+      "key": "wildcom-001@17",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@17.png",
+      "png_sha256": "2188c94830b7063269952cc3f8cd99515b151e8d878c532063240ecd7139059b",
+      "indexed": "wildcom-001@17.idx",
+      "indexed_sha256": "629db6d5ffc7066824bbe234d96477c698c6b94e4e0d94f7514ed67fd08a0f86"
+    },
+    {
+      "key": "wildcom-001@18",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@18.png",
+      "png_sha256": "ceb4ff3c3ce0d01e82a7e19a46a1413a8e73851c4f9d7db99550fbb64ad7e219",
+      "indexed": "wildcom-001@18.idx",
+      "indexed_sha256": "92a524fcd9c5837fb768d15650a789a785bc9c0f2eade2fc47d1458ae46f21ce"
+    },
+    {
+      "key": "wildcom-001@19",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@19.png",
+      "png_sha256": "d8f70c2ec30c50632e1406bae396eeb3a05186b03beb0e8051dc69f69c83de8b",
+      "indexed": "wildcom-001@19.idx",
+      "indexed_sha256": "ad39f931fb81fc6a57fdf3aff669a6f92289b1f13aebfe652ccb9078a878da49"
+    },
+    {
+      "key": "wildcom-001@20",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@20.png",
+      "png_sha256": "d6e995c739f964c0176f4d11c3ba0de6e68edb7dfe6239293d24b8498692d0c0",
+      "indexed": "wildcom-001@20.idx",
+      "indexed_sha256": "8e8c1240520be61b25db458bfe38772ce4e401d10be26c88223b40cd6c1b0ec6"
+    },
+    {
+      "key": "wildcom-001@21",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@21.png",
+      "png_sha256": "7f7716f1b9e581e70909a6919b0ddbf399f2fcd2770012050604bba0ccc1d30a",
+      "indexed": "wildcom-001@21.idx",
+      "indexed_sha256": "1fef1f639807419c30daf3fdcf146421c0206d2c6ca2b41cdebeeeeb399f0164"
+    },
+    {
+      "key": "wildcom-001@22",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@22.png",
+      "png_sha256": "e9a0a50b5eaad0a6f829f6ae73f7d57b2fed8bf89fa49082a0865ecd1946366d",
+      "indexed": "wildcom-001@22.idx",
+      "indexed_sha256": "37ff4524ff17d11b3ed6cdaa93da9f3ecf2f18f437fcac680be570942ed4bdaf"
+    },
+    {
+      "key": "wildcom-001@23",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@23.png",
+      "png_sha256": "c28e6ab7b11dc103e143cff62b026c81c6ca2baee1d42730c22a314b0bead832",
+      "indexed": "wildcom-001@23.idx",
+      "indexed_sha256": "581925d0518a50fb2197ead43a0a2028c7d315e5320fc13de51b2f822e0b0bde"
+    },
+    {
+      "key": "wildcom-001@24",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@24.png",
+      "png_sha256": "5adcb1d0b76dbce9406656d89f098849531bc357d855ab814a2ad812ee483854",
+      "indexed": "wildcom-001@24.idx",
+      "indexed_sha256": "d380e40128d6b1e4965a5fe1b4c1b5d5acf4f21c2099ade7b5c661ea1034718f"
+    },
+    {
+      "key": "wildcom-001@25",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@25.png",
+      "png_sha256": "025a50cbb944949734683fb16037be8063150945a3962a1a3af8d3eb54914fd1",
+      "indexed": "wildcom-001@25.idx",
+      "indexed_sha256": "f2cd55050c00db6ec40c13df33cbe7b529a92e1e16024b2265a1875b2a3cc5c2"
+    },
+    {
+      "key": "wildcom-001@26",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@26.png",
+      "png_sha256": "e11c99147de5a74bae98fdfc51ab912b0361292114ffb8b952bb04860bc5febb",
+      "indexed": "wildcom-001@26.idx",
+      "indexed_sha256": "92eba9c9fc03bc6ab374fc8e7fb602fc785366b3c1a5382b4733522fdd725545"
+    },
+    {
+      "key": "wildcom-001@27",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@27.png",
+      "png_sha256": "73d53d77e7779e8e1ae94e87abefded2c601e09b3f95dc25000187017a4d05db",
+      "indexed": "wildcom-001@27.idx",
+      "indexed_sha256": "131852b51fa4aeed8d8abc6f1dcbec729e7705fe55835cb8218417a45befb31a"
+    },
+    {
+      "key": "wildcom-001@28",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@28.png",
+      "png_sha256": "c138542a96c7d33c893a542d65431b1f5cbb46bea439265c9d2395fd1511ccd9",
+      "indexed": "wildcom-001@28.idx",
+      "indexed_sha256": "bc2d468078f03ba2c300d0a450a8dd8f9f7f235e1259871b9190ddea1f683184"
+    },
+    {
+      "key": "wildcom-001@29",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@29.png",
+      "png_sha256": "4612a27274689c1acd83ecd49c160170446c689bd67dde99e4eadb9ca20ad427",
+      "indexed": "wildcom-001@29.idx",
+      "indexed_sha256": "beb8f4ac5c34021f8cfa64c258edbcf9370cf5d1875b93be72a2ba8617ae086e"
+    },
+    {
+      "key": "wildcom-001@30",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@30.png",
+      "png_sha256": "8378e2fd97e72950887f7ac9e23f60cc20bd5bcb73b68618489bf8b751d57741",
+      "indexed": "wildcom-001@30.idx",
+      "indexed_sha256": "db776dcae2c32cc3a78ec1c3c08bff13b4c59818e67204c38a7b4838187fc69c"
+    },
+    {
+      "key": "wildcom-001@31",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@31.png",
+      "png_sha256": "8a465be9022f07b14f1cc3d4a89d8fc158145733c61e301be44d0159541c0651",
+      "indexed": "wildcom-001@31.idx",
+      "indexed_sha256": "f33c3fcda91de9738d303bce1482fb741c24d1a03b2c1505e516e5d93a7fef11"
+    },
+    {
+      "key": "wildcom-001@32",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@32.png",
+      "png_sha256": "a1acba43758b3352babe8157cdad65f2fe042411ca17465e2b667ac0efa8ceaf",
+      "indexed": "wildcom-001@32.idx",
+      "indexed_sha256": "3efd1dd0f956e851c34a8bdb2a8f45b4b8331f46c07f68f727f49b36f35e92da"
+    },
+    {
+      "key": "wildcom-001@33",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@33.png",
+      "png_sha256": "f6f7353ea043d1cdac654be70266f933f8ee17d380bfa4fe0f631d4852cf8d4e",
+      "indexed": "wildcom-001@33.idx",
+      "indexed_sha256": "3f9ac02fbad251bc4a2b8caf6a153773a2fa749669f40172a6344707200401ff"
+    },
+    {
+      "key": "wildcom-001@34",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@34.png",
+      "png_sha256": "ec050cabbfa3b624135ae282b20e989f796108a7787f5b4258aa03a07952cf63",
+      "indexed": "wildcom-001@34.idx",
+      "indexed_sha256": "b2d259e3cdc924120d095f2480a26649560f6f15acd5d31a9cf1c8e79ee54c59"
+    },
+    {
+      "key": "wildcom-001@35",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@35.png",
+      "png_sha256": "5fe6774627899e6ab6c6435350a6d7ae94e06dfcc5c1062998068f5a4a8ec84f",
+      "indexed": "wildcom-001@35.idx",
+      "indexed_sha256": "50f41b4dfdcb38c7c95d7c7ab785a4cecaa1fedf86108b8222bcbcd90e958969"
+    },
+    {
+      "key": "wildcom-001@36",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@36.png",
+      "png_sha256": "55c4a1dc8ba0dac8f6196c8f15dd1b5a1c27c9fda35507b6141315fa89c02598",
+      "indexed": "wildcom-001@36.idx",
+      "indexed_sha256": "8908a83fb3881f24414997b81e61612be8e7cf1200e54a116264b24870714ed7"
+    },
+    {
+      "key": "wildcom-001@37",
+      "size": [
+        24,
+        24
+      ],
+      "png": "wildcom-001@37.png",
+      "png_sha256": "f6259bf64c2d0694d9bb0f5dae303221693ccd5237680dd2c6b2728da73a4dd0",
+      "indexed": "wildcom-001@37.idx",
+      "indexed_sha256": "5722583fa1ac814bdc1d90c98237a4279da897a9fc15ebdeb537196a9c139ba5"
     }
   ]
 }

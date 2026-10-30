@@ -1,0 +1,30 @@
+{
+  "source_states": 40,
+  "unique_candidates": 37,
+  "aliases": [
+    {
+      "source": "wildcom-001@9",
+      "candidate": "wildcom-001@8",
+      "indexed_sha256": "0db2e3d8ea06e485b61b15971454566a862bd25da4e539941da342ce0ce75512",
+      "palette_sha256": "b888548dcf271ca432ed60488dbe14cbc8613e7a8d5da58cd62b82a8e21cb084",
+      "evidence_level": "proven",
+      "meaning": "exact source indexed bytes and full palette; no timing claim"
+    },
+    {
+      "source": "wildcom-001@38",
+      "candidate": "wildcom-001@37",
+      "indexed_sha256": "5722583fa1ac814bdc1d90c98237a4279da897a9fc15ebdeb537196a9c139ba5",
+      "palette_sha256": "b888548dcf271ca432ed60488dbe14cbc8613e7a8d5da58cd62b82a8e21cb084",
+      "evidence_level": "proven",
+      "meaning": "exact source indexed bytes and full palette; no timing claim"
+    },
+    {
+      "source": "wildcom-001@39",
+      "candidate": "wildcom-001@37",
+      "indexed_sha256": "5722583fa1ac814bdc1d90c98237a4279da897a9fc15ebdeb537196a9c139ba5",
+      "palette_sha256": "b888548dcf271ca432ed60488dbe14cbc8613e7a8d5da58cd62b82a8e21cb084",
+      "evidence_level": "proven",
+      "meaning": "exact source indexed bytes and full palette; no timing claim"
+    }
+  ]
+}
