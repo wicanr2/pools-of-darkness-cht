@@ -120,3 +120,5 @@
 | [014](014-vga-hd.md) | 本作 VGA 圖檔、色盤、[盤點計數與別名](014-inventory-summary.json)、BIGPIC／TITLE、正常街景天空及17種牆面來源、HD素材與實際展示核對 | #10、#17 |
 
 - [025 跨機重建固定收據](025-rebuild-runtime.json)：#55，乾淨Git檔案重建926檔主題及6份字型，新編譯程式正常7400格、127檔與合成同b31、閃現0；入口見[SETUP.md](../../SETUP.md)。
+
+- [b33第6組與完整DUNGCOM素材核對](017-vga-battle-hd.md#b33-terrain)：#57，25張數值、目視、來源診斷及[正常DEMO與乾淨Git重建](017-b33-runtime.json)通過；六組150張非純色HD、六個純色保留格核對齊全，1026檔已啟用，閃現0。未觀測正常遭遇仍未知。
