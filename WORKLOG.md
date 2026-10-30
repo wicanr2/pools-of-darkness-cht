@@ -1626,3 +1626,4 @@
 - 必要PNG、原樣JSON、清單及新引擎固定commit同步Git；628張PNG有Git來源，616份原版索引由自備DAX本機重生。Git樹4841d563a4ae2b8c971095d894ea9a10bcd4a018匯出乾淨主專案來源，重建1258檔及六份字型逐檔相同，缺圖與舊索引改動負對照拒絕。
 - 固定收據docs/re/017-b37-runtime.json重算相同，642個本機連結與48張README內嵌圖片通過。變更檔UID/GID為1000:1000，原版壓縮檔雜湊不變，root-owned及誤建.md目錄為空，長期Go快取為空；本批容器全部自動移除，dosgolem工作樹乾淨。
 - WILDCOM素材對應已齊，正常野外遭遇、動畫及其他圖族仍在#10；不重開Go繪圖收尾或G6探索。原始生成圖與提示詞保存於既有本機輸出及私人審閱manifest。
+- 主專案60fab7c及引擎b5ed1eb已推本專案私人main與dosgolem/pod；#61驗收[留言](https://github.com/wicanr2/pools-of-darkness-cht/issues/61#issuecomment-6535783171)後關閉。#10補[完整野外素材對應與剩餘範圍](https://github.com/wicanr2/pools-of-darkness-cht/issues/10#issuecomment-6535784172)，維持開啟；本批容器0，兩工作樹乾淨。
