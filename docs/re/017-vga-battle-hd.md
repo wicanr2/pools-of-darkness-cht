@@ -404,3 +404,41 @@ CPU、完整RAM、原版色號與色盤、127檔、來源與最終合成相同�
 候選只新增六組PNG／idx，僅更新combat.json及來源provenance；原25格地形、238張怪物與全部舊圖不變。
 以完整目錄原子交換啟用788檔，776檔留在`workplace/hd/theme-b27-previous`，正式目錄逐檔等於受測候選。
 固定[017-b27-runtime.json](017-b27-runtime.json)，本批範圍CONFORMED。其他第4組圖樣、其他圖族及未觀測正常事件仍待後續，不新增G6探索。
+
+<a id="b28-terrain"></a>
+
+## b28 地下城第4組第6–11格
+
+2026-10-30，Issue [#51](https://github.com/wicanr2/pools-of-darkness-cht/issues/51)，沿規格010的b28 READY契約。
+來源仍為DUNGCOM.DAX第4塊，原檔byte offset 32824、原色盤32–63區段；第6–11格完整色號與色盤逐項固定在[b28私人審閱manifest](../../review/hd/b28-terrain/manifest.json)。
+六格與本組既有候選的色號指紋不同，皆各以內建image_gen手繪一次。24×24來源製成72×72不透明RGBA，結構0.579–0.887、色相量尺0，原尺寸並列逐件目視通過。
+灰階來源的色相量尺0不表示RGB逐像素相同。原圖、完整提示詞、生成檔及成品SHA由[審閱頁](../../review/hd/b28-terrain/README.md)回查；未以濾鏡放大代替重畫。
+
+沿用c9f4001來源診斷，明示六張新增、共37張地形及第4組原色盤，六例17.231秒通過。
+完整PNG、兩個同組真實鄰格、來源／色盤失配、孤立圖案、2倍／F12及來源不變均檢查；產品三格戰場守衛與正式程式未改。
+測試用Go編譯快取只在一次性容器內建立，隨容器移除，不重建專案的長期快取。
+
+800檔候選只新增六組PNG／idx，並更新combat.json、provenance；原788檔完整保留。
+正常DEMO驗收前，已逐檔核對b27正常收據的程式、遊戲輸入、字型、文字與788檔基準均同目前版本；未觀測正常遭遇仍未知，不新增G6探索。
+
+正常7400格候選DEMO完成712250000步，CPU、完整RAM、原版色號與色盤、127個客體檔案及最終合成同b27正常基準，閃現0。
+既有四路與b27舊／新主題收據保留，本批只重跑正常HD路徑，不外推為重新驗完四路或新增遭遇。
+
+CPU紀錄、來源色號與客體檔案三項負對照均拒絕。最初負對照腳本找SAVGAM檔，但DEMO並未建立存檔；
+改用實際客體檔案集合中的8X8D0.DAX暫存副本，同容器乾淨重查通過。這是驗證配方問題，產品與驗收門檻未改。
+負對照配方保存在`workplace/hd/out/b28/negative.py`，啟用與報告配方在同目錄`activate.py`、`report.py`；SHA由固定收據綁定。
+這條DEMO路徑只核對既有客體檔案，並不替代已完成的正常另存／冷讀驗收。
+
+800檔以完整目錄原子交換啟用，正式逐檔同受測候選，788檔保留在`workplace/hd/theme-b28-previous`。
+固定[017-b28-runtime.json](017-b28-runtime.json)，本批範圍CONFORMED。未觀測正常遭遇與第4組其餘圖樣仍未知。
+
+重查方式在Docker內執行：
+
+```sh
+python3 -I tools/vga_battle_play_check.py \
+  --out workplace/probe/g9-hd/b28-play-v1 --theme workplace/hd/theme-b28-stage \
+  --baseline workplace/probe/g9-hd/b27-play-v1 --baseline-theme workplace/hd/theme-b28-previous \
+  --terrain --added dungcom-004@6 dungcom-004@7 dungcom-004@8 dungcom-004@9 dungcom-004@10 dungcom-004@11
+```
+
+原始收據保留在ignored workplace；此命令核對已保存的正常路徑，不會啟動新遭遇。

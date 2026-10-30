@@ -1,0 +1,141 @@
+{
+  "date": "2026-10-30",
+  "issue": 51,
+  "scope": "DUNGCOM第4塊第6–11格六個條件式地形候選；來源插入診斷與正常DEMO增量回歸；未觀測遭遇仍未知。",
+  "status": "CONFORMED within stated scope",
+  "product_source_commit": "570f8a3c14827cdc6fed043f2bfa00bb1f729f77",
+  "fixture_source_commit": "c9f4001a13c5e2e4f1f259cf846144741d556e16",
+  "binary_sha256": "faa68b446a59b8a96273617f9f3d5a75f3a7b694c3a1d8d3b516af5427279c82",
+  "source": {
+    "file": "DUNGCOM.DAX",
+    "archive_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+    "packed_file_offset": 32824,
+    "address_space": "original DAX file byte offset",
+    "block": 4,
+    "frames": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "palette_interval": [
+      32,
+      64
+    ],
+    "indexed_and_palette_sha256": {
+      "dungcom-004@6": [
+        "d1a5294c864ae6a7ac719ec627b394a7cbe9ccc67e9066fbaa610c4ace58a810",
+        "46e48c64bcad837b167c2496135ac36254c64c8c2fcb7f6562dc637485e963cb"
+      ],
+      "dungcom-004@7": [
+        "c27aba6f05bf8ebdff2b99fdc5855a030f48363177ceb3e87d5d0a902b785a51",
+        "46e48c64bcad837b167c2496135ac36254c64c8c2fcb7f6562dc637485e963cb"
+      ],
+      "dungcom-004@8": [
+        "8a9d07dfafd5822136f357ec71531a3d82adc88905cf689835743356d67528a7",
+        "46e48c64bcad837b167c2496135ac36254c64c8c2fcb7f6562dc637485e963cb"
+      ],
+      "dungcom-004@9": [
+        "881d4367d2979b607dc45e1b95c4838d1281f951c2ae088c4d8b437f3b9195d1",
+        "46e48c64bcad837b167c2496135ac36254c64c8c2fcb7f6562dc637485e963cb"
+      ],
+      "dungcom-004@10": [
+        "2fbd8a0b9cae143346d68d2767b9c4338243f959576bd44f78d1941893ae462d",
+        "46e48c64bcad837b167c2496135ac36254c64c8c2fcb7f6562dc637485e963cb"
+      ],
+      "dungcom-004@11": [
+        "e40b8fb5d3b0a91085c6cf1d9113fd065362798100ed687c3d99beab55bf9c19",
+        "46e48c64bcad837b167c2496135ac36254c64c8c2fcb7f6562dc637485e963cb"
+      ]
+    }
+  },
+  "materials": {
+    "count": 6,
+    "generation_attempts": 6,
+    "generator": "built-in image_gen",
+    "style": "approved B",
+    "size": [
+      72,
+      72
+    ],
+    "all_opaque_rgba": true,
+    "structural_min": 0.5789473684210527,
+    "structural_max": 0.8875,
+    "hue_metric_note": "來源以灰階為主，色相量尺依彩度門檻回傳0；不表示RGB逐像素一致。",
+    "review": "review/hd/b28-terrain/README.md",
+    "review_manifest_sha256": "548b11cf23c0e480e8014a803795237f9f2a3046524fb475f9728cd1930c311c",
+    "request_sha256": "47fd403dd72644e453349314a14daf9975e9f034c23112c37e76da73013e7e2a",
+    "validation_sha256": "c59eab9c66e21a57b95a3d12e21afeead73cba3f9c437760eb72fdebebe8c079",
+    "visual_sha256": "b5441ba0ac15b6e3774750b45a55e76f148c3cc64ce3572944a2b3a6404c5ae8",
+    "preview_sha256": "8cd1eedb85ab4fca9d1c54a7cea4eea7d0465354cb6a5e8969f84bc394d832b2"
+  },
+  "source_diagnostics": {
+    "cases": 6,
+    "passed": true,
+    "scope": "完整PNG像素、正確高色號色盤與三個同組來源；來源／色盤失配、孤立圖案、2倍／F12及來源陣列不變。",
+    "source_sha256": "f02b298774eee9e654187c381dfe6b645d90bbaa08bf3cecd1df5f2bee01113c",
+    "log_sha256": "3f529213568522d4110c8f1979d61ff91c3e996402a8e6aba5d0cf24fb18de8c"
+  },
+  "runtime": {
+    "scope": "既有四路基準加未觀測資料；重跑7400格HD正常路徑；逐件2倍/F12與失配另由來源診斷驗證",
+    "added_terrain_keys": [
+      "dungcom-004@6",
+      "dungcom-004@7",
+      "dungcom-004@8",
+      "dungcom-004@9",
+      "dungcom-004@10",
+      "dungcom-004@11"
+    ],
+    "registered_terrain_states": 37,
+    "binary_sha256": "faa68b446a59b8a96273617f9f3d5a75f3a7b694c3a1d8d3b516af5427279c82",
+    "guest_files": 127,
+    "guest_state_equal": true,
+    "original_endpoint_equal": true,
+    "final_composite_equal": true,
+    "prior_assets_preserved": true,
+    "flash_count": 0,
+    "frame_sha256": "00d6d1692f3fe54151c5111b32b48c8393add16509c7a05c822cb9010ebf25ca",
+    "baseline_summary_sha256": "655510abd58d5011a3f7e6dbd7640727fe8bd11945c8b3ab56aa9725f8340b46",
+    "baseline_summary_source": "workplace/probe/g9-hd/b27-play-v1/summary.json",
+    "inputs_sha256": "b7b00d39c34773eedf8f82e2315985ad7c2a216dfd8a09d0a754fcb6093b01cb"
+  },
+  "baseline_inputs_sha256": "cf90c841228adf88161a73bf54fc84ea19592102cc468c21d0beac3ca7dd2c36",
+  "baseline_batch_receipt_sha256": "7bf869eaa32a91ed0301d09378d81d3939e47310bd45b2b8fd5730df9c71653b",
+  "runtime_inputs_sha256": "b7b00d39c34773eedf8f82e2315985ad7c2a216dfd8a09d0a754fcb6093b01cb",
+  "runtime_log_sha256": "eea26577fc46f06babcc81acfead4c6017737ef8ccb2717a3f0841a0022a4d28",
+  "baseline_receipt_negative_sha256": "2f8ae8817ae972fe307dbefeed21f92bb99d954bbdd8aefa27039638485ff24e",
+  "activation": {
+    "method": "Linux renameat2 RENAME_EXCHANGE; complete prevalidated theme",
+    "official": "workplace/hd/theme",
+    "previous": "workplace/hd/theme-b28-previous",
+    "tested": "workplace/hd/theme-b28-stage",
+    "official_files": 800,
+    "prior_files": 788,
+    "official_equals_tested": true,
+    "prior_equals_baseline": true,
+    "theme_tree_sha256": "9904e36615c482584c8ca76d601a20e5c1ff7adeb81f5148ed0184f70bd0d780"
+  },
+  "unchanged_program": true,
+  "tools": {
+    "python": "3.13.16",
+    "pillow": "11.0.0",
+    "numpy": "2.1.3",
+    "image": "sosb-img:r1",
+    "image_id": "8b9012adb991ebd1714725cf122ac052462d2993a17dd7b3ec2504e213ae9cf3"
+  },
+  "tool_sha256": {
+    "hd_vga_request.py": "1556967df15693f6c1af4c804a2b5350ee376d9cde379c9a0212059040e0c777",
+    "hd_vga_prepare.py": "d3f1203904cb5a82a63f9ca9e85883a255a0dcb81d6013f74b0d3b0a6fa44ace",
+    "hd_vga_validate.py": "cbe88b3d90bb834331f4176efa61f86da90090194ae376e562a55f5ac2a048d9",
+    "hd_metrics.py": "b2b93c14d1503462c7c95d7615a10e528249232efbea9e50ee9efce6e38fa2a7",
+    "hd_vga_review.py": "654c44466473ebc7be6bab3b9969bda4705591dca719c664601974aea6480340",
+    "hd_vga_layers_theme.py": "8c7ef11f62ffb700579454b87e15a1bcdea267aa4e889f7297bd3f817630a13b",
+    "hd_vga_readme_preview.py": "2d8a3c44e289999925d0c276b7c5ce36b9958e19d4f7a119fc88a69825b21c3c",
+    "vga_battle_play_check.py": "d00e5d66e45987df6579edf378c90f4313d64cb6518b8bd43ab477ac561388f1"
+  },
+  "activation_source_sha256": "5cfa94f5a92f9b703a0e681bd71d3106747a42ef5cd20908587722673c262c2d",
+  "negative_source_sha256": "cf32178f2f01ca2bf100e56359eb296c502d93263f7ef6f2b5b514fcaa154588",
+  "report_source_sha256": "5d93a54fef40425b60fa9b2027777f37e345d9518353f476944438a89aad23c2"
+}
