@@ -1595,3 +1595,4 @@
 - README直接顯示本批拼圖，共46張圖片。本組40張素材完成；其他兩組尚餘79個非純色來源，正常野外遭遇及其他圖族、動畫仍另計。
 - 增量收據工具補`--source-sample-keys`，只修正報告範圍，明列已抽與未抽素材；相同資料重新核對及三種改動負對照通過，沒有重跑遊戲或放寬條件。
 - 最後固定收據重算相同，593個本機連結與46張README圖片通過；變更檔UID/GID 1000:1000，原始壓縮檔雜湊不變，root-owned與誤建`.md`目錄為空，長期Go快取為空。dosgolem工作樹乾淨，本批容器全部自動移除，沿用既有工具映像。
+- 提交e4399bd已推送私人main；#59驗收[留言](https://github.com/wicanr2/pools-of-darkness-cht/issues/59#issuecomment-6525892555)後關閉，回讀CLOSED。#10已補[森林組里程碑與剩餘來源](https://github.com/wicanr2/pools-of-darkness-cht/issues/10#issuecomment-6525909461)，保持其他圖族與未觀測正常遭遇另計。
