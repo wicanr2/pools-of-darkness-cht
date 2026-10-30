@@ -476,3 +476,43 @@ python3 -I tools/vga_battle_play_check.py \
   --baseline workplace/probe/g9-hd/b28-play-v1 --baseline-theme workplace/hd/theme-b29-previous \
   --terrain --added dungcom-004@12 dungcom-004@13 dungcom-004@14 dungcom-004@15 dungcom-004@16 dungcom-004@17 dungcom-004@18 dungcom-004@19 dungcom-004@20 dungcom-004@21 dungcom-004@23 dungcom-004@24 dungcom-004@25
 ```
+
+<a id="b30-terrain"></a>
+
+## b30 地下城第3組25張圖樣
+
+2026-10-30，Issue [#53](https://github.com/wicanr2/pools-of-darkness-cht/issues/53)，沿規格010既有DUNGCOM第3塊、32–63色盤與combat版本1。
+本組25張非純色來源第0–21、23–25格沒有已完成第4、5組的相同RGB素材可直接沿用。
+第22格逐像素只有RGB(56,65,77)，保留原色，不增加候選。來源SHA、壓縮位移、色號與色盤由請求及私人審閱manifest固定。
+
+25張以內建image_gen製作，共28次生成。第0格數值達標但壓頂起點偏高，第二版改正；
+第9格三版各自重新排列石塊，輪廓0.275、0.200、0.225未過，不因接近目視效果而放寬門檻。
+兩次同類失敗後重新核對路由及證據契約，確認25份原版參考PNG均逐像素等於原色號／色盤，排除參考檔失配。
+
+第5、9格原始RGB只有右側32點不同，來源差異框[20,0,24,24]，左20欄完全相同。
+沿既有明示來源變體工具，以第5格已接受HD為底，只替換原始RGB差異遮罩外擴6個輸出像素內的第9格AI手繪，
+輪廓升至0.6125，遮罩外差異0。這是靜態素材變體，不從圖樣索引推論時間、動畫或新增遊戲行為。
+原請求、三版生成圖、來源差異證據及新遮罩SHA全部保留，沒有平移成品或使用原版像素放大當HD。
+
+最終25張72×72不透明RGBA全數通過，結構0.600–0.963，彩色藍色光點色相差約13.2度；低彩度石材量尺0不稱RGB一致。
+原尺寸逐件並列目視通過，來源、提示詞及SHA見[b30審閱頁](../../review/hd/b30-terrain/README.md)及[manifest](../../review/hd/b30-terrain/manifest.json)。
+沿c9f4001來源診斷，明示新增25張、地形總數75與本組原色盤，25例5.837秒通過完整PNG、同組鄰格、
+來源／色盤失配、孤立圖案、2倍／F12及輸入不變。產品三格戰場守衛、正式程式及字型未改。
+重用b29正常基準前，另逐檔確認程式、原始輸入、字型、文字及826檔主題相同；未觀測正常遭遇仍未知。
+
+候選正常7400格／712250000步的CPU、完整RAM、原版色號與色盤、127客體檔案及最終合成同b29基準，閃現0。
+CPU紀錄、色號及客體檔案三個改動暫存副本的負對照全部拒絕。本批只重跑正常HD路徑，未宣稱重新驗完四路或新增正常遭遇。
+876檔已用完整目錄原子交換啟用，正式逐檔同受測候選，826檔回復副本留在`workplace/hd/theme-b30-previous`。
+
+固定[017-b30-runtime.json](017-b30-runtime.json)，本批範圍CONFORMED。25個第3組圖樣素材齊全，純色格維持原色；
+未觀測正常遭遇、其他地下城／野外圖組及動畫HD仍未完成。輸入／負對照／啟用／報告配方在`workplace/hd/out/b30/`，SHA由固定報告綁定。
+第9格的原始RGB差異遮罩也保存於私人審閱頁，對應manifest的來源SHA，沒有把原版圖面當成HD像素使用。
+
+在Docker內重查已保存的正常路徑：
+
+```sh
+python3 -I tools/vga_battle_play_check.py \
+  --out workplace/probe/g9-hd/b30-play-v1 --theme workplace/hd/theme-b30-stage \
+  --baseline workplace/probe/g9-hd/b29-play-v1 --baseline-theme workplace/hd/theme-b30-previous \
+  --terrain --added dungcom-003@0 dungcom-003@1 dungcom-003@2 dungcom-003@3 dungcom-003@4 dungcom-003@5 dungcom-003@6 dungcom-003@7 dungcom-003@8 dungcom-003@9 dungcom-003@10 dungcom-003@11 dungcom-003@12 dungcom-003@13 dungcom-003@14 dungcom-003@15 dungcom-003@16 dungcom-003@17 dungcom-003@18 dungcom-003@19 dungcom-003@20 dungcom-003@21 dungcom-003@23 dungcom-003@24 dungcom-003@25
+```
