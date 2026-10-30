@@ -14,13 +14,17 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     for name in ('actor-req','actor-out','terrain-req','terrain-out','theme'):
-        ap.add_argument('--'+name,type=Path,required=True)
+        ap.add_argument('--'+name,type=Path,required=not name.startswith('actor-'))
     ap.add_argument('--merge-existing',action='store_true',help='保留已驗收圖層，拒絕跨批key、來源與鏡像歧義')
     ap.add_argument('--actor-keys',nargs='+',help='明示只接入本請求的指定怪物；未列出者不覆寫既有主題')
     a=ap.parse_args();files=[];outputs={};proof=[]
-    for kind,req,out,target,sourcefile in (
-        ('combat-actors',a.actor_req,a.actor_out,'actors.json','CPIC1.DAX'),
-        ('combat-terrain',a.terrain_req,a.terrain_out,'combat.json','DUNGCOM.DAX')):
+    if bool(a.actor_req)!=bool(a.actor_out)or(a.actor_keys and not a.actor_req):
+        ap.error('actor-req／actor-out須成對；actor-keys須有對應請求')
+    jobs=[]
+    if a.actor_req:
+        jobs.append(('combat-actors',a.actor_req,a.actor_out,'actors.json','CPIC1.DAX'))
+    jobs.append(('combat-terrain',a.terrain_req,a.terrain_out,'combat.json','DUNGCOM.DAX'))
+    for kind,req,out,target,sourcefile in jobs:
         request=json.loads((req/'manifest.json').read_text())
         validation=json.loads((out/'validation.json').read_text())
         visual=json.loads((out/'visual-review.json').read_text())

@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-30",
+  "issue": 50,
+  "scope": "DUNGCOM第4塊六個條件式地形候選；來源插入診斷與正常DEMO成對回歸；未觀測遭遇仍未知。",
+  "status": "CONFORMED within stated scope",
+  "product_source_commit": "570f8a3c14827cdc6fed043f2bfa00bb1f729f77",
+  "fixture_source_commit": "c9f4001a13c5e2e4f1f259cf846144741d556e16",
+  "binary_sha256": "faa68b446a59b8a96273617f9f3d5a75f3a7b694c3a1d8d3b516af5427279c82",
+  "source": {
+    "file": "DUNGCOM.DAX",
+    "archive_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+    "packed_file_offset": 32824,
+    "address_space": "original DAX file byte offset",
+    "block": 4,
+    "frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "palette_interval": [
+      32,
+      64
+    ],
+    "indexed_and_palette_sha256": {
+      "dungcom-004@0": [
+        "b2b4b099bc4c3509dd282dd5b1fce6b04f0875c87cf023652d67c8c4b8965451",
+        "46e48c64bcad837b167c2496135ac36254c64c8c2fcb7f6562dc637485e963cb"
+      ],
+      "dungcom-004@1": [
+        "4a2a61dc40bb8f5cfade8d5471f1049d4b5f2e2fa93358bea508caaf7aba5afe",
+        "46e48c64bcad837b167c2496135ac36254c64c8c2fcb7f6562dc637485e963cb"
+      ],
+      "dungcom-004@2": [
+        "22f643aa879febfec03d1ab48b290b56e4755895f42df57b701450b0210df50f",
+        "46e48c64bcad837b167c2496135ac36254c64c8c2fcb7f6562dc637485e963cb"
+      ],
+      "dungcom-004@3": [
+        "c7e361ee721fa709bb86a38d9db4babee1b082b2de3332f48c6c0e12babb1ae5",
+        "46e48c64bcad837b167c2496135ac36254c64c8c2fcb7f6562dc637485e963cb"
+      ],
+      "dungcom-004@4": [
+        "33cce1b299c05625008ce4433829883f7678705d0739a2b763113cd1faf037dc",
+        "46e48c64bcad837b167c2496135ac36254c64c8c2fcb7f6562dc637485e963cb"
+      ],
+      "dungcom-004@5": [
+        "01d0a10299b83b03fb14024e58056b359c04bc200d61e1deb2a2630a85f4c022",
+        "46e48c64bcad837b167c2496135ac36254c64c8c2fcb7f6562dc637485e963cb"
+      ]
+    }
+  },
+  "materials": {
+    "count": 6,
+    "generation_attempts": 8,
+    "generator": "built-in image_gen",
+    "style": "approved B",
+    "size": [
+      72,
+      72
+    ],
+    "all_opaque_rgba": true,
+    "structural_min": 0.5625,
+    "structural_max": 0.9,
+    "hue_metric_note": "來源以灰階為主，色相量尺依彩度門檻回傳0；不表示RGB逐像素一致。",
+    "review": "review/hd/b27-terrain/README.md",
+    "review_manifest_sha256": "9e06cba57b6af11afd03dc9225fd1360e66898c3a7aa5626dd07dffe6715a68d",
+    "request_sha256": "08f707c34242108c5bed508bddfc48d64b26c09bd581853e85318e5189b6c719",
+    "validation_sha256": "dc971f7b07885796113c46bb58e5d0bb92e7d7052748278e612472b5025dddca",
+    "visual_sha256": "fb9f9de94455b0368224ce6b914b5f33d0352c60bb91c549e22afe2595c4965c",
+    "preview_sha256": "baef00dfb9473b2a3fe155af1ea341847c28a53fb0ddc0613dc95346f8ba8b32"
+  },
+  "source_diagnostics": {
+    "cases": 6,
+    "passed": true,
+    "scope": "完整PNG像素、正確高色號色盤與三個同組來源；來源／色盤失配、孤立圖案、2倍／F12及來源陣列不變。",
+    "source_sha256": "f02b298774eee9e654187c381dfe6b645d90bbaa08bf3cecd1df5f2bee01113c",
+    "log_sha256": "48afc0ac59afebb9aebc2bb71a56487f41aaa41d0e89d626a63d7acff7da7758"
+  },
+  "runtime": {
+    "scope": "同一正式程式與文字的兩次正常7400格HD成對重播；舊主題另核對既有Go驗收終點；逐件2倍/F12與失配另由來源診斷驗證",
+    "added_terrain_keys": [
+      "dungcom-004@0",
+      "dungcom-004@1",
+      "dungcom-004@2",
+      "dungcom-004@3",
+      "dungcom-004@4",
+      "dungcom-004@5"
+    ],
+    "registered_terrain_states": 31,
+    "binary_sha256": "faa68b446a59b8a96273617f9f3d5a75f3a7b694c3a1d8d3b516af5427279c82",
+    "guest_files": 127,
+    "guest_state_equal": true,
+    "original_endpoint_equal": true,
+    "final_composite_equal": true,
+    "prior_assets_preserved": true,
+    "flash_count": 0,
+    "frame_sha256": "00d6d1692f3fe54151c5111b32b48c8393add16509c7a05c822cb9010ebf25ca",
+    "baseline_summary_sha256": "e67c3da35a734367c514ea25716bcbedb81d3d78f7bdbb7761107e961caf32d2",
+    "baseline_summary_source": "docs/re/023-draw-closure-runtime.json",
+    "inputs_sha256": "cf90c841228adf88161a73bf54fc84ea19592102cc468c21d0beac3ca7dd2c36"
+  },
+  "baseline_inputs_sha256": "5bd81d7f7bb0b6cf0d6703e6a0fb0e168984609f51535f653b214f89475ce5a1",
+  "runtime_inputs_sha256": "cf90c841228adf88161a73bf54fc84ea19592102cc468c21d0beac3ca7dd2c36",
+  "runtime_log_sha256": "eea26577fc46f06babcc81acfead4c6017737ef8ccb2717a3f0841a0022a4d28",
+  "baseline_receipt_negative_sha256": "eae8b984cfeaed206754667d943ce5d6e5af857fdc5a23c47c383720a33bb8c0",
+  "activation": {
+    "method": "Linux renameat2 RENAME_EXCHANGE; complete prevalidated theme",
+    "official": "workplace/hd/theme",
+    "previous": "workplace/hd/theme-b27-previous",
+    "tested": "workplace/hd/theme-b27-stage",
+    "official_files": 788,
+    "prior_files": 776,
+    "official_equals_tested": true,
+    "prior_equals_baseline": true,
+    "theme_tree_sha256": "96643a3967a277b888b9942d1878333168b984191797582821867bc04cc58801"
+  },
+  "unchanged_program": true,
+  "tools": {
+    "python": "3.13.16",
+    "pillow": "11.0.0",
+    "numpy": "2.1.3",
+    "image": "sosb-img:r1",
+    "image_id": "8b9012adb991ebd1714725cf122ac052462d2993a17dd7b3ec2504e213ae9cf3"
+  },
+  "tool_sha256": {
+    "hd_vga_request.py": "1556967df15693f6c1af4c804a2b5350ee376d9cde379c9a0212059040e0c777",
+    "hd_vga_prepare.py": "d3f1203904cb5a82a63f9ca9e85883a255a0dcb81d6013f74b0d3b0a6fa44ace",
+    "hd_vga_validate.py": "cbe88b3d90bb834331f4176efa61f86da90090194ae376e562a55f5ac2a048d9",
+    "hd_metrics.py": "b2b93c14d1503462c7c95d7615a10e528249232efbea9e50ee9efce6e38fa2a7",
+    "hd_vga_review.py": "654c44466473ebc7be6bab3b9969bda4705591dca719c664601974aea6480340",
+    "hd_vga_layers_theme.py": "8c7ef11f62ffb700579454b87e15a1bcdea267aa4e889f7297bd3f817630a13b",
+    "hd_vga_readme_preview.py": "2d8a3c44e289999925d0c276b7c5ce36b9958e19d4f7a119fc88a69825b21c3c",
+    "vga_battle_play_check.py": "d00e5d66e45987df6579edf378c90f4313d64cb6518b8bd43ab477ac561388f1"
+  },
+  "activation_source_sha256": "2cf97f4d7fbf8b96ddcb9bf4e74c5f397d79541598f23037458bb4512fac64df",
+  "report_source_sha256": "bad6a3cff80e1438a98fd9fe2594af9bc78a115499298d509d239fc00e893c44"
+}

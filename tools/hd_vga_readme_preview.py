@@ -16,18 +16,25 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=Path('.'))
     parser.add_argument('--kind', choices=('monster', 'terrain'), default='monster')
+    parser.add_argument('--terrain-batch', default='b26-terrain', help='review/hd內的地形批次目錄')
+    parser.add_argument('--name', help='輸出PNG檔名；須為單一檔名')
     args = parser.parse_args()
     if args.kind == 'terrain':
-        proof = json.loads((args.root / 'review/hd/b26-terrain/manifest.json').read_text())
-        selections = [('b26-terrain', row['key']) for row in proof['items']]
-        assert len(selections) == 23
-        size, columns, cell, name = (480, 320), 6, 80, 'dungeon-terrain-hd-preview.png'
+        assert Path(args.terrain_batch).name == args.terrain_batch
+        proof = json.loads((args.root / 'review/hd' / args.terrain_batch / 'manifest.json').read_text())
+        selections = [(args.terrain_batch, row['key']) for row in proof['items']]
+        assert selections
+        columns, cell, name = 6, 80, 'dungeon-terrain-hd-preview.png'
+        size = (columns * cell, ((len(selections) + columns - 1) // columns) * cell)
     else:
         selections = [('b18-cpic', 'cpic1-044'), ('b18-cpic', 'cpic1-048'),
                       ('b21-cpic', 'cpic1-069'), ('b21-cpic', 'cpic1-077'),
                       ('b23-cpic', 'cpic1-094'), ('b23-cpic', 'cpic1-095'),
                       ('b23-cpic', 'cpic1-105'), ('b24-cpic', 'cpic1-108')]
         size, columns, cell, name = (600, 300), 4, 150, 'monster-hd-preview.png'
+    if args.name:
+        assert Path(args.name).name == args.name and args.name.endswith('.png')
+        name = args.name
     canvas = Image.new('RGB', size, (85, 85, 85))
     rows = []
     for i, (batch, key) in enumerate(selections):

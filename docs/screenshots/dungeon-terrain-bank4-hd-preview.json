@@ -1,0 +1,90 @@
+{
+  "scope": "AI-redrawn asset preview; not a gameplay screenshot",
+  "composition": "native 3x PNG; no resizing or cropping",
+  "size": [
+    480,
+    80
+  ],
+  "output_sha256": "baef00dfb9473b2a3fe155af1ea341847c28a53fb0ddc0613dc95346f8ba8b32",
+  "items": [
+    {
+      "key": "dungcom-004@0",
+      "source": "review/hd/b27-terrain/dungcom-004@0.png",
+      "png_sha256": "d84acf4c894cad9a506eef6c6535ace7da93e3b27b0accaa4fd3af773ce86a79",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        4,
+        4
+      ]
+    },
+    {
+      "key": "dungcom-004@1",
+      "source": "review/hd/b27-terrain/dungcom-004@1.png",
+      "png_sha256": "851750a7535644a0c0e026dded1291d6fe8c6a15e6b3937f5951d161f61f36f7",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        84,
+        4
+      ]
+    },
+    {
+      "key": "dungcom-004@2",
+      "source": "review/hd/b27-terrain/dungcom-004@2.png",
+      "png_sha256": "2cc5f6d06613ccecb589a90f11593959dd18df6d08dddd025725693149e1fbb2",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        164,
+        4
+      ]
+    },
+    {
+      "key": "dungcom-004@3",
+      "source": "review/hd/b27-terrain/dungcom-004@3.png",
+      "png_sha256": "e05fb75e82e6451e1db5a6d933a7c45b8e6ff0cee58109a95a7d915a39c23e99",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        244,
+        4
+      ]
+    },
+    {
+      "key": "dungcom-004@4",
+      "source": "review/hd/b27-terrain/dungcom-004@4.png",
+      "png_sha256": "0feebb1d3b29e6f9e2dcfa098cef8ddb3e5eda863b20d30c51076a9a2884f254",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        324,
+        4
+      ]
+    },
+    {
+      "key": "dungcom-004@5",
+      "source": "review/hd/b27-terrain/dungcom-004@5.png",
+      "png_sha256": "524b3fa0c43e8cfce1176cd1599990105ef832a950c12565761a956a2058fdfb",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        404,
+        4
+      ]
+    }
+  ],
+  "rights": "AI redraws within existing private HD patch scope; no original reference pixels"
+}

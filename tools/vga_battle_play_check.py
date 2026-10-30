@@ -152,7 +152,7 @@ def check(root, theme, original_baseline=None, record_baseline=False):
     print(json.dumps(report, ensure_ascii=False, indent=2))
 
 
-def check_incremental(root, theme, baseline, baseline_theme, added, terrain=False):
+def check_incremental(root, theme, baseline, baseline_theme, added, terrain=False, baseline_receipt=None):
     """只增未觀測素材時，比較新的正常HD路徑與已通過的四路基準。"""
     assert added and len(set(added)) == len(added)
     current, previous = root / 'hd', baseline / 'hd'
@@ -160,6 +160,17 @@ def check_incremental(root, theme, baseline, baseline_theme, added, terrain=Fals
     old_inputs = json.loads((previous / 'inputs.json').read_text())
     for key in ('orig', 'font', 'text', 'binary_sha256'):
         assert inputs[key] == old_inputs[key], f'{key}與固定基準不同'
+    receipt_path = baseline_receipt or baseline / 'summary.json'
+    if baseline_receipt:
+        proof = json.loads(baseline_receipt.read_text())
+        assert proof['status'] == 'PASS' and proof['binary_sha256'] == old_inputs['binary_sha256']
+        assert proof['unchanged_inputs_sha256']['theme'] == old_inputs['theme']
+        log = (previous / 'run.log').read_text()
+        observed = {k: re.search(k + r'_sha256=([0-9a-f]{64})', log)[1]
+                    for k in ['cpu', 'memory', 'indexed', 'palette']}
+        match = re.search(r'frames=(\d+) steps=(\d+)', log)
+        observed.update(frames=int(match[1]), steps=int(match[2]))
+        assert observed == proof['routes']['hd']['state'], '新基準未重現既有Go驗收終點'
     manifests = []
     manifest_name = 'combat.json' if terrain else 'actors.json'
     for directory, recorded in ((baseline_theme, old_inputs), (theme, inputs)):
@@ -195,14 +206,17 @@ def check_incremental(root, theme, baseline, baseline_theme, added, terrain=Fals
     guest = [{k: v for k, v in tree(d / 'save').items() if k not in frontend} for d in (current, previous)]
     assert guest[0] == guest[1]
     assert re.search(r'pod-play: 閃現 (\d+) 次', log)[1] == '0'
-    report = dict(scope='既有四路基準加未觀測資料；重跑7400格HD正常路徑；逐件2倍/F12與失配另由來源診斷驗證',
+    scope = ('同一正式程式與文字的兩次正常7400格HD成對重播；舊主題另核對既有Go驗收終點；逐件2倍/F12與失配另由來源診斷驗證'
+             if baseline_receipt else '既有四路基準加未觀測資料；重跑7400格HD正常路徑；逐件2倍/F12與失配另由來源診斷驗證')
+    report = dict(scope=scope,
                   **({'added_terrain_keys': added, 'registered_terrain_states': len(new_rows)} if terrain else
                      {'added_actor_keys': added, 'registered_actor_states': len(new_rows)}),
                   binary_sha256=inputs['binary_sha256'], guest_files=len(guest[0]),
                   guest_state_equal=True, original_endpoint_equal=True, final_composite_equal=True,
                   prior_assets_preserved=True, flash_count=0,
                   frame_sha256=sha((current / 'frame.png').read_bytes()),
-                  baseline_summary_sha256=sha((baseline / 'summary.json').read_bytes()),
+                  baseline_summary_sha256=sha(receipt_path.read_bytes()),
+                  baseline_summary_source=str(receipt_path),
                   inputs_sha256=sha((current / 'inputs.json').read_bytes()))
     (root / 'summary.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps(report, ensure_ascii=False, indent=2))
@@ -216,6 +230,7 @@ if __name__ == '__main__':
     parser.add_argument('--theme', type=Path)
     parser.add_argument('--baseline', type=Path)
     parser.add_argument('--baseline-theme', type=Path)
+    parser.add_argument('--baseline-receipt', type=Path, help='既有Go驗收收據；新基準須重現其程式、主題與原版終點')
     parser.add_argument('--original-baseline', type=Path, help='四路完整驗收後，另比先前執行檔的原版終點；不取代四路')
     parser.add_argument('--record-baseline-observation', action='store_true', help='只保存既有版本的觀察報告，不輸出通過收據；候選驗收仍要求閃現0')
     parser.add_argument('--added', nargs='+')
@@ -225,10 +240,11 @@ if __name__ == '__main__':
         record(args.record, args.record_binary)
     else:
         assert args.out and args.theme
+        assert not args.baseline_receipt or args.baseline, 'baseline-receipt須配合同一程式的正常基準路線'
         assert not args.record_baseline_observation or not (args.baseline or args.original_baseline)
         assert not (args.baseline and args.original_baseline), '純資料增量與新執行檔四路驗收不能混用'
         if args.baseline:
             assert args.baseline_theme
-            check_incremental(args.out, args.theme, args.baseline, args.baseline_theme, args.added, args.terrain)
+            check_incremental(args.out, args.theme, args.baseline, args.baseline_theme, args.added, args.terrain, args.baseline_receipt)
         else:
             check(args.out, args.theme, args.original_baseline, args.record_baseline_observation)

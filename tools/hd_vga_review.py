@@ -40,6 +40,11 @@ def main():
             raise ValueError(f'{key}: 原版參考或生成圖雜湊變更')
         raw_name = pr['raw'].removesuffix('-raw.png')
         job = json.loads((a.out/'jobs'/(raw_name+'.json')).read_text())
+        if job.get('extra_reference'):
+            extra = job['extra_reference']
+            if Path(extra).name != extra or sha(a.req/extra) != job['extra_reference_sha256']:
+                raise ValueError(f'{key}: 額外輪廓參考失配')
+            shutil.copyfile(a.req/extra, a.review/extra)
         shutil.copyfile(png, a.review/(key+'.png'))
         shutil.copyfile(ref, a.review/(key+'-original.png'))
         rows.append(dict(key=key, source=s, generation=job, preparation=pr, numeric=result,

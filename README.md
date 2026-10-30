@@ -131,6 +131,11 @@ HD、無 HD、F12 原版及 2 倍四路的 CPU、記憶體、色號、色盤與 
 上圖是第5組新增23張重畫素材的原尺寸拼圖，並非新增戰鬥截圖。純色背景格保留原色，既有兩張石牆沿用。
 原版並列、提示詞與驗收見[地形審閱頁](review/hd/b26-terrain/README.md)，拼圖來源見[預覽紀錄](docs/screenshots/dungeon-terrain-hd-preview.json)。
 
+![地下城第4組首批六張HD地形素材](docs/screenshots/dungeon-terrain-bank4-hd-preview.png)
+
+第4組新增六張72×72重繪素材，上圖保留成品原始尺寸。已接入條件式辨識並通過正常DEMO回歸；尚未在正常遭遇中觀測的來源仍依完整色號與色盤條件選用。
+原版對照與提示詞見[本批審閱頁](review/hd/b27-terrain/README.md)，[接入驗收](docs/re/017-b27-runtime.json)與[拼圖來源](docs/screenshots/dungeon-terrain-bank4-hd-preview.json)另列。
+
 ### 菲蘭街景
 
 | 原版菲蘭街景 | 繁中與 HD 街景 |
