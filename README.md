@@ -36,9 +36,9 @@
 繁中已驗證冷啟動、建角、存讀檔、查驗題與部分探索路徑。人物 HD 主題的 81 個狀態已完成，去重後 78 項，
 已接入並做正常 DEMO 抽樣。七張 BIGPIC 已接入，其中第 244 張通過正常 DEMO 抽樣，其他六張依完整來源條件辨識；其他圖族尚在製作。
 戰鬥怪物的 244 個 CPIC 來源狀態已完成重畫，去重後 238 張；地下城 DUNGCOM 六組共150張非純色圖樣已接入，六個純色背景格保留原色。
-野外森林首批12張樹叢、樹幹與倒木也已接入。
+野外森林組40張樹叢、水岸、岩石與家具已接入。
 正常冷啟動、倍率與原版切換抽樣通過；尚未遇到的怪物與地形仍依完整原版來源條件辨識。
-素材覆蓋與實機驗證範圍見[研究017](docs/re/017-vga-battle-hd.md#b34-wild-terrain)。
+素材覆蓋與實機驗證範圍見[研究017](docs/re/017-vga-battle-hd.md#b35-wild-terrain)。
 開場封面、世界標誌與製作名單已接入，可用 F8 切換繁中與英文。
 片頭八組台詞也可切換繁中與英文，支援 2／3 倍與 F12 原版；正常播放的[字幕驗收](docs/re/018-movie-subtitles.md#正式呈現層與正常視窗驗收)通過，動畫美術仍待 HD 重畫。
 菲蘭起點的天空、地面與牆面也已接入，完整讀檔抽樣通過。
@@ -180,6 +180,14 @@ HD、無 HD、F12 原版及 2 倍四路的 CPU、記憶體、色號、色盤與 
 保留原版黃綠樹葉、褐色樹幹與深綠地面。上圖是12張72×72成品的原尺寸拼圖。
 來源診斷、正常DEMO與乾淨Git重建通過，閃現0；正常野外遭遇尚未觀測。
 原版並列與內建生圖提示詞見[b34審閱頁](review/hd/b34-wild-terrain/README.md)，[驗收收據](docs/re/017-b34-runtime.json)與[拼圖來源](docs/screenshots/wild-terrain-bank0-first-hd-preview.json)另列。
+
+### 森林組水岸、岩石與家具
+
+![森林組補齊的28張HD圖樣](docs/screenshots/wild-terrain-bank0-rest-hd-preview.png)
+
+新增28張補齊本組40張，保留深綠地面、藍色水面、灰褐岩石與木製家具。上圖以72×72成品原尺寸拼排。
+執行期抽驗六類代表素材及一條正常DEMO通過，閃現0；正常野外遭遇尚未觀測。
+原版並列與內建生圖提示詞見[b35審閱頁](review/hd/b35-wild-terrain/README.md)，[抽驗收據](docs/re/017-b35-runtime.json)與[拼圖來源](docs/screenshots/wild-terrain-bank0-rest-hd-preview.json)另列。
 
 ### 菲蘭街景
 

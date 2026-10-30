@@ -152,9 +152,12 @@ def check(root, theme, original_baseline=None, record_baseline=False):
     print(json.dumps(report, ensure_ascii=False, indent=2))
 
 
-def check_incremental(root, theme, baseline, baseline_theme, added, terrain=False, baseline_receipt=None):
+def check_incremental(root, theme, baseline, baseline_theme, added, terrain=False, baseline_receipt=None, source_sample_keys=None):
     """只增未觀測素材時，比較新的正常HD路徑與已通過的四路基準。"""
     assert added and len(set(added)) == len(added)
+    if source_sample_keys is not None:
+        assert source_sample_keys and len(set(source_sample_keys)) == len(source_sample_keys)
+        assert set(source_sample_keys) <= set(added), '來源抽樣不在新增素材內'
     current, previous = root / 'hd', baseline / 'hd'
     inputs = json.loads((current / 'inputs.json').read_text())
     old_inputs = json.loads((previous / 'inputs.json').read_text())
@@ -218,6 +221,10 @@ def check_incremental(root, theme, baseline, baseline_theme, added, terrain=Fals
                   baseline_summary_sha256=sha(receipt_path.read_bytes()),
                   baseline_summary_source=str(receipt_path),
                   inputs_sha256=sha((current / 'inputs.json').read_bytes()))
+    if source_sample_keys is not None:
+        report['scope'] = '一條正常7400格HD增量路徑；來源診斷只抽事先固定的代表素材，不外推其餘新增素材的逐件執行期驗證'
+        report['source_diagnostic_sample_keys'] = source_sample_keys
+        report['source_diagnostic_unexercised_keys'] = sorted(set(added) - set(source_sample_keys))
     (root / 'summary.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps(report, ensure_ascii=False, indent=2))
 
@@ -235,7 +242,9 @@ if __name__ == '__main__':
     parser.add_argument('--record-baseline-observation', action='store_true', help='只保存既有版本的觀察報告，不輸出通過收據；候選驗收仍要求閃現0')
     parser.add_argument('--added', nargs='+')
     parser.add_argument('--terrain', action='store_true', help='純資料增量比較combat.json；仍要求最終合成完全相同')
+    parser.add_argument('--source-sample-keys', nargs='+', help='事先固定的來源診斷樣本；只記錄抽驗範圍，不改驗收條件')
     args = parser.parse_args()
+    assert not args.source_sample_keys or (args.baseline and args.added), '來源抽樣須配合增量驗收'
     if args.record:
         record(args.record, args.record_binary)
     else:
@@ -245,6 +254,6 @@ if __name__ == '__main__':
         assert not (args.baseline and args.original_baseline), '純資料增量與新執行檔四路驗收不能混用'
         if args.baseline:
             assert args.baseline_theme
-            check_incremental(args.out, args.theme, args.baseline, args.baseline_theme, args.added, args.terrain, args.baseline_receipt)
+            check_incremental(args.out, args.theme, args.baseline, args.baseline_theme, args.added, args.terrain, args.baseline_receipt, args.source_sample_keys)
         else:
             check(args.out, args.theme, args.original_baseline, args.record_baseline_observation)
