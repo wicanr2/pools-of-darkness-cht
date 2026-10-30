@@ -1566,3 +1566,4 @@
 - 必要圖片與原樣JSON同步Git，512張PNG有Git來源，500份原版索引由自備DAX重生。Git樹531a742b1bd1f8a7d27e52281d91da91ebae4c8c匯出乾淨來源，不掛舊workplace，重建1026檔與6份字型逐檔相同；缺圖與舊索引改動負對照拒絕，清單不變。
 - README直接嵌入第6組原尺寸拼圖，展示圖片增為44張。收據017-b33-runtime.json及現況、規格與審閱索引同步；工具映像沿用sosb-img:r1及dosgolem-go-ebiten:1.24-r1，不建立重複映像。
 - 最後核對558個本機連結、44張README圖片、所有變更檔UID/GID 1000:1000通過。原始壓縮檔雜湊不變、長期Go快取為空、root-owned與誤建`.md`目錄均無；dosgolem工作樹乾淨，b33測試容器全部自動移除。
+- 提交75f5bc6已推送私人main；#57驗收[留言](https://github.com/wicanr2/pools-of-darkness-cht/issues/57#issuecomment-6521594903)後關閉，回讀CLOSED。#10已補[里程碑與限制](https://github.com/wicanr2/pools-of-darkness-cht/issues/10#issuecomment-6521604270)，其餘圖族與原案交付繼續追蹤。
