@@ -1,5 +1,7 @@
 # 研究索引
 
+- [攻略詞彙與正常地圖操作補驗](011-walkthrough.md#攻略物品詞與正常玩家路線補驗)：[固定收據](024-guide-terms-runtime.json)、[正常操作配方](../../tools/guide_closure_gui.sh)、[成對檢查器](../../tools/guide_closure_check.py)。78段中8段對齊已知物品詞，數量、加值、段號與出處保留；兩路正常讀檔、地圖、攻略翻章與回場通過。
+
 - [Go繪圖收尾與固定畫布讀寫守衛](../spec/025-direct-render-commands.md#draw-closure-conformed)：#49已支援VGA核心CONFORMED。[收尾收據](023-draw-closure-runtime.json)、[重生入口](../../tools/draw-closure-receipt.sh)、[來源觀測器](../../tools/draw_closure_probe.py)、[檢查器](../../tools/draw_closure_check.py)。六路15,073,225 bytes全為型別化Go，原x86像素寫入0；填色搜尋與讀點另有受控原版完整呼叫，來源570f8a3已啟用。以下較早各批的DRAFT與剩餘計數保留歷史範圍，現況以上述收尾為準。
 
 - [CPU速度互動效能與Draw量測修正](../spec/019-cpu-speed.md#效能量測修正與互動驗收ready)：[2CPU固定收據](022-speed-interactive-runtime.json)、[重生入口](../../tools/speed-interactive-receipt.sh)、[檢查器](../../tools/speed_interactive_check.py)。正常讀檔4800格同狀態、六種倍率及關窗通過；2CPU抽樣約14–18fps、實際停於1x，30fps尚未達成，保留效能限制。
