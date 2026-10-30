@@ -1,0 +1,181 @@
+{
+  "scope": "AI-redrawn asset preview; not a gameplay screenshot",
+  "composition": "native 3x PNG; no resizing or cropping",
+  "size": [
+    480,
+    240
+  ],
+  "output_sha256": "b43c5a47fa9ea1125105fc4c5a5625043258ad820f8270e3dd7cbdc19b3c870e",
+  "items": [
+    {
+      "key": "dungcom-004@12",
+      "source": "review/hd/b29-terrain/dungcom-004@12.png",
+      "png_sha256": "fe8c6ebc72484c86736dc1fbac063c525d4303905ccd540074dec90e6517afa7",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        4,
+        4
+      ]
+    },
+    {
+      "key": "dungcom-004@13",
+      "source": "review/hd/b29-terrain/dungcom-004@13.png",
+      "png_sha256": "a8c866e414764ba6111883a1a062019c330e135430e149b6b8c49823a537859c",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        84,
+        4
+      ]
+    },
+    {
+      "key": "dungcom-004@14",
+      "source": "review/hd/b29-terrain/dungcom-004@14.png",
+      "png_sha256": "43a59a31a37f8d0ae0a07325bde55a30b185712f0f5325e639fa7a4d1ecd2d59",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        164,
+        4
+      ]
+    },
+    {
+      "key": "dungcom-004@15",
+      "source": "review/hd/b29-terrain/dungcom-004@15.png",
+      "png_sha256": "9efecf83e290357eb60c4f05bee52583b1280dc24a11bae2e5cbd58502183753",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        244,
+        4
+      ]
+    },
+    {
+      "key": "dungcom-004@16",
+      "source": "review/hd/b29-terrain/dungcom-004@16.png",
+      "png_sha256": "f6accd6e32c908a4227a6d056cc9ea44bfe6f987f043ff5a7caaee4364388fba",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        324,
+        4
+      ]
+    },
+    {
+      "key": "dungcom-004@17",
+      "source": "review/hd/b29-terrain/dungcom-004@17.png",
+      "png_sha256": "8ffdc9e907beb94e68d0858121039bfc513c0a8f77f24b705b16ed86c086d4bb",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        404,
+        4
+      ]
+    },
+    {
+      "key": "dungcom-004@18",
+      "source": "review/hd/b29-terrain/dungcom-004@18.png",
+      "png_sha256": "fa6256f14289edf203a8e1e3d020319762c828eeafc3047002d074e33bce24c0",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        4,
+        84
+      ]
+    },
+    {
+      "key": "dungcom-004@19",
+      "source": "review/hd/b29-terrain/dungcom-004@19.png",
+      "png_sha256": "2185b10756be05f374be57d08be768ea8822062136676139d4733148569f9589",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        84,
+        84
+      ]
+    },
+    {
+      "key": "dungcom-004@20",
+      "source": "review/hd/b29-terrain/dungcom-004@20.png",
+      "png_sha256": "84dd0c4d2830988255ab8b64fdf5e71d73cdd44c903ca4a984c8ef2b8576bdb6",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        164,
+        84
+      ]
+    },
+    {
+      "key": "dungcom-004@21",
+      "source": "review/hd/b29-terrain/dungcom-004@21.png",
+      "png_sha256": "4a0f4bf77a63854817cdd99ab34de75953b61a06808b84ce3a4742bc2a22e55d",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        244,
+        84
+      ]
+    },
+    {
+      "key": "dungcom-004@23",
+      "source": "review/hd/b29-terrain/dungcom-004@23.png",
+      "png_sha256": "f8231158272287aee57853a0fac589f573d8628a2e8dba16dd2a728bac9c77e1",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        324,
+        84
+      ]
+    },
+    {
+      "key": "dungcom-004@24",
+      "source": "review/hd/b29-terrain/dungcom-004@24.png",
+      "png_sha256": "e29a6f79d5f723525e3740dd25bca73b64a964f7ef04407fcb7e16e92ef21bc0",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        404,
+        84
+      ]
+    },
+    {
+      "key": "dungcom-004@25",
+      "source": "review/hd/b29-terrain/dungcom-004@25.png",
+      "png_sha256": "43bcc080063dfc0689eb3f073e16c059bb7aca741b7b7438b674dca0a3435637",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        4,
+        164
+      ]
+    }
+  ],
+  "rights": "AI redraws within existing private HD patch scope; no original reference pixels"
+}
