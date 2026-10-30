@@ -1,7 +1,7 @@
 {
   "version": 1,
   "issue": 55,
-  "scope": "b35主題；私人素材保存與本機重建，不擴張遊戲驗收或公開權利",
+  "scope": "b36主題；私人素材保存與本機重建，不擴張遊戲驗收或公開權利",
   "engine": {
     "repository": "https://github.com/wicanr2/pools-of-darkness-cht.git",
     "branch": "dosgolem/pod",
@@ -408,7 +408,7 @@
     },
     {
       "path": "combat.json",
-      "sha256": "f8d826bbd93502cadc0163414936ecc2f4765218234be92aca7a03c28b196749",
+      "sha256": "2107c9b3a67e41f37bb746ddec0c75d08892c132a17e1ad412ddadd8691d7f21",
       "kind": "repo-file",
       "source": "review/hd/runtime/theme/combat.json",
       "rights": "project metadata; private review"
@@ -8171,7 +8171,7 @@
     },
     {
       "path": "vga-layers-provenance.json",
-      "sha256": "252c49934567e918f09b4bfc3013eb94ca45edee30b8e00afff3a73a141f5b0a",
+      "sha256": "f70dc2cbb655c27ff1886bf680b9c0c3b631c8c4952fb6aa7a3608bedf9f9156",
       "kind": "repo-file",
       "source": "review/hd/runtime/theme/vga-layers-provenance.json",
       "rights": "project metadata; private review"
@@ -8828,6 +8828,630 @@
       "sha256": "896097be05fefc0dbf51419bff3cc88bdc2a147919c41600b744aa91f1aaccf4",
       "kind": "repo-file",
       "source": "review/hd/b34-wild-terrain/wildcom-000@9.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@0.idx",
+      "sha256": "61fb2f7c0c20830ae7d27e5be8ed4b463b2ed954e79809e73f1f7655f46576bd",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@0.png",
+      "sha256": "3bcf0d23888b7f4b54676e4f51d5b932b6b2f8823d76262fad9d9d975480e387",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@0.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@1.idx",
+      "sha256": "c8460ab13c37560c57879148e65825cd7c112661d9b121ec5bd76a859e756a5a",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 1,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@1.png",
+      "sha256": "b2dd7f08b8afd7bc573ab8c24da9d91ee888e80c24cf2cfeab2868d7dbe48a1a",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@1.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@10.idx",
+      "sha256": "6de5278684303318d0510c07226ba847a52d52c482ec089eaa7eca310f20287e",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 10,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@10.png",
+      "sha256": "b403e878ebf4f09ef123ef2d45eacc6d1c11adbfc531de61341a55e0cc4d4e71",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@10.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@11.idx",
+      "sha256": "679da0ca434b4d875bf1314484f1f2f4040fe81b97a25e00af9bbfe0014c6b3f",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 11,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@11.png",
+      "sha256": "2c18e4ee0cc90b51d792a60278cef6d8ce2a4b51aebe7d1fa3e3048cb7f14ceb",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@11.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@12.idx",
+      "sha256": "dfc2333745a6413fdcbb3179b841a2841e4adc5bf34959f0dcffaf312f6829e9",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 12,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@12.png",
+      "sha256": "1d539ddfe24b4ae031ad24512795451287976538045f4dbae7a10c0d98cd8034",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@12.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@13.idx",
+      "sha256": "a05cd36b0448027db01132f13c4d187d1ce296e34e91c8f24a7a7edbe98ff6e1",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 13,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@13.png",
+      "sha256": "3b0d2a47f5654fbae37c3d51a66983386a4cd0830a51e459a20a61666d31cd1f",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@13.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@14.idx",
+      "sha256": "74adf1a7d974a65b2307b468005ca2e1f44113d201c4db1455ca095fbbfd1c60",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 14,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@14.png",
+      "sha256": "8b94e00fe7b42a7a30a58e1252072a3d031386a1166ba8618d0fd4523f391ded",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@14.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@15.idx",
+      "sha256": "f08fb7fbe5ce1c5e3365688cff83f5b1b58845c616202278787de883ae2e6517",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 15,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@15.png",
+      "sha256": "3687ea0917fd0f8c09d4743d7b5c7c66636fc80a763ad833505711bb1e80be65",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@15.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@16.idx",
+      "sha256": "8279df03570099f7493faf76b5bc528674cf530b5dd07658a9e2dd883e8db3da",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 16,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@16.png",
+      "sha256": "bd61963bb646b3bb7af96b9e1a9f16694157f75ba756388be893a11083dc5395",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@16.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@17.idx",
+      "sha256": "260229208df1ecec64d3656d54eb335745fba7fb1199d0bf18f858fa088014cb",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 17,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@17.png",
+      "sha256": "e7e4d6bf7d5394e64cc57711fafec7c422e709f2d77182a8ef175b4fce26a8a8",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@17.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@18.idx",
+      "sha256": "7f266bf3b696795bc26700b707bf27aa20021185f3af2edb50c6fc3cd0bf1a0c",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 18,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@18.png",
+      "sha256": "e4136e8adbe0c9ca69c42b3a283e3aaaefc11f6d42c83be70799770ade7c705b",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@18.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@19.idx",
+      "sha256": "daf154e1930de3bec9d9c15e3cd8d829b8cc6b597158707455f46a2077647e7f",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 19,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@19.png",
+      "sha256": "08ad913809388909414515dc1131f4fe98bbc0324ad12bb0d6160c331a2321ac",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@19.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@2.idx",
+      "sha256": "951d769eb080533e3a048810dd1850a82a3a0c0a7327b0a617c07c96b1058573",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 2,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@2.png",
+      "sha256": "687b0475b34d7eb8d8acc409a8f1543f39422d5d0c107e8178263e79bee61e85",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@2.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@20.idx",
+      "sha256": "9e85ebb53f5c8e1bd4bcfa1a291d06f839cfa53692a231d884641588e72cb760",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 20,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@20.png",
+      "sha256": "4cb2d31bdf839efe4152e09cbcad881b4d9920e67bcfcc416343eacc8721ded7",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@20.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@21.idx",
+      "sha256": "1aa57c3febac71be4083be2b769d683360b5cd1c3d9f9052125d6cb4c60cc53c",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 21,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@21.png",
+      "sha256": "226314d89ea4166c8993c6d6e373092370bca9e36e36dfcc6e0d84d040e8877d",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@21.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@22.idx",
+      "sha256": "d306540eb580897bb70a6e6ae6eba806fbc69821f65506262d7d2f2e5430c002",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 22,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@22.png",
+      "sha256": "9ac5f31234e681029d93cd3682d1dfb0158b6fc3e105c26315b20da1acefb0da",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@22.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@23.idx",
+      "sha256": "f81dd82ed7e7da3c5a19a1c1a61e8eaf8fc83487e9df37adca82eb9bd0f1f5ff",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 23,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@23.png",
+      "sha256": "8399e8515a663984060046954487ea9ca3d5cd19aa672f34b6552cc39856d38d",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@23.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@24.idx",
+      "sha256": "102562b8838fa55d94af9b8f7dde2e6b5f22383e7a1a17fe468199eb86aa3eaf",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 24,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@24.png",
+      "sha256": "e7d8124ded731fcdc9db7b7b61097f1e9303f102de476f3e7d026647d226fd28",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@24.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@25.idx",
+      "sha256": "82815774999d9080c3e6c8cc68be3fceb80233d6393698c3e6560f97acaaaee8",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 25,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@25.png",
+      "sha256": "760f845092d959928a688f5188f184316fef5b4f63c14567328bc98244f3e8b6",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@25.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@26.idx",
+      "sha256": "501e62c5edcf75d02efca9fd71e8a4d3319b1a8cf41592f8e5c5bc66c4f0fb18",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 26,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@26.png",
+      "sha256": "78e49076029accf5228c41358b60fa8fb12a83c5bd48512ce6fe1f875534e92e",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@26.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@27.idx",
+      "sha256": "a9a9fa1e0d8986038e22dd8aef1e9ca477696aa59aaee3bcce7d7a90e75588cc",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 27,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@27.png",
+      "sha256": "ce233a4352905177789ede5d0785cab2ba67c9f13cc6485a5998f2224b7eae22",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@27.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@28.idx",
+      "sha256": "0eb9281c874fc72c32cd6f7a855ad523fdaea95d087293a4493092e6ec7be410",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 28,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@28.png",
+      "sha256": "35bb5f863cf22adacd69dc2d57fc28fb547f002463d23846b1f4f6e700e91aef",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@28.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@29.idx",
+      "sha256": "0df0d8ab88c3b9844d0b494395870ea485a5ac3c22d01b9516c546b1c9b41832",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 29,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@29.png",
+      "sha256": "76c6086603579f6b5c45e81839cad517a7fdc729c3d5902a1b48a785a5fc3ab6",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@29.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@3.idx",
+      "sha256": "3c8f719c2e0c174d1b12417bce1d104ae4f277132136a06662cd7a56a32f769c",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 3,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@3.png",
+      "sha256": "fecee38fa8707e3ab93a344bb17a6e81b86f510dfd70a92b63140be5d5393f9d",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@3.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@30.idx",
+      "sha256": "377ae0f717bcd4b882a8c32a7aaac7a05dc9a7c8079861e883451c7ab8afc22f",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 30,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@30.png",
+      "sha256": "28ab03479e9d026a1b86df81dbcb31932861f81cb6e74524696fc23607f6e67f",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@30.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@31.idx",
+      "sha256": "97a5b2ed136273b088a253feda98e56ad79e9fbb8d6bc8bc3aa7ee9805e9245a",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 31,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@31.png",
+      "sha256": "0824874c21f4ff3fdc83f2f75ee29cb2dd71de76fddf1ca67edb2bc40ac7fe42",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@31.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@32.idx",
+      "sha256": "9e98d1096c46072f1f1a77cac9733e8f3038f149f8fb04cb7ea3804055d2d0c8",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 32,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@32.png",
+      "sha256": "c309801b5e07aa4b4576cbe11ea8a6cd80b3702e47812b81ecaf178db5b0848d",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@32.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@33.idx",
+      "sha256": "d3968faf4864a3069f871d6d6be52bbebc46f50e6155c64ca90fdc86b5b36ad2",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 33,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@33.png",
+      "sha256": "057ba344c826e969ad48970f2454afd63fc68c5bb7e1c44241937dd3a66d84ba",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@33.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@34.idx",
+      "sha256": "fdb3ca7d646eda11ea51308a556b35e926cbedf3c3d08601754a52fb8dfb6205",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 34,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@34.png",
+      "sha256": "9c3e2f1f4590462299f60df37d371eadaa6525d8016d967201b34ba2a64a93e2",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@34.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@35.idx",
+      "sha256": "b0b69d9e5a38c14161b454e99aca6b3a6c66e50fd8544c353a1fa5dcd200c6c8",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 35,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@35.png",
+      "sha256": "30e139877f2e18cf553a4faf2e0c74edd34e548839f8b641262adfd41ad8d556",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@35.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@36.idx",
+      "sha256": "6bd1d39271d3d2bed827c30c7b692fa481f764d0a6bfc199310728deea415b81",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 36,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@36.png",
+      "sha256": "bc5e19488b7dbf8f861c82d04beddbaa0532f49a078d9577ceaa47a79d7883b1",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@36.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@37.idx",
+      "sha256": "f45484873bb826e75803f05ffcd53cba263f54dda80351e9b8cd53fcd146e7ff",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 37,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@37.png",
+      "sha256": "78139ba9d1af550ea9795aefad07dac337df9d67a819dac99b6532144bf6fc53",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@37.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@39.idx",
+      "sha256": "263ba418b90238e73fabeb8c5aac10bbf7719bbb3681c5569931bde01902c092",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 39,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@39.png",
+      "sha256": "030830f6cd5ddcc62b2aa453aa3628fd746b5f134a2369ba74cd66caefc78334",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@39.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@4.idx",
+      "sha256": "6465d8a6e1c6d46f0545fab358f893ccd99031335561c8657a7d5877ebd61242",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 4,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@4.png",
+      "sha256": "3f8b7dd8cf00d529b408a1643485ebf745e7951e2550393a5c9d521038f7524e",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@4.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@5.idx",
+      "sha256": "82ea99c0a3c3d097ae8fe21ab9849559daea11528f94f73e4f61bd83676de6bd",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 5,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@5.png",
+      "sha256": "b4e4a3907fb6067e58149a9270fb1e681726b51305f188d5e0b4a8544733f6a8",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@5.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@6.idx",
+      "sha256": "f3a76b8137186e74044b7127568edc99308b6e142266e5ecf36d88e85252c54e",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 6,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@6.png",
+      "sha256": "a156716a10b8b0b79aff4514397e23d698b0dce8e6506b2be58b4962baf4c0fd",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@6.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@7.idx",
+      "sha256": "e90139a561e5a1ae0535e733fa41c7c30ee4eb92aa9b21921847524a7692c64b",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 7,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@7.png",
+      "sha256": "6fa657b858b1f6b8e51084cd0932d85c400bda68bc4803a3fbbdb93f009ea206",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@7.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@8.idx",
+      "sha256": "1cf3f1508f7b569056ef1ee4af71b707752a9b3c5fb73d3adc143f1c00983e9c",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 8,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@8.png",
+      "sha256": "d27626e0dd40670e5350350da6da4baf019c92caca146f51aba012403cd71f1c",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@8.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "wildcom-002@9.idx",
+      "sha256": "a12935ab828c776f11e6e965500e1fad0b4117e2df15697110ea34beb2fb7884",
+      "kind": "original-index",
+      "archive": "WILDCOM.DAX",
+      "block": 2,
+      "frame": 9,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "wildcom-002@9.png",
+      "sha256": "e4393d15d49ce85c37bd56bc91ab2f57e42d72a811c2ac88ee0743ad00d6acf8",
+      "kind": "repo-file",
+      "source": "review/hd/b36-wild-terrain/wildcom-002@9.png",
       "rights": "accepted HD redraw"
     }
   ],

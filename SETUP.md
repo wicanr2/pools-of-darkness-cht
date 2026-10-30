@@ -19,7 +19,7 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 
 | 步驟 | 輸出與檢查 |
 |---|---|
-| `assets` | 重生540份原版辨識索引，重建1106檔主題及6份字型，每檔核對已驗SHA-256 |
+| `assets` | 重生579份原版辨識索引，重建1184檔主題及6份字型，每檔核對已驗SHA-256 |
 | `build` | 從本儲存庫`dosgolem/pod`取得[固定commit](tools/rebuild-engine.commit)，編譯`bin/pod-play`，保存建置資訊與SHA-256 |
 | `smoke` | 正常冷啟動7400格DEMO，產生`smoke/`的截圖、來源、紀錄與獨立可寫客體資料 |
 
@@ -46,7 +46,7 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 ## 驗證與目前限制
 
 跨機重建的驗證結果由[CONTEXT.md](CONTEXT.md)索引，過程記在[WORKLOG.md](WORKLOG.md)。
-初次[跨機重建收據](docs/re/025-rebuild-runtime.json)保存新編譯程式的7400格正常路徑；目前[b35收據](docs/re/017-b35-runtime.json)另驗1106檔主題與6份字型由乾淨Git檔案重生，本批未重編正式程式。
+初次[跨機重建收據](docs/re/025-rebuild-runtime.json)保存新編譯程式的7400格正常路徑；目前[b36收據](docs/re/017-b36-runtime.json)另驗1184檔主題與6份字型由乾淨Git檔案重生，本批未重編正式程式。
 這個入口保存目前已完成的素材，不代表尚未驗證的地形、動畫、語系、配樂或平台已完成。
 新增HD素材或正式字型時，須同步更新重建清單，並以乾淨Git檔案重跑`assets`，核對新正式主題及字型雜湊後才提交。
 
