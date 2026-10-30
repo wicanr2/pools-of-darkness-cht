@@ -1609,3 +1609,4 @@
 - README直接顯示39張成品的原尺寸拼圖，累計47張內嵌圖片；原版並列及提示詞保存於review/hd/b36-wild-terrain/。固定收據docs/re/017-b36-runtime.json重算相同，630個本機連結通過。
 - 變更檔UID/GID為1000:1000，原始壓縮檔雜湊不變，root-owned與誤建.md目錄為空，長期Go快取為空。dosgolem工作樹乾淨，本批容器已自動移除，沿用既有工具映像。
 - 本批抽驗範圍CONFORMED；野外素材累計79個非純色來源，第1組尚餘40張。正常野外遭遇、動畫與其他圖族仍另計，不重開Go繪圖收尾或G6探索。
+- 提交f85b552已推送私人main；#60驗收[留言](https://github.com/wicanr2/pools-of-darkness-cht/issues/60#issuecomment-6527212986)後關閉，2026-10-31回讀CLOSED。#10補[本批里程碑及剩餘來源](https://github.com/wicanr2/pools-of-darkness-cht/issues/10#issuecomment-6527221936)，維持開啟；本批容器為0，dosgolem工作樹乾淨。
