@@ -82,6 +82,7 @@ def main():
     ap.add_argument('--cell', type=int, choices=(12, 16, 22, 24), required=True)
     ap.add_argument('--threshold', type=int, default=128)
     ap.add_argument('--fallback', help='Unifont hex（字型沒有的字）')
+    ap.add_argument('--charset-file', type=Path, help='固定字集JSON碼點清單，供跨機重建已驗字型')
     ap.add_argument('--out')
     ap.add_argument('--sample', help='只畫這段文字的樣張 PNG 到 --out')
     a = ap.parse_args()
@@ -103,7 +104,16 @@ def main():
         img.save(a.out)
         return
     uni = load_unifont(a.fallback) if a.fallback else {}
-    chars = charset(a.catalogs, ''.join(chr(c) for c in range(0x20, 0x7F)))
+    if a.charset_file:
+        import json
+        points = json.loads(a.charset_file.read_text())
+        if (a.catalogs or not isinstance(points, list) or not points or
+                any(type(cp) is not int or not 0 <= cp <= 0x10FFFF or 0xD800 <= cp <= 0xDFFF for cp in points) or
+                points != sorted(set(points))):
+            sys.exit('固定字集須為唯一遞增的合法碼點，不能同時指定catalog')
+        chars = [chr(cp) for cp in points]
+    else:
+        chars = charset(a.catalogs, ''.join(chr(c) for c in range(0x20, 0x7F)))
     body, missing, fallback = [], [], 0
     for ch in chars:
         if ord(ch) < 0x80:

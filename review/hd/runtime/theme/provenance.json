@@ -1,0 +1,981 @@
+{
+  "request_manifest_sha256": "a9efcb6e082d7bd0c0b4e7ae348255da5d07b4aa0fe915569d919c8608df5b66",
+  "validation_sha256": "03e968ea50eb7732c4c2bdbc4a43474e6da982f7b50c8fd8bb968432e94d4ea7",
+  "runtime_proof_sha256": "67e088c5699593b38c3f47647cf23f69cb9b94e7ff1e714eff724d7b4c38be22",
+  "evidence": [
+    {
+      "key": "pic1-002",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "48ba369d390e3b5aedba7bec18f411cb9bb1a866fd92c10b3be2f71886296523"
+    },
+    {
+      "key": "pic1-007@0",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "f2526693ae22d2d74089ba395f766933ed4a64182317ef2609246685700d74ab"
+    },
+    {
+      "key": "pic1-007@1",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "f2526693ae22d2d74089ba395f766933ed4a64182317ef2609246685700d74ab"
+    },
+    {
+      "key": "pic1-007@2",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "f2526693ae22d2d74089ba395f766933ed4a64182317ef2609246685700d74ab"
+    },
+    {
+      "key": "pic1-011",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "58498f8fbf95ea43da954dff445f43eeb717997bdd3c053866e39bb73ca0aedf"
+    },
+    {
+      "key": "pic1-012",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "ce6a86a740e124cb7a3d775546cf165249881869ab67bcc6f6d12bd75635df28"
+    },
+    {
+      "key": "pic1-013",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "c18bb465babf7497d49a6ab326ddc2a11731e31e272ae36fad339218344f01c3"
+    },
+    {
+      "key": "pic1-014",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "28a6824e83f6705bc7d7de7ab9e31f16c99c3ffe600def894cd4642e6550e384"
+    },
+    {
+      "key": "pic1-026@0",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "ee4f995726e07f815bad08a1036e121a195b98a0e95d43e829b6b776f5e3163f"
+    },
+    {
+      "key": "pic1-026@1",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "ee4f995726e07f815bad08a1036e121a195b98a0e95d43e829b6b776f5e3163f"
+    },
+    {
+      "key": "pic1-026@2",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "ee4f995726e07f815bad08a1036e121a195b98a0e95d43e829b6b776f5e3163f"
+    },
+    {
+      "key": "pic1-026@3",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "ee4f995726e07f815bad08a1036e121a195b98a0e95d43e829b6b776f5e3163f"
+    },
+    {
+      "key": "pic1-026@4",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "ee4f995726e07f815bad08a1036e121a195b98a0e95d43e829b6b776f5e3163f"
+    },
+    {
+      "key": "pic1-026@5",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "ee4f995726e07f815bad08a1036e121a195b98a0e95d43e829b6b776f5e3163f"
+    },
+    {
+      "key": "pic1-031@0",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "31a8563bdeab73a6acdfc112d5cfeeb0f14eaa00a11dd1ef8513e1e9813f3f6e"
+    },
+    {
+      "key": "pic1-031@1",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "31a8563bdeab73a6acdfc112d5cfeeb0f14eaa00a11dd1ef8513e1e9813f3f6e"
+    },
+    {
+      "key": "pic1-031@2",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "31a8563bdeab73a6acdfc112d5cfeeb0f14eaa00a11dd1ef8513e1e9813f3f6e"
+    },
+    {
+      "key": "pic1-032",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "53522719ee4adc5b6e94b1834bbecf6be772a61d51d68df7eb7c8f8694102a71"
+    },
+    {
+      "key": "pic1-035",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "88db818d42c0fb247460d9980f39e789b9cb9127f37f6fc867799f03217e2a21"
+    },
+    {
+      "key": "pic1-038",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "88db818d42c0fb247460d9980f39e789b9cb9127f37f6fc867799f03217e2a21"
+    },
+    {
+      "key": "pic1-043@0",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "observed",
+      "palette_sha256": "406d624ee404d8639a75ecf0ccb53f852981de51421ef60548bdd77aa3f35094"
+    },
+    {
+      "key": "pic1-043@1",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "406d624ee404d8639a75ecf0ccb53f852981de51421ef60548bdd77aa3f35094"
+    },
+    {
+      "key": "pic1-043@2",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "406d624ee404d8639a75ecf0ccb53f852981de51421ef60548bdd77aa3f35094"
+    },
+    {
+      "key": "pic1-043@3",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "406d624ee404d8639a75ecf0ccb53f852981de51421ef60548bdd77aa3f35094"
+    },
+    {
+      "key": "pic1-043@4",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "406d624ee404d8639a75ecf0ccb53f852981de51421ef60548bdd77aa3f35094"
+    },
+    {
+      "key": "pic1-043@5",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "406d624ee404d8639a75ecf0ccb53f852981de51421ef60548bdd77aa3f35094"
+    },
+    {
+      "key": "pic1-044@0",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "e83ad970507e20fdb126a599af4718d184e8348fa3c5e3ac239ab9e551560b30"
+    },
+    {
+      "key": "pic1-044@1",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "e83ad970507e20fdb126a599af4718d184e8348fa3c5e3ac239ab9e551560b30"
+    },
+    {
+      "key": "pic1-044@2",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "e83ad970507e20fdb126a599af4718d184e8348fa3c5e3ac239ab9e551560b30"
+    },
+    {
+      "key": "pic1-044@3",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "e83ad970507e20fdb126a599af4718d184e8348fa3c5e3ac239ab9e551560b30"
+    },
+    {
+      "key": "pic1-044@4",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "e83ad970507e20fdb126a599af4718d184e8348fa3c5e3ac239ab9e551560b30"
+    },
+    {
+      "key": "pic1-044@5",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "e83ad970507e20fdb126a599af4718d184e8348fa3c5e3ac239ab9e551560b30"
+    },
+    {
+      "key": "pic1-044@6",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "e83ad970507e20fdb126a599af4718d184e8348fa3c5e3ac239ab9e551560b30"
+    },
+    {
+      "key": "pic1-044@7",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "e83ad970507e20fdb126a599af4718d184e8348fa3c5e3ac239ab9e551560b30",
+      "alias_of": "pic1-044@5"
+    },
+    {
+      "key": "pic1-047@0",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "46efd56a2bc254e5535d762036aa24dbd19111595414194a86bc39e26daa0b9a"
+    },
+    {
+      "key": "pic1-047@1",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "46efd56a2bc254e5535d762036aa24dbd19111595414194a86bc39e26daa0b9a"
+    },
+    {
+      "key": "pic1-047@2",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "46efd56a2bc254e5535d762036aa24dbd19111595414194a86bc39e26daa0b9a"
+    },
+    {
+      "key": "pic1-047@3",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "46efd56a2bc254e5535d762036aa24dbd19111595414194a86bc39e26daa0b9a",
+      "alias_of": "pic1-047@1"
+    },
+    {
+      "key": "pic1-062",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "ba8d46d89bc44e9c37d7abbdf0cfad9fd81f1e606235e5b5034efe36d1806003"
+    },
+    {
+      "key": "pic1-070",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "1460b170334a73dcf2f5663146088ce2b7a4e9006fa8dd410cdafd6c8afdd9ff"
+    },
+    {
+      "key": "pic1-077",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "c89297e620c21b6b14b47742aaf9b70f752119a8ee67df77be6f12dd6cb5c989"
+    },
+    {
+      "key": "pic1-078",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "c79e90c23c634588db75bc7f793911ebd8e62a0b368a7549b3af93df533fbac2"
+    },
+    {
+      "key": "pic1-085",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "e935aabf62dee226e47ba600438f3fcdddd7c3d75717c64c93f7d67c858ec0b6"
+    },
+    {
+      "key": "pic1-086",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "b0aa1256eef6464f2c2bcf3d74605b990af2fb40b461658961851e3fc65bb6f2"
+    },
+    {
+      "key": "pic1-112",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "0bccc0898d4edae9c50e55663adf92e974ada1e888898a5bdafb15dbca1f65bb"
+    },
+    {
+      "key": "pic1-113",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "a8362e955341623911da53faa25f7cb2bc3a28de7771e3e1e0139fd3dd182c86"
+    },
+    {
+      "key": "pic1-114",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "67052b2fcb5314f8f26ff2ef8f9623abc5e34f93d160121f0a477e432bcdc9a5"
+    },
+    {
+      "key": "pic1-115",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "7709b112df1e26502075fb014d99c8c4225a5e8f1574c80b96b6b4a14105fc03"
+    },
+    {
+      "key": "pic1-116",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "44b516163bfc0f1b41af46afc72b7fe948a8969a28c427dd75572fbbb8faaf4f"
+    },
+    {
+      "key": "pic1-128",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "594bd853736d353c9802e7b5412fc15a4c1b412fc0f22d174793851607466637"
+    },
+    {
+      "key": "pic1-129",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "da5e0864cdb1c96084fe9656f8051e31c23a648be03a5b191c826cbb43d68f41"
+    },
+    {
+      "key": "pic1-130",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "d3b7aca1db9775db3b6d878f63de0117b076e01deb8183ffb965de8d5e91b90e"
+    },
+    {
+      "key": "pic1-131",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "observed",
+      "palette_sha256": "50722b8b0331518f2099dac422029ab2fc5a0376a5c0f8ac1ffcb75b1c6b2fea"
+    },
+    {
+      "key": "pic1-132",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "b02fc9dd3f16a0b55a1f7fb40fa34c9a3a1f08d1592b8abad626daa1043dae86"
+    },
+    {
+      "key": "pic1-133",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "c3186824339d35c65552f088b3f93f02d87e7581c4fb855187c1ed9be4e2dc82"
+    },
+    {
+      "key": "pic1-134",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "6e21059b669d4159f0be05e5bcf016555a05655bef3b30d2ecc1ca213425f204"
+    },
+    {
+      "key": "pic1-135",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "304d6bb6f0783d57ae04bd28e5d2070b7558e3bda71d9ed503c91a02fafcdfdd"
+    },
+    {
+      "key": "pic1-136",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "d0c61cc98cca37e3c6d0fe2ac45ec85c39c52a2fd20202d77f49b48af154d30a"
+    },
+    {
+      "key": "pic1-137@0",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "5d7c824f8b5726806bb76cda3529a13d762738df1934b589021f71c76ad2e438"
+    },
+    {
+      "key": "pic1-137@1",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "5d7c824f8b5726806bb76cda3529a13d762738df1934b589021f71c76ad2e438"
+    },
+    {
+      "key": "pic1-137@2",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "5d7c824f8b5726806bb76cda3529a13d762738df1934b589021f71c76ad2e438"
+    },
+    {
+      "key": "pic1-137@3",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "5d7c824f8b5726806bb76cda3529a13d762738df1934b589021f71c76ad2e438"
+    },
+    {
+      "key": "pic1-137@4",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "5d7c824f8b5726806bb76cda3529a13d762738df1934b589021f71c76ad2e438"
+    },
+    {
+      "key": "pic1-137@5",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "5d7c824f8b5726806bb76cda3529a13d762738df1934b589021f71c76ad2e438"
+    },
+    {
+      "key": "pic1-137@6",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "5d7c824f8b5726806bb76cda3529a13d762738df1934b589021f71c76ad2e438"
+    },
+    {
+      "key": "pic1-137@7",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "5d7c824f8b5726806bb76cda3529a13d762738df1934b589021f71c76ad2e438"
+    },
+    {
+      "key": "pic1-138",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "a643d4788cae3f49a8e174d20be0dc242e79d4afe9cbae7337dfcb207b3dca7b"
+    },
+    {
+      "key": "pic1-139",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "62364171bc7d20a2c3230e864b37fd570c9679c85a5087cf23fd8a62d095e041"
+    },
+    {
+      "key": "pic1-140",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "c458e27c71ee6029db6fa7f74c68488ec528ed97484064eab7acd9f62aa47c93"
+    },
+    {
+      "key": "pic1-141",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "f9f9f49552eee3e324ceac6db1cdbbfdb1271c8d69ba484a28d4b25deb84768a"
+    },
+    {
+      "key": "pic1-142",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "890cd5b7fc8b87151a11cc822cc87bdd9338b5d3fbd2a1e1b685b21f4860d215"
+    },
+    {
+      "key": "pic1-143@0",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "ef60a791063b45088aa5ee90623708a5d7d78f0cb461ad54a17bc157711616be"
+    },
+    {
+      "key": "pic1-143@1",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "ef60a791063b45088aa5ee90623708a5d7d78f0cb461ad54a17bc157711616be"
+    },
+    {
+      "key": "pic1-144",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "3fa35aca8a66bdca2a0a9437a40689c502d302fd9fcee7258d6c588e352d7685"
+    },
+    {
+      "key": "pic1-145",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "49ccaef87719b498e7b4ed67d725d7523a2760ec49095e976a8bbda30cc0a220"
+    },
+    {
+      "key": "pic1-146",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "07a78df091e3275757dd79e520cf8309e81060b1a3fd5c07867dcb63397054b4"
+    },
+    {
+      "key": "pic1-147",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "df44019a33c8a4a036e1a79e805b656200b25a76d180b6b9b2157172932cfcf5"
+    },
+    {
+      "key": "pic1-148",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "06736d7c62720e8f492128c78c0c2d918eb18881d802655a53ff2e53e4790ac3"
+    },
+    {
+      "key": "pic1-149",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "df89c7c1e4bb86f80dedc1605d23e65f83edcbb4832eb67cd270538fed5c283d"
+    },
+    {
+      "key": "pic1-150",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "da3200a66b201660a790bb37f82c51ec488bf69b6623b1fb22d7f4732e060a16"
+    },
+    {
+      "key": "pic1-151",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "evidence": "conditional-candidate",
+      "palette_sha256": "c5642015f45545cb5d9dab0a031768d077a2cc869496bf1cdd57e6462f14ae03",
+      "alias_of": "pic1-143@0"
+    }
+  ],
+  "keys": [
+    "pic1-002",
+    "pic1-007@0",
+    "pic1-007@1",
+    "pic1-007@2",
+    "pic1-011",
+    "pic1-012",
+    "pic1-013",
+    "pic1-014",
+    "pic1-026@0",
+    "pic1-026@1",
+    "pic1-026@2",
+    "pic1-026@3",
+    "pic1-026@4",
+    "pic1-026@5",
+    "pic1-031@0",
+    "pic1-031@1",
+    "pic1-031@2",
+    "pic1-032",
+    "pic1-035",
+    "pic1-038",
+    "pic1-043@0",
+    "pic1-043@1",
+    "pic1-043@2",
+    "pic1-043@3",
+    "pic1-043@4",
+    "pic1-043@5",
+    "pic1-044@0",
+    "pic1-044@1",
+    "pic1-044@2",
+    "pic1-044@3",
+    "pic1-044@4",
+    "pic1-044@5",
+    "pic1-044@6",
+    "pic1-047@0",
+    "pic1-047@1",
+    "pic1-047@2",
+    "pic1-062",
+    "pic1-070",
+    "pic1-077",
+    "pic1-078",
+    "pic1-085",
+    "pic1-086",
+    "pic1-112",
+    "pic1-113",
+    "pic1-114",
+    "pic1-115",
+    "pic1-116",
+    "pic1-128",
+    "pic1-129",
+    "pic1-130",
+    "pic1-131",
+    "pic1-132",
+    "pic1-133",
+    "pic1-134",
+    "pic1-135",
+    "pic1-136",
+    "pic1-137@0",
+    "pic1-137@1",
+    "pic1-137@2",
+    "pic1-137@3",
+    "pic1-137@4",
+    "pic1-137@5",
+    "pic1-137@6",
+    "pic1-137@7",
+    "pic1-138",
+    "pic1-139",
+    "pic1-140",
+    "pic1-141",
+    "pic1-142",
+    "pic1-143@0",
+    "pic1-143@1",
+    "pic1-144",
+    "pic1-145",
+    "pic1-146",
+    "pic1-147",
+    "pic1-148",
+    "pic1-149",
+    "pic1-150"
+  ]
+}

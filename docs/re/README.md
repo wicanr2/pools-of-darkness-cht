@@ -117,3 +117,5 @@
 | [012](012-map-overlay.md) | 地圖疊層：本作 GEO 指標、座標、方向、東菲蘭攻略點；`g8-map-evidence.sh`、`g8-map-receipt.sh`、`map_geo.py` 及檢查器 | #9 |
 | [013](013-map-identification.md) | 24 塊 GEO 名稱與五個攻略點、[裁切表](013-map-reference-crops.json)、牆面比對與攻略專名對齊工具 | #9 |
 | [014](014-vga-hd.md) | 本作 VGA 圖檔、色盤、[盤點計數與別名](014-inventory-summary.json)、BIGPIC／TITLE、正常街景天空及17種牆面來源、HD素材與實際展示核對 | #10、#17 |
+
+- [025 跨機重建固定收據](025-rebuild-runtime.json)：#55，乾淨Git檔案重建926檔主題及6份字型，新編譯程式正常7400格、127檔與合成同b31、閃現0；入口見[SETUP.md](../../SETUP.md)。

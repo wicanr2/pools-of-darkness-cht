@@ -1,0 +1,2 @@
+# 字型來源與授權逐位元組保存，保留上游換行及尾端空白。
+font/source/** -text whitespace=-blank-at-eol,-blank-at-eof

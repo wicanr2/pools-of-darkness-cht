@@ -1,0 +1,46 @@
+{
+  "issue": 44,
+  "source_proof_sha256": "bd160b1aaa952cbaef27daca28fee9ae54e0a49fa97ab071599eb46342a45e70",
+  "review_manifests": {
+    "b01": "7ea7399c9886da7180435a78e8de569a4a40211dc1a0fe45d47d59543a80aca8",
+    "b03": "103f95e5135f32c414b8ced4a224dcca2e5d3d8ff6bd659206781fea80be54e6"
+  },
+  "items": [
+    {
+      "key": "bigpic1-243",
+      "observed": false,
+      "used_palette_sha256": "c1a37316f25866530b2293734ae58fa521fcc98a925a72b1c4a0bb5d16d0fb49"
+    },
+    {
+      "key": "bigpic1-246",
+      "observed": false,
+      "used_palette_sha256": "12d7331ae09ba966df9fe31cf8361c489815c78c61a564a00b523432b7c8bba1"
+    },
+    {
+      "key": "bigpic1-240",
+      "observed": false,
+      "used_palette_sha256": "d4b874f4b104dd3bbfc52af42f44712f6c10cc7690be135703990a9b81f5bb3f"
+    },
+    {
+      "key": "bigpic1-241",
+      "observed": false,
+      "used_palette_sha256": "119d6584a3deccfa9aa523ccffd44b563a10ff1e1301c37bc7de635673e0b605"
+    },
+    {
+      "key": "bigpic1-242",
+      "observed": false,
+      "used_palette_sha256": "99b2b6ec37a1a19bd97619b0f6e281bf893ea92fdace30c44cca43dc93388133"
+    },
+    {
+      "key": "bigpic1-244",
+      "observed": true,
+      "used_palette_sha256": "e885f147b960484e95cddaa3af91a6948617cb094daee98109f6ca5724951bf7"
+    },
+    {
+      "key": "bigpic1-245",
+      "observed": false,
+      "used_palette_sha256": "a559474554368ffc2bd2a172e334cadd62df4876097049b06a67b2a441f62b00"
+    }
+  ],
+  "scope": "seven conditional full-source items; only244 has normal-frame evidence; runtime validation separate"
+}

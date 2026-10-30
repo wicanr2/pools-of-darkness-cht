@@ -1,0 +1,105 @@
+{
+  "method": "opaque DOM render delta; unchanged pixels transparent; preserve approved LCD edges",
+  "items": [
+    {
+      "file": "poster-text-left.en-2x.png",
+      "sha256": "5468151aa3ee7ad3c09531b943c47a363881bfb64e8a8193d0a167ea11598a81",
+      "base": "poster-left-2x.png",
+      "base_sha256": "2a793150d6849b9b2e8ae644d6a25ec9445ca88df19260c5413397881350ce1a",
+      "full": "poster-full-left.en-2x.png",
+      "full_sha256": "e790d476f5744a0eabeea1fa4e19ad19311eb5ce23a9dbdf9bfd66ee65d1d1e7",
+      "changed_pixels": 6242,
+      "exact_composition": true
+    },
+    {
+      "file": "poster-text-left.en-3x.png",
+      "sha256": "cade2fbc73efa2c1e46150e01137c02277e89efdbedaa5bee4582f0c7304164c",
+      "base": "poster-left-3x.png",
+      "base_sha256": "bf340f6007132704a7f26fafa62daa64636f064f0c0ce527d41082c630f8f346",
+      "full": "poster-full-left.en-3x.png",
+      "full_sha256": "ee9bba951a75717669c305e6a4c51c103e89bac3b14544bca2ef5efe11123100",
+      "changed_pixels": 13857,
+      "exact_composition": true
+    },
+    {
+      "file": "poster-text-left.zh-TW-2x.png",
+      "sha256": "71add1f09bd932cf08d763129d0a24902709c97df6d29bc47b870f2e73706445",
+      "base": "poster-left-2x.png",
+      "base_sha256": "2a793150d6849b9b2e8ae644d6a25ec9445ca88df19260c5413397881350ce1a",
+      "full": "poster-full-left.zh-TW-2x.png",
+      "full_sha256": "050e626c9e84a458163d02326e56a3f7a92f001e6f63c5529d55175a04cab18f",
+      "changed_pixels": 4321,
+      "exact_composition": true
+    },
+    {
+      "file": "poster-text-left.zh-TW-3x.png",
+      "sha256": "a5a24495b27a5f5dd66676ccf28ea0e0b0b48b62a71ea03ca4649fc641784d67",
+      "base": "poster-left-3x.png",
+      "base_sha256": "bf340f6007132704a7f26fafa62daa64636f064f0c0ce527d41082c630f8f346",
+      "full": "poster-full-left.zh-TW-3x.png",
+      "full_sha256": "e102ee4a78b478e093b7d0a84b81a780fed315b8393aa1100619dbdb80c59a8d",
+      "changed_pixels": 9619,
+      "exact_composition": true
+    },
+    {
+      "file": "poster-text-right.en-2x.png",
+      "sha256": "05a9f1e03552ad91d6b0196445b461fb7b406ac257b601cd8a180f15ad22a8ce",
+      "base": "poster-right-2x.png",
+      "base_sha256": "82714b24476564d3d9845707f60d070b13e3481dc99e5e07e944bbce18ce8721",
+      "full": "poster-full-right.en-2x.png",
+      "full_sha256": "ce51d93e36b73ce90f37eb836d4bc514450cb0b3bab531847ff67221a08eab8d",
+      "changed_pixels": 6265,
+      "exact_composition": true
+    },
+    {
+      "file": "poster-text-right.en-3x.png",
+      "sha256": "a021a33ea8f23e75987065ef037063a9db429a9eee34833f27a90822eede584d",
+      "base": "poster-right-3x.png",
+      "base_sha256": "23300db92cd86ab782e9276e8be2b973f322afd1a5f2c4119d5afd790705601f",
+      "full": "poster-full-right.en-3x.png",
+      "full_sha256": "638dc8518ac3ce24d26f67e7a1af6489e13c212e059cdbd7e2218cdf01ad6c8f",
+      "changed_pixels": 13893,
+      "exact_composition": true
+    },
+    {
+      "file": "poster-text-right.zh-TW-2x.png",
+      "sha256": "2257e76d265402b1fe7b703580659e42f773cde852301aa38dff5624ea8fcb8a",
+      "base": "poster-right-2x.png",
+      "base_sha256": "82714b24476564d3d9845707f60d070b13e3481dc99e5e07e944bbce18ce8721",
+      "full": "poster-full-right.zh-TW-2x.png",
+      "full_sha256": "b3869c16f67442dffe0c4c5b616fa47d30675e83785193f87c063f336968be05",
+      "changed_pixels": 4465,
+      "exact_composition": true
+    },
+    {
+      "file": "poster-text-right.zh-TW-3x.png",
+      "sha256": "49effe965b1495ab4fca438ef3d6275aee16830a738d84d606a49f19fc70c2cf",
+      "base": "poster-right-3x.png",
+      "base_sha256": "23300db92cd86ab782e9276e8be2b973f322afd1a5f2c4119d5afd790705601f",
+      "full": "poster-full-right.zh-TW-3x.png",
+      "full_sha256": "aeb5716d7da1552d0dce85145423798de7caa1b3d5543652992ffcf34bd25e88",
+      "changed_pixels": 9843,
+      "exact_composition": true
+    }
+  ],
+  "private_only": true,
+  "original_art_sha256": "7bfb0f23a9d09f5046c0b79b96421f4b1c841f8e97b63c0ec0c248ab7c73d9f0",
+  "files": {
+    "poster-left-2x.png": "2a793150d6849b9b2e8ae644d6a25ec9445ca88df19260c5413397881350ce1a",
+    "poster-left-3x.png": "bf340f6007132704a7f26fafa62daa64636f064f0c0ce527d41082c630f8f346",
+    "poster-right-2x.png": "82714b24476564d3d9845707f60d070b13e3481dc99e5e07e944bbce18ce8721",
+    "poster-right-3x.png": "23300db92cd86ab782e9276e8be2b973f322afd1a5f2c4119d5afd790705601f",
+    "poster-text-left.en-2x.png": "5468151aa3ee7ad3c09531b943c47a363881bfb64e8a8193d0a167ea11598a81",
+    "poster-text-left.en-3x.png": "cade2fbc73efa2c1e46150e01137c02277e89efdbedaa5bee4582f0c7304164c",
+    "poster-text-left.zh-TW-2x.png": "71add1f09bd932cf08d763129d0a24902709c97df6d29bc47b870f2e73706445",
+    "poster-text-left.zh-TW-3x.png": "a5a24495b27a5f5dd66676ccf28ea0e0b0b48b62a71ea03ca4649fc641784d67",
+    "poster-text-right.en-2x.png": "05a9f1e03552ad91d6b0196445b461fb7b406ac257b601cd8a180f15ad22a8ce",
+    "poster-text-right.en-3x.png": "a021a33ea8f23e75987065ef037063a9db429a9eee34833f27a90822eede584d",
+    "poster-text-right.zh-TW-2x.png": "2257e76d265402b1fe7b703580659e42f773cde852301aa38dff5624ea8fcb8a",
+    "poster-text-right.zh-TW-3x.png": "49effe965b1495ab4fca438ef3d6275aee16830a738d84d606a49f19fc70c2cf"
+  },
+  "text_sha256": {
+    "zh-TW": "f30d556d8aabcc9805f51f5278e626fd5093161a461bfe1a0f4b0d0430d1c7e7",
+    "en": "e4f6056403edc62a8cdb8c9c073a0aa4c037926c5fe7d294a127abb01deeebff"
+  }
+}

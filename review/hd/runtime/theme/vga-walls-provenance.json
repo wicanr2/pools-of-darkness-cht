@@ -1,0 +1,18 @@
+{
+  "proof_sha256": "414bce40bbccbf3d036b52f6563672a8104dab6e63dc9cd02695db2ad3f1cc3d",
+  "scope": "one observed viewport; runtime gate separate",
+  "items": [
+    {
+      "kind": "wall",
+      "request_sha256": "65535ec80a56f9e98ac4d5ec32905aef9669f0b7cd8a7dd275faa2dbf2593a39",
+      "validation_sha256": "e6c78dbb98d141bd5c758a6674b323ea1c52a6e7950ab9441d9e2c7a98e857cd",
+      "visual_sha256": "b361f7624775bed6480baa9f201d88672f38cdd1fba4ff0c0a1d1ef9295075b6"
+    },
+    {
+      "kind": "sky",
+      "request_sha256": "b8e226a03dac0d8a962dc4fe51b9e06577115ed2a4014e789c0bc511ff30df95",
+      "validation_sha256": "a2afcae570f9b9ae8e7f24a3a6f567eea11885382d0390cc76b497863703239a",
+      "visual_sha256": "f22a69ae119699ed7a89db24edbcb20b25f8ffe1627d4e91320ff4e39f7a8fba"
+    }
+  ]
+}

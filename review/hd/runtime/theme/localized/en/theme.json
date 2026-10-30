@@ -1,0 +1,44 @@
+{
+  "scale": 3,
+  "items": [
+    {
+      "key": "title-001",
+      "screen_rect": [
+        0,
+        0,
+        320,
+        200
+      ],
+      "png": "title-001.png",
+      "indexed": "title-001.idx",
+      "indexed_sha256": "f61a14b25fe8e4921b9da854e15f1cc60475ec75ce2147e15b7d1dfc5525db0c",
+      "png_sha256": "531f3e80f8abd2c2fc358032b490eb1d2b10b8b3e3eef367bb1c4ed681c12507"
+    },
+    {
+      "key": "title-002",
+      "screen_rect": [
+        0,
+        0,
+        320,
+        200
+      ],
+      "png": "title-002.png",
+      "indexed": "title-002.idx",
+      "indexed_sha256": "f5aff74e221772af84d2883bb091c0facf82e3995c8096ba5814c81caceb1795",
+      "png_sha256": "3fe93a0a9f91a56d70cf8ab1825ce4891ef1768584a4851e5a7838a25c4411e4"
+    },
+    {
+      "key": "title-003",
+      "screen_rect": [
+        0,
+        0,
+        320,
+        200
+      ],
+      "png": "title-003.png",
+      "indexed": "title-003.idx",
+      "indexed_sha256": "2c2f516bb9bd70302ee85b953673eb82f94c3ded401ac1e5968ae65e1e207396",
+      "png_sha256": "bb7638bf026b021dbb0a921733b4e11953360c812039456b9baa0883cecfc6c1"
+    }
+  ]
+}

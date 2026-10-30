@@ -1,0 +1,9 @@
+{
+  "issue": 26,
+  "source": "TITLE.DAX",
+  "preview_manifest_sha256": "aa86ac8c314136ca083f58a0068ff4bdadc50357684f195083b8823021d40233",
+  "visual_sha256": "0546043baaedb35cc6afb2601eb9a3b61732e1c5f2abf41c2e978d47edf6a630",
+  "cover_manifest_sha256": "b77b7495a91fa8299e8d00e4e3074a6ce875f860d6be9b13483fafc8275ab41f",
+  "text_exception": "原版圖上的文字另由正式TSV渲染，數值驗收不將不同語系字形視為同一圖案",
+  "scope": "asset and localized text accepted; normal runtime gate separate"
+}

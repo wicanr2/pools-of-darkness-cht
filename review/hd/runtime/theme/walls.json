@@ -1,0 +1,2627 @@
+{
+  "version": 1,
+  "scale": 3,
+  "kind": "wall-grid",
+  "viewport": [
+    24,
+    24,
+    11,
+    11,
+    8
+  ],
+  "assets": [
+    {
+      "key": "8x8d1-001@21",
+      "kind": "wall",
+      "size": [
+        8,
+        8
+      ],
+      "indexed": "8x8d1-001@21.idx",
+      "indexed_sha256": "92c4523dd0e910c9b61fba0420bb19529bc1ce43d054e8c5c80a48ffcb3bb1c2",
+      "png": "8x8d1-001@21.png",
+      "png_sha256": "b8b1e1ccd3635c18a2b3bf8cbd02583ce6bbac2db6b4b7b311cab5fddbd0c591"
+    },
+    {
+      "key": "8x8d1-001@32",
+      "kind": "wall",
+      "size": [
+        8,
+        8
+      ],
+      "indexed": "8x8d1-001@32.idx",
+      "indexed_sha256": "98438ab6e6a26af00eddcfa1687321916e055119b74db7d85b853488f1fbf1a5",
+      "png": "8x8d1-001@32.png",
+      "png_sha256": "0ee4d45ca93fab91f92dfd540b96978f9c6b4a9e06cb4d5cdf1dbc5440220e56"
+    },
+    {
+      "key": "8x8d1-001@36",
+      "kind": "wall",
+      "size": [
+        8,
+        8
+      ],
+      "indexed": "8x8d1-001@36.idx",
+      "indexed_sha256": "22071fee4bcffe2cbdaad1ca3eb4c8c08ef98cedb8a6df14cad3386f76d91420",
+      "png": "8x8d1-001@36.png",
+      "png_sha256": "78966a608247f5b3c604321aad655dfc3089eb89bc5b46ced69bf1137e9e3d14"
+    },
+    {
+      "key": "8x8d1-001@37",
+      "kind": "wall",
+      "size": [
+        8,
+        8
+      ],
+      "indexed": "8x8d1-001@37.idx",
+      "indexed_sha256": "812a73536bf50b814bbfd2412b6d5739cb1aa510e2e7587bb24807480c4e8b62",
+      "png": "8x8d1-001@37.png",
+      "png_sha256": "1a2e440d07983d9ba801bfd15839d874ce2e6c0d5387bcb2df9f87298d2412e6"
+    },
+    {
+      "key": "8x8d1-001@38",
+      "kind": "wall",
+      "size": [
+        8,
+        8
+      ],
+      "indexed": "8x8d1-001@38.idx",
+      "indexed_sha256": "8571df0505d5356e0bf9a21c8c310e677cf32c70920b653f07fe6be172e44c9e",
+      "png": "8x8d1-001@38.png",
+      "png_sha256": "f5b15c38edbd434102ced82b9f856b577dc2e8c55975afff0c6869cb98e00468"
+    },
+    {
+      "key": "8x8d1-001@40",
+      "kind": "wall",
+      "size": [
+        8,
+        8
+      ],
+      "indexed": "8x8d1-001@40.idx",
+      "indexed_sha256": "2339f6113431a9ed0057313f69031aceb3b043b05a26181ac613c18dfe4a722f",
+      "png": "8x8d1-001@40.png",
+      "png_sha256": "9699dd1e24a9a36e54cc1c1bb10bf32c1e657f8da9fb9cdb903e513192cd247e"
+    },
+    {
+      "key": "8x8d1-001@41",
+      "kind": "wall",
+      "size": [
+        8,
+        8
+      ],
+      "indexed": "8x8d1-001@41.idx",
+      "indexed_sha256": "e633d48a45b68350d7016627962ac7ae3da22d10c153cfe86c878e28a8a0cd78",
+      "png": "8x8d1-001@41.png",
+      "png_sha256": "71010160fb771a5e8e342233220f1ca82c699eba2e0122a67bc4757cafd35596"
+    },
+    {
+      "key": "8x8d1-001@42",
+      "kind": "wall",
+      "size": [
+        8,
+        8
+      ],
+      "indexed": "8x8d1-001@42.idx",
+      "indexed_sha256": "b2e292f677c78c49ba422dbe57970c1edccdc549c0b6ede890af720f13553111",
+      "png": "8x8d1-001@42.png",
+      "png_sha256": "33f9a721a267dd75a75305c1b3934017ef585951a301a7d6a174cf9b2e4fa987"
+    },
+    {
+      "key": "8x8d1-001@43",
+      "kind": "wall",
+      "size": [
+        8,
+        8
+      ],
+      "indexed": "8x8d1-001@43.idx",
+      "indexed_sha256": "3582aef5f6c4a02841aba0c5dc0c615431e9d3338b87f112f8c78ddc2f8212ab",
+      "png": "8x8d1-001@43.png",
+      "png_sha256": "dc66f049befc1c625a505db4dafb6e3fe585976ba9f987ecc2a67e382664c4e4"
+    },
+    {
+      "key": "8x8d1-001@44",
+      "kind": "wall",
+      "size": [
+        8,
+        8
+      ],
+      "indexed": "8x8d1-001@44.idx",
+      "indexed_sha256": "55598827dfd96fb9fd1bbe63ed268a4e34d3cf07880d554e274b9548e5860149",
+      "png": "8x8d1-001@44.png",
+      "png_sha256": "71f127cfe6a0cebf74f4ef292688981c0a8ac5ea8d8236cd6df1087b774f8914"
+    },
+    {
+      "key": "8x8d1-001@46",
+      "kind": "wall",
+      "size": [
+        8,
+        8
+      ],
+      "indexed": "8x8d1-001@46.idx",
+      "indexed_sha256": "390fbde0d864227a0774cf37a30141801ddf755f0bbc25d8c7c97ca057338be2",
+      "png": "8x8d1-001@46.png",
+      "png_sha256": "ac37415864d5c10b607ab29322e54ffcb5bdf47dbf2c504a22ea1e7d5216091b"
+    },
+    {
+      "key": "8x8d1-001@47",
+      "kind": "wall",
+      "size": [
+        8,
+        8
+      ],
+      "indexed": "8x8d1-001@47.idx",
+      "indexed_sha256": "6ee6fc904dd9c9b2ec5463d77b9e4b83ca78441512956f8aa4cdabe6cab3ac05",
+      "png": "8x8d1-001@47.png",
+      "png_sha256": "482b519f33188f49ab33b33c734a0eeb2e87e881953eebf583e77787c4c723e9"
+    },
+    {
+      "key": "8x8d1-001@55",
+      "kind": "wall",
+      "size": [
+        8,
+        8
+      ],
+      "indexed": "8x8d1-001@55.idx",
+      "indexed_sha256": "9e7becb32c97e758d775e3e1c7df675f3cfe534837784bdf153a9a5876aee4cc",
+      "png": "8x8d1-001@55.png",
+      "png_sha256": "6bad34cb6a480c4f15b333a3b12b39be0632162f5edfa2ada93c779be5e177e3"
+    },
+    {
+      "key": "8x8d1-001@60",
+      "kind": "wall",
+      "size": [
+        8,
+        8
+      ],
+      "indexed": "8x8d1-001@60.idx",
+      "indexed_sha256": "7142992b523a7aa6598a93221f50ddcbc64e84d2c2c9fb4b06030fc880f8d9b0",
+      "png": "8x8d1-001@60.png",
+      "png_sha256": "1c406c901359fecf570abd51fe86dbfaa1b3b5dc189ed3c5ccb213dc51df0694"
+    },
+    {
+      "key": "8x8d1-001@61",
+      "kind": "wall",
+      "size": [
+        8,
+        8
+      ],
+      "indexed": "8x8d1-001@61.idx",
+      "indexed_sha256": "356a32f5d4be4bc0ebbdf946023cad2676ac3b94d611289dddebca9c834554d2",
+      "png": "8x8d1-001@61.png",
+      "png_sha256": "a9564ffa64b4d6ecaf7bef15466d6a4738a61c42578cd1af964e474f010e6c96"
+    },
+    {
+      "key": "8x8d1-001@62",
+      "kind": "wall",
+      "size": [
+        8,
+        8
+      ],
+      "indexed": "8x8d1-001@62.idx",
+      "indexed_sha256": "559846e2140bc92cf8558513333798bb6c2de17ffe11d28ac4060b8d09944f45",
+      "png": "8x8d1-001@62.png",
+      "png_sha256": "9b5518546783dab7094d762af6a2bd412ec9a992614ca76ac751f835e5df0257"
+    },
+    {
+      "key": "8x8d1-001@193",
+      "kind": "wall",
+      "size": [
+        8,
+        8
+      ],
+      "indexed": "8x8d1-001@193.idx",
+      "indexed_sha256": "6cabd3819586f10d48e173f3b8459452b088c120c4a6021549e6206e093f3f4b",
+      "png": "8x8d1-001@193.png",
+      "png_sha256": "0fb818c54533e448fa4ca54cd45fb4c21d8eb9ff3078ef0983a78373e6760663"
+    },
+    {
+      "key": "skygrnd-001",
+      "kind": "sky",
+      "size": [
+        88,
+        88
+      ],
+      "indexed": "skygrnd-001.idx",
+      "indexed_sha256": "3b7758d528493c836059053a9f64243c9907c75743d77028f9cc5d9afcdd79cb",
+      "png": "skygrnd-001.png",
+      "png_sha256": "c15992627f698ef9b5e3c2941d68a821614e8721a149a369b806bdff1893aa9c"
+    }
+  ],
+  "cells": [
+    {
+      "key": "vga-phlan-000",
+      "positions": [
+        0
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "394ac66cf8b254a8bd064a709e12043dd245eea1c1084141b9c7fc74af88ad32",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-001",
+      "positions": [
+        1
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -8,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "c965bb72fb7e950f39ba5d85a2a69053aeff84ce29ed2d29a7e60fdf190d31ce",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-002",
+      "positions": [
+        2
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -16,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "a67d34912c8c3cdcb386fceec57076df561544f44f9f32af4acac1cdaae139a1",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-003",
+      "positions": [
+        3
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -24,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "281d03eb05cbd43842433f11b209bc187fde5409381a8febc222270a0e0456ba",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-004",
+      "positions": [
+        4
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -32,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "89d63a2de58e19c251be81458d87ed1566c3d56da25b3a1dfcccf52ffb552a64",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-005",
+      "positions": [
+        5
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -40,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "96f709e12fb73181c2aa23549b2a8ad2708cfc438b160e12a086df3963ef3665",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-006",
+      "positions": [
+        6
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -48,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "fba339860e1645c3fbb48ba8c7b79beaaeb4612d8b8b499ff9bbea23cce1cadc",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-007",
+      "positions": [
+        7
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -56,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "a017fc81ee476c08436d049dbf6914a00882d944395183b81f1e1a433063b685",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-008",
+      "positions": [
+        8
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -64,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "455f394e94f0be184aac2def1a041d9cc32d4d67e3f61a6bbba29da11c52c5d9",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-009",
+      "positions": [
+        9
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -72,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "fec0b97bfba9e6cf25886e0c4884536456a151b4a91b372dc9e74a0b1b68403f",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-010",
+      "positions": [
+        10
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -80,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "4a4c8c191f98533d13dd786328e95eda994b5264ea8a943075fdc550c559379c",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-011",
+      "positions": [
+        11
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            0,
+            -8
+          ]
+        }
+      ],
+      "indexed_sha256": "9d867cd467411403ea3636c4fd5e6d3d6784f7fb140df1c8c90c5be69cc72576",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-012",
+      "positions": [
+        12
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -8,
+            -8
+          ]
+        }
+      ],
+      "indexed_sha256": "f028994d08ab3e7b7b7b233f8067d28b6ae8ea3cd646adf7e729312a64eb3c6c",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-013",
+      "positions": [
+        13
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -16,
+            -8
+          ]
+        }
+      ],
+      "indexed_sha256": "4a4decb1b36d44938416131dcc0c42b93aef1da8c71f3118ca7cb5b4b471438e",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-014",
+      "positions": [
+        14
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -24,
+            -8
+          ]
+        }
+      ],
+      "indexed_sha256": "3eef7a24204651f4e22638169121c8a39b2039c1f4600d8fe09af2d28c2cdecc",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-015",
+      "positions": [
+        15
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -32,
+            -8
+          ]
+        }
+      ],
+      "indexed_sha256": "09bd396b7967240cc43a844ef76a6d060ab1864f2cf8a6ce6529d50e4f5e6189",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-016",
+      "positions": [
+        16
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -40,
+            -8
+          ]
+        }
+      ],
+      "indexed_sha256": "75bbd3f21135b3d49e144fe1af627e008f007cf2e9cde33ce1edaced3a28cc87",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-017",
+      "positions": [
+        17
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -48,
+            -8
+          ]
+        }
+      ],
+      "indexed_sha256": "07badd8a7e6185088cbd42a2ee7646eb145018020fc0c99878d718053da9a173",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-018",
+      "positions": [
+        18
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -56,
+            -8
+          ]
+        }
+      ],
+      "indexed_sha256": "2dca7ce25ade3057a8b93cc6a414375e338e38a7e82378885e00783fc39f470e",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-019",
+      "positions": [
+        19
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -64,
+            -8
+          ]
+        }
+      ],
+      "indexed_sha256": "3150e48b659cd1ff2a61be89606638f75da3b54fd5ba780c900e8880e0418524",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-020",
+      "positions": [
+        20
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -72,
+            -8
+          ]
+        }
+      ],
+      "indexed_sha256": "153945272b9ea714db7f6e8b956ddba010cf7ceceee30335182bc1c0b7d89701",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-021",
+      "positions": [
+        21
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -80,
+            -8
+          ]
+        }
+      ],
+      "indexed_sha256": "12ecde9afb380864c71685c9bc1bc80ac8a874bf2acbe600a012456246e9ac80",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-022",
+      "positions": [
+        22
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            0,
+            -16
+          ]
+        },
+        {
+          "key": "8x8d1-001@42",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "b2e292f677c78c49ba422dbe57970c1edccdc549c0b6ede890af720f13553111",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-023",
+      "positions": [
+        23
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -8,
+            -16
+          ]
+        },
+        {
+          "key": "8x8d1-001@41",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "e633d48a45b68350d7016627962ac7ae3da22d10c153cfe86c878e28a8a0cd78",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-024",
+      "positions": [
+        24
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -16,
+            -16
+          ]
+        },
+        {
+          "key": "8x8d1-001@55",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "4f4841e166ce056cc8a2d5ef558c9181f014d36c81273bc4a9f8f81613eaab53",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-025",
+      "positions": [
+        25
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -24,
+            -16
+          ]
+        }
+      ],
+      "indexed_sha256": "ad44654dd9b48fdf1ba4abd3dd619aad92149684e1867745f52c9d3d00270556",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-026",
+      "positions": [
+        26
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -32,
+            -16
+          ]
+        }
+      ],
+      "indexed_sha256": "a01a7c026a13ccabeac7968a6f749123745831d8d51c4c84d95cb4234bb523b1",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-027",
+      "positions": [
+        27
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -40,
+            -16
+          ]
+        }
+      ],
+      "indexed_sha256": "01787f13a8ed369756c7baf47dc52a90716752d74cb1863f6f51f3959a3432bc",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-028",
+      "positions": [
+        28
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -48,
+            -16
+          ]
+        }
+      ],
+      "indexed_sha256": "1290777003de065075c451633980c04b0ded7872df592c2886cf47f71f46fb1c",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-029",
+      "positions": [
+        29
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -56,
+            -16
+          ]
+        }
+      ],
+      "indexed_sha256": "f2fb85f27fb172a4121cc9d806e1aa5f36dc7b93e073d56f19bbfb6577bdcbdf",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-030",
+      "positions": [
+        30
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -64,
+            -16
+          ]
+        }
+      ],
+      "indexed_sha256": "ac223f2fe203d1b96ae605137ad2a7aa028c8088779ff1ef34868d8b67e86a62",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-031",
+      "positions": [
+        31
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -72,
+            -16
+          ]
+        }
+      ],
+      "indexed_sha256": "798fa8491474f0fc073d2c975fe3c843df850619eae9c606ca1974426240f18c",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-032",
+      "positions": [
+        32
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -80,
+            -16
+          ]
+        }
+      ],
+      "indexed_sha256": "c024bc47b14717d962b04ed2233eda0d24bc0370f5ca05b1216ac1966a4aba5d",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-033",
+      "positions": [
+        33
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            0,
+            -24
+          ]
+        },
+        {
+          "key": "8x8d1-001@43",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "3582aef5f6c4a02841aba0c5dc0c615431e9d3338b87f112f8c78ddc2f8212ab",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-034",
+      "positions": [
+        34
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -8,
+            -24
+          ]
+        },
+        {
+          "key": "8x8d1-001@47",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "6ee6fc904dd9c9b2ec5463d77b9e4b83ca78441512956f8aa4cdabe6cab3ac05",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-035",
+      "positions": [
+        35
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -16,
+            -24
+          ]
+        },
+        {
+          "key": "8x8d1-001@61",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "356a32f5d4be4bc0ebbdf946023cad2676ac3b94d611289dddebca9c834554d2",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-036",
+      "positions": [
+        36
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -24,
+            -24
+          ]
+        },
+        {
+          "key": "8x8d1-001@55",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "2704b5c5b09a4b8a52e382f9ac9064f3980df13fbc9ab910749e7e76d095cf36",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-037",
+      "positions": [
+        37
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -32,
+            -24
+          ]
+        }
+      ],
+      "indexed_sha256": "671c9a2651a42dbc17caf59450a6b9f48013604c7622d02d936875e666c73782",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-038",
+      "positions": [
+        38
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -40,
+            -24
+          ]
+        }
+      ],
+      "indexed_sha256": "b2829f26de69d35618e6585e0845e7e331121a092cbf38e9b2c96427e4843d4a",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-039",
+      "positions": [
+        39
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -48,
+            -24
+          ]
+        }
+      ],
+      "indexed_sha256": "8641bd8ea96eb00d58313ebde3a22d2ba75ef1ef1ac562666b623b1cbeaff737",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-040",
+      "positions": [
+        40
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -56,
+            -24
+          ]
+        }
+      ],
+      "indexed_sha256": "f4356920c48b01d84ad3077b30ea2287111ebd84d7a7acd6a2b3875bee032bea",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-041",
+      "positions": [
+        41
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -64,
+            -24
+          ]
+        }
+      ],
+      "indexed_sha256": "9ea97d20f301beb26cc75b8ac57a2f9036a90f88435cfdf5670aa11b0c105dbe",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-042",
+      "positions": [
+        42
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -72,
+            -24
+          ]
+        }
+      ],
+      "indexed_sha256": "ea57ea281c401806941e03423f4d212f99725e9fca6db540bf80ab5505e164df",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-043",
+      "positions": [
+        43
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -80,
+            -24
+          ]
+        }
+      ],
+      "indexed_sha256": "d3450511c2cc261ec1392a17ba93a10a663bfca5aa2770dbc3da1f912f7443b7",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-044",
+      "positions": [
+        44
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            0,
+            -32
+          ]
+        },
+        {
+          "key": "8x8d1-001@193",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "6cabd3819586f10d48e173f3b8459452b088c120c4a6021549e6206e093f3f4b",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-045",
+      "positions": [
+        45
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -8,
+            -32
+          ]
+        },
+        {
+          "key": "8x8d1-001@40",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "2339f6113431a9ed0057313f69031aceb3b043b05a26181ac613c18dfe4a722f",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-046",
+      "positions": [
+        46
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -16,
+            -32
+          ]
+        },
+        {
+          "key": "8x8d1-001@32",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "98438ab6e6a26af00eddcfa1687321916e055119b74db7d85b853488f1fbf1a5",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-047",
+      "positions": [
+        47
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -24,
+            -32
+          ]
+        },
+        {
+          "key": "8x8d1-001@61",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "356a32f5d4be4bc0ebbdf946023cad2676ac3b94d611289dddebca9c834554d2",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-048",
+      "positions": [
+        48
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -32,
+            -32
+          ]
+        },
+        {
+          "key": "8x8d1-001@55",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "c6d8b481312f25976935b16f4ca07104b72e88fe6d6ab8753652dce53918d30c",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-049",
+      "positions": [
+        49
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -40,
+            -32
+          ]
+        }
+      ],
+      "indexed_sha256": "bcedc529e9a16278f178b1481f8ad1b54a80d3ab853e5e255331f1783f22ee15",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-050",
+      "positions": [
+        50
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -48,
+            -32
+          ]
+        }
+      ],
+      "indexed_sha256": "ab9d0c6b114f0c07ac04163df7e87202f022ef6333a7313fc38bda8072133e4b",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-051",
+      "positions": [
+        51
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -56,
+            -32
+          ]
+        }
+      ],
+      "indexed_sha256": "1129be32cd691df8f61b02636ca55c79efdfdbac47c45e7435796a2fcb2a46a5",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-052",
+      "positions": [
+        52
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -64,
+            -32
+          ]
+        }
+      ],
+      "indexed_sha256": "d83e60dfb183e9aafc0b26278f0c097f0f6c7a66b5e2575137c8f4aae437023a",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-053",
+      "positions": [
+        53
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -72,
+            -32
+          ]
+        }
+      ],
+      "indexed_sha256": "83f338d4310c9a26be0a507fb8382c2fb5db5000e320612e5e9667a11589cc03",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-054",
+      "positions": [
+        54
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -80,
+            -32
+          ]
+        }
+      ],
+      "indexed_sha256": "7815bd6d5c56c19f0acdb1a25215e9756df8a045dbce10bf2998211444a80771",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-055",
+      "positions": [
+        55
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            0,
+            -40
+          ]
+        },
+        {
+          "key": "8x8d1-001@43",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "3582aef5f6c4a02841aba0c5dc0c615431e9d3338b87f112f8c78ddc2f8212ab",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-056",
+      "positions": [
+        56
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -8,
+            -40
+          ]
+        },
+        {
+          "key": "8x8d1-001@43",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "3582aef5f6c4a02841aba0c5dc0c615431e9d3338b87f112f8c78ddc2f8212ab",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-057",
+      "positions": [
+        57
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -16,
+            -40
+          ]
+        },
+        {
+          "key": "8x8d1-001@60",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "7142992b523a7aa6598a93221f50ddcbc64e84d2c2c9fb4b06030fc880f8d9b0",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-058",
+      "positions": [
+        58
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -24,
+            -40
+          ]
+        },
+        {
+          "key": "8x8d1-001@62",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "559846e2140bc92cf8558513333798bb6c2de17ffe11d28ac4060b8d09944f45",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-059",
+      "positions": [
+        59
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -32,
+            -40
+          ]
+        },
+        {
+          "key": "8x8d1-001@60",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "7142992b523a7aa6598a93221f50ddcbc64e84d2c2c9fb4b06030fc880f8d9b0",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-060",
+      "positions": [
+        60
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -40,
+            -40
+          ]
+        }
+      ],
+      "indexed_sha256": "1d868da5ba1d2f0e0dd024c24a16cc11ac12dc0805caf3131557002cef3e4579",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-061",
+      "positions": [
+        61
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -48,
+            -40
+          ]
+        }
+      ],
+      "indexed_sha256": "2d0a1051ff62c53110a5ea1f22595b722810119b033759f3e35c6eaa7fd7dedc",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-062",
+      "positions": [
+        62
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -56,
+            -40
+          ]
+        }
+      ],
+      "indexed_sha256": "700f23c8b9af1c2c5a0c578569a8910b3ccdda0996fd73cd51ef1f75bc6c4569",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-063",
+      "positions": [
+        63
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -64,
+            -40
+          ]
+        }
+      ],
+      "indexed_sha256": "7a07fe36004ba4bd8a18f1acc33c39c3b23d8edb184e5decc4708d13f541d3f6",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-064",
+      "positions": [
+        64
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -72,
+            -40
+          ]
+        },
+        {
+          "key": "8x8d1-001@37",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "812a73536bf50b814bbfd2412b6d5739cb1aa510e2e7587bb24807480c4e8b62",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-065",
+      "positions": [
+        65
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -80,
+            -40
+          ]
+        },
+        {
+          "key": "8x8d1-001@38",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "8571df0505d5356e0bf9a21c8c310e677cf32c70920b653f07fe6be172e44c9e",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-066",
+      "positions": [
+        66
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            0,
+            -48
+          ]
+        },
+        {
+          "key": "8x8d1-001@47",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "6ee6fc904dd9c9b2ec5463d77b9e4b83ca78441512956f8aa4cdabe6cab3ac05",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-067",
+      "positions": [
+        67
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -8,
+            -48
+          ]
+        },
+        {
+          "key": "8x8d1-001@46",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "390fbde0d864227a0774cf37a30141801ddf755f0bbc25d8c7c97ca057338be2",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-068",
+      "positions": [
+        68
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -16,
+            -48
+          ]
+        },
+        {
+          "key": "8x8d1-001@32",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "98438ab6e6a26af00eddcfa1687321916e055119b74db7d85b853488f1fbf1a5",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-069",
+      "positions": [
+        69
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -24,
+            -48
+          ]
+        },
+        {
+          "key": "8x8d1-001@36",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "22071fee4bcffe2cbdaad1ca3eb4c8c08ef98cedb8a6df14cad3386f76d91420",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-070",
+      "positions": [
+        70
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -32,
+            -48
+          ]
+        },
+        {
+          "key": "8x8d1-001@21",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "9af4667149eee9646f7fecadd5d5fa8fa7e17c19b94e58fb22a51ff35c1ebe81",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-071",
+      "positions": [
+        71
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -40,
+            -48
+          ]
+        }
+      ],
+      "indexed_sha256": "bcd3972ddd1492ac1c7fb8fb82feebe46ff32b7a75027a996fab5e6399749dfe",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-072",
+      "positions": [
+        72
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -48,
+            -48
+          ]
+        }
+      ],
+      "indexed_sha256": "730a999bf1af4357a56207d217e8863360d73a929731aca317cbca60a1b4aaa1",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-073",
+      "positions": [
+        73
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -56,
+            -48
+          ]
+        }
+      ],
+      "indexed_sha256": "55fbc71a20336e9c61a41ab1dc4a185c53d9a7f003e78a0af84ad5134ad7d64a",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-074",
+      "positions": [
+        74
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -64,
+            -48
+          ]
+        }
+      ],
+      "indexed_sha256": "1f1f4ef1d37597fb26d500ea565705b8dbea8bc884e6c02bb087e2c32f152388",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-075",
+      "positions": [
+        75
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -72,
+            -48
+          ]
+        }
+      ],
+      "indexed_sha256": "e41e27ad7a675a30d88fd442675b303f5ff027faa230a90b693ce60a87387dc8",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-076",
+      "positions": [
+        76
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -80,
+            -48
+          ]
+        }
+      ],
+      "indexed_sha256": "197a472e52e00ce01046d1187b63a70f01f8a2080c44474856f948e9985cfba8",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-077",
+      "positions": [
+        77
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            0,
+            -56
+          ]
+        },
+        {
+          "key": "8x8d1-001@43",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "3582aef5f6c4a02841aba0c5dc0c615431e9d3338b87f112f8c78ddc2f8212ab",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-078",
+      "positions": [
+        78
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -8,
+            -56
+          ]
+        },
+        {
+          "key": "8x8d1-001@47",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "6ee6fc904dd9c9b2ec5463d77b9e4b83ca78441512956f8aa4cdabe6cab3ac05",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-079",
+      "positions": [
+        79
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -16,
+            -56
+          ]
+        },
+        {
+          "key": "8x8d1-001@36",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "22071fee4bcffe2cbdaad1ca3eb4c8c08ef98cedb8a6df14cad3386f76d91420",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-080",
+      "positions": [
+        80
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -24,
+            -56
+          ]
+        },
+        {
+          "key": "8x8d1-001@21",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "df09bc2dab6062a936f91fde4fdfb3ba5788b1b94ccc1c0127e64f8206310d29",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-081",
+      "positions": [
+        81
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -32,
+            -56
+          ]
+        }
+      ],
+      "indexed_sha256": "aab38ce7aa17cfbc3a6e0fac9572acd0e2f147c9d5eb5718ee7b78b57a37b3a7",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-082",
+      "positions": [
+        82
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -40,
+            -56
+          ]
+        }
+      ],
+      "indexed_sha256": "a2f5e81d1bd935b2290685d871c9ec447e779855c4efe23ec13c5d177037c498",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-083",
+      "positions": [
+        83
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -48,
+            -56
+          ]
+        }
+      ],
+      "indexed_sha256": "8bf29e0cef097e31e670cf6fb9effa06c620b699c405396781390eb4166f6cb2",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-084",
+      "positions": [
+        84
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -56,
+            -56
+          ]
+        }
+      ],
+      "indexed_sha256": "3c6885689a9fd09a99f410211aaa8286f87098bcaa0662d527d8cd49507cd423",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-085",
+      "positions": [
+        85
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -64,
+            -56
+          ]
+        }
+      ],
+      "indexed_sha256": "d2589cdbc23da3b372e1be94672cd5c312a5d9932c7f3b83a5967b23e9c8ad8d",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-086",
+      "positions": [
+        86
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -72,
+            -56
+          ]
+        }
+      ],
+      "indexed_sha256": "bf8ba1b01f075dd64eb67deffbdb79b04d9c239b1efd604610c7fceb8dd56c44",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-087",
+      "positions": [
+        87
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -80,
+            -56
+          ]
+        }
+      ],
+      "indexed_sha256": "185da6e99e830063db66a81cb1fba257998929ca794cf69cb6b4a5b7c6f20dea",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-088",
+      "positions": [
+        88
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            0,
+            -64
+          ]
+        },
+        {
+          "key": "8x8d1-001@44",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "55598827dfd96fb9fd1bbe63ed268a4e34d3cf07880d554e274b9548e5860149",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-089",
+      "positions": [
+        89
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -8,
+            -64
+          ]
+        },
+        {
+          "key": "8x8d1-001@44",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "55598827dfd96fb9fd1bbe63ed268a4e34d3cf07880d554e274b9548e5860149",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-090",
+      "positions": [
+        90
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -16,
+            -64
+          ]
+        },
+        {
+          "key": "8x8d1-001@21",
+          "at": [
+            0,
+            0
+          ]
+        }
+      ],
+      "indexed_sha256": "bd48e0aca9aadf9f711820ccbf5f27e1842b73c574e9f94264c820c24662e566",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-091",
+      "positions": [
+        91
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -24,
+            -64
+          ]
+        }
+      ],
+      "indexed_sha256": "8c85b000743146480484d393c27accb6b7fdf2deccba1ca98bea7e687d2f6262",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-092",
+      "positions": [
+        92
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -32,
+            -64
+          ]
+        }
+      ],
+      "indexed_sha256": "db23e987eff907be19633625dc8bade7c3ef513b984f86573c5f5ccf7eaea11b",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-093",
+      "positions": [
+        93
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -40,
+            -64
+          ]
+        }
+      ],
+      "indexed_sha256": "9e51d5538d6d4a64f0a10dd249e04eda42d99b8ff8a27118d3993910ac683aff",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-094",
+      "positions": [
+        94
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -48,
+            -64
+          ]
+        }
+      ],
+      "indexed_sha256": "f1971bfe76ebdc9bf940b790068ea272abfb976b7508ff911e5ed5c8d51637c5",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-095",
+      "positions": [
+        95
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -56,
+            -64
+          ]
+        }
+      ],
+      "indexed_sha256": "e51968e6b0407ce91f6ce729fe9c9cc61c1adf8016b885d0b2e770faa366314e",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-096",
+      "positions": [
+        96
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -64,
+            -64
+          ]
+        }
+      ],
+      "indexed_sha256": "f9d6cd3889dc659c1b2548d6c44044a260bbf3333329a518531351adce69443d",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-097",
+      "positions": [
+        97
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -72,
+            -64
+          ]
+        }
+      ],
+      "indexed_sha256": "fdadd7e4af9c02e2a61246741645149590bddce5fa428facc402fb401e346c61",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-098",
+      "positions": [
+        98
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -80,
+            -64
+          ]
+        }
+      ],
+      "indexed_sha256": "a4b61295088bfb8611a83cb3a0de61b37ff786df4dfab14f5c8e115b1834e26d",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-099",
+      "positions": [
+        99
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            0,
+            -72
+          ]
+        }
+      ],
+      "indexed_sha256": "72092f236c582bbee79f36595e9d6d23d676c81436e8379e1ab10bb38fe889e5",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-100",
+      "positions": [
+        100
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -8,
+            -72
+          ]
+        }
+      ],
+      "indexed_sha256": "953c1a344d8816af9a8c5d85b9802c057ab6e4386a859f40eccc6b971965f17c",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-101",
+      "positions": [
+        101
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -16,
+            -72
+          ]
+        }
+      ],
+      "indexed_sha256": "4190d0c755df836c5203d5eebb5fb2f1751b6c757431bf186ffc451e2cbbba37",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-102",
+      "positions": [
+        102
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -24,
+            -72
+          ]
+        }
+      ],
+      "indexed_sha256": "32853a4946383f57fb6f4e3816d680be10da791fcb494f590afec7fd5527ae77",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-103",
+      "positions": [
+        103
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -32,
+            -72
+          ]
+        }
+      ],
+      "indexed_sha256": "ae748beb70e8735e2843b61ba18dd927c82706006482746d81a0d4e964b65372",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-104",
+      "positions": [
+        104
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -40,
+            -72
+          ]
+        }
+      ],
+      "indexed_sha256": "800802cdd78cc263636c3133ca8ca64ac8672277e6a4bc14a92330e6e62a6465",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-105",
+      "positions": [
+        105
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -48,
+            -72
+          ]
+        }
+      ],
+      "indexed_sha256": "c6b7bbb081e263b2b4f82d65ee97418a50a82df4f0acd920334b83d09cb0e184",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-106",
+      "positions": [
+        106
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -56,
+            -72
+          ]
+        }
+      ],
+      "indexed_sha256": "cbaf2b04728cbf5b81c79b09fddbd28589bb5f537dfd6bce6824a600c5adb458",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-107",
+      "positions": [
+        107
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -64,
+            -72
+          ]
+        }
+      ],
+      "indexed_sha256": "993a698fa4f35065cddb7ca2416b5a90953f53b727e3c3ff33a9c2a4be43d681",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-108",
+      "positions": [
+        108
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -72,
+            -72
+          ]
+        }
+      ],
+      "indexed_sha256": "54f59be20ac84a970974167e3e8e5133345cf45e9fa52b7de93ef21351f50af9",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-109",
+      "positions": [
+        109
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -80,
+            -72
+          ]
+        }
+      ],
+      "indexed_sha256": "1e89ecd088da5132c453ef186946c6ca56c7b7cc2cb332403a23d05b3ae7b1d8",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-110",
+      "positions": [
+        110
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            0,
+            -80
+          ]
+        }
+      ],
+      "indexed_sha256": "d257fd8c88c739885e34a44973722621e07c0416849abb026f56af51d0c5b09d",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-111",
+      "positions": [
+        111
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -8,
+            -80
+          ]
+        }
+      ],
+      "indexed_sha256": "c5039b6926bdccbf3744a98d36802bf1d78783cc0071c70253defee310df6eb8",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-112",
+      "positions": [
+        112
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -16,
+            -80
+          ]
+        }
+      ],
+      "indexed_sha256": "a3fcd2649791ba3a90a36cef4d9bfea334e4711c6d3eb79247b0bdf1b197ea54",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-113",
+      "positions": [
+        113
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -24,
+            -80
+          ]
+        }
+      ],
+      "indexed_sha256": "f560b3475f7739e05dda2a20ada2d1f80cf8323d2f354d673fee13a6c98a2f7b",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-114",
+      "positions": [
+        114
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -32,
+            -80
+          ]
+        }
+      ],
+      "indexed_sha256": "5a1d5eec723da90085a9a9bc7c5a217f66f4382597d7086a4f119db8368f6bc3",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-115",
+      "positions": [
+        115
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -40,
+            -80
+          ]
+        }
+      ],
+      "indexed_sha256": "b43713e9c9646e8f018c808dc1ced02cac223961e27ab13774782e3b750854fa",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-116",
+      "positions": [
+        116
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -48,
+            -80
+          ]
+        }
+      ],
+      "indexed_sha256": "da1e63882d8810e9f0364a2da766037fe7ff5b5c69230eed1313863a04eb43dc",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-117",
+      "positions": [
+        117
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -56,
+            -80
+          ]
+        }
+      ],
+      "indexed_sha256": "b19fa7fc730ccab950aba94fdd6fc40ac1547a44c5b4047fe285713a6d68b9ce",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-118",
+      "positions": [
+        118
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -64,
+            -80
+          ]
+        }
+      ],
+      "indexed_sha256": "6cce75ea5b5687fe51d6ce22d32c0971d62801e043a24aa8911ac67aaaf0ca77",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-119",
+      "positions": [
+        119
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -72,
+            -80
+          ]
+        }
+      ],
+      "indexed_sha256": "23d7f19e4815394bda875fedcba0dc1759a18d0171e2bbb612344b44030ac7b0",
+      "paint": true
+    },
+    {
+      "key": "vga-phlan-120",
+      "positions": [
+        120
+      ],
+      "base_color": 8,
+      "layers": [
+        {
+          "key": "skygrnd-001",
+          "at": [
+            -80,
+            -80
+          ]
+        }
+      ],
+      "indexed_sha256": "4bf0dbf21977e0a3756a4800caabb6198d598c8f4f900017e91d32c1988ab86c",
+      "paint": true
+    }
+  ]
+}

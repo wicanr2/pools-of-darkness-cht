@@ -294,6 +294,7 @@
 | `CONTEXT.md` | 有日期的現況、有效決策、glossary、dosgolem 基線與證據入口 |
 | `WORKLOG.md` | 按時間追加的操作、驗證結果、勘誤與 Docker 清理狀態 |
 | `README.md` | 用途、穩定入口與現況摘要 |
+| `SETUP.md` | 乾淨Git來源的跨機重建入口、原版匯入與依賴限制 |
 | `docs/re/` | 輸入雜湊、位址、實驗與證據等級；`docs/re/README.md` 為索引 |
 | `docs/spec/` | DRAFT、READY、CONFORMED 規格，回鏈 Issue；`000-index.md` 為索引 |
 | `text/` | 譯文 catalog、手札、`glossary.tsv`、`errata.tsv`、翻譯指引 |
@@ -303,6 +304,8 @@
 | `tools/` | 可重現的 Docker、盤點、驗證與打包入口 |
 | `workplace/` | 解壓輸入、英文原文、轉錄、探針、IDA、dosgolem clone、HD 批次；不入 Git |
 | `dist-all/` | 正式交付根；含原版產物不入 Git |
+
+新增HD、字型或正式主題變更時，同批更新`review/hd/runtime/manifest.json`及缺少的正式PNG，依`SETUP.md`以乾淨Git檔案重跑`tools/rebuild.sh assets`。全部主題與字型SHA須同已驗版，必要素材才算已保存在GitHub；原版索引由自備DAX重生，原版資料與聊天紀錄不入Git。
 
 ## 10. 共同決策與停止線
 

@@ -1,0 +1,156 @@
+{
+  "date": "2026-10-30",
+  "issue": 55,
+  "status": "CONFORMED within stated scope",
+  "scope": "Git追蹤檔案快照、明示自備原版、Linux amd64既有Docker工具映像；無舊workplace或前作依賴。",
+  "candidate_git_tree": "fdcf2f2ccc3271218a4a45e31410e386303670bb",
+  "preserved": {
+    "previously_tracked_png": 443,
+    "added_png": 19,
+    "theme_json": 14,
+    "locally_regenerated_indexes": 450,
+    "font_outputs": 6,
+    "manifest": "review/hd/runtime/manifest.json",
+    "manifest_sha256": "057cd25c78e7788264f907235c1e1acde59689c4668193ca7308a40bb65fa59c",
+    "licensed_font_sources": {
+      "font/source/rounded/GenSenRounded2TW-M.otf": "b8286a42c534d31ca136c377ab3a3add7cf63058c67de8fec78e784ab26ec077",
+      "font/source/rounded/GenSenRounded2TW-B.otf": "050f9ebf394faab3c0ba59092ae3e4b6686b349eadb3018d76d385c5829a1267",
+      "font/source/rounded/SIL_Open_Font_License_1.1.txt": "a6e4f868df1b9eec9284d26f35808a9a08f0733b8fd96109e509d6eac29f2aca",
+      "font/source/courier/CourierPrime-Bold.ttf": "ff1f38786c849d1c41fa8e447960abdb2bd75fdfb0cfcdeb524fad65a5af3638",
+      "font/source/courier/OFL.txt": "9a755af092b494944c99f471be6fddd19b006a448fefdc4717e4ee0aa09a97b0",
+      "font/source/unifont/unifont_t-17.0.05.hex": "169634258e4037b507beaafad5d72edc2e44b3faeaa856d9669e4657d1eee454",
+      "font/source/unifont/OFL-1.1.txt": "869692af094c57fb7258c57fe26820c759319603321d0ffeb278de3651763ded",
+      "font/source/unifont/COPYING": "cd2785c2b8e0a01d203560265b2d2d47cdb1401d2707d25918ac5531bcdba947",
+      "font/charset-pod-rounded-3x.json": "06b334d5340c6b07b5d1d13f9d128bddd0b4b6c9d309c14e31635a44471f5648",
+      "font/charset-pod-rounded-bar12.json": "3e40a13c273bdd89b8ebbf6df4b989ad24604d800610c8fe5b517d5aac7392f4",
+      "font/charset-pod-rounded-bar22.json": "3e40a13c273bdd89b8ebbf6df4b989ad24604d800610c8fe5b517d5aac7392f4",
+      "font/charset-pod-rounded.json": "06b334d5340c6b07b5d1d13f9d128bddd0b4b6c9d309c14e31635a44471f5648"
+    },
+    "engine": {
+      "repository": "https://github.com/wicanr2/pools-of-darkness-cht.git",
+      "branch": "dosgolem/pod",
+      "commit": "570f8a3c14827cdc6fed043f2bfa00bb1f729f77"
+    }
+  },
+  "assets": {
+    "status": "PASS",
+    "manifest_sha256": "057cd25c78e7788264f907235c1e1acde59689c4668193ca7308a40bb65fa59c",
+    "theme_files": 926,
+    "theme_tree_sha256": "d7b7aca034b1ec3499ba69fff2e657c77c33fa397f0f5f8d499ce082d12c681b",
+    "fonts": {
+      "pod-en-3x.golemfnt": "c701ce90a4b3009e6126b0ccfc0dc042dc17c22dbf59c07b1e41c90678481db9",
+      "pod-en.golemfnt": "121e92b01c9c907aa66b8e6e78155d0a368102e599bbb9784feaec5c7f2234e0",
+      "pod-rounded-3x.golemfnt": "52e749e344c5bf6a60fa6501ad4ab17b72de0871897382a5c58d2acc3cc21730",
+      "pod-rounded-bar12.golemfnt": "89cd27498ae1dea002b3fef714695e433e198269e71f76e50bdeab9b9f4c8976",
+      "pod-rounded-bar22.golemfnt": "0d731150caef048b40b60a6baaba1b37dc1f3791c7a442b2ee51a60834f635d5",
+      "pod-rounded.golemfnt": "0f0430e7db828b8b74249b69f02ac7c590724215d9edc0f212830790ae4531ac"
+    },
+    "original_archives": {
+      "8X8D1.DAX": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+      "BIGPIC1.DAX": "bc3565c62c1654ee757d1f98f64bbb78e06bcd551c2e8593c41feb130b9f0f6b",
+      "CPIC1.DAX": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+      "DUNGCOM.DAX": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+      "TITLE.DAX": "8a53adf4044527df86d2d983f6c4eeee440c3d09773e7cbd4166279ccafde757",
+      "PIC1.DAX": "a3cf36ca3d51ca7960fd73b630489f019c5ad984808ad08bcf91186f67401ab7",
+      "SKYGRND.DAX": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6"
+    },
+    "engine": {
+      "repository": "https://github.com/wicanr2/pools-of-darkness-cht.git",
+      "branch": "dosgolem/pod",
+      "commit": "570f8a3c14827cdc6fed043f2bfa00bb1f729f77"
+    },
+    "input_scope": "Git files and explicitly supplied original DAX only; no old workplace",
+    "rights": "private review inputs; original indexes reconstructed locally"
+  },
+  "runtime": {
+    "status": "PASS",
+    "scope": "clean Git source; 7400-frame normal HD DEMO; Linux amd64 container",
+    "engine_commit": "570f8a3c14827cdc6fed043f2bfa00bb1f729f77",
+    "binary_sha256": "f467746180a238ad08223c418f9ae545a98c42e5fd3cd75997075389cceaf08c",
+    "manifest_sha256": "057cd25c78e7788264f907235c1e1acde59689c4668193ca7308a40bb65fa59c",
+    "baseline_receipt_sha256": "d82de8a70707ba9d44e65fc3cfff6fa6b63608e3c26f4a09093c0b6afe7a1af7",
+    "cpu_memory_source_equal": true,
+    "guest_files": 127,
+    "guest_equal": true,
+    "frame_sha256": "00d6d1692f3fe54151c5111b32b48c8393add16509c7a05c822cb9010ebf25ca",
+    "flash_count": 0,
+    "theme_files": 926,
+    "fonts": 6
+  },
+  "negative_controls": {
+    "all_pass": true,
+    "cases": [
+      {
+        "case": "missing-original",
+        "rejected": true,
+        "no_output": true,
+        "reason": "[Errno 2] No such file or directory"
+      },
+      {
+        "case": "changed-original",
+        "rejected": true,
+        "no_output": true,
+        "reason": "原版雜湊不符：8X8D1.DAX"
+      },
+      {
+        "case": "changed-png",
+        "rejected": true,
+        "no_output": true,
+        "reason": "素材雜湊不符：review/hd/b11-walls/8x8d1-001@193.png"
+      }
+    ]
+  },
+  "original_program_unchanged": true,
+  "official_theme_unchanged": true,
+  "official_fonts_unchanged": true,
+  "build": {
+    "flags": [
+      "-trimpath",
+      "-buildvcs=false"
+    ],
+    "go": "1.24.13",
+    "binary_sha256": "f467746180a238ad08223c418f9ae545a98c42e5fd3cd75997075389cceaf08c",
+    "build_info_sha256": "555553bd0a233246bed8156d77afe7914f0ec985e5c31632897cc2ff34d3a078",
+    "source_commit": "570f8a3c14827cdc6fed043f2bfa00bb1f729f77",
+    "old_go_caches_used": false,
+    "modules": "fresh go mod download; locked go.mod/go.sum",
+    "python": "3.13.16",
+    "pillow": "11.0.0",
+    "numpy": "2.1.3"
+  },
+  "docker": {
+    "images_reused": {
+      "sosb-img:r1": "8b9012adb991ebd1714725cf122ac052462d2993a17dd7b3ec2504e213ae9cf3",
+      "dosgolem-go-ebiten:1.24-r1": "8ed6bdee2bce1f32f804e888f942b25bbf62f2165a43344bb4587f3371de0581"
+    },
+    "registry_bases_verified": true,
+    "fresh_tool_images_built": false,
+    "note": "沿用既有專用映像；Dockerfile固定官方多架構基底摘要，新機首次需網路建置系統套件與下載模組。"
+  },
+  "limits": [
+    "沒有在另一台實體機器執行",
+    "未驗Windows或macOS封包",
+    "不含原版遊戲、存檔、掃描或聊天紀錄",
+    "其他HD圖族與原案功能仍續辦"
+  ],
+  "tool_sha256": {
+    "rebuild.sh": "68a58f8f47c064e25763fbe706d770fad7950fed42a18f8cf3dd910d666b3750",
+    "rebuild_assets.py": "e4dd1f4857fabd381b16ca04a967679eaf0ceabcff04f78ae0027cca604c8611",
+    "rebuild_verify.py": "a779236c3e53c4f8b62590fd786e9c395d3f5b8faba16c934a8829ecc65f9f51",
+    "rebuild_negative_check.py": "f7960badf447cf2f1273c2df3757533650293d4c2b3a1a674b1329d78e6a9e2a",
+    "rounded_font.py": "5ae22300fbcc1d62a7f26b2b13eb0af5c1538ec860f56f6b73b52384ab3c52f6",
+    "en_font.py": "57c1e63afbfd6aa8aab43803268a2d69b12118790b37ca6ed6a8a014fc73b109",
+    "dax_vga.py": "081f1e95cfb944ca4993596d41b0a4c931d69cf3c3aec3319a177680888abe4f",
+    "ecl_text_catalog.py": "c995333cca48e91a9933a1f6a4c813f62a1b4c5d19aa8e71339769d655498309",
+    "rebuild-engine.commit": "e58223c77c80207686c25f717588b29e7dac0d4ca3d253b9ed32d614256ea544",
+    "docker/img.Dockerfile": "b35a8b7a92ffd9e5240a99ee6d47dc46ebc1ef126d679d14bc3249de689fd045",
+    "docker/rebuild-go.Dockerfile": "8db245b7a9b013fbdc70682d71254b724f97fbdc467ad184fdb119464e29bbbd"
+  },
+  "artifact_sha256": {
+    "assets_receipt": "89ed18150e29d8dc01dd3dde55549b0c23bf96744208f36ffd32b7218a92c658",
+    "runtime_receipt": "9acdfadc8ad124bee538871ff8df6c71e30b4be636c3a0638597e9bdcbd2b79a",
+    "runtime_log": "eea26577fc46f06babcc81acfead4c6017737ef8ccb2717a3f0841a0022a4d28",
+    "negative_controls": "aa1c4ec3003a27cdd1f13a3344c58b0c6d38ae6ab72330014f3184f51b37339d",
+    "recipe": "bf37242f3c457a860f36cb916090a3390e25d0c8a3e723d28756e9fef3b737fe"
+  }
+}
