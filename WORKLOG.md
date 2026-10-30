@@ -1580,3 +1580,4 @@
 - Git樹1ecdf8bd73f042e5d7c4832ebc201dfac5b33c55匯出乾淨來源，不掛舊workplace，重建1050檔及六份字型逐檔同候選。缺圖與舊索引改動負對照拒絕，清單不變。
 - README直接嵌入森林首批拼圖，共45張圖片。正常野外遭遇仍未知，剩餘107個非純色野外來源與其他圖族、動畫依#10追蹤，不重開Go繪圖收尾或G6探索。
 - 固定收據重算相同，546個本機連結及45張README圖片通過，變更檔UID/GID為1000:1000。原始壓縮檔雜湊不變，root-owned與誤建`.md`目錄為空，長期Go快取為空；dosgolem工作樹乾淨，本批容器全部自動移除，沿用既有工具映像。
+- 提交293b006已推送私人main；#58驗收[留言](https://github.com/wicanr2/pools-of-darkness-cht/issues/58#issuecomment-6523528937)後關閉，回讀CLOSED。#10補[本批里程碑及剩餘來源](https://github.com/wicanr2/pools-of-darkness-cht/issues/10#issuecomment-6523538522)，正常野外遭遇及其餘素材仍另計。
