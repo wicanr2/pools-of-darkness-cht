@@ -1,0 +1,22 @@
+{
+  "key": "dungcom-001@22",
+  "file": "DUNGCOM.DAX",
+  "archive_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+  "block": 1,
+  "frame": 22,
+  "width": 24,
+  "height": 24,
+  "decoded_sha256": "8dcc49714f4c966efa7e5a2b42ca235d9182353425c1cdc5bc1eb037105d0f4d",
+  "indexed_sha256": "e644998a93be1e40d942fd90eb7c5352f8bc3aa94c71f56791d436ea4722df9b",
+  "palette_sha256": "b5cae627c1a9b0ee44d3c13f895a38face911f1ba07da00f5130d05adf29af85",
+  "pixel_offset": 126,
+  "palette_end": 106,
+  "evidence_level": "strong inference",
+  "runtime_observed": false,
+  "reason": "solid RGB(130,65,40); retain original color",
+  "rgb": [
+    130,
+    65,
+    40
+  ]
+}

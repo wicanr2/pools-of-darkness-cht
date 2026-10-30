@@ -555,3 +555,35 @@ python3 -I tools/vga_battle_play_check.py \
   --baseline workplace/probe/g9-hd/b30-play-v1 --baseline-theme workplace/hd/theme-b31-previous \
   --terrain --added dungcom-002@0 dungcom-002@1 dungcom-002@2 dungcom-002@3 dungcom-002@4 dungcom-002@5 dungcom-002@6 dungcom-002@7 dungcom-002@8 dungcom-002@9 dungcom-002@10 dungcom-002@11 dungcom-002@12 dungcom-002@13 dungcom-002@14 dungcom-002@15 dungcom-002@16 dungcom-002@17 dungcom-002@18 dungcom-002@19 dungcom-002@20 dungcom-002@21 dungcom-002@23 dungcom-002@24 dungcom-002@25
 ```
+
+<a id="b32-terrain"></a>
+
+## b32 地下城第1組25張圖樣
+
+2026-10-30，Issue [#56](https://github.com/wicanr2/pools-of-darkness-cht/issues/56)，沿規格010既有combat版本1、32–63色盤及三格戰場守衛。
+DUNGCOM.DAX的SHA-256仍為`90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f`，第1塊壓縮起點56為原始DAX檔案byte offset，解碼SHA為`8dcc49714f4c966efa7e5a2b42ca235d9182353425c1cdc5bc1eb037105d0f4d`。
+25份參考PNG逐像素等於原索引／色盤解出的RGB，與既有組別沒有相同RGB圖樣可直接沿用。第22格僅RGB(130,65,40)，保留原色，詳[排除清單](../../review/hd/b32-terrain/excluded.json)。
+
+第0–21、23–25格各由內建image_gen手繪一次，既有全幅LANCZOS製成72×72不透明RGBA。原版橘粉石材、淡黃邊梁與褐色地面配色保留。
+結構0.5625–0.938、色相中位差均小於30度，原尺寸逐件目視通過。大色塊與邊界依原圖手繪近似，不稱原版像素一致；中央小光點維持小尺寸與原位置。
+原版並列、完整提示詞、生成來源與成品SHA見[b32審閱頁](../../review/hd/b32-terrain/README.md)及[manifest](../../review/hd/b32-terrain/manifest.json)。
+
+15組局部RGB變體各差13–102個來源像素，配對、邊界框與遮罩SHA見[source-pairs.json](../../review/hd/b32-terrain/source-pairs.json)。
+沿既有來源差異遮罩外擴6個輸出像素，相同區域保留已接受AI基底，遮罩外差異0；所有成品仍獨立通過門檻。
+不從索引推論動畫時間，不注入原版圖像像素，也不改產品格式或呈現守衛。
+
+沿c9f4001來源診斷，明示新增25張、地形總數125與第1組原色盤，25例4.694秒通過完整PNG、同組鄰格、來源／色盤失配、孤立圖案、2倍／F12及輸入不變。
+重用b31正常基準前核對同一正式程式、原始輸入、字型、文字及926檔主題，並確認固定收據同實際summary。
+候選7400格／712250000步正常DEMO、900格按空白、1800格按D，CPU／RAM、原版圖面、127客體檔與最終合成相同，閃現0。
+CPU紀錄、原始索引與客體檔案三種暫存副本負對照均拒絕；本批不重跑四種模式或新增存讀檔路徑，未觀測正常遭遇仍未知。
+
+976檔以完整目錄原子交換啟用，正式逐檔同受測候選；926檔留於`workplace/hd/theme-b32-previous`。正式程式與Go診斷來源不變。
+收據腳本初次將地形總數替換誤套到UID而中止，修正為1000後同容器重查通過，沒有重做已成功的原子交換；這是報告配方問題。
+
+本批同步更新[重建清單](../../review/hd/runtime/manifest.json)及原樣主題JSON，487張PNG皆有Git來源，475份原版索引只在本機由自備DAX重生。
+新增[快照工具](../../tools/rebuild_theme_snapshot.py)依已暫存Git檔案SHA配對，不重複保存全部圖片；未存Git的PNG與被改動的既有索引兩項負對照均拒絕，清單不變。
+從Git檔案樹`944c50a17898dc61055fa5dc2c8e467c0744f892`解出乾淨來源，初始不含workplace；只掛乾淨來源、自備原版與獨立輸出，重生976檔主題及6份字型，逐檔同已驗候選。
+固定[017-b32-runtime.json](017-b32-runtime.json)綁素材、來源診斷、正常路徑、負對照及重建。初次引擎建置由[025](025-rebuild-runtime.json)保存，本批只改素材，不重編正式程式或宣稱其他平台已驗。
+
+本批範圍CONFORMED，第1至第5組各25張非純色圖樣完成；其他圖組及動畫HD仍待後續，不新增G6探索。
+配方在`workplace/hd/out/b32/`，SHA由固定收據綁定。重建入口見[SETUP.md](../../SETUP.md)。

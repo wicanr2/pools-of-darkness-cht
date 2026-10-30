@@ -1,0 +1,337 @@
+{
+  "scope": "AI-redrawn asset preview; not a gameplay screenshot",
+  "composition": "native 3x PNG; no resizing or cropping",
+  "size": [
+    480,
+    400
+  ],
+  "output_sha256": "6ea547fe15fd0be1cc0ecafad9676c8f9dc92766b2d86941cad424f9962c04fa",
+  "items": [
+    {
+      "key": "dungcom-001@0",
+      "source": "review/hd/b32-terrain/dungcom-001@0.png",
+      "png_sha256": "679ee229374dae03d9430ff487058b89a5ad90b37fb824b420e177c8daef8855",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        4,
+        4
+      ]
+    },
+    {
+      "key": "dungcom-001@1",
+      "source": "review/hd/b32-terrain/dungcom-001@1.png",
+      "png_sha256": "c02d8f6e572795499efa0973ec0c6ebdc73f06816c55442908c0f9c76b50f373",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        84,
+        4
+      ]
+    },
+    {
+      "key": "dungcom-001@2",
+      "source": "review/hd/b32-terrain/dungcom-001@2.png",
+      "png_sha256": "6768a953441b6d5a0c007295c1df9fdf9eb0970d48302e6a462e0180ec25e5db",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        164,
+        4
+      ]
+    },
+    {
+      "key": "dungcom-001@3",
+      "source": "review/hd/b32-terrain/dungcom-001@3.png",
+      "png_sha256": "1596adafdc939a03ec353ad55868a99c5707443bcc614e48e56e331696dcfb1a",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        244,
+        4
+      ]
+    },
+    {
+      "key": "dungcom-001@4",
+      "source": "review/hd/b32-terrain/dungcom-001@4.png",
+      "png_sha256": "d5cdb09fa83afafabd6c806611225f8d54b7d2aa621117eda69de4b40d456b19",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        324,
+        4
+      ]
+    },
+    {
+      "key": "dungcom-001@5",
+      "source": "review/hd/b32-terrain/dungcom-001@5.png",
+      "png_sha256": "7c900b28cf73bbca5d2e65c37dbab0d4641b73911174411f0398b7157fa3eb7a",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        404,
+        4
+      ]
+    },
+    {
+      "key": "dungcom-001@6",
+      "source": "review/hd/b32-terrain/dungcom-001@6.png",
+      "png_sha256": "c2113d5c7ba88050bb4d79984aa02b3b343d0c9ded9a429fc75ffa20c4b8d55a",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        4,
+        84
+      ]
+    },
+    {
+      "key": "dungcom-001@7",
+      "source": "review/hd/b32-terrain/dungcom-001@7.png",
+      "png_sha256": "54008af88845d32e7799786b6368015cfb9d30b5ab92c92bbeadf9b5d5a3d0e1",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        84,
+        84
+      ]
+    },
+    {
+      "key": "dungcom-001@8",
+      "source": "review/hd/b32-terrain/dungcom-001@8.png",
+      "png_sha256": "1e7776c89c866d3ec18e5db596eac50152d659300af6a99018d9bb23bee8ff4e",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        164,
+        84
+      ]
+    },
+    {
+      "key": "dungcom-001@9",
+      "source": "review/hd/b32-terrain/dungcom-001@9.png",
+      "png_sha256": "cc166ece83d268e4a6536c91d6cc8005b8483266d899b1787f04b90357371e82",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        244,
+        84
+      ]
+    },
+    {
+      "key": "dungcom-001@10",
+      "source": "review/hd/b32-terrain/dungcom-001@10.png",
+      "png_sha256": "09a6d419c5dc75b9d7cc447de6bb0549f70e590bf082e1904eb514d5344ec576",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        324,
+        84
+      ]
+    },
+    {
+      "key": "dungcom-001@11",
+      "source": "review/hd/b32-terrain/dungcom-001@11.png",
+      "png_sha256": "1bfafc4498e402e124e28753641e32bbd38c17f9a6c1f7e6cd186004a7ab2393",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        404,
+        84
+      ]
+    },
+    {
+      "key": "dungcom-001@12",
+      "source": "review/hd/b32-terrain/dungcom-001@12.png",
+      "png_sha256": "08730a752bc9276f36d7f5ccdfa2f2635bd450188502950a54b932731d140783",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        4,
+        164
+      ]
+    },
+    {
+      "key": "dungcom-001@13",
+      "source": "review/hd/b32-terrain/dungcom-001@13.png",
+      "png_sha256": "71f9a231d5ee1e71754e460fddc9a64f7b355f2c8b96e2078ee587882e82bb49",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        84,
+        164
+      ]
+    },
+    {
+      "key": "dungcom-001@14",
+      "source": "review/hd/b32-terrain/dungcom-001@14.png",
+      "png_sha256": "5f5eddc5273d6a171afdf07e1ad0429d74f61055ea14a95e7df4e02d6a7513ae",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        164,
+        164
+      ]
+    },
+    {
+      "key": "dungcom-001@15",
+      "source": "review/hd/b32-terrain/dungcom-001@15.png",
+      "png_sha256": "d1f51d62a77ac48b67c4b701e687cffe2ab0475c9230f09d8ce43c2d7c9089bd",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        244,
+        164
+      ]
+    },
+    {
+      "key": "dungcom-001@16",
+      "source": "review/hd/b32-terrain/dungcom-001@16.png",
+      "png_sha256": "199dfdc027be8a4c570bd2b28d957e955ae1c8c577e633fcf995807cdf466ab8",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        324,
+        164
+      ]
+    },
+    {
+      "key": "dungcom-001@17",
+      "source": "review/hd/b32-terrain/dungcom-001@17.png",
+      "png_sha256": "620f29ed38699b5f5a8b868aba3ac93afbda6b50b8c546ea9c5b4e5894dec6c6",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        404,
+        164
+      ]
+    },
+    {
+      "key": "dungcom-001@18",
+      "source": "review/hd/b32-terrain/dungcom-001@18.png",
+      "png_sha256": "03b2602ebd08aebb9440346d14a6193fd7398b4a3362fbb6feb453110ea15449",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        4,
+        244
+      ]
+    },
+    {
+      "key": "dungcom-001@19",
+      "source": "review/hd/b32-terrain/dungcom-001@19.png",
+      "png_sha256": "e9c6710514f35ecf7ecb8fcd1911e6512e56858248708608a961bf02dc0587bf",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        84,
+        244
+      ]
+    },
+    {
+      "key": "dungcom-001@20",
+      "source": "review/hd/b32-terrain/dungcom-001@20.png",
+      "png_sha256": "052579b1332198029840b67efe56dae13a8a82db7d52d2d61d7b07119f4ca7cf",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        164,
+        244
+      ]
+    },
+    {
+      "key": "dungcom-001@21",
+      "source": "review/hd/b32-terrain/dungcom-001@21.png",
+      "png_sha256": "86c1806b99fbb083f2a9881653b49717e19c7699ded37801998c3da0b95baf4f",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        244,
+        244
+      ]
+    },
+    {
+      "key": "dungcom-001@23",
+      "source": "review/hd/b32-terrain/dungcom-001@23.png",
+      "png_sha256": "652b731dba0e7a313d972df36c8aa7ef311920dcf2df7062d0113d47e0afb10d",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        324,
+        244
+      ]
+    },
+    {
+      "key": "dungcom-001@24",
+      "source": "review/hd/b32-terrain/dungcom-001@24.png",
+      "png_sha256": "b373883280f98f7b72afab070676fe16a43b4785059411ef71f84d5fda684d5b",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        404,
+        244
+      ]
+    },
+    {
+      "key": "dungcom-001@25",
+      "source": "review/hd/b32-terrain/dungcom-001@25.png",
+      "png_sha256": "e81b1eead451bcebb62c83cfe66470585c7fdd8d8a16a58ee7510b7b2e46b720",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        4,
+        324
+      ]
+    }
+  ],
+  "rights": "AI redraws within existing private HD patch scope; no original reference pixels"
+}

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "issue": 55,
-  "scope": "已驗b31主題；私有素材保存與本機重建，不擴張遊戲驗收或公開權利",
+  "scope": "b32主題；私人素材保存與本機重建，不擴張遊戲驗收或公開權利",
   "engine": {
     "repository": "https://github.com/wicanr2/pools-of-darkness-cht.git",
     "branch": "dosgolem/pod",
@@ -408,7 +408,7 @@
     },
     {
       "path": "combat.json",
-      "sha256": "1727f6c229f5e7141ad1618500264124d7a0ce90317e133a53eac1bd989d41bb",
+      "sha256": "e85d6b118a3a25123693e66dc9bd531fb3a7df6b272e8d080f9f90d88833baa7",
       "kind": "repo-file",
       "source": "review/hd/runtime/theme/combat.json",
       "rights": "project metadata; private review"
@@ -4222,6 +4222,406 @@
       "rights": "accepted HD redraw"
     },
     {
+      "path": "dungcom-001@0.idx",
+      "sha256": "f4dd1976771dc56fca5718441f3c9d8df5214b2b64bf0ed92b4097c92f5078ce",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@0.png",
+      "sha256": "679ee229374dae03d9430ff487058b89a5ad90b37fb824b420e177c8daef8855",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@0.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@1.idx",
+      "sha256": "3a45b865d3f431ec0fb6ba2a7cee09d2e888a040b9b17e3cdf624791318b5f52",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 1,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@1.png",
+      "sha256": "c02d8f6e572795499efa0973ec0c6ebdc73f06816c55442908c0f9c76b50f373",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@1.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@10.idx",
+      "sha256": "8d7e25d67a3107e5ec89ce5805b3a8fa1fe46cfdca1e859ba025788ddebb1c50",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 10,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@10.png",
+      "sha256": "09a6d419c5dc75b9d7cc447de6bb0549f70e590bf082e1904eb514d5344ec576",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@10.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@11.idx",
+      "sha256": "fc322accddbf7a0b5b0ffda36d088a00b26f56ddf96dd4789341f89e35b18480",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 11,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@11.png",
+      "sha256": "1bfafc4498e402e124e28753641e32bbd38c17f9a6c1f7e6cd186004a7ab2393",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@11.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@12.idx",
+      "sha256": "6bf2981d84274df4129ed035973ea94519d7696a15c642159781278527127beb",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 12,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@12.png",
+      "sha256": "08730a752bc9276f36d7f5ccdfa2f2635bd450188502950a54b932731d140783",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@12.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@13.idx",
+      "sha256": "f8d7e2ee73f25ba232bc84b638cf07b7b7e20204b87c02edcee13895be0c56ee",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 13,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@13.png",
+      "sha256": "71f9a231d5ee1e71754e460fddc9a64f7b355f2c8b96e2078ee587882e82bb49",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@13.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@14.idx",
+      "sha256": "ea33e44269a2475dce33c037add6b323ed4cdd4fb92988a276f0227abd4e52ca",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 14,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@14.png",
+      "sha256": "5f5eddc5273d6a171afdf07e1ad0429d74f61055ea14a95e7df4e02d6a7513ae",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@14.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@15.idx",
+      "sha256": "361ff716f13fe17beb45f1ebe4b6741610fbd973c09bd9da3b6eebac43d83eda",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 15,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@15.png",
+      "sha256": "d1f51d62a77ac48b67c4b701e687cffe2ab0475c9230f09d8ce43c2d7c9089bd",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@15.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@16.idx",
+      "sha256": "a78fe457aaed76ea8652083cb6c95d1f1c3c621535bff775212823d8213bcaa0",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 16,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@16.png",
+      "sha256": "199dfdc027be8a4c570bd2b28d957e955ae1c8c577e633fcf995807cdf466ab8",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@16.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@17.idx",
+      "sha256": "2f04c10ca8d24aa827fb330d127d2de2fc001062967bf77ea006e088871ab186",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 17,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@17.png",
+      "sha256": "620f29ed38699b5f5a8b868aba3ac93afbda6b50b8c546ea9c5b4e5894dec6c6",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@17.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@18.idx",
+      "sha256": "e076177bb2d5e7bb85f047e9ed8e0e0a42720cca79d573b07b3414af308c673e",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 18,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@18.png",
+      "sha256": "03b2602ebd08aebb9440346d14a6193fd7398b4a3362fbb6feb453110ea15449",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@18.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@19.idx",
+      "sha256": "3f3a2625ff588e415f326a79ae64373bb658255222d074b8e351cb1e12d117e9",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 19,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@19.png",
+      "sha256": "e9c6710514f35ecf7ecb8fcd1911e6512e56858248708608a961bf02dc0587bf",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@19.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@2.idx",
+      "sha256": "8bde1fd0c307b6d64bb0fe9296115aa9794ecf92ef1662d663aec1aa0f00aef1",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 2,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@2.png",
+      "sha256": "6768a953441b6d5a0c007295c1df9fdf9eb0970d48302e6a462e0180ec25e5db",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@2.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@20.idx",
+      "sha256": "2c05165be7e848a8257448467bc8833cc060f7b75d1ca0e279688d1f72786c81",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 20,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@20.png",
+      "sha256": "052579b1332198029840b67efe56dae13a8a82db7d52d2d61d7b07119f4ca7cf",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@20.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@21.idx",
+      "sha256": "17e99d394be151d11078c164499c90efd532e1209ec0f9b47a53a386b8ff631f",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 21,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@21.png",
+      "sha256": "86c1806b99fbb083f2a9881653b49717e19c7699ded37801998c3da0b95baf4f",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@21.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@23.idx",
+      "sha256": "ff4f40e3ff7a6fc0cd2b7af80a80b374f6deb45488853001255383184cbfe623",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 23,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@23.png",
+      "sha256": "652b731dba0e7a313d972df36c8aa7ef311920dcf2df7062d0113d47e0afb10d",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@23.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@24.idx",
+      "sha256": "7bdf09b39c86f0f438491021fb60ce7b84f138eb77a535e2f4d7d454e51fc9dc",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 24,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@24.png",
+      "sha256": "b373883280f98f7b72afab070676fe16a43b4785059411ef71f84d5fda684d5b",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@24.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@25.idx",
+      "sha256": "22e55afca80b4fedd129e40f4eb749b497c804fa7fe635336d337e8510bbbea7",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 25,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@25.png",
+      "sha256": "e81b1eead451bcebb62c83cfe66470585c7fdd8d8a16a58ee7510b7b2e46b720",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@25.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@3.idx",
+      "sha256": "086ea5c816032833c13a817fd6d12bc6c19e64044aafebeb44c587c306bf7777",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 3,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@3.png",
+      "sha256": "1596adafdc939a03ec353ad55868a99c5707443bcc614e48e56e331696dcfb1a",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@3.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@4.idx",
+      "sha256": "99c212c5c63d4d3a631700e9deb4d62269ca05c23928e2880e0598a6c7ac0805",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 4,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@4.png",
+      "sha256": "d5cdb09fa83afafabd6c806611225f8d54b7d2aa621117eda69de4b40d456b19",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@4.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@5.idx",
+      "sha256": "63cdb3078c194979f498df5364e8366b8ab4f751bd5493f6535f3d7436e5e38e",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 5,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@5.png",
+      "sha256": "7c900b28cf73bbca5d2e65c37dbab0d4641b73911174411f0398b7157fa3eb7a",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@5.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@6.idx",
+      "sha256": "ad2e60f6678d881c72d90c52f027698a49180cc4c29431d4403c5fbbf15a3fc0",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 6,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@6.png",
+      "sha256": "c2113d5c7ba88050bb4d79984aa02b3b343d0c9ded9a429fc75ffa20c4b8d55a",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@6.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@7.idx",
+      "sha256": "aad1713498db4e8e7b13c5b94067ebfcac189e9db4275fa02ad48d101e4d03c8",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 7,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@7.png",
+      "sha256": "54008af88845d32e7799786b6368015cfb9d30b5ab92c92bbeadf9b5d5a3d0e1",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@7.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@8.idx",
+      "sha256": "c1b30460fc171d53d5a458fd867021500f69ce0abded1f7f2100e0e0f51c3a8c",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 8,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@8.png",
+      "sha256": "1e7776c89c866d3ec18e5db596eac50152d659300af6a99018d9bb23bee8ff4e",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@8.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "dungcom-001@9.idx",
+      "sha256": "29eb976b745b08e10ce7469e43e325d418a7b6c271580495c0f89c63b6faa3a2",
+      "kind": "original-index",
+      "archive": "DUNGCOM.DAX",
+      "block": 1,
+      "frame": 9,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "dungcom-001@9.png",
+      "sha256": "cc166ece83d268e4a6536c91d6cc8005b8483266d899b1787f04b90357371e82",
+      "kind": "repo-file",
+      "source": "review/hd/b32-terrain/dungcom-001@9.png",
+      "rights": "accepted HD redraw"
+    },
+    {
       "path": "dungcom-002@0.idx",
       "sha256": "00274713c6b4cda437d963e045ebd050f97fee643b763319ecd6f5eab1ee6c4a",
       "kind": "original-index",
@@ -7371,7 +7771,7 @@
     },
     {
       "path": "vga-layers-provenance.json",
-      "sha256": "b6eee8bf1a113a329798ea4d43730f367f89c248f862ba3136b8b4aeeb700eb1",
+      "sha256": "560357f59e84013f7b8f1e571eb7f00347b4c1bb2a06559bf7d40a92cf2678c5",
       "kind": "repo-file",
       "source": "review/hd/runtime/theme/vga-layers-provenance.json",
       "rights": "project metadata; private review"
