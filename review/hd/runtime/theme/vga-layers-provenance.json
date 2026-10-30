@@ -561,6 +561,26 @@
         "dungcom-006@24",
         "dungcom-006@25"
       ]
+    },
+    {
+      "kind": "combat-terrain",
+      "request_sha256": "23e912ca12d8d03a57aeff685f6e658c1f62e188a7d3109d61d84cd42d8bb045",
+      "validation_sha256": "feccd77e5cfb1d9ae891f6a792a35ad1c538c61cb588990b6ffafa80aa1c86be",
+      "visual_sha256": "e21e2ae1a6df4d68e7813e4dd18c4028efc997959f627f5791116e7b4144140b",
+      "keys": [
+        "wildcom-000@0",
+        "wildcom-000@1",
+        "wildcom-000@2",
+        "wildcom-000@3",
+        "wildcom-000@4",
+        "wildcom-000@5",
+        "wildcom-000@6",
+        "wildcom-000@7",
+        "wildcom-000@8",
+        "wildcom-000@9",
+        "wildcom-000@10",
+        "wildcom-000@11"
+      ]
     }
   ]
 }

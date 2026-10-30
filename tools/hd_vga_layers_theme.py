@@ -22,8 +22,8 @@ def main():
         ap.error('actor-req／actor-out須成對；actor-keys須有對應請求')
     jobs=[]
     if a.actor_req:
-        jobs.append(('combat-actors',a.actor_req,a.actor_out,'actors.json','CPIC1.DAX'))
-    jobs.append(('combat-terrain',a.terrain_req,a.terrain_out,'combat.json','DUNGCOM.DAX'))
+        jobs.append(('combat-actors',a.actor_req,a.actor_out,'actors.json',('CPIC1.DAX',)))
+    jobs.append(('combat-terrain',a.terrain_req,a.terrain_out,'combat.json',('DUNGCOM.DAX','WILDCOM.DAX')))
     for kind,req,out,target,sourcefile in jobs:
         request=json.loads((req/'manifest.json').read_text())
         validation=json.loads((out/'validation.json').read_text())
@@ -39,7 +39,9 @@ def main():
             selected=[it for it in selected if it['key']in keys]
         for it in selected:
             key=it['key'];png=out/(key+'.png');idx=req/it['indexed'];pal=req/it['palette']
-            if not re.fullmatch(r'[a-z0-9@-]+',key)or it['source_file']!=sourcefile:raise ValueError('來源種類或key不符本批')
+            if not re.fullmatch(r'[a-z0-9@-]+',key)or it['source_file']not in sourcefile:raise ValueError('來源種類或key不符本批')
+            if kind=='combat-terrain' and (not re.fullmatch(r'(dungcom|wildcom)-\d{3}@\d+',key)or key.split('-')[0].upper()+'.DAX'!=it['source_file']):
+                raise ValueError('地形key與來源檔不符')
             if sha(png)!=bykey[key]['png_sha256']or sha(png)!=visual.get(key)or sha(idx)!=it['indexed_sha256']or sha(pal)!=it['palette_sha256']:
                 raise ValueError('缺目前版本目視或來源／成品雜湊不符')
             w,h=it['source_size'];ref=idx.read_bytes()

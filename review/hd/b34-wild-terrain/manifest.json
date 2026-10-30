@@ -1,0 +1,848 @@
+{
+  "batch": "b34",
+  "count": 12,
+  "private_only": true,
+  "request_manifest_sha256": "23e912ca12d8d03a57aeff685f6e658c1f62e188a7d3109d61d84cd42d8bb045",
+  "items": [
+    {
+      "key": "wildcom-000@0",
+      "source": {
+        "key": "wildcom-000@0",
+        "source_file": "WILDCOM.DAX",
+        "source_file_sha256": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+        "block": 0,
+        "packed_file_offset": 29,
+        "decoded_sha256": "e55dcbf0a201a068811a6213a23542b13823c76e501641bf5daf6ab1ab7d8cf9",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "wildcom-000@0-1x.png",
+        "reference_3x": "wildcom-000@0-3x.png",
+        "reference_1x_sha256": "397407f105c5793cdc02f6cd23946a83d477a17f00be1122c816380985d1d16e",
+        "reference_3x_sha256": "28c428bdc0a27f09a774f4acf0fff34d5824afc9ef14fa65fe17e726dd0f2c23",
+        "indexed": "wildcom-000@0.idx",
+        "indexed_sha256": "694dd223deb95997170a2609ab6b8b7762356a16b868766837d88885de492a83",
+        "palette": "wildcom-000@0.pal",
+        "palette_sha256": "c87cc4a90861d1171dd82a4b134fbc59827b4e997ee341a7c26ca2e0658adb3e",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "wildcom-000@0",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-7691ab84-e778-4b44-ad43-37822603a110.png",
+        "prompt": "Use case: style-transfer. Edit the supplied reference (original composition and palette authority) into a smooth hand-painted 1990s fantasy CRPG terrain tile, approved Style B. Final asset viewed at72x72. Square orthographic game tile, edge-to-edge, no borders, no perspective horizon, no text. Replace pixel dithering with fine painted brush texture; do not create enlarged pixel art. Preserve original silhouette, object positions, widths, color masses and open ground. Ground is deep flat teal-green RGB0,85,60 with sparse muted olive square-like grass marks. Foliage is bright lime/yellow-green, olive and pale yellow; woody parts orange-brown with deep green/black shadows. Not realistic dark green oak leaves. Keep high original color saturation. Do not add new objects, faces, creatures, flowers, stones, shadows, sky or scenery; keep original clipped-at-edge branches and vegetation. A narrow irregular tree/vegetation form centered toward left, rising from bottom edge to top quarter. Thin central bent brown woody stem with broken clusters of vivid yellow-green leaves, several leaves spreading along bottom edge, isolated small left-side cluster at mid-height. Exact jagged arrangement as reference; ground open upper-left/right.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "150ae0f47bcae959645e6668ce0e5f5393f71ab907106682fdfcffb28b0c4eb6",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b34/wildcom-000@0-1x-view.png",
+            "sha256": "e1a274f597e168f32fe2137d67cac85bb8b649828f14416702d1520d772ec490",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "wildcom-000@0",
+        "raw": "wildcom-000@0-r1-raw.png",
+        "raw_sha256": "150ae0f47bcae959645e6668ce0e5f5393f71ab907106682fdfcffb28b0c4eb6",
+        "png": "wildcom-000@0.png",
+        "png_sha256": "f15715e870bb93a60f8e9cdec4531bdc9114043074c85a7e93a3e24990209176",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "wildcom-000@0",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.875,
+        "median_hue_difference_degrees": 4.191130228348342,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "f15715e870bb93a60f8e9cdec4531bdc9114043074c85a7e93a3e24990209176"
+      },
+      "visual": {
+        "png_sha256": "f15715e870bb93a60f8e9cdec4531bdc9114043074c85a7e93a3e24990209176",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "wildcom-000@1",
+      "source": {
+        "key": "wildcom-000@1",
+        "source_file": "WILDCOM.DAX",
+        "source_file_sha256": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+        "block": 0,
+        "packed_file_offset": 29,
+        "decoded_sha256": "e55dcbf0a201a068811a6213a23542b13823c76e501641bf5daf6ab1ab7d8cf9",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "wildcom-000@1-1x.png",
+        "reference_3x": "wildcom-000@1-3x.png",
+        "reference_1x_sha256": "30202902bb87394889d32f873f3d25b93908e34ab8ea30f7c7320c47efaadc13",
+        "reference_3x_sha256": "81ffa6c9700fe9b8a02ccb4e1dcb2a37d0bd3065784183233d3daa739ea8d76f",
+        "indexed": "wildcom-000@1.idx",
+        "indexed_sha256": "eb27edc146876fa35c6fcaed0f31ed627a95fdbc4eb3c4fd360f612f34aeb83a",
+        "palette": "wildcom-000@1.pal",
+        "palette_sha256": "c87cc4a90861d1171dd82a4b134fbc59827b4e997ee341a7c26ca2e0658adb3e",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "wildcom-000@1",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-7141d92b-3104-4535-89f2-d65061b3b216.png",
+        "prompt": "Use case: style-transfer. Edit the supplied reference (original composition and palette authority) into a smooth hand-painted 1990s fantasy CRPG terrain tile, approved Style B. Final asset viewed at72x72. Square orthographic game tile, edge-to-edge, no borders, no perspective horizon, no text. Replace pixel dithering with fine painted brush texture; do not create enlarged pixel art. Preserve original silhouette, object positions, widths, color masses and open ground. Ground is deep flat teal-green RGB0,85,60 with sparse muted olive square-like grass marks. Foliage is bright lime/yellow-green, olive and pale yellow; woody parts orange-brown with deep green/black shadows. Not realistic dark green oak leaves. Keep high original color saturation. Do not add new objects, faces, creatures, flowers, stones, shadows, sky or scenery; keep original clipped-at-edge branches and vegetation. Broad dense upright leafy tree/vegetation mound occupying most of tile, touching bottom and nearing top center. Lumpy yellow-green foliage canopy with ochre brown branches/segments visible through it and several deep dark green crevices. Keep the exact rounded tapered silhouette, central lower hole and gaps.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "ade7dae92498c2db31490cc1b49f03ac5c996641827b393d4c97a12a04c547a1",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b34/wildcom-000@1-1x-view.png",
+            "sha256": "b315ef2f62fa27b0775b3ce18ad0665533531728811d9efd318fbcc0c77a3773",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "wildcom-000@1",
+        "raw": "wildcom-000@1-r1-raw.png",
+        "raw_sha256": "ade7dae92498c2db31490cc1b49f03ac5c996641827b393d4c97a12a04c547a1",
+        "png": "wildcom-000@1.png",
+        "png_sha256": "817cde1e92e9811978cf8e05d9ab63079f26328f3f144e49de4a6500bb3eeb86",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "wildcom-000@1",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.85,
+        "median_hue_difference_degrees": 4.337414965986412,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "817cde1e92e9811978cf8e05d9ab63079f26328f3f144e49de4a6500bb3eeb86"
+      },
+      "visual": {
+        "png_sha256": "817cde1e92e9811978cf8e05d9ab63079f26328f3f144e49de4a6500bb3eeb86",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "wildcom-000@2",
+      "source": {
+        "key": "wildcom-000@2",
+        "source_file": "WILDCOM.DAX",
+        "source_file_sha256": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+        "block": 0,
+        "packed_file_offset": 29,
+        "decoded_sha256": "e55dcbf0a201a068811a6213a23542b13823c76e501641bf5daf6ab1ab7d8cf9",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "wildcom-000@2-1x.png",
+        "reference_3x": "wildcom-000@2-3x.png",
+        "reference_1x_sha256": "57d397ad08a2e3ffb272fcde0573f4d7eee9e453f31ec38b8d83141d8dc364c1",
+        "reference_3x_sha256": "96eb35a4cd676336090facc5edc91581e9b4420af41b91f6d949370a78b910c9",
+        "indexed": "wildcom-000@2.idx",
+        "indexed_sha256": "0719d79ae81de31eaffd5b4478d6ed4151e0d165df8232d20148466e7a81029e",
+        "palette": "wildcom-000@2.pal",
+        "palette_sha256": "c87cc4a90861d1171dd82a4b134fbc59827b4e997ee341a7c26ca2e0658adb3e",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "wildcom-000@2",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-521268ba-1025-446c-8a45-41d9d17f8e8d.png",
+        "prompt": "Use case: style-transfer. Edit the supplied reference (original composition and palette authority) into a smooth hand-painted 1990s fantasy CRPG terrain tile, approved Style B. Final asset viewed at72x72. Square orthographic game tile, edge-to-edge, no borders, no perspective horizon, no text. Replace pixel dithering with fine painted brush texture; do not create enlarged pixel art. Preserve original silhouette, object positions, widths, color masses and open ground. Ground is deep flat teal-green RGB0,85,60 with sparse muted olive square-like grass marks. Foliage is bright lime/yellow-green, olive and pale yellow; woody parts orange-brown with deep green/black shadows. Not realistic dark green oak leaves. Keep high original color saturation. Do not add new objects, faces, creatures, flowers, stones, shadows, sky or scenery; keep original clipped-at-edge branches and vegetation. Multiple rounded yellow-green leafy masses above brown branching woody segments: large flattened round canopy fills upper half, medium lower-left canopy and smaller center/lower-right form. Vertical dark gaps divide trunks and masses. Keep all clumps and original geometry and clipping, including small right/bottom gap.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "8eb9621715cded4857403e9e4cdec2ce8c5b4c821eca62050be8e86a2fbdb11c",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b34/wildcom-000@2-1x-view.png",
+            "sha256": "5c6093fabe0612cc98c50f785bf89a315c55a525186ea4cd4177223ae38595d4",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "wildcom-000@2",
+        "raw": "wildcom-000@2-r1-raw.png",
+        "raw_sha256": "8eb9621715cded4857403e9e4cdec2ce8c5b4c821eca62050be8e86a2fbdb11c",
+        "png": "wildcom-000@2.png",
+        "png_sha256": "1c713fd08378e60e3eadd78cc4616f905f3120a8090b5f1527115816afb1ddb2",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "wildcom-000@2",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8875,
+        "median_hue_difference_degrees": 3.8363977418544835,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "1c713fd08378e60e3eadd78cc4616f905f3120a8090b5f1527115816afb1ddb2"
+      },
+      "visual": {
+        "png_sha256": "1c713fd08378e60e3eadd78cc4616f905f3120a8090b5f1527115816afb1ddb2",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "wildcom-000@3",
+      "source": {
+        "key": "wildcom-000@3",
+        "source_file": "WILDCOM.DAX",
+        "source_file_sha256": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+        "block": 0,
+        "packed_file_offset": 29,
+        "decoded_sha256": "e55dcbf0a201a068811a6213a23542b13823c76e501641bf5daf6ab1ab7d8cf9",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "wildcom-000@3-1x.png",
+        "reference_3x": "wildcom-000@3-3x.png",
+        "reference_1x_sha256": "3aec0da05311b7f854d052be61074d1cf4c1aff6f67e87d8701936f77c3e78b8",
+        "reference_3x_sha256": "7614d0948c0fe254debc24ca8fdcc8f81593f3ea629642e4ba4ee3b43e2d032b",
+        "indexed": "wildcom-000@3.idx",
+        "indexed_sha256": "52ff5c75e81b43b3170f9088564640d206379bd0017ad2ff3266b7e775fe019e",
+        "palette": "wildcom-000@3.pal",
+        "palette_sha256": "c87cc4a90861d1171dd82a4b134fbc59827b4e997ee341a7c26ca2e0658adb3e",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "wildcom-000@3",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-269a156c-778f-4d1c-8438-4b5033a9f176.png",
+        "prompt": "Use case: style-transfer. Edit the supplied reference (original composition and palette authority) into a smooth hand-painted 1990s fantasy CRPG terrain tile, approved Style B. Final asset viewed at72x72. Square orthographic game tile, edge-to-edge, no borders, no perspective horizon, no text. Replace pixel dithering with fine painted brush texture; do not create enlarged pixel art. Preserve original silhouette, object positions, widths, color masses and open ground. Ground is deep flat teal-green RGB0,85,60 with sparse muted olive square-like grass marks. Foliage is bright lime/yellow-green, olive and pale yellow; woody parts orange-brown with deep green/black shadows. Not realistic dark green oak leaves. Keep high original color saturation. Do not add new objects, faces, creatures, flowers, stones, shadows, sky or scenery; keep original clipped-at-edge branches and vegetation. Low broad leafy shrub/tree canopy across lower two-thirds. Tallest yellow-green sprigs around x10/24 at y5/24, crown slopes down to right. Flat teal ground in upper rows and around edges. Ochre brown woody/shadow stripes visible near bottom, deep green clefts in canopy. Preserve horizontal wide silhouette.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "c48da6bbb61606e33afa7c94e9d71254b87df0ec6dfd86e1c9c47db2fc279003",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b34/wildcom-000@3-1x-view.png",
+            "sha256": "341de1c2b1a82e7991087570cf76b2a1f78186ac39d47680a3d43988e59a37a5",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "wildcom-000@3",
+        "raw": "wildcom-000@3-r1-raw.png",
+        "raw_sha256": "c48da6bbb61606e33afa7c94e9d71254b87df0ec6dfd86e1c9c47db2fc279003",
+        "png": "wildcom-000@3.png",
+        "png_sha256": "3cd39313cede22eef11816fb3caadb87c24e9d6ad4d54a08dc4f00cbabb1b107",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "wildcom-000@3",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.825,
+        "median_hue_difference_degrees": 3.5986180709016935,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "3cd39313cede22eef11816fb3caadb87c24e9d6ad4d54a08dc4f00cbabb1b107"
+      },
+      "visual": {
+        "png_sha256": "3cd39313cede22eef11816fb3caadb87c24e9d6ad4d54a08dc4f00cbabb1b107",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "wildcom-000@4",
+      "source": {
+        "key": "wildcom-000@4",
+        "source_file": "WILDCOM.DAX",
+        "source_file_sha256": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+        "block": 0,
+        "packed_file_offset": 29,
+        "decoded_sha256": "e55dcbf0a201a068811a6213a23542b13823c76e501641bf5daf6ab1ab7d8cf9",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "wildcom-000@4-1x.png",
+        "reference_3x": "wildcom-000@4-3x.png",
+        "reference_1x_sha256": "29a969bfcc03ff3e8224b7061cc84bf379ff71f80d92dfc248cf47d5461ca7e4",
+        "reference_3x_sha256": "31bff0aa9660505673dd1470e50f972dfcb50d1891d378d2f88bd084f6e17638",
+        "indexed": "wildcom-000@4.idx",
+        "indexed_sha256": "cedd976fcd1c7c8aff1be00a631ac08d090ac24c205f6814e18239a0c32547fd",
+        "palette": "wildcom-000@4.pal",
+        "palette_sha256": "c87cc4a90861d1171dd82a4b134fbc59827b4e997ee341a7c26ca2e0658adb3e",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "wildcom-000@4",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-ff912bba-aa7a-4a91-9b54-ef944097543c.png",
+        "prompt": "Use case: style-transfer. Edit the supplied reference (original composition and palette authority) into a smooth hand-painted 1990s fantasy CRPG terrain tile, approved Style B. Final asset viewed at72x72. Square orthographic game tile, edge-to-edge, no borders, no perspective horizon, no text. Replace pixel dithering with fine painted brush texture; do not create enlarged pixel art. Preserve original silhouette, object positions, widths, color masses and open ground. Ground is deep flat teal-green RGB0,85,60 with sparse muted olive square-like grass marks. Foliage is bright lime/yellow-green, olive and pale yellow; woody parts orange-brown with deep green/black shadows. Not realistic dark green oak leaves. Keep high original color saturation. Do not add new objects, faces, creatures, flowers, stones, shadows, sky or scenery; keep original clipped-at-edge branches and vegetation. Irregular tall narrow yellow-green leafy mound with orange-brown branches. Tallest thin sprig is at x14/24,y3/24, upper-left mostly open ground. Wider foliage clusters lower-left and lower-right, broken deep shadow gaps. Follow exact reference silhouette.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "38437a06279a8a2e74f2e8b73e47d6f5aef9533fdc46033209d1885e71941f20",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b34/wildcom-000@4-1x-view.png",
+            "sha256": "eb4d140e6587855856f79c0ca70dd48ebdcf2e2a1b31b2ff9ffb442e2f31d734",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "wildcom-000@4",
+        "raw": "wildcom-000@4-r1-raw.png",
+        "raw_sha256": "38437a06279a8a2e74f2e8b73e47d6f5aef9533fdc46033209d1885e71941f20",
+        "png": "wildcom-000@4.png",
+        "png_sha256": "3821142121253680e4b2cdab05c7583c9d6ab76dfbfa1d2239167ea059e91db7",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "wildcom-000@4",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8625,
+        "median_hue_difference_degrees": 4.1292134831460885,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "3821142121253680e4b2cdab05c7583c9d6ab76dfbfa1d2239167ea059e91db7"
+      },
+      "visual": {
+        "png_sha256": "3821142121253680e4b2cdab05c7583c9d6ab76dfbfa1d2239167ea059e91db7",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "wildcom-000@5",
+      "source": {
+        "key": "wildcom-000@5",
+        "source_file": "WILDCOM.DAX",
+        "source_file_sha256": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+        "block": 0,
+        "packed_file_offset": 29,
+        "decoded_sha256": "e55dcbf0a201a068811a6213a23542b13823c76e501641bf5daf6ab1ab7d8cf9",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "wildcom-000@5-1x.png",
+        "reference_3x": "wildcom-000@5-3x.png",
+        "reference_1x_sha256": "20612b7f4e6bf27883b95dc0e1404b35784facab05140518edfcd50bc8a00aea",
+        "reference_3x_sha256": "8e21b3f01518fc985f97d27d016d1ae63b69fab120ba735e3f3aae1ccd98e46b",
+        "indexed": "wildcom-000@5.idx",
+        "indexed_sha256": "06f3e5cbb541ab57e9b681e2e3dcaaa6d5314bfa564dd02cd1892db2aeebfe5d",
+        "palette": "wildcom-000@5.pal",
+        "palette_sha256": "c87cc4a90861d1171dd82a4b134fbc59827b4e997ee341a7c26ca2e0658adb3e",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "wildcom-000@5",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-22f5c208-4b62-4bef-a6e0-4b421691a9b1.png",
+        "prompt": "Use case: style-transfer. Edit the supplied reference (original composition and palette authority) into a smooth hand-painted 1990s fantasy CRPG terrain tile, approved Style B. Final asset viewed at72x72. Square orthographic game tile, edge-to-edge, no borders, no perspective horizon, no text. Replace pixel dithering with fine painted brush texture; do not create enlarged pixel art. Preserve original silhouette, object positions, widths, color masses and open ground. Ground is deep flat teal-green RGB0,85,60 with sparse muted olive square-like grass marks. Foliage is bright lime/yellow-green, olive and pale yellow; woody parts orange-brown with deep green/black shadows. Not realistic dark green oak leaves. Keep high original color saturation. Do not add new objects, faces, creatures, flowers, stones, shadows, sky or scenery; keep original clipped-at-edge branches and vegetation. Close cropped dark tree trunk with yellow-green leaves attached in clumps along left and right. Canopy extends off entire top edge; thin mostly black/deep-green trunk descends near center to bottom, with small brown patches. Yellow-green ground leaves touch lower edge. No complete top crown, no broad roots not in source; dark stem remains narrow.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "c11352a0443996c2f9267a873e790dae974e48c188963233211cc2fecb95f047",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b34/wildcom-000@5-1x-view.png",
+            "sha256": "ce5cc11f455c37cd7296e609398aca39773824aadc4fd5f529dfc645a5434b75",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "wildcom-000@5",
+        "raw": "wildcom-000@5-r1-raw.png",
+        "raw_sha256": "c11352a0443996c2f9267a873e790dae974e48c188963233211cc2fecb95f047",
+        "png": "wildcom-000@5.png",
+        "png_sha256": "ae71519a0ec91e594e8a00aa606bd6654888b6acdb23af011ecc4ff1cbed8cab",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "wildcom-000@5",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8375,
+        "median_hue_difference_degrees": 7.599752278156245,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "ae71519a0ec91e594e8a00aa606bd6654888b6acdb23af011ecc4ff1cbed8cab"
+      },
+      "visual": {
+        "png_sha256": "ae71519a0ec91e594e8a00aa606bd6654888b6acdb23af011ecc4ff1cbed8cab",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "wildcom-000@6",
+      "source": {
+        "key": "wildcom-000@6",
+        "source_file": "WILDCOM.DAX",
+        "source_file_sha256": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+        "block": 0,
+        "packed_file_offset": 29,
+        "decoded_sha256": "e55dcbf0a201a068811a6213a23542b13823c76e501641bf5daf6ab1ab7d8cf9",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "wildcom-000@6-1x.png",
+        "reference_3x": "wildcom-000@6-3x.png",
+        "reference_1x_sha256": "62a18eec2681e9f067edc89249217dacbec3435d47291706aefc87b2e38cc7cd",
+        "reference_3x_sha256": "237c8d36069ed45511ad6905dbde7a89160f9d73726b3461fc06fd5442928e14",
+        "indexed": "wildcom-000@6.idx",
+        "indexed_sha256": "fe15bfd1f6cb2beb9fc6c3ca60cc9d654a93122f0a27d58d543a2844363d5f09",
+        "palette": "wildcom-000@6.pal",
+        "palette_sha256": "c87cc4a90861d1171dd82a4b134fbc59827b4e997ee341a7c26ca2e0658adb3e",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "wildcom-000@6",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-5f73c073-efb6-46c6-ad5e-91a536d982ae.png",
+        "prompt": "Use case: style-transfer. Edit the supplied reference (original composition and palette authority) into a smooth hand-painted 1990s fantasy CRPG terrain tile, approved Style B. Final asset viewed at72x72. Square orthographic game tile, edge-to-edge, no borders, no perspective horizon, no text. Replace pixel dithering with fine painted brush texture; do not create enlarged pixel art. Preserve original silhouette, object positions, widths, color masses and open ground. Ground is deep flat teal-green RGB0,85,60 with sparse muted olive square-like grass marks. Foliage is bright lime/yellow-green, olive and pale yellow; woody parts orange-brown with deep green/black shadows. Not realistic dark green oak leaves. Keep high original color saturation. Do not add new objects, faces, creatures, flowers, stones, shadows, sky or scenery; keep original clipped-at-edge branches and vegetation. Large thick orange-brown tree trunk rooted at lower center with spreading stepped buttress roots left/right. The leafy yellow-green canopy is cropped at the top edge. The trunk bends slightly near upper center, left lit ochre wood and very dark green/blue-black right shadow. Preserve thick lower root width and sparse lime ground flecks. No face or extra branches.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "fc81b7c3003a48d7a72231e2affec0cfaefa1af7f61c8c6b4d560b01462fb195",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b34/wildcom-000@6-1x-view.png",
+            "sha256": "157971097ea71099fc592d6a40363215a011958fdcef7ee8706cf01360bd912a",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "wildcom-000@6",
+        "raw": "wildcom-000@6-r1-raw.png",
+        "raw_sha256": "fc81b7c3003a48d7a72231e2affec0cfaefa1af7f61c8c6b4d560b01462fb195",
+        "png": "wildcom-000@6.png",
+        "png_sha256": "214bc5ab9a254276c2caa1659708acfaebe262848d33b2ba5bf5285ccb02922a",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "wildcom-000@6",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8,
+        "median_hue_difference_degrees": 3.885025817555942,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "214bc5ab9a254276c2caa1659708acfaebe262848d33b2ba5bf5285ccb02922a"
+      },
+      "visual": {
+        "png_sha256": "214bc5ab9a254276c2caa1659708acfaebe262848d33b2ba5bf5285ccb02922a",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "wildcom-000@7",
+      "source": {
+        "key": "wildcom-000@7",
+        "source_file": "WILDCOM.DAX",
+        "source_file_sha256": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+        "block": 0,
+        "packed_file_offset": 29,
+        "decoded_sha256": "e55dcbf0a201a068811a6213a23542b13823c76e501641bf5daf6ab1ab7d8cf9",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "wildcom-000@7-1x.png",
+        "reference_3x": "wildcom-000@7-3x.png",
+        "reference_1x_sha256": "7d5ca6f6387b6582486c4cfc429d2928e81b5e840f6eb36a280ebb5db0e6f103",
+        "reference_3x_sha256": "3575f30bba250485ccc59b811d05e14074d49a43c5bf844ebcade56999cdc144",
+        "indexed": "wildcom-000@7.idx",
+        "indexed_sha256": "2654c11b0960eb01550b80c56e20b4ec58557a061dbab504577a542e7817689e",
+        "palette": "wildcom-000@7.pal",
+        "palette_sha256": "c87cc4a90861d1171dd82a4b134fbc59827b4e997ee341a7c26ca2e0658adb3e",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "wildcom-000@7",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-f670c640-1d15-4029-b552-e0c96b3aa08a.png",
+        "prompt": "Use case: style-transfer. Edit the supplied reference (original composition and palette authority) into a smooth hand-painted 1990s fantasy CRPG terrain tile, approved Style B. Final asset viewed at72x72. Square orthographic game tile, edge-to-edge, no borders, no perspective horizon, no text. Replace pixel dithering with fine painted brush texture; do not create enlarged pixel art. Preserve original silhouette, object positions, widths, color masses and open ground. Ground is deep flat teal-green RGB0,85,60 with sparse muted olive square-like grass marks. Foliage is bright lime/yellow-green, olive and pale yellow; woody parts orange-brown with deep green/black shadows. Not realistic dark green oak leaves. Keep high original color saturation. Do not add new objects, faces, creatures, flowers, stones, shadows, sky or scenery; keep original clipped-at-edge branches and vegetation. Thick irregular rooted tree with canopy cropped at top edge. Brown roots fan from central trunk toward lower corners; central very dark split descends along trunk to roots. Yellow/olive leafy material in top strip and lime ground flecks at bottom. Preserve all trunk boundaries and open teal-green side areas exactly.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "8f3de8679935110c66586534aa96c7a70578db9adcce5677a7f7de402bf5e70e",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b34/wildcom-000@7-1x-view.png",
+            "sha256": "4d30b53240d1f8c23d55cb74d45308098db8f035496fd905f5b427297dbeb0a4",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "wildcom-000@7",
+        "raw": "wildcom-000@7-r1-raw.png",
+        "raw_sha256": "8f3de8679935110c66586534aa96c7a70578db9adcce5677a7f7de402bf5e70e",
+        "png": "wildcom-000@7.png",
+        "png_sha256": "e2e06c51e62fbf735d07bef825824c9334036ae34f8abd487e2dc36a136c2ab2",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "wildcom-000@7",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8375,
+        "median_hue_difference_degrees": 4.282989994114182,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "e2e06c51e62fbf735d07bef825824c9334036ae34f8abd487e2dc36a136c2ab2"
+      },
+      "visual": {
+        "png_sha256": "e2e06c51e62fbf735d07bef825824c9334036ae34f8abd487e2dc36a136c2ab2",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "wildcom-000@8",
+      "source": {
+        "key": "wildcom-000@8",
+        "source_file": "WILDCOM.DAX",
+        "source_file_sha256": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+        "block": 0,
+        "packed_file_offset": 29,
+        "decoded_sha256": "e55dcbf0a201a068811a6213a23542b13823c76e501641bf5daf6ab1ab7d8cf9",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "wildcom-000@8-1x.png",
+        "reference_3x": "wildcom-000@8-3x.png",
+        "reference_1x_sha256": "82975f68095ab24152454bc08c8d79dc0a9e0ec6a336e963195e138553b611ae",
+        "reference_3x_sha256": "d6eccdf7234c577ff60bfcc2ebb1830bc04fede55b9b30a15fe7bb190fb08851",
+        "indexed": "wildcom-000@8.idx",
+        "indexed_sha256": "ac5e8cb008bf9896ffef7c7a59e0984d40462a923ce08f3dd136ee5bcb96c434",
+        "palette": "wildcom-000@8.pal",
+        "palette_sha256": "c87cc4a90861d1171dd82a4b134fbc59827b4e997ee341a7c26ca2e0658adb3e",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "wildcom-000@8",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-0ac7563d-d4fe-4ff3-96cf-a3cb27204584.png",
+        "prompt": "Use case: style-transfer. Edit the supplied reference (original composition and palette authority) into a smooth hand-painted 1990s fantasy CRPG terrain tile, approved Style B. Final asset viewed at72x72. Square orthographic game tile, edge-to-edge, no borders, no perspective horizon, no text. Replace pixel dithering with fine painted brush texture; do not create enlarged pixel art. Preserve original silhouette, object positions, widths, color masses and open ground. Ground is deep flat teal-green RGB0,85,60 with sparse muted olive square-like grass marks. Foliage is bright lime/yellow-green, olive and pale yellow; woody parts orange-brown with deep green/black shadows. Not realistic dark green oak leaves. Keep high original color saturation. Do not add new objects, faces, creatures, flowers, stones, shadows, sky or scenery; keep original clipped-at-edge branches and vegetation. Tree canopy cropped at entire top edge, with larger dense yellow-green foliage upper-left and thinner right hanging leaves. Very dark narrow forked woody trunk descends near center, a few orange-brown sections, and thin root runs toward lower-left edge. Preserve thin trunk and large teal-green opening on right; no invented thick bark trunk.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "43d65b3ba0c979354ac2f3b7a5759a4e4506e6b655fd23c80dc84cc6bb7a7536",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b34/wildcom-000@8-1x-view.png",
+            "sha256": "074492f280b2a489c4ec40b6827ea574f129f6a96526b2a5863c26e10604823b",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "wildcom-000@8",
+        "raw": "wildcom-000@8-r1-raw.png",
+        "raw_sha256": "43d65b3ba0c979354ac2f3b7a5759a4e4506e6b655fd23c80dc84cc6bb7a7536",
+        "png": "wildcom-000@8.png",
+        "png_sha256": "a83be802e5e15f760d898f2490d07d1824e4ce7539a7d08aed211e0454a414d8",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "wildcom-000@8",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.7375,
+        "median_hue_difference_degrees": 5.212414871902496,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "a83be802e5e15f760d898f2490d07d1824e4ce7539a7d08aed211e0454a414d8"
+      },
+      "visual": {
+        "png_sha256": "a83be802e5e15f760d898f2490d07d1824e4ce7539a7d08aed211e0454a414d8",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "wildcom-000@9",
+      "source": {
+        "key": "wildcom-000@9",
+        "source_file": "WILDCOM.DAX",
+        "source_file_sha256": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+        "block": 0,
+        "packed_file_offset": 29,
+        "decoded_sha256": "e55dcbf0a201a068811a6213a23542b13823c76e501641bf5daf6ab1ab7d8cf9",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "wildcom-000@9-1x.png",
+        "reference_3x": "wildcom-000@9-3x.png",
+        "reference_1x_sha256": "7182cf294aec8e9490ba3e8967af81e960d752033b23b0d415bd52004f9be7f6",
+        "reference_3x_sha256": "366849085da25f6ac4c4dcf258799b5eb3f59b94dd774d8437e2bfcb7e760870",
+        "indexed": "wildcom-000@9.idx",
+        "indexed_sha256": "526034f1920912462b94ce2cd194adeee5c18204b8eeeae25ebb0d8623f43187",
+        "palette": "wildcom-000@9.pal",
+        "palette_sha256": "c87cc4a90861d1171dd82a4b134fbc59827b4e997ee341a7c26ca2e0658adb3e",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "wildcom-000@9",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-1af93431-b3c5-4a0d-8f28-c589f4aa77e5.png",
+        "prompt": "Use case: style-transfer. Edit the supplied reference (original composition and palette authority) into a smooth hand-painted 1990s fantasy CRPG terrain tile, approved Style B. Final asset viewed at72x72. Square orthographic game tile, edge-to-edge, no borders, no perspective horizon, no text. Replace pixel dithering with fine painted brush texture; do not create enlarged pixel art. Preserve original silhouette, object positions, widths, color masses and open ground. Ground is deep flat teal-green RGB0,85,60 with sparse muted olive square-like grass marks. Foliage is bright lime/yellow-green, olive and pale yellow; woody parts orange-brown with deep green/black shadows. Not realistic dark green oak leaves. Keep high original color saturation. Do not add new objects, faces, creatures, flowers, stones, shadows, sky or scenery; keep original clipped-at-edge branches and vegetation. Tree canopy cropped at top edge, mostly short yellow-green fringe. Broad twisted orange-brown trunk with multiple branching arms in upper center and thick root spreading diagonally lower-left to lower-right. Big deep dark green/blue-black shadow wedge along right of trunk. Preserve crossed lower root shape and left/right teal ground.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "c000ebab452ad1e4d29b09f0e036a323e72997beb1094235dd52809ab63d8a39",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b34/wildcom-000@9-1x-view.png",
+            "sha256": "f30d897516600c6bc816481c15f8135c69b7eeb108f3b1b339150df241209fd6",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "wildcom-000@9",
+        "raw": "wildcom-000@9-r1-raw.png",
+        "raw_sha256": "c000ebab452ad1e4d29b09f0e036a323e72997beb1094235dd52809ab63d8a39",
+        "png": "wildcom-000@9.png",
+        "png_sha256": "896097be05fefc0dbf51419bff3cc88bdc2a147919c41600b744aa91f1aaccf4",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "wildcom-000@9",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8375,
+        "median_hue_difference_degrees": 3.8631035272964453,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "896097be05fefc0dbf51419bff3cc88bdc2a147919c41600b744aa91f1aaccf4"
+      },
+      "visual": {
+        "png_sha256": "896097be05fefc0dbf51419bff3cc88bdc2a147919c41600b744aa91f1aaccf4",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "wildcom-000@10",
+      "source": {
+        "key": "wildcom-000@10",
+        "source_file": "WILDCOM.DAX",
+        "source_file_sha256": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+        "block": 0,
+        "packed_file_offset": 29,
+        "decoded_sha256": "e55dcbf0a201a068811a6213a23542b13823c76e501641bf5daf6ab1ab7d8cf9",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "wildcom-000@10-1x.png",
+        "reference_3x": "wildcom-000@10-3x.png",
+        "reference_1x_sha256": "28b577cd21508173a138dd7fa0e4d237ac77f6bef508c6a680cec72dbe6adb06",
+        "reference_3x_sha256": "60477ebb25d23275913d21ed62b3b5441ff185549ac18fbef72520f916911421",
+        "indexed": "wildcom-000@10.idx",
+        "indexed_sha256": "78650e1cb02acb547ce31fbafc3ac2bf7fb17ecb5b0dac8ce8c53c1fc5e6b094",
+        "palette": "wildcom-000@10.pal",
+        "palette_sha256": "c87cc4a90861d1171dd82a4b134fbc59827b4e997ee341a7c26ca2e0658adb3e",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "wildcom-000@10",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-b32b71c8-e23d-404f-80be-7318cdfce7c3.png",
+        "prompt": "Use case: style-transfer. Edit the supplied reference (original composition and palette authority) into a smooth hand-painted 1990s fantasy CRPG terrain tile, approved Style B. Final asset viewed at72x72. Square orthographic game tile, edge-to-edge, no borders, no perspective horizon, no text. Replace pixel dithering with fine painted brush texture; do not create enlarged pixel art. Preserve original silhouette, object positions, widths, color masses and open ground. Ground is deep flat teal-green RGB0,85,60 with sparse muted olive square-like grass marks. Foliage is bright lime/yellow-green, olive and pale yellow; woody parts orange-brown with deep green/black shadows. Not realistic dark green oak leaves. Keep high original color saturation. Do not add new objects, faces, creatures, flowers, stones, shadows, sky or scenery; keep original clipped-at-edge branches and vegetation. A fallen hollow brown log spanning lower-middle left to upper-right. Round cut/hollow end at far-left lower-middle, a dark hollow in right-side bend, orange-brown lit bark top; a thin short forked twig points upward near x8/24,y3/24. Lime ground flecks beneath log and teal-green open background above. Exact log outline and all fork positions; no additional branches.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "ad8c0296755998503bd3f74c25795bd9917d6e75b3075062d27cf845ecb2c076",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b34/wildcom-000@10-1x-view.png",
+            "sha256": "e49a34955f059ba4068ae81727e4a18d48de4d3598a3e66b2fde903ada8ca5f4",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "wildcom-000@10",
+        "raw": "wildcom-000@10-r1-raw.png",
+        "raw_sha256": "ad8c0296755998503bd3f74c25795bd9917d6e75b3075062d27cf845ecb2c076",
+        "png": "wildcom-000@10.png",
+        "png_sha256": "bd6305b6e49f68bbd3629ae95949a945922d52144a011b18215fc5f05c8fd8ef",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "wildcom-000@10",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8,
+        "median_hue_difference_degrees": 4.25776669796614,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "bd6305b6e49f68bbd3629ae95949a945922d52144a011b18215fc5f05c8fd8ef"
+      },
+      "visual": {
+        "png_sha256": "bd6305b6e49f68bbd3629ae95949a945922d52144a011b18215fc5f05c8fd8ef",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "wildcom-000@11",
+      "source": {
+        "key": "wildcom-000@11",
+        "source_file": "WILDCOM.DAX",
+        "source_file_sha256": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+        "block": 0,
+        "packed_file_offset": 29,
+        "decoded_sha256": "e55dcbf0a201a068811a6213a23542b13823c76e501641bf5daf6ab1ab7d8cf9",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "wildcom-000@11-1x.png",
+        "reference_3x": "wildcom-000@11-3x.png",
+        "reference_1x_sha256": "158d98c2ded3bd906eff4449a738e7629d80b359e03dc402799c9b33c0574c40",
+        "reference_3x_sha256": "5adf264992e53da297cc3add6de41422392bc80f5a527654b270b54bcdfad873",
+        "indexed": "wildcom-000@11.idx",
+        "indexed_sha256": "aa06e09814175488225f9124e20c751659ce12044c645b518f89c70dda39ea00",
+        "palette": "wildcom-000@11.pal",
+        "palette_sha256": "c87cc4a90861d1171dd82a4b134fbc59827b4e997ee341a7c26ca2e0658adb3e",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "wildcom-000@11",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-0b4140bf-de98-4a40-ac3b-e2ab5a86c9ad.png",
+        "prompt": "Use case: style-transfer. Edit the supplied reference (original composition and palette authority) into a smooth hand-painted 1990s fantasy CRPG terrain tile, approved Style B. Final asset viewed at72x72. Square orthographic game tile, edge-to-edge, no borders, no perspective horizon, no text. Replace pixel dithering with fine painted brush texture; do not create enlarged pixel art. Preserve original silhouette, object positions, widths, color masses and open ground. Ground is deep flat teal-green RGB0,85,60 with sparse muted olive square-like grass marks. Foliage is bright lime/yellow-green, olive and pale yellow; woody parts orange-brown with deep green/black shadows. Not realistic dark green oak leaves. Keep high original color saturation. Do not add new objects, faces, creatures, flowers, stones, shadows, sky or scenery; keep original clipped-at-edge branches and vegetation. Large fallen forked brown log lying horizontally across lower half; broken branches point upper-right and upper-middle. Far-left is a dark cut end with brown top rim, central orange-brown rounded trunk, bright brown right limb extending to edge. Keep all ground grass flecks under log and open teal background above. Do not turn log into a living upright tree.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "b415fd1ad229247423ab7ca22a158213f05b49e2f7d924d730316048b34db286",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b34/wildcom-000@11-1x-view.png",
+            "sha256": "d2ed8b2758a4cf039dd443e87860cef2e57d4bcb5322299dfb091695a8cf8046",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "wildcom-000@11",
+        "raw": "wildcom-000@11-r1-raw.png",
+        "raw_sha256": "b415fd1ad229247423ab7ca22a158213f05b49e2f7d924d730316048b34db286",
+        "png": "wildcom-000@11.png",
+        "png_sha256": "c0377df1d7ed652e1284607b0f060b2750c8becc9af13ed741ed293c7adee3e2",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "wildcom-000@11",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.725,
+        "median_hue_difference_degrees": 1.3217525711907658,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "c0377df1d7ed652e1284607b0f060b2750c8becc9af13ed741ed293c7adee3e2"
+      },
+      "visual": {
+        "png_sha256": "c0377df1d7ed652e1284607b0f060b2750c8becc9af13ed741ed293c7adee3e2",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    }
+  ]
+}

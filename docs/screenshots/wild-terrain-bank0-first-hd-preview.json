@@ -1,0 +1,168 @@
+{
+  "scope": "AI-redrawn asset preview; not a gameplay screenshot",
+  "composition": "native 3x PNG; no resizing or cropping",
+  "size": [
+    480,
+    160
+  ],
+  "output_sha256": "b9546d57ab721b15bd7a882492b2a554a06170fef495dcbec7cc8c6b572612f5",
+  "items": [
+    {
+      "key": "wildcom-000@0",
+      "source": "review/hd/b34-wild-terrain/wildcom-000@0.png",
+      "png_sha256": "f15715e870bb93a60f8e9cdec4531bdc9114043074c85a7e93a3e24990209176",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        4,
+        4
+      ]
+    },
+    {
+      "key": "wildcom-000@1",
+      "source": "review/hd/b34-wild-terrain/wildcom-000@1.png",
+      "png_sha256": "817cde1e92e9811978cf8e05d9ab63079f26328f3f144e49de4a6500bb3eeb86",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        84,
+        4
+      ]
+    },
+    {
+      "key": "wildcom-000@2",
+      "source": "review/hd/b34-wild-terrain/wildcom-000@2.png",
+      "png_sha256": "1c713fd08378e60e3eadd78cc4616f905f3120a8090b5f1527115816afb1ddb2",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        164,
+        4
+      ]
+    },
+    {
+      "key": "wildcom-000@3",
+      "source": "review/hd/b34-wild-terrain/wildcom-000@3.png",
+      "png_sha256": "3cd39313cede22eef11816fb3caadb87c24e9d6ad4d54a08dc4f00cbabb1b107",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        244,
+        4
+      ]
+    },
+    {
+      "key": "wildcom-000@4",
+      "source": "review/hd/b34-wild-terrain/wildcom-000@4.png",
+      "png_sha256": "3821142121253680e4b2cdab05c7583c9d6ab76dfbfa1d2239167ea059e91db7",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        324,
+        4
+      ]
+    },
+    {
+      "key": "wildcom-000@5",
+      "source": "review/hd/b34-wild-terrain/wildcom-000@5.png",
+      "png_sha256": "ae71519a0ec91e594e8a00aa606bd6654888b6acdb23af011ecc4ff1cbed8cab",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        404,
+        4
+      ]
+    },
+    {
+      "key": "wildcom-000@6",
+      "source": "review/hd/b34-wild-terrain/wildcom-000@6.png",
+      "png_sha256": "214bc5ab9a254276c2caa1659708acfaebe262848d33b2ba5bf5285ccb02922a",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        4,
+        84
+      ]
+    },
+    {
+      "key": "wildcom-000@7",
+      "source": "review/hd/b34-wild-terrain/wildcom-000@7.png",
+      "png_sha256": "e2e06c51e62fbf735d07bef825824c9334036ae34f8abd487e2dc36a136c2ab2",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        84,
+        84
+      ]
+    },
+    {
+      "key": "wildcom-000@8",
+      "source": "review/hd/b34-wild-terrain/wildcom-000@8.png",
+      "png_sha256": "a83be802e5e15f760d898f2490d07d1824e4ce7539a7d08aed211e0454a414d8",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        164,
+        84
+      ]
+    },
+    {
+      "key": "wildcom-000@9",
+      "source": "review/hd/b34-wild-terrain/wildcom-000@9.png",
+      "png_sha256": "896097be05fefc0dbf51419bff3cc88bdc2a147919c41600b744aa91f1aaccf4",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        244,
+        84
+      ]
+    },
+    {
+      "key": "wildcom-000@10",
+      "source": "review/hd/b34-wild-terrain/wildcom-000@10.png",
+      "png_sha256": "bd6305b6e49f68bbd3629ae95949a945922d52144a011b18215fc5f05c8fd8ef",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        324,
+        84
+      ]
+    },
+    {
+      "key": "wildcom-000@11",
+      "source": "review/hd/b34-wild-terrain/wildcom-000@11.png",
+      "png_sha256": "c0377df1d7ed652e1284607b0f060b2750c8becc9af13ed741ed293c7adee3e2",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        404,
+        84
+      ]
+    }
+  ],
+  "rights": "AI redraws within existing private HD patch scope; no original reference pixels"
+}
