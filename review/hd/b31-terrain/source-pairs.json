@@ -1,0 +1,182 @@
+[
+  {
+    "key": "dungcom-002@3",
+    "base": "dungcom-002@1",
+    "different_pixels": 12,
+    "bbox": [
+      0,
+      0,
+      24,
+      17
+    ],
+    "mask_sha256": "013479ab3880ec2548089c6a6b545b5d37ad59450574d8111e5fd38b9f01a8e0"
+  },
+  {
+    "key": "dungcom-002@9",
+    "base": "dungcom-002@5",
+    "different_pixels": 22,
+    "bbox": [
+      20,
+      1,
+      24,
+      24
+    ],
+    "mask_sha256": "fe7e42675ebfa04612491f8bea370b022b9e48a365e792accbef6b571c745d0c"
+  },
+  {
+    "key": "dungcom-002@11",
+    "base": "dungcom-002@3",
+    "different_pixels": 23,
+    "bbox": [
+      20,
+      0,
+      24,
+      24
+    ],
+    "mask_sha256": "7360ea2e39190d978b34a2817393aeff8544640075c05abe02af6716e4095841"
+  },
+  {
+    "key": "dungcom-002@12",
+    "base": "dungcom-002@4",
+    "different_pixels": 17,
+    "bbox": [
+      20,
+      0,
+      24,
+      18
+    ],
+    "mask_sha256": "192899a8c244f7acc675e20a2543908ff46129aaa6105f84bc7f3c5e52344ae6"
+  },
+  {
+    "key": "dungcom-002@13",
+    "base": "dungcom-002@0",
+    "different_pixels": 37,
+    "bbox": [
+      0,
+      1,
+      7,
+      24
+    ],
+    "mask_sha256": "465322fb1fa717ed076f21a365a650dacad15062119a2e97903fc2e547a24372"
+  },
+  {
+    "key": "dungcom-002@14",
+    "base": "dungcom-002@10",
+    "different_pixels": 17,
+    "bbox": [
+      20,
+      0,
+      24,
+      18
+    ],
+    "mask_sha256": "192899a8c244f7acc675e20a2543908ff46129aaa6105f84bc7f3c5e52344ae6"
+  },
+  {
+    "key": "dungcom-002@15",
+    "base": "dungcom-002@5",
+    "different_pixels": 96,
+    "bbox": [
+      0,
+      0,
+      5,
+      24
+    ],
+    "mask_sha256": "c3cd4ee3c76889aea168270a95c6853bdac7b1681f2084e3f4eedc09248f8ba4"
+  },
+  {
+    "key": "dungcom-002@16",
+    "base": "dungcom-002@10",
+    "different_pixels": 65,
+    "bbox": [
+      0,
+      0,
+      5,
+      15
+    ],
+    "mask_sha256": "54548f4d84df3c565f5016147e41d00daf5389a4b907b6248734e1797d19cedc"
+  },
+  {
+    "key": "dungcom-002@17",
+    "base": "dungcom-002@5",
+    "different_pixels": 27,
+    "bbox": [
+      19,
+      0,
+      24,
+      23
+    ],
+    "mask_sha256": "32e6726f893509b47031c0f78402f50bc53298de3dfc6bc612bd7a854adad606"
+  },
+  {
+    "key": "dungcom-002@18",
+    "base": "dungcom-002@2",
+    "different_pixels": 66,
+    "bbox": [
+      0,
+      0,
+      10,
+      24
+    ],
+    "mask_sha256": "09185f20dd8dbc9293b5e34175624638f170068ac94a30d65eca4c6ea1e8a3f8"
+  },
+  {
+    "key": "dungcom-002@19",
+    "base": "dungcom-002@17",
+    "different_pixels": 14,
+    "bbox": [
+      19,
+      0,
+      24,
+      4
+    ],
+    "mask_sha256": "3a5c18f719adf72d26fc259d2e17e8f14f74ab6875c83d9dbf9ee26b2680b082"
+  },
+  {
+    "key": "dungcom-002@20",
+    "base": "dungcom-002@7",
+    "different_pixels": 11,
+    "bbox": [
+      0,
+      0,
+      1,
+      17
+    ],
+    "mask_sha256": "53301a85c49ea7ede34519d840fd22c97940c433c0ebd36e3e1dc4ab11c965dc"
+  },
+  {
+    "key": "dungcom-002@21",
+    "base": "dungcom-002@6",
+    "different_pixels": 9,
+    "bbox": [
+      23,
+      0,
+      24,
+      14
+    ],
+    "mask_sha256": "4d883ceb5bfda248151d24354dd76daf44059070e10258a3a7c8bd0e0b85be52"
+  },
+  {
+    "key": "dungcom-002@23",
+    "base": "dungcom-002@10",
+    "different_pixels": 9,
+    "bbox": [
+      23,
+      0,
+      24,
+      14
+    ],
+    "mask_sha256": "4d883ceb5bfda248151d24354dd76daf44059070e10258a3a7c8bd0e0b85be52"
+  },
+  {
+    "key": "dungcom-002@24",
+    "base": "dungcom-002@11",
+    "different_pixels": 14,
+    "bbox": [
+      0,
+      0,
+      24,
+      17
+    ],
+    "mask_sha256": "402e2ea8251ab542f52f9bd1c3eee9563dc26cfb2628b111a5499719ffb367f5"
+  }
+]

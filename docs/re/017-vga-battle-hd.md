@@ -516,3 +516,42 @@ python3 -I tools/vga_battle_play_check.py \
   --baseline workplace/probe/g9-hd/b29-play-v1 --baseline-theme workplace/hd/theme-b30-previous \
   --terrain --added dungcom-003@0 dungcom-003@1 dungcom-003@2 dungcom-003@3 dungcom-003@4 dungcom-003@5 dungcom-003@6 dungcom-003@7 dungcom-003@8 dungcom-003@9 dungcom-003@10 dungcom-003@11 dungcom-003@12 dungcom-003@13 dungcom-003@14 dungcom-003@15 dungcom-003@16 dungcom-003@17 dungcom-003@18 dungcom-003@19 dungcom-003@20 dungcom-003@21 dungcom-003@23 dungcom-003@24 dungcom-003@25
 ```
+
+<a id="b31-terrain"></a>
+
+## b31 地下城第2組25張圖樣
+
+2026-10-30，Issue [#54](https://github.com/wicanr2/pools-of-darkness-cht/issues/54)，沿規格010既有來源色號、32–63色盤、combat版本1與三格戰場守衛。
+來源DUNGCOM.DAX的SHA-256為`90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f`，第2塊壓縮資料起點10319為原始DAX檔案byte offset。
+解碼SHA-256為`85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e`；各格完整索引及色盤由請求與私人審閱manifest固定。
+25份參考PNG逐像素等於原索引／色盤解出的RGB，與已完成組別沒有可直接沿用的相同RGB圖樣。
+第22格只有RGB(113,85,73)，保留原色、不增加HD候選，原始雜湊及排除原因見[excluded.json](../../review/hd/b31-terrain/excluded.json)。
+
+第0–21、23–25格共25張各由內建image_gen手繪一次，再以既有全幅LANCZOS製成72×72不透明RGBA。
+結構0.700–1.000、色相中位差最大約8.7度，正式尺寸逐件並列目視通過。中央小光點保留小尺寸、位置與黃紅配色；手繪差異不稱原版逐像素一致。
+原版對照、完整生成提示詞、參考圖與成品SHA見[b31審閱頁](../../review/hd/b31-terrain/README.md)及[manifest](../../review/hd/b31-terrain/manifest.json)。
+
+來源RGB已證實15組局部變體，各對差異9–96個來源像素。配對、點數、邊界框與遮罩SHA見[source-pairs.json](../../review/hd/b31-terrain/source-pairs.json)。
+沿既有明示來源遮罩外擴6個輸出像素，相同區域保留已接受AI基底，遮罩外差異0；所有成品仍獨立通過數值與目視門檻。
+此項僅為靜態素材重用，不以圖樣索引推論動畫時間，不注入原版圖像像素，也不新增產品格式。
+
+沿用c9f4001來源診斷，明示新增25張、地形總數100與第2組原色盤，25例6.219秒通過。
+逐張完整PNG、兩個同組鄰格、來源／色盤失配、孤立圖案、2倍／F12及輸入不變均通過；產品程式、字型、譯文及原始資料未改。
+Go編譯快取只留一次性容器內，收尾移除，不重建專案長期快取。來源診斷不替代正常遇怪證據。
+
+重用b30正常基準前，已核對同一正式程式、原始輸入、字型、文字及876檔主題，並核對b30固定收據與原始summary一致。
+候選另跑7400格／712250000步正常冷啟動DEMO，900格按空白、1800格按D，CPU、完整RAM、原版索引與色盤、127客體檔案及最終合成相同，閃現0。
+CPU紀錄、原始索引及客體檔案三種暫存副本負對照均拒絕；不改動原始輸入。本批只重跑正常HD路徑，不宣稱重跑四種模式或新增存讀檔。
+
+926檔已以完整目錄原子交換啟用，正式逐檔同受測候選，876檔回復副本留於`workplace/hd/theme-b31-previous`。
+固定[017-b31-runtime.json](017-b31-runtime.json)，本批範圍CONFORMED。第2、3、4、5組素材各25張，純色格維持原色；正常遭遇、其他圖組與動畫HD仍另計，不新增G6探索。
+輸入匯入、負對照、啟用及報告配方在`workplace/hd/out/b31/`，其SHA由固定報告綁定。
+
+在Docker內重查已保存的正常路徑：
+
+```sh
+python3 -I tools/vga_battle_play_check.py \
+  --out workplace/probe/g9-hd/b31-play-v1 --theme workplace/hd/theme-b31-stage \
+  --baseline workplace/probe/g9-hd/b30-play-v1 --baseline-theme workplace/hd/theme-b31-previous \
+  --terrain --added dungcom-002@0 dungcom-002@1 dungcom-002@2 dungcom-002@3 dungcom-002@4 dungcom-002@5 dungcom-002@6 dungcom-002@7 dungcom-002@8 dungcom-002@9 dungcom-002@10 dungcom-002@11 dungcom-002@12 dungcom-002@13 dungcom-002@14 dungcom-002@15 dungcom-002@16 dungcom-002@17 dungcom-002@18 dungcom-002@19 dungcom-002@20 dungcom-002@21 dungcom-002@23 dungcom-002@24 dungcom-002@25
+```

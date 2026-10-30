@@ -1,0 +1,1848 @@
+{
+  "batch": "b31",
+  "count": 25,
+  "private_only": true,
+  "request_manifest_sha256": "aefa305ee23dc3e2e527d62998dd6f91493b1296583cf53b23f08a2b54e6c510",
+  "items": [
+    {
+      "key": "dungcom-002@0",
+      "source": {
+        "key": "dungcom-002@0",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@0-1x.png",
+        "reference_3x": "dungcom-002@0-3x.png",
+        "reference_1x_sha256": "a89542a3277b2e9df52e3c82273022e64cdc4adfb2b1ee1926c3d724fbc5e192",
+        "reference_3x_sha256": "9dd429cf7735ca829031b4c339f1e3794ea865e656e14637680192e8d180ed8b",
+        "indexed": "dungcom-002@0.idx",
+        "indexed_sha256": "00274713c6b4cda437d963e045ebd050f97fee643b763319ecd6f5eab1ee6c4a",
+        "palette": "dungcom-002@0.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "dungcom-002@0",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-b23dcdcc-9cc8-457a-bbd7-e982f302086c.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Ground occupies upper-right. A broad tan diagonal beam descends from left edge y8/24 to bottom edge x20/24, with dark stone triangle below-left. The beam upper-left start MUST remain exactly at one-third image height, not at top. Upper 8 rows entirely plain brown floor.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "066509b87eeb6e484e35d373832e8d8991df597b449221ec8a21013b414a7e44",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@0-1x-view.png",
+            "sha256": "23647bbb4a121c4fd311c93b2c716978e48644eb2742314f9d39023d05c2fd40",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@0",
+        "raw": "dungcom-002@0-r1-raw.png",
+        "raw_sha256": "066509b87eeb6e484e35d373832e8d8991df597b449221ec8a21013b414a7e44",
+        "png": "dungcom-002@0.png",
+        "png_sha256": "dabe32c214647b1e7279c0062aa2cc10b6ed784f33fd6e4dd08083bf70704c0e",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@0",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 1.0,
+        "median_hue_difference_degrees": 1.721115537848604,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "dabe32c214647b1e7279c0062aa2cc10b6ed784f33fd6e4dd08083bf70704c0e"
+      },
+      "visual": {
+        "png_sha256": "dabe32c214647b1e7279c0062aa2cc10b6ed784f33fd6e4dd08083bf70704c0e",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@1",
+      "source": {
+        "key": "dungcom-002@1",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@1-1x.png",
+        "reference_3x": "dungcom-002@1-3x.png",
+        "reference_1x_sha256": "c98f7d437344dba32363dae64f823c6a887fa3c5ed5a3636952da547196881f5",
+        "reference_3x_sha256": "c9ae9d3a1784898c33900ba99873e3f08982d16023b615ffacbb71cbc1b30d5c",
+        "indexed": "dungcom-002@1.idx",
+        "indexed_sha256": "61f30122a4d46e11a96b6ea6c97dda90db80307cb867c61fb79b643922303175",
+        "palette": "dungcom-002@1.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "dungcom-002@1",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-72636285-3c80-4908-91da-75e0cd4b0d21.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Nearly whole tile is dark brown/burgundy mottled stone. Bottom-left plain brown floor triangle starts left y19/24 and ends bottom x8/24. Top-right tan corner starts top x17/24, becomes narrow vertical band at right, and dark stone meets this band on a diagonal through upper-right. Preserve tiny original corner highlights.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "632a6c06fb04457880461bc24ece4e4f35f9c1c64543ea76102ce92b185418cc",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@1-1x-view.png",
+            "sha256": "3a6e2f2e4d4d28525ee89288423b433df981813009eca2557862531b26ceb3d2",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@1",
+        "raw": "dungcom-002@1-r1-raw.png",
+        "raw_sha256": "632a6c06fb04457880461bc24ece4e4f35f9c1c64543ea76102ce92b185418cc",
+        "png": "dungcom-002@1.png",
+        "png_sha256": "236e9b0fc1dc87ea09a95d92ce8994e557d53c3ef6ceca1f29f3af7ce251c9ba",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@1",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.825,
+        "median_hue_difference_degrees": 8.166128720097964,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "236e9b0fc1dc87ea09a95d92ce8994e557d53c3ef6ceca1f29f3af7ce251c9ba"
+      },
+      "visual": {
+        "png_sha256": "236e9b0fc1dc87ea09a95d92ce8994e557d53c3ef6ceca1f29f3af7ce251c9ba",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@2",
+      "source": {
+        "key": "dungcom-002@2",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@2-1x.png",
+        "reference_3x": "dungcom-002@2-3x.png",
+        "reference_1x_sha256": "a0c5779cf5ed1000c23e745d83480a1a707bdbab03b1c5a1210e32ff5c09fbd0",
+        "reference_3x_sha256": "d666f1372160c2b283065b9a8152995aa9c56a3c6d0baf70156f66aed2cb7176",
+        "indexed": "dungcom-002@2.idx",
+        "indexed_sha256": "6211d64611d9b51fc76cb302c41fdedf5a0d4b19ab84423448466bcf3737a467",
+        "palette": "dungcom-002@2.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "dungcom-002@2",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-99c0444b-9bce-438d-83ef-101925fa08b9.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Tan horizontal beam across top at y0..5/24, dark brown narrow seam at row4/24. Below is dark brown stone divided by broad tan diagonal beam from left y6/24 to bottom x17/24. Small brown floor triangles on bottom-right and left top.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "d5234f98de47d4bd1e0b96229351d10e5ec8ead7d5fe114c2c734761ed2fbe41",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@2-1x-view.png",
+            "sha256": "3cc17c5e5563d5860fb7a93968d60129beed46bd84ceb1a7450323489364eb99",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@2",
+        "raw": "dungcom-002@2-r1-raw.png",
+        "raw_sha256": "d5234f98de47d4bd1e0b96229351d10e5ec8ead7d5fe114c2c734761ed2fbe41",
+        "png": "dungcom-002@2.png",
+        "png_sha256": "ea5f01149588caac381daf146e1153fd973906bc6d2304b0e202f2931068706c",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@2",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.725,
+        "median_hue_difference_degrees": 8.661916506805513,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "ea5f01149588caac381daf146e1153fd973906bc6d2304b0e202f2931068706c"
+      },
+      "visual": {
+        "png_sha256": "ea5f01149588caac381daf146e1153fd973906bc6d2304b0e202f2931068706c",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@3",
+      "source": {
+        "key": "dungcom-002@3",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@3-1x.png",
+        "reference_3x": "dungcom-002@3-3x.png",
+        "reference_1x_sha256": "fb2f9573e5f781fea1428ac4a6eb7c3c26ccbfbe5d412402273114a1167bead2",
+        "reference_3x_sha256": "c7055786afbd4f7b8362607567fb7b4251cab67f4279e87b7ad25506422c3092",
+        "indexed": "dungcom-002@3.idx",
+        "indexed_sha256": "d0675761051d987d1945714d5afbeeb9374f3186eab3de24b3e417f77c4b9721",
+        "palette": "dungcom-002@3.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "dungcom-002@1",
+          "mask": "dungcom-002@3-mask.png",
+          "mask_sha256": "013479ab3880ec2548089c6a6b545b5d37ad59450574d8111e5fd38b9f01a8e0",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "dungcom-002@3",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-fdaa32fe-4659-4982-bc94-50f42b54e985.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Nearly entire tile is dark burgundy-brown mottled stone, with diagonal plain brown ground wedge at bottom-left and tan angled top-right corner. Preserve its very small original edge differences from source1. Fine natural stone, no brick grid.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "96a27a2c768bae269968337250beee7322adf1023a561b0690d942317b19494b",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@3-1x-view.png",
+            "sha256": "1b19cdc5fea08422b03d427f6654563cefdf6b05f42c0c15ad87c0c01d34d30f",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@3",
+        "raw": "dungcom-002@3-r1-raw.png",
+        "raw_sha256": "96a27a2c768bae269968337250beee7322adf1023a561b0690d942317b19494b",
+        "png": "dungcom-002@3.png",
+        "png_sha256": "4731f148e31873d6ca3d36859c2e337002c89c06df7d685b8b98494e9ea7dea9",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@3",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8375,
+        "median_hue_difference_degrees": 8.071215954992418,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "4731f148e31873d6ca3d36859c2e337002c89c06df7d685b8b98494e9ea7dea9"
+      },
+      "visual": {
+        "png_sha256": "4731f148e31873d6ca3d36859c2e337002c89c06df7d685b8b98494e9ea7dea9",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@4",
+      "source": {
+        "key": "dungcom-002@4",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@4-1x.png",
+        "reference_3x": "dungcom-002@4-3x.png",
+        "reference_1x_sha256": "b6d4dbd5686f596bb03c35d858009bc5ce62a35e73a69482130faa53dbab7594",
+        "reference_3x_sha256": "4a80707719dbe7d0829a6d8ab11acc8d70e2b6689a83e061e94c2834abc84a52",
+        "indexed": "dungcom-002@4.idx",
+        "indexed_sha256": "bf950105070649e5c25c5f7ad13a66a2671003e8405502b474c5e20b3a0f4451",
+        "palette": "dungcom-002@4.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "dungcom-002@4",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-6141a40d-9b41-4d1a-b183-dd021eb277f4.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Mostly completely flat brown ground. Only upper-right dark mottled stone triangle: its diagonal boundary runs from top x6/24 to right y18/24. Thin dark burgundy bottom/right edge bordering that triangle.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "7544b911f4eca0c1db81280709486603c7b6d69ade3d2e623abf848484857d74",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@4-1x-view.png",
+            "sha256": "facc5310a0435b543e91b1157b9574d5f6a70c9c1e9cef679ec8f21d43903776",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@4",
+        "raw": "dungcom-002@4-r1-raw.png",
+        "raw_sha256": "7544b911f4eca0c1db81280709486603c7b6d69ade3d2e623abf848484857d74",
+        "png": "dungcom-002@4.png",
+        "png_sha256": "70b71fc2df96bdb26103457d27ab1e74bb1d9154ff9ae87328cd77a797274a75",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@4",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.875,
+        "median_hue_difference_degrees": 1.2502674316833566,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "70b71fc2df96bdb26103457d27ab1e74bb1d9154ff9ae87328cd77a797274a75"
+      },
+      "visual": {
+        "png_sha256": "70b71fc2df96bdb26103457d27ab1e74bb1d9154ff9ae87328cd77a797274a75",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@5",
+      "source": {
+        "key": "dungcom-002@5",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@5-1x.png",
+        "reference_3x": "dungcom-002@5-3x.png",
+        "reference_1x_sha256": "e736dee24a4cbd6c0590b96fa0ee88b87f20c50264eba4f9186c09746ebd9be8",
+        "reference_3x_sha256": "ba3feb61106f3c61ca375813a68952574636b5ddadc7cabf75769221988ed372",
+        "indexed": "dungcom-002@5.idx",
+        "indexed_sha256": "17e4744ccd71e2fe4ce18ddf0430a18617245eb4b7b12b69209e407300efdd20",
+        "palette": "dungcom-002@5.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "dungcom-002@5",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-d214aee7-db83-4312-9d63-a2a13712da92.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Dark mottled brown-burgundy stone below a tan horizontal beam occupying top rows0..4/24. Beam has narrow darker line at top and dark burgundy seam underneath at y4..5/24. Beam remains perfectly horizontal full width. Do not turn stone into masonry blocks.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "1772d21c55b90e66b8fbf07c2eb4db5820135aa9817d1549f5403b1fba04d381",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@5-1x-view.png",
+            "sha256": "56a0cc5081ca6aae64c98556950ce5876f3c34d8b718ef56f937f427e35d8437",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@5",
+        "raw": "dungcom-002@5-r1-raw.png",
+        "raw_sha256": "1772d21c55b90e66b8fbf07c2eb4db5820135aa9817d1549f5403b1fba04d381",
+        "png": "dungcom-002@5.png",
+        "png_sha256": "dd29385ef28f8c52407131fd9d452f1b48b9297bc8cdf97c8074612e639412c5",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@5",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8625,
+        "median_hue_difference_degrees": 8.566404190102677,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "dd29385ef28f8c52407131fd9d452f1b48b9297bc8cdf97c8074612e639412c5"
+      },
+      "visual": {
+        "png_sha256": "dd29385ef28f8c52407131fd9d452f1b48b9297bc8cdf97c8074612e639412c5",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@6",
+      "source": {
+        "key": "dungcom-002@6",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@6-1x.png",
+        "reference_3x": "dungcom-002@6-3x.png",
+        "reference_1x_sha256": "1a8ce4df13dbf6e49549739902c380709780dbc029b1b70d3e380a6de68fb37e",
+        "reference_3x_sha256": "da4d1aac1809bdec0a237e524823111d9836689afa9c3f41e550e99f5d3925fb",
+        "indexed": "dungcom-002@6.idx",
+        "indexed_sha256": "772bf608730fd61ad6b0cdac7eef1ffd2f3712171930ec9bc3d6e110e51b86b7",
+        "palette": "dungcom-002@6.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "dungcom-002@6",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-dfa1b1fb-b4f8-4f0f-9841-4e1e66829d5d.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Dark mottled brown-burgundy stone in upper-right and lower-left, separated by broad tan diagonal beam from left y5/24 to bottom x18/24. At y15/24 the upper-right stone ends along a horizontal dark seam leaving flat brown ground bottom-right. Keep angled tan beam exact.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "f08ed1f4309111d3bad54746fb7d32a2bc33c8a7fc2e7fa959349a27a5dd7f65",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@6-1x-view.png",
+            "sha256": "36651034b66ddfbe51df6362cf5976f910a9ef6b6662fda712cc9c53b5bd8fde",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@6",
+        "raw": "dungcom-002@6-r1-raw.png",
+        "raw_sha256": "f08ed1f4309111d3bad54746fb7d32a2bc33c8a7fc2e7fa959349a27a5dd7f65",
+        "png": "dungcom-002@6.png",
+        "png_sha256": "b2aecbc479507046b0dc06ba16f8b9d87c5747ffeab16899cd9798f70df00689",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@6",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.96,
+        "median_hue_difference_degrees": 6.099446080823334,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "b2aecbc479507046b0dc06ba16f8b9d87c5747ffeab16899cd9798f70df00689"
+      },
+      "visual": {
+        "png_sha256": "b2aecbc479507046b0dc06ba16f8b9d87c5747ffeab16899cd9798f70df00689",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@7",
+      "source": {
+        "key": "dungcom-002@7",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@7-1x.png",
+        "reference_3x": "dungcom-002@7-3x.png",
+        "reference_1x_sha256": "4bb2c205509191e7faf372b00f57f934aa9e29bb09ba3c51b69133c277d18b5c",
+        "reference_3x_sha256": "c18c8b2512dbf537b1aa926e26e8ffea687713434fb5392febb082daf66934c8",
+        "indexed": "dungcom-002@7.idx",
+        "indexed_sha256": "08fbc00aa0edf79ab7e7a6b0c62454664e1b36d71e72da39c3b6a32f068a1a4a",
+        "palette": "dungcom-002@7.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "dungcom-002@7",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-844064f3-ebe7-4520-96d6-9f2b29dff12b.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Upper-left rectangle roughly x0..15/24 and y0..17/24 is dark mottled stone. Plain brown floor bottom-left beginning y18/24. Rightmost region x15..24/24 contains vertical tall ochre-brown rectangular post: black burgundy border outer x15..24; medium brown frame x17..23; tan inset x18..22. Post extends to bottom without closing cap. Top cap at y1/24.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "917372afaac181c7d94e4861bef21c2d06ae6bc221581dc33b506b15fd6f95df",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@7-1x-view.png",
+            "sha256": "2a772cda9d625dae6eb14767e0442107b3963ad4d811f9d3665bfbfd9f4d3cc5",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@7",
+        "raw": "dungcom-002@7-r1-raw.png",
+        "raw_sha256": "917372afaac181c7d94e4861bef21c2d06ae6bc221581dc33b506b15fd6f95df",
+        "png": "dungcom-002@7.png",
+        "png_sha256": "a1d03b4216a610b5e0ba78986f171148c62543a679dc49f988327260f0bae281",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@7",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.9024390243902439,
+        "median_hue_difference_degrees": 4.504018926006152,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "a1d03b4216a610b5e0ba78986f171148c62543a679dc49f988327260f0bae281"
+      },
+      "visual": {
+        "png_sha256": "a1d03b4216a610b5e0ba78986f171148c62543a679dc49f988327260f0bae281",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@8",
+      "source": {
+        "key": "dungcom-002@8",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@8-1x.png",
+        "reference_3x": "dungcom-002@8-3x.png",
+        "reference_1x_sha256": "91cffb1168925685a13252f7ca87c03312528362f44c44a96a37e54ba6c79195",
+        "reference_3x_sha256": "21455573a08c35bc347687da88d339cd4c69ab06f88b9feed422313c916ae024",
+        "indexed": "dungcom-002@8.idx",
+        "indexed_sha256": "296a811f778d93d5e41e3b04701bb55a38976b001fae622eca27ba5af7db6a7b",
+        "palette": "dungcom-002@8.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "dungcom-002@8",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-4cf6c97a-5929-45c9-a59e-938a106966f9.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Mostly flat brown floor. Small upper-right mottled stone triangle from top x6/24 to x17/24 at y11/24. At right x17..24 a short tan inset rectangular post extends top to y10/24 with dark burgundy border. Flat brown ground below. Exact shape, no extra ground texture.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "37603edc16577f0faa977bce04c98c0df141f556e8cd05ba756bc108c98f78c9",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@8-1x-view.png",
+            "sha256": "e799d2f40fe1f8fcc4b38eb72500f18759e28f38ca354b0fe5045b1ad51550b6",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@8",
+        "raw": "dungcom-002@8-r1-raw.png",
+        "raw_sha256": "37603edc16577f0faa977bce04c98c0df141f556e8cd05ba756bc108c98f78c9",
+        "png": "dungcom-002@8.png",
+        "png_sha256": "1e980f411c6325d28fd1b26ad650b8cd57bea74fe1a342da8e476ffb8c43ed3c",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@8",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8846153846153846,
+        "median_hue_difference_degrees": 1.3636363636363669,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "1e980f411c6325d28fd1b26ad650b8cd57bea74fe1a342da8e476ffb8c43ed3c"
+      },
+      "visual": {
+        "png_sha256": "1e980f411c6325d28fd1b26ad650b8cd57bea74fe1a342da8e476ffb8c43ed3c",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@9",
+      "source": {
+        "key": "dungcom-002@9",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@9-1x.png",
+        "reference_3x": "dungcom-002@9-3x.png",
+        "reference_1x_sha256": "be86c2fd7d6fba1a7c00096c70c900fe971d7505433e7ab28af1b3f01016ebfa",
+        "reference_3x_sha256": "dcabadd9530a18982edb035fc7c115bc7ebd402027283c83bf40e8efd1ec6628",
+        "indexed": "dungcom-002@9.idx",
+        "indexed_sha256": "4162cb9d8edf4c2752df27da4e908a5314f0677556c873d0bd9923b94982a678",
+        "palette": "dungcom-002@9.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "dungcom-002@5",
+          "mask": "dungcom-002@9-mask.png",
+          "mask_sha256": "fe7e42675ebfa04612491f8bea370b022b9e48a365e792accbef6b571c745d0c",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "dungcom-002@9",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-2e401ac4-f5fe-444d-b765-57ebcd5939a7.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Tan horizontal beam full width at rows0..4/24, dark stone all below. At far right x20..23/24 tiny edge notch variants. Keep all beam and right-edge silhouettes at exact source coordinates.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "46161ffe99dfa97f72362519591b50c98d776630903b57628b6216807a58e86d",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@9-1x-view.png",
+            "sha256": "dc832d0e302f87271d2d5dfbf857a0da7beeeaa6ced82256d4341b480ef4e8d7",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@9",
+        "raw": "dungcom-002@9-r1-raw.png",
+        "raw_sha256": "46161ffe99dfa97f72362519591b50c98d776630903b57628b6216807a58e86d",
+        "png": "dungcom-002@9.png",
+        "png_sha256": "a6bed87bcddd430795e0c23ce0caad91c464c1294770628a63216d46386a8535",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@9",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8,
+        "median_hue_difference_degrees": 7.793032018538668,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "a6bed87bcddd430795e0c23ce0caad91c464c1294770628a63216d46386a8535"
+      },
+      "visual": {
+        "png_sha256": "a6bed87bcddd430795e0c23ce0caad91c464c1294770628a63216d46386a8535",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@10",
+      "source": {
+        "key": "dungcom-002@10",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@10-1x.png",
+        "reference_3x": "dungcom-002@10-3x.png",
+        "reference_1x_sha256": "44e3a543447377bcd302b129cce459a96e4a8b3f1f613697f8b982152b577cc1",
+        "reference_3x_sha256": "67d2193bda72d10770128dcab09e8c7eca39c2e6c59aa6b0ad13f913164a727b",
+        "indexed": "dungcom-002@10.idx",
+        "indexed_sha256": "c1dfd620772a3ab62eb534b3ce7c24307a8efa992f456da13ddc8e7c641c3c07",
+        "palette": "dungcom-002@10.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "dungcom-002@10",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-088d6d00-e3b3-440a-a736-2644efa01cd4.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Upper dark mottled brown-burgundy stone rectangle occupies rows0..13/24; thin almost-black burgundy horizontal edge at y14/24. Entire bottom rows15..23 are flat brown ground RGB113,85,73. Keep boundary at exact 15/24 height.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "7ca098357ff02740474b40db0f6f822e4ed95048920ba5970e4daaa3cc00d640",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@10-1x-view.png",
+            "sha256": "ef80af8a7ef231cb4ec662f32babb557e670d896cef6625fae2370d5cb57ea07",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@10",
+        "raw": "dungcom-002@10-r1-raw.png",
+        "raw_sha256": "7ca098357ff02740474b40db0f6f822e4ed95048920ba5970e4daaa3cc00d640",
+        "png": "dungcom-002@10.png",
+        "png_sha256": "ea6a9f7db3f4a64f7d68df2abf1e38ca245fea06470525d469f607af95ece337",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@10",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8375,
+        "median_hue_difference_degrees": 3.151528013582342,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "ea6a9f7db3f4a64f7d68df2abf1e38ca245fea06470525d469f607af95ece337"
+      },
+      "visual": {
+        "png_sha256": "ea6a9f7db3f4a64f7d68df2abf1e38ca245fea06470525d469f607af95ece337",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@11",
+      "source": {
+        "key": "dungcom-002@11",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@11-1x.png",
+        "reference_3x": "dungcom-002@11-3x.png",
+        "reference_1x_sha256": "716127034833e1e4499a567efb7d31a8c619d5431ef690ffb21cb96303f7aa0a",
+        "reference_3x_sha256": "a2708251b281a13182964855ac66e7ed69ddf312e2fe328803616ea5e7bbedd8",
+        "indexed": "dungcom-002@11.idx",
+        "indexed_sha256": "3c37d7c222a05fec0aca87ac7bea949f0377b70ef56c118d8435d6640bff2bbc",
+        "palette": "dungcom-002@11.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "dungcom-002@3",
+          "mask": "dungcom-002@11-mask.png",
+          "mask_sha256": "7360ea2e39190d978b34a2817393aeff8544640075c05abe02af6716e4095841",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "dungcom-002@11",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-745151a6-8457-42dd-adb7-8e24590dda5d.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Nearly full dark mottled brown-burgundy stone tile, tiny plain brown wedge bottom-left and tan angled cap at top-right corner, with narrow dark straight right-edge seam. Geometry and all edge notches exactly from reference.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "48c7ef310eb7ff365d4e4bd0790e3bbe771ca655ac7998f363b0cf3ad8661905",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@11-1x-view.png",
+            "sha256": "6828fe4ea93ba9fdb47f5d8d276ea87bd33ad8ab2a352768d09bfd0d63d87b77",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@11",
+        "raw": "dungcom-002@11-r1-raw.png",
+        "raw_sha256": "48c7ef310eb7ff365d4e4bd0790e3bbe771ca655ac7998f363b0cf3ad8661905",
+        "png": "dungcom-002@11.png",
+        "png_sha256": "514414d6ed900a2225fe3a1909c7fe6fcf238e4f90d403bb68c53e9367f6f334",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@11",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.7875,
+        "median_hue_difference_degrees": 7.970966255312613,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "514414d6ed900a2225fe3a1909c7fe6fcf238e4f90d403bb68c53e9367f6f334"
+      },
+      "visual": {
+        "png_sha256": "514414d6ed900a2225fe3a1909c7fe6fcf238e4f90d403bb68c53e9367f6f334",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@12",
+      "source": {
+        "key": "dungcom-002@12",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@12-1x.png",
+        "reference_3x": "dungcom-002@12-3x.png",
+        "reference_1x_sha256": "8a16714136b4f6f57ab80c121acc78d70725980645765e50591b9e501f59caf1",
+        "reference_3x_sha256": "943f9a8d99e42d6cbbe5a74910d48e133e60918aaa90851c6758023fe5523b17",
+        "indexed": "dungcom-002@12.idx",
+        "indexed_sha256": "62fcc711fbe3ecfa52cc920f6ceafdb02b705b428adb7eeadd93b4140ebec722",
+        "palette": "dungcom-002@12.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "dungcom-002@4",
+          "mask": "dungcom-002@12-mask.png",
+          "mask_sha256": "192899a8c244f7acc675e20a2543908ff46129aaa6105f84bc7f3c5e52344ae6",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "dungcom-002@12",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-d40ef9e9-9aa4-4114-98ae-4fe393458358.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Mostly completely flat brown ground. Only upper-right dark mottled stone triangle: its diagonal boundary runs from top x6/24 to right y18/24. Thin dark burgundy bottom/right edge bordering that triangle. Thin dark edge extends down right boundary; preserve tiny tan cuts at upper-right exactly.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "6356c0b5ea4eb5eed1fbbeac00aa87e6a90269fbb104bebeb6ef1859f9df6448",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@12-1x-view.png",
+            "sha256": "06bc8cbf2c8de05cea755b99b7fb1bff2371b918844c9ffc97813532c952d0b7",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@12",
+        "raw": "dungcom-002@12-r1-raw.png",
+        "raw_sha256": "6356c0b5ea4eb5eed1fbbeac00aa87e6a90269fbb104bebeb6ef1859f9df6448",
+        "png": "dungcom-002@12.png",
+        "png_sha256": "f47a663ca4c354b24ac6fd8da471b622435d8626ceaed3598d10a7f80fbde91e",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@12",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.775,
+        "median_hue_difference_degrees": 1.2643562682157832,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "f47a663ca4c354b24ac6fd8da471b622435d8626ceaed3598d10a7f80fbde91e"
+      },
+      "visual": {
+        "png_sha256": "f47a663ca4c354b24ac6fd8da471b622435d8626ceaed3598d10a7f80fbde91e",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@13",
+      "source": {
+        "key": "dungcom-002@13",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@13-1x.png",
+        "reference_3x": "dungcom-002@13-3x.png",
+        "reference_1x_sha256": "5aab175e1945666461286af3ecb4f29caa0b41def771fa3340e96a0f07382b88",
+        "reference_3x_sha256": "a3b06246b95cfbcb9d7fd90e8427bc1c39bf94d42d34d8db7ccd38cfca44a47d",
+        "indexed": "dungcom-002@13.idx",
+        "indexed_sha256": "dab25faf49519660238fd3b6068007fbab320174b40b05725bda00c26bdef579",
+        "palette": "dungcom-002@13.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "dungcom-002@0",
+          "mask": "dungcom-002@13-mask.png",
+          "mask_sha256": "465322fb1fa717ed076f21a365a650dacad15062119a2e97903fc2e547a24372",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "dungcom-002@13",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-619a5d2c-9693-46f9-8e56-b68add4d29f6.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Ground occupies upper-right. A broad tan diagonal beam descends from left edge y8/24 to bottom edge x20/24, with dark stone triangle below-left. The beam upper-left start MUST remain exactly at one-third image height, not at top. Upper 8 rows entirely plain brown floor. Preserve changed narrow dark edge along far-left source pixels.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "7477cda92cdaf9417253b1c9821a2dd2f979058517f77bf57c99d7fc5d77e57e",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@13-1x-view.png",
+            "sha256": "044321abf6bf2f0b586c3e1886d632fbb7a32909e95d74c9e276435bbd8861b3",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@13",
+        "raw": "dungcom-002@13-r1-raw.png",
+        "raw_sha256": "7477cda92cdaf9417253b1c9821a2dd2f979058517f77bf57c99d7fc5d77e57e",
+        "png": "dungcom-002@13.png",
+        "png_sha256": "4d171989efcb6386e08bfb3ef557fd2b06686c36e92b972b715d90ec5a3b32af",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@13",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.9710144927536232,
+        "median_hue_difference_degrees": 1.7626091856861041,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "4d171989efcb6386e08bfb3ef557fd2b06686c36e92b972b715d90ec5a3b32af"
+      },
+      "visual": {
+        "png_sha256": "4d171989efcb6386e08bfb3ef557fd2b06686c36e92b972b715d90ec5a3b32af",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@14",
+      "source": {
+        "key": "dungcom-002@14",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@14-1x.png",
+        "reference_3x": "dungcom-002@14-3x.png",
+        "reference_1x_sha256": "8d656a7d9a23c4ea5d56162dcd24310260e51bf64f998666f4427f38bb11b883",
+        "reference_3x_sha256": "7c3a3cf024396749274fec83abd18bb8d12972e8a6db4725c1e195a6dae77687",
+        "indexed": "dungcom-002@14.idx",
+        "indexed_sha256": "8e815520db70eb2156b81b9e77d6c593dbfc88f4b7c5b5b16f60439e376fc6f9",
+        "palette": "dungcom-002@14.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "dungcom-002@10",
+          "mask": "dungcom-002@14-mask.png",
+          "mask_sha256": "192899a8c244f7acc675e20a2543908ff46129aaa6105f84bc7f3c5e52344ae6",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "dungcom-002@14",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-c5885c55-f0be-43c3-9099-945ce658996e.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Upper dark mottled brown-burgundy stone rectangle occupies rows0..13/24; thin almost-black burgundy horizontal edge at y14/24. Entire bottom rows15..23 are flat brown ground RGB113,85,73. Keep boundary at exact 15/24 height. At right edge top area the dark stone boundary has small source notches, and runs down a small additional step at y15/24; preserve it.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "5b86261bd9eeba3011e90c791155baaeab8aa1c9a5290e7e5f0e4f36d0f59ffa",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@14-1x-view.png",
+            "sha256": "5d46b82990ceb962f90229161316fee39d35bda40a0c0024a43182aadbc495dd",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@14",
+        "raw": "dungcom-002@14-r1-raw.png",
+        "raw_sha256": "5b86261bd9eeba3011e90c791155baaeab8aa1c9a5290e7e5f0e4f36d0f59ffa",
+        "png": "dungcom-002@14.png",
+        "png_sha256": "1845012e51e894c3eb3018d02fc4bfb8a643cb09f481c17589de80eb42f87a37",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@14",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.85,
+        "median_hue_difference_degrees": 2.9997518815647997,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "1845012e51e894c3eb3018d02fc4bfb8a643cb09f481c17589de80eb42f87a37"
+      },
+      "visual": {
+        "png_sha256": "1845012e51e894c3eb3018d02fc4bfb8a643cb09f481c17589de80eb42f87a37",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@15",
+      "source": {
+        "key": "dungcom-002@15",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@15-1x.png",
+        "reference_3x": "dungcom-002@15-3x.png",
+        "reference_1x_sha256": "7b9082a7dba09203781cff3afa5d94721320acb45204111837e42139a59066f9",
+        "reference_3x_sha256": "daaec424a89688206fb5e4a0d0c8314b650d97a339bdea65fe3ff16215fe737f",
+        "indexed": "dungcom-002@15.idx",
+        "indexed_sha256": "215f9c0654dfa5cc7e0412d8f310e75b4e5bfc8d8462fa874bfd7928663b1f7f",
+        "palette": "dungcom-002@15.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "dungcom-002@5",
+          "mask": "dungcom-002@15-mask.png",
+          "mask_sha256": "c3cd4ee3c76889aea168270a95c6853bdac7b1681f2084e3f4eedc09248f8ba4",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "dungcom-002@15",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-bcd5954c-d0d7-43d7-bc0a-7f1306fe0e17.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Mostly dark mottled burgundy-brown stone, tan horizontal beam at top rows0..4/24. Left x0..4/24 is a vertical tan post starting y1/24 down to bottom, with narrow dark burgundy seam between post and stone, forming a right-angle upper-left join. Preserve tiny angled cap at x0..3,y0..3.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "1f921394f593761e527396910187630afa82c4dead4541a418178220c0ba2f04",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@15-1x-view.png",
+            "sha256": "550b7a92e1bdf5d9ca770e2b90a5ebe6a2f13fa85b0275eee96e58fc133ee43f",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@15",
+        "raw": "dungcom-002@15-r1-raw.png",
+        "raw_sha256": "1f921394f593761e527396910187630afa82c4dead4541a418178220c0ba2f04",
+        "png": "dungcom-002@15.png",
+        "png_sha256": "e3b99a9af8cc0525812c9107e5708b2aacf9ac2b60616fb0450972ef8d607dfb",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@15",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.7391304347826086,
+        "median_hue_difference_degrees": 6.712338691196351,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "e3b99a9af8cc0525812c9107e5708b2aacf9ac2b60616fb0450972ef8d607dfb"
+      },
+      "visual": {
+        "png_sha256": "e3b99a9af8cc0525812c9107e5708b2aacf9ac2b60616fb0450972ef8d607dfb",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@16",
+      "source": {
+        "key": "dungcom-002@16",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@16-1x.png",
+        "reference_3x": "dungcom-002@16-3x.png",
+        "reference_1x_sha256": "6e20dc55aa075d13b4d99c762c7dda4ea0711db81b7f2ee46605d25c40245316",
+        "reference_3x_sha256": "e55a6af7777109a992cc8bfd6f9a5ad4ec59dd6561ce3eada7db42685e999956",
+        "indexed": "dungcom-002@16.idx",
+        "indexed_sha256": "ca6ce17d8df36c2bef8501e01bceeec311604c25a80df82acacb4a06cb0c28cb",
+        "palette": "dungcom-002@16.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "dungcom-002@10",
+          "mask": "dungcom-002@16-mask.png",
+          "mask_sha256": "54548f4d84df3c565f5016147e41d00daf5389a4b907b6248734e1797d19cedc",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "dungcom-002@16",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-1d75f98c-ccd0-4341-ae00-f644c4a51f08.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Upper rectangle of dark mottled stone extends to y15/24; bottom is flat brown ground. At left x0..4/24 tan vertical strip begins top and ends at y10/24 with angled bottom-right edge, creating exact left step shown. Dark burgundy border under stone.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "b06de140c3e14ec38a34941c9a0a053708f6ca4483479d66f90b5a37bae3e793",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@16-1x-view.png",
+            "sha256": "edadc0e9f8790b055a87acdff53539a4649d0a19f9a7f3c2975abc4d1420e878",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@16",
+        "raw": "dungcom-002@16-r1-raw.png",
+        "raw_sha256": "b06de140c3e14ec38a34941c9a0a053708f6ca4483479d66f90b5a37bae3e793",
+        "png": "dungcom-002@16.png",
+        "png_sha256": "716c1ffef2d0fd18c0efd9958ea3e861aa25fed7d0d23e13a7f281648bdad89f",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@16",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.9,
+        "median_hue_difference_degrees": 2.086011582031704,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "716c1ffef2d0fd18c0efd9958ea3e861aa25fed7d0d23e13a7f281648bdad89f"
+      },
+      "visual": {
+        "png_sha256": "716c1ffef2d0fd18c0efd9958ea3e861aa25fed7d0d23e13a7f281648bdad89f",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@17",
+      "source": {
+        "key": "dungcom-002@17",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@17-1x.png",
+        "reference_3x": "dungcom-002@17-3x.png",
+        "reference_1x_sha256": "bd88ae1e4fe72221ad57f77498f7060ec63c3c133cdf847878e784ca96783243",
+        "reference_3x_sha256": "f4f4acb3f5a0b11211d29b50f45044e3333be1cd4e89e1eba3ea12ddc791f125",
+        "indexed": "dungcom-002@17.idx",
+        "indexed_sha256": "87737c33a9a68633c5d737a461a6897b1739aeb2fb7081494a99bb070fd53ab4",
+        "palette": "dungcom-002@17.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "dungcom-002@5",
+          "mask": "dungcom-002@17-mask.png",
+          "mask_sha256": "32e6726f893509b47031c0f78402f50bc53298de3dfc6bc612bd7a854adad606",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "dungcom-002@17",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-ab6ae38f-6f9e-49c7-97fc-ab2dda09afa5.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Dark mottled brown-burgundy stone below a tan horizontal beam occupying top rows0..4/24. Beam has narrow darker line at top and dark burgundy seam underneath at y4..5/24. Beam remains perfectly horizontal full width. Do not turn stone into masonry blocks. Top-right beam has sloping cap from x20/24,y0 to right,y4/24. Exact small edge change only.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "69ea22b61a6ccc1e10f5eec2565c3badf5974c93c44069cd1399e697b492c5fe",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@17-1x-view.png",
+            "sha256": "ad33edbf43762af150df4a970e29fd26200d58a78745d5e43fbea0f55a7264b6",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@17",
+        "raw": "dungcom-002@17-r1-raw.png",
+        "raw_sha256": "69ea22b61a6ccc1e10f5eec2565c3badf5974c93c44069cd1399e697b492c5fe",
+        "png": "dungcom-002@17.png",
+        "png_sha256": "a900738b40e0049c10f47916180a8ddbfd907ed8aa3014214c4ef1e3549e3554",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@17",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8625,
+        "median_hue_difference_degrees": 7.893750000000001,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "a900738b40e0049c10f47916180a8ddbfd907ed8aa3014214c4ef1e3549e3554"
+      },
+      "visual": {
+        "png_sha256": "a900738b40e0049c10f47916180a8ddbfd907ed8aa3014214c4ef1e3549e3554",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@18",
+      "source": {
+        "key": "dungcom-002@18",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@18-1x.png",
+        "reference_3x": "dungcom-002@18-3x.png",
+        "reference_1x_sha256": "7a922c8305c11651785cd427a9b5fd31e0d4865b2bc9b2e53f8e69baf70f73a5",
+        "reference_3x_sha256": "67eb033711e7856a9d1b4bb8b9a83496a2e83f7130e69b180de113283f9ac306",
+        "indexed": "dungcom-002@18.idx",
+        "indexed_sha256": "69220d739bf04e91f0a57fb9eb17ead74ec3789c0be11ff1122d10bd975a24c5",
+        "palette": "dungcom-002@18.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "dungcom-002@2",
+          "mask": "dungcom-002@18-mask.png",
+          "mask_sha256": "09185f20dd8dbc9293b5e34175624638f170068ac94a30d65eca4c6ea1e8a3f8",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "dungcom-002@18",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-6657a964-dd98-4584-ac7d-5ce355537236.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Dark mottled stone upper-right and lower-left; tan diagonal beam from left y6/24 to bottom x17/24. A horizontal tan beam across top from x8/24 to right, rows0..4/24. At left y5/24 both beams form a pointed chevron corner. A little plain brown floor wedge in upper-left above the tan diagonal. Preserve exact connected tan geometry.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "ba9d72ca2d016648ea58ff6c8bf8f3477a426c362ab91cb212b34c614c3cb1cd",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@18-1x-view.png",
+            "sha256": "cea4086b4fcad2c380ea6721eeb13c7dc904eb649dcb9b779f8372b46bf96d66",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@18",
+        "raw": "dungcom-002@18-r1-raw.png",
+        "raw_sha256": "ba9d72ca2d016648ea58ff6c8bf8f3477a426c362ab91cb212b34c614c3cb1cd",
+        "png": "dungcom-002@18.png",
+        "png_sha256": "30b15449e14de16e3a38e4c9d28cf20b37ae0ff8b23b9b37b7fb0b64b3a54ad8",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@18",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.7,
+        "median_hue_difference_degrees": 7.4724563108124755,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "30b15449e14de16e3a38e4c9d28cf20b37ae0ff8b23b9b37b7fb0b64b3a54ad8"
+      },
+      "visual": {
+        "png_sha256": "30b15449e14de16e3a38e4c9d28cf20b37ae0ff8b23b9b37b7fb0b64b3a54ad8",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@19",
+      "source": {
+        "key": "dungcom-002@19",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@19-1x.png",
+        "reference_3x": "dungcom-002@19-3x.png",
+        "reference_1x_sha256": "84c755c38b0b569cecfe4898e68be4915933cecc6e014be6b6aad995d7eeb6c4",
+        "reference_3x_sha256": "16e37cfa1f454e8c429b3aab42eb40185967b2457d6f3f214c2df5dfa00f3840",
+        "indexed": "dungcom-002@19.idx",
+        "indexed_sha256": "38ae663aca42be0a18992955b782bc1eab029d7d289b2ea4771d3ad4ea43165e",
+        "palette": "dungcom-002@19.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "dungcom-002@17",
+          "mask": "dungcom-002@19-mask.png",
+          "mask_sha256": "3a5c18f719adf72d26fc259d2e17e8f14f74ab6875c83d9dbf9ee26b2680b082",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "dungcom-002@19",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-d2e84f81-0b98-4698-9c3a-572138e322b2.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Dark mottled brown-burgundy stone below a tan horizontal beam occupying top rows0..4/24. Beam has narrow darker line at top and dark burgundy seam underneath at y4..5/24. Beam remains perfectly horizontal full width. Do not turn stone into masonry blocks. The horizontal tan beam touches all the way to right edge, no plain brown upper-right cap. Preserve dark brown edge profile source.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "03669aba0749101f3f84ee5b56536c1b69bfbab00912d08c704cd89cab2745a5",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@19-1x-view.png",
+            "sha256": "e7cf64ff00ee858afa4f176a441bcf1d9a6f55726e638f3e52904357932e7806",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@19",
+        "raw": "dungcom-002@19-r1-raw.png",
+        "raw_sha256": "03669aba0749101f3f84ee5b56536c1b69bfbab00912d08c704cd89cab2745a5",
+        "png": "dungcom-002@19.png",
+        "png_sha256": "11822c764b51e41efced951d848b9bb5def47cf696b645da0d83ca9572547e64",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@19",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.9125,
+        "median_hue_difference_degrees": 8.110320911644987,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "11822c764b51e41efced951d848b9bb5def47cf696b645da0d83ca9572547e64"
+      },
+      "visual": {
+        "png_sha256": "11822c764b51e41efced951d848b9bb5def47cf696b645da0d83ca9572547e64",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@20",
+      "source": {
+        "key": "dungcom-002@20",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@20-1x.png",
+        "reference_3x": "dungcom-002@20-3x.png",
+        "reference_1x_sha256": "2ab6336874eb1551a21be891a9689bb751753c6434f49d1b3335fde4b38d948a",
+        "reference_3x_sha256": "ffb8b4be2b157c6955a8f1398ae545e46fb1713a51d4d4e202186301ee4949eb",
+        "indexed": "dungcom-002@20.idx",
+        "indexed_sha256": "8e8ac7fee2c1a7e8e76088bfd02b95c855c9e91575c38d3ea4a28f2e8dbc99bd",
+        "palette": "dungcom-002@20.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "dungcom-002@7",
+          "mask": "dungcom-002@20-mask.png",
+          "mask_sha256": "53301a85c49ea7ede34519d840fd22c97940c433c0ebd36e3e1dc4ab11c965dc",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "dungcom-002@20",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-9acdb1d4-c269-4f91-accc-da4d0ec08ce5.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Upper-left rectangle roughly x0..15/24 and y0..17/24 is dark mottled stone. Plain brown floor bottom-left beginning y18/24. Rightmost region x15..24/24 contains vertical tall ochre-brown rectangular post: black burgundy border outer x15..24; medium brown frame x17..23; tan inset x18..22. Post extends to bottom without closing cap. Top cap at y1/24. Tiny leftmost edge changes only from reference7; keep broad stone region and tall ochre rectangular right inset same.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "6590782e1cc4851ed29fafe97a79d0d40af5bb5d02bb9570f249b3793331207a",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@20-1x-view.png",
+            "sha256": "2c3468a049892315ada9c38c1dc7bed7dc808ccbd7721c132f3a10246c8947c0",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@20",
+        "raw": "dungcom-002@20-r1-raw.png",
+        "raw_sha256": "6590782e1cc4851ed29fafe97a79d0d40af5bb5d02bb9570f249b3793331207a",
+        "png": "dungcom-002@20.png",
+        "png_sha256": "4ec73153af81d27317947da5516662ae52dc7f4feab39218ce1a0217090db5cb",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@20",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.925,
+        "median_hue_difference_degrees": 4.259085604070993,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "4ec73153af81d27317947da5516662ae52dc7f4feab39218ce1a0217090db5cb"
+      },
+      "visual": {
+        "png_sha256": "4ec73153af81d27317947da5516662ae52dc7f4feab39218ce1a0217090db5cb",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@21",
+      "source": {
+        "key": "dungcom-002@21",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@21-1x.png",
+        "reference_3x": "dungcom-002@21-3x.png",
+        "reference_1x_sha256": "b4b3558610027e14fa9b686a79ef66c0dedc968f2e662207634dfd11353ab817",
+        "reference_3x_sha256": "b224ad96559cf9a6f7ab8c4dc49798e23c7dd2ed22d93d7dd6f630468bd5973a",
+        "indexed": "dungcom-002@21.idx",
+        "indexed_sha256": "30a264881651bdaea39b0c21b71a4eeddccd731fc9637de48e2125b96ba332f7",
+        "palette": "dungcom-002@21.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "dungcom-002@6",
+          "mask": "dungcom-002@21-mask.png",
+          "mask_sha256": "4d883ceb5bfda248151d24354dd76daf44059070e10258a3a7c8bd0e0b85be52",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "dungcom-002@21",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-62682375-5dfa-4398-b2a9-4143db654166.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Dark mottled brown-burgundy stone in upper-right and lower-left, separated by broad tan diagonal beam from left y5/24 to bottom x18/24. At y15/24 the upper-right stone ends along a horizontal dark seam leaving flat brown ground bottom-right. Keep angled tan beam exact. Preserve the tiny rightmost edge variations and exact stone-floor boundary.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "b2bfdb1aca6efce45f43a0cb5b7e2c4ad527f79a33d84a5c52ee1e0ded900fce",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@21-1x-view.png",
+            "sha256": "741ed021805f59b7a9be4d38272238f814dc57b9b797d1c8083d151ae51508c0",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@21",
+        "raw": "dungcom-002@21-r1-raw.png",
+        "raw_sha256": "b2bfdb1aca6efce45f43a0cb5b7e2c4ad527f79a33d84a5c52ee1e0ded900fce",
+        "png": "dungcom-002@21.png",
+        "png_sha256": "28d406484b38ffd61bd2172735a0a4548bbf043a915842b1db54003b3a37f685",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@21",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.96,
+        "median_hue_difference_degrees": 6.1878973600990825,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "28d406484b38ffd61bd2172735a0a4548bbf043a915842b1db54003b3a37f685"
+      },
+      "visual": {
+        "png_sha256": "28d406484b38ffd61bd2172735a0a4548bbf043a915842b1db54003b3a37f685",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@23",
+      "source": {
+        "key": "dungcom-002@23",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@23-1x.png",
+        "reference_3x": "dungcom-002@23-3x.png",
+        "reference_1x_sha256": "47cef4f3b82559e0e50328b0d0ed1e9fcf6da0577a19b317396d42bff896bd15",
+        "reference_3x_sha256": "0b6f7c388a79784f49067345c957d3b0fbfc2f3fbcf8964b0ae75b1d6ae8e569",
+        "indexed": "dungcom-002@23.idx",
+        "indexed_sha256": "5faec4d62437e345095398327cf1ea722f9921666f363432cbadbfd195eeaccf",
+        "palette": "dungcom-002@23.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "dungcom-002@10",
+          "mask": "dungcom-002@23-mask.png",
+          "mask_sha256": "4d883ceb5bfda248151d24354dd76daf44059070e10258a3a7c8bd0e0b85be52",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "dungcom-002@23",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-df44b116-24fc-479d-bce1-226d2bfc309a.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Upper dark mottled brown-burgundy stone rectangle occupies rows0..13/24; thin almost-black burgundy horizontal edge at y14/24. Entire bottom rows15..23 are flat brown ground RGB113,85,73. Keep boundary at exact 15/24 height. Dark stone joins smoothly to right image edge above the floor; do not add right-side pillar or steps.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "9257f7f64d5b83335108a990f17193223bbba832c0b437cb03347e0f14e26079",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@23-1x-view.png",
+            "sha256": "ccab171f48106f2af5ad3ec52dcb1af493f8b5e6b9f3ba7ec32e8f043b941792",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@23",
+        "raw": "dungcom-002@23-r1-raw.png",
+        "raw_sha256": "9257f7f64d5b83335108a990f17193223bbba832c0b437cb03347e0f14e26079",
+        "png": "dungcom-002@23.png",
+        "png_sha256": "936cbc2634dc65fa2d1623184993557859b50825ce6769913828533ee5150587",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@23",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8125,
+        "median_hue_difference_degrees": 3.163853028798408,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "936cbc2634dc65fa2d1623184993557859b50825ce6769913828533ee5150587"
+      },
+      "visual": {
+        "png_sha256": "936cbc2634dc65fa2d1623184993557859b50825ce6769913828533ee5150587",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@24",
+      "source": {
+        "key": "dungcom-002@24",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@24-1x.png",
+        "reference_3x": "dungcom-002@24-3x.png",
+        "reference_1x_sha256": "2986533be6600f66d8270c9886b86fb863d8111428998d8a31f480885a884679",
+        "reference_3x_sha256": "db225c4e2f0d26426c7095a1a19d19ef165c8b180b8d2c5ac4e4bb27205434d4",
+        "indexed": "dungcom-002@24.idx",
+        "indexed_sha256": "7d9c514352166a9a6217300b256a451ae33ba9c82aabefe5511dc8beafc780f6",
+        "palette": "dungcom-002@24.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames.",
+        "animation": {
+          "base": "dungcom-002@11",
+          "mask": "dungcom-002@24-mask.png",
+          "mask_sha256": "402e2ea8251ab542f52f9bd1c3eee9563dc26cfb2628b111a5499719ffb367f5",
+          "meaning": "source state difference; no timing claim"
+        }
+      },
+      "generation": {
+        "key": "dungcom-002@24",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-edbe3c75-7f99-439c-92b3-e0c41f9984cd.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Nearly full dark mottled brown-burgundy stone tile, tiny plain brown wedge bottom-left and tan angled cap at top-right corner, with narrow dark straight right-edge seam. Geometry and all edge notches exactly from reference. Top-right tan cap has slightly different tiny notches, and leftmost edge changes. Exact reference shapes.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "e6e38cc37abac2000640de243ccd819152a41fdfc9279331b5e373afbe0adb43",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@24-1x-view.png",
+            "sha256": "2beb03c776c12a27162b18d69cd7b43dac902dd1252de91145fb34532e8ae7a7",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@24",
+        "raw": "dungcom-002@24-r1-raw.png",
+        "raw_sha256": "e6e38cc37abac2000640de243ccd819152a41fdfc9279331b5e373afbe0adb43",
+        "png": "dungcom-002@24.png",
+        "png_sha256": "7e9ae6d5b19e1857b71a86f81de99bfbfa729e5f98d2a32daaf4e6421685be16",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@24",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8,
+        "median_hue_difference_degrees": 7.776327151609854,
+        "outside_mask_difference": 0,
+        "target_met": true,
+        "png_sha256": "7e9ae6d5b19e1857b71a86f81de99bfbfa729e5f98d2a32daaf4e6421685be16"
+      },
+      "visual": {
+        "png_sha256": "7e9ae6d5b19e1857b71a86f81de99bfbfa729e5f98d2a32daaf4e6421685be16",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "dungcom-002@25",
+      "source": {
+        "key": "dungcom-002@25",
+        "source_file": "DUNGCOM.DAX",
+        "source_file_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "block": 2,
+        "packed_file_offset": 10319,
+        "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "dungcom-002@25-1x.png",
+        "reference_3x": "dungcom-002@25-3x.png",
+        "reference_1x_sha256": "db459846935f15ce4ed9652063580c7175e1af4583dc97ce30ad8b334c06c06d",
+        "reference_3x_sha256": "45c0b8a43713b7f2f0982970ae009eed6177c523718550f17b4d67b5a46b30a6",
+        "indexed": "dungcom-002@25.idx",
+        "indexed_sha256": "153852d010063313fae2c77259d523ab88b5e6adf0cd2dc6de5d2e52dcb2dcc4",
+        "palette": "dungcom-002@25.pal",
+        "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "dungcom-002@25",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-1ad7b2e4-c9c3-4aa1-a66c-7f18782bdc4b.png",
+        "prompt": "Edit the supplied reference into a hand-painted classic fantasy CRPG terrain tile. The blocky source is only a layout/palette guide, NOT a pixel-art style. Rich fine brush texture, clean painted silhouettes, matte old stone and brown wooden material, 1990s fantasy illustration Style B. Square edge-to-edge flat tile, orthographic, no perspective, no scene, no borders, no text, no objects added. Preserve ALL major boundaries at EXACT relative coordinates; do not zoom, crop, rotate, or reposition. Brown-taupe flat ground RGB113,85,73; dark burgundy-brown speckled stone infill, tan ochre structural bands. Keep broad uniform floor regions quiet and flat; stone texture may be painterly but must retain original dark/light color distribution. Produce smooth high resolution painting, final displayed at72x72. Almost entire image is flat uniform muted brown ground RGB113,85,73. At exact center x11..12/24,y11..12/24 there is one tiny plus-shaped yellow-white glowing point with red-orange tips, total footprint about5x5 original pixels. Keep the point SMALL, same exact center and footprint. No dramatic rays, no lens flare, no ornaments or surrounding speckles. Smooth painted glow within existing original point.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "614bf512e88dc1503633ba4da80f1eb6ad3f065a82f4660ff0d203dd864899c1",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b31/dungcom-002@25-1x-view.png",
+            "sha256": "78beca234e1fdde74b47c3e858c472e44aa4112da6a975178d1362123344aa83",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "dungcom-002@25",
+        "raw": "dungcom-002@25-r1-raw.png",
+        "raw_sha256": "614bf512e88dc1503633ba4da80f1eb6ad3f065a82f4660ff0d203dd864899c1",
+        "png": "dungcom-002@25.png",
+        "png_sha256": "588828b357bbae6e9f38150c420591c92fd080402202733f7025e55e54a717b2",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "dungcom-002@25",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.8307692307692308,
+        "median_hue_difference_degrees": 1.2609699769053115,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "588828b357bbae6e9f38150c420591c92fd080402202733f7025e55e54a717b2"
+      },
+      "visual": {
+        "png_sha256": "588828b357bbae6e9f38150c420591c92fd080402202733f7025e55e54a717b2",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    }
+  ]
+}

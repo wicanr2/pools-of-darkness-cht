@@ -1,0 +1,476 @@
+{
+  "date": "2026-10-30",
+  "issue": 54,
+  "status": "CONFORMED within stated scope",
+  "scope": "DUNGCOM第2塊25個條件式圖樣；純色格保留；來源診斷與正常DEMO增量驗收，未觀測遭遇仍未知。",
+  "product_source_commit": "570f8a3c14827cdc6fed043f2bfa00bb1f729f77",
+  "fixture_source_commit": "c9f4001a13c5e2e4f1f259cf846144741d556e16",
+  "binary_sha256": "faa68b446a59b8a96273617f9f3d5a75f3a7b694c3a1d8d3b516af5427279c82",
+  "unchanged_program": true,
+  "source": {
+    "file": "DUNGCOM.DAX",
+    "archive_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+    "address_space": "original DAX file byte offset",
+    "packed_file_offset": 10319,
+    "block": 2,
+    "frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      23,
+      24,
+      25
+    ],
+    "palette_interval": [
+      32,
+      64
+    ],
+    "indexed_and_palette_sha256": {
+      "dungcom-002@0": [
+        "00274713c6b4cda437d963e045ebd050f97fee643b763319ecd6f5eab1ee6c4a",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@1": [
+        "61f30122a4d46e11a96b6ea6c97dda90db80307cb867c61fb79b643922303175",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@2": [
+        "6211d64611d9b51fc76cb302c41fdedf5a0d4b19ab84423448466bcf3737a467",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@3": [
+        "d0675761051d987d1945714d5afbeeb9374f3186eab3de24b3e417f77c4b9721",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@4": [
+        "bf950105070649e5c25c5f7ad13a66a2671003e8405502b474c5e20b3a0f4451",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@5": [
+        "17e4744ccd71e2fe4ce18ddf0430a18617245eb4b7b12b69209e407300efdd20",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@6": [
+        "772bf608730fd61ad6b0cdac7eef1ffd2f3712171930ec9bc3d6e110e51b86b7",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@7": [
+        "08fbc00aa0edf79ab7e7a6b0c62454664e1b36d71e72da39c3b6a32f068a1a4a",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@8": [
+        "296a811f778d93d5e41e3b04701bb55a38976b001fae622eca27ba5af7db6a7b",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@9": [
+        "4162cb9d8edf4c2752df27da4e908a5314f0677556c873d0bd9923b94982a678",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@10": [
+        "c1dfd620772a3ab62eb534b3ce7c24307a8efa992f456da13ddc8e7c641c3c07",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@11": [
+        "3c37d7c222a05fec0aca87ac7bea949f0377b70ef56c118d8435d6640bff2bbc",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@12": [
+        "62fcc711fbe3ecfa52cc920f6ceafdb02b705b428adb7eeadd93b4140ebec722",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@13": [
+        "dab25faf49519660238fd3b6068007fbab320174b40b05725bda00c26bdef579",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@14": [
+        "8e815520db70eb2156b81b9e77d6c593dbfc88f4b7c5b5b16f60439e376fc6f9",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@15": [
+        "215f9c0654dfa5cc7e0412d8f310e75b4e5bfc8d8462fa874bfd7928663b1f7f",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@16": [
+        "ca6ce17d8df36c2bef8501e01bceeec311604c25a80df82acacb4a06cb0c28cb",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@17": [
+        "87737c33a9a68633c5d737a461a6897b1739aeb2fb7081494a99bb070fd53ab4",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@18": [
+        "69220d739bf04e91f0a57fb9eb17ead74ec3789c0be11ff1122d10bd975a24c5",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@19": [
+        "38ae663aca42be0a18992955b782bc1eab029d7d289b2ea4771d3ad4ea43165e",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@20": [
+        "8e8ac7fee2c1a7e8e76088bfd02b95c855c9e91575c38d3ea4a28f2e8dbc99bd",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@21": [
+        "30a264881651bdaea39b0c21b71a4eeddccd731fc9637de48e2125b96ba332f7",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@23": [
+        "5faec4d62437e345095398327cf1ea722f9921666f363432cbadbfd195eeaccf",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@24": [
+        "7d9c514352166a9a6217300b256a451ae33ba9c82aabefe5511dc8beafc780f6",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ],
+      "dungcom-002@25": [
+        "153852d010063313fae2c77259d523ab88b5e6adf0cd2dc6de5d2e52dcb2dcc4",
+        "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93"
+      ]
+    }
+  },
+  "materials": {
+    "count": 25,
+    "generation_attempts": 25,
+    "generator": "built-in image_gen",
+    "style": "approved B",
+    "size": [
+      72,
+      72
+    ],
+    "all_opaque_rgba": true,
+    "structural_min": 0.7,
+    "structural_max": 1.0,
+    "maximum_hue_difference_degrees": 8.661916506805513,
+    "hue_metric_note": "色相是配色量尺，不表示RGB逐像素一致。",
+    "review": "review/hd/b31-terrain/README.md",
+    "review_manifest_sha256": "2a8cc35c4315b0f4a0b691104186ad7dddd51c9604ef9bfb3438ed0a545491c5",
+    "request_sha256": "aefa305ee23dc3e2e527d62998dd6f91493b1296583cf53b23f08a2b54e6c510",
+    "validation_sha256": "93f75fe95ad0995d11dd1c00999a92550ec6943bb8806595fe34c42edf79d604",
+    "visual_sha256": "68b130e37f7760384614943e48c30c6f2a671302f221b6ee68d69757fc18618d",
+    "preview_sha256": "d53f529358359be65f921500945bbef668963f99e65838eb59eda8990ef99dff"
+  },
+  "static_variants": {
+    "count": 15,
+    "pairs": [
+      {
+        "key": "dungcom-002@3",
+        "base": "dungcom-002@1",
+        "different_pixels": 12,
+        "bbox": [
+          0,
+          0,
+          24,
+          17
+        ],
+        "mask_sha256": "013479ab3880ec2548089c6a6b545b5d37ad59450574d8111e5fd38b9f01a8e0"
+      },
+      {
+        "key": "dungcom-002@9",
+        "base": "dungcom-002@5",
+        "different_pixels": 22,
+        "bbox": [
+          20,
+          1,
+          24,
+          24
+        ],
+        "mask_sha256": "fe7e42675ebfa04612491f8bea370b022b9e48a365e792accbef6b571c745d0c"
+      },
+      {
+        "key": "dungcom-002@11",
+        "base": "dungcom-002@3",
+        "different_pixels": 23,
+        "bbox": [
+          20,
+          0,
+          24,
+          24
+        ],
+        "mask_sha256": "7360ea2e39190d978b34a2817393aeff8544640075c05abe02af6716e4095841"
+      },
+      {
+        "key": "dungcom-002@12",
+        "base": "dungcom-002@4",
+        "different_pixels": 17,
+        "bbox": [
+          20,
+          0,
+          24,
+          18
+        ],
+        "mask_sha256": "192899a8c244f7acc675e20a2543908ff46129aaa6105f84bc7f3c5e52344ae6"
+      },
+      {
+        "key": "dungcom-002@13",
+        "base": "dungcom-002@0",
+        "different_pixels": 37,
+        "bbox": [
+          0,
+          1,
+          7,
+          24
+        ],
+        "mask_sha256": "465322fb1fa717ed076f21a365a650dacad15062119a2e97903fc2e547a24372"
+      },
+      {
+        "key": "dungcom-002@14",
+        "base": "dungcom-002@10",
+        "different_pixels": 17,
+        "bbox": [
+          20,
+          0,
+          24,
+          18
+        ],
+        "mask_sha256": "192899a8c244f7acc675e20a2543908ff46129aaa6105f84bc7f3c5e52344ae6"
+      },
+      {
+        "key": "dungcom-002@15",
+        "base": "dungcom-002@5",
+        "different_pixels": 96,
+        "bbox": [
+          0,
+          0,
+          5,
+          24
+        ],
+        "mask_sha256": "c3cd4ee3c76889aea168270a95c6853bdac7b1681f2084e3f4eedc09248f8ba4"
+      },
+      {
+        "key": "dungcom-002@16",
+        "base": "dungcom-002@10",
+        "different_pixels": 65,
+        "bbox": [
+          0,
+          0,
+          5,
+          15
+        ],
+        "mask_sha256": "54548f4d84df3c565f5016147e41d00daf5389a4b907b6248734e1797d19cedc"
+      },
+      {
+        "key": "dungcom-002@17",
+        "base": "dungcom-002@5",
+        "different_pixels": 27,
+        "bbox": [
+          19,
+          0,
+          24,
+          23
+        ],
+        "mask_sha256": "32e6726f893509b47031c0f78402f50bc53298de3dfc6bc612bd7a854adad606"
+      },
+      {
+        "key": "dungcom-002@18",
+        "base": "dungcom-002@2",
+        "different_pixels": 66,
+        "bbox": [
+          0,
+          0,
+          10,
+          24
+        ],
+        "mask_sha256": "09185f20dd8dbc9293b5e34175624638f170068ac94a30d65eca4c6ea1e8a3f8"
+      },
+      {
+        "key": "dungcom-002@19",
+        "base": "dungcom-002@17",
+        "different_pixels": 14,
+        "bbox": [
+          19,
+          0,
+          24,
+          4
+        ],
+        "mask_sha256": "3a5c18f719adf72d26fc259d2e17e8f14f74ab6875c83d9dbf9ee26b2680b082"
+      },
+      {
+        "key": "dungcom-002@20",
+        "base": "dungcom-002@7",
+        "different_pixels": 11,
+        "bbox": [
+          0,
+          0,
+          1,
+          17
+        ],
+        "mask_sha256": "53301a85c49ea7ede34519d840fd22c97940c433c0ebd36e3e1dc4ab11c965dc"
+      },
+      {
+        "key": "dungcom-002@21",
+        "base": "dungcom-002@6",
+        "different_pixels": 9,
+        "bbox": [
+          23,
+          0,
+          24,
+          14
+        ],
+        "mask_sha256": "4d883ceb5bfda248151d24354dd76daf44059070e10258a3a7c8bd0e0b85be52"
+      },
+      {
+        "key": "dungcom-002@23",
+        "base": "dungcom-002@10",
+        "different_pixels": 9,
+        "bbox": [
+          23,
+          0,
+          24,
+          14
+        ],
+        "mask_sha256": "4d883ceb5bfda248151d24354dd76daf44059070e10258a3a7c8bd0e0b85be52"
+      },
+      {
+        "key": "dungcom-002@24",
+        "base": "dungcom-002@11",
+        "different_pixels": 14,
+        "bbox": [
+          0,
+          0,
+          24,
+          17
+        ],
+        "mask_sha256": "402e2ea8251ab542f52f9bd1c3eee9563dc26cfb2628b111a5499719ffb367f5"
+      }
+    ],
+    "evidence_sha256": "947aaa323305e6b50931b8b5cc3c41dcf0eb4619d4a0dee07f947da42756c5d7",
+    "outside_mask_difference": 0,
+    "note": "來源RGB差異遮罩外擴6個輸出像素；相同區域沿已接受AI基底；無動畫時間主張。"
+  },
+  "source_diagnostics": {
+    "cases": 25,
+    "passed": true,
+    "scope": "完整PNG、同組鄰格、來源／色盤失配、孤立圖案、2倍／F12與輸入不變。",
+    "source_sha256": "f02b298774eee9e654187c381dfe6b645d90bbaa08bf3cecd1df5f2bee01113c",
+    "log_sha256": "62c18915be8ba71f88bf1fdd3a0631f22bd9798bdb1be5df56a9dcf3b06827f9"
+  },
+  "bank2_coverage": {
+    "total_source_frames": 26,
+    "redrawn_states": 25,
+    "excluded_pure_color": {
+      "key": "dungcom-002@22",
+      "file": "DUNGCOM.DAX",
+      "archive_sha256": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+      "block": 2,
+      "frame": 22,
+      "width": 24,
+      "height": 24,
+      "decoded_sha256": "85ad3c1b12cf816f68826e95e73d66bc494636b3ef7d0d947f4ce871e9ccc52e",
+      "indexed_sha256": "e644998a93be1e40d942fd90eb7c5352f8bc3aa94c71f56791d436ea4722df9b",
+      "palette_sha256": "ecc78d694cc2a6614d14860e08949bab04bd6950c8106a48ccd64fbbba6d6a93",
+      "pixel_offset": 126,
+      "palette_end": 106,
+      "evidence_level": "strong inference",
+      "runtime_observed": false,
+      "reason": "solid RGB(113,85,73); retain original color",
+      "rgb": [
+        113,
+        85,
+        73
+      ]
+    },
+    "excluded_manifest_sha256": "4b441a378fad8f7d486b50b24d6d2d2508ea1dd66c99ded50af0f9c54160c688",
+    "note": "素材覆蓋齊全；正常遭遇仍未觀測，不外推其他圖組。"
+  },
+  "runtime": {
+    "scope": "既有四路基準加未觀測資料；重跑7400格HD正常路徑；逐件2倍/F12與失配另由來源診斷驗證",
+    "added_terrain_keys": [
+      "dungcom-002@0",
+      "dungcom-002@1",
+      "dungcom-002@2",
+      "dungcom-002@3",
+      "dungcom-002@4",
+      "dungcom-002@5",
+      "dungcom-002@6",
+      "dungcom-002@7",
+      "dungcom-002@8",
+      "dungcom-002@9",
+      "dungcom-002@10",
+      "dungcom-002@11",
+      "dungcom-002@12",
+      "dungcom-002@13",
+      "dungcom-002@14",
+      "dungcom-002@15",
+      "dungcom-002@16",
+      "dungcom-002@17",
+      "dungcom-002@18",
+      "dungcom-002@19",
+      "dungcom-002@20",
+      "dungcom-002@21",
+      "dungcom-002@23",
+      "dungcom-002@24",
+      "dungcom-002@25"
+    ],
+    "registered_terrain_states": 100,
+    "binary_sha256": "faa68b446a59b8a96273617f9f3d5a75f3a7b694c3a1d8d3b516af5427279c82",
+    "guest_files": 127,
+    "guest_state_equal": true,
+    "original_endpoint_equal": true,
+    "final_composite_equal": true,
+    "prior_assets_preserved": true,
+    "flash_count": 0,
+    "frame_sha256": "00d6d1692f3fe54151c5111b32b48c8393add16509c7a05c822cb9010ebf25ca",
+    "baseline_summary_sha256": "d893a676dcc1ebc4776585bcce00784d7486f803853d02bb67d02ad5fdd7e05a",
+    "baseline_summary_source": "workplace/probe/g9-hd/b30-play-v1/summary.json",
+    "inputs_sha256": "52efb1d50478e6e76eea4dd28a19e60c83ac9629cf1312b8b9f2ccaabded5ba1"
+  },
+  "runtime_inputs_sha256": "52efb1d50478e6e76eea4dd28a19e60c83ac9629cf1312b8b9f2ccaabded5ba1",
+  "runtime_log_sha256": "eea26577fc46f06babcc81acfead4c6017737ef8ccb2717a3f0841a0022a4d28",
+  "baseline_inputs_sha256": "da94b23e0411fafb82d5ddb21933835f74fc3069b52cd7be1c21fbd06b915209",
+  "baseline_batch_receipt_sha256": "bd1ae8408666499e6551330878a01d6b1a7dde699a0a84748ff7dc50cf9c7c88",
+  "negative_controls_sha256": "23ce4299bd0ca6da64980c1d4d06cac45a3add0259753ae5fb7836f0e61e88be",
+  "activation": {
+    "method": "Linux renameat2 RENAME_EXCHANGE; complete prevalidated theme",
+    "official": "workplace/hd/theme",
+    "previous": "workplace/hd/theme-b31-previous",
+    "tested": "workplace/hd/theme-b31-stage",
+    "official_files": 926,
+    "prior_files": 876,
+    "official_equals_tested": true,
+    "prior_equals_baseline": true,
+    "theme_tree_sha256": "d7b7aca034b1ec3499ba69fff2e657c77c33fa397f0f5f8d499ce082d12c681b"
+  },
+  "tools": {
+    "python": "3.13.16",
+    "pillow": "11.0.0",
+    "numpy": "2.1.3",
+    "image": "sosb-img:r1",
+    "image_id": "8b9012adb991ebd1714725cf122ac052462d2993a17dd7b3ec2504e213ae9cf3"
+  },
+  "tool_sha256": {
+    "hd_vga_request.py": "1556967df15693f6c1af4c804a2b5350ee376d9cde379c9a0212059040e0c777",
+    "hd_vga_prepare.py": "d3f1203904cb5a82a63f9ca9e85883a255a0dcb81d6013f74b0d3b0a6fa44ace",
+    "hd_vga_validate.py": "cbe88b3d90bb834331f4176efa61f86da90090194ae376e562a55f5ac2a048d9",
+    "hd_metrics.py": "b2b93c14d1503462c7c95d7615a10e528249232efbea9e50ee9efce6e38fa2a7",
+    "hd_vga_review.py": "654c44466473ebc7be6bab3b9969bda4705591dca719c664601974aea6480340",
+    "hd_vga_layers_theme.py": "8c7ef11f62ffb700579454b87e15a1bcdea267aa4e889f7297bd3f817630a13b",
+    "hd_vga_readme_preview.py": "2d8a3c44e289999925d0c276b7c5ce36b9958e19d4f7a119fc88a69825b21c3c",
+    "vga_battle_play_check.py": "d00e5d66e45987df6579edf378c90f4313d64cb6518b8bd43ab477ac561388f1"
+  },
+  "evidence_recipe_sha256": {
+    "import-generated.py": "42e0b8d81f12b14efc8608d3453538f80edcf2e51cb20a9ccc26e5a66fa9df86",
+    "negative.py": "a82197ae9023eb2ef1259542aba7cee7e39482256251e175839eb3fe28348a5f",
+    "activate.py": "291443e91a03db92f4fe829c7badbe862d999ae75856b656b437e386ecbdc73e",
+    "report.py": "c9b964ac9dfc83fb2c440ef05de233a4287fce3567f04907913b1859dc642b5a",
+    "run-recipe.json": "ee59375a6def118b2b40112ec6fb7892694008e5108caef7f56f35bcb47a202d"
+  }
+}
