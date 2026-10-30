@@ -6,6 +6,7 @@ import (
 	"image/png"
 	"os"
 	"path/filepath"
+	"strconv"
 	"testing"
 )
 
@@ -36,6 +37,29 @@ func TestVGATerrainExpandedSourceTemplates(t *testing.T) {
 	if !bytes.Equal(before.Compose(3, true, nil), after.Compose(3, true, nil)) {
 		t.Fatal("新增地形改變既有正常終點合成")
 	}
+	// b26 defaults remain unchanged. Other banks provide their original high
+	// palette and expected counts explicitly; this is source insertion only.
+	expected := func(name string, fallback int) int {
+		if value := os.Getenv(name); value != "" {
+			n, err := strconv.Atoi(value)
+			if err != nil || n < 1 {
+				t.Fatal("invalid fixture count", name)
+			}
+			return n
+		}
+		return fallback
+	}
+	wantAdded := expected("POD_TERRAIN_EXPECTED_ADD", 23)
+	wantTotal := expected("POD_TERRAIN_EXPECTED_TOTAL", 25)
+	if source := os.Getenv("POD_TERRAIN_SOURCE_PALETTE"); source != "" {
+		b, err := os.ReadFile(source)
+		if err != nil || len(b) != 768 {
+			t.Fatal("invalid source palette", source, err)
+		}
+		for i := 32; i < 64; i++ {
+			copy(pal[i][:], b[i*3:i*3+3])
+		}
+	}
 	// 同一已載入且驗證的素材可重用；每個反例仍建立全新的呈現狀態。
 	fresh := func() *Live {
 		l := NewLive(nil, nil, nil)
@@ -56,6 +80,21 @@ func TestVGATerrainExpandedSourceTemplates(t *testing.T) {
 	known := map[string]bool{}
 	for _, item := range old.Items {
 		known[item.Key] = true
+	}
+	var contextRefs [][]byte
+	if os.Getenv("POD_TERRAIN_SOURCE_PALETTE") != "" {
+		for _, item := range current.Items {
+			if !known[item.Key] && len(contextRefs) < 2 {
+				ref := read(dir, item.Indexed)
+				if len(ref) != 576 {
+					t.Fatal("invalid context terrain")
+				}
+				contextRefs = append(contextRefs, ref)
+			}
+		}
+		if len(contextRefs) != 2 {
+			t.Fatal("new palette needs two supporting source tiles")
+		}
 	}
 	added := 0
 	for _, item := range current.Items {
@@ -84,6 +123,15 @@ func TestVGATerrainExpandedSourceTemplates(t *testing.T) {
 				t.Fatal("成品尺寸不合")
 			}
 			scene := append([]byte(nil), indexed...)
+			// The unchanged production guard requires three matching tiles.
+			// A new palette makes the original bank's tiles ineligible, so the
+			// controlled scene supplies two authentic same-bank neighbors.
+			for i, support := range contextRefs {
+				for y := 0; y < 24; y++ {
+					x := 32 + i*24
+					copy(scene[(80+y)*320+x:(80+y)*320+x+24], support[y*24:y*24+24])
+				}
+			}
 			for y := 0; y < 24; y++ {
 				copy(scene[(80+y)*320+8:(80+y)*320+32], ref[y*24:y*24+24])
 			}
@@ -156,7 +204,7 @@ func TestVGATerrainExpandedSourceTemplates(t *testing.T) {
 			}
 		})
 	}
-	if added != 23 || len(current.Items) != 25 {
-		t.Fatalf("新增%d／共%d，預期23／25", added, len(current.Items))
+	if added != wantAdded || len(current.Items) != wantTotal {
+		t.Fatalf("新增%d／共%d，預期%d／%d", added, len(current.Items), wantAdded, wantTotal)
 	}
 }
