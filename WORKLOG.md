@@ -1674,3 +1674,4 @@
 - 新程式先以舊主題驗證相容，再完整原子切換1350檔。1331檔回復副本在workplace/hd/theme-b40-previous，舊程式為pod-play-before-backgrounds。固定docs/re/017-b40-runtime.json綁來源、九張成品、抽驗、正常比較、重建及啟用。
 - README直接顯示九張264×264原尺寸預覽，素材與實際截圖分別標示；54張內嵌圖及653個本機連結通過。重建清單原樣保留b38畫面基準，因正常終點與合成未改；README不累積逐輪命令。
 - 沿用sosb-img:r1（8b9012adb991）與dosgolem-go-ebiten:1.24-r1（8ed6bdee2bce），無新映像。原版zip／rar雜湊未改，root-owned及誤建.md目錄空，長期Go快取空，專案容器0。角色改色／定位、遭遇圖、背景遮擋與動畫仍依#10，不追加G6探索。
+- 主專案55ff37a已推私人main；42個提交檔案擁有權均1000:1000，固定收據重算一致，沒有原版idx進Git。#64附[驗收留言](https://github.com/wicanr2/pools-of-darkness-cht/issues/64#issuecomment-6542653116)後關閉並回讀CLOSED；#10補[九張背景與剩餘範圍](https://github.com/wicanr2/pools-of-darkness-cht/issues/10#issuecomment-6542654728)，回讀OPEN。儲存庫仍PRIVATE，引擎工作樹乾淨，專案容器0。
