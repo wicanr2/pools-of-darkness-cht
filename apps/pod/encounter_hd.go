@@ -1,8 +1,9 @@
 package pod
 
-// SPRIT 使用獨立映射13→0，原始0區不畫。規格010 §6.3。
+// EGA SPRIT使用獨立映射13→0；本作已證實VGA非零色號不變。原始0區不畫。規格010 §6.3、b41。
 import (
 	"bytes"
+	"crypto/sha256"
 	"encoding/json"
 	"fmt"
 	"image"
@@ -17,6 +18,8 @@ type encounterItem struct {
 	x, y, w, h int
 	ink        []actorInk
 	pixels     []byte
+	used       []byte
+	palette    string // VGA使用RGB簽章；空字串沿原EGA契約。
 }
 type encounterHD struct {
 	items   []encounterItem
@@ -63,21 +66,25 @@ func loadEncounterHD(dir string) (*encounterHD, error) {
 		if len(ref) != w*h {
 			return nil, fmt.Errorf("SPRIT基準長度不符")
 		}
+		palette, err := encounterVGAPalette(it.Key, ref, it.Size, it.Position)
+		if err != nil {
+			return nil, err
+		}
 		signature := fmt.Sprintf("%d,%d,%d,%d:%s", x, y, w, h, string(ref))
 		if refs[signature] {
 			return nil, fmt.Errorf("SPRIT重複基準")
 		}
 		refs[signature] = true
-		item := encounterItem{key: it.Key, x: x, y: y, w: w, h: h}
+		item := encounterItem{key: it.Key, x: x, y: y, w: w, h: h, palette: palette}
 		colors := map[byte]bool{}
 		for n, v := range ref {
-			if v > 15 {
+			if palette == "" && v > 15 {
 				return nil, fmt.Errorf("SPRIT非EGA色號")
 			}
 			if v == 0 {
 				continue
 			}
-			if v == 13 {
+			if palette == "" && v == 13 {
 				v = 0
 			}
 			colors[v] = true
@@ -86,9 +93,19 @@ func loadEncounterHD(dir string) (*encounterHD, error) {
 		if len(item.ink) < 16 || len(colors) < 3 {
 			return nil, fmt.Errorf("SPRIT前景資訊不足")
 		}
+		if palette != "" {
+			for c := 1; c < 256; c++ {
+				if colors[byte(c)] {
+					item.used = append(item.used, byte(c))
+				}
+			}
+		}
 		encoded, err := readChecked(filepath.Join(dir, it.PNG), it.PNGSHA)
 		if err != nil {
 			return nil, err
+		}
+		if palette != "" && (len(encoded) < 26 || encoded[24] != 8 || encoded[25] != 6) {
+			return nil, fmt.Errorf("VGA SPRIT需要八位元RGBA PNG")
 		}
 		im, err := png.Decode(bytes.NewReader(encoded))
 		if err != nil {
@@ -125,14 +142,31 @@ func (h *encounterHD) frame(idx []byte, pal [256][3]uint8) {
 	if len(idx) != 64000 {
 		return
 	}
+	ega := true
 	for n, c := range combatEGA {
 		if pal[n] != c {
-			return
+			ega = false
+			break
 		}
 	}
 	candidates := []int{}
 	for n := range h.items {
-		if h.items[n].present(idx) {
+		it := &h.items[n]
+		if it.palette == "" {
+			if !ega {
+				continue
+			}
+		} else {
+			signature := make([]byte, 0, len(it.used)*4)
+			for _, v := range it.used {
+				signature = append(signature, v)
+				signature = append(signature, pal[v][:]...)
+			}
+			if fmt.Sprintf("%x", sha256.Sum256(signature)) != it.palette {
+				continue
+			}
+		}
+		if it.present(idx) {
 			candidates = append(candidates, n)
 		}
 	}
