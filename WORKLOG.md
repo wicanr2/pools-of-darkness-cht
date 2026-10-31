@@ -1740,3 +1740,19 @@
 - 沿用sosb-img:r1（8b9012adb991）及dosgolem-go-ebiten:1.24-r1（8ed6bdee2bce），沒有新增映像。原版圖與索引／色盤只留本機及既有私人審閱例外，未擴張散布權利。
 - 提交前31個檔案擁有權1000:1000、618個本機連結與README 61張內嵌圖通過，固定素材收據重算相同，成品及工具均有Git來源。原版zip／rar雜湊不變，root-owned與誤建.md目錄空、長期Go快取空，本專案容器0，其他專案資源未動。磁碟剩269 GiB。
 - 主專案e968708已推私人main。#68附[素材驗收留言](https://github.com/wicanr2/pools-of-darkness-cht/issues/68#issuecomment-6545695806)後關閉並回讀CLOSED；#10補[關鍵畫面與動畫接入邊界](https://github.com/wicanr2/pools-of-darkness-cht/issues/10#issuecomment-6545696334)，回讀OPEN。儲存庫仍PRIVATE，正式引擎未改且工作樹乾淨。
+
+## 2026-11-01：三平台可試玩候選與交付入口
+
+- 使用者要求趕快收尾，本輪轉向實際封包，不再增加美術批次。命中復古收尾路由，載入生命週期17–20、交接驗證、版號、dist-all及Windows UTF-8 ZIP契約。主機gh auth通過，回讀#11／#12及目前Issues；新增#69，範圍明列九包候選、正常啟動與存讀檔，不把尚缺功能宣稱完成。
+- 候選固定`v.0.1.0-20261101`，沒有tag或公開Release。引擎從乾淨Git來源建置；`4a8ef9f4ff18c82d8c98595faf19fb1ee803c609`只修正啟動器英文DOS版本提示1.2為1.10，既有前端測試與vet通過，已推本專案私人dosgolem/pod。正式程式56ebba3、1525檔主題及六份字型固定點維持原樣。
+- 素材輸入由主專案Git樹`9379b7bba9c6e0c7e293ba1cab6dc7e21f67fc9f`乾淨匯出，重建1525檔及六份字型逐檔相符。原版唯讀來源為`workplace/input/dos/pod/`，完整版只取頂層47檔，排除歷史SAVE；不含原版的基本patch另外檢查原版雜湊與DAX／BMA／ACF／IDX外洩邊界，隨包引擎來源也檢查保護副檔名。
+- 三平台均用Go1.24.13、trimpath、buildvcs=false與相同版號／引擎commit。Linux為ELF x86_64；Windows為PE x86_64；macOS以SDK15.5分別編arm64／amd64，再lipo合併universal，最低11.0，依賴只指向系統framework。macOS未簽章、未公證、真機未驗，不用Linux結果代替。
+- 固定AppImage type2-runtime 20251108，來源commit dd6cebedcbddde9c82f89b011e8e1d40b6e43868。runtime SHA 2fca8b443c92510f1483a883f60061ad09b46b978b2631c807cd873a47ec260d，官方來源壓縮檔SHA 70129e551d44571a438b06640cd12ea3b6db67f31b142b607dcccf66d5dbc320，連同MIT及內含程式庫說明存tools/vendor/appimage，不依賴浮動continuous。SquashFS固定時間與兩執行緒，核對偏移944632及hsqs。
+- 九包共313,656,119 bytes：Linux AppImage、Windows ZIP、macOS ZIP各有基本patch、基本本機完整版、HD本機完整版。ZIP採UTF-8旗標、README UTF-8 BOM與CRLF、macOS可執行權限，逐包解開核對內含manifest。HD patch尚缺原版索引匯入與海報權利處理，沒有以完整版本機包冒充可散布patch。
+- Linux以實際基本／HD AppImage各跑3800格，365,750,000步，原版CPU／RAM、色號／色盤、RGBA及匯入資料一致；demo中止1次、返回1次、終點不在demo。兩包首次匯入後，再以無原版patch冷啟動，客體檔案不變。基本patch缺原版時拒絕，提示1.10，沒有生成GAME.EXE。Go繪圖計畫與寫入bytes相同，fallback、mismatch與LegacyRGBFrames均0。
+- 實際HD AppImage以既有正常G6自建槽A起跑，4700格正常另存B，再3250格冷啟動讀B。預先確認沒有槽B，另存後產生savgamB.pty；冷讀保留全部存檔SHA。原尺寸抽看另存畫面與冷讀後人物，姓名、防禦與HP可辨，沒有以direct-entry代替前端操作。
+- Windows由實際HD ZIP解開，在隔離Wine內驗版本、1250格正常開場、三張擷取與首次匯入49個客體檔案；原尺寸抽看製作名單及兩側海報。此結果限Wine，不聲稱原生Windows真機或demo／存讀檔已驗。wineserver隨驗收結束停止。
+- 基本版量尺原始23格，HD原始0。固定相鄰2804／2805呈現回合的完整原版索引與色盤相同，題名範圍只有160–175紅色背景，後續10／13／15字形尚未繪製；中文題名提前出現，圖像差異只在[0,576,552,24]。保留原計數、配對PNG／IDX／PAL及原尺寸目視，另從實際AppImage重播分類，不改量尺或降低門檻。此分類只覆蓋這23格，其他事件仍須驗證。
+- 環境修正獨立記錄：macOS建置完成後通用otool名稱不存在，改用映像實際的x86_64-apple-darwin24.5-otool重跑依賴檢查；第一個Wine映像缺Python，檢查能力後沿用yuan映像。驗證器首次掛錯原版路徑，立即改回已存在的input/dos/pod，rmdir移除自動建立的兩個root-owned空目錄，沒有遞迴改權限。這些不列為產品缺陷。
+- 使用既有sosb-img:r1（8b9012adb991）、dosgolem-go-ebiten:1.24-r1（8ed6bdee2bce）、cok-osxcross:go1.24.13-sdk15.5-r1（a2dc911a8709）、kgb-cht-pkg:1.99.1-r2（dfc4fd92efc6）、yuan-wine-verify:noble-r2（31664639bb8c），未新增映像。編排入口tools/package.sh完成語法檢查，本輪各步驟實際執行通過，未另重跑整輪。macOS SDK不入Git，完整三平台映像重建限制已寫SETUP。
+- 固定收據docs/re/026-package-runtime.json與規格012、研究索引、README、SETUP、CONTEXT同步。原案仍缺配樂與試聽、完整多語系、無敵、完整動畫HD及HD patch；#12保持開啟。原版素材與所有含原版候選只留本機dist-all，不上傳。

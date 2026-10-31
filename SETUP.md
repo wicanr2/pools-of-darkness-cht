@@ -27,7 +27,7 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 
 主題在`theme/`，字型在`font/`，素材重建結果在`assets-receipt.json`。重建不改正在使用的正式主題。
 新程式以`-trimpath -buildvcs=false`建置，雜湊可能與歷史開發執行檔不同；玩家可見行為另以正常路徑核對，不以歷史執行檔雜湊相等作假設。
-目前只驗證Linux容器重建，Windows與macOS正式封包仍依[#12](https://github.com/wicanr2/pools-of-darkness-cht/issues/12)追蹤。
+既有固定程式重建只驗證Linux容器。另有下方三平台候選，Windows與macOS正式驗收仍依[#12](https://github.com/wicanr2/pools-of-darkness-cht/issues/12)追蹤。
 本輪沿用既有專用工具映像驗證乾淨來源，未另建映像；兩份Dockerfile的固定官方基底摘要已查證可取得。
 
 ## 素材與權利
@@ -49,6 +49,32 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 初次[跨機重建收據](docs/re/025-rebuild-runtime.json)保存新編譯程式的7400格正常路徑；目前[遭遇圖收據](docs/re/017-b43-runtime.json)驗證1525檔主題與6份字型由乾淨Git檔案重生，固定引擎56ebba3乾淨重編與受測程式逐位元相同。[正常增量比較](docs/re/017-b43-play.json)的CPU、記憶體、來源、127檔及最終畫面同前批、閃現0，因此重建終點畫面基準仍綁[b38正常收據](docs/re/017-b38-play.json)。既有041近遠景由前批配對截圖驗證；本批十四張既有截圖逐張相同，新正常事件仍未知。
 這個入口保存目前已完成的素材，不代表尚未驗證的地形、動畫、語系、配樂或平台已完成。
 新增HD素材或正式字型時，須同步更新重建清單，並以乾淨Git檔案重跑`assets`，核對新正式主題及字型雜湊後才提交。
+
+## 候選封包
+
+`v.0.1.0-20261101`是本機可試玩候選，沒有tag或公開Release。九包在`dist-all/v.0.1.0-20261101/`，總大小約314MB；`SHA256SUMS.json`記錄逐包雜湊，`smoke/`保存實際封包驗收。含原版的六包只留`full-local/`，不可上傳。`patch/`的三包為基本中文化，需自備原版；HD patch尚未完成。
+
+| 平台 | 候選抽驗 |
+|---|---|
+| Linux x86_64 AppImage | 基本／HD首次匯入、正常demo中止返回、patch沿用匯入、缺原版拒絕、另存B與冷啟動讀B |
+| Windows x86_64 ZIP | Wine內實際解包、首次匯入、版本與1250格正常開場；原生Windows未驗 |
+| macOS universal ZIP | amd64與arm64、App結構、執行權限及系統依賴；未簽章、未公證，真機未驗 |
+
+各包`README.txt`說明操作與存檔位置。Linux需要X11、OpenGL、ALSA與glibc2.36或相容環境；缺FUSE時用`APPIMAGE_EXTRACT_AND_RUN=1`。首次把合法DOS英文版1.10的47個遊戲檔放到程式旁`original/`，或用`-original`指定。歷史玩家SAVE不在包內；新存檔寫入使用者資料目錄。
+
+重建入口為[tools/package.sh](tools/package.sh)，固定候選引擎`4a8ef9f4ff18c82d8c98595faf19fb1ee803c609`。它從乾淨Git匯出素材與程式；只改啟動器的原版版本提示，不替換既有正式引擎固定點。先提交工具再執行，輸出目錄必須是本專案`workplace/`內的新路徑。
+
+```sh
+bash tools/package.sh build /absolute/path/to/original "$PWD/workplace/package-rebuild"
+bash tools/package.sh smoke /absolute/path/to/original "$PWD/workplace/package-rebuild" /absolute/path/to/normal-save-A
+bash tools/package.sh verify /absolute/path/to/original "$PWD/workplace/package-rebuild"
+```
+
+`build`只對下載Go模組開網路。`smoke`第四參數是經正常遊戲建立、只有槽A而沒有槽B的SAVE目錄，供測試另存B，不注入執行期狀態；開場與缺檔抽驗仍由正式前端啟動。個別步驟由[規格012](docs/spec/012-package.md)連結的容器腳本執行。本輪實際驗證的是各步驟，編排腳本完成語法檢查，尚未再整輪重跑。
+
+候選工具映像須已存在：`sosb-img:r1`、`dosgolem-go-ebiten:1.24-r1`、`cok-osxcross:go1.24.13-sdk15.5-r1`、`kgb-cht-pkg:1.99.1-r2`，Wine抽驗另需`yuan-wine-verify:noble-r2`。前兩者來源見上方Dockerfile。後三者沿用主機既有工具鏈，macOS SDK不放Git；新機器需另備合法SDK及相同工具能力，完整三平台工具映像重建尚非已驗範圍。固定AppImage runtime及對應來源已[存檔](tools/vendor/appimage/manifest.json)，不需浮動下載。
+
+[固定驗收收據](docs/re/026-package-runtime.json)保存九包大小與SHA、原版同狀態、Go繪圖計數、demo、存讀檔及平台限制。基本版量尺原始23格保留為題名與紅色背景轉換，HD原始0；此分類不代替其他畫面抽驗。配樂、多語系、無敵、完整動畫HD與HD patch仍未完成，不能把候選稱為原案完成版。
 
 維護重建清單時，先將已驗收PNG加入Git暫存，使用`git ls-files -z`保存檔案清單。
 在Docker內執行`tools/rebuild_theme_snapshot.py --root <repo> --theme <已驗候選> --tracked-list <Git檔案清單> --batch bNN`，

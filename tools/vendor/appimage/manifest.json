@@ -1,0 +1,26 @@
+{
+  "project": "AppImage/type2-runtime",
+  "release": "20251108",
+  "commit": "dd6cebedcbddde9c82f89b011e8e1d40b6e43868",
+  "runtime_url": "https://github.com/AppImage/type2-runtime/releases/download/20251108/runtime-x86_64",
+  "source_url": "https://api.github.com/repos/AppImage/type2-runtime/tarball/dd6cebedcbddde9c82f89b011e8e1d40b6e43868",
+  "retrieved": "2026-11-01",
+  "files": [
+    {
+      "file": "runtime-x86_64",
+      "sha256": "2fca8b443c92510f1483a883f60061ad09b46b978b2631c807cd873a47ec260d"
+    },
+    {
+      "file": "appimage-LICENSE",
+      "sha256": "aa154fc9070614bbe7921f89db11efd1dba7a1f3a41685958110e2230f9c0ca1"
+    },
+    {
+      "file": "appimage-README.md",
+      "sha256": "43d2ee9a844234e69ebf6948ebb58e42c4272d816b4d666b9fc31e6d3276bc6c"
+    },
+    {
+      "file": "appimage-source-20251108.tar.gz",
+      "sha256": "70129e551d44571a438b06640cd12ea3b6db67f31b142b607dcccf66d5dbc320"
+    }
+  ]
+}
