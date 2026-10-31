@@ -779,6 +779,18 @@
         "skygrnd-003",
         "skygrnd-004"
       ]
+    },
+    {
+      "kind": "encounter-sprites",
+      "request_sha256": "d98331a6c17a99532468f520afb90a68572bf81aaaa21a3e1bc04958e28c78c2",
+      "validation_sha256": "fdfee065eb5973b24433af30bced88cb66cdb553faf5b280f9e982d15a4915ff",
+      "visual_sha256": "e7934f80b57b1177b8d251ca34689a2dfb943373991defede92545ed880fc1fe",
+      "source_proof_sha256": "7dc829645c6e9dec93d73be0c73d5498740c43cb02e4e26ce6952383d3d144ae",
+      "keys": [
+        "sprit1-041@0",
+        "sprit1-041@1",
+        "sprit1-041@2"
+      ]
     }
   ]
 }

@@ -1,0 +1,738 @@
+{
+  "date": "2026-10-31",
+  "issue": 65,
+  "status": "CONFORMED within stated sampled scope",
+  "scope": "SPRIT041三種距離成品與來源診斷；正常近遠景完整前景、透明區及框外；新程式舊新主題的正常DEMO回歸。中景正常事件未知。",
+  "product_source_commit": "672623e917e48a72ab5cd37fda90047c548f9781",
+  "binary_sha256": "752442e400b2c07b707b77f50290b02f0aea469c3ac78365f6039b68ef9fabee",
+  "source": {
+    "date": "2026-10-31",
+    "issue": 65,
+    "archive": {
+      "file": "SPRIT1.DAX",
+      "sha256": "df356577a5d884222138c486170caf0bb21809f58201ed52827b2cd9dc441c7f",
+      "block_ids": [
+        5,
+        8,
+        15,
+        17,
+        23,
+        27,
+        28,
+        29,
+        30,
+        41,
+        42,
+        45,
+        46,
+        51,
+        53,
+        66,
+        67,
+        69,
+        74,
+        76,
+        79,
+        81,
+        82,
+        83,
+        84,
+        87,
+        90,
+        96,
+        108
+      ],
+      "records": 29,
+      "decoded_frames": 87
+    },
+    "address_space": "original DAX file byte offset; decoded offsets explicitly separate",
+    "request_sha256": "d98331a6c17a99532468f520afb90a68572bf81aaaa21a3e1bc04958e28c78c2",
+    "position": [
+      24,
+      24
+    ],
+    "transparent_index": 0,
+    "mapping": "VGA nonzero source indices unchanged; no EGA13-to0 remapping",
+    "items": [
+      {
+        "key": "sprit1-041@0",
+        "source_size": [
+          88,
+          88
+        ],
+        "indexed_sha256": "e3a835776c06b3fbc49aecd405af7e03ac2b43527b28ee377dce1152dbba9607",
+        "used_rgb_sha256": "9061c36f48b0d095009e3cb060df0a767c2cdd5b898167e43ccf98d05c9a9d70",
+        "used_colors": [
+          176,
+          177,
+          179,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          195,
+          196,
+          198,
+          199,
+          200,
+          201,
+          202,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          211,
+          212,
+          213,
+          214,
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          225,
+          227,
+          228,
+          229,
+          230,
+          231,
+          232,
+          233,
+          234,
+          235,
+          236,
+          237,
+          238,
+          239
+        ],
+        "foreground_pixels": 2133,
+        "transparent_zero_pixels": 5611,
+        "decoded_sha256": "26cc475c80c3cebe06fc9b00a83ec58d417f0144ae90f74bebf4a049e39c5be9",
+        "packed_file_offset": 48536,
+        "decoded_pixel_offset": 810,
+        "palette_end": 683,
+        "evidence_level": "proven source pixels and used RGB; only frame0 normal output observed"
+      },
+      {
+        "key": "sprit1-041@1",
+        "source_size": [
+          88,
+          88
+        ],
+        "indexed_sha256": "d30de9a7a7f70b2880687daab1ea2d4d20f74c1af797768b1cb3adde871e6f7b",
+        "used_rgb_sha256": "573485ad3d86e8bcc281b8cbeb8c2cdced091accf5921ccacf17d78ff4f8034b",
+        "used_colors": [
+          176,
+          177,
+          179,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          199,
+          200,
+          202,
+          205,
+          206,
+          208,
+          209,
+          216,
+          220,
+          222,
+          224,
+          229,
+          233,
+          234,
+          235,
+          237,
+          239
+        ],
+        "foreground_pixels": 515,
+        "transparent_zero_pixels": 7229,
+        "decoded_sha256": "26cc475c80c3cebe06fc9b00a83ec58d417f0144ae90f74bebf4a049e39c5be9",
+        "packed_file_offset": 48536,
+        "decoded_pixel_offset": 810,
+        "palette_end": 683,
+        "evidence_level": "proven source pixels and used RGB; only frame0 normal output observed"
+      },
+      {
+        "key": "sprit1-041@2",
+        "source_size": [
+          88,
+          88
+        ],
+        "indexed_sha256": "a5e4da506c2eb631448b12197b56f12b24aef4617a6cb4fd17c25209acc401d1",
+        "used_rgb_sha256": "c73595adf793f677f2f22c29e302d68c1d7c330bf77db0197001cf4fc7ae4312",
+        "used_colors": [
+          176,
+          179,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          200,
+          205,
+          208,
+          216,
+          221,
+          222,
+          225,
+          233,
+          234,
+          235
+        ],
+        "foreground_pixels": 151,
+        "transparent_zero_pixels": 7593,
+        "decoded_sha256": "26cc475c80c3cebe06fc9b00a83ec58d417f0144ae90f74bebf4a049e39c5be9",
+        "packed_file_offset": 48536,
+        "decoded_pixel_offset": 810,
+        "palette_end": 683,
+        "evidence_level": "proven source pixels and used RGB; only frame0 normal output observed"
+      }
+    ],
+    "normal": {
+      "capture": "workplace/probe/g9-hd/vga-transition/sources/pod-f006466.idx",
+      "indexed_sha256": "fa6041591cc8c4486ffa39292281314708bddbb744236bbc794b4b729730eb5d",
+      "palette_sha256": "d6a839e05c4eca489232c9f09728871a7fa849b3e08aff93154c104dfce10993",
+      "rect": [
+        24,
+        24,
+        88,
+        88
+      ],
+      "key": "sprit1-041@0",
+      "full_nonzero_source_equal": true,
+      "used_rgb_equal": true,
+      "foreground_pixels": 2133,
+      "zero_source_nonzero_background_pixels": 5611,
+      "evidence_level": "proven output and used RGB at existing normal DEMO capture; no timing inferred"
+    },
+    "not_observed_normal_frames": [
+      "sprit1-041@1",
+      "sprit1-041@2"
+    ]
+  },
+  "source_proof_sha256": "7dc829645c6e9dec93d73be0c73d5498740c43cb02e4e26ce6952383d3d144ae",
+  "materials": {
+    "count": 3,
+    "generation_attempts": 3,
+    "generator": "built-in image_gen",
+    "style": "approved B",
+    "size": [
+      264,
+      264
+    ],
+    "all_opaque_rgba": true,
+    "structural_min": 0.7966549295774648,
+    "structural_max": 1.0,
+    "maximum_hue_difference_degrees": 12.377932783766653,
+    "review": "review/hd/b41-encounter/README.md",
+    "review_manifest_sha256": "0993db06d05709eed1e6b5dd617c1346efb7b836c5c45342c97798ac485ec1ee",
+    "request_sha256": "d98331a6c17a99532468f520afb90a68572bf81aaaa21a3e1bc04958e28c78c2",
+    "validation_sha256": "fdfee065eb5973b24433af30bced88cb66cdb553faf5b280f9e982d15a4915ff",
+    "visual_sha256": "e7934f80b57b1177b8d251ca34689a2dfb943373991defede92545ed880fc1fe",
+    "preview_sha256": "0fdc48867c78c6f61b2699482e896799ec89f73619fb0c53d7995305693293cc"
+  },
+  "source_diagnostics": {
+    "classes": 3,
+    "background_cases": 6,
+    "sampled_keys": [
+      "sprit1-041@0",
+      "sprit1-041@1",
+      "sprit1-041@2"
+    ],
+    "passed": true,
+    "scope": "三種距離的完整PNG前景、來源0與框外、不同背景、直接與舊合成相同、先選HD、使用RGB撤除、未用RGB隔離、透明區改動、失配撤候選及改格回退、冷失配、未證實位置、清除、2倍／F12、輸入不變及衝突回退。未變格沿既有鎖存。",
+    "source": "apps/pod/vga_encounter_fixture_test.go",
+    "source_sha256": "f7ce80411e1ddd6c402793e711c76a895d02a19cb16fc21773b9de0063f2fb64",
+    "logs": {
+      "apps.log": "beb3f36129fc29e71ce6015d95130f57c6c031183409f93ea8bb82b9c29243eb",
+      "frontend.log": "28f6d6e99fe37f8285e3d1f7806c5ab0460e0b4cf4c9cabfe10a00ed80ab6c98",
+      "vet.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "clean-build.sha256": "a2a456abf021497ac5ff7b098f420d36eee1f2ebcf1a1faab0bb4a408db465df",
+      "build-info.txt": "7639686851a1b68f1d16ef054d2495550c34fb283fced0e2c4ef11bff9ca0793"
+    },
+    "apps_seconds": 55.152,
+    "frontend_seconds": 0.043,
+    "missing_external_fixtures_skipped": [
+      "TestAutoMapPodMemory",
+      "TestMapGuideTable",
+      "TestAutoMapEclQualifiedKey",
+      "TestDirectRGBActualFixtures",
+      "TestFormalEnglishFrontendAndFont",
+      "TestExplicitDemoHDTransition",
+      "TestWholeGlyphIndependentOriginal",
+      "TestWholeGlyphRefusalsAndEmptyReturn",
+      "TestWholeGlyphBoundaryStates",
+      "TestGlyphTextCompositionAndOriginal",
+      "TestGlyphTextDuplicateEntry",
+      "TestGlyphTextOriginalCells",
+      "TestGlyphTextGuards",
+      "TestGuideTableFits",
+      "TestBIGPICAllSourcesAndPaletteGuards",
+      "TestBIGPICNormal244AndRejectedMetadata",
+      "TestHDFrameCacheOriginalClassification",
+      "TestLocalizedTitleNormalSourceAndLanguage",
+      "TestLocalizedTitleCreditsBottomAndSourceMismatch",
+      "TestInventoryQuantityWithOfficialCatalog",
+      "TestJournalTableFits",
+      "TestLoadLangPackRealText",
+      "TestIntroSourceFrames",
+      "TestLoadTextDirTranslit",
+      "TestPlayerNameSexReal",
+      "TestPostersOfficialAssets",
+      "TestQuizSourceTransition",
+      "TestResidentPixelEdges",
+      "TestResidentPixelRefusals",
+      "TestResidentPixelBoundaries",
+      "TestResidentPixelWhole",
+      "TestVGABackgroundSixSourceClassesAndPaletteIsolation",
+      "TestVGABackgroundLoaderRejectsSubstitution",
+      "TestVGAEffectSourceFixture",
+      "TestVGAEffectNormalFixture",
+      "TestVGAExpandedSourceTemplates",
+      "TestVGABattleTransitionFixture",
+      "TestVGABattleHoldUnknownBoundAndPalette",
+      "TestVGABattleHoldBound",
+      "TestVGABattleFixtureForegroundAndBackground",
+      "TestVGABattleFixtureFallbacks",
+      "TestCPICVGAOriginalDirectory",
+      "TestVGATerrainExpandedSourceTemplates",
+      "TestVGAWallSourceFixture"
+    ],
+    "loader_negative_controls": [
+      "unknown-key",
+      "substituted-source",
+      "size",
+      "position",
+      "duplicate"
+    ],
+    "ega_regression": true,
+    "direct_and_legacy_equal": true,
+    "normal_distance_frames_observed": [
+      0,
+      2
+    ],
+    "unobserved_normal_distance_frames": [
+      1
+    ]
+  },
+  "runtime": {
+    "status": "PASS",
+    "scope": "SPRIT041三距離來源；正常DEMO增量及近遠景，中景正常事件未知",
+    "binary_sha256": "752442e400b2c07b707b77f50290b02f0aea469c3ac78365f6039b68ef9fabee",
+    "prior_binary_sha256": "4581cd6f203ca120f9b2539f4a8c4305d04622819b567819ddb9e2f6ebed51ac",
+    "frames": 7400,
+    "steps": 712250000,
+    "state": {
+      "cpu": "c2b1ab7e95b942a904842f53eced383f6e0c39b111a0d6c1b65e8ac740694c47",
+      "memory": "92378aa1b9a421f5f2b2b93c504aed1f80dbd06e627fd1d9f297932fbacbf540",
+      "indexed": "e77dd084128cf4f20ecce7cd104b1bb0a68f008da864490d926e338386abb7bf",
+      "palette": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+      "frames": 7400,
+      "steps": 712250000
+    },
+    "guest_files": 127,
+    "guest_state_equal": true,
+    "original_endpoint_equal": true,
+    "old_theme_new_program_composite_equal": true,
+    "final_composite_equal": true,
+    "prior_assets_preserved": true,
+    "theme_files": 1357,
+    "encounter_candidates": 3,
+    "flash_count": 0,
+    "frames_sha256": {
+      "prior": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d",
+      "before": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d",
+      "after": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d"
+    },
+    "negative_controls": [
+      {
+        "case": "cpu",
+        "rejected": true
+      },
+      {
+        "case": "source",
+        "rejected": true
+      },
+      {
+        "case": "palette",
+        "rejected": true
+      },
+      {
+        "case": "guest",
+        "rejected": true
+      },
+      {
+        "case": "output-pixel",
+        "rejected": true
+      },
+      {
+        "case": "shot-foreground",
+        "rejected": true
+      },
+      {
+        "case": "shot-background",
+        "rejected": true
+      },
+      {
+        "case": "shot-palette",
+        "rejected": true
+      }
+    ],
+    "negative_controls_all_pass": true,
+    "normal_shots": [
+      {
+        "full_source": false,
+        "distance": null,
+        "used_rgb_sha256": null,
+        "changed_pixels": 0,
+        "transparent_and_outside_changes": 0,
+        "capture": "pod-f004000",
+        "indexed_sha256": "2591874f8e2da80ac868469472ff5560b6c497e13e6f6791c97f6ccf40c0a025",
+        "palette_sha256": "43f31483a4a92cbf2588c42e6d78f33a40df804a19eb49734c69c7d30a5ece57",
+        "before_png_sha256": "76bf6de66a26f91caab34c41f26743d5433b52b604160c4cdef15bd497989990",
+        "after_png_sha256": "76bf6de66a26f91caab34c41f26743d5433b52b604160c4cdef15bd497989990",
+        "source_frame_offset": -1
+      },
+      {
+        "full_source": false,
+        "distance": null,
+        "used_rgb_sha256": null,
+        "changed_pixels": 0,
+        "transparent_and_outside_changes": 0,
+        "capture": "pod-f004500",
+        "indexed_sha256": "8484eca0f1c7b01fb2e8fe040f66f53d417f3bad1a2737b90b4f2c77862ccda2",
+        "palette_sha256": "e708ffd4ed7f532c2647b451ac60d12ba2a2395f4ea0137ae52ad86c9179e744",
+        "before_png_sha256": "3e6ff172f41fe2aed87a8894536da4896678a7a889663e1ee15dd3e0cea6407a",
+        "after_png_sha256": "3e6ff172f41fe2aed87a8894536da4896678a7a889663e1ee15dd3e0cea6407a",
+        "source_frame_offset": -1
+      },
+      {
+        "full_source": false,
+        "distance": null,
+        "used_rgb_sha256": null,
+        "changed_pixels": 0,
+        "transparent_and_outside_changes": 0,
+        "capture": "pod-f005000",
+        "indexed_sha256": "3edf4d87e4e63848dffbcf0f11757ccfc2881bce49c6a5efe6389eeabe59e4c8",
+        "palette_sha256": "e708ffd4ed7f532c2647b451ac60d12ba2a2395f4ea0137ae52ad86c9179e744",
+        "before_png_sha256": "b810931d5132618c71f0dfb18e6d9b1ba262993f38261039a3bc1c64038a36e1",
+        "after_png_sha256": "b810931d5132618c71f0dfb18e6d9b1ba262993f38261039a3bc1c64038a36e1",
+        "source_frame_offset": -1
+      },
+      {
+        "full_source": false,
+        "distance": null,
+        "used_rgb_sha256": null,
+        "changed_pixels": 0,
+        "transparent_and_outside_changes": 0,
+        "capture": "pod-f005500",
+        "indexed_sha256": "98b56175a67e10efce1ac89f8bfe2e2bac30835c0b652dd7770e95e5339f0793",
+        "palette_sha256": "86d18176e3f9b9aaa2856690bfd720fad7f17e9165a7ba4a7b13f782f99623e0",
+        "before_png_sha256": "9b529bb786d817919cca5389721fb30df7f6a12685c330beb81bb31f31910389",
+        "after_png_sha256": "9b529bb786d817919cca5389721fb30df7f6a12685c330beb81bb31f31910389",
+        "source_frame_offset": -1
+      },
+      {
+        "full_source": true,
+        "distance": 2,
+        "used_rgb_sha256": "c73595adf793f677f2f22c29e302d68c1d7c330bf77db0197001cf4fc7ae4312",
+        "changed_pixels": 1152,
+        "transparent_and_outside_changes": 0,
+        "capture": "pod-f006000",
+        "indexed_sha256": "eca8d053d2ff25e4bd89e7ff58c122b38962ce5009403b8bd3ccc67386c6ccd2",
+        "palette_sha256": "d6a839e05c4eca489232c9f09728871a7fa849b3e08aff93154c104dfce10993",
+        "before_png_sha256": "2a107b3284a6626dc1c0435c15ad22fdcd42b2f9560e2225d994042a480ada0f",
+        "after_png_sha256": "f9b7c5a42e0df7f7608736249e4e93f0ba35164f59182c8ea737520804ac9884",
+        "source_frame_offset": -1
+      },
+      {
+        "full_source": true,
+        "distance": 0,
+        "used_rgb_sha256": "9061c36f48b0d095009e3cb060df0a767c2cdd5b898167e43ccf98d05c9a9d70",
+        "changed_pixels": 15705,
+        "transparent_and_outside_changes": 0,
+        "capture": "pod-f006300",
+        "indexed_sha256": "723b92566cad107316a9d9e69b2a795e9d7c83086b0a8af23baaab04c6564c8a",
+        "palette_sha256": "d6a839e05c4eca489232c9f09728871a7fa849b3e08aff93154c104dfce10993",
+        "before_png_sha256": "d08c4b8acd0dcacd569c998f68792b5004ff67d02bf2b318186fc45caf668867",
+        "after_png_sha256": "d90e14ff2971a0becf73a211144c868fb24edfe4dadf44c5d507b6c29edb8eba",
+        "source_frame_offset": -1
+      },
+      {
+        "full_source": false,
+        "distance": null,
+        "used_rgb_sha256": null,
+        "changed_pixels": 0,
+        "transparent_and_outside_changes": 0,
+        "capture": "pod-f006400",
+        "indexed_sha256": "1fdf8cd8bb89eaa03cddc0c3d6117528287ca0c9c69ed1dcb460da199f19c436",
+        "palette_sha256": "d6a839e05c4eca489232c9f09728871a7fa849b3e08aff93154c104dfce10993",
+        "before_png_sha256": "f1406e4631d0f86ed2a97ad4aed0700c13b24e58f22c35aef355bc743610b971",
+        "after_png_sha256": "f1406e4631d0f86ed2a97ad4aed0700c13b24e58f22c35aef355bc743610b971",
+        "source_frame_offset": -1
+      },
+      {
+        "full_source": false,
+        "distance": null,
+        "used_rgb_sha256": null,
+        "changed_pixels": 0,
+        "transparent_and_outside_changes": 0,
+        "capture": "pod-f006458",
+        "indexed_sha256": "c19ae00020c53963f79a9c9e1e674299ef10293ce97484d5474ee83641229418",
+        "palette_sha256": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+        "before_png_sha256": "4c46b4d30da261987a38ef88a8550a5818837fc507197b353160b1ee05f47d07",
+        "after_png_sha256": "4c46b4d30da261987a38ef88a8550a5818837fc507197b353160b1ee05f47d07",
+        "source_frame_offset": -1
+      },
+      {
+        "full_source": false,
+        "distance": null,
+        "used_rgb_sha256": null,
+        "changed_pixels": 0,
+        "transparent_and_outside_changes": 0,
+        "capture": "pod-f006464",
+        "indexed_sha256": "c19ae00020c53963f79a9c9e1e674299ef10293ce97484d5474ee83641229418",
+        "palette_sha256": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+        "before_png_sha256": "4c46b4d30da261987a38ef88a8550a5818837fc507197b353160b1ee05f47d07",
+        "after_png_sha256": "4c46b4d30da261987a38ef88a8550a5818837fc507197b353160b1ee05f47d07",
+        "source_frame_offset": -1
+      },
+      {
+        "full_source": false,
+        "distance": null,
+        "used_rgb_sha256": null,
+        "changed_pixels": 0,
+        "transparent_and_outside_changes": 0,
+        "capture": "pod-f006466",
+        "indexed_sha256": "c19ae00020c53963f79a9c9e1e674299ef10293ce97484d5474ee83641229418",
+        "palette_sha256": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+        "before_png_sha256": "4c46b4d30da261987a38ef88a8550a5818837fc507197b353160b1ee05f47d07",
+        "after_png_sha256": "4c46b4d30da261987a38ef88a8550a5818837fc507197b353160b1ee05f47d07",
+        "source_frame_offset": -1
+      },
+      {
+        "full_source": false,
+        "distance": null,
+        "used_rgb_sha256": null,
+        "changed_pixels": 0,
+        "transparent_and_outside_changes": 0,
+        "capture": "pod-f006467",
+        "indexed_sha256": "c19ae00020c53963f79a9c9e1e674299ef10293ce97484d5474ee83641229418",
+        "palette_sha256": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+        "before_png_sha256": "4c46b4d30da261987a38ef88a8550a5818837fc507197b353160b1ee05f47d07",
+        "after_png_sha256": "4c46b4d30da261987a38ef88a8550a5818837fc507197b353160b1ee05f47d07",
+        "source_frame_offset": -1
+      },
+      {
+        "full_source": false,
+        "distance": null,
+        "used_rgb_sha256": null,
+        "changed_pixels": 0,
+        "transparent_and_outside_changes": 0,
+        "capture": "pod-f006468",
+        "indexed_sha256": "c19ae00020c53963f79a9c9e1e674299ef10293ce97484d5474ee83641229418",
+        "palette_sha256": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+        "before_png_sha256": "4c46b4d30da261987a38ef88a8550a5818837fc507197b353160b1ee05f47d07",
+        "after_png_sha256": "4c46b4d30da261987a38ef88a8550a5818837fc507197b353160b1ee05f47d07",
+        "source_frame_offset": -1
+      },
+      {
+        "full_source": false,
+        "distance": null,
+        "used_rgb_sha256": null,
+        "changed_pixels": 0,
+        "transparent_and_outside_changes": 0,
+        "capture": "pod-f006472",
+        "indexed_sha256": "c19ae00020c53963f79a9c9e1e674299ef10293ce97484d5474ee83641229418",
+        "palette_sha256": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+        "before_png_sha256": "4c46b4d30da261987a38ef88a8550a5818837fc507197b353160b1ee05f47d07",
+        "after_png_sha256": "4c46b4d30da261987a38ef88a8550a5818837fc507197b353160b1ee05f47d07",
+        "source_frame_offset": -1
+      },
+      {
+        "full_source": false,
+        "distance": null,
+        "used_rgb_sha256": null,
+        "changed_pixels": 0,
+        "transparent_and_outside_changes": 0,
+        "capture": "pod-f006476",
+        "indexed_sha256": "56c0d197a483ffb042727c112a8f3adbf96a2ea5a0758a7889e5e3153ef81de7",
+        "palette_sha256": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+        "before_png_sha256": "b52944ad615246cf93cf76fb643e5e453cf17a1c6faf3b8852557355e4797d04",
+        "after_png_sha256": "b52944ad615246cf93cf76fb643e5e453cf17a1c6faf3b8852557355e4797d04",
+        "source_frame_offset": -1
+      }
+    ],
+    "normal_full_source_captures": [
+      "pod-f006000",
+      "pod-f006300"
+    ],
+    "normal_distance_frames_observed": [
+      0,
+      2
+    ],
+    "unobserved_normal_distance_frames": [
+      1
+    ],
+    "source_proof_sha256": "7dc829645c6e9dec93d73be0c73d5498740c43cb02e4e26ce6952383d3d144ae",
+    "baseline_receipt_sha256": "b2cf577b183b5edfa478942a342d4689b76b1522dd0adfaa6f026d5e89c75e51",
+    "runtime_inputs_sha256": "a8dd519fd2d227cc14770d861270c9fdd0e81321251058dce9ae1b86dc42d4da",
+    "runtime_log_sha256": "eea26577fc46f06babcc81acfead4c6017737ef8ccb2717a3f0841a0022a4d28",
+    "old_theme_runtime_inputs_sha256": "66e36390dfb9c8d92a1e339dff9fc2e7d81396cd3127a2c7271beaf47f17d0fd",
+    "old_theme_runtime_log_sha256": "eea26577fc46f06babcc81acfead4c6017737ef8ccb2717a3f0841a0022a4d28"
+  },
+  "runtime_receipt_sha256": "89a49add69f72cae949d754eef48a3c0d581c30e4d00831fa1aafaf14d59ab7d",
+  "prior_batch_receipt_sha256": "b2cf577b183b5edfa478942a342d4689b76b1522dd0adfaa6f026d5e89c75e51",
+  "normal_draw": {
+    "receipt_sha256": "9a25e23a3f1d901c36497440bfc4d3638dfc639d865c6b71e94d0e9f455a87e6",
+    "host_bytes": 3476040,
+    "native_bytes": 3476040,
+    "fallback_bytes": 0,
+    "mismatches": 0,
+    "legacy_rgb_frames": 0,
+    "selected_rgb_pixels": 3011068080,
+    "original_rgb_pixels": 3896323920,
+    "scope": "同一次正常DEMO與F10合成；既有Go繪圖核心未改，不外推其他路線或FPS"
+  },
+  "portable_rebuild": {
+    "receipt": {
+      "status": "PASS",
+      "manifest_sha256": "28f551bc54b56ac7a1a43ad50a4079ca6f01e7ff5becd18bd81d6d385600f9ee",
+      "theme_files": 1357,
+      "theme_tree_sha256": "33753073d69c32f19664f55722eaf0f70d3a9ec613e1528e29dce4566a7b2b33",
+      "fonts": {
+        "pod-en-3x.golemfnt": "c701ce90a4b3009e6126b0ccfc0dc042dc17c22dbf59c07b1e41c90678481db9",
+        "pod-en.golemfnt": "121e92b01c9c907aa66b8e6e78155d0a368102e599bbb9784feaec5c7f2234e0",
+        "pod-rounded-3x.golemfnt": "52e749e344c5bf6a60fa6501ad4ab17b72de0871897382a5c58d2acc3cc21730",
+        "pod-rounded-bar12.golemfnt": "89cd27498ae1dea002b3fef714695e433e198269e71f76e50bdeab9b9f4c8976",
+        "pod-rounded-bar22.golemfnt": "0d731150caef048b40b60a6baaba1b37dc1f3791c7a442b2ee51a60834f635d5",
+        "pod-rounded.golemfnt": "0f0430e7db828b8b74249b69f02ac7c590724215d9edc0f212830790ae4531ac"
+      },
+      "original_archives": {
+        "8X8D1.DAX": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "BIGPIC1.DAX": "bc3565c62c1654ee757d1f98f64bbb78e06bcd551c2e8593c41feb130b9f0f6b",
+        "CPIC1.DAX": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+        "DUNGCOM.DAX": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "TITLE.DAX": "8a53adf4044527df86d2d983f6c4eeee440c3d09773e7cbd4166279ccafde757",
+        "PIC1.DAX": "a3cf36ca3d51ca7960fd73b630489f019c5ad984808ad08bcf91186f67401ab7",
+        "SKYGRND.DAX": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+        "WILDCOM.DAX": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+        "COMSPR.DAX": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee",
+        "BACK1.DAX": "2efc68c5220a3f2c00315accc4b13961727cf87ae941484a8eb77cb78e054c6f",
+        "SPRIT1.DAX": "df356577a5d884222138c486170caf0bb21809f58201ed52827b2cd9dc441c7f"
+      },
+      "engine": {
+        "repository": "https://github.com/wicanr2/pools-of-darkness-cht.git",
+        "branch": "dosgolem/pod",
+        "commit": "672623e917e48a72ab5cd37fda90047c548f9781"
+      },
+      "input_scope": "Git files and explicitly supplied original DAX only; no old workplace",
+      "rights": "private review inputs; original indexes reconstructed locally"
+    },
+    "receipt_sha256": "7b8e6735e77e12e94425f1bc65252f8b8adbd788a58b89419939002a2e84f4c3",
+    "source_git_tree": "636c6bb800b2a3b0c7b064601d0d359cc7957d82",
+    "negative_controls": {
+      "all_pass": true,
+      "cases": [
+        {
+          "case": "missing-original",
+          "rejected": true,
+          "no_output": true,
+          "reason": "[Errno 2] No such file or directory"
+        },
+        {
+          "case": "changed-original",
+          "rejected": true,
+          "no_output": true,
+          "reason": "原版雜湊不符：8X8D1.DAX"
+        },
+        {
+          "case": "changed-png",
+          "rejected": true,
+          "no_output": true,
+          "reason": "素材雜湊不符：review/hd/b11-walls/8x8d1-001@193.png"
+        }
+      ]
+    },
+    "engine_commit": "672623e917e48a72ab5cd37fda90047c548f9781",
+    "engine_clean_build_equals_tested": true,
+    "engine_build_log_sha256": "7639686851a1b68f1d16ef054d2495550c34fb283fced0e2c4ef11bff9ca0793",
+    "scope": "乾淨Git引擎重編逐位元相同；乾淨主專案與自備DAX重建1357檔及六份字型，每檔相同。僅Linux amd64容器，其他平台未驗。"
+  },
+  "activation": {
+    "method": "new binary verified on old theme, then Linux renameat2 RENAME_EXCHANGE of complete theme",
+    "official": "workplace/hd/theme",
+    "tested": "workplace/hd/theme-b41-stage",
+    "previous": "workplace/hd/theme-b41-previous",
+    "official_files": 1357,
+    "prior_files": 1350,
+    "official_equals_tested": true,
+    "prior_equals_baseline": true,
+    "binary_sha256": "752442e400b2c07b707b77f50290b02f0aea469c3ac78365f6039b68ef9fabee",
+    "prior_binary_sha256": "4581cd6f203ca120f9b2539f4a8c4305d04622819b567819ddb9e2f6ebed51ac",
+    "binary_rollback": "workplace/dosgolem/workplace/bin/pod-play-before-encounters",
+    "theme_tree_sha256": "33753073d69c32f19664f55722eaf0f70d3a9ec613e1528e29dce4566a7b2b33"
+  },
+  "screenshots": {
+    "manifest": "docs/screenshots/encounter-041-runtime.json",
+    "manifest_sha256": "87efc8a96ae4a8d4d65c3dbc6b35ca945b842e5255af312810afd311fe0a0d52"
+  },
+  "tools": {
+    "python": "3.13.16",
+    "pillow": "11.0.0",
+    "numpy": "2.1.3",
+    "image": "sosb-img:r1",
+    "image_id": "8b9012adb991ebd1714725cf122ac052462d2993a17dd7b3ec2504e213ae9cf3",
+    "go": "go1.24.13",
+    "go_image": "dosgolem-go-ebiten:1.24-r1",
+    "go_image_id": "8ed6bdee2bce1f32f804e888f942b25bbf62f2165a43344bb4587f3371de0581"
+  },
+  "tool_sha256": {
+    "hd_vga_request.py": "1556967df15693f6c1af4c804a2b5350ee376d9cde379c9a0212059040e0c777",
+    "hd_vga_prepare.py": "d3f1203904cb5a82a63f9ca9e85883a255a0dcb81d6013f74b0d3b0a6fa44ace",
+    "hd_vga_validate.py": "cbe88b3d90bb834331f4176efa61f86da90090194ae376e562a55f5ac2a048d9",
+    "hd_vga_review.py": "654c44466473ebc7be6bab3b9969bda4705591dca719c664601974aea6480340",
+    "hd_vga_encounter_theme.py": "296fa847114d0c35b5384173c958680ecb784ae2ee3492f520f059390ee52e10",
+    "hd_vga_readme_preview.py": "6112666390d49da577b31cc665d39045e05cd9271336ddc2411c1b76a9ef5b7a",
+    "vga_encounter_play_check.py": "395816dc6bd56c0f504e57d69cb6520af652f6779fc92d3812be68f8725170da",
+    "hd_encounter_readme_shots.py": "eb97242392d5f71b029dc361632fc8d31b8547dce75aaf329a8627449ffbb5d0",
+    "rebuild_theme_snapshot.py": "d8c29fe90e2dfe7a92c653c2177a2d03565d0ce05282b8e2216e72e2990d260a",
+    "rebuild_assets.py": "e4dd1f4857fabd381b16ca04a967679eaf0ceabcff04f78ae0027cca604c8611"
+  },
+  "evidence_recipe_sha256": {
+    "source-proof.py": "7dafe4d008a2dea64689e17c4f16b21e255a1afd651821fa6e85e0830535148b",
+    "import-generated.py": "dc7f286edfc6ac71008037681a5082bdd9fb4238a4e97a11fb66018efb2b3a8a",
+    "normal.sh": "55415b106cf00a0b529b209fa6a709fd1babd4ddd68753a94c06b64f362aedc8",
+    "activate.py": "b871647e747d5f3be874645e768d231e43f8d844b83ec1ddb39d36faff86c423",
+    "report.py": "fc77dc43b0e0ebede6df92c85aa958e7a85981567bb94f411053307aa7731c19"
+  }
+}

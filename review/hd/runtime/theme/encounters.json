@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "scale": 3,
+  "kind": "encounter-sprites",
+  "items": [
+    {
+      "key": "sprit1-041@0",
+      "size": [
+        88,
+        88
+      ],
+      "position": [
+        24,
+        24
+      ],
+      "png": "sprit1-041@0.png",
+      "png_sha256": "77759a7b0af552995d6d24baa9a35ca3c772e84f371a635dd47a158cfdcb5c75",
+      "indexed": "sprit1-041@0.idx",
+      "indexed_sha256": "e3a835776c06b3fbc49aecd405af7e03ac2b43527b28ee377dce1152dbba9607"
+    },
+    {
+      "key": "sprit1-041@1",
+      "size": [
+        88,
+        88
+      ],
+      "position": [
+        24,
+        24
+      ],
+      "png": "sprit1-041@1.png",
+      "png_sha256": "ec9f1f44366558fd387602a8cf2477738c8f43a46e3ff8e83b214ce3cfa4cbb8",
+      "indexed": "sprit1-041@1.idx",
+      "indexed_sha256": "d30de9a7a7f70b2880687daab1ea2d4d20f74c1af797768b1cb3adde871e6f7b"
+    },
+    {
+      "key": "sprit1-041@2",
+      "size": [
+        88,
+        88
+      ],
+      "position": [
+        24,
+        24
+      ],
+      "png": "sprit1-041@2.png",
+      "png_sha256": "b25f07136429e7ccf89b5c84621fc8ec4f38a3a191c900efaff7de5e96494ce7",
+      "indexed": "sprit1-041@2.idx",
+      "indexed_sha256": "a5e4da506c2eb631448b12197b56f12b24aef4617a6cb4fd17c25209acc401d1"
+    }
+  ]
+}

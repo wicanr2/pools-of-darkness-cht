@@ -1,0 +1,58 @@
+{
+  "scope": "正常冷啟動DEMO近景；原始像素裁切與完整視窗，無縮放、重畫或來源注入",
+  "capture": "pod-f006300",
+  "source_frame": 6299,
+  "source_frame_offset": -1,
+  "key": "sprit1-041@0",
+  "indexed_sha256": "723b92566cad107316a9d9e69b2a795e9d7c83086b0a8af23baaab04c6564c8a",
+  "palette_sha256": "d6a839e05c4eca489232c9f09728871a7fa849b3e08aff93154c104dfce10993",
+  "play_receipt_sha256": "89a49add69f72cae949d754eef48a3c0d581c30e4d00831fa1aafaf14d59ab7d",
+  "images": [
+    {
+      "path": "docs/screenshots/encounter-041-original-3x.png",
+      "role": "original",
+      "source": "workplace/probe/g9-hd/b41-play-v1/old/window-shots/pod-f006300.png",
+      "source_sha256": "d08c4b8acd0dcacd569c998f68792b5004ff67d02bf2b318186fc45caf668867",
+      "crop": [
+        312,
+        72,
+        576,
+        336
+      ],
+      "size": [
+        264,
+        264
+      ],
+      "sha256": "edbd1c637d47e8d2d549d9a6c96fb7350a78084b8f223d902e059547e637eca3"
+    },
+    {
+      "path": "docs/screenshots/encounter-041-hd-3x.png",
+      "role": "HD",
+      "source": "workplace/probe/g9-hd/b41-play-v1/hd/window-shots/pod-f006300.png",
+      "source_sha256": "d90e14ff2971a0becf73a211144c868fb24edfe4dadf44c5d507b6c29edb8eba",
+      "crop": [
+        312,
+        72,
+        576,
+        336
+      ],
+      "size": [
+        264,
+        264
+      ],
+      "sha256": "2f6601313f38df0c8bf5b42b1c491913c0c4f6e16564c2970dc20c2b13568e15"
+    },
+    {
+      "path": "docs/screenshots/encounter-041-demo-window.png",
+      "role": "HD full window",
+      "source": "workplace/probe/g9-hd/b41-play-v1/hd/window-shots/pod-f006300.png",
+      "source_sha256": "d90e14ff2971a0becf73a211144c868fb24edfe4dadf44c5d507b6c29edb8eba",
+      "size": [
+        1440,
+        600
+      ],
+      "sha256": "d90e14ff2971a0becf73a211144c868fb24edfe4dadf44c5d507b6c29edb8eba"
+    }
+  ],
+  "rights": "private original-reference screenshots; no public distribution rights implied"
+}

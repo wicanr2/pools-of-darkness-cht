@@ -41,6 +41,7 @@
 戰鬥特效的 44 個來源已有素材對應，共 36 張成品。六類來源與正常 DEMO 抽驗通過；未遇事件依完整來源條件辨識，有位置歧義時保留原版。
 素材覆蓋與實機驗證範圍見[研究017](docs/re/017-vga-battle-hd.md#b39-effects)。
 另有九張天空與地下城背景成品，依完整來源與使用色盤條件選用；正常出現位置與遮擋尚未驗證。
+遭遇圖已有一組三種距離成品，正常近景與遠景抽驗通過，透明區保留原版場景；中景與其他遭遇圖仍待正常事件驗證。
 開場封面、世界標誌與製作名單已接入，可用 F8 切換繁中與英文。
 片頭八組台詞也可切換繁中與英文，支援 2／3 倍與 F12 原版；正常播放的[字幕驗收](docs/re/018-movie-subtitles.md#正式呈現層與正常視窗驗收)通過，動畫美術仍待 HD 重畫。
 菲蘭起點的天空、地面與牆面也已接入，完整讀檔抽樣通過。
@@ -229,6 +230,23 @@ HD、無 HD、F12 原版及 2 倍四路的 CPU、記憶體、色號、色盤與 
 來源與驗證範圍見[正常收據](docs/re/017-b38-play.json)及[截圖清單](docs/screenshots/combat-effect-runtime.json)。
 
 ![正常戰鬥的HD特效與完整遊戲視窗](docs/screenshots/combat-effects-demo-window.png)
+
+### 遭遇圖與距離
+
+![同一遭遇圖的近景、中景與遠景HD素材](docs/screenshots/encounter-041-hd-preview.png)
+
+三張 264×264 成品保留各自的大小與留白，上圖是素材預覽。
+HD 只覆蓋來源的非零前景，地下城背景仍可從腿部與身體間看見。
+原版並列與內建生圖提示詞見[遭遇圖審閱頁](review/hd/b41-encounter/README.md)，[預覽來源](docs/screenshots/encounter-041-hd-preview.json)另列。
+
+| 原版遭遇圖，3 倍 | HD 遭遇圖，3 倍 |
+|---|---|
+| ![正常DEMO的原版遭遇圖](docs/screenshots/encounter-041-original-3x.png) | ![正常DEMO的HD遭遇圖](docs/screenshots/encounter-041-hd-3x.png) |
+
+兩圖取自相同輸入的正常 DEMO，保留截圖原始像素。近景與遠景都已核對完整成品前景，
+透明區及框外差異為 0；中景正常事件尚未觀測。[正常比較](docs/re/017-b41-play.json)及[截圖來源](docs/screenshots/encounter-041-runtime.json)另列。
+
+![正常遭遇圖與含兩側海報的完整遊戲視窗](docs/screenshots/encounter-041-demo-window.png)
 
 ### 天空與地下城背景
 

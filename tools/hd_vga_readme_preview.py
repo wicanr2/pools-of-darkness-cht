@@ -15,17 +15,17 @@ def sha(path):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=Path('.'))
-    parser.add_argument('--kind', choices=('monster', 'terrain', 'effects', 'background'), default='monster')
+    parser.add_argument('--kind', choices=('monster', 'terrain', 'effects', 'background', 'encounter'), default='monster')
     parser.add_argument('--terrain-batch', default='b26-terrain', help='review/hd內的地形批次目錄')
     parser.add_argument('--name', help='輸出PNG檔名；須為單一檔名')
     args = parser.parse_args()
-    if args.kind in ('terrain', 'effects', 'background'):
+    if args.kind in ('terrain', 'effects', 'background', 'encounter'):
         assert Path(args.terrain_batch).name == args.terrain_batch
         proof = json.loads((args.root / 'review/hd' / args.terrain_batch / 'manifest.json').read_text())
         selections = [(args.terrain_batch, row['key']) for row in proof['items']]
         assert selections
         columns, cell, name = 6, 80, 'dungeon-terrain-hd-preview.png'
-        if args.kind == 'background':
+        if args.kind in ('background', 'encounter'):
             columns, cell, name = 3, 272, 'background-hd-preview.png'
         size = (columns * cell, ((len(selections) + columns - 1) // columns) * cell)
     else:

@@ -1,0 +1,51 @@
+{
+  "scope": "AI-redrawn asset preview; not a gameplay screenshot",
+  "composition": "native 3x PNG; no resizing or cropping",
+  "size": [
+    816,
+    272
+  ],
+  "output_sha256": "0fdc48867c78c6f61b2699482e896799ec89f73619fb0c53d7995305693293cc",
+  "items": [
+    {
+      "key": "sprit1-041@0",
+      "source": "review/hd/b41-encounter/sprit1-041@0.png",
+      "png_sha256": "77759a7b0af552995d6d24baa9a35ca3c772e84f371a635dd47a158cfdcb5c75",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        4,
+        4
+      ]
+    },
+    {
+      "key": "sprit1-041@1",
+      "source": "review/hd/b41-encounter/sprit1-041@1.png",
+      "png_sha256": "ec9f1f44366558fd387602a8cf2477738c8f43a46e3ff8e83b214ce3cfa4cbb8",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        276,
+        4
+      ]
+    },
+    {
+      "key": "sprit1-041@2",
+      "source": "review/hd/b41-encounter/sprit1-041@2.png",
+      "png_sha256": "b25f07136429e7ccf89b5c84621fc8ec4f38a3a191c900efaff7de5e96494ce7",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        548,
+        4
+      ]
+    }
+  ],
+  "rights": "AI redraws within existing private HD patch scope; no original reference pixels"
+}

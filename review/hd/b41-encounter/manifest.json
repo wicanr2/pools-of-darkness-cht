@@ -1,0 +1,218 @@
+{
+  "batch": "b41",
+  "count": 3,
+  "private_only": true,
+  "request_manifest_sha256": "d98331a6c17a99532468f520afb90a68572bf81aaaa21a3e1bc04958e28c78c2",
+  "items": [
+    {
+      "key": "sprit1-041@0",
+      "source": {
+        "key": "sprit1-041@0",
+        "source_file": "SPRIT1.DAX",
+        "source_file_sha256": "df356577a5d884222138c486170caf0bb21809f58201ed52827b2cd9dc441c7f",
+        "block": 41,
+        "packed_file_offset": 48536,
+        "decoded_sha256": "26cc475c80c3cebe06fc9b00a83ec58d417f0144ae90f74bebf4a049e39c5be9",
+        "source_size": [
+          88,
+          88
+        ],
+        "output_size": [
+          264,
+          264
+        ],
+        "reference_1x": "sprit1-041@0-1x.png",
+        "reference_3x": "sprit1-041@0-3x.png",
+        "reference_1x_sha256": "4c80a7f509e9b732e9a7dbfbd66619da521eda95bf8b7a4820c3d3a3414366ea",
+        "reference_3x_sha256": "07c3a18f5e1d5cf4eba397af431502f95b46babb354d6ec6c30f15b04405eac8",
+        "indexed": "sprit1-041@0.idx",
+        "indexed_sha256": "e3a835776c06b3fbc49aecd405af7e03ac2b43527b28ee377dce1152dbba9607",
+        "palette": "sprit1-041@0.pal",
+        "palette_sha256": "a3a8c33f3eff57b7611d222c4d3b8b95989410cdff9a5b915852852422240192",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "sprit1-041@0",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-d684dbe6-be79-4787-94df-d7a7951cc649.png",
+        "prompt": "Use case: style-transfer. Asset type: Pools of Darkness HD encounter creature sprite on opaque pure black square background, final264x264. Image1 is the exact original composition and color authority. Repaint this SAME strange gray-lavender spider creature with fine classic fantasy hand-painted detail, approved style B. Keep the narrow pointed upper shell, dark hollow face, small red-orange glowing central eye, thin golden horizontal brow projections, segmented tapering torso, black/maroon belly, and the exact number and poses of bent thin legs visible in the reference. Silver-gray highlights, dark violet shadows, tiny golden and red accents. Near view: the exact original silhouette occupies x13..75 percent, y25..96 percent of the square, with long bent legs reaching the bottom as shown. Keep the bottommost feet and every bend in place. Preserve silhouette, proportions, position and black negative space precisely. No ground, castshadow, scenery, extra anatomy, eyes, weapons, decorations, lettering, frame or watermark. No pixel blocks or modern3D. Paint only existing shapes, and fill remaining canvas flat pure black.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "fa02489ec756fb44b50fba5b51ebdcbc4cb6ad938bb30029681fe30c1e1fab57",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b41/sprit1-041@0-1x-view.png",
+            "sha256": "ab34b0c20a61a23115f9339a8457692623216cc83b90e1d9117e8262d72407be",
+            "derivation": "4x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "sprit1-041@0",
+        "raw": "sprit1-041@0-r1-raw.png",
+        "raw_sha256": "fa02489ec756fb44b50fba5b51ebdcbc4cb6ad938bb30029681fe30c1e1fab57",
+        "png": "sprit1-041@0.png",
+        "png_sha256": "77759a7b0af552995d6d24baa9a35ca3c772e84f371a635dd47a158cfdcb5c75",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "sprit1-041@0",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.7966549295774648,
+        "median_hue_difference_degrees": 10.46153846153847,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "77759a7b0af552995d6d24baa9a35ca3c772e84f371a635dd47a158cfdcb5c75"
+      },
+      "visual": {
+        "png_sha256": "77759a7b0af552995d6d24baa9a35ca3c772e84f371a635dd47a158cfdcb5c75",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "sprit1-041@1",
+      "source": {
+        "key": "sprit1-041@1",
+        "source_file": "SPRIT1.DAX",
+        "source_file_sha256": "df356577a5d884222138c486170caf0bb21809f58201ed52827b2cd9dc441c7f",
+        "block": 41,
+        "packed_file_offset": 48536,
+        "decoded_sha256": "26cc475c80c3cebe06fc9b00a83ec58d417f0144ae90f74bebf4a049e39c5be9",
+        "source_size": [
+          88,
+          88
+        ],
+        "output_size": [
+          264,
+          264
+        ],
+        "reference_1x": "sprit1-041@1-1x.png",
+        "reference_3x": "sprit1-041@1-3x.png",
+        "reference_1x_sha256": "6f966af16819ff05300c1b969f68df26b6a21ae7dfcc017e96ea446e34485222",
+        "reference_3x_sha256": "418b5e14b06d450f770e78cc7b0154c47a8769c9ee7c7f4e89fd35d439f415f5",
+        "indexed": "sprit1-041@1.idx",
+        "indexed_sha256": "d30de9a7a7f70b2880687daab1ea2d4d20f74c1af797768b1cb3adde871e6f7b",
+        "palette": "sprit1-041@1.pal",
+        "palette_sha256": "a3a8c33f3eff57b7611d222c4d3b8b95989410cdff9a5b915852852422240192",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "sprit1-041@1",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-1031b63e-3a54-41f7-99e5-fa8fe351724e.png",
+        "prompt": "Use case: style-transfer. Asset type: Pools of Darkness HD encounter creature sprite on opaque pure black square background, final264x264. Image1 is the exact original composition and color authority. Repaint this SAME strange gray-lavender spider creature with fine classic fantasy hand-painted detail, approved style B. Keep the narrow pointed upper shell, dark hollow face, small red-orange glowing central eye, thin golden horizontal brow projections, segmented tapering torso, black/maroon belly, and the exact number and poses of bent thin legs visible in the reference. Silver-gray highlights, dark violet shadows, tiny golden and red accents. Middle-distance view: the creature is SMALL in the canvas, occupies x29..73percent and y43..75percent of the square, centered horizontally toward the lower middle. Preserve ALL the huge black margins. Do not zoom in or enlarge the creature. Preserve silhouette, proportions, position and black negative space precisely. No ground, castshadow, scenery, extra anatomy, eyes, weapons, decorations, lettering, frame or watermark. No pixel blocks or modern3D. Paint only existing shapes, and fill remaining canvas flat pure black.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "1b957b0a1d1e12994f3ad1befafcd039171f6dd9988ad1f2627c2bac7985c33a",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b41/sprit1-041@1-1x-view.png",
+            "sha256": "03ed55e179df25a0670c184997b51c15f45e0dc7a581e1e86d839589d0c5d837",
+            "derivation": "4x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "sprit1-041@1",
+        "raw": "sprit1-041@1-r1-raw.png",
+        "raw_sha256": "1b957b0a1d1e12994f3ad1befafcd039171f6dd9988ad1f2627c2bac7985c33a",
+        "png": "sprit1-041@1.png",
+        "png_sha256": "ec9f1f44366558fd387602a8cf2477738c8f43a46e3ff8e83b214ce3cfa4cbb8",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "sprit1-041@1",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 1.0,
+        "median_hue_difference_degrees": 6.334841628959282,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "ec9f1f44366558fd387602a8cf2477738c8f43a46e3ff8e83b214ce3cfa4cbb8"
+      },
+      "visual": {
+        "png_sha256": "ec9f1f44366558fd387602a8cf2477738c8f43a46e3ff8e83b214ce3cfa4cbb8",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "sprit1-041@2",
+      "source": {
+        "key": "sprit1-041@2",
+        "source_file": "SPRIT1.DAX",
+        "source_file_sha256": "df356577a5d884222138c486170caf0bb21809f58201ed52827b2cd9dc441c7f",
+        "block": 41,
+        "packed_file_offset": 48536,
+        "decoded_sha256": "26cc475c80c3cebe06fc9b00a83ec58d417f0144ae90f74bebf4a049e39c5be9",
+        "source_size": [
+          88,
+          88
+        ],
+        "output_size": [
+          264,
+          264
+        ],
+        "reference_1x": "sprit1-041@2-1x.png",
+        "reference_3x": "sprit1-041@2-3x.png",
+        "reference_1x_sha256": "d88706b18d4044cb6e145c2f9be7e0943c68cabb47c4c31ec4a5507b06aeb61f",
+        "reference_3x_sha256": "f2c090ff7c3c391f4a4c035f2bcd78317f997dfa9f460c0e2eb08bfa58078365",
+        "indexed": "sprit1-041@2.idx",
+        "indexed_sha256": "a5e4da506c2eb631448b12197b56f12b24aef4617a6cb4fd17c25209acc401d1",
+        "palette": "sprit1-041@2.pal",
+        "palette_sha256": "a3a8c33f3eff57b7611d222c4d3b8b95989410cdff9a5b915852852422240192",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "sprit1-041@2",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-ea46c2c8-460f-4032-a684-cd16eb7326a6.png",
+        "prompt": "Use case: style-transfer. Asset type: Pools of Darkness HD encounter creature sprite on opaque pure black square background, final264x264. Image1 is the exact original composition and color authority. Repaint this SAME strange gray-lavender spider creature with fine classic fantasy hand-painted detail, approved style B. Keep the narrow pointed upper shell, dark hollow face, small red-orange glowing central eye, thin golden horizontal brow projections, segmented tapering torso, black/maroon belly, and the exact number and poses of bent thin legs visible in the reference. Silver-gray highlights, dark violet shadows, tiny golden and red accents. Far-distance view: the creature is TINY in the canvas, occupies x38..62percent and y51..68percent of the square, sitting below the square center. Preserve ALL the enormous black margins. Do not zoom in or enlarge. Preserve silhouette, proportions, position and black negative space precisely. No ground, castshadow, scenery, extra anatomy, eyes, weapons, decorations, lettering, frame or watermark. No pixel blocks or modern3D. Paint only existing shapes, and fill remaining canvas flat pure black.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "a307e1ee0879af39cb5d0d27f7bc0c1193b3a2587088928ef93d624c903c7ea2",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b41/sprit1-041@2-1x-view.png",
+            "sha256": "949178815c3a9ddc1bd09f402405c41ca5eb3eeef95e6179a2589ac74e8241c7",
+            "derivation": "4x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "sprit1-041@2",
+        "raw": "sprit1-041@2-r1-raw.png",
+        "raw_sha256": "a307e1ee0879af39cb5d0d27f7bc0c1193b3a2587088928ef93d624c903c7ea2",
+        "png": "sprit1-041@2.png",
+        "png_sha256": "b25f07136429e7ccf89b5c84621fc8ec4f38a3a191c900efaff7de5e96494ce7",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "sprit1-041@2",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 1.0,
+        "median_hue_difference_degrees": 12.377932783766653,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "b25f07136429e7ccf89b5c84621fc8ec4f38a3a191c900efaff7de5e96494ce7"
+      },
+      "visual": {
+        "png_sha256": "b25f07136429e7ccf89b5c84621fc8ec4f38a3a191c900efaff7de5e96494ce7",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    }
+  ]
+}

@@ -59,7 +59,7 @@ def main():
                 archive=m[1].upper()+'.DAX'
                 if archive not in lock['original_archives']:raise ValueError('新原版圖族須獨立固定來源SHA')
                 row.update(kind='original-index',archive=archive,block=int(m[2]),frame=int(m[3] or 0),
-                           decoder='wall-8x8' if archive=='8X8D1.DAX' else 'sprite-vga' if archive=='PIC1.DAX' else 'block-vga')
+                           decoder='wall-8x8' if archive=='8X8D1.DAX' else 'sprite-vga' if archive in ('PIC1.DAX','SPRIT1.DAX') else 'block-vga')
         else:raise ValueError('未知主題檔案種類')
         rows.append(row)
     new={row['path']:row for row in rows}

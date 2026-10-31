@@ -1,11 +1,11 @@
 {
   "version": 1,
   "issue": 55,
-  "scope": "b40主題；私人素材保存與本機重建，不擴張遊戲驗收或公開權利",
+  "scope": "b41主題；私人素材保存與本機重建，不擴張遊戲驗收或公開權利",
   "engine": {
     "repository": "https://github.com/wicanr2/pools-of-darkness-cht.git",
     "branch": "dosgolem/pod",
-    "commit": "4e662625d2f2289f339fe7cad444b3fb0839e78d"
+    "commit": "672623e917e48a72ab5cd37fda90047c548f9781"
   },
   "theme": [
     {
@@ -7301,6 +7301,13 @@
       "rights": "project metadata; private review"
     },
     {
+      "path": "encounters.json",
+      "sha256": "0bd34b9671acc7db9c4578665443558b655c53dfde1b21a8db33687462894be1",
+      "kind": "repo-file",
+      "source": "review/hd/runtime/theme/encounters.json",
+      "rights": "project metadata; private review"
+    },
+    {
       "path": "exact.json",
       "sha256": "e0dd8e29625bef36ce47a0f7519084c3db63e22da475e79da103f8736b54df46",
       "kind": "repo-file",
@@ -8897,6 +8904,54 @@
       "rights": "accepted HD redraw"
     },
     {
+      "path": "sprit1-041@0.idx",
+      "sha256": "e3a835776c06b3fbc49aecd405af7e03ac2b43527b28ee377dce1152dbba9607",
+      "kind": "original-index",
+      "archive": "SPRIT1.DAX",
+      "block": 41,
+      "frame": 0,
+      "decoder": "sprite-vga"
+    },
+    {
+      "path": "sprit1-041@0.png",
+      "sha256": "77759a7b0af552995d6d24baa9a35ca3c772e84f371a635dd47a158cfdcb5c75",
+      "kind": "repo-file",
+      "source": "review/hd/b41-encounter/sprit1-041@0.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "sprit1-041@1.idx",
+      "sha256": "d30de9a7a7f70b2880687daab1ea2d4d20f74c1af797768b1cb3adde871e6f7b",
+      "kind": "original-index",
+      "archive": "SPRIT1.DAX",
+      "block": 41,
+      "frame": 1,
+      "decoder": "sprite-vga"
+    },
+    {
+      "path": "sprit1-041@1.png",
+      "sha256": "ec9f1f44366558fd387602a8cf2477738c8f43a46e3ff8e83b214ce3cfa4cbb8",
+      "kind": "repo-file",
+      "source": "review/hd/b41-encounter/sprit1-041@1.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "sprit1-041@2.idx",
+      "sha256": "a5e4da506c2eb631448b12197b56f12b24aef4617a6cb4fd17c25209acc401d1",
+      "kind": "original-index",
+      "archive": "SPRIT1.DAX",
+      "block": 41,
+      "frame": 2,
+      "decoder": "sprite-vga"
+    },
+    {
+      "path": "sprit1-041@2.png",
+      "sha256": "b25f07136429e7ccf89b5c84621fc8ec4f38a3a191c900efaff7de5e96494ce7",
+      "kind": "repo-file",
+      "source": "review/hd/b41-encounter/sprit1-041@2.png",
+      "rights": "accepted HD redraw"
+    },
+    {
       "path": "theme.json",
       "sha256": "35201c489bbf59aaa1e18d0484a9f810d44a80d8169a7f0546c1803a1c3edcdc",
       "kind": "repo-file",
@@ -8905,7 +8960,7 @@
     },
     {
       "path": "vga-layers-provenance.json",
-      "sha256": "cf0ab112f6931c903f65c444f33090706b3b0a94fbd7a22531bc26d6a982a20d",
+      "sha256": "2a452ec22592425ec94122e48697a32bb99a27ab2205dbb35786d27f6276a2e5",
       "kind": "repo-file",
       "source": "review/hd/runtime/theme/vga-layers-provenance.json",
       "rights": "project metadata; private review"
@@ -10791,7 +10846,8 @@
     "SKYGRND.DAX": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
     "WILDCOM.DAX": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
     "COMSPR.DAX": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee",
-    "BACK1.DAX": "2efc68c5220a3f2c00315accc4b13961727cf87ae941484a8eb77cb78e054c6f"
+    "BACK1.DAX": "2efc68c5220a3f2c00315accc4b13961727cf87ae941484a8eb77cb78e054c6f",
+    "SPRIT1.DAX": "df356577a5d884222138c486170caf0bb21809f58201ed52827b2cd9dc441c7f"
   },
   "fonts": [
     {
