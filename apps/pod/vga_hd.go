@@ -11,6 +11,24 @@ import (
 )
 
 const cpicVGAPalette = "f565f6507750cb76102763cde24ce198cfcbbc37e1b08edcc7dc121f03299151"
+const comsprVGAPalette = "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+
+// 研究017-b38：實際目錄為0–21、128–149，共44筆。
+func vgaEffectReference(key string, ref []byte) (bool, error) {
+	if !hasVGAPixels(ref) {
+		return false, nil
+	}
+	n, err := strconv.Atoi(strings.TrimPrefix(key, "comspr-"))
+	if err != nil || key != fmt.Sprintf("comspr-%03d", n) || !(n >= 0 && n <= 21 || n >= 128 && n <= 149) {
+		return false, fmt.Errorf("%s：未知VGA特效來源", key)
+	}
+	for _, c := range ref {
+		if c > 15 && (c < 64 || c >= 96) {
+			return false, fmt.Errorf("%s：色號%d不在特效色盤範圍", key, c)
+		}
+	}
+	return true, nil
+}
 
 var terrainVGAPalettes = map[string]string{
 	"dungcom-001": "d10ff3c9b87208a6d05cede1114360fa8d1dbf7c8eb3eb7cd200c701079c9a5f",

@@ -92,6 +92,7 @@ func (h *HDLayers) classify(indexed []byte, pal [256][3]uint8) {
 	guard := h.combat != nil && len(h.combat.matches) >= 3
 	if h.actors != nil {
 		h.actors.vgaPaletteOK = paletteBankHash(pal, 144, 256) == cpicVGAPalette
+		h.actors.effectPaletteOK = paletteBankHash(pal, 64, 96) == comsprVGAPalette
 	}
 	h.actors.frame(indexed, guard)
 	h.actors.partialFrame(indexed, guard)

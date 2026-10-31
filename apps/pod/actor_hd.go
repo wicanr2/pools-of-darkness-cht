@@ -21,6 +21,7 @@ type actorInk struct {
 type actorPattern struct {
 	key            string
 	vga            bool
+	vgaEffect      bool
 	w, h           int
 	ink            []actorInk
 	anchors        []actorInk
@@ -38,13 +39,14 @@ type actorMatch struct {
 }
 
 type actorHD struct {
-	sources      int
-	patterns     []actorPattern
-	matches      []actorMatch
-	owner        []int
-	full         map[[32]byte]int
-	vgaPaletteOK bool
-	deferCells   [21 * 21]bool
+	sources         int
+	patterns        []actorPattern
+	matches         []actorMatch
+	owner           []int
+	full            map[[32]byte]int
+	vgaPaletteOK    bool
+	effectPaletteOK bool
+	deferCells      [21 * 21]bool
 }
 
 // partialFrame只辨識需短暫保留的完整前景小格，不繪局部HD。資訊量沿loader的144點／三色。
@@ -53,11 +55,11 @@ func (a *actorHD) partialFrame(indexed []byte, terrainGuard bool) {
 		return
 	}
 	clear(a.deferCells[:])
-	if !terrainGuard || !a.vgaPaletteOK || len(indexed) != 64000 {
+	if !terrainGuard || len(indexed) != 64000 {
 		return
 	}
 	for _, p := range a.patterns {
-		if !p.vga {
+		if !(p.vga && a.vgaPaletteOK || p.vgaEffect && a.effectPaletteOK) {
 			continue
 		}
 		for y := 8; y+p.h <= 176; y += 24 {
@@ -286,7 +288,7 @@ func (a *actorHD) frame(indexed []byte, terrainGuard bool) {
 	}
 	for n := range a.patterns {
 		p := &a.patterns[n]
-		if !p.freeFull {
+		if !p.freeFull || p.vgaEffect && !a.effectPaletteOK {
 			continue
 		}
 		for from := 0; from+len(p.fullAnchor) <= len(indexed); {
@@ -331,7 +333,7 @@ func (a *actorHD) draw(out, indexed []byte, scale int) {
 	}
 	for _, match := range a.matches {
 		pattern := &a.patterns[match.pattern]
-		if match.conflict || pattern.vga && !a.vgaPaletteOK || !pattern.present(indexed, match.x, match.y) {
+		if match.conflict || pattern.vga && !a.vgaPaletteOK || pattern.vgaEffect && !a.effectPaletteOK || !pattern.present(indexed, match.x, match.y) {
 			continue
 		}
 		for _, point := range pattern.ink {

@@ -32,10 +32,11 @@ func loadEffectHD(dir string) (*actorHD, error) {
 	if err := json.Unmarshal(data, &m); err != nil {
 		return nil, err
 	}
-	if m.Version != 1 || m.Scale != 3 || m.Kind != "combat-effects" || m.Grid != [5]int{8, 8, 7, 7, 24} || m.Background != 8 || len(m.Items) < 1 || len(m.Items) > 26 {
+	if m.Version != 1 || m.Scale != 3 || m.Kind != "combat-effects" || m.Grid != [5]int{8, 8, 7, 7, 24} || m.Background != 8 || len(m.Items) < 1 || len(m.Items) > 44 {
 		return nil, fmt.Errorf("effects.json：欄位不符規格 010 §6.2")
 	}
 	keys, sources := map[string]bool{}, map[[32]byte]bool{}
+	vgaSources := map[string]bool{}
 	var components []*characterComponent
 	for _, item := range m.Items {
 		if item.Key == "" || keys[item.Key] || item.Size != [2]int{24, 24} {
@@ -46,11 +47,16 @@ func loadEffectHD(dir string) (*actorHD, error) {
 		if err != nil || len(ref) != 576 {
 			return nil, fmt.Errorf("%s：色號長度或 SHA 不符：%v", item.Key, err)
 		}
+		vga, err := vgaEffectReference(item.Key, ref)
+		if err != nil {
+			return nil, err
+		}
+		if !vga && len(m.Items) > 26 {
+			return nil, fmt.Errorf("%s：EGA特效清單超過26筆", item.Key)
+		}
+		vgaSources[item.Key] = vga
 		colors, ink := map[byte]bool{}, 0
 		for _, c := range ref {
-			if c > 15 {
-				return nil, fmt.Errorf("%s：色號超過15", item.Key)
-			}
 			colors[c] = true
 			if c != 8 {
 				ink++
@@ -88,7 +94,7 @@ func loadEffectHD(dir string) (*actorHD, error) {
 	// 所有原方向先登錄；鏡像遇到既有圖樣便沿用，避免同圖兩個候選。
 	for _, flip := range []bool{false, true} {
 		for _, component := range components {
-			p := actorPattern{key: component.key, w: 24, h: 24, full: make([]byte, 576), pixels: make([]byte, 72*72*4)}
+			p := actorPattern{key: component.key, vgaEffect: vgaSources[component.key], w: 24, h: 24, full: make([]byte, 576), pixels: make([]byte, 72*72*4)}
 			for y := 0; y < 24; y++ {
 				for x := 0; x < 24; x++ {
 					sx := x

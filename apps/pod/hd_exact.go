@@ -143,7 +143,7 @@ func (p *exactHDItem) makeAnchor() {
 	for y := 0; y < p.h; y++ {
 		for x := 0; x+8 <= p.w; x++ {
 			a := p.ref[y*p.w+x : y*p.w+x+8]
-			seen := [16]bool{}
+			seen := [256]bool{}
 			score := 0
 			for n, c := range a {
 				if !seen[c] {
