@@ -1690,3 +1690,4 @@
 - 676張PNG及17份JSON保存Git，664份原版索引由自備DAX重生，SPRIT1採sprite-vga。乾淨Git主專案樹636c6bb800b2a3b0c7b064601d0d359cc7957d82不含workplace，只掛乾淨來源、自備原版及獨立輸出，重建1357檔與六份字型逐檔相同；缺原版、改原版及改PNG三項負對照在寫出前拒絕。
 - 新程式與1357檔完整原子啟用，1350檔回復副本在workplace/hd/theme-b41-previous，舊程式為pod-play-before-encounters。固定docs/re/017-b41-runtime.json綁來源、素材、正常／診斷、Go繪圖及重建；README直接顯示三距離素材、原版／HD原像素裁切與完整視窗，共58張圖，668個本機連結通過。
 - 沿用sosb-img:r1（8b9012adb991）與dosgolem-go-ebiten:1.24-r1（8ed6bdee2bce），無新映像。原版zip／rar雜湊未改，root-owned與誤建.md目錄空，長期Go快取空，專案容器0。SPRIT其餘28組84幀、中景正常事件、角色改色／定位、背景遮擋及動畫仍依#10。
+- 主專案19c3f7e已推私人main，36個提交檔案擁有權1000:1000，固定收據重算一致，沒有原版idx進Git。#65附[驗收留言](https://github.com/wicanr2/pools-of-darkness-cht/issues/65#issuecomment-6543043132)後關閉並回讀CLOSED；#10補[三距離與剩餘範圍](https://github.com/wicanr2/pools-of-darkness-cht/issues/10#issuecomment-6543045492)，回讀OPEN。儲存庫仍PRIVATE，引擎工作樹乾淨，專案容器0。
