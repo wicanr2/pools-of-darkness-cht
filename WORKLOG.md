@@ -1706,3 +1706,4 @@
 - 匯出工具支援保留既有三張的續批，重複與未指定保留均在寫出前拒絕；重新匯出b42逐檔相同，舊b41匯出亦逐檔同1357檔回復主題。新程式與1405檔完整原子啟用，1357檔回復主題在workplace/hd/theme-b42-previous，舊程式為pod-play-before-encounter-b42。
 - 固定docs/re/017-b42-runtime.json綁來源、素材、抽驗、正常、Go繪圖、重建及啟用。README直接顯示24張成品原尺寸拼圖，與正常遊戲截圖分開標示；59張內嵌圖與629個本機連結通過，新增文件與測試入口同批加入索引。SPRIT已完成九組27張，其他20組60幀、新正常事件與位置、041中景、角色改色／定位、背景遮擋及動畫仍依#10。
 - 沿用sosb-img:r1（8b9012adb991）與dosgolem-go-ebiten:1.24-r1（8ed6bdee2bce），無新映像；Go快取只在容器/tmp，長期快取空。原版zip／rar雜湊不變，root-owned與誤建.md目錄空，專案容器0。
+- 主專案bc70c50已推私人main；72個提交檔案擁有權1000:1000，固定收據重算相同，沒有原版idx入Git。#66附[驗收留言](https://github.com/wicanr2/pools-of-darkness-cht/issues/66#issuecomment-6543429624)後關閉並回讀CLOSED；#10補[九組27張與剩餘範圍](https://github.com/wicanr2/pools-of-darkness-cht/issues/10#issuecomment-6543430269)，回讀OPEN。儲存庫仍PRIVATE，引擎工作樹乾淨，專案容器0。
