@@ -165,6 +165,7 @@ type game struct {
 	barSize       barSize
 	barSizePath   string
 	barFonts      barFonts
+	langBarFonts  map[*xlate.Font]barFonts
 	posters       *pod.PosterSet
 	windowPixels  []byte
 	frameShotDir  string
@@ -905,6 +906,9 @@ func main() {
 		g.barSize = readBarSize(g.barSizePath)
 	}
 	if g.barFonts, err = loadBarFonts(font, *fontPath); err != nil {
+		fail(err)
+	}
+	if g.langBarFonts, err = loadLangBarFonts(langs, fontsByLang, release); err != nil {
 		fail(err)
 	}
 	if *musicDir != "" {

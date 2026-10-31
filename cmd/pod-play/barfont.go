@@ -100,15 +100,38 @@ func barFontMenu(text map[string]string, current barSize, bar []toolbarItem) []t
 	return out
 }
 
-// barGlyphs 回目前倍率與字級要用的字模；字型不是 -font（其他語言）時沿用該字型的倍率規則。
+// barGlyphs 回目前語系、倍率與字級要用的字模。
 func (g *game) barGlyphs() (*xlate.Font, int) {
 	f := g.barFont()
 	px := barGlyphPx(g.scale, g.barSize)
 	if f == g.mainFont && g.barFonts[px] != nil {
 		return g.barFonts[px], px
 	}
+	if fonts := g.langBarFonts[f]; fonts[px] != nil {
+		return fonts[px], px
+	}
 	v, k, _, _ := f.ForScale(g.scale)
 	return v, v.W * k
+}
+
+// loadLangBarFonts 沿既有語系字型路徑載入12／22字模，不改英文工具列沿用主字型的契約。
+func loadLangBarFonts(packs []*pod.LangPack, paths map[string]string, release bool) (map[*xlate.Font]barFonts, error) {
+	out := map[*xlate.Font]barFonts{}
+	for _, pack := range packs {
+		if pack.Code == pod.DefaultLang || pack.Code == pod.EnglishLang {
+			continue
+		}
+		path := langFontPath(pack.Code, paths, release)
+		if path == "" {
+			return nil, fmt.Errorf("語系%s缺工具列字型路徑", pack.Code)
+		}
+		fonts, err := loadBarFonts(pack.Font, path)
+		if err != nil {
+			return nil, fmt.Errorf("語系%s工具列字型：%w", pack.Code, err)
+		}
+		out[pack.Font] = fonts
+	}
+	return out, nil
 }
 
 func (g *game) setBarSize(s barSize) {
