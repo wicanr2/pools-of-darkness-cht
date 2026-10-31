@@ -1776,3 +1776,4 @@
 - 已啟用新程式、1536檔主題與四份新字型，前版程式保留pod-play-before-zhcn，1525檔主題保留theme-before-zhcn-b43。原九包v.0.1.0-20261101與SHA不改，package.sh固定其4bdd711來源，簡中未偷偷加進舊包。
 - 規格015簡中升CONFORMED抽樣，固定證據docs/re/027-zhcn-runtime.json，README直接新增正常簡中工具列與海報圖。英文手札／攻略、日韓、配樂／試聽、無敵、完整動畫HD、HD patch及正式平台交付仍待完成；#11／#12等母項保持開啟。沿用既有影像、Go與Playwright映像，沒有新增映像，不動其他專案。
 - 最終546個本機文件連結及README 62張內嵌圖入口通過，027收據SHA 7cfedb034b283ec86fcf7f288cd0264febf1b0a5268f9d245335cc89550a2c2e。舊素材、六份字型、原九包及zip／rar原始輸入SHA不變，回復副本完整。全工作樹root-owned與誤建.md目錄0，本專案容器0，剩264GiB。巢狀音譯TSV行尾Tab是必要空欄，依既有資料政策補gitattributes，不裁掉空欄；OpenCC授權保存原始bytes。
+- 主專案3abaa88已推私人main，#70附[簡中驗收](https://github.com/wicanr2/pools-of-darkness-cht/issues/70#issuecomment-6550569429)後關閉並回讀CLOSED；#11補[簡中進度與剩餘範圍](https://github.com/wicanr2/pools-of-darkness-cht/issues/11#issuecomment-6550569692)，與#9／#10／#12／#16回讀OPEN。儲存庫回讀PRIVATE，引擎工作樹乾淨且與私人遠端相同。
