@@ -761,6 +761,24 @@
         "comspr-020",
         "comspr-021"
       ]
+    },
+    {
+      "kind": "complete-source-backgrounds",
+      "request_sha256": "f4e51468571aa5e761e67e9c82a324cd5a9bdc13ba0dad8f4894da902ed25d6c",
+      "validation_sha256": "e54fe953fb07056939e5294a6bd5209a79386a1153869423bf698ca3246555e1",
+      "visual_sha256": "69e3c03599113be67e79ae3a5d9cd76784c30539edcbe14e7ecd033c927e9537",
+      "source_proof_sha256": "52012e35ed756fc297c4e8be7d3b9988e773c6465aa798da05b52a6deeaffa34",
+      "keys": [
+        "back1-001",
+        "back1-002",
+        "back1-003",
+        "back1-004",
+        "back1-005",
+        "back1-006",
+        "skygrnd-002",
+        "skygrnd-003",
+        "skygrnd-004"
+      ]
     }
   ]
 }

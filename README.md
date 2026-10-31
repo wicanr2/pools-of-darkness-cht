@@ -40,6 +40,7 @@
 正常冷啟動、倍率與原版切換抽樣通過；尚未遇到的怪物與地形仍依完整原版來源條件辨識。
 戰鬥特效的 44 個來源已有素材對應，共 36 張成品。六類來源與正常 DEMO 抽驗通過；未遇事件依完整來源條件辨識，有位置歧義時保留原版。
 素材覆蓋與實機驗證範圍見[研究017](docs/re/017-vga-battle-hd.md#b39-effects)。
+另有九張天空與地下城背景成品，依完整來源與使用色盤條件選用；正常出現位置與遮擋尚未驗證。
 開場封面、世界標誌與製作名單已接入，可用 F8 切換繁中與英文。
 片頭八組台詞也可切換繁中與英文，支援 2／3 倍與 F12 原版；正常播放的[字幕驗收](docs/re/018-movie-subtitles.md#正式呈現層與正常視窗驗收)通過，動畫美術仍待 HD 重畫。
 菲蘭起點的天空、地面與牆面也已接入，完整讀檔抽樣通過。
@@ -228,6 +229,14 @@ HD、無 HD、F12 原版及 2 倍四路的 CPU、記憶體、色號、色盤與 
 來源與驗證範圍見[正常收據](docs/re/017-b38-play.json)及[截圖清單](docs/screenshots/combat-effect-runtime.json)。
 
 ![正常戰鬥的HD特效與完整遊戲視窗](docs/screenshots/combat-effects-demo-window.png)
+
+### 天空與地下城背景
+
+![六種地下城背景與三種天空的HD成品](docs/screenshots/background-hd-preview.png)
+
+上圖是九張 264×264 成品的原尺寸拼圖，保留各種石材、木樑、夜空、陰天與紅雲的原版配色。
+這是素材預覽；來源診斷及正常 DEMO 回歸通過，完整背景的正常事件與遮擋仍未知。
+原版並列與內建生圖提示詞見[背景審閱頁](review/hd/b40-background/README.md)，[預覽來源](docs/screenshots/background-hd-preview.json)及[抽驗範圍](docs/re/017-b40-runtime.json)另列。
 
 ### 菲蘭街景
 

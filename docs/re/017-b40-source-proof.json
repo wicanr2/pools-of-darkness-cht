@@ -1,0 +1,311 @@
+{
+  "date": "2026-10-31",
+  "issue": 64,
+  "archives": {
+    "BACK1.DAX": {
+      "sha256": "2efc68c5220a3f2c00315accc4b13961727cf87ae941484a8eb77cb78e054c6f",
+      "block_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "SKYGRND.DAX": {
+      "sha256": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+      "block_ids": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  "address_space": "original DAX file byte offsets",
+  "palette_interval": [
+    144,
+    176
+  ],
+  "items": [
+    {
+      "key": "skygrnd-002",
+      "indexed_sha256": "3b7758d528493c836059053a9f64243c9907c75743d77028f9cc5d9afcdd79cb",
+      "used_rgb_sha256": "67b2cabf18e5f3c0e5bb29a1020957adc1bc36b121031f885a3ef63d9468cc9e",
+      "used_colors": [
+        146,
+        147,
+        149,
+        150,
+        151,
+        152,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        167,
+        168,
+        170,
+        173,
+        174,
+        175
+      ],
+      "palette_bank_sha256": "a73b291602a0995612f249e5ba35a72a012de55cd9410bc7e56d0d58d9407efc",
+      "source_file": "SKYGRND.DAX",
+      "packed_file_offset": 7159,
+      "source_size": [
+        88,
+        88
+      ]
+    },
+    {
+      "key": "skygrnd-003",
+      "indexed_sha256": "3b7758d528493c836059053a9f64243c9907c75743d77028f9cc5d9afcdd79cb",
+      "used_rgb_sha256": "9f14f27a6a1645c4fb2041550d6518641552eb7f8a32ac4c4fffca1d1d16e2ef",
+      "used_colors": [
+        146,
+        147,
+        149,
+        150,
+        151,
+        152,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        167,
+        168,
+        170,
+        173,
+        174,
+        175
+      ],
+      "palette_bank_sha256": "801fe69dde2dc165c530a6a3da40a995f4fa66ad49ec4c0751d1e7f716e6cb9d",
+      "source_file": "SKYGRND.DAX",
+      "packed_file_offset": 14286,
+      "source_size": [
+        88,
+        88
+      ]
+    },
+    {
+      "key": "skygrnd-004",
+      "indexed_sha256": "0c036b72e3c6ff1ced410c5171df87ac9abc4aaceb7cb891b500594be56176fa",
+      "used_rgb_sha256": "231d9bcc0266fcc4beda26b6b807a9e9f80d210c52ba8b9729f3dd5eee43d6f8",
+      "used_colors": [
+        146,
+        147,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        159,
+        161,
+        162,
+        163,
+        167,
+        169,
+        170,
+        171,
+        172,
+        175
+      ],
+      "palette_bank_sha256": "1efd078d94abcaffec16f28da42ef9dedec33778071b325fd000d6f0cedf5bba",
+      "source_file": "SKYGRND.DAX",
+      "packed_file_offset": 21408,
+      "source_size": [
+        88,
+        88
+      ]
+    },
+    {
+      "key": "back1-001",
+      "indexed_sha256": "6e6497b68401ffa64001e15770ec2ee123e49f19eb60110e3c2d6461fb3804be",
+      "used_rgb_sha256": "adb917b88a493112d133bac4e314539572d6bfba778ddb2c3a53e22b6d5a6baf",
+      "used_colors": [
+        148,
+        150,
+        151,
+        155,
+        157,
+        159
+      ],
+      "palette_bank_sha256": "9938ef54e35c0135d0ee2ce7d2e8bb2f94dcf5bc803a95ddca5f8d983766a605",
+      "source_file": "BACK1.DAX",
+      "packed_file_offset": 56,
+      "source_size": [
+        88,
+        88
+      ]
+    },
+    {
+      "key": "back1-002",
+      "indexed_sha256": "07ff7762725474441a1173a794f2481353aa61af37f715eda25b81603a080c66",
+      "used_rgb_sha256": "8720264943a68137da0cab3bbfd0f3df75fcd67c2cab0d8edc17acaf0282f25d",
+      "used_colors": [
+        145,
+        148,
+        149,
+        154,
+        155,
+        161,
+        162,
+        167,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174
+      ],
+      "palette_bank_sha256": "a43b67d82d231fa5755c695e52151b2cf4af33ea7c168e6504a1b22b37532ac0",
+      "source_file": "BACK1.DAX",
+      "packed_file_offset": 7036,
+      "source_size": [
+        88,
+        88
+      ]
+    },
+    {
+      "key": "back1-003",
+      "indexed_sha256": "969788ff0fa3a51c8847608d42832b9ac630b4ecb510854de5a119ccbcefec93",
+      "used_rgb_sha256": "a30e3ab18fe9affacf9166e642a37044cfe65efc4fbd05e65a24bbf911de143f",
+      "used_colors": [
+        145,
+        148,
+        151,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        169,
+        172
+      ],
+      "palette_bank_sha256": "a731e2bec15b3ba6a1c2b347e9db7068f8535fac1c25ca9cb959a93bf21b1dd4",
+      "source_file": "BACK1.DAX",
+      "packed_file_offset": 15098,
+      "source_size": [
+        88,
+        88
+      ]
+    },
+    {
+      "key": "back1-004",
+      "indexed_sha256": "838d3c29e5d63ca0939efa6aeb38716b16b599d2c1eafcf79977f11aa1db3941",
+      "used_rgb_sha256": "4ce74f66db8bb002b55a83de400a790792fe9426722376c25af8e05320d0d410",
+      "used_colors": [
+        145,
+        148,
+        151,
+        153,
+        160,
+        161,
+        165,
+        166,
+        169,
+        172
+      ],
+      "palette_bank_sha256": "620632db8a238b32e22ec323f64a4fb18859f64acbb40ab37389ae95a8bfc789",
+      "source_file": "BACK1.DAX",
+      "packed_file_offset": 20905,
+      "source_size": [
+        88,
+        88
+      ]
+    },
+    {
+      "key": "back1-005",
+      "indexed_sha256": "bdb163a5f0fe0f042baad21fa36e145363789276a8ac15c57f4bf3b1f7c20b9a",
+      "used_rgb_sha256": "2780d5312de4ba2339660ce6883da810e38f09220d13132fc954374d9a726cc4",
+      "used_colors": [
+        145,
+        148,
+        160,
+        161,
+        165,
+        166,
+        169,
+        172,
+        173,
+        174
+      ],
+      "palette_bank_sha256": "1efd078d94abcaffec16f28da42ef9dedec33778071b325fd000d6f0cedf5bba",
+      "source_file": "BACK1.DAX",
+      "packed_file_offset": 29146,
+      "source_size": [
+        88,
+        88
+      ]
+    },
+    {
+      "key": "back1-006",
+      "indexed_sha256": "1ad27eb247fa05ac10158fe575f803c47d98ac9c147431d8fb1ae60b3212da1f",
+      "used_rgb_sha256": "01ade3d90c3382017dace8260bc653faa3013efb196cbdc7bbd2ab115295fb2b",
+      "used_colors": [
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "palette_bank_sha256": "7f204dee1271e823b77aa79ca00e979442f8a7af3b9cf7a497609f53b51b2143",
+      "source_file": "BACK1.DAX",
+      "packed_file_offset": 37417,
+      "source_size": [
+        88,
+        88
+      ]
+    }
+  ],
+  "sampled_keys": [
+    "back1-001",
+    "back1-003",
+    "back1-005",
+    "back1-006",
+    "skygrnd-002",
+    "skygrnd-004"
+  ],
+  "request_sha256": "f4e51468571aa5e761e67e9c82a324cd5a9bdc13ba0dad8f4894da902ed25d6c",
+  "runtime_position": "unknown; existing full-rectangle matcher only; no invented occlusion",
+  "evidence_level": "proven source pixels and used RGB; normal background events unobserved",
+  "character_scope_limit": {
+    "head_records": 28,
+    "unique_heads": 25,
+    "body_records": 128,
+    "full_head_body_templates": 6400,
+    "unique_templates": 6400,
+    "legacy_body_foreground_limit": 190,
+    "observed_body_source_maximum": 240,
+    "normal_capture": "workplace/probe/g9-hd/b39-play-v1/hd",
+    "normal_full_template_hits": 0,
+    "note": "raw unremapped templates not observed; character recoloring and placement remain unknown; no production change"
+  }
+}

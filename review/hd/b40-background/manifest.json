@@ -1,0 +1,642 @@
+{
+  "batch": "b40",
+  "count": 9,
+  "private_only": true,
+  "request_manifest_sha256": "f4e51468571aa5e761e67e9c82a324cd5a9bdc13ba0dad8f4894da902ed25d6c",
+  "items": [
+    {
+      "key": "skygrnd-002",
+      "source": {
+        "key": "skygrnd-002",
+        "source_file": "SKYGRND.DAX",
+        "source_file_sha256": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+        "block": 2,
+        "packed_file_offset": 7159,
+        "decoded_sha256": "55610d1e064553cdd18a2ab244e2f0c09fca2e09259be3cda38606c9cc385347",
+        "source_size": [
+          88,
+          88
+        ],
+        "output_size": [
+          264,
+          264
+        ],
+        "reference_1x": "skygrnd-002-1x.png",
+        "reference_3x": "skygrnd-002-3x.png",
+        "reference_1x_sha256": "a7e43f671cae901f225eb3836e3a8b832d6066c4bb6a4b257741a5976aca74a5",
+        "reference_3x_sha256": "ef0212ca03a4db5c222a3cd9e780a5f93c5ca5a5833515463b8088bf238a3395",
+        "indexed": "skygrnd-002.idx",
+        "indexed_sha256": "3b7758d528493c836059053a9f64243c9907c75743d77028f9cc5d9afcdd79cb",
+        "palette": "skygrnd-002.pal",
+        "palette_sha256": "b6692205a8328771015d2feb612cfbb454e2875c24248036119c74fa7d0831cf",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "skygrnd-002",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-598d7403-c2db-4cd5-b0f8-a8e19aaaf1e8.png",
+        "prompt": "Use case: style-transfer. Asset type: Pools of Darkness HD square background tile. Input image 1 is the original composition and palette reference. Hand-paint this source in approved classic fantasy illustration style B, with refined brushwork instead of pixel blocks. Very dark midnight navy-black cloudy sky with sparse tiny dim original stars above, muted deep olive green empty grassy plain below. Flat horizon at exactly 50 percent height; no mountains, buildings, moon, sun, trees or new objects. Preserve source large shapes, exact equal upper/lower halves, straight horizon/center seam, original palette and lightness. Opaque edge-to-edge square art, suitable for final downsampling to264x264. No captions, border or watermark; no additions to the original scene.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "724d60efc864f6f902142d071edbf06e3c3c3514feb538fb6b2dfbb426f85a7f",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b40/skygrnd-002-1x-view.png",
+            "sha256": "d34d11904c3bd0af32273c84f01e167a73602f9143de1d39ebecd722f3f6b402",
+            "derivation": "4x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "skygrnd-002",
+        "raw": "skygrnd-002-r1-raw.png",
+        "raw_sha256": "724d60efc864f6f902142d071edbf06e3c3c3514feb538fb6b2dfbb426f85a7f",
+        "png": "skygrnd-002.png",
+        "png_sha256": "1bda0382f965fa6ecb7653c33b483bad4b0878361883228556df0026adfb9397",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "skygrnd-002",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.45422535211267606,
+        "median_hue_difference_degrees": 7.9550561797752835,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "1bda0382f965fa6ecb7653c33b483bad4b0878361883228556df0026adfb9397"
+      },
+      "visual": {
+        "png_sha256": "1bda0382f965fa6ecb7653c33b483bad4b0878361883228556df0026adfb9397",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "skygrnd-003",
+      "source": {
+        "key": "skygrnd-003",
+        "source_file": "SKYGRND.DAX",
+        "source_file_sha256": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+        "block": 3,
+        "packed_file_offset": 14286,
+        "decoded_sha256": "bbc59e55610767544ef5be2253cb2fec8e3172e381275c8eed03734b985563bb",
+        "source_size": [
+          88,
+          88
+        ],
+        "output_size": [
+          264,
+          264
+        ],
+        "reference_1x": "skygrnd-003-1x.png",
+        "reference_3x": "skygrnd-003-3x.png",
+        "reference_1x_sha256": "ea897ddbfb4cf19a3eb28dea23f9ef358e5b76f1ebdbc434b15d695d5acdaadf",
+        "reference_3x_sha256": "de74b7eada030b730286bc4b6e1000c928a6e38dcc256b45bddebe7f8df80c68",
+        "indexed": "skygrnd-003.idx",
+        "indexed_sha256": "3b7758d528493c836059053a9f64243c9907c75743d77028f9cc5d9afcdd79cb",
+        "palette": "skygrnd-003.pal",
+        "palette_sha256": "8b0cefcf48ceb1e02ffec6b9fb03d3ab026e67a4bcdd2c95ea7bcb619a3dff58",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "skygrnd-003",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-56360e3c-13d3-458d-85c6-a69acf978ca5.png",
+        "prompt": "Use case: style-transfer. Asset type: Pools of Darkness HD square background tile. Input image 1 is the original composition and palette reference. Hand-paint this source in approved classic fantasy illustration style B, with refined brushwork instead of pixel blocks. Heavy layered cool gray clouds in gray-brown sky above, muted green empty grassy plain below. Match original sweeping cloud shapes and flat horizon at exactly 50 percent height. No mountains, buildings, trees, sun, moon or new objects. Preserve source large shapes, exact equal upper/lower halves, straight horizon/center seam, original palette and lightness. Opaque edge-to-edge square art, suitable for final downsampling to264x264. No captions, border or watermark; no additions to the original scene.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "4e7ec3e94e9454648300783207a54bc99fa8f7f1d489ec49f2356c5872582db1",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b40/skygrnd-003-1x-view.png",
+            "sha256": "6313264df2d8773da1a058d21b4260a0b64d42f3a7aa212d6d299161107cf66b",
+            "derivation": "4x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "skygrnd-003",
+        "raw": "skygrnd-003-r1-raw.png",
+        "raw_sha256": "4e7ec3e94e9454648300783207a54bc99fa8f7f1d489ec49f2356c5872582db1",
+        "png": "skygrnd-003.png",
+        "png_sha256": "dd2dde0d2dfcae4dac9536c754ec75cd96f47de1be61a691c8de53b7a62e7b09",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "skygrnd-003",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.7790492957746479,
+        "median_hue_difference_degrees": 28.134135329777777,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "dd2dde0d2dfcae4dac9536c754ec75cd96f47de1be61a691c8de53b7a62e7b09"
+      },
+      "visual": {
+        "png_sha256": "dd2dde0d2dfcae4dac9536c754ec75cd96f47de1be61a691c8de53b7a62e7b09",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "skygrnd-004",
+      "source": {
+        "key": "skygrnd-004",
+        "source_file": "SKYGRND.DAX",
+        "source_file_sha256": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+        "block": 4,
+        "packed_file_offset": 21408,
+        "decoded_sha256": "1ed9ca9df64ade4c683ec2f1b122f7ccf3b98c3f7593f031cca06ffb0bde82e0",
+        "source_size": [
+          88,
+          88
+        ],
+        "output_size": [
+          264,
+          264
+        ],
+        "reference_1x": "skygrnd-004-1x.png",
+        "reference_3x": "skygrnd-004-3x.png",
+        "reference_1x_sha256": "83f4d44a30375b1edae3cf0934f4387cbe27fd42eb66152c2c3f84fd841b477a",
+        "reference_3x_sha256": "2521843edfdef8266c106c8a4c1b5d9e7fb5f76e687c6340978376766c918fc1",
+        "indexed": "skygrnd-004.idx",
+        "indexed_sha256": "0c036b72e3c6ff1ced410c5171df87ac9abc4aaceb7cb891b500594be56176fa",
+        "palette": "skygrnd-004.pal",
+        "palette_sha256": "f3f54977663e56e58acd8b5a5a103a2ede5e8f14e5020953030269c6f8f3d6f1",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "skygrnd-004",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-3975efbc-3988-48c0-a910-f7d59bd913a8.png",
+        "prompt": "Use case: style-transfer. Asset type: square HD background tile for Pools of Darkness. Input image1 is the original palette and composition reference. Hand-paint the same scene in classic fantasy illustration style B: layered dark red, muted maroon, charcoal-gray storm clouds in a few blue-gray sky gaps above; an empty rough ash-gray rocky plain with subtle muted red undertones below. Preserve original sweeping cloud masses, colors, exact flat horizon at50percent height, edge-to-edge equal upper/lower halves. Refined painterly detail suitable for264x264 final. No mountains, buildings, sun, moon, trees, creatures, lava, fire, text, border or watermark. Opaque square.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "676a18c44bf1608cf1a26b337e40a14fcadceb4ca7ab6abc6ce53c0ca13bbe77",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b40/skygrnd-004-1x-view.png",
+            "sha256": "0d0b4cfdc6fff4fbf629be09642abca7627510ac363df266971faab0391912f6",
+            "derivation": "4x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "skygrnd-004",
+        "raw": "skygrnd-004-r1-raw.png",
+        "raw_sha256": "676a18c44bf1608cf1a26b337e40a14fcadceb4ca7ab6abc6ce53c0ca13bbe77",
+        "png": "skygrnd-004.png",
+        "png_sha256": "b60d6afd99f5d80ba3192450a97401b87e4fcab330dffc955976a61c12c4c4bf",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "skygrnd-004",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.4859154929577465,
+        "median_hue_difference_degrees": 11.342373498361862,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "b60d6afd99f5d80ba3192450a97401b87e4fcab330dffc955976a61c12c4c4bf"
+      },
+      "visual": {
+        "png_sha256": "b60d6afd99f5d80ba3192450a97401b87e4fcab330dffc955976a61c12c4c4bf",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "back1-001",
+      "source": {
+        "key": "back1-001",
+        "source_file": "BACK1.DAX",
+        "source_file_sha256": "2efc68c5220a3f2c00315accc4b13961727cf87ae941484a8eb77cb78e054c6f",
+        "block": 1,
+        "packed_file_offset": 56,
+        "decoded_sha256": "d7730be80264cb3120e1f1d6e8c3e9dafaf2ca3e7d7b3df02c82974bb34b7ed5",
+        "source_size": [
+          88,
+          88
+        ],
+        "output_size": [
+          264,
+          264
+        ],
+        "reference_1x": "back1-001-1x.png",
+        "reference_3x": "back1-001-3x.png",
+        "reference_1x_sha256": "8487992c3f9658eaf4a5c6e53f9a086f8a969567e65c6ec4f3c52b2bfa059246",
+        "reference_3x_sha256": "dcf579800285767d8ed570bc8ee8d3cfc3d958be08cd5a4f2cc10d32696eb006",
+        "indexed": "back1-001.idx",
+        "indexed_sha256": "6e6497b68401ffa64001e15770ec2ee123e49f19eb60110e3c2d6461fb3804be",
+        "palette": "back1-001.pal",
+        "palette_sha256": "36abf55d6aa8e56b05f67c0c69e1ab662e299357fefd64d3c3cb71851fe49325",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "back1-001",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-aefaa884-a4c7-46ee-9142-84e03ec8380d.png",
+        "prompt": "Use case: style-transfer. Redraw input image1 as HD fantasy hand-painted ceiling/floor tile, faithful source reconstruction. Preserve the ACTUAL original rock outlines, not arbitrary new rocks. Many SMALL thin irregular cracks densely cover the upper half (roughly20-30 stone fragments acrosswidth), receding towardthemiddle. In the LOWER half the floor is densely mottled around thehorizon, then scattered larger irregular outlines toward bottom. Midline exactly y50percent. Colors:neutral dark charcoal upper half, lighter medium gray lower half, pale thin middle line. Follow the reference's jagged contour density and placements closely, with delicate brushwork and subtle material shading. Square, edge-to-edge opaque, no new objects, walls, doors, text,borders. Avoid large regular cobblestones or oversized foreground boulders. Final downsample264x264; preserve dark gaps in original reference.",
+        "revision": 2,
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "6bcfc0150a906f40b941f37ac49dd071825d4d44fdac6d566986a5cc0ae6961e",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b40/back1-001-1x-view.png",
+            "sha256": "54bd7f0b01d0eec8429896547acbc9d44bcd456e899979854c1a6b00b04d23ff",
+            "derivation": "4x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "back1-001",
+        "raw": "back1-001-r2-raw.png",
+        "raw_sha256": "6bcfc0150a906f40b941f37ac49dd071825d4d44fdac6d566986a5cc0ae6961e",
+        "png": "back1-001.png",
+        "png_sha256": "442e55411a141d2080789088bde82b93fc703010b0a5abab59e845daaad64858",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "back1-001",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.7166813768755517,
+        "median_hue_difference_degrees": 4.537815126050418,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "442e55411a141d2080789088bde82b93fc703010b0a5abab59e845daaad64858"
+      },
+      "visual": {
+        "png_sha256": "442e55411a141d2080789088bde82b93fc703010b0a5abab59e845daaad64858",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "back1-002",
+      "source": {
+        "key": "back1-002",
+        "source_file": "BACK1.DAX",
+        "source_file_sha256": "2efc68c5220a3f2c00315accc4b13961727cf87ae941484a8eb77cb78e054c6f",
+        "block": 2,
+        "packed_file_offset": 7036,
+        "decoded_sha256": "bbbce67db64afd1ee4565aa0a39938263222b35071f86ea2ab1e1c32f3086550",
+        "source_size": [
+          88,
+          88
+        ],
+        "output_size": [
+          264,
+          264
+        ],
+        "reference_1x": "back1-002-1x.png",
+        "reference_3x": "back1-002-3x.png",
+        "reference_1x_sha256": "b3832c3757a77bf5e8387896080b61a21d5eb4cecb582988316d02d6b0695800",
+        "reference_3x_sha256": "ae4f5a4a9877b81f757723b3ec69682bed345780d3372293de12c39d6394ea13",
+        "indexed": "back1-002.idx",
+        "indexed_sha256": "07ff7762725474441a1173a794f2481353aa61af37f715eda25b81603a080c66",
+        "palette": "back1-002.pal",
+        "palette_sha256": "b0f9cb1eef85a90aa488eb01385b18d6a609c3a8e31a9c1f403a7f011325584b",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "back1-002",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-18a0e28b-b865-4b55-8285-6a13cc8a6414.png",
+        "prompt": "Use case: style-transfer. Redraw input image1 as HD fantasy hand-painted ceiling/floor tile, faithful source reconstruction. Preserve the ACTUAL original rock outlines, not arbitrary new rocks. Many SMALL thin irregular cracks densely cover the upper half (roughly20-30 stone fragments acrosswidth), receding towardthemiddle. In the LOWER half the floor is densely mottled around thehorizon, then scattered larger irregular outlines toward bottom. Midline exactly y50percent. Colors:very dark low-contrast umber-brown throughout, dark brown center line. Follow the reference's jagged contour density and placements closely, with delicate brushwork and subtle material shading. Square, edge-to-edge opaque, no new objects, walls, doors, text,borders. Avoid large regular cobblestones or oversized foreground boulders. Final downsample264x264; preserve dark gaps in original reference.",
+        "revision": 2,
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "afa98aa9fe6308bca3cd63dca782334583cca2a9abab85c94a090b1dc2616fdd",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b40/back1-002-1x-view.png",
+            "sha256": "f0abaed335cc95d74a8a3326625792e3e70bfdd9e33245de0bc370b485e80741",
+            "derivation": "4x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "back1-002",
+        "raw": "back1-002-r2-raw.png",
+        "raw_sha256": "afa98aa9fe6308bca3cd63dca782334583cca2a9abab85c94a090b1dc2616fdd",
+        "png": "back1-002.png",
+        "png_sha256": "b214cc8c35fcb001d6ce6a969c9bc73bee5753ee179ef62f1bbb47eafcc9af1e",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "back1-002",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.6619718309859155,
+        "median_hue_difference_degrees": 6.797796345611507,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "b214cc8c35fcb001d6ce6a969c9bc73bee5753ee179ef62f1bbb47eafcc9af1e"
+      },
+      "visual": {
+        "png_sha256": "b214cc8c35fcb001d6ce6a969c9bc73bee5753ee179ef62f1bbb47eafcc9af1e",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "back1-003",
+      "source": {
+        "key": "back1-003",
+        "source_file": "BACK1.DAX",
+        "source_file_sha256": "2efc68c5220a3f2c00315accc4b13961727cf87ae941484a8eb77cb78e054c6f",
+        "block": 3,
+        "packed_file_offset": 15098,
+        "decoded_sha256": "b8ab9db5bde606c60d6afd9686efd51ae84997f257576ee6f8ea4b17c35f004b",
+        "source_size": [
+          88,
+          88
+        ],
+        "output_size": [
+          264,
+          264
+        ],
+        "reference_1x": "back1-003-1x.png",
+        "reference_3x": "back1-003-3x.png",
+        "reference_1x_sha256": "506a8cd9e400a9d06f95c5f967afe89ca275bc5b910c76c4795dca8de347bcef",
+        "reference_3x_sha256": "459dea1de1bfd6a7fa7823666027e275686bd3053470b13da48c0a650a543111",
+        "indexed": "back1-003.idx",
+        "indexed_sha256": "969788ff0fa3a51c8847608d42832b9ac630b4ecb510854de5a119ccbcefec93",
+        "palette": "back1-003.pal",
+        "palette_sha256": "02352fac04fc64614bcfd6e6033691f8917680269ec1d1629636ad9f89a2bc18",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "back1-003",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-43a04b7f-0acc-42c3-8bc8-2250af49c85e.png",
+        "prompt": "Use case: style-transfer. Asset type: Pools of Darkness HD dungeon background tile, square opaque illustration. Input image 1 is the original composition and color reference. Hand-paint this source in the approved classic fantasy illustration style B, replacing pixel steps with delicate painterly stone/material detail. Brown wooden ceiling lattice: thick beams recede toward the middle horizon and horizontal crossbeams frame black gaps, matching the reference beam positions. Cool gray irregular cobblestone floor below. Straight thin pale horizontal center seam. Preserve the exact two-half composition, large tonal shapes, horizon at 50 percent height and original palette; this is a ceiling/floor backdrop behind separately drawn walls. No added walls, doors, arches, people, props, lighting sources, captions, borders, or watermark. Fill the square edge to edge. Render at high detail suitable for final downsampling to 264x264. Do not show pixels, a room front wall, or new objects.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "4aba61124705559b74b2325cab5d72932f6a1d64736b0fc347c533ce9283affc",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b40/back1-003-1x-view.png",
+            "sha256": "f57ec24ca4e7e352487ec7a64e899e6dce6b46d9da5e988d3a14dbe381ddf9d6",
+            "derivation": "4x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "back1-003",
+        "raw": "back1-003-r1-raw.png",
+        "raw_sha256": "4aba61124705559b74b2325cab5d72932f6a1d64736b0fc347c533ce9283affc",
+        "png": "back1-003.png",
+        "png_sha256": "972822a436d560fb2192b4d65093db5b12ce0eb6fc432c699c7746d43cb7f74f",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "back1-003",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.5527472527472528,
+        "median_hue_difference_degrees": 1.681128508410488,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "972822a436d560fb2192b4d65093db5b12ce0eb6fc432c699c7746d43cb7f74f"
+      },
+      "visual": {
+        "png_sha256": "972822a436d560fb2192b4d65093db5b12ce0eb6fc432c699c7746d43cb7f74f",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "back1-004",
+      "source": {
+        "key": "back1-004",
+        "source_file": "BACK1.DAX",
+        "source_file_sha256": "2efc68c5220a3f2c00315accc4b13961727cf87ae941484a8eb77cb78e054c6f",
+        "block": 4,
+        "packed_file_offset": 20905,
+        "decoded_sha256": "d2cf9a322b7e92d0cf4551f62042011a22d2e1f9e14aa9aaaa09ea3a812ebf71",
+        "source_size": [
+          88,
+          88
+        ],
+        "output_size": [
+          264,
+          264
+        ],
+        "reference_1x": "back1-004-1x.png",
+        "reference_3x": "back1-004-3x.png",
+        "reference_1x_sha256": "a013ee9e62b4e1bf91b9e5cae1338aa79641f1deda3cc0e7d82379b3384f9d89",
+        "reference_3x_sha256": "0efb43c3331541c7e883c099ba0e086622a454af1ddd2727115761fc179e94e0",
+        "indexed": "back1-004.idx",
+        "indexed_sha256": "838d3c29e5d63ca0939efa6aeb38716b16b599d2c1eafcf79977f11aa1db3941",
+        "palette": "back1-004.pal",
+        "palette_sha256": "96270988cf070479e7dfd9473d1e15216d1a8acc0d54412c2dbece9931559658",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "back1-004",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-15608f26-581e-494f-80db-c0dc9f063a0d.png",
+        "prompt": "Use case: style-transfer. Redraw input image1 as HD fantasy hand-painted ceiling/floor tile, faithful source reconstruction. Preserve the ACTUAL original rock outlines, not arbitrary new rocks. Many SMALL thin irregular cracks densely cover the upper half (roughly20-30 stone fragments acrosswidth), receding towardthemiddle. In the LOWER half the floor is densely mottled around thehorizon, then scattered larger irregular outlines toward bottom. Midline exactly y50percent. Colors:black and charcoal upperhalf, cool medium-gray lowerhalf, highcontrast fine black fissures. Follow the reference's jagged contour density and placements closely, with delicate brushwork and subtle material shading. Square, edge-to-edge opaque, no new objects, walls, doors, text,borders. Avoid large regular cobblestones or oversized foreground boulders. Final downsample264x264; preserve dark gaps in original reference.",
+        "revision": 2,
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "118f1911d7d2da5e695a0f59b1ec112fb8116afe5026efe6d76aca5c5be749df",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b40/back1-004-1x-view.png",
+            "sha256": "1be3db54a37e1a50fe0cb43430979d9ec5ea969851d49c9877652283932b4746",
+            "derivation": "4x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "back1-004",
+        "raw": "back1-004-r2-raw.png",
+        "raw_sha256": "118f1911d7d2da5e695a0f59b1ec112fb8116afe5026efe6d76aca5c5be749df",
+        "png": "back1-004.png",
+        "png_sha256": "20a0656bb57f78ec4699191b1a19027c7beced5b7a5fa090428ce59f002dc41d",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "back1-004",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.4365079365079365,
+        "median_hue_difference_degrees": 0.0,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "20a0656bb57f78ec4699191b1a19027c7beced5b7a5fa090428ce59f002dc41d"
+      },
+      "visual": {
+        "png_sha256": "20a0656bb57f78ec4699191b1a19027c7beced5b7a5fa090428ce59f002dc41d",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "back1-005",
+      "source": {
+        "key": "back1-005",
+        "source_file": "BACK1.DAX",
+        "source_file_sha256": "2efc68c5220a3f2c00315accc4b13961727cf87ae941484a8eb77cb78e054c6f",
+        "block": 5,
+        "packed_file_offset": 29146,
+        "decoded_sha256": "cf218cf027a1edb2bb898fb5dd0702b2fe65ffd811fd41e9041014a11b341353",
+        "source_size": [
+          88,
+          88
+        ],
+        "output_size": [
+          264,
+          264
+        ],
+        "reference_1x": "back1-005-1x.png",
+        "reference_3x": "back1-005-3x.png",
+        "reference_1x_sha256": "595ba5af4811c879c87fe9d1f80487db1aedc372ca3ae0110800278fe518f449",
+        "reference_3x_sha256": "6f94c4b9aabf13fab1794bc82328e66b02b01419da98bc54c474a1130904e7cf",
+        "indexed": "back1-005.idx",
+        "indexed_sha256": "bdb163a5f0fe0f042baad21fa36e145363789276a8ac15c57f4bf3b1f7c20b9a",
+        "palette": "back1-005.pal",
+        "palette_sha256": "f3f54977663e56e58acd8b5a5a103a2ede5e8f14e5020953030269c6f8f3d6f1",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "back1-005",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-97f57018-9144-499c-91b3-01a4d653dcc5.png",
+        "prompt": "Use case: style-transfer. Redraw input image1 as HD fantasy hand-painted ceiling/floor tile, faithful source reconstruction. Preserve the ACTUAL original rock outlines, not arbitrary new rocks. Many SMALL thin irregular cracks densely cover the upper half (roughly20-30 stone fragments acrosswidth), receding towardthemiddle. In the LOWER half the floor is densely mottled around thehorizon, then scattered larger irregular outlines toward bottom. Midline exactly y50percent. Colors:muted mediumcharcoalgray throughout, lowcontrast gray thin fissures. Follow the reference's jagged contour density and placements closely, with delicate brushwork and subtle material shading. Square, edge-to-edge opaque, no new objects, walls, doors, text,borders. Avoid large regular cobblestones or oversized foreground boulders. Final downsample264x264; preserve dark gaps in original reference.",
+        "revision": 2,
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "f2a60bbe7d5ad0651179d07f4b5d07038ec8456b401cb15a718522e74a16ef4e",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b40/back1-005-1x-view.png",
+            "sha256": "73d26d0508353fb49102ab097cd54704a4d22b2a779a93195e7942360b6e314e",
+            "derivation": "4x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "back1-005",
+        "raw": "back1-005-r2-raw.png",
+        "raw_sha256": "f2a60bbe7d5ad0651179d07f4b5d07038ec8456b401cb15a718522e74a16ef4e",
+        "png": "back1-005.png",
+        "png_sha256": "14e4309c042e26a7f7f97b9ef8cb75579430a9e527bcd47cee4b7c36d256ca64",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "back1-005",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.5536971830985915,
+        "median_hue_difference_degrees": 0.0,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "14e4309c042e26a7f7f97b9ef8cb75579430a9e527bcd47cee4b7c36d256ca64"
+      },
+      "visual": {
+        "png_sha256": "14e4309c042e26a7f7f97b9ef8cb75579430a9e527bcd47cee4b7c36d256ca64",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "back1-006",
+      "source": {
+        "key": "back1-006",
+        "source_file": "BACK1.DAX",
+        "source_file_sha256": "2efc68c5220a3f2c00315accc4b13961727cf87ae941484a8eb77cb78e054c6f",
+        "block": 6,
+        "packed_file_offset": 37417,
+        "decoded_sha256": "c47b129d0d341cc45851a51f38f9d4bbe73190f29a56e245c84f68e7f27db580",
+        "source_size": [
+          88,
+          88
+        ],
+        "output_size": [
+          264,
+          264
+        ],
+        "reference_1x": "back1-006-1x.png",
+        "reference_3x": "back1-006-3x.png",
+        "reference_1x_sha256": "35ef03a2d79c507a0ab8d778937009eecdbfb8dcc9394d535dbf56ec473a7a2d",
+        "reference_3x_sha256": "633cd158eef8625d31f0514bd79585701e9a53190a54f68321f963306706c608",
+        "indexed": "back1-006.idx",
+        "indexed_sha256": "1ad27eb247fa05ac10158fe575f803c47d98ac9c147431d8fb1ae60b3212da1f",
+        "palette": "back1-006.pal",
+        "palette_sha256": "e3b0504d5c47c6269775311ff11b537b6afd06086c1f0916fa5ed1376eb0381b",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 264 by 264 pixels, aspect ratio 88:88, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "back1-006",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-5f7d7c52-2871-483a-bc5e-4e10c349ae51.png",
+        "prompt": "Use case: style-transfer. Asset type: Pools of Darkness HD square background tile. Input image 1 is the original composition and palette reference. Hand-paint this source in approved classic fantasy illustration style B, with refined brushwork instead of pixel blocks. Saturated deep crimson and red irregular stone texture ceiling above, red rocky pavement below. Broad horizontally layered crimson patches and near-black cracks, exact original two-half arrangement and thin dark center seam. These are red stones, no lava, blood or fire. Preserve source large shapes, exact equal upper/lower halves, straight horizon/center seam, original palette and lightness. Opaque edge-to-edge square art, suitable for final downsampling to264x264. No captions, border or watermark; no additions to the original scene.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "30d97d5d54727869cef4f4904689319448a00b51d451ef5f45abb418f937a7e5",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b40/back1-006-1x-view.png",
+            "sha256": "e17faa06f974b035269d243b0453f2d338c2ae6df990be67007006b9ef403c80",
+            "derivation": "4x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "back1-006",
+        "raw": "back1-006-r1-raw.png",
+        "raw_sha256": "30d97d5d54727869cef4f4904689319448a00b51d451ef5f45abb418f937a7e5",
+        "png": "back1-006.png",
+        "png_sha256": "5b8f43f8a97e9940d3f4f70363bce576b9f565d0c170debf4590da4e09917cab",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "back1-006",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.6302816901408451,
+        "median_hue_difference_degrees": 1.3069330764477398,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "5b8f43f8a97e9940d3f4f70363bce576b9f565d0c170debf4590da4e09917cab"
+      },
+      "visual": {
+        "png_sha256": "5b8f43f8a97e9940d3f4f70363bce576b9f565d0c170debf4590da4e09917cab",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    }
+  ]
+}

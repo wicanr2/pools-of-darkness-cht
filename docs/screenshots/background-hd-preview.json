@@ -1,0 +1,129 @@
+{
+  "scope": "AI-redrawn asset preview; not a gameplay screenshot",
+  "composition": "native 3x PNG; no resizing or cropping",
+  "size": [
+    816,
+    816
+  ],
+  "output_sha256": "9421be0643f7f42def128238cca95764728549799b5d4eb3a71a9c123edc52d6",
+  "items": [
+    {
+      "key": "skygrnd-002",
+      "source": "review/hd/b40-background/skygrnd-002.png",
+      "png_sha256": "1bda0382f965fa6ecb7653c33b483bad4b0878361883228556df0026adfb9397",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        4,
+        4
+      ]
+    },
+    {
+      "key": "skygrnd-003",
+      "source": "review/hd/b40-background/skygrnd-003.png",
+      "png_sha256": "dd2dde0d2dfcae4dac9536c754ec75cd96f47de1be61a691c8de53b7a62e7b09",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        276,
+        4
+      ]
+    },
+    {
+      "key": "skygrnd-004",
+      "source": "review/hd/b40-background/skygrnd-004.png",
+      "png_sha256": "b60d6afd99f5d80ba3192450a97401b87e4fcab330dffc955976a61c12c4c4bf",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        548,
+        4
+      ]
+    },
+    {
+      "key": "back1-001",
+      "source": "review/hd/b40-background/back1-001.png",
+      "png_sha256": "442e55411a141d2080789088bde82b93fc703010b0a5abab59e845daaad64858",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        4,
+        276
+      ]
+    },
+    {
+      "key": "back1-002",
+      "source": "review/hd/b40-background/back1-002.png",
+      "png_sha256": "b214cc8c35fcb001d6ce6a969c9bc73bee5753ee179ef62f1bbb47eafcc9af1e",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        276,
+        276
+      ]
+    },
+    {
+      "key": "back1-003",
+      "source": "review/hd/b40-background/back1-003.png",
+      "png_sha256": "972822a436d560fb2192b4d65093db5b12ce0eb6fc432c699c7746d43cb7f74f",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        548,
+        276
+      ]
+    },
+    {
+      "key": "back1-004",
+      "source": "review/hd/b40-background/back1-004.png",
+      "png_sha256": "20a0656bb57f78ec4699191b1a19027c7beced5b7a5fa090428ce59f002dc41d",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        4,
+        548
+      ]
+    },
+    {
+      "key": "back1-005",
+      "source": "review/hd/b40-background/back1-005.png",
+      "png_sha256": "14e4309c042e26a7f7f97b9ef8cb75579430a9e527bcd47cee4b7c36d256ca64",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        276,
+        548
+      ]
+    },
+    {
+      "key": "back1-006",
+      "source": "review/hd/b40-background/back1-006.png",
+      "png_sha256": "5b8f43f8a97e9940d3f4f70363bce576b9f565d0c170debf4590da4e09917cab",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        548,
+        548
+      ]
+    }
+  ],
+  "rights": "AI redraws within existing private HD patch scope; no original reference pixels"
+}

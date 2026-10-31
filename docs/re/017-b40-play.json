@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "scope": "九個背景條件式來源；正常冷啟動DEMO增量抽驗，不外推正常背景事件或遮擋",
+  "binary_sha256": "4581cd6f203ca120f9b2539f4a8c4305d04622819b567819ddb9e2f6ebed51ac",
+  "prior_binary_sha256": "ff54dfe2fa2fc0e4462c14718f7e85dbddc3043b5259b1559f1cf97ed9cea042",
+  "frames": 7400,
+  "steps": 712250000,
+  "state": {
+    "cpu": "c2b1ab7e95b942a904842f53eced383f6e0c39b111a0d6c1b65e8ac740694c47",
+    "memory": "92378aa1b9a421f5f2b2b93c504aed1f80dbd06e627fd1d9f297932fbacbf540",
+    "indexed": "e77dd084128cf4f20ecce7cd104b1bb0a68f008da864490d926e338386abb7bf",
+    "palette": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+    "frames": 7400,
+    "steps": 712250000
+  },
+  "guest_files": 127,
+  "guest_state_equal": true,
+  "original_endpoint_equal": true,
+  "old_theme_new_program_composite_equal": true,
+  "final_composite_equal": true,
+  "prior_assets_preserved": true,
+  "theme_files": 1350,
+  "background_candidates": 9,
+  "flash_count": 0,
+  "normal_background_events_observed": false,
+  "frames_sha256": {
+    "prior": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d",
+    "before": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d",
+    "after": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d"
+  },
+  "negative_controls": [
+    {
+      "case": "cpu",
+      "rejected": true
+    },
+    {
+      "case": "source",
+      "rejected": true
+    },
+    {
+      "case": "palette",
+      "rejected": true
+    },
+    {
+      "case": "guest",
+      "rejected": true
+    },
+    {
+      "case": "output-pixel",
+      "rejected": true
+    }
+  ],
+  "negative_controls_all_pass": true,
+  "source_proof_sha256": "52012e35ed756fc297c4e8be7d3b9988e773c6465aa798da05b52a6deeaffa34",
+  "baseline_receipt_sha256": "2eaad8797fdb852bf0ed45a1767f1bc0b4956ea8a7440b85b561cba9c96dac21",
+  "runtime_inputs_sha256": "575bd7700cd6bef1cb5065edff9ffa38a0852d4608c38de30be39d6cfc9e8df2",
+  "runtime_log_sha256": "eea26577fc46f06babcc81acfead4c6017737ef8ccb2717a3f0841a0022a4d28",
+  "old_theme_runtime_inputs_sha256": "f7bc00aa5ba6ca2534e72aa6623f73e54822f5a7913b3d61f3e63771361663cc",
+  "old_theme_runtime_log_sha256": "eea26577fc46f06babcc81acfead4c6017737ef8ccb2717a3f0841a0022a4d28"
+}

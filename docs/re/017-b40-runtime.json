@@ -1,0 +1,557 @@
+{
+  "date": "2026-10-31",
+  "issue": 64,
+  "status": "CONFORMED within stated sampled scope",
+  "scope": "九張88×88來源的264×264背景成品；六類兩種位置的來源診斷、天空色盤隔離及一條正常DEMO的新程式／舊新主題抽驗。完整背景正常事件及遮擋未知。",
+  "product_source_commit": "4e662625d2f2289f339fe7cad444b3fb0839e78d",
+  "binary_sha256": "4581cd6f203ca120f9b2539f4a8c4305d04622819b567819ddb9e2f6ebed51ac",
+  "source": {
+    "date": "2026-10-31",
+    "issue": 64,
+    "archives": {
+      "BACK1.DAX": {
+        "sha256": "2efc68c5220a3f2c00315accc4b13961727cf87ae941484a8eb77cb78e054c6f",
+        "block_ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "SKYGRND.DAX": {
+        "sha256": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+        "block_ids": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    "address_space": "original DAX file byte offsets",
+    "palette_interval": [
+      144,
+      176
+    ],
+    "items": [
+      {
+        "key": "skygrnd-002",
+        "indexed_sha256": "3b7758d528493c836059053a9f64243c9907c75743d77028f9cc5d9afcdd79cb",
+        "used_rgb_sha256": "67b2cabf18e5f3c0e5bb29a1020957adc1bc36b121031f885a3ef63d9468cc9e",
+        "used_colors": [
+          146,
+          147,
+          149,
+          150,
+          151,
+          152,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          167,
+          168,
+          170,
+          173,
+          174,
+          175
+        ],
+        "palette_bank_sha256": "a73b291602a0995612f249e5ba35a72a012de55cd9410bc7e56d0d58d9407efc",
+        "source_file": "SKYGRND.DAX",
+        "packed_file_offset": 7159,
+        "source_size": [
+          88,
+          88
+        ]
+      },
+      {
+        "key": "skygrnd-003",
+        "indexed_sha256": "3b7758d528493c836059053a9f64243c9907c75743d77028f9cc5d9afcdd79cb",
+        "used_rgb_sha256": "9f14f27a6a1645c4fb2041550d6518641552eb7f8a32ac4c4fffca1d1d16e2ef",
+        "used_colors": [
+          146,
+          147,
+          149,
+          150,
+          151,
+          152,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          167,
+          168,
+          170,
+          173,
+          174,
+          175
+        ],
+        "palette_bank_sha256": "801fe69dde2dc165c530a6a3da40a995f4fa66ad49ec4c0751d1e7f716e6cb9d",
+        "source_file": "SKYGRND.DAX",
+        "packed_file_offset": 14286,
+        "source_size": [
+          88,
+          88
+        ]
+      },
+      {
+        "key": "skygrnd-004",
+        "indexed_sha256": "0c036b72e3c6ff1ced410c5171df87ac9abc4aaceb7cb891b500594be56176fa",
+        "used_rgb_sha256": "231d9bcc0266fcc4beda26b6b807a9e9f80d210c52ba8b9729f3dd5eee43d6f8",
+        "used_colors": [
+          146,
+          147,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          159,
+          161,
+          162,
+          163,
+          167,
+          169,
+          170,
+          171,
+          172,
+          175
+        ],
+        "palette_bank_sha256": "1efd078d94abcaffec16f28da42ef9dedec33778071b325fd000d6f0cedf5bba",
+        "source_file": "SKYGRND.DAX",
+        "packed_file_offset": 21408,
+        "source_size": [
+          88,
+          88
+        ]
+      },
+      {
+        "key": "back1-001",
+        "indexed_sha256": "6e6497b68401ffa64001e15770ec2ee123e49f19eb60110e3c2d6461fb3804be",
+        "used_rgb_sha256": "adb917b88a493112d133bac4e314539572d6bfba778ddb2c3a53e22b6d5a6baf",
+        "used_colors": [
+          148,
+          150,
+          151,
+          155,
+          157,
+          159
+        ],
+        "palette_bank_sha256": "9938ef54e35c0135d0ee2ce7d2e8bb2f94dcf5bc803a95ddca5f8d983766a605",
+        "source_file": "BACK1.DAX",
+        "packed_file_offset": 56,
+        "source_size": [
+          88,
+          88
+        ]
+      },
+      {
+        "key": "back1-002",
+        "indexed_sha256": "07ff7762725474441a1173a794f2481353aa61af37f715eda25b81603a080c66",
+        "used_rgb_sha256": "8720264943a68137da0cab3bbfd0f3df75fcd67c2cab0d8edc17acaf0282f25d",
+        "used_colors": [
+          145,
+          148,
+          149,
+          154,
+          155,
+          161,
+          162,
+          167,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174
+        ],
+        "palette_bank_sha256": "a43b67d82d231fa5755c695e52151b2cf4af33ea7c168e6504a1b22b37532ac0",
+        "source_file": "BACK1.DAX",
+        "packed_file_offset": 7036,
+        "source_size": [
+          88,
+          88
+        ]
+      },
+      {
+        "key": "back1-003",
+        "indexed_sha256": "969788ff0fa3a51c8847608d42832b9ac630b4ecb510854de5a119ccbcefec93",
+        "used_rgb_sha256": "a30e3ab18fe9affacf9166e642a37044cfe65efc4fbd05e65a24bbf911de143f",
+        "used_colors": [
+          145,
+          148,
+          151,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          169,
+          172
+        ],
+        "palette_bank_sha256": "a731e2bec15b3ba6a1c2b347e9db7068f8535fac1c25ca9cb959a93bf21b1dd4",
+        "source_file": "BACK1.DAX",
+        "packed_file_offset": 15098,
+        "source_size": [
+          88,
+          88
+        ]
+      },
+      {
+        "key": "back1-004",
+        "indexed_sha256": "838d3c29e5d63ca0939efa6aeb38716b16b599d2c1eafcf79977f11aa1db3941",
+        "used_rgb_sha256": "4ce74f66db8bb002b55a83de400a790792fe9426722376c25af8e05320d0d410",
+        "used_colors": [
+          145,
+          148,
+          151,
+          153,
+          160,
+          161,
+          165,
+          166,
+          169,
+          172
+        ],
+        "palette_bank_sha256": "620632db8a238b32e22ec323f64a4fb18859f64acbb40ab37389ae95a8bfc789",
+        "source_file": "BACK1.DAX",
+        "packed_file_offset": 20905,
+        "source_size": [
+          88,
+          88
+        ]
+      },
+      {
+        "key": "back1-005",
+        "indexed_sha256": "bdb163a5f0fe0f042baad21fa36e145363789276a8ac15c57f4bf3b1f7c20b9a",
+        "used_rgb_sha256": "2780d5312de4ba2339660ce6883da810e38f09220d13132fc954374d9a726cc4",
+        "used_colors": [
+          145,
+          148,
+          160,
+          161,
+          165,
+          166,
+          169,
+          172,
+          173,
+          174
+        ],
+        "palette_bank_sha256": "1efd078d94abcaffec16f28da42ef9dedec33778071b325fd000d6f0cedf5bba",
+        "source_file": "BACK1.DAX",
+        "packed_file_offset": 29146,
+        "source_size": [
+          88,
+          88
+        ]
+      },
+      {
+        "key": "back1-006",
+        "indexed_sha256": "1ad27eb247fa05ac10158fe575f803c47d98ac9c147431d8fb1ae60b3212da1f",
+        "used_rgb_sha256": "01ade3d90c3382017dace8260bc653faa3013efb196cbdc7bbd2ab115295fb2b",
+        "used_colors": [
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157
+        ],
+        "palette_bank_sha256": "7f204dee1271e823b77aa79ca00e979442f8a7af3b9cf7a497609f53b51b2143",
+        "source_file": "BACK1.DAX",
+        "packed_file_offset": 37417,
+        "source_size": [
+          88,
+          88
+        ]
+      }
+    ],
+    "sampled_keys": [
+      "back1-001",
+      "back1-003",
+      "back1-005",
+      "back1-006",
+      "skygrnd-002",
+      "skygrnd-004"
+    ],
+    "request_sha256": "f4e51468571aa5e761e67e9c82a324cd5a9bdc13ba0dad8f4894da902ed25d6c",
+    "runtime_position": "unknown; existing full-rectangle matcher only; no invented occlusion",
+    "evidence_level": "proven source pixels and used RGB; normal background events unobserved",
+    "character_scope_limit": {
+      "head_records": 28,
+      "unique_heads": 25,
+      "body_records": 128,
+      "full_head_body_templates": 6400,
+      "unique_templates": 6400,
+      "legacy_body_foreground_limit": 190,
+      "observed_body_source_maximum": 240,
+      "normal_capture": "workplace/probe/g9-hd/b39-play-v1/hd",
+      "normal_full_template_hits": 0,
+      "note": "raw unremapped templates not observed; character recoloring and placement remain unknown; no production change"
+    }
+  },
+  "source_proof_sha256": "52012e35ed756fc297c4e8be7d3b9988e773c6465aa798da05b52a6deeaffa34",
+  "materials": {
+    "count": 9,
+    "generation_attempts": 13,
+    "generator": "built-in image_gen",
+    "style": "approved B",
+    "size": [
+      264,
+      264
+    ],
+    "all_opaque_rgba": true,
+    "structural_min": 0.4365079365079365,
+    "structural_max": 0.7790492957746479,
+    "maximum_hue_difference_degrees": 28.134135329777777,
+    "revisions": {
+      "back1-001": 2,
+      "back1-002": 2,
+      "back1-004": 2,
+      "back1-005": 2
+    },
+    "review": "review/hd/b40-background/README.md",
+    "review_manifest_sha256": "66274be8181e235918f78fbdfb1afc04004fc5fdba12b1151641020bb3a4811d",
+    "request_sha256": "f4e51468571aa5e761e67e9c82a324cd5a9bdc13ba0dad8f4894da902ed25d6c",
+    "validation_sha256": "e54fe953fb07056939e5294a6bd5209a79386a1153869423bf698ca3246555e1",
+    "visual_sha256": "69e3c03599113be67e79ae3a5d9cd76784c30539edcbe14e7ecd033c927e9537",
+    "preview_sha256": "9421be0643f7f42def128238cca95764728549799b5d4eb3a71a9c123edc52d6"
+  },
+  "source_diagnostics": {
+    "classes": 6,
+    "position_cases": 12,
+    "sampled_keys": [
+      "back1-001",
+      "back1-003",
+      "back1-005",
+      "back1-006",
+      "skygrnd-002",
+      "skygrnd-004"
+    ],
+    "not_individually_composed": [
+      "back1-002",
+      "back1-004",
+      "skygrnd-003"
+    ],
+    "sky_palette_selection": [
+      "skygrnd-002",
+      "skygrnd-003"
+    ],
+    "passed": true,
+    "scope": "完整PNG與框外、兩種位置、移動清除、改點撤除完整候選及改動8×8格回退、冷失配無HD、使用RGB撤除、未用RGB隔離、2倍／F12、原版輸入不變；天空同索引不同色盤唯一選取。合成沿既有鎖存，未變格可保留先前HD。",
+    "source": "apps/pod/vga_background_fixture_test.go",
+    "source_sha256": "0e7bcdd2a30273ba89457464d6f542658280d299327b49eb1b9b7ba85ad94968",
+    "logs": {
+      "apps-r2.log": "714788e4d9045406cf46154469988d857ebb151acb9210831749a0ed2abd8696",
+      "frontend.log": "3450caa1d8b25a71671ed9886e3f4a8260307a1910ad1058c99b8b2e72b49078",
+      "vet.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "clean-build.sha256": "697aca49f70c1885c14b8d065efc4c59a870549fd19a0bc860fb19b0be1dc333",
+      "build-info.txt": "7639686851a1b68f1d16ef054d2495550c34fb283fced0e2c4ef11bff9ca0793"
+    },
+    "apps_seconds": 38.721,
+    "frontend_seconds": 0.026,
+    "loader_negative_controls": [
+      "unknown-key",
+      "substituted-verified-source",
+      "size",
+      "algorithm",
+      "duplicate"
+    ],
+    "ega_regression": true,
+    "overlap_conflict_diagnostic": true,
+    "normal_events_not_proven": true
+  },
+  "runtime": {
+    "status": "PASS",
+    "scope": "九個背景條件式來源；正常冷啟動DEMO增量抽驗，不外推正常背景事件或遮擋",
+    "binary_sha256": "4581cd6f203ca120f9b2539f4a8c4305d04622819b567819ddb9e2f6ebed51ac",
+    "prior_binary_sha256": "ff54dfe2fa2fc0e4462c14718f7e85dbddc3043b5259b1559f1cf97ed9cea042",
+    "frames": 7400,
+    "steps": 712250000,
+    "state": {
+      "cpu": "c2b1ab7e95b942a904842f53eced383f6e0c39b111a0d6c1b65e8ac740694c47",
+      "memory": "92378aa1b9a421f5f2b2b93c504aed1f80dbd06e627fd1d9f297932fbacbf540",
+      "indexed": "e77dd084128cf4f20ecce7cd104b1bb0a68f008da864490d926e338386abb7bf",
+      "palette": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+      "frames": 7400,
+      "steps": 712250000
+    },
+    "guest_files": 127,
+    "guest_state_equal": true,
+    "original_endpoint_equal": true,
+    "old_theme_new_program_composite_equal": true,
+    "final_composite_equal": true,
+    "prior_assets_preserved": true,
+    "theme_files": 1350,
+    "background_candidates": 9,
+    "flash_count": 0,
+    "normal_background_events_observed": false,
+    "frames_sha256": {
+      "prior": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d",
+      "before": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d",
+      "after": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d"
+    },
+    "negative_controls": [
+      {
+        "case": "cpu",
+        "rejected": true
+      },
+      {
+        "case": "source",
+        "rejected": true
+      },
+      {
+        "case": "palette",
+        "rejected": true
+      },
+      {
+        "case": "guest",
+        "rejected": true
+      },
+      {
+        "case": "output-pixel",
+        "rejected": true
+      }
+    ],
+    "negative_controls_all_pass": true,
+    "source_proof_sha256": "52012e35ed756fc297c4e8be7d3b9988e773c6465aa798da05b52a6deeaffa34",
+    "baseline_receipt_sha256": "2eaad8797fdb852bf0ed45a1767f1bc0b4956ea8a7440b85b561cba9c96dac21",
+    "runtime_inputs_sha256": "575bd7700cd6bef1cb5065edff9ffa38a0852d4608c38de30be39d6cfc9e8df2",
+    "runtime_log_sha256": "eea26577fc46f06babcc81acfead4c6017737ef8ccb2717a3f0841a0022a4d28",
+    "old_theme_runtime_inputs_sha256": "f7bc00aa5ba6ca2534e72aa6623f73e54822f5a7913b3d61f3e63771361663cc",
+    "old_theme_runtime_log_sha256": "eea26577fc46f06babcc81acfead4c6017737ef8ccb2717a3f0841a0022a4d28"
+  },
+  "runtime_receipt_sha256": "1eab25eacbe8cc47f81cf46ca7913b8306f1a22e7c460a7cdb70546855c5250f",
+  "prior_batch_receipt_sha256": "2eaad8797fdb852bf0ed45a1767f1bc0b4956ea8a7440b85b561cba9c96dac21",
+  "portable_rebuild": {
+    "receipt": {
+      "status": "PASS",
+      "manifest_sha256": "9858145b7634e8b2843b90c33f8b35a49dfa35c15ed723b3eea9f3b0711b16b8",
+      "theme_files": 1350,
+      "theme_tree_sha256": "a7ff92baec7ec81b557876d978a5bebdba0ae493a376f9157986040b59dbac5a",
+      "fonts": {
+        "pod-en-3x.golemfnt": "c701ce90a4b3009e6126b0ccfc0dc042dc17c22dbf59c07b1e41c90678481db9",
+        "pod-en.golemfnt": "121e92b01c9c907aa66b8e6e78155d0a368102e599bbb9784feaec5c7f2234e0",
+        "pod-rounded-3x.golemfnt": "52e749e344c5bf6a60fa6501ad4ab17b72de0871897382a5c58d2acc3cc21730",
+        "pod-rounded-bar12.golemfnt": "89cd27498ae1dea002b3fef714695e433e198269e71f76e50bdeab9b9f4c8976",
+        "pod-rounded-bar22.golemfnt": "0d731150caef048b40b60a6baaba1b37dc1f3791c7a442b2ee51a60834f635d5",
+        "pod-rounded.golemfnt": "0f0430e7db828b8b74249b69f02ac7c590724215d9edc0f212830790ae4531ac"
+      },
+      "original_archives": {
+        "8X8D1.DAX": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "BIGPIC1.DAX": "bc3565c62c1654ee757d1f98f64bbb78e06bcd551c2e8593c41feb130b9f0f6b",
+        "CPIC1.DAX": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+        "DUNGCOM.DAX": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "TITLE.DAX": "8a53adf4044527df86d2d983f6c4eeee440c3d09773e7cbd4166279ccafde757",
+        "PIC1.DAX": "a3cf36ca3d51ca7960fd73b630489f019c5ad984808ad08bcf91186f67401ab7",
+        "SKYGRND.DAX": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+        "WILDCOM.DAX": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+        "COMSPR.DAX": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee",
+        "BACK1.DAX": "2efc68c5220a3f2c00315accc4b13961727cf87ae941484a8eb77cb78e054c6f"
+      },
+      "engine": {
+        "repository": "https://github.com/wicanr2/pools-of-darkness-cht.git",
+        "branch": "dosgolem/pod",
+        "commit": "4e662625d2f2289f339fe7cad444b3fb0839e78d"
+      },
+      "input_scope": "Git files and explicitly supplied original DAX only; no old workplace",
+      "rights": "private review inputs; original indexes reconstructed locally"
+    },
+    "receipt_sha256": "f11130af97543ea3cfc2f8d05689bdf1c72adb7812012ef2c8e0e9c52463ab8d",
+    "source_git_tree": "0a5caea6d77359b676df3749f13e6f4efeb459f5",
+    "negative_controls": {
+      "all_pass": true,
+      "cases": [
+        {
+          "case": "missing-original",
+          "rejected": true,
+          "no_output": true,
+          "reason": "[Errno 2] No such file or directory"
+        },
+        {
+          "case": "changed-original",
+          "rejected": true,
+          "no_output": true,
+          "reason": "原版雜湊不符：8X8D1.DAX"
+        },
+        {
+          "case": "changed-png",
+          "rejected": true,
+          "no_output": true,
+          "reason": "素材雜湊不符：review/hd/b11-walls/8x8d1-001@193.png"
+        }
+      ]
+    },
+    "engine_commit": "4e662625d2f2289f339fe7cad444b3fb0839e78d",
+    "engine_clean_build_equals_tested": true,
+    "engine_build_log_sha256": "7639686851a1b68f1d16ef054d2495550c34fb283fced0e2c4ef11bff9ca0793",
+    "scope": "乾淨Git引擎重編逐位元相同；乾淨Git主專案加自備DAX重建1350檔與六份字型，逐檔相同。僅Linux amd64容器，其他平台未驗。"
+  },
+  "activation": {
+    "method": "new binary verified on old theme, then Linux renameat2 RENAME_EXCHANGE of complete theme",
+    "official": "workplace/hd/theme",
+    "tested": "workplace/hd/theme-b40-stage",
+    "previous": "workplace/hd/theme-b40-previous",
+    "official_files": 1350,
+    "prior_files": 1331,
+    "official_equals_tested": true,
+    "prior_equals_baseline": true,
+    "binary_sha256": "4581cd6f203ca120f9b2539f4a8c4305d04622819b567819ddb9e2f6ebed51ac",
+    "prior_binary_sha256": "ff54dfe2fa2fc0e4462c14718f7e85dbddc3043b5259b1559f1cf97ed9cea042",
+    "binary_rollback": "workplace/dosgolem/workplace/bin/pod-play-before-backgrounds",
+    "theme_tree_sha256": "a7ff92baec7ec81b557876d978a5bebdba0ae493a376f9157986040b59dbac5a"
+  },
+  "tools": {
+    "python": "3.13.16",
+    "pillow": "11.0.0",
+    "numpy": "2.1.3",
+    "image": "sosb-img:r1",
+    "image_id": "8b9012adb991ebd1714725cf122ac052462d2993a17dd7b3ec2504e213ae9cf3",
+    "go": "go1.24.13",
+    "go_image": "dosgolem-go-ebiten:1.24-r1",
+    "go_image_id": "8ed6bdee2bce1f32f804e888f942b25bbf62f2165a43344bb4587f3371de0581"
+  },
+  "tool_sha256": {
+    "hd_vga_request.py": "1556967df15693f6c1af4c804a2b5350ee376d9cde379c9a0212059040e0c777",
+    "hd_vga_prepare.py": "d3f1203904cb5a82a63f9ca9e85883a255a0dcb81d6013f74b0d3b0a6fa44ace",
+    "hd_vga_validate.py": "cbe88b3d90bb834331f4176efa61f86da90090194ae376e562a55f5ac2a048d9",
+    "hd_vga_review.py": "654c44466473ebc7be6bab3b9969bda4705591dca719c664601974aea6480340",
+    "hd_vga_background_theme.py": "c3c868cb6ca42e68803a129ec0b2f6d336c4fcac49ff112558f6e9d9992c1a14",
+    "hd_vga_readme_preview.py": "a10cce5ec9004afe7ccfbf4f1db5ed120a04690d8c272f4487bd12dd9d00ed78",
+    "vga_background_play_check.py": "dc5c8e9faedb43ba99e3c70866a97dca07f9a1581847e5a89812676257a79d22",
+    "rebuild_theme_snapshot.py": "1457bab5f60085e6d5f38c485d4a55dc41feb1303ee4289d09f3f54bf8404fea",
+    "rebuild_assets.py": "e4dd1f4857fabd381b16ca04a967679eaf0ceabcff04f78ae0027cca604c8611"
+  },
+  "evidence_recipe_sha256": {
+    "import-generated.py": "55ec59e3f6146154cb4b618df62d7825134f0295f63eb153ec904f8c6509798f",
+    "normal.sh": "d404670f596c9b1b4584740bb7ec2e6cbcb91b46c2a2eb861f24b152b838f4f9",
+    "activate.py": "a9e7a107a996e767e6be45ae57bd33f115fb99fcf279abce3e911ba2e08f5485",
+    "report.py": "1f923a046261d96f23d015896e430df71bf5692016a366939339b57c9d95988f"
+  }
+}

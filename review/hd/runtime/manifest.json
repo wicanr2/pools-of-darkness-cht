@@ -1,11 +1,11 @@
 {
   "version": 1,
   "issue": 55,
-  "scope": "b39主題；私人素材保存與本機重建，不擴張遊戲驗收或公開權利",
+  "scope": "b40主題；私人素材保存與本機重建，不擴張遊戲驗收或公開權利",
   "engine": {
     "repository": "https://github.com/wicanr2/pools-of-darkness-cht.git",
     "branch": "dosgolem/pod",
-    "commit": "e197ce9852a32474e7ac5b0b5c75fdf9434edd4e"
+    "commit": "4e662625d2f2289f339fe7cad444b3fb0839e78d"
   },
   "theme": [
     {
@@ -286,6 +286,102 @@
       "kind": "repo-file",
       "source": "review/hd/runtime/theme/actors.json",
       "rights": "project metadata; private review"
+    },
+    {
+      "path": "back1-001.idx",
+      "sha256": "6e6497b68401ffa64001e15770ec2ee123e49f19eb60110e3c2d6461fb3804be",
+      "kind": "original-index",
+      "archive": "BACK1.DAX",
+      "block": 1,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "back1-001.png",
+      "sha256": "442e55411a141d2080789088bde82b93fc703010b0a5abab59e845daaad64858",
+      "kind": "repo-file",
+      "source": "review/hd/b40-background/back1-001.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "back1-002.idx",
+      "sha256": "07ff7762725474441a1173a794f2481353aa61af37f715eda25b81603a080c66",
+      "kind": "original-index",
+      "archive": "BACK1.DAX",
+      "block": 2,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "back1-002.png",
+      "sha256": "b214cc8c35fcb001d6ce6a969c9bc73bee5753ee179ef62f1bbb47eafcc9af1e",
+      "kind": "repo-file",
+      "source": "review/hd/b40-background/back1-002.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "back1-003.idx",
+      "sha256": "969788ff0fa3a51c8847608d42832b9ac630b4ecb510854de5a119ccbcefec93",
+      "kind": "original-index",
+      "archive": "BACK1.DAX",
+      "block": 3,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "back1-003.png",
+      "sha256": "972822a436d560fb2192b4d65093db5b12ce0eb6fc432c699c7746d43cb7f74f",
+      "kind": "repo-file",
+      "source": "review/hd/b40-background/back1-003.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "back1-004.idx",
+      "sha256": "838d3c29e5d63ca0939efa6aeb38716b16b599d2c1eafcf79977f11aa1db3941",
+      "kind": "original-index",
+      "archive": "BACK1.DAX",
+      "block": 4,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "back1-004.png",
+      "sha256": "20a0656bb57f78ec4699191b1a19027c7beced5b7a5fa090428ce59f002dc41d",
+      "kind": "repo-file",
+      "source": "review/hd/b40-background/back1-004.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "back1-005.idx",
+      "sha256": "bdb163a5f0fe0f042baad21fa36e145363789276a8ac15c57f4bf3b1f7c20b9a",
+      "kind": "original-index",
+      "archive": "BACK1.DAX",
+      "block": 5,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "back1-005.png",
+      "sha256": "14e4309c042e26a7f7f97b9ef8cb75579430a9e527bcd47cee4b7c36d256ca64",
+      "kind": "repo-file",
+      "source": "review/hd/b40-background/back1-005.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "back1-006.idx",
+      "sha256": "1ad27eb247fa05ac10158fe575f803c47d98ac9c147431d8fb1ae60b3212da1f",
+      "kind": "original-index",
+      "archive": "BACK1.DAX",
+      "block": 6,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "back1-006.png",
+      "sha256": "5b8f43f8a97e9940d3f4f70363bce576b9f565d0c170debf4590da4e09917cab",
+      "kind": "repo-file",
+      "source": "review/hd/b40-background/back1-006.png",
+      "rights": "accepted HD redraw"
     },
     {
       "path": "bigpic-provenance.json",
@@ -7205,6 +7301,13 @@
       "rights": "project metadata; private review"
     },
     {
+      "path": "exact.json",
+      "sha256": "e0dd8e29625bef36ce47a0f7519084c3db63e22da475e79da103f8736b54df46",
+      "kind": "repo-file",
+      "source": "review/hd/runtime/theme/exact.json",
+      "rights": "project metadata; private review"
+    },
+    {
       "path": "localized/base/theme.json",
       "sha256": "a8ab4418f284c8e13d0a5aa53f30831d5a542982510be487310b74e9114649a2",
       "kind": "repo-file",
@@ -8746,6 +8849,54 @@
       "rights": "accepted HD redraw"
     },
     {
+      "path": "skygrnd-002.idx",
+      "sha256": "3b7758d528493c836059053a9f64243c9907c75743d77028f9cc5d9afcdd79cb",
+      "kind": "original-index",
+      "archive": "SKYGRND.DAX",
+      "block": 2,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "skygrnd-002.png",
+      "sha256": "1bda0382f965fa6ecb7653c33b483bad4b0878361883228556df0026adfb9397",
+      "kind": "repo-file",
+      "source": "review/hd/b40-background/skygrnd-002.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "skygrnd-003.idx",
+      "sha256": "3b7758d528493c836059053a9f64243c9907c75743d77028f9cc5d9afcdd79cb",
+      "kind": "original-index",
+      "archive": "SKYGRND.DAX",
+      "block": 3,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "skygrnd-003.png",
+      "sha256": "dd2dde0d2dfcae4dac9536c754ec75cd96f47de1be61a691c8de53b7a62e7b09",
+      "kind": "repo-file",
+      "source": "review/hd/b40-background/skygrnd-003.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "skygrnd-004.idx",
+      "sha256": "0c036b72e3c6ff1ced410c5171df87ac9abc4aaceb7cb891b500594be56176fa",
+      "kind": "original-index",
+      "archive": "SKYGRND.DAX",
+      "block": 4,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "skygrnd-004.png",
+      "sha256": "b60d6afd99f5d80ba3192450a97401b87e4fcab330dffc955976a61c12c4c4bf",
+      "kind": "repo-file",
+      "source": "review/hd/b40-background/skygrnd-004.png",
+      "rights": "accepted HD redraw"
+    },
+    {
       "path": "theme.json",
       "sha256": "35201c489bbf59aaa1e18d0484a9f810d44a80d8169a7f0546c1803a1c3edcdc",
       "kind": "repo-file",
@@ -8754,7 +8905,7 @@
     },
     {
       "path": "vga-layers-provenance.json",
-      "sha256": "cc2f8f068cd4f306d3a197d51a4b7bee5adb48afb05e08867c9dde9cb32ebf64",
+      "sha256": "cf0ab112f6931c903f65c444f33090706b3b0a94fbd7a22531bc26d6a982a20d",
       "kind": "repo-file",
       "source": "review/hd/runtime/theme/vga-layers-provenance.json",
       "rights": "project metadata; private review"
@@ -10639,7 +10790,8 @@
     "PIC1.DAX": "a3cf36ca3d51ca7960fd73b630489f019c5ad984808ad08bcf91186f67401ab7",
     "SKYGRND.DAX": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
     "WILDCOM.DAX": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
-    "COMSPR.DAX": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee"
+    "COMSPR.DAX": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee",
+    "BACK1.DAX": "2efc68c5220a3f2c00315accc4b13961727cf87ae941484a8eb77cb78e054c6f"
   },
   "fonts": [
     {
