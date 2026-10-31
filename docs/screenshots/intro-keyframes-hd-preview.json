@@ -1,0 +1,90 @@
+{
+  "scope": "AI-redrawn asset preview; not a gameplay screenshot",
+  "composition": "native 3x PNG; no resizing or cropping",
+  "size": [
+    1920,
+    1512
+  ],
+  "output_sha256": "f0682b40748ab3137a51892ecc3f1e0a3e85d158437bb2f16a6b7edf5c274ab0",
+  "items": [
+    {
+      "key": "intro-council",
+      "source": "review/hd/b44-intro/intro-council.png",
+      "png_sha256": "060ac36f5ddd02693d30aa0281f318ac4b753cbd2bfd2c4bc4107a8de8021799",
+      "size": [
+        960,
+        504
+      ],
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "intro-phlan",
+      "source": "review/hd/b44-intro/intro-phlan.png",
+      "png_sha256": "cebbf66ee0e9be7a4a9fb28783006ef01c7aca58cd9ab02362f48edfdc39e87e",
+      "size": [
+        960,
+        504
+      ],
+      "position": [
+        960,
+        0
+      ]
+    },
+    {
+      "key": "intro-horned",
+      "source": "review/hd/b44-intro/intro-horned.png",
+      "png_sha256": "60cd6c6c413cebca4457fa20e3a9f3322c650387181df26a399998992dda43cd",
+      "size": [
+        960,
+        504
+      ],
+      "position": [
+        0,
+        504
+      ]
+    },
+    {
+      "key": "intro-heroes",
+      "source": "review/hd/b44-intro/intro-heroes.png",
+      "png_sha256": "69fa6f79bca1b7527464f41649ebc6e4b7eb47c3980788b2fcabccc1e2a32f5d",
+      "size": [
+        960,
+        504
+      ],
+      "position": [
+        960,
+        504
+      ]
+    },
+    {
+      "key": "intro-followers",
+      "source": "review/hd/b44-intro/intro-followers.png",
+      "png_sha256": "508b5af6311ce6854ac3d96c0e288f6a188413ac5f10e2123e2170624befecda",
+      "size": [
+        960,
+        504
+      ],
+      "position": [
+        0,
+        1008
+      ]
+    },
+    {
+      "key": "intro-dreadlord",
+      "source": "review/hd/b44-intro/intro-dreadlord.png",
+      "png_sha256": "00d04d8190efa1c5c2f7e06f4e144b44681994eaba2b2c240083e4985669fcb0",
+      "size": [
+        960,
+        504
+      ],
+      "position": [
+        960,
+        1008
+      ]
+    }
+  ],
+  "rights": "AI redraws within existing private HD patch scope; no original reference pixels"
+}

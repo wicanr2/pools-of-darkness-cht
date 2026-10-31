@@ -1,0 +1,337 @@
+{
+  "date": "2026-10-31",
+  "issue": 68,
+  "status": "materials CONFORMED; runtime animation DRAFT",
+  "scope": "six960x504 keyframes and complete art-region observation in fixed5100 host updates; no runtime activation",
+  "source_proof": "docs/re/018-b44-source-proof.json",
+  "source_proof_sha256": "bd6e91ad847d74592945a130e5fd29dee12e244d34f167dccede12f22883b347",
+  "materials": {
+    "count": 6,
+    "generation_attempts": 7,
+    "generator": "built-in image_gen",
+    "style": "approved B",
+    "items": [
+      {
+        "key": "intro-council",
+        "png": "review/hd/b44-intro/intro-council.png",
+        "png_sha256": "060ac36f5ddd02693d30aa0281f318ac4b753cbd2bfd2c4bc4107a8de8021799",
+        "size": [
+          960,
+          504
+        ],
+        "numeric": {
+          "key": "intro-council",
+          "format_ok": true,
+          "alpha_ok": true,
+          "structural_edge_overlap": 0.7509698410712051,
+          "median_hue_difference_degrees": 6.138035264483619,
+          "outside_mask_difference": null,
+          "target_met": true,
+          "png_sha256": "060ac36f5ddd02693d30aa0281f318ac4b753cbd2bfd2c4bc4107a8de8021799"
+        },
+        "visual": "accepted-after-viewing at native size",
+        "generation": {
+          "key": "intro-council",
+          "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-4d83bdee-50c1-414f-afe8-6bf0ad114d27.png",
+          "prompt": "Use case: style-transfer. Create one faithful hand-painted fantasy CRPG HD keyframe based only on the supplied original. Output landscape960x504, exact aspect320:168, opaque. Preserve the entire source canvas including solid pure black side margins, ornate grey-purple stone picture frame topped by three skulls, and all picture boundaries at their exact original fractions: left frame about x15%, right frame about x83%, top edge y2%, bottom edge y96%. The inner painting must not expand beyond the original frame. No subtitle region, letters, logo or watermark. Keep original scene perspective, pose, outlines, color relationships and every main element. Approved style B: detailed fantasy book illustration painted by hand, smooth brushwork replacing dithering, not pixel art, not 3D. No new characters, props, ornaments, framing or light effects. Scene: Four figures across the back of a purple stone chamber. At far left an orange-red coiled winged dragon crouches. Center-left stands a tall horned orange-brown humanoid in full fitted orange-brown armor with green elements. Center-right a small white-haired elderly wizard in a full purple robe with yellow-green trim holds a staff. Far right an orange-haired humanoid in fully closed orange robes with a green outer mantle sits. Keep exactly these four figures, sizes and positions, green crystalline formations behind them, small purple sunset disc high left of center, black oval portal at center of purple-blue tiled floor. All humanoids are fully clothed.",
+          "method": "built-in image_gen",
+          "rights": "AI-generated HD keyframe; original reference local/private only",
+          "raw_sha256": "a900b9e60c8dccf33f511984bb9a093fe73da9e0b2ecb9b0c955f8db0beb4706",
+          "references": [
+            {
+              "path": "workplace/hd/requests/b44/intro-council-3x.png",
+              "sha256": "2beac7418155c36a8d8e69c371fae62b9b4c58dec0fc10c8d4d587fe95ee2a08",
+              "role": "3x nearest original normal-frame reference; not final HD"
+            }
+          ]
+        }
+      },
+      {
+        "key": "intro-phlan",
+        "png": "review/hd/b44-intro/intro-phlan.png",
+        "png_sha256": "cebbf66ee0e9be7a4a9fb28783006ef01c7aca58cd9ab02362f48edfdc39e87e",
+        "size": [
+          960,
+          504
+        ],
+        "numeric": {
+          "key": "intro-phlan",
+          "format_ok": true,
+          "alpha_ok": true,
+          "structural_edge_overlap": 0.7024152171192591,
+          "median_hue_difference_degrees": 7.314433932769029,
+          "outside_mask_difference": null,
+          "target_met": true,
+          "png_sha256": "cebbf66ee0e9be7a4a9fb28783006ef01c7aca58cd9ab02362f48edfdc39e87e"
+        },
+        "visual": "accepted-after-viewing at native size",
+        "generation": {
+          "key": "intro-phlan",
+          "revision": 2,
+          "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-f2b8f403-4098-4d4f-95e2-c2b718a1c5e2.png",
+          "prompt": "Use case: precise-object-edit/style-transfer. Edit this existing HD fantasy city illustration. Change ONLY the decorative grey-purple stone skull frame to a smoothly hand-painted fantasy illustration rendering: remove the visible square pixel grid, block steps, dithering and low-resolution facets from the skulls, curved finials, side pillars and bottom rail. Paint detailed smooth natural chipped stone and expressive carved skulls. Preserve frame shape, all three skull positions, inner/outer boundaries, exact frame scale, black margins and overall960x504 canvas. Keep the entire inner city panorama, shoreline, buildings, flames, mountains, storm sky, composition and every color as close to the existing image as possible. No additional symbols, skulls, letters, logo, watermark or new objects. It must read as a hand-painted HD frame, not enlarged retro pixels.",
+          "method": "built-in image_gen",
+          "rights": "AI-generated HD keyframe; original reference local/private only",
+          "extra_reference": "intro-phlan-r1-input.png",
+          "raw_sha256": "84b88cff5669c74466109e78c2de1b3173e8491bdecb9e5c5a2631dc35670b66",
+          "references": [
+            {
+              "path": "workplace/hd/requests/b44/intro-phlan-3x.png",
+              "sha256": "88abb10b51909795f33a241ad231f8b939a992c69f3df4c2a266a0b49ddac904",
+              "role": "original composition validation; not tool input for this edit"
+            },
+            {
+              "path": "workplace/hd/requests/b44/intro-phlan-r1-input.png",
+              "sha256": "956eb689ba2c858434d241e133d45f26ea659f76839f70ce8f6d602666b21239",
+              "role": "actual HD edit input; preserve city and repaint stone frame"
+            }
+          ],
+          "extra_reference_sha256": "956eb689ba2c858434d241e133d45f26ea659f76839f70ce8f6d602666b21239"
+        }
+      },
+      {
+        "key": "intro-horned",
+        "png": "review/hd/b44-intro/intro-horned.png",
+        "png_sha256": "60cd6c6c413cebca4457fa20e3a9f3322c650387181df26a399998992dda43cd",
+        "size": [
+          960,
+          504
+        ],
+        "numeric": {
+          "key": "intro-horned",
+          "format_ok": true,
+          "alpha_ok": true,
+          "structural_edge_overlap": 0.8169983727625485,
+          "median_hue_difference_degrees": 7.561858748310112,
+          "outside_mask_difference": null,
+          "target_met": true,
+          "png_sha256": "60cd6c6c413cebca4457fa20e3a9f3322c650387181df26a399998992dda43cd"
+        },
+        "visual": "accepted-after-viewing at native size",
+        "generation": {
+          "key": "intro-horned",
+          "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-c1d1caf2-0a3e-46d8-af46-159c0e6eed7e.png",
+          "prompt": "Use case: style-transfer. Create one faithful hand-painted fantasy CRPG HD keyframe based only on the supplied original. Output landscape960x504, exact aspect320:168, opaque. Preserve the entire source canvas including solid pure black side margins, ornate grey-purple stone picture frame topped by three skulls, and all picture boundaries at their exact original fractions: left frame about x15%, right frame about x83%, top edge y2%, bottom edge y96%. The inner painting must not expand beyond the original frame. No subtitle region, letters, logo or watermark. Keep original scene perspective, pose, outlines, color relationships and every main element. Approved style B: detailed fantasy book illustration painted by hand, smooth brushwork replacing dithering, not pixel art, not 3D. No new characters, props, ornaments, framing or light effects. Scene: A floating horned skull-faced grey spirit over a small blue-white light in a black oval pool. Long yellow horns sweep out to both sides high on skull, orange glowing eye sockets, skeletal grin, tan-gold armored shoulders, grey torso covering tapering into a pointed mist tail. Both golden clawed hands are raised at their exact original positions, right hand farther forward. Purple cracked stone wall and purple-blue tiled pool floor remain fixed. No legs, no additional creatures or effects.",
+          "method": "built-in image_gen",
+          "rights": "AI-generated HD keyframe; original reference local/private only",
+          "raw_sha256": "340b6351ab12d8b95aff14801c6347bf60ecd9e8cc89fbf2191f45eeb3db52ea",
+          "references": [
+            {
+              "path": "workplace/hd/requests/b44/intro-horned-3x.png",
+              "sha256": "ef4e4d44b4b31d86d88afe6282a3ca8bc75fd4c9dabe123ed825a9ca8a113223",
+              "role": "3x nearest original normal-frame reference; not final HD"
+            }
+          ]
+        }
+      },
+      {
+        "key": "intro-heroes",
+        "png": "review/hd/b44-intro/intro-heroes.png",
+        "png_sha256": "69fa6f79bca1b7527464f41649ebc6e4b7eb47c3980788b2fcabccc1e2a32f5d",
+        "size": [
+          960,
+          504
+        ],
+        "numeric": {
+          "key": "intro-heroes",
+          "format_ok": true,
+          "alpha_ok": true,
+          "structural_edge_overlap": 0.8283853188024553,
+          "median_hue_difference_degrees": 3.430567602571273,
+          "outside_mask_difference": null,
+          "target_met": true,
+          "png_sha256": "69fa6f79bca1b7527464f41649ebc6e4b7eb47c3980788b2fcabccc1e2a32f5d"
+        },
+        "visual": "accepted-after-viewing at native size",
+        "generation": {
+          "key": "intro-heroes",
+          "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-944b2a43-4460-43bf-9cd3-593540c20eb6.png",
+          "prompt": "Use case: style-transfer. Create one faithful hand-painted fantasy CRPG HD keyframe based only on the supplied original. Output landscape960x504, exact aspect320:168, opaque. Preserve the entire source canvas including solid pure black side margins, ornate grey-purple stone picture frame topped by three skulls, and all picture boundaries at their exact original fractions: left frame about x15%, right frame about x83%, top edge y2%, bottom edge y96%. The inner painting must not expand beyond the original frame. No subtitle region, letters, logo or watermark. Keep original scene perspective, pose, outlines, color relationships and every main element. Approved style B: detailed fantasy book illustration painted by hand, smooth brushwork replacing dithering, not pixel art, not 3D. No new characters, props, ornaments, framing or light effects. Scene: Three closely cropped heroic faces on black, behind them a huge shadowy purple horned head with red-orange eyes and fiery red-orange outline. Left a person in orange edged purple hood, center a smiling golden sun-shaped face/mask with orange radiating rays, right an older moustached man in ornate dark purple helmet with orange-gold trim. Preserve all expressions, head sizes and exact placement, warm yellow-orange skin and deep purple shadows. Tiny sparse stars on black remain sparse.",
+          "method": "built-in image_gen",
+          "rights": "AI-generated HD keyframe; original reference local/private only",
+          "raw_sha256": "bef546dbc3652dbd47f43f1bb47016ab9f3e784ad6d918970d20963428dd8b22",
+          "references": [
+            {
+              "path": "workplace/hd/requests/b44/intro-heroes-3x.png",
+              "sha256": "dd5761463c316a565bb2a2508b10eef188a2b22ca1dbc88aa958cecd6e6c3771",
+              "role": "3x nearest original normal-frame reference; not final HD"
+            }
+          ]
+        }
+      },
+      {
+        "key": "intro-followers",
+        "png": "review/hd/b44-intro/intro-followers.png",
+        "png_sha256": "508b5af6311ce6854ac3d96c0e288f6a188413ac5f10e2123e2170624befecda",
+        "size": [
+          960,
+          504
+        ],
+        "numeric": {
+          "key": "intro-followers",
+          "format_ok": true,
+          "alpha_ok": true,
+          "structural_edge_overlap": 0.691653109748467,
+          "median_hue_difference_degrees": 8.201094086828647,
+          "outside_mask_difference": null,
+          "target_met": true,
+          "png_sha256": "508b5af6311ce6854ac3d96c0e288f6a188413ac5f10e2123e2170624befecda"
+        },
+        "visual": "accepted-after-viewing at native size",
+        "generation": {
+          "key": "intro-followers",
+          "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-3d668ea2-15ed-4ac8-8f43-f39e6af74450.png",
+          "prompt": "Use case: style-transfer. Create one faithful hand-painted fantasy CRPG HD keyframe based only on the supplied original. Output landscape960x504, exact aspect320:168, opaque. Preserve the entire source canvas including solid pure black side margins, ornate grey-purple stone picture frame topped by three skulls, and all picture boundaries at their exact original fractions: left frame about x15%, right frame about x83%, top edge y2%, bottom edge y96%. The inner painting must not expand beyond the original frame. No subtitle region, letters, logo or watermark. Keep original scene perspective, pose, outlines, color relationships and every main element. Approved style B: detailed fantasy book illustration painted by hand, smooth brushwork replacing dithering, not pixel art, not 3D. No new characters, props, ornaments, framing or light effects. Scene: The same floating horned skull-faced grey spirit, frontal and larger, above a black oval pool. Yellow swept horns, orange-red eye sockets and open skeletal grin, tan-gold armored shoulders, grey torso covering tapers into a grey pointed mist tail. Two raised golden clawed hands, right hand prominent. Tall deep purple columns at left and right against purple cracked wall, purple-blue stone floor. Exact reference pose and bounds. No additional flame or effects yet.",
+          "method": "built-in image_gen",
+          "rights": "AI-generated HD keyframe; original reference local/private only",
+          "raw_sha256": "ca0d2a7a770e8ae224834b533c9501e20e8e32722f5c4e6ee1b4814942bdcca0",
+          "references": [
+            {
+              "path": "workplace/hd/requests/b44/intro-followers-3x.png",
+              "sha256": "4a14c192ae3d2f512a0cb7ed590ec63aa3e68af133c38aaffaacca4e1b8c69fa",
+              "role": "3x nearest original normal-frame reference; not final HD"
+            }
+          ]
+        }
+      },
+      {
+        "key": "intro-dreadlord",
+        "png": "review/hd/b44-intro/intro-dreadlord.png",
+        "png_sha256": "00d04d8190efa1c5c2f7e06f4e144b44681994eaba2b2c240083e4985669fcb0",
+        "size": [
+          960,
+          504
+        ],
+        "numeric": {
+          "key": "intro-dreadlord",
+          "format_ok": true,
+          "alpha_ok": true,
+          "structural_edge_overlap": 0.6705043173570266,
+          "median_hue_difference_degrees": 2.7169811320754746,
+          "outside_mask_difference": null,
+          "target_met": true,
+          "png_sha256": "00d04d8190efa1c5c2f7e06f4e144b44681994eaba2b2c240083e4985669fcb0"
+        },
+        "visual": "accepted-after-viewing at native size",
+        "generation": {
+          "key": "intro-dreadlord",
+          "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-ac7eab21-4c85-4386-ae83-a833843d498e.png",
+          "prompt": "Use case: style-transfer. Create one faithful hand-painted fantasy CRPG HD keyframe based only on the supplied original. Output landscape960x504, exact aspect320:168, opaque. Preserve the entire source canvas including solid pure black side margins, ornate grey-purple stone picture frame topped by three skulls, and all picture boundaries at their exact original fractions: left frame about x15%, right frame about x83%, top edge y2%, bottom edge y96%. The inner painting must not expand beyond the original frame. No subtitle region, letters, logo or watermark. Keep original scene perspective, pose, outlines, color relationships and every main element. Approved style B: detailed fantasy book illustration painted by hand, smooth brushwork replacing dithering, not pixel art, not 3D. No new characters, props, ornaments, framing or light effects. Scene: Close-up skeletal undead sorcerer wearing a deep cobalt blue hood and robe, blue riveted crown-like helmet, orange inner hood lining, large golden circular neck clasp and golden right shoulder pauldron. Bone-brown skull face with green glowing eyes turned slightly left; his left bony hand extends pointing to lower-left, the right hand partially visible at lower-right. Purple columns and dark purple background. Preserve the exact gesture, skull proportions, blue/gold colors and crop.",
+          "method": "built-in image_gen",
+          "rights": "AI-generated HD keyframe; original reference local/private only",
+          "raw_sha256": "25502d27ae9225398b4e4e592edb718ea2c6590925e140f8dae16cda5874c950",
+          "references": [
+            {
+              "path": "workplace/hd/requests/b44/intro-dreadlord-3x.png",
+              "sha256": "5107b9c33ad1e68972c574751ceada74aac9a3a0db092815ca3f0a00c01c7c62",
+              "role": "3x nearest original normal-frame reference; not final HD"
+            }
+          ]
+        }
+      }
+    ],
+    "structural_min": 0.6705043173570266,
+    "structural_max": 0.8283853188024553,
+    "maximum_hue_difference_degrees": 8.201094086828647,
+    "review": "review/hd/b44-intro/README.md",
+    "manifest_sha256": "62d9b8a17790e40709f452269863c3fb08937ae8151c31db372193054e8fa11c",
+    "request_sha256": "d161945ff12efa070982635f11d253d2746644a34fc49c590735a4bc8fae4a87",
+    "numeric_sha256": "d6ccbc999df4928018b9582a5926dcc5871095abadf0646a5e647f56456ceb8b",
+    "visual_sha256": "9e959709b483b327bc5d3f38ff9c7cb519865af45ae507e9b589e2d381855fc8",
+    "preview_sha256": "f0682b40748ab3137a51892ecc3f1e0a3e85d158437bb2f16a6b7edf5c274ab0",
+    "revision": "phlan r2 repaints stone frame after numeric-pass r1 retained visible pixel blocks; original threshold unchanged"
+  },
+  "source_verification": {
+    "prior_digest_equal": true,
+    "guest_equal": true,
+    "guest_files": 127,
+    "frames": 5100,
+    "steps": 490875000,
+    "state": {
+      "Steps": 490875000,
+      "MemorySHA256": "e4afc2c98d6b7615e84b168672d0c8472ca0b56927bba3f1fa772ecb953d1f27",
+      "CPUSHA256": "de89e30ec065a49136d70332d61c6dcfd8db37c3e8681311e7dff10062f38c3d",
+      "IndexedSHA256": "f61a14b25fe8e4921b9da854e15f1cc60475ec75ce2147e15b7d1dfc5525db0c",
+      "PaletteSHA256": "17dc586aa5241390980763e8b5abf9db044d3ad788a2b2bdd5d6d285325b2acf",
+      "DOSExited": false,
+      "AdLib": true,
+      "ClockPercent": 50,
+      "IRQ0Clamped": 0
+    },
+    "transitions": 172,
+    "source_and_used_rgb_states": 163,
+    "indexed_states": 129,
+    "count_scope": "whole capture includes SSI logo, black transitions and following TITLE; not 129 independent painted scenes",
+    "negative_controls": [
+      {
+        "case": "cpu",
+        "rejected": true
+      },
+      {
+        "case": "source",
+        "rejected": true
+      },
+      {
+        "case": "used-rgb",
+        "rejected": true
+      }
+    ],
+    "cleanup_before_after_transitions_equal": true,
+    "probe_clean_build_equal": true,
+    "probe_binary_sha256": "e1bf9a1611a149d1235a73c097a868e152419768991f4c532726b8f243147ac8",
+    "engine_commit": "56ebba3e0dc6982b313c1a5702370f99a81ab896",
+    "launcher_shell_syntax_checked": true
+  },
+  "portable_materials": {
+    "source_git_tree": "a3c4c46fad6d0e53ca87043ce82b197edbf0ad17",
+    "six_png_files_equal": true,
+    "no_workplace_in_clean_tree": true,
+    "negative_controls": [
+      {
+        "case": "missing-png",
+        "rejected": true
+      },
+      {
+        "case": "changed-png",
+        "rejected": true
+      }
+    ],
+    "prior_b43_preview_byte_equal": true,
+    "scope": "accepted finished PNGs retrieved from clean Git; not runtime theme expansion or animation import"
+  },
+  "unchanged_production": {
+    "program_sha256": "8a790bbbd35b7edacd6401a8a5e55953b389d66c10ae79432721bd83d8c58a47",
+    "theme_files": 1525,
+    "theme_tree_sha256": "11906fb24438d631e8ae44b128a896444349a4def96cb41ec8ef2a814443fe9e",
+    "manifest_sha256": "8464b934bcfcf1cdbe7422c66acf42dd485aa8059da169f8b95809938453917a",
+    "fonts_unchanged": 6,
+    "prior_runtime_receipt_sha256": "e0ee793b128f780b6318b1990cd5a2679142c72c1e325730b8243e1eecc96ae0",
+    "scope": "existing product files hashed only; no new normal HD rendering run claimed"
+  },
+  "limits": [
+    "not a full animation replacement",
+    "other source phases, palette fades, transitions and FINAL remain DRAFT/unknown",
+    "observation covers last presented frame per host update, not every framebuffer write or all BMA states",
+    "canonical frame to BMA byte mapping remains unknown; no invented offsets, timers or interpolation",
+    "only Linux amd64 containers checked"
+  ],
+  "tools": {
+    "python": "3.13.16",
+    "pillow": "11.0.0",
+    "numpy": "2.1.3",
+    "go": "go1.24.13",
+    "image": "sosb-img:r1",
+    "image_id": "8b9012adb991ebd1714725cf122ac052462d2993a17dd7b3ec2504e213ae9cf3",
+    "go_image": "dosgolem-go-ebiten:1.24-r1",
+    "go_image_id": "8ed6bdee2bce1f32f804e888f942b25bbf62f2165a43344bb4587f3371de0581"
+  },
+  "tool_sha256": {
+    "movie_hd_probe.go": "e472d53dc25172491947ce7982efdac4ac569449b6e8e5aba4295077b2425c5a",
+    "movie_hd_inventory.py": "8857ab20b140dcc1d716ae288da01b9408608e03e97ea858379d916c319d2e70",
+    "movie-hd-source-receipt.sh": "a10f563074498b2ca0a8718a13af5e1fc3d8da56d74f713036c2fc9cb385c61e",
+    "hd_vga_prepare.py": "8ac76397e071f58bb3ac006e551e093833750a42e5063c88873452d2d0bf44a4",
+    "hd_vga_validate.py": "cbe88b3d90bb834331f4176efa61f86da90090194ae376e562a55f5ac2a048d9",
+    "hd_vga_review.py": "654c44466473ebc7be6bab3b9969bda4705591dca719c664601974aea6480340",
+    "hd_vga_readme_preview.py": "1bc2fc3ff3446d7eb87f60b303e43b2904cc243ec49cbc064086e31a614c7317"
+  }
+}
