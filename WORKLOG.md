@@ -1739,3 +1739,4 @@
 - 正式程式仍為56ebba3／SHA 8a790bbbd35b7edacd6401a8a5e55953b389d66c10ae79432721bd83d8c58a47。1525檔主題、重建清單及六份字型雜湊未改，本輪沒有冒稱重跑正式HD畫面或新增動畫接入。下一閘門是正常畫格與BMA可重建來源對應、其他畫格與淡出／變形；FINAL仍未涵蓋。不新增G6探索或重開Go繪圖收尾。
 - 沿用sosb-img:r1（8b9012adb991）及dosgolem-go-ebiten:1.24-r1（8ed6bdee2bce），沒有新增映像。原版圖與索引／色盤只留本機及既有私人審閱例外，未擴張散布權利。
 - 提交前31個檔案擁有權1000:1000、618個本機連結與README 61張內嵌圖通過，固定素材收據重算相同，成品及工具均有Git來源。原版zip／rar雜湊不變，root-owned與誤建.md目錄空、長期Go快取空，本專案容器0，其他專案資源未動。磁碟剩269 GiB。
+- 主專案e968708已推私人main。#68附[素材驗收留言](https://github.com/wicanr2/pools-of-darkness-cht/issues/68#issuecomment-6545695806)後關閉並回讀CLOSED；#10補[關鍵畫面與動畫接入邊界](https://github.com/wicanr2/pools-of-darkness-cht/issues/10#issuecomment-6545696334)，回讀OPEN。儲存庫仍PRIVATE，正式引擎未改且工作樹乾淨。
