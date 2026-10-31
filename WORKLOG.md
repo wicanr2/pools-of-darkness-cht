@@ -1643,3 +1643,4 @@
 - 1271檔完整原子啟用，1258檔回復副本在workplace/hd/theme-b38-previous；新程式先驗舊主題再交換，舊執行檔保留為pod-play-before-effects。README直接顯示六張原尺寸預覽、實際特效前後裁切與完整正常視窗；本批固定收據docs/re/017-b38-runtime.json。
 - 沿用sosb-img:r1及dosgolem-go-ebiten:1.24-r1，未建立新映像，建置快取只在容器/tmp。其他圖族、動畫與未遇事件仍依#10；配樂、多語系、作弊、推廣片及三平台交付依既有Issue，不外推本批完成。
 - 固定收據重算相同，612個本機連結及52張README內嵌圖片通過。變更檔UID/GID為1000:1000，原版兩個壓縮檔SHA不變，root-owned與誤建.md目錄為空，長期Go快取為空；本批容器0，引擎工作樹乾淨，遠端回讀仍為PRIVATE。
+- 主專案93ebbe3與引擎e197ce9已推本專案私人main與dosgolem/pod。#62附[驗收留言](https://github.com/wicanr2/pools-of-darkness-cht/issues/62#issuecomment-6540672059)後關閉並回讀CLOSED；#10補[本批成果與剩餘範圍](https://github.com/wicanr2/pools-of-darkness-cht/issues/10#issuecomment-6540673900)，回讀OPEN。兩工作樹乾淨，專案容器0。
