@@ -1724,3 +1724,4 @@
 - 全部驗收後完整原子啟用1525檔與新程式，1405檔回復主題在workplace/hd/theme-b43-previous，舊程式為pod-play-before-encounter-b43。固定docs/re/017-b43-runtime.json綁來源、素材、診斷、正常、Go繪圖、重建及啟用；新增收據與工具同批加入索引。初次來源證據腳本掛載點不合及一次匯入誤指檔名屬腳本錯誤，修正入口後以同映像成功，未改原版或產品邏輯。
 - 命中收尾路由重新核對結論範圍：SPRIT全部29組87張素材已有條件式對應，正常事件與位置未知者保留未知；角色改色／定位、背景遮擋與片頭片尾動畫仍依#10。沿用sosb-img:r1（8b9012adb991）及dosgolem-go-ebiten:1.24-r1（8ed6bdee2bce），沒有新增映像。
 - 提交前146個檔案擁有權1000:1000、842個本機連結及README 60張內嵌圖通過，固定收據重算相同，全部正式素材均有已暫存Git來源，無原版idx入Git。原始zip／rar雜湊未改，root-owned與誤建.md目錄空，長期Go快取空，本專案容器0；其他專案容器保留。磁碟剩271 GiB。
+- 主專案d8a90cc已推私人main，引擎56ebba3已推本專案dosgolem/pod並回讀同一commit。#67附[驗收留言](https://github.com/wicanr2/pools-of-darkness-cht/issues/67#issuecomment-6545194700)後關閉並回讀CLOSED；#10補[87張素材與尚未驗範圍](https://github.com/wicanr2/pools-of-darkness-cht/issues/10#issuecomment-6545195260)，回讀OPEN。儲存庫仍PRIVATE，兩份工作樹乾淨。
