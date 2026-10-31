@@ -38,7 +38,8 @@
 戰鬥怪物的 244 個 CPIC 來源狀態已完成重畫，去重後 238 張；地下城 DUNGCOM 六組共150張非純色圖樣已接入，六個純色背景格保留原色。
 野外WILDCOM三組119個非純色來源已完成，去重後116張HD，一格純色維持原版；包含樹叢、水岸、岩石、垂直輪廓與環形池。
 正常冷啟動、倍率與原版切換抽樣通過；尚未遇到的怪物與地形仍依完整原版來源條件辨識。
-素材覆蓋與實機驗證範圍見[研究017](docs/re/017-vga-battle-hd.md#b37-wild-terrain)。
+六張戰鬥特效素材已接入條件式辨識，骷髏特效通過正常 DEMO 抽驗，箭矢有位置歧義時保留原版。
+素材覆蓋與實機驗證範圍見[研究017](docs/re/017-vga-battle-hd.md#b38-effects)。
 開場封面、世界標誌與製作名單已接入，可用 F8 切換繁中與英文。
 片頭八組台詞也可切換繁中與英文，支援 2／3 倍與 F12 原版；正常播放的[字幕驗收](docs/re/018-movie-subtitles.md#正式呈現層與正常視窗驗收)通過，動畫美術仍待 HD 重畫。
 菲蘭起點的天空、地面與牆面也已接入，完整讀檔抽樣通過。
@@ -204,6 +205,23 @@ HD、無 HD、F12 原版及 2 倍四路的 CPU、記憶體、色號、色盤與 
 37張成品涵蓋40個來源，保留原版洋紅、橘黃、灰色邊界與深褐底色。上圖按72×72成品原尺寸拼排。
 六個固定來源樣本及同程式新舊主題的正常DEMO抽驗通過，閃現0；正常野外遭遇尚未觀測。
 原版並列、重複來源與提示詞見[b37審閱頁](review/hd/b37-wild-terrain/README.md)，[抽驗收據](docs/re/017-b37-runtime.json)與[拼圖來源](docs/screenshots/wild-terrain-bank1-hd-preview.json)另列。
+
+### 戰鬥特效 HD 素材
+
+![箭矢、閃電、石塊、骷髏、火球與冰藍特效的HD素材](docs/screenshots/combat-effects-hd-preview.png)
+
+這是六張 72×72 成品的原尺寸素材預覽。特效依原版完整來源與獨立色盤辨識，
+有位置歧義時保留原版。原版並列與提示詞見[特效審閱頁](review/hd/b38-effects/README.md)。
+預覽來源與雜湊見[素材清單](docs/screenshots/combat-effects-hd-preview.json)。
+
+| 原版骷髏特效，3 倍 | HD 特效，3 倍 |
+|---|---|
+| ![正常戰鬥的原版特效](docs/screenshots/combat-effect-original-3x.png) | ![正常戰鬥的HD特效](docs/screenshots/combat-effect-hd-3x.png) |
+
+兩圖取自相同輸入的正常 DEMO，保留截圖原始像素。HD 差異只在這個特效矩形內，
+來源與驗證範圍見[正常收據](docs/re/017-b38-play.json)及[截圖清單](docs/screenshots/combat-effect-runtime.json)。
+
+![正常戰鬥的HD特效與完整遊戲視窗](docs/screenshots/combat-effects-demo-window.png)
 
 ### 菲蘭街景
 

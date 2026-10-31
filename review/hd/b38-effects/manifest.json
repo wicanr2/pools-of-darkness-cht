@@ -1,0 +1,428 @@
+{
+  "batch": "b38",
+  "count": 6,
+  "private_only": true,
+  "request_manifest_sha256": "a6892a31c198f66036b9320f3838a0b4bff49ab806d4235e6bdb9b41db70b207",
+  "items": [
+    {
+      "key": "comspr-000",
+      "source": {
+        "key": "comspr-000",
+        "source_file": "COMSPR.DAX",
+        "source_file_sha256": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee",
+        "block": 0,
+        "packed_file_offset": 398,
+        "decoded_sha256": "299f4ea32da31bfc79e6f31ee94321c5a0a9a4014614b472c3a969226b0ea40b",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "comspr-000-1x.png",
+        "reference_3x": "comspr-000-3x.png",
+        "reference_1x_sha256": "2e6d9fd4d357f5dbb5598e8c87880f7b080fb06d5220ed58621cef46558362f6",
+        "reference_3x_sha256": "3cb6d5faa503f6db2e5df7ac6146bcfd66d81bd1301ba2e90fc140271aa850cf",
+        "indexed": "comspr-000.idx",
+        "indexed_sha256": "36200b13c16b02401b5caffe612357719f34cf4e00c0d03684a9fe2a3885d8af",
+        "palette": "comspr-000.pal",
+        "palette_sha256": "8685fae8e7354ea6ca0614cccdc8f5fc292beb0d0115d35150ea1a069673a59f",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "comspr-000",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-0a38e1e4-e252-4dd2-b0ce-ace85dafcdf0.png",
+        "prompt": "Redraw this single classic fantasy RPG combat effect as detailed hand-painted fantasy illustration, matching the reference composition, colors, position and silhouette exactly. A vertical magical arrow pointing straight up, narrow brown shaft, blue-white metal tip at top, small orange red flame feathers at bottom. Retain the precise silhouette and placement of the reference. Square asset, no border, no text, no extra objects. Keep the flat gray background RGB 85 85 85 opaque; do not add scenery or a shadow outside the original silhouette. Smooth confident painted detail, readable when reduced to 72 by 72 pixels. Preserve every element's original direction and relative size.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "48e576a0be66c63a8982f04ae69e2bfd4cd247313d89d6937cb48ff9c3a38046",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b38/comspr-000-1x-view.png",
+            "sha256": "93b2ab00ef4cc9bc34c0630aa0ec1158beb7e368f88350f69dac2b6e321c53b2",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "comspr-000",
+        "raw": "comspr-000-r1-raw.png",
+        "raw_sha256": "48e576a0be66c63a8982f04ae69e2bfd4cd247313d89d6937cb48ff9c3a38046",
+        "png": "comspr-000.png",
+        "png_sha256": "bab894567e162c80638e2422ba9aded8e6f664f3edd3a1dc2e259a66883c3628",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "comspr-000",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.7848101265822784,
+        "median_hue_difference_degrees": 7.216184378180417,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "bab894567e162c80638e2422ba9aded8e6f664f3edd3a1dc2e259a66883c3628"
+      },
+      "visual": {
+        "png_sha256": "bab894567e162c80638e2422ba9aded8e6f664f3edd3a1dc2e259a66883c3628",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "comspr-005",
+      "source": {
+        "key": "comspr-005",
+        "source_file": "COMSPR.DAX",
+        "source_file_sha256": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee",
+        "block": 5,
+        "packed_file_offset": 2833,
+        "decoded_sha256": "d65e66322336f7b9c1dc0a6adfd7f17046ff5a129a88984eeb60de289f2275ab",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "comspr-005-1x.png",
+        "reference_3x": "comspr-005-3x.png",
+        "reference_1x_sha256": "599e63d50b3764a1b1e5c394453f10c82dcd5d2bc5fc6fbf2e9a59a9a8e22881",
+        "reference_3x_sha256": "dbc4670a4e31880100729ed6adee3d7c3b613688269ceec5dcdebe9f945a5a8f",
+        "indexed": "comspr-005.idx",
+        "indexed_sha256": "519f17001d297c3e550e88c001e18ae5681b3ae531e4c6e21d4d61735b32fbc9",
+        "palette": "comspr-005.pal",
+        "palette_sha256": "8685fae8e7354ea6ca0614cccdc8f5fc292beb0d0115d35150ea1a069673a59f",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "comspr-005",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-1241dd9a-978b-4bf1-9a89-41b33eef23b2.png",
+        "prompt": "Redraw this single classic fantasy RPG combat effect as detailed hand-painted fantasy illustration, matching the reference composition, colors, position and silhouette exactly. An electric blue branching lightning impact, white and pale yellow luminous core, sharp branching blue bolts matching the exact diagonals and endpoints of the reference. Square asset, no border, no text, no extra objects. Keep the flat gray background RGB 85 85 85 opaque; do not add scenery or a shadow outside the original silhouette. Smooth confident painted detail, readable when reduced to 72 by 72 pixels. Preserve every element's original direction and relative size.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "ebcea8fc666821dac6964df695fbdaa7046ee037cf764c9e13887c3b062786fa",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b38/comspr-005-1x-view.png",
+            "sha256": "06abfafe78b2ae8464e7764db4827ec94cfb0320868b4fabe0d852f09a1bdb95",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "comspr-005",
+        "raw": "comspr-005-r1-raw.png",
+        "raw_sha256": "ebcea8fc666821dac6964df695fbdaa7046ee037cf764c9e13887c3b062786fa",
+        "png": "comspr-005.png",
+        "png_sha256": "76cf0fa689667807507c8fc986223f48810aeb60f39b22083cb96f10309f7894",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "comspr-005",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.7375,
+        "median_hue_difference_degrees": 5.477897800414169,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "76cf0fa689667807507c8fc986223f48810aeb60f39b22083cb96f10309f7894"
+      },
+      "visual": {
+        "png_sha256": "76cf0fa689667807507c8fc986223f48810aeb60f39b22083cb96f10309f7894",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "comspr-006",
+      "source": {
+        "key": "comspr-006",
+        "source_file": "COMSPR.DAX",
+        "source_file_sha256": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee",
+        "block": 6,
+        "packed_file_offset": 3609,
+        "decoded_sha256": "09fd339b2d41a2b4d70fa6db3f75112e488154e0b1c54786f5d1a53fa8fb2ee5",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "comspr-006-1x.png",
+        "reference_3x": "comspr-006-3x.png",
+        "reference_1x_sha256": "fb9464325e9685db64832eb7019a4dfe227bf6182e522266b59e9a5bb493a923",
+        "reference_3x_sha256": "50559f96b837fa8c896310784892fb899ae1e60599fbba29733398b87928f8d2",
+        "indexed": "comspr-006.idx",
+        "indexed_sha256": "e4b81404a499e7dd1207b35f2c8cda1687296c21aa0dbd3220d280f4506b6a13",
+        "palette": "comspr-006.pal",
+        "palette_sha256": "8685fae8e7354ea6ca0614cccdc8f5fc292beb0d0115d35150ea1a069673a59f",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "comspr-006",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-ba0805ac-b69e-4a23-b4c2-1daf9a56b02f.png",
+        "prompt": "Redraw this single classic fantasy RPG combat effect as detailed hand-painted fantasy illustration, matching the reference composition, colors, position and silhouette exactly. A round rough gray stone projectile with warm ochre shaded right edge and pale ivory highlight upper left. Match its round asymmetric silhouette and center. Square asset, no border, no text, no extra objects. Keep the flat gray background RGB 85 85 85 opaque; do not add scenery or a shadow outside the original silhouette. Smooth confident painted detail, readable when reduced to 72 by 72 pixels. Preserve every element's original direction and relative size.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "7a7de02b54922bc562ff762fcb297132d9d7f7acd9a76cf58d9c5a8805cb0fb1",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b38/comspr-006-1x-view.png",
+            "sha256": "baad1c7153b6e9f0794f523da65e4d1113dbb47ee10dac5085e3482416d9f025",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "comspr-006",
+        "raw": "comspr-006-r1-raw.png",
+        "raw_sha256": "7a7de02b54922bc562ff762fcb297132d9d7f7acd9a76cf58d9c5a8805cb0fb1",
+        "png": "comspr-006.png",
+        "png_sha256": "639c23498946e0d8a0608bc314450afc8668c69d48118a23f7620c250cf09759",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "comspr-006",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.7375,
+        "median_hue_difference_degrees": 2.095190460636319,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "639c23498946e0d8a0608bc314450afc8668c69d48118a23f7620c250cf09759"
+      },
+      "visual": {
+        "png_sha256": "639c23498946e0d8a0608bc314450afc8668c69d48118a23f7620c250cf09759",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "comspr-009",
+      "source": {
+        "key": "comspr-009",
+        "source_file": "COMSPR.DAX",
+        "source_file_sha256": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee",
+        "block": 9,
+        "packed_file_offset": 5301,
+        "decoded_sha256": "2fedec3adf9a9b8dae86cd8d19dced15976da19c38f8519453e8f30e3bd7c485",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "comspr-009-1x.png",
+        "reference_3x": "comspr-009-3x.png",
+        "reference_1x_sha256": "2c2dbbd7aa5426d14779c625d51d1fccb65e6dc25379ab93950044526ec7443e",
+        "reference_3x_sha256": "d4fcb6120e663793954b954d873c392e882f3754bb55ed229156dcf141e4ce89",
+        "indexed": "comspr-009.idx",
+        "indexed_sha256": "e11d4ef8829a97581bdc5418156871daf8fd419e25945d91e0115fbf438a786d",
+        "palette": "comspr-009.pal",
+        "palette_sha256": "8685fae8e7354ea6ca0614cccdc8f5fc292beb0d0115d35150ea1a069673a59f",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "comspr-009",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-1ce0b8a1-3425-446e-aee4-dc074c23e003.png",
+        "prompt": "Redraw this single classic fantasy RPG combat effect as detailed hand-painted fantasy illustration, matching the reference composition, colors, position and silhouette exactly. A front facing ivory skull with black eye sockets above crossed ivory bones, on a deep crimson red square field. Match the reference closely: large domed skull, visible jaw, two diagonal crossed bones across lower third, bone ends at left and right edges. Square asset, no border, no text, no extra objects. Keep the red background fully opaque edge to edge. Smooth confident painted detail, readable when reduced to 72 by 72 pixels. Preserve every element's original direction and relative size.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "e6178b4d4b70225ae64e11c825bc0750e17b6c3d1e13c8aa5252db965cb8ee16",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b38/comspr-009-1x-view.png",
+            "sha256": "a23e14d5b1dc154d49a75820e06e97d3a2e866a4374d525f13761cd94a0fc4c2",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "comspr-009",
+        "raw": "comspr-009-r1-raw.png",
+        "raw_sha256": "e6178b4d4b70225ae64e11c825bc0750e17b6c3d1e13c8aa5252db965cb8ee16",
+        "png": "comspr-009.png",
+        "png_sha256": "40955b1303a47007ce94511fd219b628b2c005fb5b77f529760db4c4f0091817",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "comspr-009",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.575,
+        "median_hue_difference_degrees": 0.0,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "40955b1303a47007ce94511fd219b628b2c005fb5b77f529760db4c4f0091817"
+      },
+      "visual": {
+        "png_sha256": "40955b1303a47007ce94511fd219b628b2c005fb5b77f529760db4c4f0091817",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "comspr-010",
+      "source": {
+        "key": "comspr-010",
+        "source_file": "COMSPR.DAX",
+        "source_file_sha256": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee",
+        "block": 10,
+        "packed_file_offset": 6554,
+        "decoded_sha256": "a114074481ec16a3d0c7f3cacbc811fdd8eb3a41829d2ea64e1f4d3802dd9b5a",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "comspr-010-1x.png",
+        "reference_3x": "comspr-010-3x.png",
+        "reference_1x_sha256": "e7fc37ba7ceb9f037f6e82a7dff413aac935a43a5daa352788874a64a8371739",
+        "reference_3x_sha256": "fb9561abd000a8b2089cda41ae988cf49511110fde91a382f5b197738d02f4bb",
+        "indexed": "comspr-010.idx",
+        "indexed_sha256": "87d60e3db15a121d1621acbc4e2d84bf9911d754bd0041a8c7e2fa95fe867791",
+        "palette": "comspr-010.pal",
+        "palette_sha256": "8685fae8e7354ea6ca0614cccdc8f5fc292beb0d0115d35150ea1a069673a59f",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "comspr-010",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-ce6b685c-850a-4988-bdb2-ec1a459de79c.png",
+        "prompt": "Redraw this classic fantasy RPG combat sprite as a hand-painted fantasy illustration. An orange red spherical fireball, pale yellow and white hot center, fiery uneven orange red rim. Preserve its round shape and centered position. Match reference composition, silhouette and colors exactly. Square asset, flat gray RGB85 85 85 opaque background, no scenery, no text, no border, no extra objects. Readable at 72 by 72 pixels, crisp painted detail within the existing silhouette.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "5e04fe4c4c68036b4fbb477e4084ee6343bc0bd573a0d9f0b331857e59c60b86",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b38/comspr-010-1x-view.png",
+            "sha256": "34d85cfb576c10c1069db03b9ff00dd3c408196de7629a3dcf7fb08dec6d3320",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "comspr-010",
+        "raw": "comspr-010-r1-raw.png",
+        "raw_sha256": "5e04fe4c4c68036b4fbb477e4084ee6343bc0bd573a0d9f0b331857e59c60b86",
+        "png": "comspr-010.png",
+        "png_sha256": "275d7b44ebe2f0b041b92bab79e2d47a2ffc04f45e2d66dbbd116f460789b0b9",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "comspr-010",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.85,
+        "median_hue_difference_degrees": 6.21641516378358,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "275d7b44ebe2f0b041b92bab79e2d47a2ffc04f45e2d66dbbd116f460789b0b9"
+      },
+      "visual": {
+        "png_sha256": "275d7b44ebe2f0b041b92bab79e2d47a2ffc04f45e2d66dbbd116f460789b0b9",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    },
+    {
+      "key": "comspr-013",
+      "source": {
+        "key": "comspr-013",
+        "source_file": "COMSPR.DAX",
+        "source_file_sha256": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee",
+        "block": 13,
+        "packed_file_offset": 9961,
+        "decoded_sha256": "01da886ebb591b89db6d6b38f2590872e4deeadcc9cc91fe621a517dc7dededf",
+        "source_size": [
+          24,
+          24
+        ],
+        "output_size": [
+          72,
+          72
+        ],
+        "reference_1x": "comspr-013-1x.png",
+        "reference_3x": "comspr-013-3x.png",
+        "reference_1x_sha256": "2faf7f96c3681e4257335cd95d8d793fd0ad66c5ca7b937202533490089d3bd1",
+        "reference_3x_sha256": "2df491f78de014623b0f8867cbf98631e4e8dce64a756bd946995a6e53902db2",
+        "indexed": "comspr-013.idx",
+        "indexed_sha256": "4afb12813172c9dfd5fb2df477e9229916098bf83acce4fb0d84a5eeb9d151c0",
+        "palette": "comspr-013.pal",
+        "palette_sha256": "8685fae8e7354ea6ca0614cccdc8f5fc292beb0d0115d35150ea1a069673a59f",
+        "transparent": false,
+        "animation_mask": null,
+        "runtime_observed": false,
+        "prompt": "Edit the supplied reference image. Use case: style-transfer. Create a faithful hand-painted fantasy illustration for a classic CRPG HD art asset. Target canvas exactly 72 by 72 pixels, aspect ratio 24:24, edge to edge with no borders or margins. Preserve the original composition, silhouettes, camera, proportions and original color relationships. Replace pixel stair-steps and dithering with deliberate brushwork, painted texture and clean readable forms. Style B: richly painted 1990s fantasy illustration, not photorealistic, no modern 3D rendering. The reference is the composition and palette authority. Preserve every character, object, silhouette, pose, clothing color, background and light source exactly in place. Do not add or remove subjects, objects, letters or frames."
+      },
+      "generation": {
+        "key": "comspr-013",
+        "path": "/home/anr2/.codex/generated_images/01a16b46-b400-77f3-afa6-902ef6c74a26/exec-a33097ac-4b7a-4df8-940a-85c81f82b0f0.png",
+        "prompt": "Redraw this classic fantasy RPG combat sprite as a hand-painted fantasy illustration. A swirling blue ice magic impact, intricate interlocking blue-white icy clouds and pale cyan highlights. Retain the reference's asymmetrical rounded cluster and its occupied area. Match reference composition, silhouette and colors exactly. Square asset, flat gray RGB85 85 85 opaque background, no scenery, no text, no border, no extra objects. Readable at 72 by 72 pixels, crisp painted detail within the existing silhouette.",
+        "method": "built-in image_gen",
+        "rights": "AI-generated HD art; original reference local/private only",
+        "raw_sha256": "59e9108424002cb1d9d55a881fc77fec27ae026c716c5473cededfca6462bd5a",
+        "references": [
+          {
+            "role": "original composition",
+            "path": "workplace/hd/requests/b38/comspr-013-1x-view.png",
+            "sha256": "0e39c393734bad9e9731758dc7db0ae9755e81c55e94159f2f546c4b0bdc7607",
+            "derivation": "12x nearest-neighbor source reference; not final HD"
+          }
+        ]
+      },
+      "preparation": {
+        "key": "comspr-013",
+        "raw": "comspr-013-r1-raw.png",
+        "raw_sha256": "59e9108424002cb1d9d55a881fc77fec27ae026c716c5473cededfca6462bd5a",
+        "png": "comspr-013.png",
+        "png_sha256": "69db9720647afeaee10b9b8e37b89c110d698ee6c49f802d5171faeecc96f2b1",
+        "preparation": "whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels"
+      },
+      "numeric": {
+        "key": "comspr-013",
+        "format_ok": true,
+        "alpha_ok": true,
+        "structural_edge_overlap": 0.675,
+        "median_hue_difference_degrees": 6.550983491611063,
+        "outside_mask_difference": null,
+        "target_met": true,
+        "png_sha256": "69db9720647afeaee10b9b8e37b89c110d698ee6c49f802d5171faeecc96f2b1"
+      },
+      "visual": {
+        "png_sha256": "69db9720647afeaee10b9b8e37b89c110d698ee6c49f802d5171faeecc96f2b1",
+        "status": "accepted-after-viewing"
+      },
+      "rights": "private original-reference review; AI redraw eligible for existing HD patch scope"
+    }
+  ]
+}

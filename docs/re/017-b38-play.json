@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "scope": "冷啟動明確按D，7400格正常DEMO；其餘五種施法事件未觀測",
+  "frames": 7400,
+  "steps": 712250000,
+  "state": {
+    "cpu": "c2b1ab7e95b942a904842f53eced383f6e0c39b111a0d6c1b65e8ac740694c47",
+    "memory": "92378aa1b9a421f5f2b2b93c504aed1f80dbd06e627fd1d9f297932fbacbf540",
+    "indexed": "e77dd084128cf4f20ecce7cd104b1bb0a68f008da864490d926e338386abb7bf",
+    "palette": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+    "frames": 7400,
+    "steps": 712250000
+  },
+  "binary_sha256": "ff54dfe2fa2fc0e4462c14718f7e85dbddc3043b5259b1559f1cf97ed9cea042",
+  "prior_binary_sha256": "8ef0d68d317388d9cf7808f5e25c5d0c3d26c03e90ebc8600290b7d98fd09036",
+  "guest_files": 127,
+  "guest_state_equal": true,
+  "original_endpoint_equal": true,
+  "old_theme_new_program_composite_equal": true,
+  "approved_effect_rect": [
+    56,
+    32,
+    24,
+    24
+  ],
+  "final_composite_equal": false,
+  "approved_hd_change_only": true,
+  "changed_pixels": 5181,
+  "outside_effect_changes": 0,
+  "flash_count": 0,
+  "prior_assets_preserved": true,
+  "theme_files": 1271,
+  "frames_sha256": {
+    "prior": "00d6d1692f3fe54151c5111b32b48c8393add16509c7a05c822cb9010ebf25ca",
+    "before": "00d6d1692f3fe54151c5111b32b48c8393add16509c7a05c822cb9010ebf25ca",
+    "after": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d"
+  },
+  "negative_controls": [
+    {
+      "case": "cpu",
+      "rejected": true
+    },
+    {
+      "case": "source",
+      "rejected": true
+    },
+    {
+      "case": "palette",
+      "rejected": true
+    },
+    {
+      "case": "guest",
+      "rejected": true
+    },
+    {
+      "case": "outside-pixel",
+      "rejected": true
+    }
+  ],
+  "negative_controls_all_pass": true
+}

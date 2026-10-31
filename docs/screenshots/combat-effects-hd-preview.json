@@ -1,0 +1,90 @@
+{
+  "scope": "AI-redrawn asset preview; not a gameplay screenshot",
+  "composition": "native 3x PNG; no resizing or cropping",
+  "size": [
+    480,
+    80
+  ],
+  "output_sha256": "c2c3b107370f2c39d6e2888f22073b38c61d79f6103e744722232b168ed4ff9e",
+  "items": [
+    {
+      "key": "comspr-000",
+      "source": "review/hd/b38-effects/comspr-000.png",
+      "png_sha256": "bab894567e162c80638e2422ba9aded8e6f664f3edd3a1dc2e259a66883c3628",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        4,
+        4
+      ]
+    },
+    {
+      "key": "comspr-005",
+      "source": "review/hd/b38-effects/comspr-005.png",
+      "png_sha256": "76cf0fa689667807507c8fc986223f48810aeb60f39b22083cb96f10309f7894",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        84,
+        4
+      ]
+    },
+    {
+      "key": "comspr-006",
+      "source": "review/hd/b38-effects/comspr-006.png",
+      "png_sha256": "639c23498946e0d8a0608bc314450afc8668c69d48118a23f7620c250cf09759",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        164,
+        4
+      ]
+    },
+    {
+      "key": "comspr-009",
+      "source": "review/hd/b38-effects/comspr-009.png",
+      "png_sha256": "40955b1303a47007ce94511fd219b628b2c005fb5b77f529760db4c4f0091817",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        244,
+        4
+      ]
+    },
+    {
+      "key": "comspr-010",
+      "source": "review/hd/b38-effects/comspr-010.png",
+      "png_sha256": "275d7b44ebe2f0b041b92bab79e2d47a2ffc04f45e2d66dbbd116f460789b0b9",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        324,
+        4
+      ]
+    },
+    {
+      "key": "comspr-013",
+      "source": "review/hd/b38-effects/comspr-013.png",
+      "png_sha256": "69db9720647afeaee10b9b8e37b89c110d698ee6c49f802d5171faeecc96f2b1",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        404,
+        4
+      ]
+    }
+  ],
+  "rights": "AI redraws within existing private HD patch scope; no original reference pixels"
+}

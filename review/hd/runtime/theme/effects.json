@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "scale": 3,
+  "kind": "combat-effects",
+  "grid": [
+    8,
+    8,
+    7,
+    7,
+    24
+  ],
+  "background_index": 8,
+  "items": [
+    {
+      "key": "comspr-000",
+      "size": [
+        24,
+        24
+      ],
+      "png": "comspr-000.png",
+      "png_sha256": "bab894567e162c80638e2422ba9aded8e6f664f3edd3a1dc2e259a66883c3628",
+      "indexed": "comspr-000.idx",
+      "indexed_sha256": "36200b13c16b02401b5caffe612357719f34cf4e00c0d03684a9fe2a3885d8af"
+    },
+    {
+      "key": "comspr-005",
+      "size": [
+        24,
+        24
+      ],
+      "png": "comspr-005.png",
+      "png_sha256": "76cf0fa689667807507c8fc986223f48810aeb60f39b22083cb96f10309f7894",
+      "indexed": "comspr-005.idx",
+      "indexed_sha256": "519f17001d297c3e550e88c001e18ae5681b3ae531e4c6e21d4d61735b32fbc9"
+    },
+    {
+      "key": "comspr-006",
+      "size": [
+        24,
+        24
+      ],
+      "png": "comspr-006.png",
+      "png_sha256": "639c23498946e0d8a0608bc314450afc8668c69d48118a23f7620c250cf09759",
+      "indexed": "comspr-006.idx",
+      "indexed_sha256": "e4b81404a499e7dd1207b35f2c8cda1687296c21aa0dbd3220d280f4506b6a13"
+    },
+    {
+      "key": "comspr-009",
+      "size": [
+        24,
+        24
+      ],
+      "png": "comspr-009.png",
+      "png_sha256": "40955b1303a47007ce94511fd219b628b2c005fb5b77f529760db4c4f0091817",
+      "indexed": "comspr-009.idx",
+      "indexed_sha256": "e11d4ef8829a97581bdc5418156871daf8fd419e25945d91e0115fbf438a786d"
+    },
+    {
+      "key": "comspr-010",
+      "size": [
+        24,
+        24
+      ],
+      "png": "comspr-010.png",
+      "png_sha256": "275d7b44ebe2f0b041b92bab79e2d47a2ffc04f45e2d66dbbd116f460789b0b9",
+      "indexed": "comspr-010.idx",
+      "indexed_sha256": "87d60e3db15a121d1621acbc4e2d84bf9911d754bd0041a8c7e2fa95fe867791"
+    },
+    {
+      "key": "comspr-013",
+      "size": [
+        24,
+        24
+      ],
+      "png": "comspr-013.png",
+      "png_sha256": "69db9720647afeaee10b9b8e37b89c110d698ee6c49f802d5171faeecc96f2b1",
+      "indexed": "comspr-013.idx",
+      "indexed_sha256": "4afb12813172c9dfd5fb2df477e9229916098bf83acce4fb0d84a5eeb9d151c0"
+    }
+  ]
+}

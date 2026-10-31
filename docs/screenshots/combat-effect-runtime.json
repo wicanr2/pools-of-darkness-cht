@@ -1,0 +1,40 @@
+{
+  "scope": "正常冷啟動DEMO的實際截圖與原始像素裁切；非素材合成",
+  "normal_receipt": "docs/re/017-b38-play.json",
+  "normal_receipt_sha256": "f80c81791b3dce00d7c194f25d1474411fe5115f6b7e78493b4a769afdab3930",
+  "items": [
+    {
+      "path": "docs/screenshots/combat-effect-original-3x.png",
+      "sha256": "d4fcb6120e663793954b954d873c392e882f3754bb55ed229156dcf141e4ce89",
+      "source": "workplace/probe/g9-hd/b38-code-old-v1/hd/frame.png",
+      "source_sha256": "00d6d1692f3fe54151c5111b32b48c8393add16509c7a05c822cb9010ebf25ca",
+      "crop": [
+        408,
+        96,
+        72,
+        72
+      ],
+      "resized": false
+    },
+    {
+      "path": "docs/screenshots/combat-effect-hd-3x.png",
+      "sha256": "06c18f71ef592c7caa6fbdb56f1b4f328d45a1dc3ea6a326a758a175406cc052",
+      "source": "workplace/probe/g9-hd/b38-play-v1/hd/frame.png",
+      "source_sha256": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d",
+      "crop": [
+        408,
+        96,
+        72,
+        72
+      ],
+      "resized": false
+    },
+    {
+      "path": "docs/screenshots/combat-effects-demo-window.png",
+      "sha256": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d",
+      "source": "workplace/probe/g9-hd/b38-play-v1/hd/frame.png",
+      "source_sha256": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d",
+      "resized": false
+    }
+  ]
+}

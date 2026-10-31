@@ -1,11 +1,11 @@
 {
   "version": 1,
   "issue": 55,
-  "scope": "b37主題；私人素材保存與本機重建，不擴張遊戲驗收或公開權利",
+  "scope": "b38主題；私人素材保存與本機重建，不擴張遊戲驗收或公開權利",
   "engine": {
     "repository": "https://github.com/wicanr2/pools-of-darkness-cht.git",
     "branch": "dosgolem/pod",
-    "commit": "b5ed1eb99de415f82d19b77d378130dec65f1a05"
+    "commit": "e197ce9852a32474e7ac5b0b5c75fdf9434edd4e"
   },
   "theme": [
     {
@@ -412,6 +412,102 @@
       "kind": "repo-file",
       "source": "review/hd/runtime/theme/combat.json",
       "rights": "project metadata; private review"
+    },
+    {
+      "path": "comspr-000.idx",
+      "sha256": "36200b13c16b02401b5caffe612357719f34cf4e00c0d03684a9fe2a3885d8af",
+      "kind": "original-index",
+      "archive": "COMSPR.DAX",
+      "block": 0,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "comspr-000.png",
+      "sha256": "bab894567e162c80638e2422ba9aded8e6f664f3edd3a1dc2e259a66883c3628",
+      "kind": "repo-file",
+      "source": "review/hd/b38-effects/comspr-000.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "comspr-005.idx",
+      "sha256": "519f17001d297c3e550e88c001e18ae5681b3ae531e4c6e21d4d61735b32fbc9",
+      "kind": "original-index",
+      "archive": "COMSPR.DAX",
+      "block": 5,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "comspr-005.png",
+      "sha256": "76cf0fa689667807507c8fc986223f48810aeb60f39b22083cb96f10309f7894",
+      "kind": "repo-file",
+      "source": "review/hd/b38-effects/comspr-005.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "comspr-006.idx",
+      "sha256": "e4b81404a499e7dd1207b35f2c8cda1687296c21aa0dbd3220d280f4506b6a13",
+      "kind": "original-index",
+      "archive": "COMSPR.DAX",
+      "block": 6,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "comspr-006.png",
+      "sha256": "639c23498946e0d8a0608bc314450afc8668c69d48118a23f7620c250cf09759",
+      "kind": "repo-file",
+      "source": "review/hd/b38-effects/comspr-006.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "comspr-009.idx",
+      "sha256": "e11d4ef8829a97581bdc5418156871daf8fd419e25945d91e0115fbf438a786d",
+      "kind": "original-index",
+      "archive": "COMSPR.DAX",
+      "block": 9,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "comspr-009.png",
+      "sha256": "40955b1303a47007ce94511fd219b628b2c005fb5b77f529760db4c4f0091817",
+      "kind": "repo-file",
+      "source": "review/hd/b38-effects/comspr-009.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "comspr-010.idx",
+      "sha256": "87d60e3db15a121d1621acbc4e2d84bf9911d754bd0041a8c7e2fa95fe867791",
+      "kind": "original-index",
+      "archive": "COMSPR.DAX",
+      "block": 10,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "comspr-010.png",
+      "sha256": "275d7b44ebe2f0b041b92bab79e2d47a2ffc04f45e2d66dbbd116f460789b0b9",
+      "kind": "repo-file",
+      "source": "review/hd/b38-effects/comspr-010.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "comspr-013.idx",
+      "sha256": "4afb12813172c9dfd5fb2df477e9229916098bf83acce4fb0d84a5eeb9d151c0",
+      "kind": "original-index",
+      "archive": "COMSPR.DAX",
+      "block": 13,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "comspr-013.png",
+      "sha256": "69db9720647afeaee10b9b8e37b89c110d698ee6c49f802d5171faeecc96f2b1",
+      "kind": "repo-file",
+      "source": "review/hd/b38-effects/comspr-013.png",
+      "rights": "accepted HD redraw"
     },
     {
       "path": "cpic1-001.idx",
@@ -6622,6 +6718,13 @@
       "rights": "accepted HD redraw"
     },
     {
+      "path": "effects.json",
+      "sha256": "3f8ecc4e662178e7b5bc8066daa29d1869f2142338475459dd639bc95e7a083a",
+      "kind": "repo-file",
+      "source": "review/hd/runtime/theme/effects.json",
+      "rights": "project metadata; private review"
+    },
+    {
       "path": "localized/base/theme.json",
       "sha256": "a8ab4418f284c8e13d0a5aa53f30831d5a542982510be487310b74e9114649a2",
       "kind": "repo-file",
@@ -8171,7 +8274,7 @@
     },
     {
       "path": "vga-layers-provenance.json",
-      "sha256": "76baf3a09dd36bcbe0cca434e1983806e387ea493179c346b226e00563eac361",
+      "sha256": "2d3ebfc754dc09293d10a59a5190dd32ed7e68e1dc6e8303ab9664c704c0c7bb",
       "kind": "repo-file",
       "source": "review/hd/runtime/theme/vga-layers-provenance.json",
       "rights": "project metadata; private review"
@@ -10055,7 +10158,8 @@
     "TITLE.DAX": "8a53adf4044527df86d2d983f6c4eeee440c3d09773e7cbd4166279ccafde757",
     "PIC1.DAX": "a3cf36ca3d51ca7960fd73b630489f019c5ad984808ad08bcf91186f67401ab7",
     "SKYGRND.DAX": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
-    "WILDCOM.DAX": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421"
+    "WILDCOM.DAX": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+    "COMSPR.DAX": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee"
   },
   "fonts": [
     {
@@ -10126,7 +10230,7 @@
     ],
     "source_indexed_sha256": "e77dd084128cf4f20ecce7cd104b1bb0a68f008da864490d926e338386abb7bf",
     "source_palette_sha256": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
-    "frame_sha256": "00d6d1692f3fe54151c5111b32b48c8393add16509c7a05c822cb9010ebf25ca",
+    "frame_sha256": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d",
     "guest": {
       "8X8D0.DAX": "84bd2b8015dbb58255dae03f560439f7c5022b4a451c4db865a915d573ccbf12",
       "8X8D1.DAX": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
@@ -10256,8 +10360,8 @@
       "pool4.cfg": "6161a336828e889c6377bd4fa327376f691a57fc3cd4f2eb6f74db06908d03bd",
       "snd.com": "7c39949b5c740d92449110e896f08f2d11b16b8602d7d3d6d59a9f250d574286"
     },
-    "baseline_receipt": "docs/re/017-b31-runtime.json",
-    "baseline_receipt_sha256": "d82de8a70707ba9d44e65fc3cfff6fa6b63608e3c26f4a09093c0b6afe7a1af7",
+    "baseline_receipt": "docs/re/017-b38-play.json",
+    "baseline_receipt_sha256": "f80c81791b3dce00d7c194f25d1474411fe5115f6b7e78493b4a769afdab3930",
     "text_tree": {
       "LICENSE-translit-table.md": "386a33ed8091d1c367727706c142018442fe77d3d5fd4bd9bb327fbebf33bc56",
       "TRANSLATION-GUIDE.md": "88b9036e42919509befd39dcdd591ce9450c55cdf8cec4584956c1f0995f96f0",

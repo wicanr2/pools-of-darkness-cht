@@ -709,6 +709,20 @@
         "wildcom-001@36",
         "wildcom-001@37"
       ]
+    },
+    {
+      "kind": "combat-effects",
+      "request_sha256": "a6892a31c198f66036b9320f3838a0b4bff49ab806d4235e6bdb9b41db70b207",
+      "validation_sha256": "8da1a86cbb60ff6440d4b1c4920fa292403c2a757bf971fdcd2830b85ecf9ae0",
+      "visual_sha256": "5e7831085a540d16593d328c46c572179cc5d5dd061aa3c9a34d88e1cac683d9",
+      "keys": [
+        "comspr-000",
+        "comspr-005",
+        "comspr-006",
+        "comspr-009",
+        "comspr-010",
+        "comspr-013"
+      ]
     }
   ]
 }

@@ -722,3 +722,35 @@ Git樹`4841d563a4ae2b8c971095d894ea9a10bcd4a018`匯出不含本機workplace的�
 
 固定[017-b37-runtime.json](017-b37-runtime.json)記錄來源、去重對應、六個樣本及未抽31張、容量修正與新舊主題正常路徑、啟用及重建。配方在`workplace/hd/out/b37/`，重建入口見[SETUP.md](../../SETUP.md)。
 本批抽驗範圍CONFORMED；WILDCOM素材對應齊全，正常野外遭遇、動畫與其他圖族仍另計，不重開Go繪圖收尾或G6探索。
+
+<a id="b38-effects"></a>
+
+## b38 VGA戰鬥特效首批
+
+2026-10-31，Issue [#62](https://github.com/wicanr2/pools-of-darkness-cht/issues/62)。COMSPR.DAX的44筆實際目錄為0–21、128–149，皆為24×24單幀。
+原檔SHA-256為`f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee`，壓縮起點逐項見[審閱manifest](../../review/hd/b38-effects/manifest.json)，位址基準為原始DAX檔案byte offset。
+64–95色盤區段SHA為`903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0`。與怪物CPIC的144–255區段分開辨識，失配只使相應圖層回退。
+009骷髏在b37正常DEMO終點[56,32,24,24]完整色號與使用RGB吻合；其他五種正常事件未觀測。[來源證據](017-b38-source-proof.json)保留實際目錄及正常畫面雜湊。
+
+000、005、006、009、010、013共六張，各由內建image_gen手繪一次，全幅縮小為72×72不透明RGBA。
+結構約0.575–0.850，色相中位差最大約7.2度，原尺寸目視通過；手繪外觀近似不稱原版RGB逐點一致。
+[審閱頁](../../review/hd/b38-effects/README.md)逐張保存原版參考、成品、完整提示詞與SHA。
+
+沿既有effects.json v1與完整24×24矩形辨識；背景色8保留底圖，格間位置可辨識，三格地形守衛、歧義回退及2倍／F12維持。
+載入器只接受實際COMSPR ID與64–95高色號，EGA原上限26維持，VGA上限依實際目錄為44。錨點色號統計擴為256項，不改低色號的選取分數。
+六例來源抽驗涵蓋原向、鏡像、格間位置、來源失配、清除、背景8、色盤失配及輸入不變。005、006、009、010、013的完整HD前景通過；000箭矢有鏡像相差一像素仍完整吻合的情況，全部衝突候選保留原版，不推測方向或框位。
+來源插入只驗呈現，不代表正常施法流程。正常009另驗特效與CPIC色盤隔離、2倍與F12回退；apps/pod及cmd/pod-play回歸通過。
+
+引擎來源`e197ce9852a32474e7ac5b0b5c75fdf9434edd4e`已保存本專案dosgolem/pod。2287份Git檔案逐筆核對乾淨匯出，Go1.24.13以`-trimpath -buildvcs=false`重編，
+執行檔SHA為`ff54dfe2fa2fc0e4462c14718f7e85dbddc3043b5259b1559f1cf97ed9cea042`，與正常路徑候選逐位元相同。
+主題匯出入口為[hd_vga_effects_theme.py](../../tools/hd_vga_effects_theme.py)，正常新舊主題抽驗入口為[vga_effect_play_check.py](../../tools/vga_effect_play_check.py)，皆在Docker內執行。
+
+同一新程式先以1258檔舊主題重現b37正常終點，再以1271檔候選跑相同7400格／712250000步冷啟動DEMO，900格按空白、1800格按D。
+CPU／RAM、原版圖面與127個客體檔相同，閃現均0。最終009完整72×72逐點同HD成品，5181個像素改變，特效矩形外差異0；CPU、來源、色盤、客體檔與框外像素五項負對照均拒絕。
+[正常比較收據](017-b38-play.json)同時固定新的跨機重建畫面基準。未新增探索或重跑四路，其他五種正常事件仍未知。
+
+1271檔完整原子啟用，正式逐檔同受測候選，1258檔回復副本在workplace/hd/theme-b38-previous，舊程式保留為pod-play-before-effects。
+634張PNG皆有Git來源，622份原版索引只從自備DAX重生；新增effects.json沿版本1格式，未加入原版遊戲檔。
+主專案Git樹a846e2ff0bbd165fd112bdb590d5e282dc0a22c3乾淨匯出，不含workplace，只掛該來源、自備原版及獨立輸出，重建1271檔與六份字型，每檔相同。
+固定[017-b38-runtime.json](017-b38-runtime.json)綁來源、素材、抽驗、正常比較、啟用與重建；配方在workplace/hd/out/b38/，重建入口見[SETUP.md](../../SETUP.md)。
+本批抽驗範圍CONFORMED。其他特效、角色組合、小圖示、動畫及未遇事件仍依#10，不重開Go繪圖或G6探索。

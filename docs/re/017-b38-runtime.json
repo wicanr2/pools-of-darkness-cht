@@ -1,0 +1,292 @@
+{
+  "date": "2026-10-31",
+  "issue": 62,
+  "status": "CONFORMED within stated sampled scope",
+  "scope": "COMSPR首批六張素材；五張完整來源與鏡像呈現，000箭矢歧義時回退；009正常DEMO可見。其餘正常施法事件未知。",
+  "product_source_commit": "e197ce9852a32474e7ac5b0b5c75fdf9434edd4e",
+  "binary_sha256": "ff54dfe2fa2fc0e4462c14718f7e85dbddc3043b5259b1559f1cf97ed9cea042",
+  "source": {
+    "issue": 62,
+    "source": {
+      "file": "COMSPR.DAX",
+      "sha256": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee",
+      "address_space": "original DAX file byte offsets",
+      "block_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149
+      ],
+      "palette_interval": [
+        64,
+        96
+      ],
+      "palette_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+    },
+    "selected_keys": [
+      "comspr-000",
+      "comspr-005",
+      "comspr-006",
+      "comspr-009",
+      "comspr-010",
+      "comspr-013"
+    ],
+    "normal_source": {
+      "capture": "workplace/probe/g9-hd/b37-play-v2/hd",
+      "source_receipt": "docs/re/017-b37-runtime.json",
+      "source_receipt_sha256": "3d02ff94e9b207dd79825962c6cab22b066c6499d3233d9c9d3a2c8c016f81bc",
+      "key": "comspr-009",
+      "rect": [
+        56,
+        32,
+        24,
+        24
+      ],
+      "indexed_sha256": "e77dd084128cf4f20ecce7cd104b1bb0a68f008da864490d926e338386abb7bf",
+      "palette_sha256": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+      "full_indexed_equal": true,
+      "used_rgb_equal": true,
+      "evidence_level": "proven",
+      "other_events": "unknown"
+    },
+    "request_sha256": "a6892a31c198f66036b9320f3838a0b4bff49ab806d4235e6bdb9b41db70b207"
+  },
+  "source_proof_sha256": "b3de4aa661c48334418375b55ebf95ce429475029687b8758124211afd9e70d9",
+  "materials": {
+    "count": 6,
+    "generation_attempts": 6,
+    "generator": "built-in image_gen",
+    "style": "approved B",
+    "size": [
+      72,
+      72
+    ],
+    "all_opaque_rgba": true,
+    "structural_min": 0.575,
+    "structural_max": 0.85,
+    "maximum_hue_difference_degrees": 7.216184378180417,
+    "review": "review/hd/b38-effects/README.md",
+    "review_manifest_sha256": "2ba746c5002070b971b4b938e094c1227e64d73c051f0919bfc6077e9263c6ea",
+    "request_sha256": "a6892a31c198f66036b9320f3838a0b4bff49ab806d4235e6bdb9b41db70b207",
+    "validation_sha256": "8da1a86cbb60ff6440d4b1c4920fa292403c2a757bf971fdcd2830b85ecf9ae0",
+    "visual_sha256": "5e7831085a540d16593d328c46c572179cc5d5dd061aa3c9a34d88e1cac683d9"
+  },
+  "source_diagnostics": {
+    "keys": [
+      "comspr-000",
+      "comspr-005",
+      "comspr-006",
+      "comspr-009",
+      "comspr-010",
+      "comspr-013"
+    ],
+    "passed": true,
+    "ambiguity": "comspr-000 original and mirrored templates can overlap at adjacent x positions; all conflicting candidates retain original",
+    "scope": "完整來源、鏡像、格間位置、背景8、來源／色盤失配、清除、非戰場、2倍／F12與輸入不變；正常009及CPIC色盤隔離。",
+    "source_sha256": "d34e4b3f06b1b392806c2ae266f8312f284c5fd985921124943cfbb831837b09",
+    "log_sha256": "fbf62b381623432f7e75e9f96ab01bde7e3cbf7c16b34c24cd7f4890b7b01f8a",
+    "regression_sha256": "f58eba341c8c6823cd02a5998a2cbd5a0cda8f32c5908cb2a4f70b660cad6070"
+  },
+  "runtime": {
+    "status": "PASS",
+    "scope": "冷啟動明確按D，7400格正常DEMO；其餘五種施法事件未觀測",
+    "frames": 7400,
+    "steps": 712250000,
+    "state": {
+      "cpu": "c2b1ab7e95b942a904842f53eced383f6e0c39b111a0d6c1b65e8ac740694c47",
+      "memory": "92378aa1b9a421f5f2b2b93c504aed1f80dbd06e627fd1d9f297932fbacbf540",
+      "indexed": "e77dd084128cf4f20ecce7cd104b1bb0a68f008da864490d926e338386abb7bf",
+      "palette": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+      "frames": 7400,
+      "steps": 712250000
+    },
+    "binary_sha256": "ff54dfe2fa2fc0e4462c14718f7e85dbddc3043b5259b1559f1cf97ed9cea042",
+    "prior_binary_sha256": "8ef0d68d317388d9cf7808f5e25c5d0c3d26c03e90ebc8600290b7d98fd09036",
+    "guest_files": 127,
+    "guest_state_equal": true,
+    "original_endpoint_equal": true,
+    "old_theme_new_program_composite_equal": true,
+    "approved_effect_rect": [
+      56,
+      32,
+      24,
+      24
+    ],
+    "final_composite_equal": false,
+    "approved_hd_change_only": true,
+    "changed_pixels": 5181,
+    "outside_effect_changes": 0,
+    "flash_count": 0,
+    "prior_assets_preserved": true,
+    "theme_files": 1271,
+    "frames_sha256": {
+      "prior": "00d6d1692f3fe54151c5111b32b48c8393add16509c7a05c822cb9010ebf25ca",
+      "before": "00d6d1692f3fe54151c5111b32b48c8393add16509c7a05c822cb9010ebf25ca",
+      "after": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d"
+    },
+    "negative_controls": [
+      {
+        "case": "cpu",
+        "rejected": true
+      },
+      {
+        "case": "source",
+        "rejected": true
+      },
+      {
+        "case": "palette",
+        "rejected": true
+      },
+      {
+        "case": "guest",
+        "rejected": true
+      },
+      {
+        "case": "outside-pixel",
+        "rejected": true
+      }
+    ],
+    "negative_controls_all_pass": true
+  },
+  "runtime_receipt_sha256": "f80c81791b3dce00d7c194f25d1474411fe5115f6b7e78493b4a769afdab3930",
+  "prior_batch_receipt_sha256": "3d02ff94e9b207dd79825962c6cab22b066c6499d3233d9c9d3a2c8c016f81bc",
+  "runtime_log_sha256": "eea26577fc46f06babcc81acfead4c6017737ef8ccb2717a3f0841a0022a4d28",
+  "runtime_inputs_sha256": "e699b1691b42e36137cdce735ef2e2aadb1070f5905d4397869c98324c3e30f5",
+  "clean_engine_build": {
+    "status": "PASS",
+    "engine_commit": "e197ce9852a32474e7ac5b0b5c75fdf9434edd4e",
+    "binary_sha256": "ff54dfe2fa2fc0e4462c14718f7e85dbddc3043b5259b1559f1cf97ed9cea042",
+    "same_as_normal_candidate": true,
+    "source": {
+      "commit": "e197ce9852a32474e7ac5b0b5c75fdf9434edd4e",
+      "files": 2287,
+      "all_content_equal": true,
+      "archive_sha256": "f9b2f5612bc372ce2055c9f0c703dcce7698ecd0d8e93faabaf634b0c51db8a1"
+    },
+    "go_version": "go1.24.13",
+    "flags": [
+      "-trimpath",
+      "-buildvcs=false"
+    ]
+  },
+  "portable_rebuild": {
+    "receipt": {
+      "status": "PASS",
+      "manifest_sha256": "6734b487102e8b9e3bf75f7b7aead02929dac5de2f23e8bfe16a0ae366762b0d",
+      "theme_files": 1271,
+      "theme_tree_sha256": "f42323f252ee4d546a1a16842905d8c0a1ed97c5fa027989f0f5f5d2ba31abe3",
+      "fonts": {
+        "pod-en-3x.golemfnt": "c701ce90a4b3009e6126b0ccfc0dc042dc17c22dbf59c07b1e41c90678481db9",
+        "pod-en.golemfnt": "121e92b01c9c907aa66b8e6e78155d0a368102e599bbb9784feaec5c7f2234e0",
+        "pod-rounded-3x.golemfnt": "52e749e344c5bf6a60fa6501ad4ab17b72de0871897382a5c58d2acc3cc21730",
+        "pod-rounded-bar12.golemfnt": "89cd27498ae1dea002b3fef714695e433e198269e71f76e50bdeab9b9f4c8976",
+        "pod-rounded-bar22.golemfnt": "0d731150caef048b40b60a6baaba1b37dc1f3791c7a442b2ee51a60834f635d5",
+        "pod-rounded.golemfnt": "0f0430e7db828b8b74249b69f02ac7c590724215d9edc0f212830790ae4531ac"
+      },
+      "original_archives": {
+        "8X8D1.DAX": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "BIGPIC1.DAX": "bc3565c62c1654ee757d1f98f64bbb78e06bcd551c2e8593c41feb130b9f0f6b",
+        "CPIC1.DAX": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+        "DUNGCOM.DAX": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "TITLE.DAX": "8a53adf4044527df86d2d983f6c4eeee440c3d09773e7cbd4166279ccafde757",
+        "PIC1.DAX": "a3cf36ca3d51ca7960fd73b630489f019c5ad984808ad08bcf91186f67401ab7",
+        "SKYGRND.DAX": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+        "WILDCOM.DAX": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+        "COMSPR.DAX": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee"
+      },
+      "engine": {
+        "repository": "https://github.com/wicanr2/pools-of-darkness-cht.git",
+        "branch": "dosgolem/pod",
+        "commit": "e197ce9852a32474e7ac5b0b5c75fdf9434edd4e"
+      },
+      "input_scope": "Git files and explicitly supplied original DAX only; no old workplace",
+      "rights": "private review inputs; original indexes reconstructed locally"
+    },
+    "source_git_tree": "a846e2ff0bbd165fd112bdb590d5e282dc0a22c3",
+    "receipt_sha256": "58169270bbfd964baabf71c324a05804b0e5a0368ec846d173f03785bc2ad738",
+    "scope": "乾淨Git來源加自備原版重建1271檔及六份字型；Linux amd64容器。"
+  },
+  "activation": {
+    "method": "Linux renameat2 RENAME_EXCHANGE; complete validated theme",
+    "official": "workplace/hd/theme",
+    "previous": "workplace/hd/theme-b38-previous",
+    "tested": "workplace/hd/theme-b38-stage",
+    "official_files": 1271,
+    "prior_files": 1258,
+    "official_equals_tested": true,
+    "prior_equals_baseline": true,
+    "theme_tree_sha256": "f42323f252ee4d546a1a16842905d8c0a1ed97c5fa027989f0f5f5d2ba31abe3",
+    "program": {
+      "official": "workplace/dosgolem/workplace/bin/pod-play",
+      "previous": "workplace/dosgolem/workplace/bin/pod-play-before-effects",
+      "source_commit": "e197ce9852a32474e7ac5b0b5c75fdf9434edd4e",
+      "binary_sha256": "ff54dfe2fa2fc0e4462c14718f7e85dbddc3043b5259b1559f1cf97ed9cea042",
+      "previous_sha256": "8ef0d68d317388d9cf7808f5e25c5d0c3d26c03e90ebc8600290b7d98fd09036",
+      "old_theme_normal_baseline_verified": true
+    }
+  },
+  "tools": {
+    "python": "3.13.16",
+    "pillow": "11.0.0",
+    "numpy": "2.1.3",
+    "image": "sosb-img:r1",
+    "image_id": "8b9012adb991ebd1714725cf122ac052462d2993a17dd7b3ec2504e213ae9cf3"
+  },
+  "tool_sha256": {
+    "hd_vga_request.py": "1556967df15693f6c1af4c804a2b5350ee376d9cde379c9a0212059040e0c777",
+    "hd_vga_prepare.py": "d3f1203904cb5a82a63f9ca9e85883a255a0dcb81d6013f74b0d3b0a6fa44ace",
+    "hd_vga_validate.py": "cbe88b3d90bb834331f4176efa61f86da90090194ae376e562a55f5ac2a048d9",
+    "hd_vga_review.py": "654c44466473ebc7be6bab3b9969bda4705591dca719c664601974aea6480340",
+    "hd_vga_effects_theme.py": "585548e7d1ab8fb3b775bc64a01901d3f7adee24a4186157b43b63a9a1638478",
+    "hd_vga_readme_preview.py": "a2cf9dbbf6a0e2924a25ce4aaf66f6d6342b3afdf8a89070ca62747a91b18741",
+    "vga_effect_play_check.py": "f00fb9ed6b9a6ae1c3dac7d3048ea8ceaa8abeeb7966949ac3969759c546777d",
+    "rebuild_theme_snapshot.py": "1457bab5f60085e6d5f38c485d4a55dc41feb1303ee4289d09f3f54bf8404fea",
+    "rebuild_assets.py": "e4dd1f4857fabd381b16ca04a967679eaf0ceabcff04f78ae0027cca604c8611"
+  },
+  "evidence_recipe_sha256": {
+    "import-generated.py": "cc88ee32259eb2628ef214736a52d649c5c7bcdafe45fced70f40dbb77a311e0",
+    "normal.sh": "c5ce4f9c3ca765221ad42269a84f0aea39f6ed76f19c706dca70f5d80ad07f1f",
+    "activate.py": "55e616cc8b6ade150f156ae76f7a3f3e6fe1c39fdc7be84983a16bbff8aaf363",
+    "report.py": "5e4fd54c519dd9d3ca0451bad7ac81a16ce5a15d0f3240c3c3cdc7d14fcbf4d6"
+  }
+}
