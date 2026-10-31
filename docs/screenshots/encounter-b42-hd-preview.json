@@ -1,0 +1,324 @@
+{
+  "scope": "AI-redrawn asset preview; not a gameplay screenshot",
+  "composition": "native 3x PNG; no resizing or cropping",
+  "size": [
+    816,
+    2176
+  ],
+  "output_sha256": "17f79c96318af74291a7b911b5996c250dd5d937c5bbf038f57818de0a087772",
+  "items": [
+    {
+      "key": "sprit1-005@0",
+      "source": "review/hd/b42-encounter/sprit1-005@0.png",
+      "png_sha256": "e686b387d35d750e5c1bdd0cff9c82147f1f0b77b23368fb7a67c88348c2531d",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        4,
+        4
+      ]
+    },
+    {
+      "key": "sprit1-005@1",
+      "source": "review/hd/b42-encounter/sprit1-005@1.png",
+      "png_sha256": "627e0a20a05b7f404baaecc7a3069dfe8bcd10d7831937de0c895e62b548b2ea",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        276,
+        4
+      ]
+    },
+    {
+      "key": "sprit1-005@2",
+      "source": "review/hd/b42-encounter/sprit1-005@2.png",
+      "png_sha256": "e1e115ce97b4e6540e83608c4ee46f25a078326a4db4fa620f4757b4d2c45596",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        548,
+        4
+      ]
+    },
+    {
+      "key": "sprit1-027@0",
+      "source": "review/hd/b42-encounter/sprit1-027@0.png",
+      "png_sha256": "f1727c548e192a5558212506fcae7b5080d3d6feb904abbcb29c1cecc319cc01",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        4,
+        276
+      ]
+    },
+    {
+      "key": "sprit1-027@1",
+      "source": "review/hd/b42-encounter/sprit1-027@1.png",
+      "png_sha256": "ba4a409f38824e245f15b8d400a7d0263c79d722177a73424a0744276572784a",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        276,
+        276
+      ]
+    },
+    {
+      "key": "sprit1-027@2",
+      "source": "review/hd/b42-encounter/sprit1-027@2.png",
+      "png_sha256": "9ad7103e2b5ade8cf444086101d0f03db041fcba87286c04763d3a6e48b2ca02",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        548,
+        276
+      ]
+    },
+    {
+      "key": "sprit1-028@0",
+      "source": "review/hd/b42-encounter/sprit1-028@0.png",
+      "png_sha256": "efdc1c557ad29a7e2aa696cb411b4f4a27e9deb0fc08053a0d4b586f5757fb24",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        4,
+        548
+      ]
+    },
+    {
+      "key": "sprit1-028@1",
+      "source": "review/hd/b42-encounter/sprit1-028@1.png",
+      "png_sha256": "361a72b97179c37753853685cf1de612518df9248794a97e783ff8e5440fa62d",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        276,
+        548
+      ]
+    },
+    {
+      "key": "sprit1-028@2",
+      "source": "review/hd/b42-encounter/sprit1-028@2.png",
+      "png_sha256": "850a75b29099d0f2518884f67ea38f92bfaadb9d7f6c60c9ec80fdca0c7f3abf",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        548,
+        548
+      ]
+    },
+    {
+      "key": "sprit1-029@0",
+      "source": "review/hd/b42-encounter/sprit1-029@0.png",
+      "png_sha256": "7437454e4ca84f7d53653f467a84f70708b8e19b114ec57670ec2a304fbf9470",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        4,
+        820
+      ]
+    },
+    {
+      "key": "sprit1-029@1",
+      "source": "review/hd/b42-encounter/sprit1-029@1.png",
+      "png_sha256": "317655be94347183e4b67448211a8f59f8ed1bc6f4df0ab73d00a0869b725253",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        276,
+        820
+      ]
+    },
+    {
+      "key": "sprit1-029@2",
+      "source": "review/hd/b42-encounter/sprit1-029@2.png",
+      "png_sha256": "e693992a0b91d40d6dd9e195f5818762b3e4d8faf4889357b63645b4c9cfa7b2",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        548,
+        820
+      ]
+    },
+    {
+      "key": "sprit1-030@0",
+      "source": "review/hd/b42-encounter/sprit1-030@0.png",
+      "png_sha256": "5ab2b7906789bc11fe2be4d10ddd776f5071bf6fe42227e7252084ba720080f7",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        4,
+        1092
+      ]
+    },
+    {
+      "key": "sprit1-030@1",
+      "source": "review/hd/b42-encounter/sprit1-030@1.png",
+      "png_sha256": "946c3bb1389ca5fe511517c36e37a9b5c54af2a549d5a27705770bd67edeada8",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        276,
+        1092
+      ]
+    },
+    {
+      "key": "sprit1-030@2",
+      "source": "review/hd/b42-encounter/sprit1-030@2.png",
+      "png_sha256": "297a8ec7ef6bc0e9be2be5fb1d16bff6936a3c4b08fd1c04aacf8b59a9062b71",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        548,
+        1092
+      ]
+    },
+    {
+      "key": "sprit1-042@0",
+      "source": "review/hd/b42-encounter/sprit1-042@0.png",
+      "png_sha256": "3cfaa43a780334bfcbdbf9378bdb59bc851a3509cdb14a0169365ce97fe9f715",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        4,
+        1364
+      ]
+    },
+    {
+      "key": "sprit1-042@1",
+      "source": "review/hd/b42-encounter/sprit1-042@1.png",
+      "png_sha256": "ea93d6e25b5754d8bb4cd50f6a2963dee9751a1d540c34c1b485e7b611784dcc",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        276,
+        1364
+      ]
+    },
+    {
+      "key": "sprit1-042@2",
+      "source": "review/hd/b42-encounter/sprit1-042@2.png",
+      "png_sha256": "4ae71d6f7f6638c0d49cf1ef82b646fbd81baee7a93960cd4d461714d92f878e",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        548,
+        1364
+      ]
+    },
+    {
+      "key": "sprit1-053@0",
+      "source": "review/hd/b42-encounter/sprit1-053@0.png",
+      "png_sha256": "f9b759daed5fc1601fffd2a36fa4efe138c7d3f1296e7393739430e89d730f81",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        4,
+        1636
+      ]
+    },
+    {
+      "key": "sprit1-053@1",
+      "source": "review/hd/b42-encounter/sprit1-053@1.png",
+      "png_sha256": "0b4e076a83ad7dffc0149072f2bf77abfc2b5e1a11606737d24de743f4a6b0e0",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        276,
+        1636
+      ]
+    },
+    {
+      "key": "sprit1-053@2",
+      "source": "review/hd/b42-encounter/sprit1-053@2.png",
+      "png_sha256": "bc03774b5c256bf6184658070296801b52bddfca41cbb5557ab62ced145bb2c2",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        548,
+        1636
+      ]
+    },
+    {
+      "key": "sprit1-069@0",
+      "source": "review/hd/b42-encounter/sprit1-069@0.png",
+      "png_sha256": "04b140eda1c82531649a9e0489d46e75f05f04430ade5dc17a583c12f99e3b71",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        4,
+        1908
+      ]
+    },
+    {
+      "key": "sprit1-069@1",
+      "source": "review/hd/b42-encounter/sprit1-069@1.png",
+      "png_sha256": "f25db4b5acdbe29f4e52049e9d432332253c96d54eab577c953efe51051877a3",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        276,
+        1908
+      ]
+    },
+    {
+      "key": "sprit1-069@2",
+      "source": "review/hd/b42-encounter/sprit1-069@2.png",
+      "png_sha256": "db49860a25d9d3f3906811719fde131c2d3d7038bd5c9331e1809fce5aa6d3c1",
+      "size": [
+        264,
+        264
+      ],
+      "position": [
+        548,
+        1908
+      ]
+    }
+  ],
+  "rights": "AI redraws within existing private HD patch scope; no original reference pixels"
+}

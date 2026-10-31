@@ -824,3 +824,25 @@ apps/pod共38.721秒、Xvfb前端0.026秒與vet通過。重疊候選診斷全部
 676張PNG與17份JSON保存Git，664份原版索引只由自備DAX重生，SPRIT1使用已證實sprite-vga解碼。主專案Git樹636c6bb800b2a3b0c7b064601d0d359cc7957d82乾淨匯出，不含workplace，重建1357檔及六份字型逐檔相同；缺原版、改原版與改PNG三項負對照在寫出前拒絕。
 新程式與完整主題已啟用，1350檔回復副本在workplace/hd/theme-b41-previous，舊程式為workplace/dosgolem/workplace/bin/pod-play-before-encounters。[固定收據](017-b41-runtime.json)綁來源、素材、抽驗、正常、重建及啟用；[README截圖來源](../screenshots/encounter-041-runtime.json)與[跨機重建](../../SETUP.md)另列。
 SPRIT其餘28組84幀、中景正常事件、角色改色／定位、背景遮擋與片頭片尾動畫仍依#10，不將本批外推全圖族正常覆蓋，不重開Go繪圖或G6探索。
+
+<a id="b42-encounter"></a>
+
+## b42 八組24張遭遇圖
+
+2026-10-31，Issue [#66](https://github.com/wicanr2/pools-of-darkness-cht/issues/66)。直接解碼SPRIT1全部29組87幀，固定005、027、028、029、030、042、053、069各三種距離，共24張88×88來源。原檔、索引、解碼、實際使用RGB、前景範圍與檔案位移逐項保存於[來源證據](017-b42-source-proof.json)。與既有041共27個完整前景，各自獨立來源場景均唯一；每幀使用RGB各自固定，不把近中遠色盤假定相同。
+
+24張各一次內建image_gen生成，轉264×264不透明RGBA，保留原版輪廓、配色、姿勢、大小及留白。結構約0.713–1.000、色相中位差最大約18.1度，數值與原尺寸逐張目視通過。[審閱頁](../../review/hd/b42-encounter/README.md)保存原版並列、完整提示詞與SHA；[README預覽](../screenshots/encounter-b42-hd-preview.png)以成品原尺寸拼排，不是新正常遭遇截圖。
+
+來源與規格READY後，正式引擎僅擴充24組索引SHA及使用RGB簽章；encounters.json v1、88×88、固定[24,24]、非零前景完整比對及來源0不繪沿b41。沒有新增演算法、位置／遮擋格式或距離時序；新來源正常位置未知，只有當幀完整吻合既有守衛才呈現。081@0另含低色號10，留作批外限制，不放寬來源域。
+
+- 生成前固定005@0、027@2、028@0、030@1、042@0、053@2，各背景32與79，共12種獨立來源預期；其他18張未逐例執行期驗證。
+- [Go測試來源](../../tools/pod_vga_encounter_batch_test.go)只經overlay加入測試，完整PNG前景、來源0與框外、直接及舊合成、先選HD、RGB隔離、冷失配、改格回退、清除、未證實位置、衝突、2倍／F12與輸入不變通過。既有041三距離、EGA與五項載入拒絕回歸通過；未變8×8格沿既有鎖存。
+- apps/pod 126.297秒、Xvfb前端0.067秒及vet通過。缺其他外部fixture例明列skip，不把本輪結果外推全部歷史來源。
+
+引擎0fb0efcc920430da0dbe4a993a470263cc22df39保存本專案dosgolem/pod，乾淨Git重編逐位元同受測SHA 1d9cf03b32efd154052b50b04d6291276cf98b8887ddaf9ebe0c1d4ea9971cf1。新程式先配1357檔，再配1405檔各跑同一7400格／712250000步正常DEMO，900格空白、1800格D及原有十四個F10擷取。
+[正常比較](017-b42-play.json)核對固定b41收據、原版CPU／RAM、圖面、127個客體檔、終點與十四張既有畫面完全相同，閃現0；CPU、來源、色盤、客體檔、終點像素與三類截圖改動共八項負對照拒絕。十四張中未遇本批24個完整來源，新增正常事件仍未知，不以來源插入代替正常路徑。
+本次正常繪圖3476040 bytes全為NativeBytes，FallbackBytes、Mismatches及LegacyRGBFrames均0，既有Go核心未改，不外推其他路線或FPS。
+
+700張PNG與17份JSON有Git來源，688份原版索引從自備DAX重生。主專案Git樹523287e1deb0030aaa54467d119dbf05995469f9乾淨匯出，不含workplace，重建1405檔與六份字型逐檔相同；三項缺原版／改原版／改PNG負對照在寫出前拒絕。
+新程式與1405檔完整原子啟用，1357檔回復主題為workplace/hd/theme-b42-previous，舊程式為workplace/dosgolem/workplace/bin/pod-play-before-encounter-b42。[固定收據](017-b42-runtime.json)綁來源、成品、抽驗、正常、重建及啟用；重建入口為[SETUP.md](../../SETUP.md)。
+SPRIT已完成九組27張，其他20組60幀待續；新正常事件與位置、041中景正常事件、角色改色／定位、背景遮擋及動畫仍依#10，不重開Go繪圖或G6探索。

@@ -791,6 +791,39 @@
         "sprit1-041@1",
         "sprit1-041@2"
       ]
+    },
+    {
+      "kind": "encounter-sprites",
+      "request_sha256": "357272a5a18f7538e8a3a0443b0753405be2e329827c22bc6580140b65fd3f28",
+      "validation_sha256": "c9c25a12bd86a44410dce677170488156134c408efe99c2663d1fb9567dc2bb3",
+      "visual_sha256": "e541e7947e956a909d79ca6a4cfb2714dcd3be0ccf936e5549a2e0782c4a0ff7",
+      "source_proof_sha256": "d21f097cc4e7c3653a1c224b08b54ad3ae588971f6840e16016b5c55cb4c8ef7",
+      "keys": [
+        "sprit1-005@0",
+        "sprit1-005@1",
+        "sprit1-005@2",
+        "sprit1-027@0",
+        "sprit1-027@1",
+        "sprit1-027@2",
+        "sprit1-028@0",
+        "sprit1-028@1",
+        "sprit1-028@2",
+        "sprit1-029@0",
+        "sprit1-029@1",
+        "sprit1-029@2",
+        "sprit1-030@0",
+        "sprit1-030@1",
+        "sprit1-030@2",
+        "sprit1-042@0",
+        "sprit1-042@1",
+        "sprit1-042@2",
+        "sprit1-053@0",
+        "sprit1-053@1",
+        "sprit1-053@2",
+        "sprit1-069@0",
+        "sprit1-069@1",
+        "sprit1-069@2"
+      ]
     }
   ]
 }
