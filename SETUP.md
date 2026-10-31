@@ -19,7 +19,7 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 
 | 步驟 | 輸出與檢查 |
 |---|---|
-| `assets` | 重生748份原版辨識索引，重建1525檔主題及6份字型，每檔核對已驗SHA-256 |
+| `assets` | 重生751份原版辨識索引，重建1536檔主題及十份字型，每檔核對已驗SHA-256 |
 | `build` | 從本儲存庫`dosgolem/pod`取得[固定commit](tools/rebuild-engine.commit)，編譯`bin/pod-play`，保存建置資訊與SHA-256 |
 | `smoke` | 正常冷啟動7400格DEMO，產生`smoke/`的截圖、來源、紀錄與獨立可寫客體資料 |
 
@@ -43,11 +43,14 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 海報含原版封面插畫，沿既有私人審閱例外保存，不因此取得公開散布權。生成素材不必再次呼叫生圖服務。
 重建清單只保存原版資料的雜湊及選取方式，原始辨識索引在本機由DAX重生。原版版本不合、圖片遭改或字型來源不同時，重建會失敗並指出缺項。
 
+目前另含簡中介面、手札、攻略、地圖、姓名音譯與開場文字，F8依繁中、英文、簡中循環。簡中有原生16／24及工具列12／22字模。正式TSV由固定OpenCC1.1.9及詞彙表產生；修改繁中後，可在`dosgolem-go-ebiten:1.24-r1`容器內執行`python3 -I tools/zhcn_text.py --root <repo> --out <repo>/text`重生，或加`--check`檢查。來源與重建範圍見[規格015](docs/spec/015-multilingual.md#簡體中文收尾)，OpenCC不在遊戲執行時轉換。
+
 ## 驗證與目前限制
 
 跨機重建的驗證結果由[CONTEXT.md](CONTEXT.md)索引，過程記在[WORKLOG.md](WORKLOG.md)。
 初次[跨機重建收據](docs/re/025-rebuild-runtime.json)保存新編譯程式的7400格正常路徑；目前[遭遇圖收據](docs/re/017-b43-runtime.json)驗證1525檔主題與6份字型由乾淨Git檔案重生，固定引擎56ebba3乾淨重編與受測程式逐位元相同。[正常增量比較](docs/re/017-b43-play.json)的CPU、記憶體、來源、127檔及最終畫面同前批、閃現0，因此重建終點畫面基準仍綁[b38正常收據](docs/re/017-b38-play.json)。既有041近遠景由前批配對截圖驗證；本批十四張既有截圖逐張相同，新正常事件仍未知。
-這個入口保存目前已完成的素材，不代表尚未驗證的地形、動畫、語系、配樂或平台已完成。
+簡中增量的[固定收據](docs/re/027-zhcn-runtime.json)另外保存正常讀檔／面板路線、既有字幕來源與1536檔／十份字型的乾淨重建。歷史7400格原版狀態與畫面預期未改，新增19份簡中TSV另列於清單，舊文字SHA保持原樣；新語系的抽樣範圍不能外推為全片頭或全部玩家路線。
+這個入口保存目前已完成的素材，不代表尚未驗證的地形、動畫、日韓語系、英文面板、配樂或平台已完成。
 新增HD素材或正式字型時，須同步更新重建清單，並以乾淨Git檔案重跑`assets`，核對新正式主題及字型雜湊後才提交。
 
 ## 候選封包
@@ -62,7 +65,7 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 
 各包`README.txt`說明操作與存檔位置。Linux需要X11、OpenGL、ALSA與glibc2.36或相容環境；缺FUSE時用`APPIMAGE_EXTRACT_AND_RUN=1`。首次把合法DOS英文版1.10的47個遊戲檔放到程式旁`original/`，或用`-original`指定。歷史玩家SAVE不在包內；新存檔寫入使用者資料目錄。
 
-重建入口為[tools/package.sh](tools/package.sh)，固定候選引擎`4a8ef9f4ff18c82d8c98595faf19fb1ee803c609`。它從乾淨Git匯出素材與程式；只改啟動器的原版版本提示，不替換既有正式引擎固定點。先提交工具再執行，輸出目錄必須是本專案`workplace/`內的新路徑。
+重建入口為[tools/package.sh](tools/package.sh)，固定候選引擎`4a8ef9f4ff18c82d8c98595faf19fb1ee803c609`及主專案素材來源`4bdd711`，保留這九包的原始範圍。它從乾淨Git匯出素材與程式，只改啟動器的原版版本提示；後續簡中資料不會改寫這組既有候選。輸出目錄必須是本專案`workplace/`內的新路徑。
 
 ```sh
 bash tools/package.sh build /absolute/path/to/original "$PWD/workplace/package-rebuild"

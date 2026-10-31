@@ -1,0 +1,246 @@
+{
+  "issue": 70,
+  "title": [
+    {
+      "path": "localized/zh-CN/theme.json",
+      "sha256": "aa89c52e8689653a3e4f11a1bfad9df5c9f5a749c5ca8394eeb49acc82f07be7"
+    },
+    {
+      "path": "localized/zh-CN/title-001.idx",
+      "sha256": "f61a14b25fe8e4921b9da854e15f1cc60475ec75ce2147e15b7d1dfc5525db0c"
+    },
+    {
+      "path": "localized/zh-CN/title-001.png",
+      "sha256": "4825438fe617127215019b363dfd898717eb92e5eed03f06f3143a3dd4f82bcd"
+    },
+    {
+      "path": "localized/zh-CN/title-002.idx",
+      "sha256": "f5aff74e221772af84d2883bb091c0facf82e3995c8096ba5814c81caceb1795"
+    },
+    {
+      "path": "localized/zh-CN/title-002.png",
+      "sha256": "b8bbc88aa9ab4b288a12fa3c52327cde9c74391a6ceeafa7df4a13c6ee62ef12"
+    },
+    {
+      "path": "localized/zh-CN/title-003.idx",
+      "sha256": "2c2f516bb9bd70302ee85b953673eb82f94c3ded401ac1e5968ae65e1e207396"
+    },
+    {
+      "path": "localized/zh-CN/title-003.png",
+      "sha256": "725eb15c26c83ef3950ea04f17df02ede7f0c9bd4d66bf0639fc2e2d6a3cb911"
+    }
+  ],
+  "posters": [
+    {
+      "path": "posters/poster-text-left.zh-CN-2x.png",
+      "sha256": "75b26f2f09edeaff628505a6bc11343d1a4afc86fa5b4f531535b47942bc00f2",
+      "changed_pixels": 4316,
+      "composition_exact": true
+    },
+    {
+      "path": "posters/poster-text-left.zh-CN-3x.png",
+      "sha256": "8d1f6d8a23a4a0a5f860ca7fd38e03137510b40618d8078f2902dff3edf0bf75",
+      "changed_pixels": 9609,
+      "composition_exact": true
+    },
+    {
+      "path": "posters/poster-text-right.zh-CN-2x.png",
+      "sha256": "01fa40d5c6e6d7313262d007b87d3442b631ed84584f2c62a2d4c159c8a34683",
+      "changed_pixels": 4464,
+      "composition_exact": true
+    },
+    {
+      "path": "posters/poster-text-right.zh-CN-3x.png",
+      "sha256": "72431b897acc4fbec8865e028956dea2456101e556785512d351420e67bc5d2b",
+      "changed_pixels": 9836,
+      "composition_exact": true
+    }
+  ],
+  "template_sha256": {
+    "b07-title": "0168925ef93aaf62b9e717091420d5457fdd4fed65634cabd6b6e0d36c11fb73",
+    "poster": "a199eb35601bf886d2662266413212d8bd6480cd03caa560b6e6019a85722e64"
+  },
+  "font_sha256": "050f9ebf394faab3c0ba59092ae3e4b6686b349eadb3018d76d385c5829a1267",
+  "layout": [
+    {
+      "scene": "title-001",
+      "boxes": [
+        {
+          "key": "title.article",
+          "x": 0,
+          "y": 128,
+          "width": 960,
+          "height": 0,
+          "scrollWidth": 960
+        },
+        {
+          "key": "title.brand",
+          "x": 82,
+          "y": 252,
+          "width": 796,
+          "height": 84,
+          "scrollWidth": 796
+        },
+        {
+          "key": "title.subtitle",
+          "x": 0,
+          "y": 390,
+          "width": 960,
+          "height": 35,
+          "scrollWidth": 960
+        },
+        {
+          "key": "title.volume",
+          "x": 0,
+          "y": 432,
+          "width": 960,
+          "height": 31,
+          "scrollWidth": 960
+        }
+      ]
+    },
+    {
+      "scene": "title-003",
+      "boxes": [
+        {
+          "key": "title.creation.label",
+          "x": 87,
+          "y": 16,
+          "width": 774,
+          "height": 28,
+          "scrollWidth": 774
+        },
+        {
+          "key": "title.developer.label",
+          "x": 111,
+          "y": 66,
+          "width": 306,
+          "height": 26,
+          "scrollWidth": 306
+        },
+        {
+          "key": "title.developer.names",
+          "x": 135,
+          "y": 90,
+          "width": 282,
+          "height": 48,
+          "scrollWidth": 282
+        },
+        {
+          "key": "title.programmers.label",
+          "x": 111,
+          "y": 162,
+          "width": 306,
+          "height": 26,
+          "scrollWidth": 306
+        },
+        {
+          "key": "title.programmers.names",
+          "x": 135,
+          "y": 186,
+          "width": 282,
+          "height": 72,
+          "scrollWidth": 282
+        },
+        {
+          "key": "title.music.label",
+          "x": 111,
+          "y": 282,
+          "width": 306,
+          "height": 26,
+          "scrollWidth": 306
+        },
+        {
+          "key": "title.music.names",
+          "x": 135,
+          "y": 306,
+          "width": 282,
+          "height": 48,
+          "scrollWidth": 282
+        },
+        {
+          "key": "title.testers.label",
+          "x": 111,
+          "y": 378,
+          "width": 306,
+          "height": 26,
+          "scrollWidth": 306
+        },
+        {
+          "key": "title.testers.names",
+          "x": 135,
+          "y": 402,
+          "width": 282,
+          "height": 168,
+          "scrollWidth": 282
+        },
+        {
+          "key": "title.artists.label",
+          "x": 543,
+          "y": 66,
+          "width": 306,
+          "height": 26,
+          "scrollWidth": 306
+        },
+        {
+          "key": "title.artists.names",
+          "x": 567,
+          "y": 90,
+          "width": 282,
+          "height": 264,
+          "scrollWidth": 282
+        },
+        {
+          "key": "title.encounters.label",
+          "x": 543,
+          "y": 378,
+          "width": 306,
+          "height": 26,
+          "scrollWidth": 306
+        },
+        {
+          "key": "title.encounters.names",
+          "x": 567,
+          "y": 402,
+          "width": 282,
+          "height": 168,
+          "scrollWidth": 282
+        }
+      ]
+    },
+    {
+      "scene": "poster",
+      "boxes": [
+        {
+          "x": 20,
+          "y": 563,
+          "width": 199,
+          "height": 13,
+          "scrollWidth": 199
+        },
+        {
+          "x": 20,
+          "y": 585,
+          "width": 199,
+          "height": 45,
+          "scrollWidth": 199
+        },
+        {
+          "x": 1221,
+          "y": 539.625,
+          "width": 199,
+          "height": 32.1875,
+          "scrollWidth": 199
+        },
+        {
+          "x": 1221,
+          "y": 583.8125,
+          "width": 199,
+          "height": 46.1875,
+          "scrollWidth": 199
+        }
+      ]
+    }
+  ],
+  "scope": "same approved art and layout; zh-CN type only; cover same characters"
+}

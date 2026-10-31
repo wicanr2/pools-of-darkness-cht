@@ -90,7 +90,7 @@ def rebuild(root, original, output):
                 p.write_bytes(data)
         for row in lock['fonts']:
             p = fonts / row['path']
-            if not re.fullmatch(r'pod-[a-z0-9-]+\.golemfnt', row['path']):
+            if not re.fullmatch(r'pod-(?:[a-z0-9-]+|zh-CN(?:-3x|-bar12|-bar22)?)\.golemfnt', row['path']):
                 raise ValueError('字型檔名不合')
             if row['kind'] == 'rounded':
                 source = root/'font/source/rounded'/('GenSenRounded2TW-B.otf' if row['cell'] in (22,24) else 'GenSenRounded2TW-M.otf')

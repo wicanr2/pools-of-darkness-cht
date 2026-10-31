@@ -1,0 +1,25 @@
+{
+  "project": "BYVoid/OpenCC",
+  "version": "1.1.9",
+  "config": "tw2s.json",
+  "pypi": "https://pypi.org/project/OpenCC/1.1.9/",
+  "files": [
+    {
+      "file": "opencc-1.1.9.tar.gz",
+      "url": "https://files.pythonhosted.org/packages/e6/a2/0e86df1284143c389a3a6e33b159394da34b500a62b2b9c918949a2e6438/opencc-1.1.9.tar.gz",
+      "size": 3409025,
+      "sha256": "8ad72283732951303390fae33a1ceda98ac9b03368a8f2912edc934d74077e4a"
+    },
+    {
+      "file": "LICENSE",
+      "sha256": "b534e465949558eec2597b04f5092b5e161236a68dfbfd04d547592ac3964308"
+    },
+    {
+      "file": "OpenCC-1.1.9-cp311-cp311-manylinux2014_x86_64.whl",
+      "url": "https://files.pythonhosted.org/packages/bb/07/4eef5a5c43221470af3a9e12fce024c5b9451618c4307c7980c2d6e298b3/OpenCC-1.1.9-cp311-cp311-manylinux2014_x86_64.whl",
+      "size": 1654464,
+      "sha256": "64994c68796d93cdba42f37e0c073fb8ed6f9d6707232be0ba84f24dc5a36bbb"
+    }
+  ],
+  "license": "Apache-2.0"
+}

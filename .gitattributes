@@ -3,3 +3,6 @@ font/source/** -text whitespace=-blank-at-eol,-blank-at-eof
 
 # AppImage工具與授權依manifest雜湊逐位元保存。
 tools/vendor/appimage/** -text whitespace=-blank-at-eol,-blank-at-eof
+tools/vendor/opencc/** -text whitespace=-blank-at-eol,-blank-at-eof
+# 音譯表的行尾Tab是必要空欄，與根層TSV相同，不可用trim破壞欄數。
+text/translit-zh-CN/*.tsv whitespace=-blank-at-eol

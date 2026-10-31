@@ -1,0 +1,4 @@
+key	translation	note
+lang.name	简中	與繁中同寬的工具列語系名稱
+journal.ref	 %d 则%s	繁中DefaultJournalRef的簡體格式；apps/pod/pathb.go
+journal.refdot	。	繁中DefaultJournalRef的句尾；apps/pod/pathb.go

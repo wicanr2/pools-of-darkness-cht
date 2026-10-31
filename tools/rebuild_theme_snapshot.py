@@ -54,6 +54,14 @@ def main():
                     raise ValueError('既有來源索引改變，須獨立重驗')
                 row=old[name]
             else:
+                # 語系TITLE只別名既有base來源，不從檔名猜新的DAX記錄。
+                localized=re.fullmatch(r'localized/(?:zh-CN|ja|ko)/(title-00[123]\.idx)',name)
+                if localized:
+                    base=old.get('localized/base/'+localized[1])
+                    if not base or base['kind']!='original-index' or base['sha256']!=digest:
+                        raise ValueError('語系TITLE與已驗base來源不同')
+                    rows.append(dict(base,path=name))
+                    continue
                 m=re.fullmatch(r'([a-z0-9]+)-(\d+)(?:@(\d+))?\.idx',name)
                 if not m:raise ValueError('未知來源索引檔名')
                 archive=m[1].upper()+'.DAX'

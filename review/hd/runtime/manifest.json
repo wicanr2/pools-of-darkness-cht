@@ -1,11 +1,11 @@
 {
   "version": 1,
   "issue": 55,
-  "scope": "b43主題；私人素材保存與本機重建，不擴張遊戲驗收或公開權利",
+  "scope": "b45主題；私人素材保存與本機重建，不擴張遊戲驗收或公開權利",
   "engine": {
     "repository": "https://github.com/wicanr2/pools-of-darkness-cht.git",
     "branch": "dosgolem/pod",
-    "commit": "56ebba3e0dc6982b313c1a5702370f99a81ab896"
+    "commit": "2ec2dfa4616d47795f27c1f6f9eee92999fb4ac9"
   },
   "theme": [
     {
@@ -7432,6 +7432,61 @@
       "rights": "project metadata; private review"
     },
     {
+      "path": "localized/zh-CN/theme.json",
+      "sha256": "aa89c52e8689653a3e4f11a1bfad9df5c9f5a749c5ca8394eeb49acc82f07be7",
+      "kind": "repo-file",
+      "source": "review/hd/runtime/theme/localized/zh-CN/theme.json",
+      "rights": "project metadata; private review"
+    },
+    {
+      "path": "localized/zh-CN/title-001.idx",
+      "sha256": "f61a14b25fe8e4921b9da854e15f1cc60475ec75ce2147e15b7d1dfc5525db0c",
+      "kind": "original-index",
+      "archive": "TITLE.DAX",
+      "block": 1,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "localized/zh-CN/title-001.png",
+      "sha256": "4825438fe617127215019b363dfd898717eb92e5eed03f06f3143a3dd4f82bcd",
+      "kind": "repo-file",
+      "source": "review/hd/zh-CN/title-001.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "localized/zh-CN/title-002.idx",
+      "sha256": "f5aff74e221772af84d2883bb091c0facf82e3995c8096ba5814c81caceb1795",
+      "kind": "original-index",
+      "archive": "TITLE.DAX",
+      "block": 2,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "localized/zh-CN/title-002.png",
+      "sha256": "b8bbc88aa9ab4b288a12fa3c52327cde9c74391a6ceeafa7df4a13c6ee62ef12",
+      "kind": "repo-file",
+      "source": "review/hd/zh-CN/title-002.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "localized/zh-CN/title-003.idx",
+      "sha256": "2c2f516bb9bd70302ee85b953673eb82f94c3ded401ac1e5968ae65e1e207396",
+      "kind": "original-index",
+      "archive": "TITLE.DAX",
+      "block": 3,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "localized/zh-CN/title-003.png",
+      "sha256": "725eb15c26c83ef3950ea04f17df02ede7f0c9bd4d66bf0639fc2e2d6a3cb911",
+      "kind": "repo-file",
+      "source": "review/hd/zh-CN/title-003.png",
+      "rights": "accepted HD redraw"
+    },
+    {
       "path": "localized/zh-TW/theme.json",
       "sha256": "b624a0ae02c941a0177755e210f1894c7fb0576c688aad5d8e53c70e1e24b3bd",
       "kind": "repo-file",
@@ -7467,7 +7522,7 @@
       "path": "localized/zh-TW/title-002.png",
       "sha256": "b8bbc88aa9ab4b288a12fa3c52327cde9c74391a6ceeafa7df4a13c6ee62ef12",
       "kind": "repo-file",
-      "source": "docs/screenshots/game-cover-hd.png",
+      "source": "review/hd/zh-CN/title-002.png",
       "rights": "accepted HD redraw"
     },
     {
@@ -8784,6 +8839,20 @@
       "rights": "private original-reference review"
     },
     {
+      "path": "posters/poster-text-left.zh-CN-2x.png",
+      "sha256": "75b26f2f09edeaff628505a6bc11343d1a4afc86fa5b4f531535b47942bc00f2",
+      "kind": "repo-file",
+      "source": "review/hd/zh-CN/poster-text-left.zh-CN-2x.png",
+      "rights": "private original-reference review"
+    },
+    {
+      "path": "posters/poster-text-left.zh-CN-3x.png",
+      "sha256": "8d1f6d8a23a4a0a5f860ca7fd38e03137510b40618d8078f2902dff3edf0bf75",
+      "kind": "repo-file",
+      "source": "review/hd/zh-CN/poster-text-left.zh-CN-3x.png",
+      "rights": "private original-reference review"
+    },
+    {
       "path": "posters/poster-text-left.zh-TW-2x.png",
       "sha256": "71add1f09bd932cf08d763129d0a24902709c97df6d29bc47b870f2e73706445",
       "kind": "repo-file",
@@ -8809,6 +8878,20 @@
       "sha256": "a021a33ea8f23e75987065ef037063a9db429a9eee34833f27a90822eede584d",
       "kind": "repo-file",
       "source": "review/hd/runtime/images/posters/poster-text-right.en-3x.png",
+      "rights": "private original-reference review"
+    },
+    {
+      "path": "posters/poster-text-right.zh-CN-2x.png",
+      "sha256": "01fa40d5c6e6d7313262d007b87d3442b631ed84584f2c62a2d4c159c8a34683",
+      "kind": "repo-file",
+      "source": "review/hd/zh-CN/poster-text-right.zh-CN-2x.png",
+      "rights": "private original-reference review"
+    },
+    {
+      "path": "posters/poster-text-right.zh-CN-3x.png",
+      "sha256": "72431b897acc4fbec8865e028956dea2456101e556785512d351420e67bc5d2b",
+      "kind": "repo-file",
+      "source": "review/hd/zh-CN/poster-text-right.zh-CN-3x.png",
       "rights": "private original-reference review"
     },
     {
@@ -12233,6 +12316,34 @@
       "cell": 16,
       "kind": "rounded",
       "charset": "font/charset-pod-rounded.json"
+    },
+    {
+      "path": "pod-zh-CN.golemfnt",
+      "kind": "rounded",
+      "cell": 16,
+      "charset": "font/charset-pod-zh-CN.json",
+      "sha256": "9787e8431f51e39f8ea59f6c6f631424d862bb248faefde65701104cbfab4c93"
+    },
+    {
+      "path": "pod-zh-CN-3x.golemfnt",
+      "kind": "rounded",
+      "cell": 24,
+      "charset": "font/charset-pod-zh-CN.json",
+      "sha256": "d93b3c60876cb46e8470520b680cb6005116df18a1826e043081f898e0737617"
+    },
+    {
+      "path": "pod-zh-CN-bar12.golemfnt",
+      "kind": "rounded",
+      "cell": 12,
+      "charset": "font/charset-pod-zh-CN-bar.json",
+      "sha256": "fda46fe44043d7ff4d2d04ba152ff7ef97b4e5a1c7ad6d9f6a6e62012a27bb5d"
+    },
+    {
+      "path": "pod-zh-CN-bar22.golemfnt",
+      "kind": "rounded",
+      "cell": 22,
+      "charset": "font/charset-pod-zh-CN-bar.json",
+      "sha256": "8346692b157dfa4e5d3e016a24cd7da857bf968c50fb1172541a960b71d2b26d"
     }
   ],
   "source_files": {
@@ -12247,7 +12358,9 @@
     "font/charset-pod-rounded-3x.json": "06b334d5340c6b07b5d1d13f9d128bddd0b4b6c9d309c14e31635a44471f5648",
     "font/charset-pod-rounded-bar12.json": "3e40a13c273bdd89b8ebbf6df4b989ad24604d800610c8fe5b517d5aac7392f4",
     "font/charset-pod-rounded-bar22.json": "3e40a13c273bdd89b8ebbf6df4b989ad24604d800610c8fe5b517d5aac7392f4",
-    "font/charset-pod-rounded.json": "06b334d5340c6b07b5d1d13f9d128bddd0b4b6c9d309c14e31635a44471f5648"
+    "font/charset-pod-rounded.json": "06b334d5340c6b07b5d1d13f9d128bddd0b4b6c9d309c14e31635a44471f5648",
+    "font/charset-pod-zh-CN.json": "15f205975f920d11b8cd3dd1fd20f087494e5e733a3887378ffba340eb17caf7",
+    "font/charset-pod-zh-CN-bar.json": "6617480be84c06380e4ad6e4f62eaa5efbff29c0b9b7a68c63ff82250d1a7b9f"
   },
   "runtime_expected": {
     "end": [
@@ -12401,36 +12514,82 @@
       "cmudict/README": "00c34e7564f1f6a68de02e12c123d801471da92bc3091f7d89b605f238bf8554",
       "cmudict/cmudict.dict": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
       "composed-templates.tsv": "16304e24252a9c90cbe96d36f5c700c2077172ad54fa6e3203d7cb6646da1040",
+      "composed-templates.zh-CN.tsv": "5475e8225add2338dc0c2d7e8aa6572082d2d0dd549dd00f0969d6a2a3426b5a",
       "cover.en.tsv": "1dcad1d41608a6cd097be6983fe39d90aeef4e772e1b5530ff35d6faaec78dc9",
+      "cover.zh-CN.tsv": "ce062ef1e1f2d4a39dd3d48d8f0e673174a979da4ad5bbb04463e7607e7b9af8",
       "cover.zh-TW.tsv": "ce062ef1e1f2d4a39dd3d48d8f0e673174a979da4ad5bbb04463e7607e7b9af8",
       "ecl-text-events.tsv": "04895bd7949c8525cf85faa0e38d811406004ed61b15f1c8ec1b62190da0773b",
+      "ecl-text.zh-CN.tsv": "491da09096ee04aca9203e93b86e37d6b64db63b233b3a0c48c8901a9c4b26d2",
       "ecl-text.zh-TW.tsv": "53c5cc99fecccf276b308c4f3576efeedd86b20d1ee90cef7adcc5e779a70b11",
       "errata.tsv": "9407b86d9dd167a53d6bad864a112208fc386d0a83e6236d681789af6d47152d",
       "glossary.tsv": "7f4e84374a8e51a0058ea04acb385032feb7d4ebffb1b51bcac4b60db059f831",
+      "host-extra.zh-CN.tsv": "49032544d6f3727a9e9067d527ad4ebe6d6a3b9f3511252e39d939f8e331013d",
       "host-text.en.tsv": "7ff009460e67ea7d935637515dff29cfbd81eb1e2f64fa84293e9c9334a2fd93",
+      "host-text.zh-CN.tsv": "de282e63ddb9cc3bfcc5a8ccc15f6a6782e258394dcd1759fd5b03b978197d1d",
       "host-text.zh-TW.tsv": "7f0d5884376625a5bed7ae9056084a188b7537808422a3709c952d486bd76a6e",
+      "journal.zh-CN.tsv": "beb281e8023fa5fac22043be4dbaa1cf293caa59860480cc090254bb55c1a0db",
       "journal.zh-TW.tsv": "bfaedeeae79e088088575a007a738870de9e5148bb3370cfdbe8d4786decff37",
       "map-geo.tsv": "aec61e88db9546ed6e5d33e789063cd20c261c7a5daf086970be0ede6c8a9e26",
+      "map-guide.zh-CN.tsv": "bea393945b8dac98ceda79908e76a1f707e962c2f10037fef961bd48a73a0ee9",
       "map-guide.zh-TW.tsv": "f51a23e13c0c32024b7a9fa92543f3bcee2459ea2dce388193ac33ad27500818",
       "map-titles.en.tsv": "5e1c9d2f1941ef12dcf0c404e23aada20727a32dad9b72f2c7b56532d1dcebc8",
       "map-titles.tsv": "9f329b6d0b620c46a618cbfa16811083acc621ba84ad63c05b2d0f11d89100d2",
+      "map-titles.zh-CN.tsv": "b910cc7e3955346a513297fa9868d353e798f17e9c654dcf42e38d9521487684",
       "menu-masters.tsv": "c4e447b70937f0c0b6bc547a0e9068c27c37bd543d4a46abe5dffd72bf40e894",
+      "menu-masters.zh-CN.tsv": "60acc4391f9b0ca71a89f2a2ff712ad9bf05b4646702b1e6a6db8e53cf59345e",
       "name-events.tsv": "02aaf8601729008135c0f7310ecf6d5d6561c6fc147555a017c61b8ece524f2c",
+      "name.zh-CN.tsv": "a9ae7618a846cb7a4d62b3142e5c020f5260d97dc2312b69e3fc0a4bfce3a111",
       "name.zh-TW.tsv": "f2080e54ff39e44234e13d8881f372ac68daf79bc291455d872d6348ecaa9798",
       "poster.en.tsv": "e4f6056403edc62a8cdb8c9c073a0aa4c037926c5fe7d294a127abb01deeebff",
+      "poster.zh-CN.tsv": "5a828b18e5196ff0fad0c05bbe79b74901bfa2df50747e3658527f56224aaf3b",
       "poster.zh-TW.tsv": "f30d556d8aabcc9805f51f5278e626fd5093161a461bfe1a0f4b0d0430d1c7e7",
       "quiz-answers.tsv": "25391384867a1ff19c22be25fa99f5e43db890117fbebb95ec9b5bb78e2c3912",
       "term-avoid.tsv": "831569715cc1207ccace062a3916bad570fa391e99db8c2f0b413868c2c3a891",
       "title.en.tsv": "8cf32af2ae5c8e9659414cc1a4c00a180ddb1a0952d661b61e6b12cca13def62",
+      "title.zh-CN.tsv": "26fd382a24520bdf60755d1f672f1ef88fe8cedb03e0fea131d743ddaf1e9368",
       "title.zh-TW.tsv": "22bc9e8b1192d75920d6ea0d3d3b1e7acbb5c6cbfee9e58745079969315f9d1d",
       "translit-arpabet.tsv": "8f86686da4bd532c4a5ef154a546e9e2570a88f1fdbfe3496a04f7bb08462dbe",
       "translit-chars.zh-TW.tsv": "964027135de209b64533fa14e2481459822abd1b8cf5d5612c6f295313e8e640",
       "translit-names.tsv": "07f7d6cf7d011f927225d450b4f7331ed5e503acb4da7d4c3e29f151d7741cf2",
       "translit-table.tsv": "28bf946bdbabb97f127e1542b6cae0072e02bb108344ce6af4e3a8a0856fc329",
+      "translit-zh-CN/translit-arpabet.tsv": "8f86686da4bd532c4a5ef154a546e9e2570a88f1fdbfe3496a04f7bb08462dbe",
+      "translit-zh-CN/translit-chars.zh-TW.tsv": "56dd6b7c0f1a7a6a90e97f18285f851db55bcc5d775618501cf01b90b315f1e7",
+      "translit-zh-CN/translit-names.tsv": "78e929e8fe78abdddfe7d4475a1880a7b04dc0707ca3a3fc22671ae4385d560f",
+      "translit-zh-CN/translit-table.tsv": "104c8bc1b7b24ee1aae09a09649b80a4be4a4ca1819cdfc2a006b18fb70a9c57",
       "ui-text-events.tsv": "b654750ef72c0b8cbbb9be323db0b4dac1068ace5b1c38d3565ab25c7ecadf24",
+      "ui-text.zh-CN.tsv": "1bdfd52c21bb89b80b4e51b710188990745e00e7f5d545a04bbc571f6414cdb0",
       "ui-text.zh-TW.tsv": "005c3e6228eac731011d2c2e6d3734815c5f4514fb0184007414d804cccb908e",
+      "walkthrough.zh-CN.tsv": "4e42a13f4567f3d951b32834ac5e6245c1e2c91df2b3a0abda04ece98843cdcf",
       "walkthrough.zh-TW.tsv": "65295ae54f0590e90472e360da6344be95735290b0cc996a3fc13d8974e4ffe8",
+      "zh-CN-terms.tsv": "7afa15a60bc6643b0804c3125e608c35ad2f505d6af9bbd119a768273805e3a1",
       "zh157-names.tsv": "9dac2de365de5cc100e8f88a0976a70be48a30c413330906bebe7769606e6caa"
+    },
+    "text_extension": {
+      "issue": 70,
+      "receipt": "docs/re/027-zhcn-runtime.json",
+      "added": {
+        "composed-templates.zh-CN.tsv": "5475e8225add2338dc0c2d7e8aa6572082d2d0dd549dd00f0969d6a2a3426b5a",
+        "cover.zh-CN.tsv": "ce062ef1e1f2d4a39dd3d48d8f0e673174a979da4ad5bbb04463e7607e7b9af8",
+        "ecl-text.zh-CN.tsv": "491da09096ee04aca9203e93b86e37d6b64db63b233b3a0c48c8901a9c4b26d2",
+        "host-extra.zh-CN.tsv": "49032544d6f3727a9e9067d527ad4ebe6d6a3b9f3511252e39d939f8e331013d",
+        "host-text.zh-CN.tsv": "de282e63ddb9cc3bfcc5a8ccc15f6a6782e258394dcd1759fd5b03b978197d1d",
+        "journal.zh-CN.tsv": "beb281e8023fa5fac22043be4dbaa1cf293caa59860480cc090254bb55c1a0db",
+        "map-guide.zh-CN.tsv": "bea393945b8dac98ceda79908e76a1f707e962c2f10037fef961bd48a73a0ee9",
+        "map-titles.zh-CN.tsv": "b910cc7e3955346a513297fa9868d353e798f17e9c654dcf42e38d9521487684",
+        "menu-masters.zh-CN.tsv": "60acc4391f9b0ca71a89f2a2ff712ad9bf05b4646702b1e6a6db8e53cf59345e",
+        "name.zh-CN.tsv": "a9ae7618a846cb7a4d62b3142e5c020f5260d97dc2312b69e3fc0a4bfce3a111",
+        "poster.zh-CN.tsv": "5a828b18e5196ff0fad0c05bbe79b74901bfa2df50747e3658527f56224aaf3b",
+        "title.zh-CN.tsv": "26fd382a24520bdf60755d1f672f1ef88fe8cedb03e0fea131d743ddaf1e9368",
+        "translit-zh-CN/translit-arpabet.tsv": "8f86686da4bd532c4a5ef154a546e9e2570a88f1fdbfe3496a04f7bb08462dbe",
+        "translit-zh-CN/translit-chars.zh-TW.tsv": "56dd6b7c0f1a7a6a90e97f18285f851db55bcc5d775618501cf01b90b315f1e7",
+        "translit-zh-CN/translit-names.tsv": "78e929e8fe78abdddfe7d4475a1880a7b04dc0707ca3a3fc22671ae4385d560f",
+        "translit-zh-CN/translit-table.tsv": "104c8bc1b7b24ee1aae09a09649b80a4be4a4ca1819cdfc2a006b18fb70a9c57",
+        "ui-text.zh-CN.tsv": "1bdfd52c21bb89b80b4e51b710188990745e00e7f5d545a04bbc571f6414cdb0",
+        "walkthrough.zh-CN.tsv": "4e42a13f4567f3d951b32834ac5e6245c1e2c91df2b3a0abda04ece98843cdcf",
+        "zh-CN-terms.tsv": "7afa15a60bc6643b0804c3125e608c35ad2f505d6af9bbd119a768273805e3a1"
+      },
+      "existing_text_unchanged": true,
+      "scope": "new zh-CN data only; historical7400-frame original-state outputs unchanged; normal4800-frame locale sample separately recorded"
     }
   }
 }

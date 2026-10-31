@@ -23,8 +23,9 @@ if [[ "$MODE" = build ]]; then
  for image in "$GO_IMAGE" "$IMG" "$MAC" "$PKG"; do docker image inspect "$image" >/dev/null;done
  git -C "$ROOT" cat-file -e "$COMMIT^{commit}" 2>/dev/null || git -C "$ROOT" fetch --no-tags origin dosgolem/pod
  mkdir -p "$DEST"
- git -C "$ROOT" archive HEAD > "$DEST/main-source.tar"
- git -C "$ROOT" rev-parse 'HEAD^{tree}' > "$DEST/main-tree.txt"
+ # 候選既有九包的來源固定；後續語系／HD更新不能悄悄改變此版內容。
+ git -C "$ROOT" archive 4bdd711 > "$DEST/main-source.tar"
+ git -C "$ROOT" rev-parse '4bdd711^{tree}' > "$DEST/main-tree.txt"
  git -C "$ROOT" archive "$COMMIT" > "$DEST/engine-source.tar"
  timeout 60 docker run "${opts[@]}" --network none -v "$DEST:/out" "$GO_IMAGE" sh -ec '
   mkdir /out/main /out/engine /out/test /out/bin /out/gomodcache
