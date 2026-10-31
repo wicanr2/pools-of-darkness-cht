@@ -21,6 +21,8 @@ type exactHDItem struct {
 	ref, pixels []byte
 	ax, ay      int
 	anchor      []byte
+	used        []byte
+	palette     string // 空字串沿原EGA契約；VGA只收固定來源與使用RGB。
 }
 type exactHDMatch struct {
 	item, x, y int
@@ -76,12 +78,13 @@ func loadExactHD(dir string) (*exactHD, error) {
 		if err != nil || len(ref) != w*ht {
 			return nil, fmt.Errorf("%s：來源長度或 SHA 不符：%v", it.Key, err)
 		}
-		var counts [16]int
+		palette, err := exactBackgroundPalette(it.Key, ref, it.Size, it.Algorithm)
+		if err != nil {
+			return nil, err
+		}
+		var counts [256]int
 		maximum := 0
 		for _, c := range ref {
-			if c > 15 {
-				return nil, fmt.Errorf("%s：非 EGA 色號", it.Key)
-			}
 			counts[c]++
 			if counts[c] > maximum {
 				maximum = counts[c]
@@ -91,6 +94,9 @@ func loadExactHD(dir string) (*exactHD, error) {
 			return nil, fmt.Errorf("%s：來源資訊不足", it.Key)
 		}
 		sig := fmt.Sprintf("%dx%d:%x", w, ht, sha256.Sum256(ref))
+		if palette != "" {
+			sig += ":" + palette
+		}
 		if refs[sig] {
 			return nil, fmt.Errorf("%s：重複完整來源", it.Key)
 		}
@@ -119,7 +125,14 @@ func loadExactHD(dir string) (*exactHD, error) {
 		if it.Algorithm == "scale3x" && !hdScale3xPixelsEqual(ref, rgba.Pix, w, ht) {
 			return nil, fmt.Errorf("Scale3x完整來源結果不符")
 		}
-		p := exactHDItem{key: it.Key, w: w, h: ht, ref: ref, pixels: rgba.Pix}
+		p := exactHDItem{key: it.Key, w: w, h: ht, ref: ref, pixels: rgba.Pix, palette: palette}
+		if palette != "" {
+			for c, count := range counts {
+				if count > 0 {
+					p.used = append(p.used, byte(c))
+				}
+			}
+		}
 		p.makeAnchor()
 		h.items = append(h.items, p)
 	}
@@ -182,13 +195,29 @@ func (h *exactHD) frame(idx []byte, pal [256][3]uint8) {
 	if len(idx) != 64000 {
 		return
 	}
+	ega := true
 	for n, c := range combatEGA {
 		if pal[n] != c {
-			return
+			ega = false
+			break
 		}
 	}
 	for n := range h.items {
 		p := &h.items[n]
+		if p.palette == "" {
+			if !ega {
+				continue
+			}
+		} else {
+			signature := make([]byte, 0, len(p.used)*4)
+			for _, v := range p.used {
+				signature = append(signature, v)
+				signature = append(signature, pal[v][:]...)
+			}
+			if fmt.Sprintf("%x", sha256.Sum256(signature)) != p.palette {
+				continue
+			}
+		}
 		for from := 0; from+len(p.anchor) <= len(idx); {
 			off := bytes.Index(idx[from:], p.anchor)
 			if off < 0 {
