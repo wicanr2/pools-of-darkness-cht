@@ -1,0 +1,402 @@
+{
+  "scope": "AI-redrawn asset preview; not a gameplay screenshot",
+  "composition": "native 3x PNG; no resizing or cropping",
+  "size": [
+    480,
+    400
+  ],
+  "output_sha256": "353a001d87f6efcba38e2cd3efa2e0a87dbc881041aa10c6802754f8f446d094",
+  "items": [
+    {
+      "key": "comspr-128",
+      "source": "review/hd/b39-effects/comspr-128.png",
+      "png_sha256": "620f58f8f7f23a11d9c51f54e32ebdc0d2c038edcaaec061780fe86e36a6aae3",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        4,
+        4
+      ]
+    },
+    {
+      "key": "comspr-001",
+      "source": "review/hd/b39-effects/comspr-001.png",
+      "png_sha256": "18136868c8d1157a2b9f01e604308d5403e0b428815b5bf8cd126cc554f3ddd3",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        84,
+        4
+      ]
+    },
+    {
+      "key": "comspr-129",
+      "source": "review/hd/b39-effects/comspr-129.png",
+      "png_sha256": "08cc71ff1f4f906fed9846394c3184f904b0f507b519232a2359ba990b503c26",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        164,
+        4
+      ]
+    },
+    {
+      "key": "comspr-002",
+      "source": "review/hd/b39-effects/comspr-002.png",
+      "png_sha256": "6b38298f2f6aa9782e72aec95422e8f3497a73e34f91da469546d26a0be49f49",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        244,
+        4
+      ]
+    },
+    {
+      "key": "comspr-003",
+      "source": "review/hd/b39-effects/comspr-003.png",
+      "png_sha256": "80c3b0f00ad372eb87094df43c0764612581e9682732ad967aaad34acd5ad10b",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        324,
+        4
+      ]
+    },
+    {
+      "key": "comspr-131",
+      "source": "review/hd/b39-effects/comspr-131.png",
+      "png_sha256": "6f24555427fd679836001978a447962a436716b326393a01742db9629e93a5a6",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        404,
+        4
+      ]
+    },
+    {
+      "key": "comspr-004",
+      "source": "review/hd/b39-effects/comspr-004.png",
+      "png_sha256": "ce5c2cc1c88d32e5988e6b674a0ba94411ab2174e302d3a62594a4b079d0df93",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        4,
+        84
+      ]
+    },
+    {
+      "key": "comspr-132",
+      "source": "review/hd/b39-effects/comspr-132.png",
+      "png_sha256": "2fbc75a2c44bc5fad96d625553c7f6ea5c3781cc5b4cd1304689c4b0d461f5e6",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        84,
+        84
+      ]
+    },
+    {
+      "key": "comspr-133",
+      "source": "review/hd/b39-effects/comspr-133.png",
+      "png_sha256": "50194870c1c2160a9a014a4708ea3ddb5b2a75092c5f6fd9063abec118c5a12e",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        164,
+        84
+      ]
+    },
+    {
+      "key": "comspr-134",
+      "source": "review/hd/b39-effects/comspr-134.png",
+      "png_sha256": "7a186e0101965869f0d46cb971aac0b7b368a62e1f32bb4538bd5276a18fc4b5",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        244,
+        84
+      ]
+    },
+    {
+      "key": "comspr-007",
+      "source": "review/hd/b39-effects/comspr-007.png",
+      "png_sha256": "dc0875ae14745e4c6efdd1accb4e5325b7808ca72920cbded6feff164dc7af50",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        324,
+        84
+      ]
+    },
+    {
+      "key": "comspr-135",
+      "source": "review/hd/b39-effects/comspr-135.png",
+      "png_sha256": "bccc5ddb74442d16fec6a854a28c1f5247d6a9f56db0600e0db139f6e117ab1d",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        404,
+        84
+      ]
+    },
+    {
+      "key": "comspr-008",
+      "source": "review/hd/b39-effects/comspr-008.png",
+      "png_sha256": "c2d9046dbffd4b4e2ebbaa7990af1eb7e3b10e691a95101bf3b41d9a57862019",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        4,
+        164
+      ]
+    },
+    {
+      "key": "comspr-136",
+      "source": "review/hd/b39-effects/comspr-136.png",
+      "png_sha256": "d72db29fe605b71209a940b35a50624879b3688436a9a8df23bf5312c391e275",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        84,
+        164
+      ]
+    },
+    {
+      "key": "comspr-137",
+      "source": "review/hd/b39-effects/comspr-137.png",
+      "png_sha256": "abe81eb9b3fa48735fa2388ebe8e9ed9a638e9441cac283431be53f410330453",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        164,
+        164
+      ]
+    },
+    {
+      "key": "comspr-138",
+      "source": "review/hd/b39-effects/comspr-138.png",
+      "png_sha256": "9f9d23c3f2f0f8c3d12884edc9c933b7bc7e245d81ccbcd5d701b7d6548bd95f",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        244,
+        164
+      ]
+    },
+    {
+      "key": "comspr-011",
+      "source": "review/hd/b39-effects/comspr-011.png",
+      "png_sha256": "2ea1e346c86d18d40c892a227cade3648f6090b0bb590b4eaaef9b80c590593d",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        324,
+        164
+      ]
+    },
+    {
+      "key": "comspr-139",
+      "source": "review/hd/b39-effects/comspr-139.png",
+      "png_sha256": "502b4257414d4192bc8029c174206bc955cda40896285bab621fdd060d00ce76",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        404,
+        164
+      ]
+    },
+    {
+      "key": "comspr-012",
+      "source": "review/hd/b39-effects/comspr-012.png",
+      "png_sha256": "bfbc6a0de3d0d3a62ae69ce20a3d7bc309b37930f0d257abf2e577de008912f7",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        4,
+        244
+      ]
+    },
+    {
+      "key": "comspr-014",
+      "source": "review/hd/b39-effects/comspr-014.png",
+      "png_sha256": "0715c287e34476e022a7c473ecedd58eee5c34c9ef7c4c5d434d6a9b029a453b",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        84,
+        244
+      ]
+    },
+    {
+      "key": "comspr-142",
+      "source": "review/hd/b39-effects/comspr-142.png",
+      "png_sha256": "4a5deae344d70770820a797930293d41e852b8eb450c3b55912ff8766152523b",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        164,
+        244
+      ]
+    },
+    {
+      "key": "comspr-015",
+      "source": "review/hd/b39-effects/comspr-015.png",
+      "png_sha256": "bea29b3462adaa130f75e6f4526dbb59dfb011c01c6e928a3b452d7baf3a357c",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        244,
+        244
+      ]
+    },
+    {
+      "key": "comspr-016",
+      "source": "review/hd/b39-effects/comspr-016.png",
+      "png_sha256": "4add96c793593281029a939395c3f905ecdb31e07b8cf07225275524ffbcb8fb",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        324,
+        244
+      ]
+    },
+    {
+      "key": "comspr-017",
+      "source": "review/hd/b39-effects/comspr-017.png",
+      "png_sha256": "864453e351da24d65a0200eab1c3f36fa22d5c489fcc476e73ff76cb5f4dfb48",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        404,
+        244
+      ]
+    },
+    {
+      "key": "comspr-145",
+      "source": "review/hd/b39-effects/comspr-145.png",
+      "png_sha256": "07a90eb6f540764a23d168d566b5c5e9d6b782df294f026385765aed3197b59f",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        4,
+        324
+      ]
+    },
+    {
+      "key": "comspr-018",
+      "source": "review/hd/b39-effects/comspr-018.png",
+      "png_sha256": "eaea54ed8c3a4a54e8a73879350b63d332c73e5f036c51d824136a7d9b1c8777",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        84,
+        324
+      ]
+    },
+    {
+      "key": "comspr-146",
+      "source": "review/hd/b39-effects/comspr-146.png",
+      "png_sha256": "fa95fb070e6a9cc2d0af14676fe910f8f2fd65b80799cfad5288a832702797f9",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        164,
+        324
+      ]
+    },
+    {
+      "key": "comspr-019",
+      "source": "review/hd/b39-effects/comspr-019.png",
+      "png_sha256": "769edc0e4b7ad7833a22c4cd05f79c8021faac269be5ed0a331d0af87928de53",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        244,
+        324
+      ]
+    },
+    {
+      "key": "comspr-020",
+      "source": "review/hd/b39-effects/comspr-020.png",
+      "png_sha256": "95db337eaabcf419a2b8a38ce2b803ac2bfbf7ece6e9d4a8c0de56641b3cc705",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        324,
+        324
+      ]
+    },
+    {
+      "key": "comspr-021",
+      "source": "review/hd/b39-effects/comspr-021.png",
+      "png_sha256": "0a2f6448ef22c6ae3379918c9517388f97647170177eace3f19038ff432032b2",
+      "size": [
+        72,
+        72
+      ],
+      "position": [
+        404,
+        324
+      ]
+    }
+  ],
+  "rights": "AI redraws within existing private HD patch scope; no original reference pixels"
+}

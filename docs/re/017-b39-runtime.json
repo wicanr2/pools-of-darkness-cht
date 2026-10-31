@@ -1,0 +1,1065 @@
+{
+  "date": "2026-10-31",
+  "issue": 63,
+  "status": "CONFORMED within stated sampled scope",
+  "scope": "COMSPR全44來源的36個素材對應；新增30張，六類24種來源診斷與一條正常DEMO抽驗。其他正常特效事件未知，歧義保持原版。",
+  "product_source_commit": "e197ce9852a32474e7ac5b0b5c75fdf9434edd4e",
+  "unchanged_program": true,
+  "binary_sha256": "ff54dfe2fa2fc0e4462c14718f7e85dbddc3043b5259b1559f1cf97ed9cea042",
+  "source": {
+    "date": "2026-10-31",
+    "issue": 63,
+    "source": {
+      "file": "COMSPR.DAX",
+      "sha256": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee",
+      "address_space": "original DAX file byte offsets",
+      "block_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149
+      ],
+      "palette_interval": [
+        64,
+        96
+      ],
+      "palette_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+    },
+    "new_keys": [
+      "comspr-128",
+      "comspr-001",
+      "comspr-129",
+      "comspr-002",
+      "comspr-003",
+      "comspr-131",
+      "comspr-004",
+      "comspr-132",
+      "comspr-133",
+      "comspr-134",
+      "comspr-007",
+      "comspr-135",
+      "comspr-008",
+      "comspr-136",
+      "comspr-137",
+      "comspr-138",
+      "comspr-011",
+      "comspr-139",
+      "comspr-012",
+      "comspr-014",
+      "comspr-142",
+      "comspr-015",
+      "comspr-016",
+      "comspr-017",
+      "comspr-145",
+      "comspr-018",
+      "comspr-146",
+      "comspr-019",
+      "comspr-020",
+      "comspr-021"
+    ],
+    "sampled_keys": [
+      "comspr-001",
+      "comspr-007",
+      "comspr-012",
+      "comspr-015",
+      "comspr-017",
+      "comspr-021"
+    ],
+    "canonical_keys": [
+      "comspr-000",
+      "comspr-005",
+      "comspr-006",
+      "comspr-009",
+      "comspr-010",
+      "comspr-013",
+      "comspr-128",
+      "comspr-001",
+      "comspr-129",
+      "comspr-002",
+      "comspr-003",
+      "comspr-131",
+      "comspr-004",
+      "comspr-132",
+      "comspr-133",
+      "comspr-134",
+      "comspr-007",
+      "comspr-135",
+      "comspr-008",
+      "comspr-136",
+      "comspr-137",
+      "comspr-138",
+      "comspr-011",
+      "comspr-139",
+      "comspr-012",
+      "comspr-014",
+      "comspr-142",
+      "comspr-015",
+      "comspr-016",
+      "comspr-017",
+      "comspr-145",
+      "comspr-018",
+      "comspr-146",
+      "comspr-019",
+      "comspr-020",
+      "comspr-021"
+    ],
+    "coverage": [
+      {
+        "key": "comspr-000",
+        "canonical": "comspr-000",
+        "flip": false,
+        "indexed_sha256": "36200b13c16b02401b5caffe612357719f34cf4e00c0d03684a9fe2a3885d8af",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-128",
+        "canonical": "comspr-128",
+        "flip": false,
+        "indexed_sha256": "8d9c7ac26d6f7a0af11e3b84a1e20afeece2c48ea99bb551210d522b3d93d9e9",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-001",
+        "canonical": "comspr-001",
+        "flip": false,
+        "indexed_sha256": "95edbbe25ff2c1f674250b39c2949819846ced2e4c851af189645090c9316e4f",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-129",
+        "canonical": "comspr-129",
+        "flip": false,
+        "indexed_sha256": "fb977b8e1d89e435500b0869be4eec269d34851b8b3535bfe2d7899d1b2bebb7",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-002",
+        "canonical": "comspr-002",
+        "flip": false,
+        "indexed_sha256": "cfc85a70c9e8dc6628c48bd27a8c6ac9d66cb07e7d2e07117396bf91f7ca5919",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-130",
+        "canonical": "comspr-002",
+        "flip": true,
+        "indexed_sha256": "9cf277551d1c7805e065ce3fc662be081082126b23796a7ac1b612c77eea84f6",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-003",
+        "canonical": "comspr-003",
+        "flip": false,
+        "indexed_sha256": "b8857b391089d1cde6ae64c11b625cdb2094b66ccc8385dd93658aa17d72146a",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-131",
+        "canonical": "comspr-131",
+        "flip": false,
+        "indexed_sha256": "a779bb654cbcf337de2cc872cdf324759001722ea0e6993138c50f77007ae3c4",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-004",
+        "canonical": "comspr-004",
+        "flip": false,
+        "indexed_sha256": "9cb7971cc60be541887b43323bc4d94efcf41bef58349f4f189e512324960d0d",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-132",
+        "canonical": "comspr-132",
+        "flip": false,
+        "indexed_sha256": "27d9ac6a52d8c0e53b0675d869ced4e365d00e88ba3dd4cb8178bb641e3e1208",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-005",
+        "canonical": "comspr-005",
+        "flip": false,
+        "indexed_sha256": "519f17001d297c3e550e88c001e18ae5681b3ae531e4c6e21d4d61735b32fbc9",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-133",
+        "canonical": "comspr-133",
+        "flip": false,
+        "indexed_sha256": "4a783ffe6c4aaae8c7f1d62a143058e686469d20ef29c3a00138b5a3c0f9b1b6",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-006",
+        "canonical": "comspr-006",
+        "flip": false,
+        "indexed_sha256": "e4b81404a499e7dd1207b35f2c8cda1687296c21aa0dbd3220d280f4506b6a13",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-134",
+        "canonical": "comspr-134",
+        "flip": false,
+        "indexed_sha256": "dbdf74a36920e13b71d8dffd0ec936a582657099e81432068013b42815cad76e",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-007",
+        "canonical": "comspr-007",
+        "flip": false,
+        "indexed_sha256": "660f9a03f674992b14ba386cf9f64fe158f204ef92aa8d1cc435abfbf82dc6c8",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-135",
+        "canonical": "comspr-135",
+        "flip": false,
+        "indexed_sha256": "af552e3f122dcb6c519a26ef48bd9c32e89ec4714f918c964d062c4cdae4c97e",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-008",
+        "canonical": "comspr-008",
+        "flip": false,
+        "indexed_sha256": "a8af77d6479f6dd5d85660b06f38c4e347a274f9940dd1c7a28b813e77762018",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-136",
+        "canonical": "comspr-136",
+        "flip": false,
+        "indexed_sha256": "08c0073c4d42629145d75ff0548f50a5053db70e3208852c962057c137b35854",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-009",
+        "canonical": "comspr-009",
+        "flip": false,
+        "indexed_sha256": "e11d4ef8829a97581bdc5418156871daf8fd419e25945d91e0115fbf438a786d",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-137",
+        "canonical": "comspr-137",
+        "flip": false,
+        "indexed_sha256": "72e26c9206039cd892277de44a8fce7a86ebad4fa8c8f8b65f30f8d26535a12f",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-010",
+        "canonical": "comspr-010",
+        "flip": false,
+        "indexed_sha256": "87d60e3db15a121d1621acbc4e2d84bf9911d754bd0041a8c7e2fa95fe867791",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-138",
+        "canonical": "comspr-138",
+        "flip": false,
+        "indexed_sha256": "9f60413fecc971e38d6651ec0e9543900e24d0ee12f76326fb85c104f520a464",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-011",
+        "canonical": "comspr-011",
+        "flip": false,
+        "indexed_sha256": "1a5675b6a3151ff8e510dc6abdae46866b0117966a3ed951ae891984514441a3",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-139",
+        "canonical": "comspr-139",
+        "flip": false,
+        "indexed_sha256": "957643d431393196437cfa0b0c762464d0db1c66477214228593ae2a2ad3c543",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-012",
+        "canonical": "comspr-012",
+        "flip": false,
+        "indexed_sha256": "497c42f9c837a55a6d3d23353d52537af325da839db705c3779dede6c96921dd",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-140",
+        "canonical": "comspr-012",
+        "flip": false,
+        "indexed_sha256": "497c42f9c837a55a6d3d23353d52537af325da839db705c3779dede6c96921dd",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-013",
+        "canonical": "comspr-013",
+        "flip": false,
+        "indexed_sha256": "4afb12813172c9dfd5fb2df477e9229916098bf83acce4fb0d84a5eeb9d151c0",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-141",
+        "canonical": "comspr-013",
+        "flip": false,
+        "indexed_sha256": "4afb12813172c9dfd5fb2df477e9229916098bf83acce4fb0d84a5eeb9d151c0",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-014",
+        "canonical": "comspr-014",
+        "flip": false,
+        "indexed_sha256": "a9aede4dd4efb5f0fbc1f37c1d4c09e58e268446f57bdf31b80a68c06b60411f",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-142",
+        "canonical": "comspr-142",
+        "flip": false,
+        "indexed_sha256": "ca90636dfb3ed2593f8b93759445d25cd014eeef4f34a93cd0ad724067ddc15e",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-015",
+        "canonical": "comspr-015",
+        "flip": false,
+        "indexed_sha256": "fbfc28be6ea71dc37b9f88edc364a2ca9e8662f8bd4108847a90e835c166f977",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-143",
+        "canonical": "comspr-015",
+        "flip": false,
+        "indexed_sha256": "fbfc28be6ea71dc37b9f88edc364a2ca9e8662f8bd4108847a90e835c166f977",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-016",
+        "canonical": "comspr-016",
+        "flip": false,
+        "indexed_sha256": "2a751cc94f1d90f1aded18533e246b086783b46396887de41a445c9b7935aec8",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-144",
+        "canonical": "comspr-016",
+        "flip": false,
+        "indexed_sha256": "2a751cc94f1d90f1aded18533e246b086783b46396887de41a445c9b7935aec8",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-017",
+        "canonical": "comspr-017",
+        "flip": false,
+        "indexed_sha256": "dcca2e6076cca0b733b0bc67cff759574b009f3bc836b26c27d96c2af65bab92",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-145",
+        "canonical": "comspr-145",
+        "flip": false,
+        "indexed_sha256": "ec8346949cd280c7bc30e43a640a9b8bcc514b6fec769b9dfd60c3f15e132941",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-018",
+        "canonical": "comspr-018",
+        "flip": false,
+        "indexed_sha256": "ba5883077d875770d33b55aca0da190e88ef7aef9a036ecbbd34ef1054747bb3",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-146",
+        "canonical": "comspr-146",
+        "flip": false,
+        "indexed_sha256": "0ca2046c2f8f567acd5c9e95e4533a19844bf3e3a897cf13eb54f215d80f8771",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-019",
+        "canonical": "comspr-019",
+        "flip": false,
+        "indexed_sha256": "97eaa732c97c7ebeef260628b3596ea8db804618205f40c13940bdbe0493c02e",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-147",
+        "canonical": "comspr-019",
+        "flip": true,
+        "indexed_sha256": "a366cb9b01c31feb2caaa66d83ca6de0b7a76e4117dba0a4d878791b5e589fa8",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-020",
+        "canonical": "comspr-020",
+        "flip": false,
+        "indexed_sha256": "92a0c28f3468711266efb09cc89f621d1587855bf84049923c82b00ebbe75417",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-148",
+        "canonical": "comspr-020",
+        "flip": false,
+        "indexed_sha256": "92a0c28f3468711266efb09cc89f621d1587855bf84049923c82b00ebbe75417",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-021",
+        "canonical": "comspr-021",
+        "flip": false,
+        "indexed_sha256": "9d089efc776f1fc68d20faaf29fe143a25667de4297585959be9c311f4fb122b",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      },
+      {
+        "key": "comspr-149",
+        "canonical": "comspr-021",
+        "flip": false,
+        "indexed_sha256": "9d089efc776f1fc68d20faaf29fe143a25667de4297585959be9c311f4fb122b",
+        "source_bank_sha256": "903dcf3a1bc9aaa4b5b0829df3923b73fc4b8e7548ce33a84c8f154639d510a0"
+      }
+    ],
+    "total_source_states": 44,
+    "unique_hd_candidates": 36,
+    "direct_aliases": 6,
+    "mirror_aliases": 2,
+    "request_sha256": "617f05b2ab18a70ed706b554cb4a0a2e7310580890efab6efc3002adfb9e3269",
+    "source_validation": "full indexed bytes, decoded hash, source palette bank, all used RGB and reference pixels equal; unused palette banks belong to other layers",
+    "evidence_level": "proven source data; unobserved normal events remain unknown",
+    "diagnostic_cases": [
+      {
+        "key": "comspr-001",
+        "flip": false,
+        "x": 8,
+        "y": 80,
+        "matches": [
+          {
+            "key": "comspr-001",
+            "indexed_sha256": "95edbbe25ff2c1f674250b39c2949819846ced2e4c851af189645090c9316e4f",
+            "x": 8,
+            "y": 80,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-001",
+        "flip": false,
+        "x": 9,
+        "y": 81,
+        "matches": [
+          {
+            "key": "comspr-001",
+            "indexed_sha256": "95edbbe25ff2c1f674250b39c2949819846ced2e4c851af189645090c9316e4f",
+            "x": 9,
+            "y": 81,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-001",
+        "flip": true,
+        "x": 8,
+        "y": 80,
+        "matches": [
+          {
+            "key": "comspr-001",
+            "indexed_sha256": "8dd821287c66cb37033358e69c413029619ff43f680de727e96274e966b2f25b",
+            "x": 8,
+            "y": 80,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-001",
+        "flip": true,
+        "x": 9,
+        "y": 81,
+        "matches": [
+          {
+            "key": "comspr-001",
+            "indexed_sha256": "8dd821287c66cb37033358e69c413029619ff43f680de727e96274e966b2f25b",
+            "x": 9,
+            "y": 81,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-007",
+        "flip": false,
+        "x": 8,
+        "y": 80,
+        "matches": [
+          {
+            "key": "comspr-007",
+            "indexed_sha256": "660f9a03f674992b14ba386cf9f64fe158f204ef92aa8d1cc435abfbf82dc6c8",
+            "x": 8,
+            "y": 80,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-007",
+        "flip": false,
+        "x": 9,
+        "y": 81,
+        "matches": [
+          {
+            "key": "comspr-007",
+            "indexed_sha256": "660f9a03f674992b14ba386cf9f64fe158f204ef92aa8d1cc435abfbf82dc6c8",
+            "x": 9,
+            "y": 81,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-007",
+        "flip": true,
+        "x": 8,
+        "y": 80,
+        "matches": [
+          {
+            "key": "comspr-007",
+            "indexed_sha256": "eebc4af0aca107ac73aee42b2cc1d85f326e6ff6882ea3f51b1f3cd611e948c3",
+            "x": 8,
+            "y": 80,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-007",
+        "flip": true,
+        "x": 9,
+        "y": 81,
+        "matches": [
+          {
+            "key": "comspr-007",
+            "indexed_sha256": "eebc4af0aca107ac73aee42b2cc1d85f326e6ff6882ea3f51b1f3cd611e948c3",
+            "x": 9,
+            "y": 81,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-012",
+        "flip": false,
+        "x": 8,
+        "y": 80,
+        "matches": [
+          {
+            "key": "comspr-012",
+            "indexed_sha256": "497c42f9c837a55a6d3d23353d52537af325da839db705c3779dede6c96921dd",
+            "x": 8,
+            "y": 80,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-012",
+        "flip": false,
+        "x": 9,
+        "y": 81,
+        "matches": [
+          {
+            "key": "comspr-012",
+            "indexed_sha256": "497c42f9c837a55a6d3d23353d52537af325da839db705c3779dede6c96921dd",
+            "x": 9,
+            "y": 81,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-012",
+        "flip": true,
+        "x": 8,
+        "y": 80,
+        "matches": [
+          {
+            "key": "comspr-012",
+            "indexed_sha256": "7ab3dc9b9728d6fb25ca702a9580a928276a0d64d46ffc2d9202a17bdae89152",
+            "x": 8,
+            "y": 80,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-012",
+        "flip": true,
+        "x": 9,
+        "y": 81,
+        "matches": [
+          {
+            "key": "comspr-012",
+            "indexed_sha256": "7ab3dc9b9728d6fb25ca702a9580a928276a0d64d46ffc2d9202a17bdae89152",
+            "x": 9,
+            "y": 81,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-015",
+        "flip": false,
+        "x": 8,
+        "y": 80,
+        "matches": [
+          {
+            "key": "comspr-015",
+            "indexed_sha256": "fbfc28be6ea71dc37b9f88edc364a2ca9e8662f8bd4108847a90e835c166f977",
+            "x": 8,
+            "y": 80,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-015",
+        "flip": false,
+        "x": 9,
+        "y": 81,
+        "matches": [
+          {
+            "key": "comspr-015",
+            "indexed_sha256": "fbfc28be6ea71dc37b9f88edc364a2ca9e8662f8bd4108847a90e835c166f977",
+            "x": 9,
+            "y": 81,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-015",
+        "flip": true,
+        "x": 8,
+        "y": 80,
+        "matches": [
+          {
+            "key": "comspr-015",
+            "indexed_sha256": "7140e5016b62cc604add7617fc1271b749410906698ed3a9ec0e0c8b1efe1aca",
+            "x": 8,
+            "y": 80,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-015",
+        "flip": true,
+        "x": 9,
+        "y": 81,
+        "matches": [
+          {
+            "key": "comspr-015",
+            "indexed_sha256": "7140e5016b62cc604add7617fc1271b749410906698ed3a9ec0e0c8b1efe1aca",
+            "x": 9,
+            "y": 81,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-017",
+        "flip": false,
+        "x": 8,
+        "y": 80,
+        "matches": [
+          {
+            "key": "comspr-017",
+            "indexed_sha256": "dcca2e6076cca0b733b0bc67cff759574b009f3bc836b26c27d96c2af65bab92",
+            "x": 8,
+            "y": 80,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-017",
+        "flip": false,
+        "x": 9,
+        "y": 81,
+        "matches": [
+          {
+            "key": "comspr-017",
+            "indexed_sha256": "dcca2e6076cca0b733b0bc67cff759574b009f3bc836b26c27d96c2af65bab92",
+            "x": 9,
+            "y": 81,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-017",
+        "flip": true,
+        "x": 8,
+        "y": 80,
+        "matches": [
+          {
+            "key": "comspr-017",
+            "indexed_sha256": "86fd933562895be25b34ce85fae2bf45ee8eef42b0827f021fc40d72e2da8779",
+            "x": 8,
+            "y": 80,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-017",
+        "flip": true,
+        "x": 9,
+        "y": 81,
+        "matches": [
+          {
+            "key": "comspr-017",
+            "indexed_sha256": "86fd933562895be25b34ce85fae2bf45ee8eef42b0827f021fc40d72e2da8779",
+            "x": 9,
+            "y": 81,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-021",
+        "flip": false,
+        "x": 8,
+        "y": 80,
+        "matches": [
+          {
+            "key": "comspr-021",
+            "indexed_sha256": "9d089efc776f1fc68d20faaf29fe143a25667de4297585959be9c311f4fb122b",
+            "x": 8,
+            "y": 80,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-021",
+        "flip": false,
+        "x": 9,
+        "y": 81,
+        "matches": [
+          {
+            "key": "comspr-021",
+            "indexed_sha256": "9d089efc776f1fc68d20faaf29fe143a25667de4297585959be9c311f4fb122b",
+            "x": 9,
+            "y": 81,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-021",
+        "flip": true,
+        "x": 8,
+        "y": 80,
+        "matches": [
+          {
+            "key": "comspr-021",
+            "indexed_sha256": "ba559b582fa4403d917c34136e7142872703a82337a46a823aba6d61cd597e90",
+            "x": 8,
+            "y": 80,
+            "conflict": false
+          }
+        ]
+      },
+      {
+        "key": "comspr-021",
+        "flip": true,
+        "x": 9,
+        "y": 81,
+        "matches": [
+          {
+            "key": "comspr-021",
+            "indexed_sha256": "ba559b582fa4403d917c34136e7142872703a82337a46a823aba6d61cd597e90",
+            "x": 9,
+            "y": 81,
+            "conflict": false
+          }
+        ]
+      }
+    ],
+    "diagnostic_oracle": "independent full-template scan, one source pixel as search cue, all 576 bytes verified; overlap of non-background source points defines conflict; source-only fixtures, not gameplay events"
+  },
+  "source_proof_sha256": "7c15d227c6099e89dd03ba1250461bae962a8b456fe6648504ab1dd0e3741d8b",
+  "materials": {
+    "count": 30,
+    "generation_attempts": 33,
+    "generator": "built-in image_gen",
+    "style": "approved B",
+    "size": [
+      72,
+      72
+    ],
+    "all_opaque_rgba": true,
+    "structural_min": 0.4125,
+    "structural_max": 1.0,
+    "maximum_hue_difference_degrees": 22.937704918032807,
+    "revisions": {
+      "comspr-015": 2,
+      "comspr-020": 3
+    },
+    "review": "review/hd/b39-effects/README.md",
+    "review_manifest_sha256": "83303aec392a1dda13307cd86f824cf4827a2cb0f3401c2f549f0668b40f85e7",
+    "request_sha256": "617f05b2ab18a70ed706b554cb4a0a2e7310580890efab6efc3002adfb9e3269",
+    "validation_sha256": "9e7310617e8a4b47d7fd8b71896006d5c85cfda8bf129c0cc139d1b822334856",
+    "visual_sha256": "0b3cc4252b3211d1f464d57059f74b2fa32ee58a26b0c9f16e70d87ba9421a6f",
+    "preview_sha256": "353a001d87f6efcba38e2cd3efa2e0a87dbc881041aa10c6802754f8f446d094"
+  },
+  "source_diagnostics": {
+    "cases": 6,
+    "direction_position_cases": 24,
+    "sampled_keys": [
+      "comspr-001",
+      "comspr-007",
+      "comspr-012",
+      "comspr-015",
+      "comspr-017",
+      "comspr-021"
+    ],
+    "unexercised_new_keys": [
+      "comspr-002",
+      "comspr-003",
+      "comspr-004",
+      "comspr-008",
+      "comspr-011",
+      "comspr-014",
+      "comspr-016",
+      "comspr-018",
+      "comspr-019",
+      "comspr-020",
+      "comspr-128",
+      "comspr-129",
+      "comspr-131",
+      "comspr-132",
+      "comspr-133",
+      "comspr-134",
+      "comspr-135",
+      "comspr-136",
+      "comspr-137",
+      "comspr-138",
+      "comspr-139",
+      "comspr-142",
+      "comspr-145",
+      "comspr-146"
+    ],
+    "passed": true,
+    "scope": "原向／鏡像及格間位置完整成品、背景8、框外像素、來源／色盤失配、清除、非戰場、輸入不變；正常009色盤隔離及2倍／F12。來源插入不代表正常事件。",
+    "source": "tools/pod_vga_effect_batch_test.go",
+    "source_sha256": "ffad1628de161f45b0d003828447217ce45121a9b306c0c32d86f0a8070374d1",
+    "mechanism": "go test -overlay; formal engine read-only; no production code change",
+    "log_sha256": "f56735e6a7140441bca55df81dafa79524fdebbe53408d1e3fea93ac9059b990",
+    "existing_fixture_source_commit": "e197ce9852a32474e7ac5b0b5c75fdf9434edd4e"
+  },
+  "runtime": {
+    "status": "PASS",
+    "scope": "完整COMSPR素材；正常冷啟動DEMO增量抽一條，不外推未觀測施法事件",
+    "binary_sha256": "ff54dfe2fa2fc0e4462c14718f7e85dbddc3043b5259b1559f1cf97ed9cea042",
+    "unchanged_program": true,
+    "frames": 7400,
+    "steps": 712250000,
+    "state": {
+      "cpu": "c2b1ab7e95b942a904842f53eced383f6e0c39b111a0d6c1b65e8ac740694c47",
+      "memory": "92378aa1b9a421f5f2b2b93c504aed1f80dbd06e627fd1d9f297932fbacbf540",
+      "indexed": "e77dd084128cf4f20ecce7cd104b1bb0a68f008da864490d926e338386abb7bf",
+      "palette": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+      "frames": 7400,
+      "steps": 712250000
+    },
+    "guest_files": 127,
+    "guest_state_equal": true,
+    "original_endpoint_equal": true,
+    "final_composite_equal": true,
+    "prior_assets_preserved": true,
+    "theme_files": 1331,
+    "flash_count": 0,
+    "effect_candidates": 36,
+    "source_states": 44,
+    "direct_aliases": 6,
+    "mirror_aliases": 2,
+    "sampled_keys": [
+      "comspr-001",
+      "comspr-007",
+      "comspr-012",
+      "comspr-015",
+      "comspr-017",
+      "comspr-021"
+    ],
+    "unexercised_new_keys": [
+      "comspr-002",
+      "comspr-003",
+      "comspr-004",
+      "comspr-008",
+      "comspr-011",
+      "comspr-014",
+      "comspr-016",
+      "comspr-018",
+      "comspr-019",
+      "comspr-020",
+      "comspr-128",
+      "comspr-129",
+      "comspr-131",
+      "comspr-132",
+      "comspr-133",
+      "comspr-134",
+      "comspr-135",
+      "comspr-136",
+      "comspr-137",
+      "comspr-138",
+      "comspr-139",
+      "comspr-142",
+      "comspr-145",
+      "comspr-146"
+    ],
+    "frames_sha256": {
+      "before": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d",
+      "after": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d"
+    },
+    "negative_controls": [
+      {
+        "case": "cpu",
+        "rejected": true
+      },
+      {
+        "case": "source",
+        "rejected": true
+      },
+      {
+        "case": "palette",
+        "rejected": true
+      },
+      {
+        "case": "guest",
+        "rejected": true
+      },
+      {
+        "case": "output-pixel",
+        "rejected": true
+      }
+    ],
+    "negative_controls_all_pass": true,
+    "source_proof_sha256": "7c15d227c6099e89dd03ba1250461bae962a8b456fe6648504ab1dd0e3741d8b",
+    "baseline_receipt_sha256": "543b33b1c803d2a34de6ea6b5f9697c3e85e271795bfb8bccfffc342b18aadad",
+    "runtime_inputs_sha256": "2de94c4c7318e783eca60e44971d1ac0f5ce78b2841050186f178beaeb04f347",
+    "runtime_log_sha256": "eea26577fc46f06babcc81acfead4c6017737ef8ccb2717a3f0841a0022a4d28"
+  },
+  "runtime_receipt_sha256": "ae644281085ed1843f0f301f2a32db9a221fff7cb7a706909db3a539215c892e",
+  "prior_batch_receipt_sha256": "543b33b1c803d2a34de6ea6b5f9697c3e85e271795bfb8bccfffc342b18aadad",
+  "portable_rebuild": {
+    "receipt": {
+      "status": "PASS",
+      "manifest_sha256": "61fe42e7f494bdaa93aefccbaeb91fdfa75e08cce4bab5b4289e25f793113e46",
+      "theme_files": 1331,
+      "theme_tree_sha256": "f95173e557a210af9ef4dbe6d48096ba3944602446f34a66b3ad4667f3280df9",
+      "fonts": {
+        "pod-en-3x.golemfnt": "c701ce90a4b3009e6126b0ccfc0dc042dc17c22dbf59c07b1e41c90678481db9",
+        "pod-en.golemfnt": "121e92b01c9c907aa66b8e6e78155d0a368102e599bbb9784feaec5c7f2234e0",
+        "pod-rounded-3x.golemfnt": "52e749e344c5bf6a60fa6501ad4ab17b72de0871897382a5c58d2acc3cc21730",
+        "pod-rounded-bar12.golemfnt": "89cd27498ae1dea002b3fef714695e433e198269e71f76e50bdeab9b9f4c8976",
+        "pod-rounded-bar22.golemfnt": "0d731150caef048b40b60a6baaba1b37dc1f3791c7a442b2ee51a60834f635d5",
+        "pod-rounded.golemfnt": "0f0430e7db828b8b74249b69f02ac7c590724215d9edc0f212830790ae4531ac"
+      },
+      "original_archives": {
+        "8X8D1.DAX": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+        "BIGPIC1.DAX": "bc3565c62c1654ee757d1f98f64bbb78e06bcd551c2e8593c41feb130b9f0f6b",
+        "CPIC1.DAX": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+        "DUNGCOM.DAX": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+        "TITLE.DAX": "8a53adf4044527df86d2d983f6c4eeee440c3d09773e7cbd4166279ccafde757",
+        "PIC1.DAX": "a3cf36ca3d51ca7960fd73b630489f019c5ad984808ad08bcf91186f67401ab7",
+        "SKYGRND.DAX": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+        "WILDCOM.DAX": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+        "COMSPR.DAX": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee"
+      },
+      "engine": {
+        "repository": "https://github.com/wicanr2/pools-of-darkness-cht.git",
+        "branch": "dosgolem/pod",
+        "commit": "e197ce9852a32474e7ac5b0b5c75fdf9434edd4e"
+      },
+      "input_scope": "Git files and explicitly supplied original DAX only; no old workplace",
+      "rights": "private review inputs; original indexes reconstructed locally"
+    },
+    "receipt_sha256": "34300f9a305cba2e22dfbddf82a8c364a9487105116b90776aeeb25a16f84857",
+    "source_git_tree": "f8326b83a38a487941a76ef7e1fc77548e445a52",
+    "scope": "乾淨Git檔案加自備原版重建1331檔及六份字型；Linux amd64容器；正式程式沿已驗e197ce9，不重編。"
+  },
+  "activation": {
+    "method": "Linux renameat2 RENAME_EXCHANGE; complete validated theme",
+    "official": "workplace/hd/theme",
+    "tested": "workplace/hd/theme-b39-stage",
+    "previous": "workplace/hd/theme-b39-previous",
+    "official_files": 1331,
+    "prior_files": 1271,
+    "official_equals_tested": true,
+    "prior_equals_baseline": true,
+    "unchanged_program": true,
+    "binary_sha256": "ff54dfe2fa2fc0e4462c14718f7e85dbddc3043b5259b1559f1cf97ed9cea042",
+    "theme_tree_sha256": "f95173e557a210af9ef4dbe6d48096ba3944602446f34a66b3ad4667f3280df9"
+  },
+  "tools": {
+    "python": "3.13.16",
+    "pillow": "11.0.0",
+    "numpy": "2.1.3",
+    "image": "sosb-img:r1",
+    "image_id": "8b9012adb991ebd1714725cf122ac052462d2993a17dd7b3ec2504e213ae9cf3"
+  },
+  "tool_sha256": {
+    "hd_vga_request.py": "1556967df15693f6c1af4c804a2b5350ee376d9cde379c9a0212059040e0c777",
+    "hd_vga_prepare.py": "d3f1203904cb5a82a63f9ca9e85883a255a0dcb81d6013f74b0d3b0a6fa44ace",
+    "hd_vga_validate.py": "cbe88b3d90bb834331f4176efa61f86da90090194ae376e562a55f5ac2a048d9",
+    "hd_vga_review.py": "654c44466473ebc7be6bab3b9969bda4705591dca719c664601974aea6480340",
+    "hd_vga_effects_theme.py": "585548e7d1ab8fb3b775bc64a01901d3f7adee24a4186157b43b63a9a1638478",
+    "hd_vga_readme_preview.py": "a2cf9dbbf6a0e2924a25ce4aaf66f6d6342b3afdf8a89070ca62747a91b18741",
+    "vga_effect_incremental_check.py": "a003a7c3a217894862329a1526b28579514cd886492d49ec0cfc76ebcca403ab",
+    "rebuild_theme_snapshot.py": "1457bab5f60085e6d5f38c485d4a55dc41feb1303ee4289d09f3f54bf8404fea",
+    "rebuild_assets.py": "e4dd1f4857fabd381b16ca04a967679eaf0ceabcff04f78ae0027cca604c8611"
+  },
+  "evidence_recipe_sha256": {
+    "import-generated.py": "61737004256e9e22c40f07a08c29fe3f1f519e369c31204fa733e29e573f24e3",
+    "normal.sh": "c5ce4f9c3ca765221ad42269a84f0aea39f6ed76f19c706dca70f5d80ad07f1f",
+    "activate.py": "58272b99b75c6b6ebb71df0fa7b5a0defdbb95af516742652de5f1f6c7c9590a",
+    "report.py": "ee3762ffcd750e27fa747db6456e4caab5515016efb21b51d804db19d471b87c"
+  }
+}

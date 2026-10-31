@@ -723,6 +723,44 @@
         "comspr-010",
         "comspr-013"
       ]
+    },
+    {
+      "kind": "combat-effects",
+      "request_sha256": "617f05b2ab18a70ed706b554cb4a0a2e7310580890efab6efc3002adfb9e3269",
+      "validation_sha256": "9e7310617e8a4b47d7fd8b71896006d5c85cfda8bf129c0cc139d1b822334856",
+      "visual_sha256": "0b3cc4252b3211d1f464d57059f74b2fa32ee58a26b0c9f16e70d87ba9421a6f",
+      "keys": [
+        "comspr-128",
+        "comspr-001",
+        "comspr-129",
+        "comspr-002",
+        "comspr-003",
+        "comspr-131",
+        "comspr-004",
+        "comspr-132",
+        "comspr-133",
+        "comspr-134",
+        "comspr-007",
+        "comspr-135",
+        "comspr-008",
+        "comspr-136",
+        "comspr-137",
+        "comspr-138",
+        "comspr-011",
+        "comspr-139",
+        "comspr-012",
+        "comspr-014",
+        "comspr-142",
+        "comspr-015",
+        "comspr-016",
+        "comspr-017",
+        "comspr-145",
+        "comspr-018",
+        "comspr-146",
+        "comspr-019",
+        "comspr-020",
+        "comspr-021"
+      ]
     }
   ]
 }

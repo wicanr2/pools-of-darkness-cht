@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "scope": "完整COMSPR素材；正常冷啟動DEMO增量抽一條，不外推未觀測施法事件",
+  "binary_sha256": "ff54dfe2fa2fc0e4462c14718f7e85dbddc3043b5259b1559f1cf97ed9cea042",
+  "unchanged_program": true,
+  "frames": 7400,
+  "steps": 712250000,
+  "state": {
+    "cpu": "c2b1ab7e95b942a904842f53eced383f6e0c39b111a0d6c1b65e8ac740694c47",
+    "memory": "92378aa1b9a421f5f2b2b93c504aed1f80dbd06e627fd1d9f297932fbacbf540",
+    "indexed": "e77dd084128cf4f20ecce7cd104b1bb0a68f008da864490d926e338386abb7bf",
+    "palette": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
+    "frames": 7400,
+    "steps": 712250000
+  },
+  "guest_files": 127,
+  "guest_state_equal": true,
+  "original_endpoint_equal": true,
+  "final_composite_equal": true,
+  "prior_assets_preserved": true,
+  "theme_files": 1331,
+  "flash_count": 0,
+  "effect_candidates": 36,
+  "source_states": 44,
+  "direct_aliases": 6,
+  "mirror_aliases": 2,
+  "sampled_keys": [
+    "comspr-001",
+    "comspr-007",
+    "comspr-012",
+    "comspr-015",
+    "comspr-017",
+    "comspr-021"
+  ],
+  "unexercised_new_keys": [
+    "comspr-002",
+    "comspr-003",
+    "comspr-004",
+    "comspr-008",
+    "comspr-011",
+    "comspr-014",
+    "comspr-016",
+    "comspr-018",
+    "comspr-019",
+    "comspr-020",
+    "comspr-128",
+    "comspr-129",
+    "comspr-131",
+    "comspr-132",
+    "comspr-133",
+    "comspr-134",
+    "comspr-135",
+    "comspr-136",
+    "comspr-137",
+    "comspr-138",
+    "comspr-139",
+    "comspr-142",
+    "comspr-145",
+    "comspr-146"
+  ],
+  "frames_sha256": {
+    "before": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d",
+    "after": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d"
+  },
+  "negative_controls": [
+    {
+      "case": "cpu",
+      "rejected": true
+    },
+    {
+      "case": "source",
+      "rejected": true
+    },
+    {
+      "case": "palette",
+      "rejected": true
+    },
+    {
+      "case": "guest",
+      "rejected": true
+    },
+    {
+      "case": "output-pixel",
+      "rejected": true
+    }
+  ],
+  "negative_controls_all_pass": true,
+  "source_proof_sha256": "7c15d227c6099e89dd03ba1250461bae962a8b456fe6648504ab1dd0e3741d8b",
+  "baseline_receipt_sha256": "543b33b1c803d2a34de6ea6b5f9697c3e85e271795bfb8bccfffc342b18aadad",
+  "runtime_inputs_sha256": "2de94c4c7318e783eca60e44971d1ac0f5ce78b2841050186f178beaeb04f347",
+  "runtime_log_sha256": "eea26577fc46f06babcc81acfead4c6017737ef8ccb2717a3f0841a0022a4d28"
+}
