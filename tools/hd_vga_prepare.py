@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 import re
 
-from PIL import Image, ImageFilter
+from PIL import Image, ImageChops, ImageFilter
 
 
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -28,8 +28,31 @@ def main():
         if not raws:raise ValueError(f'{key}: 缺生成原圖')
         raw=max(raws,key=lambda p:int(re.search(r'-r(\d+)-raw\.png$',p.name)[1]))
         job=a.out/'jobs'/(raw.name.replace('-raw.png','.json'))
-        if job.exists() and json.loads(job.read_text())['raw_sha256']!=sha(raw):raise ValueError(f'{key}: raw changed')
-        im=Image.open(raw).convert('RGBA').resize(tuple(it['output_size']),Image.Resampling.LANCZOS)
+        job_data=json.loads(job.read_text()) if job.exists() else {}
+        if job_data and job_data['raw_sha256']!=sha(raw):raise ValueError(f'{key}: raw changed')
+        original=Image.open(raw).convert('RGBA')
+        framing=job_data.get('framing')
+        if framing:
+            if it['source_file']!='SPRIT1.DAX' or framing['method']!='whole-image-uniform-pad' or framing['threshold']!=1:
+                raise ValueError('未核對的素材對位方法')
+            small,offset=framing['size'],framing['offset']
+            if not all(type(v) is int for v in small+offset) or min(small)<=0 or min(offset)<0:
+                raise ValueError('對位尺寸或座標不合')
+            if small[0]*original.height!=small[1]*original.width or any(offset[n]+small[n]>it['output_size'][n] for n in (0,1)):
+                raise ValueError('對位非等比或整張超出畫布')
+            ref_path=a.req/it['indexed']
+            if sha(ref_path)!=it['indexed_sha256']:raise ValueError('對位來源雜湊改變')
+            ref=ref_path.read_bytes();w,h=it['source_size']
+            points=[(n%w,n//w) for n,c in enumerate(ref) if c!=0]
+            bounds=[min(x for x,y in points),min(y for x,y in points),max(x for x,y in points)+1,max(y for x,y in points)+1]
+            if bounds!=framing['source_bounds']:raise ValueError('對位來源外框改變')
+            mask=original.convert('RGB').point(lambda v:255 if v>1 else 0).split()
+            ink=ImageChops.lighter(ImageChops.lighter(mask[0],mask[1]),mask[2])
+            if list(ink.getbbox())!=framing['raw_bounds']:raise ValueError('對位生成稿外框改變')
+            im=Image.new('RGBA',tuple(it['output_size']),(0,0,0,255))
+            im.paste(original.resize(tuple(small),Image.Resampling.LANCZOS),tuple(offset))
+        else:
+            im=original.resize(tuple(it['output_size']),Image.Resampling.LANCZOS)
         im.putalpha(255)
         anim=it.get('animation')
         if anim:
@@ -40,6 +63,7 @@ def main():
             if base.size!=im.size or mask.size!=im.size:raise ValueError('動畫尺寸不合')
             im=Image.composite(im,base,mask)
         preparation='whole-image LANCZOS; opaque RGBA; source mask expanded 6 output pixels'
+        if framing:preparation='whole-image uniform LANCZOS reduction and opaque black padding; recorded source/raw bounds; no crop or recoloring'
         if it['source_file']=='8X8D1.DAX':
             if it['source_size']!=[8,8]or it['output_size']!=[24,24]or it.get('transparent_index')!=13:
                 raise ValueError('VGA牆面來源契約不符')

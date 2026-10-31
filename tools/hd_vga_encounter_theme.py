@@ -25,7 +25,9 @@ def main():
     assert valid['request_manifest_sha256'] == sha(a.req/'manifest.json')
     numeric = {r['key']: r for r in valid['items']}
     sources = {r['key']: r for r in proof['items']}
-    allowed_blocks = {41} if proof['issue'] == 65 else {5,27,28,29,30,42,53,69} if proof['issue'] == 66 else set()
+    blocks_by_issue = {65:{41}, 66:{5,27,28,29,30,42,53,69},
+                      67:{8,15,17,23,45,46,51,66,67,74,76,79,81,82,83,84,87,90,96,108}}
+    allowed_blocks = blocks_by_issue.get(proof['issue'], set())
     assert allowed_blocks, '未知來源批次須先固定證據及規格'
     keys = {f'sprit1-{bid:03}@{f}' for bid in allowed_blocks for f in range(3)}
     assert set(sources) == set(numeric) == {r['key'] for r in request['items']} == keys
@@ -35,15 +37,18 @@ def main():
         assert proof['normal']['full_nonzero_source_equal'] and proof['normal']['used_rgb_equal']
     else:
         assert a.merge_existing, '續批必須保留已驗041條目'
-        assert proof['prior_runtime_receipt_sha256'] == 'bc54803fe1e6d9646a009481571e41bb1f5bdc156b600b391504c7a0599bdd65'
+        expected_receipt = 'eb554c79c46c494981b837a1478da2ddbafb328fab1b1bcfb8de369dba7dee98' if proof['issue']==67 else 'bc54803fe1e6d9646a009481571e41bb1f5bdc156b600b391504c7a0599bdd65'
+        assert proof['prior_runtime_receipt_sha256'] == expected_receipt
         assert proof['new_keys'] and set(proof['new_keys']) == keys
-        assert len(proof['complete_foreground_unambiguous']) == 27 and len(proof['diagnostic_cases']) == 12
+        assert len(proof['complete_foreground_unambiguous']) == (87 if proof['issue']==67 else 27) and len(proof['diagnostic_cases']) == 12
     target = a.theme/'encounters.json'
     manifest = dict(version=1, scale=3, kind='encounter-sprites', items=[])
     if a.merge_existing:
         prior = json.loads(target.read_text())
         assert {k:v for k,v in prior.items() if k!='items'} == {k:v for k,v in manifest.items() if k!='items'}
-        assert len(prior['items']) == 3 and {r['key'] for r in prior['items']} == {f'sprit1-041@{f}' for f in range(3)}
+        prior_blocks = blocks_by_issue[65] | blocks_by_issue[66] if proof['issue']==67 else blocks_by_issue[65]
+        assert len(prior['items']) == len(prior_blocks)*3 and {r['key'] for r in prior['items']} == {f'sprit1-{b:03}@{f}' for b in prior_blocks for f in range(3)}
+        if proof['issue']==67:assert sha(target)==proof['prior_encounters_sha256']
         manifest = prior
     else:
         assert not target.exists()
@@ -59,7 +64,8 @@ def main():
         assert sha(png) == visual[key] == numeric[key]['png_sha256']
         assert sha(idx) == item['indexed_sha256'] == s['indexed_sha256'] and sha(pal) == item['palette_sha256']
         ref, rgb = idx.read_bytes(), pal.read_bytes()
-        assert len(ref) == 7744 and len(rgb) == 768 and all(v == 0 or v >= 176 for v in ref)
+        # 完整來源SHA已在上方確認。低色號例外只限此已固定來源的一點10。
+        assert len(ref) == 7744 and len(rgb) == 768 and all(v == 0 or v >= 176 or (key=='sprit1-081@0' and v==10) for v in ref)
         used = sorted(set(ref)-{0})
         signature = hashlib.sha256(b''.join(bytes([v])+rgb[v*3:v*3+3] for v in used)).hexdigest()
         assert used == s['used_colors'] and signature == s['used_rgb_sha256']
