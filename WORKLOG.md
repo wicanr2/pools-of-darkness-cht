@@ -1756,3 +1756,5 @@
 - 環境修正獨立記錄：macOS建置完成後通用otool名稱不存在，改用映像實際的x86_64-apple-darwin24.5-otool重跑依賴檢查；第一個Wine映像缺Python，檢查能力後沿用yuan映像。驗證器首次掛錯原版路徑，立即改回已存在的input/dos/pod，rmdir移除自動建立的兩個root-owned空目錄，沒有遞迴改權限。這些不列為產品缺陷。
 - 使用既有sosb-img:r1（8b9012adb991）、dosgolem-go-ebiten:1.24-r1（8ed6bdee2bce）、cok-osxcross:go1.24.13-sdk15.5-r1（a2dc911a8709）、kgb-cht-pkg:1.99.1-r2（dfc4fd92efc6）、yuan-wine-verify:noble-r2（31664639bb8c），未新增映像。編排入口tools/package.sh完成語法檢查，本輪各步驟實際執行通過，未另重跑整輪。macOS SDK不入Git，完整三平台映像重建限制已寫SETUP。
 - 固定收據docs/re/026-package-runtime.json與規格012、研究索引、README、SETUP、CONTEXT同步。原案仍缺配樂與試聽、完整多語系、無敵、完整動畫HD及HD patch；#12保持開啟。原版素材與所有含原版候選只留本機dist-all，不上傳。
+- 主專案4bdd711已推私人main，#69附[驗收結果](https://github.com/wicanr2/pools-of-darkness-cht/issues/69#issuecomment-6546403075)後關閉並回讀CLOSED；#12補[交付進度](https://github.com/wicanr2/pools-of-darkness-cht/issues/12#issuecomment-6546405251)，與#9／#10／#11／#16回讀OPEN。儲存庫回讀PRIVATE。
+- 最終九包SHA及本機／Git收據一致，驗收收據SHA d665b77aebaf2aaaf5bf01725db498d55552a284f7183bd934035e19cf59c758。448個本機文件連結及README 61張內嵌圖入口通過，正式程式SHA未變。全工作樹root-owned與誤建.md目錄0，依容器掛載來源檢查本專案容器0，剩餘264GiB，其他專案未動。
