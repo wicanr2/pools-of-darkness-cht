@@ -214,7 +214,7 @@ func locateOriginals(dir string) (map[string]string, error) {
 			return nil, err
 		}
 		if got != r.sha {
-			return nil, fmt.Errorf("%s 的 SHA-256 不符：預期 %s，實際 %s（本中文化只支援 DOS 英文版 1.2）", filepath.Join(dir, n), r.sha, got)
+			return nil, fmt.Errorf("%s 的 SHA-256 不符：預期 %s，實際 %s（本中文化只支援 DOS 英文版 1.10）", filepath.Join(dir, n), r.sha, got)
 		}
 		names[r.name] = n
 	}
