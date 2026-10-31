@@ -1658,3 +1658,4 @@
 - 1331檔完整原子啟用，正式逐檔同受測候選，1271檔回復副本保留於workplace/hd/theme-b39-previous。固定收據docs/re/017-b39-runtime.json綁來源、素材、抽驗、正常比較、啟用與重建。README直接顯示30張原尺寸成品預覽，素材與正常遊戲截圖分開標示。
 - 沿用sosb-img:r1與dosgolem-go-ebiten:1.24-r1，沒有建新映像；Go快取只在容器/tmp。COMSPR素材對應完成，未觀測正常事件及歧義仍有限制；角色組合、小圖示及動畫由#10續辦，不重開Go繪圖收尾或G6探索。
 - 固定收據重算相同，683個本機連結及53張README內嵌圖片通過。變更檔1000:1000，原版壓縮檔SHA不變，root-owned及誤建.md目錄為空，長期Go快取為空；本批容器0、引擎工作樹乾淨，推送前回讀遠端仍為PRIVATE。
+- 主專案a391946已推私人main；正式引擎沿本專案dosgolem/pod的e197ce9。#63附[驗收留言](https://github.com/wicanr2/pools-of-darkness-cht/issues/63#issuecomment-6541977084)後關閉並回讀CLOSED；#10補[完整特效素材與剩餘範圍](https://github.com/wicanr2/pools-of-darkness-cht/issues/10#issuecomment-6541979268)，回讀OPEN。兩工作樹乾淨，本批容器0。
