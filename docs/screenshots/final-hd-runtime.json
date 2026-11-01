@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-02",
+  "issue": 77,
+  "platform": "Linux Docker Xvfb",
+  "scope": "Original VACE FINAL direct entry, not a replayed campaign victory",
+  "entry": "ADLIB.COM then VACE.EXE 4 FINAL 0 1",
+  "frame": 1532,
+  "source_update": 1531,
+  "clock_percent": 50,
+  "scale": 3,
+  "theme": "B, FINAL b48, B posters",
+  "language": "zh-TW",
+  "executable_sha256": "d073c91ad6fa178351541a6e57e000df417675f14d6af926e1b363ceb6e7eae4",
+  "engine_commit": "3fdeeb8ddd93ca84ee3626bc357dc2586c814883",
+  "source_idx_sha256": "1c1db3fd89ec852c3657796dbcb118919b8214f2929f6ab07854ed47eb6577a7",
+  "source_pal_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+  "screenshot_sha256": "b1cac80ef9f2476570c8d720fbeddac46d812240f1a0ed68b0c1eff67e40c376",
+  "size": [
+    1440,
+    600
+  ],
+  "rng": "No RNG comparison required for scripted VACE artwork; no seed injection",
+  "verification": "Same initial input and equivalent steps across original, HD and host-control cases; not a campaign victory"
+}

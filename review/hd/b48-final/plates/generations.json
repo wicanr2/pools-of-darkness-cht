@@ -1,0 +1,65 @@
+[
+  {
+    "key": "dragon",
+    "source": "/home/anr2/.codex/generated_images/01a19636-cfac-7052-9a02-683f15c5b0ed/exec-c43b7bc3-0bfe-4ecd-a7df-0c022b2d3647.png",
+    "prompt": "Use case: style-transfer. Asset: Pools of Darkness FINAL ending HD game artwork, 960x504 opaque RGBA, wide 40:21 composition. Image 1 is the exact original composition and color reference. Image 2 is the approved painterly fantasy style and stone skull frame reference only. Redraw image 1 as richly detailed hand-painted classic fantasy illustration, no pixelation. Preserve every subject position, size, silhouette and black outer margin: a blazing orange-gold winged dragonlike demon with two raised bat wings, legs spread, long arms, red-orange magical globes beside its left hand, hovering over the large black oval pit in a purple and blue stone platform. Dark purple chamber, green hexagonal window centered high behind it. Keep its pose, visible head, wings, limbs and orb positions from image 1; do not invent extra creatures. Retain the rectangular gray-blue skull-and-spike frame, top three skulls, side pillars, frame corners, inner scene bounds and black margins exactly aligned to image 1, rendered in the same polished painted material as image 2. No text, no lettering, no watermark, no new ornaments. Treat the orange light as magical glow, no gore. Maintain original dominant purple/blue, orange/gold and green palette. Full artwork only; no caption strip. Wide exact 960x504 layout.",
+    "references": [
+      "/home/anr2/cht/golden_box/pool-of-darkness/workplace/probe/final-hd/reference-b00-f00.png",
+      "/home/anr2/cht/golden_box/pool-of-darkness/review/hd/b44-intro/intro-phlan.png"
+    ]
+  },
+  {
+    "key": "wizard",
+    "source": "/home/anr2/.codex/generated_images/01a19636-cfac-7052-9a02-683f15c5b0ed/exec-d77501f6-c2d2-451c-9c55-59d2fdb0cffa.png",
+    "prompt": "Use case: style-transfer. Asset: Pools of Darkness FINAL ending HD painting, opaque, exact wide 960x504 layout. Image 1 is the original composition/color reference; image 2 provides only approved classic fantasy oil-painted finish and gray-blue skull-frame material. Faithfully repaint image 1 at high detail. An elderly white-haired wizard with very long flowing white beard and round spectacles, thoughtful benevolent face, ochre/gold broad-brim pointed wizard hat and matching warm gold robes, one visible hand resting across his chest with a green ring; keep his exact original pose, head size, hat silhouette, robe folds and hand position. He is seen through the large circular opening centered in a violet/blue stone wall, with deep black space immediately behind his portrait. Preserve the surrounding concentric purple-blue portal masonry and exact original rectangular gray-blue frame with three skulls and spikes across the top. Preserve original framing, black outside margins, coordinates and relative sizes. Painterly rich detail, clear readable fantasy portrait, no pixelation. No extra staff, no new characters, no text, no lettering, no watermark. Use original ochre gold, white, deep purple and blue colors. Full artwork only, no caption strip.",
+    "references": [
+      "/home/anr2/cht/golden_box/pool-of-darkness/workplace/probe/final-hd/reference-b04-f00.png",
+      "/home/anr2/cht/golden_box/pool-of-darkness/review/hd/b44-intro/intro-phlan.png"
+    ]
+  },
+  {
+    "key": "city",
+    "source": "/home/anr2/.codex/generated_images/01a19636-cfac-7052-9a02-683f15c5b0ed/exec-15f95b73-bac7-4589-b0d1-1d3a24fc260a.png",
+    "prompt": "Use case: precise-object-edit. Asset: the restored Phlan scene for Pools of Darkness FINAL ending. Edit image 1, the approved HD painting, to match the peaceful restored city in original reference image 2. Remove every orange fire or burning flame, replacing those tiny areas with the matching intact roof, stonework, trees or dark doorway. Keep ALL other artwork, camera, composition, buildings, red roofs, foreground classical portico, sea/lake shoreline, mountains, pine forest, cloudy dark-teal sky, black outer margins, and the complete three-skull blue-gray rectangular frame unchanged. This is a restored city, with no fire, destruction, people or smoke. Keep exactly the approved rich hand-painted fantasy style and original palette. Do not redesign architecture or frame. Opaque wide 960x504 painting; no text or watermark.",
+    "references": [
+      "/home/anr2/cht/golden_box/pool-of-darkness/review/hd/b44-intro/intro-phlan.png",
+      "/home/anr2/cht/golden_box/pool-of-darkness/workplace/probe/final-hd/reference-b03-f02.png"
+    ]
+  },
+  {
+    "key": "pool-empty",
+    "source": "/home/anr2/.codex/generated_images/01a19636-cfac-7052-9a02-683f15c5b0ed/exec-4a45a65d-53f1-4276-97ba-cae0f4f1ac9b.png",
+    "prompt": "Use case: precise-object-edit. Asset: empty pool chamber background for an ending animation. Edit image 1, the approved HD dragon-demon painting, to exactly match the empty original scene in image 2. Remove the orange winged creature and every orb, flame, glow and shadow associated with it. Reveal the intact dark violet and blue stone back wall and unchanged stone floor behind it. Retain the large black oval pit, the purple-blue ring/platform around the pit, the green hexagonal window and its eerie sky high at the center, and the entire gray-blue three-skull rectangular frame with black outer margins. All architecture, framing, window position, pit shape, palette, lighting and proportions must match image 2, in the same detailed painterly style as image 1. No creatures, no fire, no objects, no text or watermark. Wide 960x504 opaque artwork; preserve alignment of frame and fixed environment.",
+    "references": [
+      "/home/anr2/cht/golden_box/pool-of-darkness/workplace/hd/out/b48-final/dragon-raw.png",
+      "/home/anr2/cht/golden_box/pool-of-darkness/workplace/probe/final-hd/reference-b01-f11.png"
+    ]
+  },
+  {
+    "key": "lake-empty",
+    "source": "/home/anr2/.codex/generated_images/01a19636-cfac-7052-9a02-683f15c5b0ed/exec-f3c4ddbe-f3e2-4567-aa4a-9a9dfb19b8f9.png",
+    "prompt": "Use case: precise-object-edit. Asset: vanished Phlan before its magical restoration. Edit the HD painting in image 1 to match original image 2. Remove ALL buildings, roofs, towers, classical foreground portico, coastal cliffs and city peninsula, including the small red roof at lower left. Replace the removed city and peninsula with uninterrupted calm deep teal lake/sea water, matching image 2. Preserve ONLY the short broken ochre curved shore wall remnant near left-center extending diagonally toward the water, at exactly the size and position in image 2. Keep the dark teal cloudy sky, distant snowy mountains, upper-right forest hillside, green foreground pine canopy, rectangular blue-gray three-skull frame, and black outer margins. The entire right-center area beneath the hills is water, with no town, island, buildings or tall cliff. Rich hand-painted classic fantasy finish matching image 1, subdued original teal/green palette. No new objects or text. Exact wide 960x504 opaque composition.",
+    "references": [
+      "/home/anr2/cht/golden_box/pool-of-darkness/workplace/hd/out/b48-final/city-raw.png",
+      "/home/anr2/cht/golden_box/pool-of-darkness/workplace/probe/final-hd/reference-b02-f00.png"
+    ]
+  },
+  {
+    "key": "portal-closed",
+    "source": "/home/anr2/.codex/generated_images/01a19636-cfac-7052-9a02-683f15c5b0ed/exec-753690ae-0fda-42cb-b9a6-09d41a5a400b.png",
+    "prompt": "Use case: precise-object-edit. Asset: closed circular portal in ending animation. Edit image 1 to match original image 2. Remove the wizard, hat, beard, hand, robe, ring and all black open portal space completely. Fill the complete central circular disk with solid violet and cobalt-blue polygonal stone masonry exactly as the original reference image 2. Keep the thick concentric outer ring, its radial blocks and blue highlights, the surrounding stone wall, the entire gray-blue three-skull frame and black outer margins fixed. The central disk is a closed stone wall, no hole, no character, no portal glow, no extra objects. Preserve exact circular boundary and original purple/blue colors, in image 1's detailed hand-painted fantasy material. Wide 960x504 opaque artwork, no text or watermark.",
+    "references": [
+      "/home/anr2/cht/golden_box/pool-of-darkness/workplace/hd/out/b48-final/wizard-raw.png",
+      "/home/anr2/cht/golden_box/pool-of-darkness/workplace/probe/final-hd/reference-b05-f01.png"
+    ]
+  },
+  {
+    "key": "wizard-wave",
+    "source": "/home/anr2/.codex/generated_images/01a19636-cfac-7052-9a02-683f15c5b0ed/exec-77a71f67-712d-4281-b12c-4203949296be.png",
+    "prompt": "Use case: identity-preserve. Asset: next animation pose of the same elderly wizard, opaque wide 960x504 painting. Edit image 1 to follow exactly the raised-hand farewell pose in original image 2. Keep the SAME wizard identity, glasses, long white beard, gold hat and gold robes, purple-blue circular stone ring, frame and black margins. Change the folded hand and forearm into one upright hand beside the LEFT side of his face as viewed, palm facing the viewer, fingers together and pointing up, thumb on viewer-right, as in image 2. His previous folded hand is no longer visible; do not add an extra arm or extra fingers. Match image 2's palm position, hand size, head position, and beard outline. Add only the small icy blue magical glints at the base of the raised palm shown in image 2. Keep eyes and expression recognizably the same, preserve all nonmoving masonry and the entire skull frame unchanged. Rich hand-painted fantasy style, no pixelation, no letters or text, no watermark.",
+    "references": [
+      "/home/anr2/cht/golden_box/pool-of-darkness/workplace/hd/out/b48-final/wizard-raw.png",
+      "/home/anr2/cht/golden_box/pool-of-darkness/workplace/hd/requests/b48-final/final-b04-f13-3x.png"
+    ]
+  }
+]

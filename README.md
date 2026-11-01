@@ -7,7 +7,7 @@
 
 在其他機器重建請讀[SETUP.md](SETUP.md)。必要HD成品、開源字型來源與重建清單已存於本儲存庫；原版遊戲資料需自備。
 
-已有`v.0.1.1-20261101`三平台HD patch候選，含B版HD海報、繁中／英文／簡中、F1無敵及片頭HD。玩家自備原版，首次啟動自動重建辨識資料。Linux已抽驗片頭、demo中止與存讀檔；Windows以Wine驗首次匯入及重啟，macOS僅驗universal結構。操作與交付位置見[HD patch入口](SETUP.md#hd-patch候選)，範圍見[驗收紀錄](docs/re/033-hd-patch-runtime.json)。日韓已通過目前開發版的[正常路線抽樣](docs/re/034-jako-runtime.json)，可從Git來源重建；既有12包維持各自原始範圍。配樂、片尾HD與推廣片仍待交付。
+已有`v.0.1.1-20261101`三平台HD patch候選，含B版HD海報、繁中／英文／簡中、F1無敵及片頭HD。玩家自備原版，首次啟動自動重建辨識資料。Linux已抽驗片頭、demo中止與存讀檔；Windows以Wine驗首次匯入及重啟，macOS僅驗universal結構。操作與交付位置見[HD patch入口](SETUP.md#hd-patch候選)，範圍見[驗收紀錄](docs/re/033-hd-patch-runtime.json)。目前開發版另有[日韓語系](docs/re/034-jako-runtime.json)與[片尾HD](docs/re/035-final-hd.md)，可從Git來源重建；既有12包維持各自原始範圍。配樂與推廣片仍待交付。
 
 ## 重返菲蘭城
 
@@ -111,6 +111,13 @@ HD 採完整藍紫色禮服，保留女王、王冠與寶座構圖。標題文�
 ![正常片頭HD與繁中字幕](docs/screenshots/intro-hd-runtime.png)
 
 這是採B版海報的正常開場實際視窗，逐像素同核准原型；來源與驗收見[執行期收據](docs/re/033-hd-patch-runtime.json)。
+
+### 片尾 HD
+
+![片尾法師揮手與B版兩側海報](docs/screenshots/final-hd-window.png)
+
+片尾六區塊58圖由43種HD相位涵蓋，包含巨龍、菲蘭城復原、法師揮手及關門。上圖取自Linux容器中的原版VACE片尾播放器直接入口，使用3倍HD與繁中海報；沒有重播完整通關。原版圖格順序與狀態保持，F2／F8／F12抽驗通過。
+[原版並列與生成紀錄](review/hd/b48-final/README.md)、[截圖來源](docs/screenshots/final-hd-runtime.json)及[驗收範圍](docs/re/035-final-hd.md)另列。
 
 ### 原版 BIGPIC 與 HD 重畫
 

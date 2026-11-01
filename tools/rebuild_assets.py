@@ -51,7 +51,7 @@ def rebuild(root, original, output):
     if len(names) != len(set(names)):
         raise ValueError('重建清單有重複路徑')
     blocks, sources, planned = {}, {}, {}
-    intro = {}
+    movies = {}
     # 在任何輸出寫入前驗證全部輸入。
     for name, expected in lock['source_files'].items():
         if sha(inside(root, name)) != expected:
@@ -62,11 +62,12 @@ def rebuild(root, original, output):
             raise ValueError(f'原版雜湊不符：{name}')
         if name.endswith('.DAX'):
             blocks[name] = dict(dax_blocks(path.read_bytes()))
-        elif name == 'INTRO.BMA':
+        elif name in ('INTRO.BMA', 'FINAL.BMA'):
+            movie = {}; movies[name] = movie
             for frame, before, after in bma_states(decode_bma(path.read_bytes())):
                 points = [p for span in frame.spans for p in range(span.y*320+span.x,span.y*320+span.x+len(span.pixels)) if p<53760]
-                intro[(frame.block,frame.index)] = dict(before=before[:53760],after=after[:53760],writes=struct.pack('<'+'H'*len(points),*points))
-        elif name != 'INTRO.ACF':
+                movie[(frame.block,frame.index)] = dict(before=before[:53760],after=after[:53760],writes=struct.pack('<'+'H'*len(points),*points))
+        elif name not in ('INTRO.ACF', 'FINAL.ACF'):
             raise ValueError('未知的原版重建輸入')
     for row in files:
         name = row['path']
@@ -78,7 +79,10 @@ def rebuild(root, original, output):
             planned[name] = p
             continue
         if row['kind'] == 'original-intro':
-            source = intro[(row['block'],row['frame'])]
+            archive = row.get('archive') or 'INTRO.BMA'
+            if archive not in ('INTRO.BMA', 'FINAL.BMA'):
+                raise ValueError('未知BMA來源')
+            source = movies[archive][(row['block'],row['frame'])]
             if row['decoder'] == 'bma-index' and row['side'] in ('before','after'):
                 data = source[row['side']]
             elif row['decoder'] == 'bma-writes':
@@ -143,7 +147,7 @@ def rebuild(root, original, output):
                      theme_tree_sha256=hashlib.sha256(json.dumps(actual,sort_keys=True).encode()).hexdigest(),
                      fonts={p.name:sha(p) for p in sorted(fonts.iterdir())},
                      original_archives=lock['original_archives'], engine=lock['engine'],
-                     input_scope='Git files and explicitly supplied original DAX/INTRO.BMA/INTRO.ACF; no old workplace',
+                     input_scope='Git files and explicitly supplied original DAX/BMA/ACF; no old workplace',
                      rights='private review inputs; original indexes reconstructed locally')
         (stage/'assets-receipt.json').write_text(json.dumps(proof,ensure_ascii=False,indent=2)+'\n')
         stage.rename(output)

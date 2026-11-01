@@ -46,3 +46,4 @@
 
 - [012 HD patch](012-package.md#hd-patch-conformed)：#75，B版海報、首次匯入與三平台本機候選CONFORMED。核心[032](../re/032-hd-patch-core.json)與實際封包[033](../re/033-hd-patch-runtime.json)分別保存；macOS真機未驗，原案其他功能未完。
 - [015 日文與韓文](015-multilingual.md#日文與韓文收尾)：#76，正式接入與正常抽樣CONFORMED；[034收據](../re/034-jako-runtime.json)保存資料、字型、乾淨Git重建及原版同狀態證據。
+- [010 片尾FINAL](010-hd-theme.md#b48-片尾final)：#77，播放器直接入口及既有正常DEMO回歸CONFORMED。58次來源／43種相位、三路2001格、F2／F8／F12及2034檔／18字型乾淨重建通過；[035](../re/035-final-hd.md)保存來源與驗收，正常通關入口仍未知。

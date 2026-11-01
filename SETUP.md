@@ -19,7 +19,7 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 
 | 步驟 | 輸出與檢查 |
 |---|---|
-| `assets` | 重生856份原版辨識索引與133份BMA有序寫入表，共989份；重建1888檔主題及十八份字型，每檔核對已驗SHA-256 |
+| `assets` | 重生900份原版辨識索引與191份BMA有序寫入表，共1091份；重建2034檔主題及十八份字型，每檔核對已驗SHA-256 |
 | `build` | 從本儲存庫`dosgolem/pod`取得[固定commit](tools/rebuild-engine.commit)，編譯`bin/pod-play`，保存建置資訊與SHA-256 |
 | `smoke` | 正常冷啟動7400格DEMO，產生`smoke/`的截圖、來源、紀錄與獨立可寫客體資料 |
 
@@ -40,7 +40,7 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 | Windows x86_64 | `pod-v.0.1.1-20261101-windows-hd-patch.zip` | 實際ZIP，以Wine驗首次匯入、1250格開場與重啟 |
 | macOS universal | `pod-v.0.1.1-20261101-macos-hd-patch.zip` | amd64／arm64結構及依賴；未簽章、真機未驗 |
 
-兩側採使用者核准的B版HD海報，保留三語文字與中央畫面。這批包含繁中、英文、簡中、F1無敵及97種片頭敘事HD。此候選保留原版號與三語範圍，日韓由目前Git來源重建，範圍見[034收據](docs/re/034-jako-runtime.json)。配樂試聽、片尾HD及推廣片仍待完成。原版資料、擷取索引及有序表不隨patch附帶；發行目錄與自備原版不被修改。
+兩側採使用者核准的B版HD海報，保留三語文字與中央畫面。這批包含繁中、英文、簡中、F1無敵及97種片頭敘事HD。此候選保留原版號與三語範圍；目前Git來源另含[日韓](docs/re/034-jako-runtime.json)與[片尾HD](docs/re/035-final-hd.md)，既有封包未重打。配樂試聽及推廣片仍待完成。原版資料、擷取索引及有序表不隨patch附帶；發行目錄與自備原版不被修改。
 
 固定驗收見[033收據](docs/re/033-hd-patch-runtime.json)，封包大小及SHA見交付根的`SHA256SUMS.json`。重建這批候選可執行：
 
@@ -54,14 +54,14 @@ bash tools/hd-patch.sh build "$PWD/workplace/package-hd-rebuild"
 
 | Git中的輸入 | 用途 |
 |---|---|
-| [主題重建清單](review/hd/runtime/manifest.json) | 固定全部檔案、來源、SHA-256及原版DAX、INTRO.BMA及INTRO.ACF版本 |
+| [主題重建清單](review/hd/runtime/manifest.json) | 固定全部檔案、來源、SHA-256及原版DAX、INTRO／FINAL的BMA及ACF版本 |
 | [HD審閱素材](review/hd/README.md) | 沿用已接受PNG；缺少的開場／海報圖補存於[runtime](review/hd/runtime/README.md) |
 | [字型來源與字集](font/README.md) | 開源字型及授權，逐位元組重生目前十八份正式字型 |
 | `text/`及`reference/` | 正式譯文、手札、攻略摘要與術語 |
 | 本儲存庫`dosgolem/pod`分支 | 遊戲adapter與引擎來源，不依賴前作工作樹 |
 
 目前海報使用已核准B版HD生圖。舊原版封面插畫只留私人歷史審閱，不列入目前patch。生成素材不必再次呼叫生圖服務。
-重建清單只保存原版資料的雜湊及選取方式，原始辨識索引與有序寫入表在本機由DAX及INTRO.BMA重生。原版版本不合、圖片遭改或字型來源不同時，重建會失敗並指出缺項。
+重建清單只保存原版資料的雜湊及選取方式，原始辨識索引與有序寫入表在本機由DAX、INTRO.BMA及FINAL.BMA重生。原版版本不合、圖片遭改或字型來源不同時，重建會失敗並指出缺項。
 
 目前F8依繁中、英文、日文、韓文、簡中循環。簡中包含介面、手札、攻略、地圖、姓名音譯與開場文字，使用原生16／24及工具列12／22字模。正式TSV由固定OpenCC1.1.9及詞彙表產生；修改繁中後，可在`dosgolem-go-ebiten:1.24-r1`容器內執行`python3 -I tools/zhcn_text.py --root <repo> --out <repo>/text`重生，或加`--check`檢查。來源與重建範圍見[規格015](docs/spec/015-multilingual.md#簡體中文收尾)，OpenCC不在遊戲執行時轉換。
 
@@ -85,6 +85,8 @@ bash tools/hd-patch.sh build "$PWD/workplace/package-hd-rebuild"
 - 乾淨Git來源重建1888檔主題、十八份字型及989份原版索引／有序表，SHA全部相同，原十份字型SHA不變。
 
 這個入口保存目前已完成的素材，不代表尚未驗證的地形、動畫、配樂或平台已完成。日韓未經母語者審校，未走的劇情與新觸發手札仍不在本次正常路線抽樣範圍。
+
+[片尾035收據](docs/re/035-final-runtime.json)保存目前2034檔／十八份字型的乾淨Git重建、固定引擎乾淨重編與7400格正常DEMO回歸。新增43種片尾相位由原版播放器直接入口驗證，三路2001格同原版狀態及127檔，F2／F8／F12通過；完整戰役通關入口仍未重播。HD與材質動作屬美術近似，舊十二包保持原範圍及SHA。
 新增HD素材或正式字型時，須同步更新重建清單，並以乾淨Git檔案重跑`assets`，核對新正式主題及字型雜湊後才提交。
 
 ## 候選封包

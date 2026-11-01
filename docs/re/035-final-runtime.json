@@ -1,0 +1,5358 @@
+{
+  "date": "2026-11-02",
+  "issue": 77,
+  "status": "PASS FINAL direct player and normal CONTROL regression",
+  "scope": "Original VACE FINAL direct entry, not a replayed campaign victory",
+  "engine_commit": "3fdeeb8ddd93ca84ee3626bc357dc2586c814883",
+  "binary_sha256": {
+    "pod-play": "152c7c50812863cd1cb0cbb9e034b2b1485d84b15dc1e2ac136657182d000d42",
+    "pod-final-player": "d073c91ad6fa178351541a6e57e000df417675f14d6af926e1b363ceb6e7eae4"
+  },
+  "clean_engine_build_equal": true,
+  "theme_files": 2034,
+  "fonts": {
+    "pod-en-3x.golemfnt": "c701ce90a4b3009e6126b0ccfc0dc042dc17c22dbf59c07b1e41c90678481db9",
+    "pod-en.golemfnt": "121e92b01c9c907aa66b8e6e78155d0a368102e599bbb9784feaec5c7f2234e0",
+    "pod-ja-3x.golemfnt": "74d3f0564e71a3534ab3b2f9b90c4c8c320573cdfa78327f82c190a320feefee",
+    "pod-ja-bar12.golemfnt": "55f41a4b156cbd90a55a8f2cb1519cc15409719824c9ff092e2cf6a9dfa25f7d",
+    "pod-ja-bar22.golemfnt": "df913a83201adfca63128a6c6bf57c34181812c2378b421ae6dfb635e8e1f77e",
+    "pod-ja.golemfnt": "e93b12499b74957140e7bdbb4a0e5f394f3375686bfbd27682c7d1a57823e93f",
+    "pod-ko-3x.golemfnt": "584966ab1f8681bb1277cc2153d24ba139bdfba0e7706f1e614c943ac6d7b993",
+    "pod-ko-bar12.golemfnt": "ef7b19eee1e3439a857d5e076b89a43a48be5a5b98b91754fb110573f3131616",
+    "pod-ko-bar22.golemfnt": "f77a0361635e9b790d8d22a2f2f8bc3b6835d0864344bad3f7f48be423f3f916",
+    "pod-ko.golemfnt": "d5ecfdbcd2aee46c88174467e87cad637f11ce8d7370ece23e581b4d451bc2d0",
+    "pod-rounded-3x.golemfnt": "52e749e344c5bf6a60fa6501ad4ab17b72de0871897382a5c58d2acc3cc21730",
+    "pod-rounded-bar12.golemfnt": "89cd27498ae1dea002b3fef714695e433e198269e71f76e50bdeab9b9f4c8976",
+    "pod-rounded-bar22.golemfnt": "0d731150caef048b40b60a6baaba1b37dc1f3791c7a442b2ee51a60834f635d5",
+    "pod-rounded.golemfnt": "0f0430e7db828b8b74249b69f02ac7c590724215d9edc0f212830790ae4531ac",
+    "pod-zh-CN-3x.golemfnt": "d93b3c60876cb46e8470520b680cb6005116df18a1826e043081f898e0737617",
+    "pod-zh-CN-bar12.golemfnt": "fda46fe44043d7ff4d2d04ba152ff7ef97b4e5a1c7ad6d9f6a6e62012a27bb5d",
+    "pod-zh-CN-bar22.golemfnt": "8346692b157dfa4e5d3e016a24cd7da857bf968c50fb1172541a960b71d2b26d",
+    "pod-zh-CN.golemfnt": "9787e8431f51e39f8ea59f6c6f631424d862bb248faefde65701104cbfab4c93"
+  },
+  "theme_tree_sha256": "71c4a33851d63247c1b6bd758b75a44b633fd3f98dc15b09df4df5416ae4e2eb",
+  "frames": 2001,
+  "steps": 192596250,
+  "memory_sha256": "7a84e21062c393bbc9c9ed25b6e1a8875e851f391d5b6629c6c3cddd171ebf4e",
+  "indexed_sha256": "d6ce4f1df56d2bebb25eb4e0c3a6827b6993fae2a3fe7b3e3a6d97d04d3f2ad3",
+  "cpu_sha256": "3a8c61d77936bcc21553beaf01729f8e79907e02c661c5b7000f94b997a0577a",
+  "palette_sha256": "0f55457c26c1f0630eb1613512be7f62ace8f44fc697f5e64720dbd2a286c0c6",
+  "guest_files": 127,
+  "guest_tree_sha256": "1e09b3e5a4cf93e42b184e1b0248e03df2a7dce6954d77546611845cdcc163bd",
+  "original_source_exit": {
+    "frames": 2002,
+    "steps": 192658464,
+    "digest": {
+      "Steps": 192658464,
+      "MemorySHA256": [
+        202,
+        148,
+        96,
+        71,
+        100,
+        203,
+        116,
+        162,
+        233,
+        211,
+        11,
+        46,
+        85,
+        216,
+        16,
+        87,
+        251,
+        229,
+        127,
+        115,
+        183,
+        229,
+        111,
+        121,
+        99,
+        58,
+        17,
+        85,
+        195,
+        241,
+        107,
+        230
+      ],
+      "CPUSHA256": [
+        35,
+        30,
+        51,
+        156,
+        240,
+        187,
+        246,
+        254,
+        244,
+        112,
+        105,
+        18,
+        197,
+        100,
+        141,
+        33,
+        134,
+        228,
+        154,
+        190,
+        207,
+        158,
+        201,
+        43,
+        82,
+        39,
+        65,
+        247,
+        70,
+        235,
+        11,
+        107
+      ],
+      "IndexedSHA256": [
+        79,
+        121,
+        136,
+        3,
+        10,
+        0,
+        208,
+        130,
+        254,
+        68,
+        94,
+        0,
+        162,
+        172,
+        93,
+        171,
+        80,
+        35,
+        0,
+        255,
+        27,
+        128,
+        232,
+        89,
+        45,
+        213,
+        105,
+        134,
+        123,
+        96,
+        239,
+        116
+      ],
+      "PaletteSHA256": [
+        117,
+        226,
+        114,
+        166,
+        4,
+        149,
+        12,
+        216,
+        238,
+        200,
+        21,
+        185,
+        16,
+        203,
+        43,
+        135,
+        181,
+        241,
+        47,
+        177,
+        248,
+        251,
+        249,
+        134,
+        1,
+        64,
+        24,
+        168,
+        177,
+        187,
+        99,
+        244
+      ],
+      "DOSExited": true,
+      "AdLib": true,
+      "ClockPercent": 50,
+      "IRQ0Clamped": 0
+    },
+    "sha256": "974bb963c48241b7a8a7af062287502e46a6688ec55c6e29d27469df25730677"
+  },
+  "stats": {
+    "base": {
+      "Calls": 58,
+      "KnownCalls": 58,
+      "Full": 67,
+      "Prefix": 12,
+      "Clear": 0,
+      "Fade": 9,
+      "Rejected": 3
+    },
+    "hd": {
+      "Calls": 58,
+      "KnownCalls": 58,
+      "Full": 67,
+      "Prefix": 12,
+      "Clear": 0,
+      "Fade": 9,
+      "Rejected": 3
+    },
+    "switch": {
+      "Calls": 58,
+      "KnownCalls": 58,
+      "Full": 67,
+      "Prefix": 12,
+      "Clear": 0,
+      "Fade": 9,
+      "Rejected": 3
+    }
+  },
+  "full_art_samples": 70,
+  "prefix_source_samples": 12,
+  "shots": [
+    {
+      "frame": 2,
+      "source_update": 1,
+      "kind": "outside-BMA",
+      "source_sha256": "4f7988030a00d082fe445e00a2ac5dab502300ff1b80e8592dd569867b60ef74",
+      "palette_sha256": "5f679a98de6d78476c1bc22d98502fb4c8d0ca0fe0156179963fcbb2e0348d60",
+      "hd_sha256": "66444267af07734cae9f3bd760d0761aeefe849e99cdee7e41ac271fa3c1ae1c",
+      "full_art_checked": false,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 3,
+      "source_update": 2,
+      "kind": "write-prefix",
+      "source_sha256": "201c5ccbf27fcb68ecdc66955a0fb132d90b6d6da8094315bc63bfcfadc344fd",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "1cab5947e4028f5c77b32450fce1b035739df0dc26e1b36a45fb401b8f2a189d",
+      "full_art_checked": false,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 4,
+      "source_update": 3,
+      "kind": "full",
+      "source_sha256": "3c72b1452230afe12cf80fe10b34c62ad09bbf173092681aa97d13fde84db348",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "04a44e7432128355ba5b7f945fed148d698300662cda69960d5c39bfdc545c85",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 10,
+      "source_update": 9,
+      "kind": "full",
+      "source_sha256": "3c72b1452230afe12cf80fe10b34c62ad09bbf173092681aa97d13fde84db348",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "04a44e7432128355ba5b7f945fed148d698300662cda69960d5c39bfdc545c85",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 200,
+      "source_update": 199,
+      "kind": "full",
+      "source_sha256": "3c72b1452230afe12cf80fe10b34c62ad09bbf173092681aa97d13fde84db348",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "04a44e7432128355ba5b7f945fed148d698300662cda69960d5c39bfdc545c85",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 218,
+      "source_update": 217,
+      "kind": "full",
+      "source_sha256": "04a5074a0ba10c35ae0161adcf7c45717a12c1ded695f079b6bcb20465a65c5f",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "e1a0442bdfb104febb3b47441d92c8670e2c3d0c78e038a13351ce9982c630fb",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 231,
+      "source_update": 230,
+      "kind": "write-prefix",
+      "source_sha256": "47cc5f3f65a7f776fc17989a4c9483f8d76237c8a32edd2a38c406f76f459a2f",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "2d04808bcb048df34229908851a056bacb03b13c97c19236257e16b0414b25be",
+      "full_art_checked": false,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 232,
+      "source_update": 231,
+      "kind": "full",
+      "source_sha256": "e62b3519f3a38a6ceea98ffa8609beff0d78c88ff8a88e16287c0c0f91dcd9bd",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "338eddca0dfceab2aeaba600e9aa9658d1963aa21e2a983bcdb242091b24a055",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 245,
+      "source_update": 244,
+      "kind": "full",
+      "source_sha256": "d24143b1274bcbc10e580e4c54da3b5bbc982e27ca8f7f41ba533c448cc227ac",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "c5494fe93eb66c0294a622bc979bba4931baf718ed25b7cf9165165af23ca0e5",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 258,
+      "source_update": 257,
+      "kind": "write-prefix",
+      "source_sha256": "e8fa7be2d6692cb602584bc685ea15ff6f9a5e9748f5fece425e1bbe44c299b0",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "9cdab324533ac96bfdc07ef7deaf3a2fd89eae513f27ebaee948a874a81dc528",
+      "full_art_checked": false,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 259,
+      "source_update": 258,
+      "kind": "full",
+      "source_sha256": "d5ef4c688a6692f8d59f1c6a382a77b828a955ea67ec21469b2d5d305e41e35d",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "b02569d869f347a55acac61f0869f9f524e7a9c475ac1415f42eb0d7a4c664bf",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 272,
+      "source_update": 271,
+      "kind": "full",
+      "source_sha256": "037199f628cf64383a08991e3a50dd28ca00676ffd67bc39e79af0d521bc9d07",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "cd37fc82b5d35fbd27d160a9b7fb81bd8fbceba654805c308cf05fe602ff7423",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 284,
+      "source_update": 283,
+      "kind": "full",
+      "source_sha256": "318fd58beac1de751f98a1a4309c5235ea5a361a913f00ebd23d354e87bf2714",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "d1e54bdcdddcefe5e2e5cc3eedd125856132089c4d1c9033b63756ca64a4186e",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 298,
+      "source_update": 297,
+      "kind": "full",
+      "source_sha256": "5e73cc03bca1b27d2d7fd53ef7fd4fcd4887ed43a59a13f26e173333a4673955",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "cedd5073e286cf86cb3465f01915af0a74ef2da2e6d670feaf47e7a4326aebf3",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 300,
+      "source_update": 299,
+      "kind": "full",
+      "source_sha256": "5e73cc03bca1b27d2d7fd53ef7fd4fcd4887ed43a59a13f26e173333a4673955",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "cedd5073e286cf86cb3465f01915af0a74ef2da2e6d670feaf47e7a4326aebf3",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 311,
+      "source_update": 310,
+      "kind": "full",
+      "source_sha256": "e5f42acbdbcca77e7c00601eca4335b2fa4ab8848b731d20863540b2a607eef3",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "3622f41eb7c10bd4a004f77fc7b4d64312458d02f20995241ba049d6c5d42ab5",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 324,
+      "source_update": 323,
+      "kind": "full",
+      "source_sha256": "4b48c9323c97f20ccc63425106d37347711a7ced93b3d32cbb4ac5f80bc55f26",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "b16e84915f8f04fd6958f2f40e45e2618006e442593e050f052ccca0b029f9af",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 338,
+      "source_update": 337,
+      "kind": "full",
+      "source_sha256": "4e6273f9180cc355f07d3a8ccb30777b8e8178a409d4b8645d02cb37da432715",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "5d102e114e3807f8e3ec9d22d6fe073b691cbfaa5f5420905b2c34839119e38e",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 350,
+      "source_update": 349,
+      "kind": "full",
+      "source_sha256": "86c9b3103021498b03c5b91e9ae0301b7f6e7768f4902fcc44c88711efc32587",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "e587daec3ee1f42831057c0a233580307e5e41163ef4253cf42bd02b1ccc6167",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 364,
+      "source_update": 363,
+      "kind": "full",
+      "source_sha256": "ebbc711654f82fc932232587a46f5cd21ccf60c1d0e340ba90bd25f9a54d21e7",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "b56d7bd5ab7fcd1c0898341a2e8ad95f8055ca96fbddb8e470bdfc4e0ec09c3b",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 400,
+      "source_update": 399,
+      "kind": "full",
+      "source_sha256": "ebbc711654f82fc932232587a46f5cd21ccf60c1d0e340ba90bd25f9a54d21e7",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "b56d7bd5ab7fcd1c0898341a2e8ad95f8055ca96fbddb8e470bdfc4e0ec09c3b",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 411,
+      "source_update": 410,
+      "kind": "full",
+      "source_sha256": "ebbc711654f82fc932232587a46f5cd21ccf60c1d0e340ba90bd25f9a54d21e7",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "b56d7bd5ab7fcd1c0898341a2e8ad95f8055ca96fbddb8e470bdfc4e0ec09c3b",
+      "full_art_checked": true,
+      "poster_language": "en",
+      "scale": 3
+    },
+    {
+      "frame": 413,
+      "source_update": 412,
+      "kind": "full",
+      "source_sha256": "ebbc711654f82fc932232587a46f5cd21ccf60c1d0e340ba90bd25f9a54d21e7",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "b56d7bd5ab7fcd1c0898341a2e8ad95f8055ca96fbddb8e470bdfc4e0ec09c3b",
+      "full_art_checked": true,
+      "poster_language": "ja",
+      "scale": 3
+    },
+    {
+      "frame": 415,
+      "source_update": 414,
+      "kind": "full",
+      "source_sha256": "ebbc711654f82fc932232587a46f5cd21ccf60c1d0e340ba90bd25f9a54d21e7",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "b56d7bd5ab7fcd1c0898341a2e8ad95f8055ca96fbddb8e470bdfc4e0ec09c3b",
+      "full_art_checked": true,
+      "poster_language": "ko",
+      "scale": 3
+    },
+    {
+      "frame": 417,
+      "source_update": 416,
+      "kind": "full",
+      "source_sha256": "ebbc711654f82fc932232587a46f5cd21ccf60c1d0e340ba90bd25f9a54d21e7",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "b56d7bd5ab7fcd1c0898341a2e8ad95f8055ca96fbddb8e470bdfc4e0ec09c3b",
+      "full_art_checked": true,
+      "poster_language": "zh-CN",
+      "scale": 3
+    },
+    {
+      "frame": 419,
+      "source_update": 418,
+      "kind": "full",
+      "source_sha256": "ebbc711654f82fc932232587a46f5cd21ccf60c1d0e340ba90bd25f9a54d21e7",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "b56d7bd5ab7fcd1c0898341a2e8ad95f8055ca96fbddb8e470bdfc4e0ec09c3b",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 431,
+      "source_update": 430,
+      "kind": "full",
+      "source_sha256": "ebbc711654f82fc932232587a46f5cd21ccf60c1d0e340ba90bd25f9a54d21e7",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "b56d7bd5ab7fcd1c0898341a2e8ad95f8055ca96fbddb8e470bdfc4e0ec09c3b",
+      "full_art_checked": true,
+      "poster_language": "en",
+      "scale": 3
+    },
+    {
+      "frame": 441,
+      "source_update": 440,
+      "kind": "full",
+      "source_sha256": "ebbc711654f82fc932232587a46f5cd21ccf60c1d0e340ba90bd25f9a54d21e7",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "b56d7bd5ab7fcd1c0898341a2e8ad95f8055ca96fbddb8e470bdfc4e0ec09c3b",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 451,
+      "source_update": 450,
+      "kind": "full",
+      "source_sha256": "ebbc711654f82fc932232587a46f5cd21ccf60c1d0e340ba90bd25f9a54d21e7",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "b56d7bd5ab7fcd1c0898341a2e8ad95f8055ca96fbddb8e470bdfc4e0ec09c3b",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 2
+    },
+    {
+      "frame": 461,
+      "source_update": 460,
+      "kind": "full",
+      "source_sha256": "ebbc711654f82fc932232587a46f5cd21ccf60c1d0e340ba90bd25f9a54d21e7",
+      "palette_sha256": "bffa18cc8023f1e5d6f6f48070ebc43050e61f39f99a87a6706df85a6fb77633",
+      "hd_sha256": "b56d7bd5ab7fcd1c0898341a2e8ad95f8055ca96fbddb8e470bdfc4e0ec09c3b",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 649,
+      "source_update": 648,
+      "kind": "full",
+      "source_sha256": "ebbc711654f82fc932232587a46f5cd21ccf60c1d0e340ba90bd25f9a54d21e7",
+      "palette_sha256": "c7b4d301c8533eb49f07a2f93ccf904008bf7060704738926cd8c015e74d0313",
+      "hd_sha256": "b71c1da4cb738f479997753eb537779b5627bc69168cfc8082b01384d91598aa",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 650,
+      "source_update": 649,
+      "kind": "full",
+      "source_sha256": "ebbc711654f82fc932232587a46f5cd21ccf60c1d0e340ba90bd25f9a54d21e7",
+      "palette_sha256": "f041fea92a84dc50d48965aa7266c396e3dd68d343eb0056844137d5576b3f3f",
+      "hd_sha256": "f5b37cadb74879cc06996709788f223868d11619e43091e264bc5839fc58de72",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 651,
+      "source_update": 650,
+      "kind": "zero-write-prefix",
+      "source_sha256": "4f7988030a00d082fe445e00a2ac5dab502300ff1b80e8592dd569867b60ef74",
+      "palette_sha256": "09a07c86b0b961da3db2a1aa473285522da25c5dd6ac1a57e8633604448c6bdc",
+      "hd_sha256": "66444267af07734cae9f3bd760d0761aeefe849e99cdee7e41ac271fa3c1ae1c",
+      "full_art_checked": false,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 652,
+      "source_update": 651,
+      "kind": "zero-write-prefix",
+      "source_sha256": "a5c19705aa716cdd79ccb69564b88b68f9b8dd18d88aba6c4934faf750b0bf82",
+      "palette_sha256": "1ba11b619cebe7aa598828e700b5d6ab3ea8f4301efe4dc7bce56b6c1a05a29e",
+      "hd_sha256": "5f6b4b92674cc0f85bc040213916aabc0f85e2c714b8bb73fd8fecc374bb9062",
+      "full_art_checked": false,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 653,
+      "source_update": 652,
+      "kind": "full",
+      "source_sha256": "9d944a0f44eb0e1bbfa015d0cfd2bf4c331a8dde064c2caee68d2effa937571f",
+      "palette_sha256": "1ba11b619cebe7aa598828e700b5d6ab3ea8f4301efe4dc7bce56b6c1a05a29e",
+      "hd_sha256": "92612cf02b66b0de4ebaed7e3e3054b582eebdeef0a2c09bf2123e4187318bd4",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 700,
+      "source_update": 699,
+      "kind": "full",
+      "source_sha256": "9d944a0f44eb0e1bbfa015d0cfd2bf4c331a8dde064c2caee68d2effa937571f",
+      "palette_sha256": "1ba11b619cebe7aa598828e700b5d6ab3ea8f4301efe4dc7bce56b6c1a05a29e",
+      "hd_sha256": "92612cf02b66b0de4ebaed7e3e3054b582eebdeef0a2c09bf2123e4187318bd4",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 881,
+      "source_update": 880,
+      "kind": "write-prefix",
+      "source_sha256": "df137db93fecac2f5a625cedecb233cabc66dd3430d1c33175a4b4523ca17edd",
+      "palette_sha256": "1ba11b619cebe7aa598828e700b5d6ab3ea8f4301efe4dc7bce56b6c1a05a29e",
+      "hd_sha256": "357c3f144a7475d5b827aa9700edb155b4cbf344a6e0d1f220e8fd2498e06bd0",
+      "full_art_checked": false,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 882,
+      "source_update": 881,
+      "kind": "full",
+      "source_sha256": "04dec7a381cb246777a7e1a134df4af50ebe72256c1c8fe64422177690d80b07",
+      "palette_sha256": "1ba11b619cebe7aa598828e700b5d6ab3ea8f4301efe4dc7bce56b6c1a05a29e",
+      "hd_sha256": "d6713daec24ba60fa1963c0a163ab5f8eb2ff3ff4395b920a89865fe071daac0",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 894,
+      "source_update": 893,
+      "kind": "write-prefix",
+      "source_sha256": "aab45cc642087873dfaaa17eec4ad8c0ea3ad8b02488114d5addfe23ebbd6b93",
+      "palette_sha256": "1ba11b619cebe7aa598828e700b5d6ab3ea8f4301efe4dc7bce56b6c1a05a29e",
+      "hd_sha256": "25002c8da8332094ad5299709989c23efd7a098e076e6fe4eaae5ef2e8f1b29b",
+      "full_art_checked": false,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 895,
+      "source_update": 894,
+      "kind": "full",
+      "source_sha256": "7baab7e9ebef9cfa3c9343eb407dde714950bcef1b45546d41ea543eb00a2744",
+      "palette_sha256": "1ba11b619cebe7aa598828e700b5d6ab3ea8f4301efe4dc7bce56b6c1a05a29e",
+      "hd_sha256": "abc21de35b64929800168705a86c3d3a813e1e87c53ebb3a86066c7c44e05410",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 908,
+      "source_update": 907,
+      "kind": "full",
+      "source_sha256": "543b5fca201a78efa4a3ca5ad3cc916194ee294e2a66eec914cd2266f116bdda",
+      "palette_sha256": "1ba11b619cebe7aa598828e700b5d6ab3ea8f4301efe4dc7bce56b6c1a05a29e",
+      "hd_sha256": "84141d00742d0e128cfc8071adb053421160849a66265fbcb6cef244f4c02d06",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 920,
+      "source_update": 919,
+      "kind": "write-prefix",
+      "source_sha256": "c6fe8f6fa33f1d0c2f4cb4276e9c9494ec564e17b484829aedcaf97850fe13c8",
+      "palette_sha256": "1ba11b619cebe7aa598828e700b5d6ab3ea8f4301efe4dc7bce56b6c1a05a29e",
+      "hd_sha256": "ebabb9b6c7e58b7378da91e90051cbc5eb790b0b854b76ea48dbd8bda94fe2cf",
+      "full_art_checked": false,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 921,
+      "source_update": 920,
+      "kind": "full",
+      "source_sha256": "028a7cb56fb4ca11be87f7a5f0b3c90dad69fa092789c7a5a924a985ccb10150",
+      "palette_sha256": "1ba11b619cebe7aa598828e700b5d6ab3ea8f4301efe4dc7bce56b6c1a05a29e",
+      "hd_sha256": "0a9395fb96c4018c1db095392c04e7ca6471f2d463f0a81d364fa1f9fa2177f9",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 934,
+      "source_update": 933,
+      "kind": "full",
+      "source_sha256": "6f626f8841f0534a7c21bf0f692191628687737147d30cf8604fd6f878310a86",
+      "palette_sha256": "1ba11b619cebe7aa598828e700b5d6ab3ea8f4301efe4dc7bce56b6c1a05a29e",
+      "hd_sha256": "1863ac866d09db8d8b606612df213cd1ae12ecee20adf0c4e4710385d7d0711a",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 947,
+      "source_update": 946,
+      "kind": "write-prefix",
+      "source_sha256": "981149b0ef2b6e0ffbf96fce3003478136cba3685daca7341e50d6fec2f0b667",
+      "palette_sha256": "1ba11b619cebe7aa598828e700b5d6ab3ea8f4301efe4dc7bce56b6c1a05a29e",
+      "hd_sha256": "202c96ea5dd97a2e2457a2e20f794ffaf186a51705cdbfc4040ad07933716ff9",
+      "full_art_checked": false,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 948,
+      "source_update": 947,
+      "kind": "full",
+      "source_sha256": "0a395d84c8de0206bd943436260664718a2a7bb626d93fc619e84945f8343f5e",
+      "palette_sha256": "1ba11b619cebe7aa598828e700b5d6ab3ea8f4301efe4dc7bce56b6c1a05a29e",
+      "hd_sha256": "a4364fdfc3c1cd3b5ac840aeff6bfe15473bd3a334322aaea6320a40b13d685d",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1000,
+      "source_update": 999,
+      "kind": "full",
+      "source_sha256": "0a395d84c8de0206bd943436260664718a2a7bb626d93fc619e84945f8343f5e",
+      "palette_sha256": "1ba11b619cebe7aa598828e700b5d6ab3ea8f4301efe4dc7bce56b6c1a05a29e",
+      "hd_sha256": "a4364fdfc3c1cd3b5ac840aeff6bfe15473bd3a334322aaea6320a40b13d685d",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1166,
+      "source_update": 1165,
+      "kind": "full",
+      "source_sha256": "0a395d84c8de0206bd943436260664718a2a7bb626d93fc619e84945f8343f5e",
+      "palette_sha256": "0042f35cc6dfa74332613532ff9f99f6a45eca358748d673c7964677d5a493e9",
+      "hd_sha256": "c61f6d57edd5425ca205e5ac3e2a8627cc0b7ec331f2676ef336a7990c5316fb",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1167,
+      "source_update": 1166,
+      "kind": "full",
+      "source_sha256": "0a395d84c8de0206bd943436260664718a2a7bb626d93fc619e84945f8343f5e",
+      "palette_sha256": "2aa62ea9d55750f9d9570fa28d4782a3684ffdb4ce919cc710f6e3f5bda3d271",
+      "hd_sha256": "a7fa959ea3dcc4cc7062199855a2f9abae1cbd94730a8c70aaf7327c0416497b",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1168,
+      "source_update": 1167,
+      "kind": "full",
+      "source_sha256": "0a395d84c8de0206bd943436260664718a2a7bb626d93fc619e84945f8343f5e",
+      "palette_sha256": "668d7d35e56f44b61bc00d7622b57ac70274cc0ed83d1abf43546acf60d6dd78",
+      "hd_sha256": "995246ea67214e4c7c0b2a4e1cd0f7e27a573a187bab54c4a70ef94bd1db8fac",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1169,
+      "source_update": 1168,
+      "kind": "full",
+      "source_sha256": "0a395d84c8de0206bd943436260664718a2a7bb626d93fc619e84945f8343f5e",
+      "palette_sha256": "baf158a9d1d20a103209b10cda1b76da0cbb062c49065ac6f89663e797b0e108",
+      "hd_sha256": "f3f7d58644e34aca64ecb0e330ba9a2285eac78cae94afcb83e95bc3fe80b1bc",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1170,
+      "source_update": 1169,
+      "kind": "full",
+      "source_sha256": "0a395d84c8de0206bd943436260664718a2a7bb626d93fc619e84945f8343f5e",
+      "palette_sha256": "d3f8b8095df3b170e718dfc8d35ace6fccaff7b2ed990b6e88907dfc3cc61448",
+      "hd_sha256": "50c3112a9b662ace184662bb293b964815c1a0665a63c87a9c44a2a2fbb90241",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1171,
+      "source_update": 1170,
+      "kind": "zero-write-prefix",
+      "source_sha256": "5907a05f64f871e4dee268280a2ce92f2f03f9b985938f0312dbf765a4639013",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "f0c1b82022de315a04b54b6788f734e3d44996f60be983dc5e88f94bae708c86",
+      "full_art_checked": false,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1172,
+      "source_update": 1171,
+      "kind": "full",
+      "source_sha256": "4321b99d97d2fbeae7d762d9897ad3667cc639dc030c8e869bb6df5a6581da9b",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "5b9d374d7e3b3d813e6d59ec713f0f429455266104caae6883533a95ac0f4be8",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1300,
+      "source_update": 1299,
+      "kind": "full",
+      "source_sha256": "4321b99d97d2fbeae7d762d9897ad3667cc639dc030c8e869bb6df5a6581da9b",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "5b9d374d7e3b3d813e6d59ec713f0f429455266104caae6883533a95ac0f4be8",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1500,
+      "source_update": 1499,
+      "kind": "full",
+      "source_sha256": "4321b99d97d2fbeae7d762d9897ad3667cc639dc030c8e869bb6df5a6581da9b",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "5b9d374d7e3b3d813e6d59ec713f0f429455266104caae6883533a95ac0f4be8",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1506,
+      "source_update": 1505,
+      "kind": "full",
+      "source_sha256": "2446a17edff232b98671357b6399c86586026068b3911ddc66167eee93717295",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "cf8b02cdf87f9e739da7ab1de14e583cd2dac8e89a9eb1b8834655831d334a92",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1519,
+      "source_update": 1518,
+      "kind": "full",
+      "source_sha256": "dbd7f530f0855ad0de4fe271d662b01918083923d6155c401a81aa2eaee1e06e",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "4d2c98c8ffa2269940f171667c22095cfc2deb5a867a860126ab811e052b76c8",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1532,
+      "source_update": 1531,
+      "kind": "full",
+      "source_sha256": "1c1db3fd89ec852c3657796dbcb118919b8214f2929f6ab07854ed47eb6577a7",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "c60c65b3d39f3b2f93b892d8b199784e490167acd3fb4a876d8a671e2c673d37",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1545,
+      "source_update": 1544,
+      "kind": "full",
+      "source_sha256": "958919e1d7ea87c8a42b9676142379f13bdc181fad575174d2d266acb1e44742",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "3939d892ca83bfbc58774cc836420f434b902333c6cd1c7f3a3fc706f05dac42",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1558,
+      "source_update": 1557,
+      "kind": "full",
+      "source_sha256": "83b3a5f91a53b6d3692ab08128b5d596a1ed685bc16be3e8266f9df2b3bce8f0",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "4de7bacae6ec8bf8b7e9b19f89c24600cef929dad95629d85fd2b327d9991a11",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1572,
+      "source_update": 1571,
+      "kind": "full",
+      "source_sha256": "0f702856372ad4488904d7bcc20824e6aaea6dd9e6791acb6e1874aa9251b8b2",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "b8737ad13e6bc6fe4dbee1e88d828413d852dfbf08c6fb1ec47639b374761188",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1585,
+      "source_update": 1584,
+      "kind": "full",
+      "source_sha256": "0c19e991a3d97655a4bfe031b4597deac90ac05ded113df46902a63478406dbc",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "56544f71b527a567f97d5ad5d9b4bc23567e948e6595587d3022a62759465d56",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1598,
+      "source_update": 1597,
+      "kind": "full",
+      "source_sha256": "5d85edd0983567cf34188a2d11fcee7b6daaa62bbf7fe40b85332464b5c95dbd",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "c956bf04696ff2762d112f541814c1e305371234f7a3c99747423e8cbe7ac1a7",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1611,
+      "source_update": 1610,
+      "kind": "full",
+      "source_sha256": "24dd575454e80573080dd105ef8e7b3179a18e67df24efb13354ea1d6359e781",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "2a293ac0536be663847d10f5390abcdf9f3457a95fddb3d7b56f33a6de389c94",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1624,
+      "source_update": 1623,
+      "kind": "full",
+      "source_sha256": "0f61d753ac474ab6567caf2e5de5074a81c5b4eb13917dbd96f3cdc853643f60",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "02de868ab8a69e9593a610c64c04a87912981075df601ad46bdbd11f5687e518",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1638,
+      "source_update": 1637,
+      "kind": "full",
+      "source_sha256": "f438f4c8e05bca7445aec056fbed5a82867271841bbd0d9caaaae8c612eb27b0",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "862d391e02080fd776204e04a07d38379889bbf25e4062722a31e5132880e0ca",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1651,
+      "source_update": 1650,
+      "kind": "full",
+      "source_sha256": "1ff167fb476dac06856cb1123bca18ae1ac9686dc23c7a828724a555b462d7c1",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "3bbe38baa33b02b7c8aebe3b6e2de0be2c3cb26cec2f91909f4a44065735d4df",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1664,
+      "source_update": 1663,
+      "kind": "full",
+      "source_sha256": "feb8adf76d1f6996a00ec0904058b257eccbdc7f77339a7e51db876c70303fec",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "26ea8711503f01980a16726d397bd5d49e2dabe3d1caa19a7770f10ebb2b8945",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1677,
+      "source_update": 1676,
+      "kind": "full",
+      "source_sha256": "2717b88780c992a6f23348e3ff96cc487c2a109e24f9e17785b763bec72c95a6",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "742774c301a5c56d8b3136884499f31b2fc3a61c8262bfd750950641f416437d",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1690,
+      "source_update": 1689,
+      "kind": "write-prefix",
+      "source_sha256": "a7f95f05f5efe8f15b30df67481682bdd20ba4a7d2922981945c1b80f3b39714",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "b6a6a71573ff91d36985a59d1de12828d84f8713aac0ab7b2f9484c8281db2a3",
+      "full_art_checked": false,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1691,
+      "source_update": 1690,
+      "kind": "full",
+      "source_sha256": "3ebd1724167a34ee42c650f211fcec285a231ac3cefba78d60e481bcecc65bad",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "fad1641e990a0b47ab4ef58088a55f78cab9cee3e87dfb78f6555bf659314e3b",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1704,
+      "source_update": 1703,
+      "kind": "full",
+      "source_sha256": "9b0a1af53350854a36393425f9cfb263badfaaad94e07d756f5fc8c620fbd666",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "c12ca92ab22cd7c121166e4aa64248a9d96f27795e6726f29c67efbf08de840b",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1717,
+      "source_update": 1716,
+      "kind": "full",
+      "source_sha256": "35ad59b00f6f53d73d08bd9fe60f1aa3b9a42cd8992ca92b3e2645567392a6a3",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "ffa023bc48981b328edb8aef9701d2d39cf7ecfd2e5f44f7196b12bd2976a254",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1730,
+      "source_update": 1729,
+      "kind": "full",
+      "source_sha256": "3158ec0b0c6fbc7bccd98ce76a2d2cce1738c72d846bdec7f4d295bb63e3a4dd",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "847e069a19666feaab376c00cb455eb7d0e6ee69fd8b8bf7bb9343def514a0b6",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1743,
+      "source_update": 1742,
+      "kind": "full",
+      "source_sha256": "1b1dea9a8339c2779560d6e56bbb29a449ada7bb52d4c19ffb6dce40ddfdd73d",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "612b05dbc8ce93d187aa481ded90e99575c0afc69db3f65ff162276ddb830894",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1757,
+      "source_update": 1756,
+      "kind": "full",
+      "source_sha256": "fb39d88365478c0b0627ea3d0d5eb00261f39d3a8e4dcac5ad053b56696e018d",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "12c86c02093b94299e4697d9e990afc12fc040d94e10df1abfb426293034eb8b",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1770,
+      "source_update": 1769,
+      "kind": "full",
+      "source_sha256": "c591e94ae1721bee463bddb813ee0137e598248bd3faed0ddd4ce652b6173db6",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "80fdbd3183ed10be353dfc87abfba275bbf708e8fd54f38ec25791739ebd979f",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1783,
+      "source_update": 1782,
+      "kind": "write-prefix",
+      "source_sha256": "7638c40c93de68ce39269f048f4a6b13b91deb07249fb03a0a053d42375db29b",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "d52d745ad5887153cd9f9d18dcb8d7711cdbf6d27e7d6da6439cb1ba45553781",
+      "full_art_checked": false,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1784,
+      "source_update": 1783,
+      "kind": "full",
+      "source_sha256": "d6ce4f1df56d2bebb25eb4e0c3a6827b6993fae2a3fe7b3e3a6d97d04d3f2ad3",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "499eb7664f075d95b53f5dc21d3d37bc2efb0bebaebca52154c84ffa1cb9305f",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1800,
+      "source_update": 1799,
+      "kind": "full",
+      "source_sha256": "d6ce4f1df56d2bebb25eb4e0c3a6827b6993fae2a3fe7b3e3a6d97d04d3f2ad3",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "499eb7664f075d95b53f5dc21d3d37bc2efb0bebaebca52154c84ffa1cb9305f",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 1990,
+      "source_update": 1989,
+      "kind": "full",
+      "source_sha256": "d6ce4f1df56d2bebb25eb4e0c3a6827b6993fae2a3fe7b3e3a6d97d04d3f2ad3",
+      "palette_sha256": "6b5c63a606fa7f6487c4756090a9e6a238c6a6af02a78bd68c045e3ed0a95034",
+      "hd_sha256": "499eb7664f075d95b53f5dc21d3d37bc2efb0bebaebca52154c84ffa1cb9305f",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    },
+    {
+      "frame": 2001,
+      "source_update": 2000,
+      "kind": "full",
+      "source_sha256": "d6ce4f1df56d2bebb25eb4e0c3a6827b6993fae2a3fe7b3e3a6d97d04d3f2ad3",
+      "palette_sha256": "308c8b837ce619964a1fb4f8231dcb13b0823257bcf985c0761375ff8fdb6d3d",
+      "hd_sha256": "7d38612ca9dd7737c6213d1414c64c7e86eaa6474328b91cbe6b1f49629cd383",
+      "full_art_checked": true,
+      "poster_language": "zh-TW",
+      "scale": 3
+    }
+  ],
+  "audit": {
+    "hd_raw": 0,
+    "switch_raw": 546,
+    "unexpected": 0,
+    "explicit_switch_records": [
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 0,
+        "column": 4,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 0,
+        "column": 5,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 0,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 0,
+        "column": 8,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 0,
+        "column": 9,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 0,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 0,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 0,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 0,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 0,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 0,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 0,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 0,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 0,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 0,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 0,
+        "column": 34,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 5,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 8,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 9,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 10,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 11,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 28,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 29,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 1,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 8,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 9,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 10,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 11,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 28,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 29,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 2,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 8,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 9,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 10,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 11,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 28,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 29,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 3,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 11,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 4,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 5,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 9,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 10,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 28,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 29,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 6,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 10,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 11,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 28,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 29,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 7,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 9,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 10,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 11,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 28,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 29,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 8,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 9,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 10,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 11,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 28,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 29,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 9,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 9,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 10,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 11,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 28,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 29,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 10,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 8,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 9,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 10,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 11,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 28,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 29,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 11,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 8,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 9,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 10,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 11,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 28,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 29,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 12,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 8,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 9,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 10,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 11,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 28,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 29,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 13,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 14,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 14,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 14,
+        "column": 8,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 14,
+        "column": 9,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 14,
+        "column": 10,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 14,
+        "column": 11,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 14,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 14,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 14,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 14,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 14,
+        "column": 28,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 14,
+        "column": 29,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 14,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 14,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 14,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 14,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 8,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 9,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 10,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 11,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 28,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 29,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 15,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 8,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 9,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 10,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 11,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 28,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 29,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 16,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 8,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 9,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 10,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 11,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 28,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 29,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 17,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 8,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 9,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 10,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 11,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 28,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 29,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 18,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 8,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 9,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 10,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 11,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 28,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 29,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 19,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 6,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 7,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 8,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 9,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 10,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 11,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 12,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 13,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 14,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 15,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 16,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 17,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 18,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 19,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 20,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 21,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 22,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 23,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 24,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 25,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 26,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 27,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 28,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 29,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 30,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 31,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 32,
+        "classification": "explicit F2 2x to 3x interval"
+      },
+      {
+        "first": 459,
+        "replaced": 460,
+        "row": 20,
+        "column": 33,
+        "classification": "explicit F2 2x to 3x interval"
+      }
+    ]
+  },
+  "demo": {
+    "frames": 7400,
+    "steps": 712250000,
+    "end": [
+      "7400",
+      "712250000",
+      "92378aa1b9a421f5f2b2b93c504aed1f80dbd06e627fd1d9f297932fbacbf540",
+      "e77dd084128cf4f20ecce7cd104b1bb0a68f008da864490d926e338386abb7bf"
+    ],
+    "digest": [
+      "c2b1ab7e95b942a904842f53eced383f6e0c39b111a0d6c1b65e8ac740694c47",
+      "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3"
+    ],
+    "guest_files": 127,
+    "frame_sha256": "0fe0a808796c24e0e4dee28c2f0274b3d61ae9fe60e6b5b71e4bf0b0f65742b9",
+    "flash": 0,
+    "draw": {
+      "HostBytes": 3476040,
+      "Commands": 251476,
+      "NativeBytes": 3476040,
+      "FallbackBytes": 0,
+      "Frames": 8633,
+      "BootstrapFrames": 3,
+      "Mismatches": 0,
+      "RGBFrames": 10732,
+      "OriginalRGBPixels": 2984093820,
+      "SelectedRGBPixels": 3197538180,
+      "LegacyRGBFrames": 0,
+      "HostCalls": 2455,
+      "HostInstructions": 1562500,
+      "HostBlocks": 148639,
+      "BlockInstructions": 1926417,
+      "AlgorithmicPlans": 151092,
+      "AlgorithmicInstructions": 3488903,
+      "Writers": {
+        "1218527905": {
+          "Commands": 200,
+          "NativeBytes": 64000,
+          "FallbackBytes": 0,
+          "HostBytes": 64000
+        },
+        "1218537727": {
+          "Commands": 7823,
+          "NativeBytes": 49494,
+          "FallbackBytes": 0,
+          "HostBytes": 49494
+        },
+        "1218537731": {
+          "Commands": 4715,
+          "NativeBytes": 4715,
+          "FallbackBytes": 0,
+          "HostBytes": 4715
+        },
+        "1218537744": {
+          "Commands": 8431,
+          "NativeBytes": 80046,
+          "FallbackBytes": 0,
+          "HostBytes": 80046
+        },
+        "1218537748": {
+          "Commands": 4313,
+          "NativeBytes": 4313,
+          "FallbackBytes": 0,
+          "HostBytes": 4313
+        },
+        "456004074": {
+          "Commands": 134288,
+          "NativeBytes": 134288,
+          "FallbackBytes": 0,
+          "HostBytes": 134288
+        },
+        "456004081": {
+          "Commands": 60336,
+          "NativeBytes": 60336,
+          "FallbackBytes": 0,
+          "HostBytes": 60336
+        },
+        "488572034": {
+          "Commands": 8322,
+          "NativeBytes": 1369216,
+          "FallbackBytes": 0,
+          "HostBytes": 1369216
+        },
+        "517216888": {
+          "Commands": 18368,
+          "NativeBytes": 938560,
+          "FallbackBytes": 0,
+          "HostBytes": 938560
+        },
+        "517216910": {
+          "Commands": 4680,
+          "NativeBytes": 771072,
+          "FallbackBytes": 0,
+          "HostBytes": 771072
+        }
+      }
+    }
+  },
+  "old_packages_unchanged": [
+    {
+      "path": "dist-all/v.0.1.0-20261101/patch/pod-v.0.1.0-20261101-linux-base-patch.AppImage",
+      "sha256": "bfdbce2d1328cb2f5590a2372bf0e67b7b0d98a2d1150f5a56d61c919928bcbd",
+      "size": 19728888
+    },
+    {
+      "path": "dist-all/v.0.1.0-20261101/full-local/pod-v.0.1.0-20261101-linux-base-full-local.AppImage",
+      "sha256": "966d1b2b05635ebdb8ce5adf31a39999480b4139cf94e95a9a6dd602a174015d",
+      "size": 21604856
+    },
+    {
+      "path": "dist-all/v.0.1.0-20261101/full-local/pod-v.0.1.0-20261101-linux-hd-full-local.AppImage",
+      "sha256": "fe54d06200a6b64a38f23b5d725be28b3b139caea38800cc8e56e55e4c4c25c0",
+      "size": 61016568
+    },
+    {
+      "path": "dist-all/v.0.1.0-20261101/patch/pod-v.0.1.0-20261101-windows-base-patch.zip",
+      "sha256": "b397b38d17dd26ba276b219bfb7723a6d9f773808c3386e7907e32fd5ebb5a73",
+      "size": 18660170
+    },
+    {
+      "path": "dist-all/v.0.1.0-20261101/full-local/pod-v.0.1.0-20261101-windows-base-full-local.zip",
+      "sha256": "fc2bdda804012fbe487ded5ddbecd9f8e7866afbac45d46fd25b2c6d11dcb21c",
+      "size": 20539327
+    },
+    {
+      "path": "dist-all/v.0.1.0-20261101/full-local/pod-v.0.1.0-20261101-windows-hd-full-local.zip",
+      "sha256": "dbd5ae6239a7c724a0e1ab9cc67c7fd409095a5fd5168656e178429102468c13",
+      "size": 60318823
+    },
+    {
+      "path": "dist-all/v.0.1.0-20261101/patch/pod-v.0.1.0-20261101-macos-base-patch.zip",
+      "sha256": "6889ff8bf674d0a972d4430c66a18704c05e4a8af63ca62f0ab9d5601660a543",
+      "size": 22719226
+    },
+    {
+      "path": "dist-all/v.0.1.0-20261101/full-local/pod-v.0.1.0-20261101-macos-base-full-local.zip",
+      "sha256": "7ac844368b836043056028b27c409c99ab2d2cfecf31e7b7f5e7c9ccee18be73",
+      "size": 24601100
+    },
+    {
+      "path": "dist-all/v.0.1.0-20261101/full-local/pod-v.0.1.0-20261101-macos-hd-full-local.zip",
+      "sha256": "d802dab8ad4829b845b5fa99f01eeb64bae17d4d1b28637005f9d11b0dd0a6cb",
+      "size": 64467161
+    },
+    {
+      "path": "dist-all/v.0.1.1-20261101/patch/pod-v.0.1.1-20261101-linux-hd-patch.AppImage",
+      "sha256": "65dd77137f76d95c61db572d696b5665ede87e77112a29bb0db054ae42524a81",
+      "size": 130333176
+    },
+    {
+      "path": "dist-all/v.0.1.1-20261101/patch/pod-v.0.1.1-20261101-windows-hd-patch.zip",
+      "sha256": "0b530e5665ef1822be4760825b98f213f94f6d5f261287da24a97a4f75c287a1",
+      "size": 130947491
+    },
+    {
+      "path": "dist-all/v.0.1.1-20261101/patch/pod-v.0.1.1-20261101-macos-hd-patch.zip",
+      "sha256": "89691dd660a48769401f61754bf722ea59b67b659c3534fe4921ae6c1821b569",
+      "size": 135096671
+    }
+  ],
+  "tools": {
+    "tools/final_bma_probe.go": "27b17045edc9c299b797a0ac94020d8dfb381cedb75782f42c66404b9cd370ff",
+    "tools/final_hd_accept.py": "981f30483679e762f7a42c2c2842228d912d33017ac0fdbba8dfe2dbfcabcb9d",
+    "tools/final_hd_art.py": "ed21b9372d481aded16fc710cb40c5b2e601ecaa4cc748b9444f7f2f95c8acb7",
+    "tools/final_hd_build.py": "278c8e8fd13539f8e46ab2684a776a0b3d1ae923db8e953e74fba56698460f9f",
+    "tools/final_hd_inventory.py": "938886ac087505c1f3d91384452e832e552e329546890fff083ed936cb2a5179",
+    "tools/final_hd_play.sh": "9c2b9281a75a222c45f9e6148aa99dff0a9681f30a240acab9ae498a20aacbff",
+    "tools/final_hd_play_check.py": "e78f95b283878884c7b688a6f54f1dde8f603b0666463520afba764cce48433b",
+    "tools/final_hd_snapshot.py": "9f0132be3a2da2adafa29f8bfc1b55a5c947a3bf06776058882a40b6dc515636",
+    "tools/final_hd_theme.py": "da0723c2e840dba90d98b78638587bf25e546aa5fdb634dcb5db04ac0a912e5e"
+  },
+  "limits": [
+    "Final entry queue is test-only; production CONTROL entry is unchanged",
+    "GUI ends at update 2001 to save a receipt; unmodified x86 probe exits normally at 2002",
+    "HD texture motion, light and reveal are artistic approximations",
+    "No Windows/macOS native validation or new packages in this batch"
+  ],
+  "clean_main_source_tree": "4dbb78721348d09e886ae8408fe8ae813bdeafb7",
+  "assets": {
+    "status": "PASS",
+    "manifest_sha256": "59209e92b76ebe30121a9755bfd18b79bbc34b0b7b945fab4751e89b39f20bbf",
+    "theme_files": 2034,
+    "theme_tree_sha256": "71c4a33851d63247c1b6bd758b75a44b633fd3f98dc15b09df4df5416ae4e2eb",
+    "fonts": {
+      "pod-en-3x.golemfnt": "c701ce90a4b3009e6126b0ccfc0dc042dc17c22dbf59c07b1e41c90678481db9",
+      "pod-en.golemfnt": "121e92b01c9c907aa66b8e6e78155d0a368102e599bbb9784feaec5c7f2234e0",
+      "pod-ja-3x.golemfnt": "74d3f0564e71a3534ab3b2f9b90c4c8c320573cdfa78327f82c190a320feefee",
+      "pod-ja-bar12.golemfnt": "55f41a4b156cbd90a55a8f2cb1519cc15409719824c9ff092e2cf6a9dfa25f7d",
+      "pod-ja-bar22.golemfnt": "df913a83201adfca63128a6c6bf57c34181812c2378b421ae6dfb635e8e1f77e",
+      "pod-ja.golemfnt": "e93b12499b74957140e7bdbb4a0e5f394f3375686bfbd27682c7d1a57823e93f",
+      "pod-ko-3x.golemfnt": "584966ab1f8681bb1277cc2153d24ba139bdfba0e7706f1e614c943ac6d7b993",
+      "pod-ko-bar12.golemfnt": "ef7b19eee1e3439a857d5e076b89a43a48be5a5b98b91754fb110573f3131616",
+      "pod-ko-bar22.golemfnt": "f77a0361635e9b790d8d22a2f2f8bc3b6835d0864344bad3f7f48be423f3f916",
+      "pod-ko.golemfnt": "d5ecfdbcd2aee46c88174467e87cad637f11ce8d7370ece23e581b4d451bc2d0",
+      "pod-rounded-3x.golemfnt": "52e749e344c5bf6a60fa6501ad4ab17b72de0871897382a5c58d2acc3cc21730",
+      "pod-rounded-bar12.golemfnt": "89cd27498ae1dea002b3fef714695e433e198269e71f76e50bdeab9b9f4c8976",
+      "pod-rounded-bar22.golemfnt": "0d731150caef048b40b60a6baaba1b37dc1f3791c7a442b2ee51a60834f635d5",
+      "pod-rounded.golemfnt": "0f0430e7db828b8b74249b69f02ac7c590724215d9edc0f212830790ae4531ac",
+      "pod-zh-CN-3x.golemfnt": "d93b3c60876cb46e8470520b680cb6005116df18a1826e043081f898e0737617",
+      "pod-zh-CN-bar12.golemfnt": "fda46fe44043d7ff4d2d04ba152ff7ef97b4e5a1c7ad6d9f6a6e62012a27bb5d",
+      "pod-zh-CN-bar22.golemfnt": "8346692b157dfa4e5d3e016a24cd7da857bf968c50fb1172541a960b71d2b26d",
+      "pod-zh-CN.golemfnt": "9787e8431f51e39f8ea59f6c6f631424d862bb248faefde65701104cbfab4c93"
+    },
+    "original_archives": {
+      "8X8D1.DAX": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+      "BIGPIC1.DAX": "bc3565c62c1654ee757d1f98f64bbb78e06bcd551c2e8593c41feb130b9f0f6b",
+      "CPIC1.DAX": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+      "DUNGCOM.DAX": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+      "TITLE.DAX": "8a53adf4044527df86d2d983f6c4eeee440c3d09773e7cbd4166279ccafde757",
+      "PIC1.DAX": "a3cf36ca3d51ca7960fd73b630489f019c5ad984808ad08bcf91186f67401ab7",
+      "SKYGRND.DAX": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+      "WILDCOM.DAX": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+      "COMSPR.DAX": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee",
+      "BACK1.DAX": "2efc68c5220a3f2c00315accc4b13961727cf87ae941484a8eb77cb78e054c6f",
+      "SPRIT1.DAX": "df356577a5d884222138c486170caf0bb21809f58201ed52827b2cd9dc441c7f",
+      "INTRO.BMA": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "INTRO.ACF": "f005e97b9d704bdfee940415d29ed76ce130a4151ffb420abcf38aeb3b6b417f",
+      "FINAL.BMA": "23c487072f64b7dd9850db885bf55a8713a289e9f5f94703b802de7bcc50f5b1",
+      "FINAL.ACF": "c6f45f23f8ac1ea0d117e40daf0c1bfd5ad03d885227e3b417c4df2b62459b19"
+    },
+    "engine": {
+      "repository": "https://github.com/wicanr2/pools-of-darkness-cht.git",
+      "branch": "dosgolem/pod",
+      "commit": "3fdeeb8ddd93ca84ee3626bc357dc2586c814883"
+    },
+    "input_scope": "Git files and explicitly supplied original DAX/BMA/ACF; no old workplace",
+    "rights": "private review inputs; original indexes reconstructed locally"
+  },
+  "reconstructed_original_files": 1091,
+  "originals_unchanged": {
+    "8X8D0.DAX": "84bd2b8015dbb58255dae03f560439f7c5022b4a451c4db865a915d573ccbf12",
+    "8X8D1.DAX": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+    "ADLIB.COM": "7c39949b5c740d92449110e896f08f2d11b16b8602d7d3d6d59a9f250d574286",
+    "BACK1.DAX": "2efc68c5220a3f2c00315accc4b13961727cf87ae941484a8eb77cb78e054c6f",
+    "BIGPIC1.DAX": "bc3565c62c1654ee757d1f98f64bbb78e06bcd551c2e8593c41feb130b9f0f6b",
+    "BORDERS.DAX": "a7e20b0f207ea7ac6379c02cbc8176f685975a40ab6840abd3132f1b31ffcf3b",
+    "CBODY.DAX": "97d8b09d0d9827d69fcb35bc67f36ed8d07d900c77f87f2706bec578a225fbb3",
+    "CHEAD.DAX": "3114b855f63108e3dba33ac2cb3ce43fd844a9dbb5050d3f163677d8f160ae45",
+    "COMSPR.DAX": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee",
+    "CONTROL.EXE": "60e53bcf4266fb4e68e4fc22990159d1c1af978e9d10068708cfd11d49935366",
+    "CPIC1.DAX": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+    "CURSOR.DAX": "581189a42a1a3b747824115ef8c27ee6ea3c7480db278cb36bc145f125d372a3",
+    "DUNGCOM.DAX": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+    "ECL1.DAX": "46aab737acb289b1995ae5a8ef495424d2e4e40bae45e33a1e9741f4c50064af",
+    "EGA.DRV": "a81ac708233d497c1beb86666f85c2f1e875c350fadaaba79bf978f0870bbb7b",
+    "FINAL.ACF": "c6f45f23f8ac1ea0d117e40daf0c1bfd5ad03d885227e3b417c4df2b62459b19",
+    "FINAL.BMA": "23c487072f64b7dd9850db885bf55a8713a289e9f5f94703b802de7bcc50f5b1",
+    "GAME.EXE": "35ad635e558852925b7028a921aacafc2df8e84be24a8a1136c6267471948d69",
+    "GAME.OVR": "885d6a07a3658f0688dc9d0630dfa984683a3d1d1e515a8e9909d29f62012485",
+    "GEO1.DAX": "d628bae8349044a1c1c05b821ccfbba6464ed5bfa57cef15ca05ec52cc5afc1f",
+    "IBMSND.COM": "3c3d65098afb94068bebe38d5a6bf8aa31b7b05466770fb1d2626e3f8544c5c2",
+    "INTRO.ACF": "f005e97b9d704bdfee940415d29ed76ce130a4151ffb420abcf38aeb3b6b417f",
+    "INTRO.BMA": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+    "ITEM0.DAX": "f79de98582122db21b36ee5e7d9f9d57dd95d75058f7103d5fc88f8f8d56b4f5",
+    "ITEMS": "f47b1ef3d478f226d86baa3f948c40f40bc48801e7de13d4e84e55b894fa21ed",
+    "MON1CHA.DAX": "dd9394a142899136da8b5466b1e2cae4357c31847abb18745bea75ae8b2e6eef",
+    "MON1ITM.DAX": "f8ec8bed44d928a3c652b52bf7bf0293a941c82da03068962396738449ab2a09",
+    "MON1SPC.DAX": "b8d669cfc41f04f94d35e058731be132e27a5ccd6c49e8054285659814a2855d",
+    "MUSIC.DAX": "21c02f70a902bb587fb0887ed62160365099c84c7ab4bf257412fe3693d337b8",
+    "P1.SMS": "fd6871dd0cf12c2fa3f95f67917f0a3214e690247fd050579935f12a48787435",
+    "P3.SMS": "09cc7df90b251d3c9e3598eb4e9bdcc67cac614df4477f320d6fe59f6d626fc4",
+    "PIC1.DAX": "a3cf36ca3d51ca7960fd73b630489f019c5ad984808ad08bcf91186f67401ab7",
+    "SAVE/CHRDATA1.EFX": "a1211b1b6107851b47ead67928af61da8b285378cf8370267eeda743b518aee0",
+    "SAVE/CHRDATA1.SAV": "7174bea59d2d8e0715be44bc009ad0f967d5c6c9ed19a0a4acc57bdd418fc688",
+    "SAVE/CHRDATA2.SAV": "4ed6c83e161dba75ba4bf350933bacf938de852e79cba39878d8bcf989c0a0d0",
+    "SAVE/CHRDATA3.SAV": "8dd69c76196cd0786b297893237148e2654c406ec236b193edbfa419160619ff",
+    "SAVE/CHRDATA4.SAV": "28af234d91f794b76a0bd0fccbfd1ed333ec32b60dceaf93bcc17676a0926cf8",
+    "SAVE/CHRDATA5.SAV": "1883b377a836519046842a22820f5cef5e4100d76a4ad991e6979869012b4f72",
+    "SAVE/CHRDATA6.SAV": "d69a40af0594299fbf7899780da42ba61c61e999c75d8faee6d1e147562d7eb6",
+    "SAVE/CHRDATB1.EFX": "a1211b1b6107851b47ead67928af61da8b285378cf8370267eeda743b518aee0",
+    "SAVE/CHRDATB1.SAV": "f51c72b187b7b7d051eb8fe4c175af83756d3ffe840121fcf824b0cebd78698b",
+    "SAVE/CHRDATB1.THG": "fdf044208c6faf837021580e90e562b5d82b767dae4a3d2f39f28250e1209af5",
+    "SAVE/CHRDATB2.SAV": "2dda9dec75989a3dd57e91de15aa44201d414158856e5ea6d6b1462e40ee83dc",
+    "SAVE/CHRDATB2.THG": "c0a1aea67e46855105744b7e06d1b13a0ecf69db9528f53f1547467156ce9994",
+    "SAVE/CHRDATB3.EFX": "32202d137f0354d72de06c8b8d8a6bb60c1d18c60503fce3dd06b9d524423524",
+    "SAVE/CHRDATB3.SAV": "0c8e50306fe7391be771287ef4c720f6300d0c4a50853b04a6fcf71170e5d1b9",
+    "SAVE/CHRDATB3.THG": "e13a3f721002061701ea9c8cd82cc7f7e35dbc09504ec2686a8cedf76754771a",
+    "SAVE/CHRDATB4.SAV": "3e4d13d81dcc408e4e955173d36a9409f1b1d00a8b8019cb5a356bb8af6f0be9",
+    "SAVE/CHRDATB4.THG": "a622b2997dbadc0e3458a21d65f1da230924ef78fe34b464feaeb804d3c5af0b",
+    "SAVE/CHRDATB5.SAV": "360710c99a153070a3584b67144910d074c9205840dafb9fdacb5597e988646e",
+    "SAVE/CHRDATB5.THG": "07ebb871e18d31667b5daeecbe813953a60a42d3077fb3c7954c6d6a50e83b95",
+    "SAVE/CHRDATB6.SAV": "abe92d99e29c118a50edb80b5ecb01307b82c261d9616cce213a38e756a27a68",
+    "SAVE/CHRDATB6.THG": "74fb336c4875b30c2ace379fd677a37cfa24a2d09c1352bda1eaed0ee406cfe4",
+    "SAVE/CHRDATB7.EFX": "a1211b1b6107851b47ead67928af61da8b285378cf8370267eeda743b518aee0",
+    "SAVE/CHRDATB7.SAV": "99f928b44df81019f6bf81c9f0f87745552d29714d70995f91ce93c9a0247a2b",
+    "SAVE/CHRDATB7.THG": "60bda177f4475d1f1313fdbe1006aedcf6fb269b8436440d243647dad54f9723",
+    "SAVE/CHRDATC1.EFX": "e4883413d6cbb10b05cbbeffb7715a8dd775bc1164f6200189c7bc048e6afc3b",
+    "SAVE/CHRDATC1.SAV": "6d5555e02528e8bad201ab7e587818bf792e3eacc3a79f8fe9128b1e2b60746b",
+    "SAVE/CHRDATC1.THG": "1fb404fee2158874b19cf9d331f03081f5bde4506f40fcea6213636a62a3d2f8",
+    "SAVE/CHRDATC2.SAV": "0133e779b9b1d933a545745e1bc24dd02497ef6a22689baad408deb781b11096",
+    "SAVE/CHRDATC2.THG": "a8cc2cd73882b8bd295dda67c4db17c6a8e9bb115401738c42584fda7c69383b",
+    "SAVE/CHRDATC3.EFX": "351a3f1cb7969a2a65a9d0532d92caa5d323550be4cf7de5329abba8a3f865c6",
+    "SAVE/CHRDATC3.SAV": "04a474f048833a319389a99fbeaa13a3315dfbb37e9c589c11c499107bbef933",
+    "SAVE/CHRDATC3.THG": "71edaf6a9f65ab24af216f67b23f41871b4ed78daa327eb82ebd65f7708188fa",
+    "SAVE/CHRDATC4.EFX": "cc961067f53184d64e3dfe3945d0866cbbc73712db7aa2ff60597f6f8cc7ac0c",
+    "SAVE/CHRDATC4.SAV": "dd0901723e548d343919590e6ce5bf18c42f4933bc9ff06fe8392e0c410e0b23",
+    "SAVE/CHRDATC4.THG": "47303a6a7ce66ed96ccc18a53fb993c712fb6d4b80e62dd296a1380c3a86488b",
+    "SAVE/CHRDATC5.SAV": "9974d48a8b6bfd544ea01f0beb98a07503f5aaf5a1e2ac0d38f67f1692236228",
+    "SAVE/CHRDATC5.THG": "28392b8c788592cb05bc46d6d73eff6d3d60e7efe2689044694235c802404c3d",
+    "SAVE/CHRDATC6.SAV": "1780b4325885d58dfd536ae19b6811cb875075643f520ad7e3a3b4e36bd0d709",
+    "SAVE/CHRDATC6.THG": "5f924ea831df1ce11189b7cd797be9c8c0ff1da931ff1e8d1932c8227808b7d4",
+    "SAVE/CHRDATC7.SAV": "bfa2dd9ec0bfa53841abfa80b0ed225ebda0229aa8ec498e15b4fb6960915175",
+    "SAVE/CHRDATC7.THG": "2d13927f60dc5997b22ff0c05fffc944ee53ac3ac584e4914d737a08b170bce4",
+    "SAVE/CHRDATD1.EFX": "e4883413d6cbb10b05cbbeffb7715a8dd775bc1164f6200189c7bc048e6afc3b",
+    "SAVE/CHRDATD1.SAV": "177565bb0a1de10412e34cacecf50dfc5f24494a745a80e0a10a175b966834b0",
+    "SAVE/CHRDATD1.THG": "066fba196649799d9faf4f7d5b05f5c39137a085bd76b806fa1fbce19bb791e8",
+    "SAVE/CHRDATD2.SAV": "bb5542d7aa72f3d7df463c88c338d491de7ea655ef2f0c6d749bf2ad60803f2a",
+    "SAVE/CHRDATD2.THG": "dfeecfbde35b418fb968c64a14cc8a2c3cc33be0dd7c193b6c8e82799a80bca1",
+    "SAVE/CHRDATD3.EFX": "351a3f1cb7969a2a65a9d0532d92caa5d323550be4cf7de5329abba8a3f865c6",
+    "SAVE/CHRDATD3.SAV": "498ce86473b1815eb6e413e73dd308881ee549c8904ef56a60b17a05fba0c592",
+    "SAVE/CHRDATD3.THG": "d98ef73c82f3d3fca452384b95d507f94790e9553e850c3b792eea88c33040fd",
+    "SAVE/CHRDATD4.EFX": "e9af9d76d4238b97528b8dd4045638c748b0965868ed9c46848730ddd749aea9",
+    "SAVE/CHRDATD4.SAV": "28de30469fd0d24b182c376e158c339d7b25088c5170482983f43b9f3a36cb78",
+    "SAVE/CHRDATD4.THG": "35b4ad4c2b3c8197721c6841d5407bd27be122745727c67607bfa527cf158c87",
+    "SAVE/CHRDATD5.SAV": "d69468dab226f8929eb8e478785477cc89a8683da611065e20b7f20e36795c4c",
+    "SAVE/CHRDATD5.THG": "3a2d686985f02916d983c1d334140a66e9201c6a81ca688ebb2280b648311cce",
+    "SAVE/CHRDATD6.SAV": "1d665c65d96b3daff11ac4f10948578786b198cdb55811232b822ecfe2f709e0",
+    "SAVE/CHRDATD6.THG": "ceca7150800010ec7cfec022ee88da69a6b17d7e2ac46b6e5b06bbe3d3f8eb97",
+    "SAVE/CHRDATD7.EFX": "a1211b1b6107851b47ead67928af61da8b285378cf8370267eeda743b518aee0",
+    "SAVE/CHRDATD7.SAV": "816f938c503be3dd0aa11cd3ad704ca63c9f12895f853e6b45614186cc22067b",
+    "SAVE/CHRDATD7.THG": "215a24a20b32085a3273fdc327b2f422f0a82d28cfab747c383de3d8b17ffe44",
+    "SAVE/CHRDATE1.EFX": "e4883413d6cbb10b05cbbeffb7715a8dd775bc1164f6200189c7bc048e6afc3b",
+    "SAVE/CHRDATE1.SAV": "49765e90ced88190bf1d4db3fe558714574b36434ffa3bd623b5f7cc6fd7b65b",
+    "SAVE/CHRDATE1.THG": "a306d8b6a5553b4f9711efdff8c267681f5c36199ef6a9c8b17429ddf469cafb",
+    "SAVE/CHRDATE2.SAV": "ca1fe43a361a38ca5713895e6b757f6458efe88a2aa6f5e229c23dca57a87bd2",
+    "SAVE/CHRDATE2.THG": "9bb2cb9063940e2e90f2662adad6c418ab450736371de6dec3b91dc6c9715c99",
+    "SAVE/CHRDATE3.EFX": "29891255a06ef1bf7f1f4f52f29d5ecfdb4f2b893dbe0e5df3bb3263fe3b5ae3",
+    "SAVE/CHRDATE3.SAV": "b89cb57289b9041c9d8cb5eb06b8795d1b84cb222d781b0108c543acb2c67509",
+    "SAVE/CHRDATE3.THG": "8dae78ce034509e1088092ce46fe39e1dc7ef2f0d049c7bc87a1c6df27b203ae",
+    "SAVE/CHRDATE4.SAV": "484f0a5a0885ebefaa1af36ad5ba7223557eec4378df30028da8f589aac0ac33",
+    "SAVE/CHRDATE4.THG": "5ca6597d7e7ca5069b225de3b3c0844dc26f050bd6fe7d0eec00f0426543598d",
+    "SAVE/CHRDATE5.SAV": "7389f2c2f10ae4087d026b9b9499f0cd13cc0b868469817f31e29088a36f6ea0",
+    "SAVE/CHRDATE5.THG": "b7a005cc664b46041de94ca7ff52168c0a34ead1b6be127118fed356d727ce4f",
+    "SAVE/CHRDATE6.SAV": "f4ed9d180fcbeb00f7764dd92939aa56fb3de31e2850ea14159f9905f50a7e8a",
+    "SAVE/CHRDATE6.THG": "c00d95b65fce74a84a5641315138a8449475dfe7efd15c85c39980442c771486",
+    "SAVE/VAULTA.DAT": "acce4e9d9acb33ac96d1a74f5ea2ca757406b765c9e0b51b84c0732afe457654",
+    "SAVE/VAULTB.DAT": "820ce5d2ae2d5b095e4b30c663854e7b366021561b531814f7323e4a875199b4",
+    "SAVE/VAULTC.DAT": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b",
+    "SAVE/VAULTD.DAT": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b",
+    "SAVE/VAULTE.DAT": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b",
+    "SBLASTER.COM": "24ba474445db209df86fdbb8f6ff733ac2a99a5032f48b29d1e800084252afca",
+    "SKYGRND.DAX": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+    "SOUND.COM": "f6fb0711277e9020596b7482244395a9252d04a9aa7879cf10c9ee06db8bac02",
+    "SPRIT1.DAX": "df356577a5d884222138c486170caf0bb21809f58201ed52827b2cd9dc441c7f",
+    "START.BAT": "87b47a9b093ea8579eed98492da7a59e83d053d8c13110d01527fed2dd869259",
+    "STARTUP.EXE": "c2e89ba5296d4c9464ea5d06d23e53687172d7e071abe07ffb6466f6b6ddf285",
+    "TANEXTX.COM": "f418ac3b73463036a27310e31f1c3c4f87d8077eebd7bb934af6e6af94c6b0ee",
+    "TANSLTL.COM": "86be8aa491e7999c06a42710e7d01e41b2d4f9a7aff7e79116fe86964eb920dc",
+    "TGA.DRV": "dc3515c18f3370bf82741ed4ce18bf32f4b16eb8655fd3bdfb7c4b8150c6282c",
+    "TITLE.DAX": "8a53adf4044527df86d2d983f6c4eeee440c3d09773e7cbd4166279ccafde757",
+    "VACE.EXE": "30fd9c2baf0d38ce9a019fefd410ce5216983763e4a1cb30bd268dd08f6ad683",
+    "VGA.DRV": "eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f",
+    "WALLDEF1.DAX": "b483f86268112d74a261c3e1c167164b4924f32ba4e47fd42c3ba5b0027b5ad1",
+    "WILDCOM.DAX": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+    "ZOUNDS.DAX": "13b9bb09317a522173b423f5fb28bd2b658d3285bab973f4205144efe75d730c"
+  },
+  "tests": {
+    "go-packages.log": {
+      "sha256": "e4d4ebb1e1ff35d601703b4035be2f5320f84e0a19e9bf54df710c8455cd90ca",
+      "text": "ok  \tgithub.com/wicanr2/dosgolem/apps/pod\t9.569s\nok  \tgithub.com/wicanr2/dosgolem/cmd/pod-play\t0.023s\nok  \tgithub.com/wicanr2/dosgolem/apps/pod/hdimport\t0.130s\n"
+    },
+    "go-vet.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "render-tests.log": {
+      "sha256": "ff8f9aeeaf1a8d70953729e6f97ae75776e1c7a43b23d71575a700164438ed5a",
+      "text": "=== RUN   TestFinalRealSources\n    hd_final_test.go:100: map[full:53 write-prefix:9 zero-write-prefix:3]\n--- PASS: TestFinalRealSources (2.25s)\n=== RUN   TestFinalSourceCallGuards\n--- PASS: TestFinalSourceCallGuards (1.40s)\n=== RUN   TestFinalManifestGuards\n--- PASS: TestFinalManifestGuards (0.05s)\n=== RUN   TestIntroRealSources\n    hd_intro_test.go:105: map[clear-prefix:1 complete:131 draw-prefix:26]\n--- PASS: TestIntroRealSources (4.92s)\n=== RUN   TestIntroPrefixRejectsOutOfOrder\n--- PASS: TestIntroPrefixRejectsOutOfOrder (0.00s)\n=== RUN   TestIntroManifestGuards\n=== RUN   TestIntroManifestGuards/version\n=== RUN   TestIntroManifestGuards/count\n=== RUN   TestIntroManifestGuards/duplicate\n=== RUN   TestIntroManifestGuards/traversal\n=== RUN   TestIntroManifestGuards/index-hash\n=== RUN   TestIntroManifestGuards/palette\n--- PASS: TestIntroManifestGuards (0.02s)\n    --- PASS: TestIntroManifestGuards/version (0.00s)\n    --- PASS: TestIntroManifestGuards/count (0.00s)\n    --- PASS: TestIntroManifestGuards/duplicate (0.00s)\n    --- PASS: TestIntroManifestGuards/traversal (0.00s)\n    --- PASS: TestIntroManifestGuards/index-hash (0.00s)\n    --- PASS: TestIntroManifestGuards/palette (0.00s)\n=== RUN   TestIntroSourceCallGuards\n--- PASS: TestIntroSourceCallGuards (2.90s)\n=== RUN   TestIntroSourceFrames\n    movie_subtitles_test.go:19: requires local original intro receipt and fonts\n--- SKIP: TestIntroSourceFrames (0.00s)\nPASS\nok  \tgithub.com/wicanr2/dosgolem/apps/pod\t11.566s\n"
+    }
+  },
+  "art": {
+    "count": 43,
+    "structure_min": 0.6041797021649356,
+    "hue_median_max": 19.12408759124088,
+    "manifest_sha256": "221147ffe1ab4db858ccb34b4f54532a02c10cc2627256ce17564d8c286108be",
+    "visual_review_sha256": "248bae665a856dce1ccee4e28ca07ed3072bf08f4432b5239ffed9f2d1a4987b"
+  },
+  "tool_versions": {
+    "python": "3.13.16",
+    "pillow": "11.0.0",
+    "numpy": "2.1.3",
+    "opencv": "4.12.0",
+    "go": "go1.24.13"
+  },
+  "activation": {
+    "status": "PASS",
+    "theme_files": 2034,
+    "previous_files": 1888,
+    "backup": "workplace/probe/final-hd/formal-before",
+    "binary_sha256": "152c7c50812863cd1cb0cbb9e034b2b1485d84b15dc1e2ac136657182d000d42",
+    "fonts_unchanged": true,
+    "old_packages_unchanged": true
+  }
+}

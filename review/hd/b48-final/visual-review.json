@@ -1,0 +1,185 @@
+{
+  "date": "2026-11-02",
+  "reviewer": "Codex",
+  "issue": 77,
+  "contact_sha256": "60a66382d575c09fcb7cdddbc5e35d3de845ba006db64902d405d6b58841859d",
+  "status": "accepted 43-phase contact and native-size samples",
+  "items": [
+    {
+      "key": "final-b00-f00",
+      "sha256": "45cae5f10c1a3e01b899038ba15a1b35c7edd18c3181a8695feb23b28c1202ea"
+    },
+    {
+      "key": "final-b00-f01",
+      "sha256": "c51c907d6b29dba16802d309ec1f2b1096baacd6788027a44913eb68a0c2ded6"
+    },
+    {
+      "key": "final-b00-f02",
+      "sha256": "9bef924af5c52c17635581651ef52b0d6056e66a349cef236b661228e80f0a09"
+    },
+    {
+      "key": "final-b00-f03",
+      "sha256": "53dc41e0d7e54851b8e21f98dde801f370d9b608fab4697d0e109d8583f6ba83"
+    },
+    {
+      "key": "final-b00-f04",
+      "sha256": "d2c22e4ed2ddcc877025c1991e2c7e18d3f689b59b63c6584828acad6691e0b5"
+    },
+    {
+      "key": "final-b00-f05",
+      "sha256": "f8aed5f026e342b5e886bfb3b3271e3cbe7bdfb7eeb5c536cc976c28983cfac5"
+    },
+    {
+      "key": "final-b01-f00",
+      "sha256": "60461e85ab10358a9262a2067c33344a017de0fb8986fc477d20fde195adb102"
+    },
+    {
+      "key": "final-b01-f01",
+      "sha256": "07e3df9870db60feed9700128b077523c9957ff6d9b5e1a05a43810762a2a6c2"
+    },
+    {
+      "key": "final-b01-f02",
+      "sha256": "3b059d0f6795fa060918a76fa7ca8c22bd7a4ef5e5dcfa44e33ae8118f0a357c"
+    },
+    {
+      "key": "final-b01-f03",
+      "sha256": "e7f89a802516314e6698f40f6d5f23a8e10d27512f156dd3df8dccf7512feffe"
+    },
+    {
+      "key": "final-b01-f04",
+      "sha256": "29888c74d82fb340b17fa3b9c200263a91d5fba89de12c29cdee5bba838c47ef"
+    },
+    {
+      "key": "final-b01-f05",
+      "sha256": "dfb858e9058377cf90e872494db45c362abf763c03b231a1655f2b9ce9436aae"
+    },
+    {
+      "key": "final-b01-f06",
+      "sha256": "9fc6b453aaf6a6d3fd1aa935011f31da0e3d3e9a749485ffb91263dab66f8d45"
+    },
+    {
+      "key": "final-b02-f00",
+      "sha256": "b2364cadde1b99dcb64281a605d1ca990b6749d905ffa7b1de9b50baebad44e5"
+    },
+    {
+      "key": "final-b02-f02",
+      "sha256": "66c55f9971ffab8b607dddf832f5b7cd3c7fd652de0aa350d1d559d653395c47"
+    },
+    {
+      "key": "final-b02-f03",
+      "sha256": "d65a6d7ae04cdbf4a36ae9735b1b7ca2556841c36b563618d671de16fee384c5"
+    },
+    {
+      "key": "final-b02-f04",
+      "sha256": "cd676ea7f8644c02f3f9c6643fb765e9cd676edcc88b34a0a39edd9b154c2ebe"
+    },
+    {
+      "key": "final-b03-f00",
+      "sha256": "05f75e061e690ad8014c695db44344f4e63c612f1f65eee208dedcb758d9d4bd"
+    },
+    {
+      "key": "final-b03-f01",
+      "sha256": "f45664f69235215d259475d9a05568415098503a155622f820a91c2d2de574c6"
+    },
+    {
+      "key": "final-b03-f02",
+      "sha256": "28aab60f4d3c4d8b0c0e22d7a2a29becc0bdfcc313c4c32d88980b5ebfa6d9c9"
+    },
+    {
+      "key": "final-b04-f00",
+      "sha256": "2d3c0a9f203fb331585dbb97fef75ec9a64873fca281503f23349fc80b86f2ad"
+    },
+    {
+      "key": "final-b04-f10",
+      "sha256": "d4057894f81cca638a876ec7bbd4385672aacf43a6b7cfeaac3bd7902db2352c"
+    },
+    {
+      "key": "final-b04-f11",
+      "sha256": "d660df446d8dfdc5e2a869b61aba4f38b35a85251227690c4cd9e7135741fd38"
+    },
+    {
+      "key": "final-b04-f12",
+      "sha256": "2c14825b2230e1d4b73b89f5e9b9ff934b67827b63fac05311c4cc2ac3066c15"
+    },
+    {
+      "key": "final-b04-f13",
+      "sha256": "968aaa6d80da66674037525b784fe4df963fa0b489e74e0da140a379ea6335bb"
+    },
+    {
+      "key": "final-b04-f14",
+      "sha256": "8e1c7a6ec723e42b3318654166f7493a88c2bba791f7ebc4f22dfe7f9b9ebe3f"
+    },
+    {
+      "key": "final-b04-f15",
+      "sha256": "6d16fe835c0e2469cb8365ef0b4cec945370ef771ec740f3993d03cc574f3e30"
+    },
+    {
+      "key": "final-b04-f16",
+      "sha256": "31e7e5b8b9d9100c19af190d8ae5360647a9cbbc63518c7d4306c1d61ea1bc54"
+    },
+    {
+      "key": "final-b04-f17",
+      "sha256": "b8bb89eeff39d4f56dcbd03e4fcae106c9875941ecab1e5335b23648f9f4a9e0"
+    },
+    {
+      "key": "final-b04-f18",
+      "sha256": "5fe4bfe78bf9eef4fd4aa45aad14a95ecea6ab9c947f31cf62cee5442bdf02bb"
+    },
+    {
+      "key": "final-b04-f19",
+      "sha256": "5ea52eb19d4cf98cded91ad253e1b21b6fd5b06344a663b7dfac8a74be6c5f08"
+    },
+    {
+      "key": "final-b04-f20",
+      "sha256": "7cbaac55ff935fbc310299ca3bc15d16cb03e26c3c0a63e9489b53375567b7a7"
+    },
+    {
+      "key": "final-b04-f21",
+      "sha256": "4211b9329b070ee5dee069d0bf1f4d6525f18a10b51657ae5e78af238393251a"
+    },
+    {
+      "key": "final-b04-f22",
+      "sha256": "abdb9bcc87e3463808e7590c054039a19a86d7f8cd58a28ebea0538ee2ba2256"
+    },
+    {
+      "key": "final-b04-f23",
+      "sha256": "654fec1a498d7b8a11ce5feed51193e764771fe94e702657aea28ce413e29d84"
+    },
+    {
+      "key": "final-b04-f24",
+      "sha256": "0ebac3d35055d2860b0f8d99b54245166fd32a1b4f7ecf29bf2d69c435143aa4"
+    },
+    {
+      "key": "final-b04-f25",
+      "sha256": "463b36aeef360518f55e9916db8fde1f2883954e9291ddf937c3d7898ea686ea"
+    },
+    {
+      "key": "final-b04-f26",
+      "sha256": "d1759771564bf9781a3a2f50e0895a0b751d33053bcf7961bc29111bf79a5684"
+    },
+    {
+      "key": "final-b04-f27",
+      "sha256": "21d95fc50d2bbefc78dc8811c9054fe3ffa4d127b0813b35719d6738d5fcfb50"
+    },
+    {
+      "key": "final-b04-f28",
+      "sha256": "14cdb1521757dc601bfb58de8f1f57d718bd368a36d51d855f9927e9074ccc57"
+    },
+    {
+      "key": "final-b04-f29",
+      "sha256": "0fdc11338bc8a4f345cf7fe582b7af59918480aa3f366b5c72a3b100f5d80a40"
+    },
+    {
+      "key": "final-b05-f00",
+      "sha256": "084b6c0a0fbf774844bd81c72f3f6b1fad862b37304c325fe6ddf4334f7eca8e"
+    },
+    {
+      "key": "final-b05-f01",
+      "sha256": "3e27eb373b3cbae3e6977abfec73e5e84f020a65397e8370db98448bdf72b087"
+    }
+  ],
+  "limits": [
+    "Source-guided movement, light and texture are artistic approximations",
+    "Private original comparisons do not belong in distributable patches"
+  ]
+}
