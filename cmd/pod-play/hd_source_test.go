@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"os"
 	"path/filepath"
 	"testing"
@@ -33,6 +34,34 @@ func TestHDSourceCache(t *testing.T) {
 	if e != nil || before.ModTime() != after.ModTime() {
 		t.Fatal("重啟改寫快取")
 	}
+	var manifest struct {
+		Originals map[string]string `json:"original_archives"`
+	}
+	if e = json.Unmarshal(raw, &manifest); e != nil {
+		t.Fatal(e)
+	}
+	copyGame := filepath.Join(out, "copied-game")
+	if e = os.Mkdir(copyGame, 0755); e != nil {
+		t.Fatal(e)
+	}
+	for name := range manifest.Originals {
+		b, e := os.ReadFile(filepath.Join(original, name))
+		if e != nil {
+			t.Fatal(e)
+		}
+		if e = os.WriteFile(filepath.Join(copyGame, name), b, 0644); e != nil {
+			t.Fatal(e)
+		}
+	}
+	if _, e = prepareHDSource(raw, root, copyGame, data); e != nil {
+		t.Fatal("拒絕同一原版的快取", e)
+	}
+	if e = os.WriteFile(filepath.Join(copyGame, "INTRO.BMA"), []byte("wrong"), 0644); e != nil {
+		t.Fatal(e)
+	}
+	if _, e = prepareHDSource(raw, root, copyGame, data); e == nil {
+		t.Fatal("來源改動仍接受快取")
+	}
 	if e = os.WriteFile(filepath.Join(first, "unlisted.dat"), []byte("unknown"), 0600); e != nil {
 		t.Fatal(e)
 	}
@@ -48,5 +77,5 @@ func TestHDSourceCache(t *testing.T) {
 	if _, e = prepareHDSource(raw, root, original, data); e == nil {
 		t.Fatal("接受已改動的快取")
 	}
-	t.Log("首次重建、唯讀重用與快取改動拒絕通過；不呼叫正式玩家分支")
+	t.Log("首次重建、唯讀重用、原版與快取改動拒絕通過")
 }

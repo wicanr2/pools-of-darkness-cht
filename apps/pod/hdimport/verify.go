@@ -4,8 +4,61 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"path"
 	"path/filepath"
+	"strings"
 )
+
+// CheckOriginals 在快取重用時同樣核對來源，避免改過DAX卻沿用舊來源主題。
+func CheckOriginals(raw []byte, dir string) error {
+	var m Manifest
+	if len(raw) > 8<<20 {
+		return fmt.Errorf("HD清單過大")
+	}
+	if err := json.Unmarshal(raw, &m); err != nil {
+		return err
+	}
+	if m.Version != 1 || len(m.Originals) == 0 || len(m.Originals) > 32 {
+		return fmt.Errorf("HD原版清單不合")
+	}
+	root, err := filepath.EvalSymlinks(dir)
+	if err != nil {
+		return err
+	}
+	root, err = filepath.Abs(root)
+	if err != nil {
+		return err
+	}
+	entries, err := os.ReadDir(root)
+	if err != nil {
+		return err
+	}
+	names := map[string]string{}
+	for _, entry := range entries {
+		key := strings.ToUpper(entry.Name())
+		if _, ok := names[key]; ok {
+			return fmt.Errorf("原版大小寫重複")
+		}
+		names[key] = entry.Name()
+	}
+	for name, want := range m.Originals {
+		if !cleanName(name) || path.Base(name) != name || !validHash(want) {
+			return fmt.Errorf("原版清單路徑或SHA不合")
+		}
+		actual, ok := names[strings.ToUpper(name)]
+		if !ok {
+			return fmt.Errorf("缺少原版%s", name)
+		}
+		data, err := read(root, actual)
+		if err != nil {
+			return err
+		}
+		if Sum(data) != want {
+			return fmt.Errorf("原版%s SHA-256不符", name)
+		}
+	}
+	return nil
+}
 
 // Verify 核對已產生快取的全部檔案；未知檔案與缺項均拒絕。
 func Verify(raw []byte, dir string) error {

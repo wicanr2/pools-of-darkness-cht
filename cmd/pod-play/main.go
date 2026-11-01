@@ -693,6 +693,11 @@ func main() {
 		if gameDir, startName, err = prepareGame(*original, data); err != nil {
 			fail(err)
 		}
+		if *hdDir == "" {
+			if *hdDir, err = releaseHDSource(gameDir, data); err != nil {
+				fail(err)
+			}
+		}
 	} else if *original == "" || *textDir == "" || *fontPath == "" {
 		flag.Usage()
 		os.Exit(2)
