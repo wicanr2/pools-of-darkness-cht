@@ -547,6 +547,10 @@ func (g *game) finish() error {
 		fmt.Fprintf(os.Stderr, "pod-play: frames=%d steps=%d memory_sha256=%x indexed_sha256=%x\n", g.frame, d.Steps, d.MemorySHA256, d.IndexedSHA256)
 		fmt.Fprintf(os.Stderr, "pod-play: cpu_sha256=%x palette_sha256=%x\n", d.CPUSHA256, d.PaletteSHA256)
 	}
+	if s := g.live.IntroHDStats(); s.Calls > 0 {
+		b, _ := json.Marshal(s)
+		fmt.Fprintf(os.Stderr, "pod-play: intro_hd=%s\n", b)
+	}
 	if g.drawReport != "" {
 		b, err := json.MarshalIndent(g.live.Direct.Stats(), "", "  ")
 		if err != nil {

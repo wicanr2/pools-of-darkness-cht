@@ -10,6 +10,7 @@ type HDLayers struct {
 	encounters  *encounterHD
 	walls       *wallHD
 	exact       *exactHD
+	intro       *introHD
 	composite   *combatComposite
 	classified  bool
 	lastIndex   []byte
@@ -50,6 +51,10 @@ func LoadHDLayers(dir string) (*HDLayers, int, error) {
 	if err != nil {
 		return nil, 0, err
 	}
+	intro, err := loadIntroHD(dir)
+	if err != nil {
+		return nil, 0, err
+	}
 	count := 0
 	if combat != nil {
 		count += len(combat.tiles)
@@ -66,13 +71,17 @@ func LoadHDLayers(dir string) (*HDLayers, int, error) {
 	if exact != nil {
 		count += len(exact.items)
 	}
-	return &HDLayers{combat: combat, actors: actors, encounters: encounters, walls: walls, exact: exact, composite: newCombatComposite(combat, actors)}, count, nil
+	if intro != nil {
+		count += 97
+	}
+	return &HDLayers{combat: combat, actors: actors, encounters: encounters, walls: walls, exact: exact, intro: intro, composite: newCombatComposite(combat, actors)}, count, nil
 }
 
 func (h *HDLayers) Frame(indexed []byte, pal [256][3]uint8) {
 	if h == nil {
 		return
 	}
+	h.intro.frame(indexed, pal)
 	if len(indexed) != 320*200 {
 		h.classified = false
 		h.classify(indexed, pal)

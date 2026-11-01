@@ -37,6 +37,7 @@ func (l *Live) composeDirect(scale int, missing func(rune)) []byte {
 			l.battleHold.applyDeferred(indexed, out, l.palSig(), l.HDLayers.pendingBattleCells(), source)
 		}
 	}
+	l.HDLayers.drawIntroArt(out, scale)
 	l.drawIntro(out, scale, missing)
 	count := source.FillOriginal(out)
 	if count < 0 {
