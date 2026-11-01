@@ -1837,3 +1837,15 @@
 - 最後2789個本機文件連結及README66張圖片入口通過，原始zip／rar、正式7109e14程式、1536檔主題、十份字型與舊九包SHA未改。沿既有Go及影像映像，沒有新建映像或修改其他專案；root-owned與誤建.md目錄0，本批容器0，剩248GiB。
 - 另由乾淨引擎0e804ea匯出重建探針，虛擬Go overlay入口不依賴舊workplace/movieprobe，重編逐位元同受測1a9897a。沒有新增重播，因二進位完全相同而不重複跑已通過的正常路線。
 - 主專案a57c2e5已推私人main，#74附[來源階段結果](https://github.com/wicanr2/pools-of-darkness-cht/issues/74#issuecomment-6556387611)，#10補[目前範圍](https://github.com/wicanr2/pools-of-darkness-cht/issues/10#issuecomment-6556388162)。#74／#9／#10／#11／#12／#16回讀OPEN；來源完成不當作動畫HD完成。主專案與引擎工作樹乾淨，本批容器0。
+
+
+## 2026-11-01 片頭HD接入與收尾
+
+- 依使用者「接上吧，加速結尾」完成#74接入。路由命中spec閘門與影像生成；沿用六張主畫面，新增七份生成素材，以原版133次BMA呼叫選97種敘事相位。SSI標誌保留原版，FINAL另計。
+- DRAFT來源已由031解除。規格010補READY契約後實作，BMA來源／程式簽章、完整索引、分段／清除、色盤失配回退均只讀。第一次真實來源測試抓到跨呼叫清除前一圖，按source-137補證據；閉幕材質拉長改由布幕遮罩處理。
+- 97件數值全過、六張核准RGBA不變；逐相位目視與原尺寸抽樣綁SHA。apps/pod與cmd/pod-play測試通過，真實來源131完整／26繪製前綴／1清除前綴及負對照通過。
+- 舊程式與最終HD／切換各5100回合，33張擷取中31張完整HD逐點相同；原版CPU／RAM、索引／色盤、127檔相同。原量尺40／599保留，全黑轉場40與明示F2／F12 559逐項核對，非預期可見閃現0，沒有調量尺。
+- 引擎50c93fb推到私人dosgolem/pod；乾淨Git重編同82b9c9ee。私人素材與重建清單保存，乾淨Git樹3684bb4按SETUP跑assets，1866檔主題與十份字型SHA全同。收據既有DAX-only標籤由verified_scope勘誤，實際BMA／ACF雜湊與輸入已驗；工具後續描述同步修正，演算法未變。
+- 現行程式與主題換成受測版；舊7109e14／1536檔保留before-intro-hd回復副本。原版與九個候選封包SHA未改，沒有新Release或上游推送。
+- 工具鏈沿用sosb-img:r1（8b9012adb991）與dosgolem-go-ebiten:1.24-r1（8ed6bdee2bce）。前處理新增明確revision pod-intro-img:r2（96e4e68626c1），Dockerfile固定全部版本與OpenCV wheel SHA；未清理其他專案資源。
+- 收尾檢查：全工作根沒有root-owned檔案或`.md`目錄；正式程式、JSON及目錄UID/GID均1000:1000。專案本批容器已隨--rm移除，未留下背景程序；未做prune或rmi。文件連結、Python語法與shell語法通過。

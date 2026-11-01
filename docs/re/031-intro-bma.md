@@ -80,3 +80,34 @@ Go 1.24.13、`dosgolem-go-ebiten:1.24-r1`（`8ed6bdee2bce`），引擎`0e804eadf
 直接核對可在影像映像內執行`python3 -I tools/intro_bma_test.py -v`；來源盤點的全部參數見`intro_bma_inventory.py --help`。缺原版時格式測試明確skip，不能算來源通過。
 
 較早018、規格010與CONTEXT的BMA未知已有回填，固定來源收據內的resolution紀錄保留不可變輸入鍵及必要勘誤標記。盤點工具會拒絕缺少標記或回鏈的舊入口。後續仍需HD相位素材、正式呈現及GUI／閃現抽驗；FINAL、通用ACF語意及其他原案功能未完成。
+
+
+## 片頭HD接入驗收
+
+2026-11-01追加，Issue [#74](https://github.com/wicanr2/pools-of-darkness-cht/issues/74)。前文保留來源階段紀錄；本節接續[規格010](../spec/010-hd-theme.md#bma片頭動畫接入)的READY審查與正式接入。引擎`50c93fb2fd1260572e031787e61e69659cec1d62`，程式SHA-256 `82b9c9ee2356cee690f747895a58e60ed485d1d02bae400d950e608903a83ba0`。
+
+| 項目 | 結果與證據等級 |
+|---|---|
+| 原版來源 | 沿前述固定BMA／ACF／VACE／VGA雜湊與dosgolem位址空間，133次來源呼叫全部綁定，已證實 |
+| 顯示 | 97種敘事相位，960×504不透明；六張b44主畫面RGBA逐點不變。新增七份生成背景／物件／動作圖；[逐相位成品與SHA](../../review/hd/b46-intro/manifest.json)、[數值驗收](../../review/hd/b46-intro/validation.json)與[提示詞](../../review/hd/b46-intro/generation.json)另列 |
+| 相位／布幕 | 原版BMA呼叫及完整前後索引決定圖面；有序寫入表處理分段來源。BMA11用原版可見人物色段與布幕遮罩，不對人物拉伸；素材遮擋屬美術近似，來源與播放順序已證實 |
+| 明暗 | 僅接受正常原版色盤SHA，亮度由當前與完整來源色盤導出；HD色調屬美術近似。未深入硬體driver，客體色盤與時序不改 |
+| 真實來源守衛 | 131個完整、26個繪製前綴與1個清除前綴通過。未知像素／色盤、亂序寫入、來源區塊／程式碼失配、非法路徑／清單及2倍負對照通過；下方字幕不覆蓋 |
+| 正常入口 | SND／CONTROL冷開機，不送DOS鍵；原版舊程式、HD候選與F2／F8／F12各5100回合、490875000步，原版終點及127個DOS檔案相同 |
+| 畫面 | 33張正常擷取，其中31張完整HD與PNG／亮度逐點相同；全黑清除與TITLE轉場另驗。二倍美術、F12整幅與原版RGB逐點相同，F8不改美術 |
+| 量尺 | 原始HD40／切換599；40格發生於3767→3769，來源及實際合成RGB逐格全0。其餘559格只在706→711明示F2／F12區間，二倍與原版截圖已驗。原始記錄完整保存，非預期可見閃現0；沒有調量尺、門檻或黑色像素 |
+| 保存與重建 | PNG／提示詞／清單進私人Git。850份索引與133份有序寫入表由自備原版重生；乾淨Git樹3684bb4依SETUP跑`tools/rebuild.sh assets`，1866檔主題與十份字型逐檔相同。引擎乾淨Git重編程式SHA相同 |
+| 現行與回復 | 現行已換成受測程式與主題；舊程式`pod-play-before-intro-hd`、舊主題`workplace/hd/theme-before-intro-hd/`保留。舊九包逐包SHA同026，不覆寫 |
+
+固定[正常收據](031-intro-hd-runtime.json)保存來源、程式與主題SHA、全部量尺格子分類及乾淨重建結果。素材[審閱頁](../../review/hd/b46-intro/README.md)有逐相位拼圖；README另保存實際正常視窗。
+
+### 重現
+
+- 影像前處理：[intro_hd_art.py](../../tools/intro_hd_art.py)讀既有請求與生成原圖，`--root <repo> --out <新相位目錄>`。工具鏈[pod-intro-img:r2](../../tools/docker/intro-img.Dockerfile)固定Python3.13.16、Pillow11.0.0、NumPy2.1.3及OpenCV4.12.0.88；來源引導變形只定位手繪材質，不將原版RGB濾鏡放大作主畫面。
+- 數值：[intro_hd_validate.py](../../tools/intro_hd_validate.py)指定`--root --artwork --report`；尺寸、alpha、結構0.4、色相30度門檻不變。
+- 來源主題：[intro_hd_theme.py](../../tools/intro_hd_theme.py)指定`--root --original --artwork --capture --out`。原始索引、色盤及有序位置只留本機。
+- 正常視窗：[intro-hd-play-receipt.sh](../../tools/intro-hd-play-receipt.sh)接受`hd`、`base`或`switch`及新收據名。現行程式／主題為預設，可用`POD_INTRO_BIN`／`POD_INTRO_THEME`明示候選；全部工作在Docker內。
+- 比對：[intro_hd_play_check.py](../../tools/intro_hd_play_check.py)指定`--base --hd --switch --theme --proof`。本次基準在`workplace/probe/intro-hd-final-v1/base`，最終HD／切換在`workplace/probe/intro-hd-final-v2/`。保留原始量尺，只接受已固定且逐格證明的全黑或明示切換，其他記錄失敗。
+- 跨機：[SETUP](../../SETUP.md)的`tools/rebuild.sh assets`從Git PNG、JSON、字型與自備DAX／INTRO.BMA／INTRO.ACF重建，不需要生圖服務或舊workplace。
+
+SSI標誌全程保留原版，FINAL另計。其他速度、未觀測色盤與其他原版版本維持未知並安全回退。此結論不外推全遊戲HD或零閃現；#10與#16母項保持開啟。

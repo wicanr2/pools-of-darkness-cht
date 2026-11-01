@@ -1,0 +1,87 @@
+{
+  "issue": 74,
+  "tool": "image_gen.imagegen",
+  "style": "B",
+  "rights": "Codex generated HD; private project and approved patch scope",
+  "generated_directory": "/home/anr2/.codex/generated_images/01a19636-cfac-7052-9a02-683f15c5b0ed/",
+  "items": [
+    {
+      "key": "phlan-skull",
+      "file": "exec-390b5210-1870-452c-bfa9-c8100d2c9f01.png",
+      "saved": "inputs/phlan-skull-raw.png",
+      "references": [
+        "INTRO.BMA block3 frame0",
+        "review/hd/b44-intro/intro-phlan.png"
+      ],
+      "transparent_background": true,
+      "prompt": "Use case: style-transfer; create a project game sprite, not a poster. Generate ONE isolated frontal floating horned skull from the FIRST reference, hand-painted in the exact polished fantasy illustration style of the SECOND reference. The first reference defines its silhouette and anatomy: very wide thin upward-splayed horns, silver-white and icy blue bony face, dark indigo shadows, sharply slanted intensely glowing RED eyes, triangular nose cavity, vertically open toothy mouth and fanged lower jaw tapering downward. Preserve this skull's facial proportions and intimidating expression, do not substitute a human skull or add a body. The second reference supplies only painterly detail, edge quality, and palette harmony. Skull only, no city, scenery, stone border, letters, smoke, pedestal, or extra ornaments. True transparent background. Center the full horn-to-horn skull with a small transparent margin; no cropping. Crisp hand-painted shapes, rich blue-violet shadows, detailed bones, matching 1990s dark fantasy illustration rather than pixel art or photorealism. Output a single transparent RGBA sprite suitable for downsampling to approximately 270 by 180 pixels.",
+      "sha256": "72bdaf00b54346bd3aa3d2c40a354780a1be4dbf8d9211e1e00ae01ec6aa04c7"
+    },
+    {
+      "key": "council-empty",
+      "file": "exec-9964577a-201c-4f18-85c4-8207b5be98ae.png",
+      "saved": "inputs/council-empty-raw.png",
+      "references": [
+        "review/hd/b44-intro/intro-council.png",
+        "INTRO.BMA block1 frame0"
+      ],
+      "prompt": "Use case: precise-object-edit. FIRST image is the edit target and must preserve its exact painterly fantasy style, composition, grey-purple stone border with three skulls, black side margins, purple stone chamber, circular black pool and green crystals. SECOND image specifies the original game animation's EMPTY chamber state. Remove ALL FOUR council characters from the first image: red dragon on left, standing armored horned figure, serpent wizard, seated red-winged woman. Reconstruct the purple back wall, green crystals, and floor naturally where they were, using the second reference's empty arrangement. Keep the moon, stone frame, camera, entire existing room, floor and crystal colors in their exact first-image positions. No new objects, no characters, no text. This is a clean animation background plate. Wide 960x504 opaque RGBA canvas, same complete bounds as the edit target.",
+      "sha256": "c1a97ac2a895850abd4ee4be88131cfae3c48ad8a704cc97385f4c4ddd6c7d34"
+    },
+    {
+      "key": "horned-empty",
+      "file": "exec-02930684-1d15-41b7-a1ee-d330d4b45e37.png",
+      "saved": "inputs/horned-empty-raw.png",
+      "references": [
+        "review/hd/b44-intro/intro-horned.png",
+        "INTRO.BMA block5 frame7"
+      ],
+      "prompt": "Use case: precise-object-edit. FIRST image is the approved hand-painted fantasy edit target. SECOND image specifies the original EMPTY animation state. Remove the entire gold-horned smoky demon, both hands, its smoke trail, blue vortex and all blue light inside the pool. Reveal the purple stone wall and let the oval pool interior be completely pure black, as in the second reference. Preserve the first image's full grey-purple stone frame with three skulls, black outer margins, perspective, cracked purple floor, individual stones and blue-purple floor lighting exactly. Reconstruct only the obscured wall and floor. No cage, no creature, no fire, no letters or new objects. Same wide 960x504 complete opaque RGBA bounds and painterly rendering as the first image.",
+      "sha256": "9a0ff54180e36e005b41d7b2c3f7e326773a90e8dc18ef4f7cdf6933ca0b9a32"
+    },
+    {
+      "key": "followers-burnt",
+      "file": "exec-28e6a5c8-d064-430b-80a4-6ad294edeedd.png",
+      "saved": "inputs/followers-burnt-raw.png",
+      "references": [
+        "review/hd/b44-intro/intro-followers.png",
+        "INTRO.BMA block8 frame11"
+      ],
+      "prompt": "Use case: precise-object-edit. FIRST reference is the approved wide hand-painted game illustration and edit target. SECOND reference defines the exact next animation phase. Replace the large gold-and-grey floating horned demon with the much smaller charred dark blue-black horned apparition shown in the SECOND image, centered lower over the pool, emerging from a bright orange-red ring of fire. Its small silhouette and size must follow the second image, roughly x132..197 and y80..127 in the original320x168 coordinates. Preserve the first image's full stone border with three skulls, black side margins, purple stone room, four violet-blue columns, camera and floor exactly. Paint the small charred creature, flames and exposed wall with the same detailed fantasy illustration technique, matching the original dark indigo, crimson and orange palette. No large gold torso, no cage, no new objects, no writing. Complete wide960x504 opaque RGBA animation keyframe.",
+      "sha256": "fae55833a8797719b86dd0820969696c83a898ee69b76ee931307080b9dd4cab"
+    },
+    {
+      "key": "dreadlord-empty",
+      "file": "exec-d65d6ba6-033f-4b18-ab8d-ba3fa8959480.png",
+      "saved": "inputs/dreadlord-empty-raw.png",
+      "references": [
+        "review/hd/b44-intro/intro-dreadlord.png",
+        "INTRO.BMA block11 frame3"
+      ],
+      "prompt": "Use case: precise-object-edit. FIRST image is the approved hand-painted fantasy edit target. SECOND image defines the EMPTY curtain stage after the sorcerer vanishes. Remove the entire skeletal sorcerer including helmet, face, shoulder armour, blue clothes, arms and hands. Reveal a deep pure-black center and continue the purple-magenta velvet curtains with narrow gold inner trims exactly as shown by the second image. Preserve the first image's outer grey-purple stone frame with three skulls, black side margins, curtain texture and layout, full canvas and camera. No person, orb, sparks, smoke, text or new objects. Maintain painterly quality rather than pixel art. Output the same full wide960x504 opaque RGBA canvas.",
+      "sha256": "b190dc4918bb5f12c72da305bc13f5c6e6ee3a1098c56d80915ab656e337e2f4"
+    },
+    {
+      "key": "dreadlord-fireball",
+      "file": "exec-d87adabe-2b3f-4fea-afa1-f697d0b529a5.png",
+      "saved": "inputs/dreadlord-fireball-raw.png",
+      "references": [
+        "review/hd/b44-intro/intro-dreadlord.png",
+        "INTRO.BMA block10 frame6"
+      ],
+      "prompt": "Use case: precise-object-edit for a game animation keyframe. FIRST reference is the approved hand-painted dark fantasy game image and edit target. SECOND reference defines the exact action phase, composition and occlusion. Preserve the first image's complete grey-purple skull stone frame, black side margins, purple velvet curtains and camera. Pose the skeletal sorcerer as in the second image: his left skeletal hand is raised at the left of a huge bright orange-red magical fireball, his other hand below it. The large spherical fireball occupies roughly original x126..224 y47..124 of the 320x168 game canvas and completely HIDES the face and much of the chest, as in the original second reference. It must be a luminous round orange-red and yellow molten orb with swirling fire, not an ordinary small flame, no visible face through it. Use the same blue-violet cloth and gold skeletal armour from the first image. Keep all changes inside the second image's moving figure region, preserve the frame exactly. Detailed painterly fantasy illustration, not pixel art. No letters, no new objects. Same full wide960x504 opaque RGBA canvas.",
+      "sha256": "4c6e11abe17463eb3174b22cf2abaafd3959b86854f194d3d4a93f0844fb9393"
+    },
+    {
+      "key": "horned-cage",
+      "file": "exec-7cbebfde-ffdf-49bf-ae48-adbfb2c4c69d.png",
+      "saved": "inputs/horned-cage-raw.png",
+      "references": [
+        "review/hd/b44-intro/intro-horned.png",
+        "INTRO.BMA block4 frame13"
+      ],
+      "prompt": "Use case precise-object-edit, next animation keyframe for a hand-painted dark fantasy game. FIRST reference defines approved painting style, full bounds and the gold horned floating muscular demon. SECOND reference defines the EXACT action phase and geometry. Keep all of the first painting's stone skull frame, black side margins, purple stone wall and floor in the same positions. Transform only the demon and magic inside the room to match the second reference: the same horned demon now tinted deep luminous BLUE, chest and clenched hands visible, within a huge transparent BLUE cylindrical energy cage. Two narrow brilliant cyan-white vertical columns bound the cage at original x96 and x223 from y28 down to y122; an elliptical blue glowing base surrounds the pool. A branching blue-white lightning fountain rises in front of the demon from the pool center, hiding its lower body. Show the demon clearly through this transparent blue energy, with sharp painted facial structure and horn shape. No solid opaque blue rectangle, no additional characters or props. Preserve the full source layout and original blue-purple palette. Detailed painted fantasy illustration, no pixels or letters. Full wide960x504 opaque RGBA canvas.",
+      "sha256": "3d6a9ccbceac7ed453a1128951f9a4b5e1d04f677bfbdb1c07f158bd7e322579"
+    }
+  ]
+}

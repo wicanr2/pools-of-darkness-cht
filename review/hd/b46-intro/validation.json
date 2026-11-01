@@ -1,0 +1,788 @@
+{
+  "issue": 74,
+  "count": 97,
+  "all_pass": true,
+  "thresholds": {
+    "structure_min": 0.4,
+    "hue_median_max": 30
+  },
+  "items": [
+    {
+      "key": "intro-b01-f00",
+      "png_sha256": "9b248b05b316713703e4b07a903557b9f951a70a1e22d96ff5aad00a5becc6c3",
+      "structure": 0.8253034663996996,
+      "hue": 6.0,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b01-f01",
+      "png_sha256": "97497bcbac9dbee2740416be02e5a5df95783a45deb04f30e6f5973fa5ba0645",
+      "structure": 0.8250531848329371,
+      "hue": 6.0,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b01-f02",
+      "png_sha256": "ed98fe323b840781f528243d27ce249dd75424c4f70cf0c2b29ce6616d7f7453",
+      "structure": 0.8253034663996996,
+      "hue": 6.0,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b01-f10",
+      "png_sha256": "99a631147900643ebe42c3e8d50636accfaa6fd222d1be2bedae3e11823cc050",
+      "structure": 0.7392066074333625,
+      "hue": 6.411344949436341,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b01-f11",
+      "png_sha256": "a3cbe566d9fd92c175e90f6b8e2e2a07253303e9e9dfd05a9cb16ac413a466be",
+      "structure": 0.7383306219496935,
+      "hue": 6.370144706778376,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b01-f12",
+      "png_sha256": "2cd8377a715955462f2c7339e10822fadf5cfd4679d4da3967e2e4ef730ccc79",
+      "structure": 0.7602002503128911,
+      "hue": 6.304347826086939,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b01-f13",
+      "png_sha256": "060ac36f5ddd02693d30aa0281f318ac4b753cbd2bfd2c4bc4107a8de8021799",
+      "structure": 0.7509698410712051,
+      "hue": 6.138035264483619,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b02-f00",
+      "png_sha256": "cebbf66ee0e9be7a4a9fb28783006ef01c7aca58cd9ab02362f48edfdc39e87e",
+      "structure": 0.7024152171192591,
+      "hue": 7.314433932769029,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b02-f01",
+      "png_sha256": "af8e82e80573c913007f3baa56ccd414017b3f298db9d88b1a17e28821b1fee4",
+      "structure": 0.7024152171192591,
+      "hue": 7.329192546583869,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b02-f02",
+      "png_sha256": "1cdf4e59ce32e6ae3c1187aae8c4f8f1b96ab45b9c7b6ffb41b0c4d933dc1ebb",
+      "structure": 0.7016643724189714,
+      "hue": 7.330909090909091,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b02-f03",
+      "png_sha256": "b79d09f6ef9ee13b5d0eb0fccad7635988b7ce7483028d45ef0e5b6c5b6a15ef",
+      "structure": 0.7017895132023526,
+      "hue": 7.330497016459049,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b02-f04",
+      "png_sha256": "147b56be79b21844f9d587913b7c274d2b3347a1ca50fa6d388100adbd40890b",
+      "structure": 0.6999124014516331,
+      "hue": 7.3369565217391255,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b02-f05",
+      "png_sha256": "69e303135421265bebbc7c023c53f545ccfd063ba4b54abf864c7e1940cd6e3b",
+      "structure": 0.7022900763358778,
+      "hue": 7.331189710610943,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b02-f06",
+      "png_sha256": "f397b636370c4e6ef8ca7504e034c37ad52870debef4fa1067e56d516d0218c9",
+      "structure": 0.6987861344012013,
+      "hue": 7.305981216015812,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b02-f07",
+      "png_sha256": "9edcd5fe71c84da8fe3da7a7dc46b2e9caa1ce5f00ec29b6d5ab666f071af63a",
+      "structure": 0.6941559254160931,
+      "hue": 7.312897360489089,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b02-f08",
+      "png_sha256": "5ac1d77ec40eee517ff99e39d354f0c44c6f4fea36ebf72147054611a74d179c",
+      "structure": 0.684645225879114,
+      "hue": 7.258687258687246,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b02-f09",
+      "png_sha256": "125acfc2d74d7118d3d2af8c5d6c9264ce9420b9a5901ec59f3e3ed97614ef56",
+      "structure": 0.6758853710424227,
+      "hue": 7.247191011235969,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b02-f10",
+      "png_sha256": "0933084d60bd8be27603de5ed7c65a97a027ddcc97cba742e4757215a328c5d4",
+      "structure": 0.6656238268051557,
+      "hue": 7.317073170731703,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b02-f11",
+      "png_sha256": "43d7e1812b4a9c59c03471e49bdaf1e5c2a3571a2e4b76e49aa1e8bdb42ae6b2",
+      "structure": 0.6527343261168815,
+      "hue": 7.356321839080451,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b02-f12",
+      "png_sha256": "f2b9f7decf6257faecb3e79ed56e33cb981e400a43ecb4504ce84a1ee3a5c711",
+      "structure": 0.6429733450131397,
+      "hue": 7.372868899426173,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b02-f13",
+      "png_sha256": "bc93fd7722c8140f83e6c1efdc720857e3053c0982b38107532e578333f0ebfb",
+      "structure": 0.6238268051558002,
+      "hue": 7.402115993513004,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b02-f14",
+      "png_sha256": "ed4f75b2ddf0d93e63a7f448a06b7503e4b0104fa492084cfa4d258014f86708",
+      "structure": 0.643473908146665,
+      "hue": 7.553444180522547,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b03-f00",
+      "png_sha256": "a79db486fcecbe4a7d77798dfe1804253977dfa35f13ba5bb87cd877409902a9",
+      "structure": 0.6363408834939307,
+      "hue": 7.562363737768109,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b03-f01",
+      "png_sha256": "4929bfb59925fe1fdd1b49dec2e6bf7b19f03ae7b18b18c2c923705757fd52d4",
+      "structure": 0.643473908146665,
+      "hue": 7.559055118110223,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b03-f02",
+      "png_sha256": "9ed58d57dddbed9ea344c6a9a63855ae1652ae45696ad9a2763a3cc9a6a5da56",
+      "structure": 0.6531097484670254,
+      "hue": 7.5294117647059124,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b03-f03",
+      "png_sha256": "0e63e44ccbc58fb69895efbc5def860a6078053a4a43bda5f1ab14c4e862b091",
+      "structure": 0.6483543986985358,
+      "hue": 7.5485326252316565,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b03-f04",
+      "png_sha256": "daf496c4227877a3e830f497db79d979b78520d204081c6bc98a2355b0749026",
+      "structure": 0.6556125641346515,
+      "hue": 7.523510971786834,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b04-f00",
+      "png_sha256": "60cd6c6c413cebca4457fa20e3a9f3322c650387181df26a399998992dda43cd",
+      "structure": 0.8169983727625485,
+      "hue": 7.561858748310112,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b04-f01",
+      "png_sha256": "29c89f73c53ee1feab40285f3d9419b80d028b1750a6c5f50d9134b87a8a95b8",
+      "structure": 0.8075093867334168,
+      "hue": 7.439999999999998,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b04-f03",
+      "png_sha256": "2fab99e9596e98e88021411aaf0dc970afd24e195e612132f063f04b478f0926",
+      "structure": 0.806907771242648,
+      "hue": 7.347715736040584,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b04-f06",
+      "png_sha256": "22729da3b538d95efb30e475622535621f2b5fd46d6527eb1cd504b3e250da70",
+      "structure": 0.7380803403829308,
+      "hue": 7.825136208759773,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b04-f07",
+      "png_sha256": "d40263f59a70362af481b26bd8e9460789ac1dda562e7d3f951562c1cd762663",
+      "structure": 0.7180578150419221,
+      "hue": 8.34821502132337,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b04-f08",
+      "png_sha256": "efc6b3663e872b08f03124e49d800694c0e8e6662a299573cac7096b98631155",
+      "structure": 0.7188986232790989,
+      "hue": 8.906917231375417,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b04-f09",
+      "png_sha256": "aa6bfff43ab538dd12ac5b23a5b758431346a64cca7730c396d0a1d91f559527",
+      "structure": 0.6980352897009136,
+      "hue": 9.50699629161491,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b04-f10",
+      "png_sha256": "3cd2a75bdbfc8279e80d54cced7b894af817fd1973358a49e04535a788e73ac9",
+      "structure": 0.6721311475409836,
+      "hue": 9.915508544638271,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b04-f11",
+      "png_sha256": "ad93abcd54e2bd3ba54c4d2d5d8b621e5c33336c5f6cae870f73779cec423401",
+      "structure": 0.6786384682768114,
+      "hue": 9.804086681324875,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b04-f12",
+      "png_sha256": "9f4487e8c202dcf7f4d812cb7bfee317484009de563ddc0c741931f3a35b0ec6",
+      "structure": 0.6920285320986109,
+      "hue": 9.782277018223397,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b04-f13",
+      "png_sha256": "498dc6fab327c4e22a7b0ffa16c2b68e0a7e693b66a5c2cdda067ef0b729dfd4",
+      "structure": 0.697034163433863,
+      "hue": 9.6677967644315,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b05-f00",
+      "png_sha256": "c8215f177780521a3ced632a145a1394bc71f117f83b5487076ed7179c24eee9",
+      "structure": 0.6994118383181078,
+      "hue": 9.463100892675612,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b05-f01",
+      "png_sha256": "6fde099719ffc16066318d681d6b72e54c1f2a94efbd265bb1b344b812a1c012",
+      "structure": 0.6969090226504818,
+      "hue": 9.632384190395214,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b05-f02",
+      "png_sha256": "693d90138d083d9ef144be9eca362817266f3cda5626f8b015d0a15b0f2a270f",
+      "structure": 0.6747183979974969,
+      "hue": 9.234537812960696,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b05-f03",
+      "png_sha256": "cc74f99faa7f9db60aed01862aaf9f66a8973c0fbed5dd0a5a0878e0744ba11e",
+      "structure": 0.6947434292866083,
+      "hue": 9.79955977060824,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b05-f04",
+      "png_sha256": "ead504d37818fe9941e4d8df693bed6ca49d985661b6095e0d16f422c97ffb25",
+      "structure": 0.72168689775998,
+      "hue": 10.187047531693224,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b05-f05",
+      "png_sha256": "5a8e4005cef78cebddf5fdd4eeccabe8e494abc8443142e79120fe184f0644e1",
+      "structure": 0.7141784507571017,
+      "hue": 10.43669213739912,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b05-f06",
+      "png_sha256": "7ba9e4f688bbb536d3d559204ee862ef86433809c5e9597e46001c2dddb1b811",
+      "structure": 0.7360780878488299,
+      "hue": 10.304499859618659,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b05-f07",
+      "png_sha256": "d5d92d4408db556fdfa153b858ef433518e42f37f25e74dd36dfc8d441e31a6a",
+      "structure": 0.8683518958828682,
+      "hue": 6.734903406948007,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b06-f00",
+      "png_sha256": "69fa6f79bca1b7527464f41649ebc6e4b7eb47c3980788b2fcabccc1e2a32f5d",
+      "structure": 0.8283853188024553,
+      "hue": 3.430567602571273,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b07-f00",
+      "png_sha256": "508b5af6311ce6854ac3d96c0e288f6a188413ac5f10e2123e2170624befecda",
+      "structure": 0.691653109748467,
+      "hue": 8.201094086828647,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b07-f01",
+      "png_sha256": "1eb4e4f8d0349d01ac77bb80226695d2ea089c693f7296cc53d012db8c2f2c77",
+      "structure": 0.6954073332499061,
+      "hue": 8.181818181818187,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b07-f02",
+      "png_sha256": "8951b699fcd1d03cd87aa525601a27a3290cb3e8f3dabf4ea1619b13a35086a4",
+      "structure": 0.6890251532974596,
+      "hue": 8.155002891845015,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b07-f03",
+      "png_sha256": "49aaf3b18f347da1d9b4509f9ddfa714479532016e75a21681c8ae880f32fe27",
+      "structure": 0.6434292866082604,
+      "hue": 8.972864321608029,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b07-f04",
+      "png_sha256": "5fbf4846b1b297c5a3320da5774886bc6a88da41a49151b2e8aed08ec10656a3",
+      "structure": 0.6417219371793268,
+      "hue": 8.974663684398223,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b07-f05",
+      "png_sha256": "36ca84d1dcf915e2e286a3d42138e25193db46d7a90008bde9cbac4aef786eb2",
+      "structure": 0.6410962332624203,
+      "hue": 9.053448994622926,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b07-f06",
+      "png_sha256": "8dc8aede41efd17dcbfecc9675c161db079657dc6f800e28c2ddb3a8b435af7a",
+      "structure": 0.6218245526216994,
+      "hue": 10.133689839572185,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b07-f07",
+      "png_sha256": "faad4ec73376353cc94e5ec58f7a0a13d7d18a83670a879daf4885392a1d62e7",
+      "structure": 0.6446001751970968,
+      "hue": 9.574468085106389,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b08-f00",
+      "png_sha256": "744d02220ea5f4b05d2c3dfded0ce048ac23ec1dc2479dd8f91f3cb11e3354c2",
+      "structure": 0.6618696033037167,
+      "hue": 9.445007969859489,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b08-f01",
+      "png_sha256": "f975677e4c9c00fc1630582d33f00deaaf8d133568b36d182c249bfda85b05bd",
+      "structure": 0.6695031910899762,
+      "hue": 9.35779816513758,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b08-f02",
+      "png_sha256": "e8223bd082f929b94e7cedaac0258dc4d1f2af1462a81ba4e2ca9f5a9b0fec5c",
+      "structure": 0.6530663329161451,
+      "hue": 9.37944099378879,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b08-f03",
+      "png_sha256": "91182228d769a91a85ba9c01367423cc96c61f7de2680cbcd7dcfef78ab0e99b",
+      "structure": 0.6612438993868102,
+      "hue": 9.169913891779402,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b08-f04",
+      "png_sha256": "e359e707ced7bc45b02f9f4d8c319e151d1dce34b694c8a4becc072ddf195c4a",
+      "structure": 0.7273182330121386,
+      "hue": 6.511133102424537,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b08-f05",
+      "png_sha256": "81d6687adad06befa00429532698c75f9da18b645416a2afb763df64dc30f816",
+      "structure": 0.7303216118132899,
+      "hue": 6.45029624753127,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b08-f06",
+      "png_sha256": "8149247ea541caf1d0ad2813644f0115228899f064b86bf028f29a45a218e9a5",
+      "structure": 0.7281942184958078,
+      "hue": 6.46843314357871,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b08-f07",
+      "png_sha256": "80c0d3d84e9c298413ba035d2aa9df6330235389e9e2566c351cbec1ac5d7229",
+      "structure": 0.729946189463146,
+      "hue": 6.483248730964419,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b08-f08",
+      "png_sha256": "5628925e85807c921a3faaa4019db114c965fdaa6da9726cb01c9ea79165c7a0",
+      "structure": 0.725657071339174,
+      "hue": 6.5116279069767415,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b08-f09",
+      "png_sha256": "86301e530781821b380b030309de68bfc0f43598bca7f0476ab1dd865f8da902",
+      "structure": 0.7183080966086848,
+      "hue": 6.499091104008073,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b08-f10",
+      "png_sha256": "548e766e8701d77eba00632a82baf4ae29c96f8e8993d919b929a25998d654a3",
+      "structure": 0.7329161451814769,
+      "hue": 6.441943277772879,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b08-f11",
+      "png_sha256": "9ad89970e3310b83879cb2118970f74597eb2d771ec1232b3af62a4b05af08fd",
+      "structure": 0.7296959078963834,
+      "hue": 6.448979591836746,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b09-f00",
+      "png_sha256": "00d04d8190efa1c5c2f7e06f4e144b44681994eaba2b2c240083e4985669fcb0",
+      "structure": 0.6705043173570266,
+      "hue": 2.7169811320754746,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b09-f01",
+      "png_sha256": "97e5a3bd2aee6e8f6d6630ce1658789a875dfa301b46548896b1061c34fd2e76",
+      "structure": 0.6642472781879615,
+      "hue": 3.0152394775036413,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b09-f02",
+      "png_sha256": "16640ced45645473a9ebfeb3e87f3aad476253d33397b8e832b8c0301b3a7bff",
+      "structure": 0.660743336253285,
+      "hue": 2.9900332225913075,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b09-f03",
+      "png_sha256": "b92fd45ee988a1aafcf24f237c512fb31e9a7fcaa083d259971f7cc4e4b9551f",
+      "structure": 0.6499812288824928,
+      "hue": 3.039215686274474,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b10-f00",
+      "png_sha256": "d013549265997749c0dbcdf136c311255e057f18f65fb3c02eee078db0c0bccd",
+      "structure": 0.6609936178200475,
+      "hue": 2.9956517302489942,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b10-f01",
+      "png_sha256": "90441edd38f40488a931619d0cc038bb925dc1f89bc885af40082c66713108d5",
+      "structure": 0.6554874233512702,
+      "hue": 2.9858925504706213,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b10-f02",
+      "png_sha256": "7acec1001ff04610d3f3852774c5c2a53169e3c18ded016babaa6183268655de",
+      "structure": 0.6440996120635715,
+      "hue": 2.973570259590378,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b10-f03",
+      "png_sha256": "2f5160cee1add67639102660c85f7073687d05c99234694c7911a51c86cb585c",
+      "structure": 0.4665248404455012,
+      "hue": 4.559430506571919,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b10-f04",
+      "png_sha256": "c77b2a2749a7e7f98f6907fa445d9d14ccc78644e799aa0ff515d70d96320d99",
+      "structure": 0.47746055597295267,
+      "hue": 4.102340481545079,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b10-f05",
+      "png_sha256": "99ddb7dd62923fb1cf6c10fbb5828140bd616b88d9471426ba5a61dca35af516",
+      "structure": 0.4770366662495307,
+      "hue": 4.311377245508993,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b10-f06",
+      "png_sha256": "782c464a49298c4c737a690f481bdaf2885bd79607e51b1bca05cca4f6e849bb",
+      "structure": 0.522838192967088,
+      "hue": 4.155715079978165,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b11-f00",
+      "png_sha256": "940a4eee38f319c76ce930a5339f555f6f2aae29cb623fc5e3c8845d2d8a0e6d",
+      "structure": 0.6053059692153673,
+      "hue": 3.4661354581672867,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b11-f01",
+      "png_sha256": "1e30886d56d944592db998f50b98657e52aa671e9a2f6cb0f5d07fc4882800ee",
+      "structure": 0.6542360155174571,
+      "hue": 3.316062176165815,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b11-f02",
+      "png_sha256": "3d5bbfd99fdfb53601a6cb8920108a19d036827b37bbca210ed2986c85e03c1f",
+      "structure": 0.6321652065081351,
+      "hue": 3.2359550561797725,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b11-f03",
+      "png_sha256": "69ae9ee6c76ec465dd26e9e8c68e627dec1ff6d0275452141ef52f31f0c0d46f",
+      "structure": 0.8049055187085471,
+      "hue": 2.7352513265248035,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b12-f11",
+      "png_sha256": "06833fa82406b6f1c0876efaa837e3625d80afb563f75998c200aa9706708261",
+      "structure": 0.8137905143286197,
+      "hue": 5.15258173480143,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b12-f12",
+      "png_sha256": "c4569899f56a9494a8eed2943bb59a889541a0f6f464b7b6ce61e12282533497",
+      "structure": 0.799899887373295,
+      "hue": 5.342465753424705,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b12-f13",
+      "png_sha256": "c01f2be40cb8d4e2a3372da08141ed3ebc9567202340e96462e7b4fe99c6320b",
+      "structure": 0.7338255537479664,
+      "hue": 5.92517344650625,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b12-f14",
+      "png_sha256": "5efc9c24b00fb9ba7e835116ec5688f7a699284d0e2fa85a133576e8d1dd4f65",
+      "structure": 0.6079339256663747,
+      "hue": 5.932885906040269,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b12-f15",
+      "png_sha256": "eefbd4fae3c9a36b2afaf53d36954325b3c14e0d1e4c30eef3b71ae134f9c917",
+      "structure": 0.6269086357947434,
+      "hue": 5.876288659793829,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b12-f16",
+      "png_sha256": "a5521656b3c250602fee8130c81f59c2b16889844733a31fb322b7a79d87aee5",
+      "structure": 0.5607558503316231,
+      "hue": 5.675675675675677,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b13-f00",
+      "png_sha256": "5e9813d266c14f70b792ef4f994fa8a1b58f096b133e47ffd3582cac846ed17d",
+      "structure": 0.687523463896884,
+      "hue": 5.679651862843556,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b13-f01",
+      "png_sha256": "a8d48abb5a268aaaa389a283260efe2e4fa2d701bab3f2366ac1cc96f1b6f955",
+      "structure": 0.753441802252816,
+      "hue": 5.759999999999991,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b13-f02",
+      "png_sha256": "0ff3c4c2366f7de9a7efbbc5f8abc2ea2cfb4f73eded18da9d9feb4ed47c59b0",
+      "structure": 0.8102865723939432,
+      "hue": 5.842529765715085,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b13-f03",
+      "png_sha256": "1069fab9865673a1bb9c03d817a9281015282de3c537578dfad2fb928f14757d",
+      "structure": 0.8178973717146433,
+      "hue": 5.950413223140494,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b13-f04",
+      "png_sha256": "45016f4adc925d473cc2b7071a50964b6de717c0c5d32373a305715e7865d967",
+      "structure": 0.8205256570713392,
+      "hue": 6.017652179817446,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b13-f05",
+      "png_sha256": "8df792fb4751817b4c09c84dd3d7b7f35a4c10f3275dc0996b051a07224f3dfb",
+      "structure": 0.8195469903641597,
+      "hue": 6.022378081677687,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b13-f06",
+      "png_sha256": "0bd647f156f43cd383c4e2f495c61b2885737c92e1cc36273e1ca492365df341",
+      "structure": 0.8201726942810662,
+      "hue": 6.023166023165999,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b13-f07",
+      "png_sha256": "ed98fe323b840781f528243d27ce249dd75424c4f70cf0c2b29ce6616d7f7453",
+      "structure": 0.8217772215269087,
+      "hue": 6.0279424425607075,
+      "canonical_unchanged": true,
+      "passed": true
+    },
+    {
+      "key": "intro-b13-f08",
+      "png_sha256": "ed98fe323b840781f528243d27ce249dd75424c4f70cf0c2b29ce6616d7f7453",
+      "structure": 0.8236766362157427,
+      "hue": 6.015588096362819,
+      "canonical_unchanged": true,
+      "passed": true
+    }
+  ],
+  "limits": "數值檢查不取代逐相位目視、原尺寸抽樣及正常執行"
+}

@@ -9,10 +9,12 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import struct
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from dax_vga import block_vga, sprite_vga
 from ecl_text_catalog import dax_blocks
+from intro_bma import decode as decode_bma, states as bma_states
 
 
 def sha(path):
@@ -38,6 +40,7 @@ def rebuild(root, original, output):
     if len(names) != len(set(names)):
         raise ValueError('重建清單有重複路徑')
     blocks, sources, planned = {}, {}, {}
+    intro = {}
     # 在任何輸出寫入前驗證全部輸入。
     for name, expected in lock['source_files'].items():
         if sha(inside(root, name)) != expected:
@@ -46,7 +49,14 @@ def rebuild(root, original, output):
         path = inside(original, name)
         if sha(path) != expected:
             raise ValueError(f'原版雜湊不符：{name}')
-        blocks[name] = dict(dax_blocks(path.read_bytes()))
+        if name.endswith('.DAX'):
+            blocks[name] = dict(dax_blocks(path.read_bytes()))
+        elif name == 'INTRO.BMA':
+            for frame, before, after in bma_states(decode_bma(path.read_bytes())):
+                points = [p for span in frame.spans for p in range(span.y*320+span.x,span.y*320+span.x+len(span.pixels)) if p<53760]
+                intro[(frame.block,frame.index)] = dict(before=before[:53760],after=after[:53760],writes=struct.pack('<'+'H'*len(points),*points))
+        elif name != 'INTRO.ACF':
+            raise ValueError('未知的原版重建輸入')
     for row in files:
         name = row['path']
         inside(output, name)
@@ -55,6 +65,18 @@ def rebuild(root, original, output):
             if sha(p) != row['sha256']:
                 raise ValueError(f'素材雜湊不符：{row["source"]}')
             planned[name] = p
+            continue
+        if row['kind'] == 'original-intro':
+            source = intro[(row['block'],row['frame'])]
+            if row['decoder'] == 'bma-index' and row['side'] in ('before','after'):
+                data = source[row['side']]
+            elif row['decoder'] == 'bma-writes':
+                data = source['writes']
+            else:
+                raise ValueError('未知的BMA重建來源')
+            if hashlib.sha256(data).hexdigest() != row['sha256']:
+                raise ValueError(f'BMA來源重生失配：{name}')
+            planned[name] = data
             continue
         if row['kind'] != 'original-index':
             raise ValueError('未知的重建來源')
@@ -110,7 +132,7 @@ def rebuild(root, original, output):
                      theme_tree_sha256=hashlib.sha256(json.dumps(actual,sort_keys=True).encode()).hexdigest(),
                      fonts={p.name:sha(p) for p in sorted(fonts.iterdir())},
                      original_archives=lock['original_archives'], engine=lock['engine'],
-                     input_scope='Git files and explicitly supplied original DAX only; no old workplace',
+                     input_scope='Git files and explicitly supplied original DAX/INTRO.BMA/INTRO.ACF; no old workplace',
                      rights='private review inputs; original indexes reconstructed locally')
         (stage/'assets-receipt.json').write_text(json.dumps(proof,ensure_ascii=False,indent=2)+'\n')
         stage.rename(output)

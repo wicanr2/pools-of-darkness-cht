@@ -19,7 +19,7 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 
 | 步驟 | 輸出與檢查 |
 |---|---|
-| `assets` | 重生751份原版辨識索引，重建1536檔主題及十份字型，每檔核對已驗SHA-256 |
+| `assets` | 重生850份原版辨識索引與133份BMA有序寫入表，重建1866檔主題及十份字型，每檔核對已驗SHA-256 |
 | `build` | 從本儲存庫`dosgolem/pod`取得[固定commit](tools/rebuild-engine.commit)，編譯`bin/pod-play`，保存建置資訊與SHA-256 |
 | `smoke` | 正常冷啟動7400格DEMO，產生`smoke/`的截圖、來源、紀錄與獨立可寫客體資料 |
 
@@ -34,14 +34,14 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 
 | Git中的輸入 | 用途 |
 |---|---|
-| [主題重建清單](review/hd/runtime/manifest.json) | 固定全部檔案、來源、SHA-256及原版DAX版本 |
+| [主題重建清單](review/hd/runtime/manifest.json) | 固定全部檔案、來源、SHA-256及原版DAX、INTRO.BMA及INTRO.ACF版本 |
 | [HD審閱素材](review/hd/README.md) | 沿用已接受PNG；缺少的開場／海報圖補存於[runtime](review/hd/runtime/README.md) |
 | [字型來源與字集](font/README.md) | 開源字型及授權，逐位元組重生目前十份正式字型 |
 | `text/`及`reference/` | 正式譯文、手札、攻略摘要與術語 |
 | 本儲存庫`dosgolem/pod`分支 | 遊戲adapter與引擎來源，不依賴前作工作樹 |
 
 海報含原版封面插畫，沿既有私人審閱例外保存，不因此取得公開散布權。生成素材不必再次呼叫生圖服務。
-重建清單只保存原版資料的雜湊及選取方式，原始辨識索引在本機由DAX重生。原版版本不合、圖片遭改或字型來源不同時，重建會失敗並指出缺項。
+重建清單只保存原版資料的雜湊及選取方式，原始辨識索引與有序寫入表在本機由DAX及INTRO.BMA重生。原版版本不合、圖片遭改或字型來源不同時，重建會失敗並指出缺項。
 
 目前另含簡中介面、手札、攻略、地圖、姓名音譯與開場文字，F8依繁中、英文、簡中循環。簡中有原生16／24及工具列12／22字模。正式TSV由固定OpenCC1.1.9及詞彙表產生；修改繁中後，可在`dosgolem-go-ebiten:1.24-r1`容器內執行`python3 -I tools/zhcn_text.py --root <repo> --out <repo>/text`重生，或加`--check`檢查。來源與重建範圍見[規格015](docs/spec/015-multilingual.md#簡體中文收尾)，OpenCC不在遊戲執行時轉換。
 

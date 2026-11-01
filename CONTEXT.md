@@ -56,20 +56,20 @@
 
 | 項目 | 目前狀態 | 下一個驗收點 |
 |---|---|---|
-| 正式程式與 HD | 程式`0e804ea`／`7109e14`修正戰鬥透明特效與HD遮擋，F1預設關閉；1536檔主題及十份字型未改。139279d保留為pod-play-before-hd-occlusion，較早回復副本保留 | [遮擋收據030](docs/re/030-hd-occlusion-runtime.json)、[無敵029](docs/re/029-invincible-runtime.json)、[簡中027](docs/re/027-zhcn-runtime.json)；Go繪圖核心未改 |
+| 正式程式與 HD | 引擎`50c93fb`／程式`82b9c9e`，1866檔主題；新增97種片頭敘事HD相位，十份字型不變。舊`7109e14`及1536檔另存before-intro-hd；更早回復副本保留 | [片頭收據031](docs/re/031-intro-hd-runtime.json)，乾淨Git素材與引擎重建相同；Go繪圖核心及舊九包未改 |
 | demo 中斷 #13 | CONFORMED：選單不逾時；對話、戰鬥中斷與重播、正常進入通過；F12／2倍終點同原流程，非預期閃現0 | 固定證據[020](docs/re/020-demo-control-runtime.json)，入口[規格018](docs/spec/018-demo-control.md#demo-conformed) |
 | Go 繪圖 #49 | 已支援VGA繪圖核心收尾CONFORMED；六條正常路線15,073,225 bytes全由Go演算法計畫寫入，固定／原x86像素寫入0；補齊填色區段搜尋及讀點短續行 | [收尾規格](docs/spec/025-direct-render-commands.md#draw-closure-conformed)、[固定收據](docs/re/023-draw-closure-runtime.json)。原版內容／字串／呼叫編排與平台服務保留，未知條件安全回退；不按歷史DRAFT重開 |
 | 高解析字型 | 已認證英數格原生16／24像素呈現通過；圖示不重畫，譯文優先，F12原版保留，README有並列原始像素裁切 | 未識別／搬移後無文字來源的格子保留原版，不猜OCR或當作全遊戲字型覆蓋 |
 | 不露原版 #16 | 既有10500格正常長戰鬥閃現19→0，原版狀態及127檔相同；字型／讀檔121格仍為明示倍率切換。029的13格鏡頭分類因擷取早一格而被反證 | [030勘誤與驗收](docs/re/030-hd-occlusion.md)、[正常收據](docs/re/030-hd-occlusion-runtime.json)；僅明列抽樣範圍通過，#16不全部結案，不重開Go核心 |
 | 攻略、地圖 #9 | 78段中8段對齊已知物品詞，數量／加值／出處保留；整理前後兩路正常讀檔、地圖、翻章翻頁與回場通過，僅一張攻略正文改變，面板外差異0 | [收據024](docs/re/024-guide-terms-runtime.json)。8個未知GEO名稱、未觀測觸發格及來源歧義保留，#9仍開啟；不追加G6探索 |
-| HD #10 | 正式1536檔不變；片頭BMA14塊133圖已對應正常原版／Go，98種完整來源中六種已有HD，其餘相位待補素材或已證實圖層合成。完整動畫尚未接入 | [來源031](docs/re/031-intro-bma.md)、[固定證據](docs/re/031-intro-bma-source.json)、[請求](docs/re/031-intro-bma-requests.json)；舊b43／簡中及片頭六張素材範圍保留，#74仍開啟 |
+| HD #10 | #74片頭接入抽樣通過：原版133次來源呼叫選97種敘事相位，保留字幕、布幕、變形、淡出及F2／F8／F12。原版狀態、127檔與十份字型相同 | [031來源及正常收據](docs/re/031-intro-bma.md)、[相位審閱](review/hd/b46-intro/README.md)。原量尺40格全黑轉場／559格明示切換保留，非預期可見閃現0；SSI標誌維持原版，片尾HD另計，#10仍開啟 |
 | 工具列字級 #15 | CONFORMED：補齊原生12／22字模，2／3倍三級、英文與偏好重啟通過；16／24遊戲字模未改 | [規格020](docs/spec/020-toolbar-font.md)、[固定收據](docs/re/021-toolbar-runtime.json)，README直接顯示六種字級 |
 | CPU速度 #14 | 功能抽樣CONFORMED，Issue已關閉；正常2／3倍讀檔、六倍率、Draw間隔回饋、1x等價及偏好通過 | 使用者已取消30fps要求，不再列為剩餘工作；歷史量測保留 |
 | 配樂、多語系、作弊、推廣片 #11 | 簡中及英文面板已接入；F1我方無敵完成本作欄位重驗、正常讀檔／DEMO及原版受控抽驗，預設關閉。日韓、配樂／試聽及推廣片仍缺 | [規格015](docs/spec/015-multilingual.md)、[規格017](docs/spec/017-invincible.md)、[無敵029](docs/re/029-invincible-runtime.json)；不將子項完成當作#11結案 |
 | 三平台封包 #12 | `v.0.1.0-20261101`候選九包：基本patch三包、本機基本／HD完整版各三包。候選引擎`4a8ef9f`及來源4bdd711固定，不含後續簡中、英文面板及無敵 | [收據026](docs/re/026-package-runtime.json)、[入口](SETUP.md#候選封包)。Linux實際AppImage、demo中止、另存B／冷讀B通過；Windows實際ZIP以Wine抽驗；macOS結構驗證，真機未驗。HD patch及原案未完功能仍使#12保持開啟 |
 | 跨機重建 #55 | 必要PNG／JSON、字集及引擎0e804ea已保存；751份索引由自備DAX重生。主題／十字型沿027乾淨重建，遮擋候選由乾淨Git重編逐位元相同 | [SETUP.md](SETUP.md)、[遮擋030](docs/re/030-hd-occlusion-runtime.json)、[素材027](docs/re/027-zhcn-runtime.json)；只驗Linux amd64容器，其他平台及實體機未驗 |
 
-目前工作：#74片頭來源階段已完成，原版與Go各5100格同018，133個圖面呼叫、172次轉換及127檔相同；Go實際提交223064個計畫。98種完整來源的393檔請求可由乾淨Git工具重生，六張既有HD已精確對應，其餘相位仍需素材或已證實圖層合成，正式接入未做。程式、主題及字型維持030，#74與母項保持開啟。日韓、配樂／試聽、推廣片、完整動畫HD與HD patch仍待完成，不重開Go核心或G6探索。
+目前工作：#74片頭HD接入已完成正常抽樣與乾淨重建，主題1866檔；六張主畫面保留，97種敘事相位由原版133次呼叫選圖。SSI標誌維持原版，材質變形與HD明暗屬美術近似。日韓、配樂／試聽、推廣片、片尾HD與HD patch仍待完成，母項保持開啟，不重開Go核心或G6探索。
 
 原九包及SHA仍在`dist-all/v.0.1.0-20261101/`，來源固定4bdd711及4a8ef9f，不含後續簡中、英文面板及無敵，不覆寫、不建立tag或公開Release。基本版原始23格的紅色背景／提前題名分類只適用收據026固定事件。
 

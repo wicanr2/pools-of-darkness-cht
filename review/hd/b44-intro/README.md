@@ -14,3 +14,5 @@
 | intro-dreadlord<br>![原版](intro-dreadlord-original.png) | ![HD](intro-dreadlord.png) |
 
 完整來源、提示詞與 SHA-256 見 [manifest.json](manifest.json)。
+
+後續接入見[b46敘事動畫](../b46-intro/README.md)與[031驗收](../../../docs/re/031-intro-bma.md#片頭hd接入驗收)。本頁保留六張主畫面的原素材紀錄。

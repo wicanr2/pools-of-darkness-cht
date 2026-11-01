@@ -1,6 +1,6 @@
 # 研究索引
 
-- [片頭BMA來源與繪製中途狀態](031-intro-bma.md)：#74來源階段完成，動畫接入仍DRAFT。[固定來源](031-intro-bma-source.json)保存14塊133圖、正常原版／Go各5100格及全部分段來源；[98種畫面請求](031-intro-bma-requests.json)有六種已接受HD，其餘相位待補。393檔由乾淨Git工具重生相同，原版圖只留本機。
+- [片頭BMA來源與動畫接入](031-intro-bma.md)：#74，14塊133次呼叫、97種敘事HD相位。[原始來源](031-intro-bma-source.json)、[請求](031-intro-bma-requests.json)與[正常接入收據](031-intro-hd-runtime.json)分列。131個完整來源、26個繪製前綴與清除前綴通過；正常5100回合及切換維持原版狀態與127檔，原量尺40／599逐項分類，非預期可見閃現0。SSI標誌及片尾另列限制。
 
 - [長戰鬥遮擋與擷取時點勘誤](030-hd-occlusion.md)：#73。029的13格鏡頭分類已因時點錯一格而勘誤；[來源](030-hd-occlusion-source.json)核對透明特效、地形與CPIC完整合成，[正常收據](030-hd-occlusion-runtime.json)保存10500格DEMO閃現19→0、原版狀態及127檔相同。素材與四格上限不變，抽樣CONFORMED，未外推全遊戲。
 
