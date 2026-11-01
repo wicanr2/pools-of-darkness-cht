@@ -1888,3 +1888,5 @@
 - Git樹d738ec21d4c0a0f000dd6380189197f7469cdc55透過SETUP的assets入口完整解碼，1888主題與18字型全部SHA同受測候選。新增六索引後共856索引＋133有序表，989份原版辨識資料仍由自備原版重生；16份新文字圖層與八份字集保存Git。舊1866檔及十字型不變。
 - 沿用033程式aa89fa8與引擎661f7dc，沒有Go產品變更。另跑7400格712250000步繁中正常DEMO，CPU／RAM、IDX／PAL、127檔及完整B版畫面同既有基準，閃現0。正式1888主題與18字型已啟用，回復副本在workplace/multilingual-jako/formal-before；移出未使用的placeholder-sosb字型，正式字型目錄恰18份。舊十二包逐大小／SHA保持，不建立新版本、tag或Release。
 - 固定收據docs/re/034-jako-runtime.json保存資料、工具、原版基準、字幕、偏好、乾淨Git與接入SHA，README增加兩張正常攻略圖。規格015與索引、字型／審閱入口、SETUP及唯一現況表同步；配樂試聽、FINAL HD、推廣片及原生平台驗收仍待完成，母項不結案。
+- 主專案9934962477985f95b1c4ec060ea688397ef1bfc2已推私人main；[日韓結案結果](https://github.com/wicanr2/pools-of-darkness-cht/issues/76#issuecomment-6561243512)與[母項回填](https://github.com/wicanr2/pools-of-darkness-cht/issues/11#issuecomment-6561245475)已回讀。#76 CLOSED，#9／#10／#11／#12／#16 OPEN，repo PRIVATE，引擎661f7dc工作樹乾淨。
+- 2914個專案文件連結及README→SETUP正對照通過，固定收據13個驗證工具SHA同目前Git。Git空白檢查的16項均是日韓各八個未知地圖的必要尾端Tab，逐列確認兩欄及未知鍵集合，其他差異通過。全工作根無root-owned檔案或誤建.md目錄，正式素材與副本均1000:1000，本專案容器0；沒有prune或rmi，也未改其他專案。
