@@ -540,8 +540,8 @@ func (g *game) finish() error {
 		}
 		fmt.Fprintf(os.Stderr, "pod-play: Layer stamps=%d\n", len(g.live.Layer.Stamps))
 	}
-	if g.cheat.On {
-		fmt.Fprintf(os.Stderr, "pod-play: 無敵 還原 %d 次、移除有害效果 %d 筆；隊伍 %s\n", g.cheat.Restored, g.cheat.Removed, g.cheat.Report)
+	if g.cheat.On || g.cheat.Restored > 0 || g.cheat.Removed > 0 || g.cheat.Rejected > 0 {
+		fmt.Fprintf(os.Stderr, "pod-play: 無敵 開啟%v、還原 %d 次、移除有害效果 %d 筆、拒絕 %d 次；隊伍 %s\n", g.cheat.On, g.cheat.Restored, g.cheat.Removed, g.cheat.Rejected, g.cheat.Report)
 	}
 	if d, err := g.owner.Digest(); err == nil {
 		fmt.Fprintf(os.Stderr, "pod-play: frames=%d steps=%d memory_sha256=%x indexed_sha256=%x\n", g.frame, d.Steps, d.MemorySHA256, d.IndexedSHA256)
