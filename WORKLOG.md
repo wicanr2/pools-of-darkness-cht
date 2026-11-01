@@ -1849,3 +1849,14 @@
 - 現行程式與主題換成受測版；舊7109e14／1536檔保留before-intro-hd回復副本。原版與九個候選封包SHA未改，沒有新Release或上游推送。
 - 工具鏈沿用sosb-img:r1（8b9012adb991）與dosgolem-go-ebiten:1.24-r1（8ed6bdee2bce）。前處理新增明確revision pod-intro-img:r2（96e4e68626c1），Dockerfile固定全部版本與OpenCV wheel SHA；未清理其他專案資源。
 - 收尾檢查：全工作根沒有root-owned檔案或`.md`目錄；正式程式、JSON及目錄UID/GID均1000:1000。專案本批容器已隨--rm移除，未留下背景程序；未做prune或rmi。文件連結、Python語法與shell語法通過。
+
+
+## 2026-11-01 HD patch匯入核心與海報前沿
+
+- 接續「ok 繼續囉」，回讀遠端僅#9／#10／#11／#12／#16開啟，#74保持完成。路由命中復古收尾、spec閘門、文件／封包，載入reverse-engineer-retro-game-remake及相關入口；建立#75，補缺少的HD patch，不覆寫九個舊包或建立Release。
+- 原版索引與有序寫入表不能直接隨patch附帶，沿既有重建清單移植Go檔案核心。規格012先補READY核心契約，海報及整包仍DRAFT。Go原版輸入13檔SHA核對、DAX／VGA／牆面／BMA解碼、全量輸出與原子發布；只寫新主題目錄。
+- 真實來源重生983份、完整1866檔逐SHA相同。九類清單／SHA／位置失配、壞格式、符號連結逃出與既有輸出拒絕；首次快取、唯讀重用、未知檔及改位元組拒絕通過。相關套件通過，核心測試程式跨編譯至Windows amd64與macOS雙架構，不冒稱實機驗收。
+- 引擎f09cf68保存私人dosgolem/pod。乾淨Git main461b274與f09cf68重跑核心、快取及回歸通過；固定收據032。正式入口未呼叫新helper，正式82b9c9e／1866檔未改，125個原版檔保持。
+- 發現現行海報底圖含原版Steam盒繪，依既有權利邊界不能放入patch。已做A保留原圖另行匯入／B使用已核准HD圖的並列原型；依grilling技能要求詢問，尚未替使用者決定。原型只在workplace，未改定版海報或建立候選。
+- 工具沿dosgolem-go-ebiten:1.24-r1與sosb-img:r1，網路關閉、UID/GID1000:1000。新編排固定兩側Git來源；各命令已實際執行，最後來源固定值與版本assert按相同輸入整理並驗語法。
+- 收尾檢查：全工作根沒有root-owned檔案或`.md`目錄；輸出UID/GID1000:1000，Go1.24.13與shell語法已核對。本批容器已移除，未留背景程序，未做prune或rmi。

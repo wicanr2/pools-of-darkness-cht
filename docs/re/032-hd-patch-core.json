@@ -1,0 +1,107 @@
+{
+  "date": "2026-11-01",
+  "issue": 75,
+  "status": "PASS file-rebuild core only; player entry inactive",
+  "source_main_commit": "461b274523e15b84b2251927b16ecc5a68ef195c",
+  "engine_core_commit": "f09cf683c06098ed3d48703afc1ecac489df44f6",
+  "manifest_sha256": "faa2c3c6c4551abc9c22d789dd04d728e08748373c411a20ca99ba38538ce6a7",
+  "theme_files": 1866,
+  "generated_files": 983,
+  "original_indexes": 850,
+  "ordered_write_tables": 133,
+  "repo_files": 883,
+  "decoder_counts": {
+    "wall-8x8": 17,
+    "repo-file": 883,
+    "block-vga": 569,
+    "bma-index": 99,
+    "bma-writes": 133,
+    "sprite-vga": 165
+  },
+  "original_archives": {
+    "8X8D1.DAX": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+    "BIGPIC1.DAX": "bc3565c62c1654ee757d1f98f64bbb78e06bcd551c2e8593c41feb130b9f0f6b",
+    "CPIC1.DAX": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+    "DUNGCOM.DAX": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+    "TITLE.DAX": "8a53adf4044527df86d2d983f6c4eeee440c3d09773e7cbd4166279ccafde757",
+    "PIC1.DAX": "a3cf36ca3d51ca7960fd73b630489f019c5ad984808ad08bcf91186f67401ab7",
+    "SKYGRND.DAX": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+    "WILDCOM.DAX": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+    "COMSPR.DAX": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee",
+    "BACK1.DAX": "2efc68c5220a3f2c00315accc4b13961727cf87ae941484a8eb77cb78e054c6f",
+    "SPRIT1.DAX": "df356577a5d884222138c486170caf0bb21809f58201ed52827b2cd9dc441c7f",
+    "INTRO.BMA": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+    "INTRO.ACF": "f005e97b9d704bdfee940415d29ed76ce130a4151ffb420abcf38aeb3b6b417f"
+  },
+  "original_input_tree_sha256": "5f7b32285e61d6394dd272110960070dc6d3c03d485d0d70df85da02f56b31dd",
+  "original_files_unchanged": 125,
+  "output_tree_sha256": "8cd56195955000621c0e62373a3a4f44d4185428fc6c36a569bb014d2081e3a3",
+  "logs": {
+    "core-test.log": "fa2334b5f015b82e61a1c01a6b093f738e44682f0cf4a1483dda473fb3c1125f",
+    "cache-test.log": "1d2e90b9fffab01513f07f6fe0c11aeccab042e2a76388bcd7d8e073665abfb4",
+    "regression.log": "7da97b67f7394e4ebbc8ad08c7c0632bbef78dbd25bb30728806b548939a9d29"
+  },
+  "cross_compilation": {
+    "import-windows.test.exe": {
+      "sha256": "355d7df17b779bbb1416eaf3fcaa0dc2daa9c94cd102f7a53572cf0ea616d1db",
+      "size": 4959744,
+      "cpu": 34404,
+      "execution_verified": false
+    },
+    "import-darwin-amd64.test": {
+      "sha256": "b5c089e2e6526a9be1be5003db13232afcb912360c7d070f2643994cf618a2a0",
+      "size": 4706304,
+      "cpu": 16777223,
+      "execution_verified": false
+    },
+    "import-darwin-arm64.test": {
+      "sha256": "16e10948f20101a5fb743bd3b2a1a8454ca93e3c3972a93184c231886fd21000",
+      "size": 4499042,
+      "cpu": 16777228,
+      "execution_verified": false
+    }
+  },
+  "cache_tests": [
+    "first build",
+    "restart read-only reuse",
+    "extra file rejected",
+    "modified bytes rejected"
+  ],
+  "negative_tests": [
+    "wrong version",
+    "path traversal",
+    "Windows absolute path",
+    "duplicate output",
+    "unknown kind",
+    "unknown decoder",
+    "out-of-range frame",
+    "wrong result SHA",
+    "wrong original SHA",
+    "malformed DAX/sprite/BMA",
+    "symlink escape",
+    "existing output"
+  ],
+  "formal_program_unchanged": "82b9c9ee2356cee690f747895a58e60ed485d1d02bae400d950e608903a83ba0",
+  "formal_theme_unchanged": true,
+  "poster_decision": "pending",
+  "prototype_comparison_sha256": "17f7f7f2be56da54c46188994847d41dc5b64716c52c68b13d7ecb95d3212883",
+  "prototype_path": "workplace/package-hd-v1/poster-comparison.png",
+  "tools": {
+    "Go": "1.24.13",
+    "Docker_image": "dosgolem-go-ebiten:1.24-r1"
+  },
+  "limits": [
+    "No official launcher call added",
+    "No HD patch artifact created",
+    "Poster choice remains pending",
+    "Windows/macOS core test binaries compiled but not executed",
+    "No normal first-import or packaged-player-path claim"
+  ],
+  "hygiene": {
+    "root_owned_files": 0,
+    "md_directories": 0,
+    "uid": 1000,
+    "gid": 1000,
+    "task_containers_remaining": 0
+  }
+}

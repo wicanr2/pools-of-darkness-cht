@@ -1,5 +1,24 @@
 # 012 三平台候選封包
 
+## HD patch 原版辨識資料匯入
+
+Issue [#75](https://github.com/wicanr2/pools-of-darkness-cht/issues/75)。本節的檔案重建核心為READY；海報與最終候選仍DRAFT，待使用者確認並列原型。既有九包保留原驗收與SHA，不覆寫。
+
+- 沿用`review/hd/runtime/manifest.json`版本1及目前1866檔主題、十份字型。輸入、解碼與輸出SHA來自既有`tools/rebuild_assets.py`及研究014／017／031，沒有新遊戲資料格式或規則。
+- patch附已接受的PNG、JSON與原版SHA／解碼配方。850份原版索引及133份BMA有序寫入表由玩家自備DAX／INTRO.BMA重生，原始輸入逐檔核對既有`original_archives`。INTRO.ACF只核對SHA，不改其內容。
+- Go核心放本作`apps/pod/hdimport`，只做檔案解碼與驗證，不接管CPU或改寫客體檔案。DAX依既有9-byte目錄與外層RLE；VGA區塊、sprite第二層RLE／XOR、434-byte牆面表頭及BMA均沿既有來源與邊界，不猜未知格式。
+- 相對路徑正規化、重複輸出、未知kind／decoder、越界、雜湊、符號連結逃出來源根及既有輸出均須拒絕。驗完全部輸入及重生結果才建立輸出；失敗不可留下可被載入的半套主題，不覆寫原版、發行目錄或存檔。
+- 前端接入沿既有首次原版匯入，在使用者資料目錄另建HD快取；現有完整HD與開發模式優先沿原路徑，基本patch不載入新分支。具體海報來源確認後才接入正式候選。
+- 核心驗收以目前合法原版及正式清單重生全部1866檔，每檔同受測主題；原版與來源樹不變。另驗路徑、缺件、改SHA、非法kind／decoder及解析邊界。正常封包驗收須等海報定案後，依前節三平台與存讀檔閘門完成，不以核心測試宣稱patch已交付。
+
+核心檔案級驗證通過，固定[收據032](../re/032-hd-patch-core.json)：來源main461b274、核心f09cf68；全部1866檔逐SHA相同，850份索引與133份有序表均由原版重生。首次重建、第二次不改檔案的快取重用、多餘檔案／改位元組拒絕通過；來源125檔與正式程式／主題不變。Windows amd64及macOS兩架構的核心測試程式可編譯，沒有執行或整包啟動聲明。
+
+重現入口[hd-import-core-receipt.sh](../../tools/hd-import-core-receipt.sh)接受一個新收據名稱，在Docker內從固定main461b274與引擎f09cf68的Git匯出重跑。原版唯讀、輸出在workplace，需已有合法原版與Go模組快取，沿AGENTS資源及權限限制。本次已執行乾淨來源全部命令，編排最後加入相同main固定值與Go版本檢查，語法另驗；不需要第二輪相同輸出。
+
+海報A／B仍待確認，原型在`workplace/package-hd-v1/poster-comparison.png`。`prepareHDSource`目前只供測試，正式main未呼叫；本節不將單元測試等同正常玩家首次匯入。新三平台候選、實際封包、Wine與存讀檔驗收尚未進行。
+
+## 原九包候選驗收
+
 狀態：本機九包候選範圍CONFORMED，正式原案交付仍未完成。Issue：[12](https://github.com/wicanr2/pools-of-darkness-cht/issues/12)、[69](https://github.com/wicanr2/pools-of-darkness-cht/issues/69)。固定證據：[026](../re/026-package-runtime.json)。
 
 候選識別為`v.0.1.0-20261101`。不建立tag或公開Release，不宣稱配樂、多語系、無敵及動畫HD已完成。既有Go繪圖、繁中、已啟用HD與demo中止維持原範圍。
