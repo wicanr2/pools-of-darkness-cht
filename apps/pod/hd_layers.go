@@ -10,6 +10,7 @@ type HDLayers struct {
 	encounters  *encounterHD
 	walls       *wallHD
 	exact       *exactHD
+	composite   *combatComposite
 	classified  bool
 	lastIndex   []byte
 	lastPalette [256][3]uint8
@@ -65,7 +66,7 @@ func LoadHDLayers(dir string) (*HDLayers, int, error) {
 	if exact != nil {
 		count += len(exact.items)
 	}
-	return &HDLayers{combat: combat, actors: actors, encounters: encounters, walls: walls, exact: exact}, count, nil
+	return &HDLayers{combat: combat, actors: actors, encounters: encounters, walls: walls, exact: exact, composite: newCombatComposite(combat, actors)}, count, nil
 }
 
 func (h *HDLayers) Frame(indexed []byte, pal [256][3]uint8) {
@@ -96,6 +97,7 @@ func (h *HDLayers) classify(indexed []byte, pal [256][3]uint8) {
 	}
 	h.actors.frame(indexed, guard)
 	h.actors.partialFrame(indexed, guard)
+	h.composite.frame(indexed, pal, h.combat, h.actors)
 	h.encounters.frame(indexed, pal)
 	h.walls.frame(indexed, pal)
 	h.exact.frame(indexed, pal)
@@ -112,6 +114,11 @@ func (h *HDLayers) pendingBattleCells() (cells [21 * 21]bool) {
 	} else if h.actors != nil {
 		cells = h.actors.deferCells
 	}
+	if h.composite != nil {
+		for n, pending := range h.composite.deferCells {
+			cells[n] = cells[n] || pending
+		}
+	}
 	return
 }
 
@@ -121,7 +128,9 @@ func (h *HDLayers) Draw(out, indexed []byte, scale int) {
 	}
 	h.walls.draw(out, indexed, scale)
 	h.combat.draw(out, indexed, scale)
+	h.composite.drawTerrain(out, indexed, scale, h.combat)
 	h.actors.draw(out, indexed, scale)
+	h.composite.drawActors(out, indexed, scale, h.actors)
 	h.encounters.draw(out, indexed, scale)
 	h.exact.draw(out, indexed, scale)
 }

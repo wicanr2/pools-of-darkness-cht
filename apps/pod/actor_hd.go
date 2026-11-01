@@ -62,8 +62,12 @@ func (a *actorHD) partialFrame(indexed []byte, terrainGuard bool) {
 		if !(p.vga && a.vgaPaletteOK || p.vgaEffect && a.effectPaletteOK) {
 			continue
 		}
-		for y := 8; y+p.h <= 176; y += 24 {
-			for x := 8; x+p.w <= 176; x += 24 {
+		step := 24
+		if p.vgaEffect {
+			step = 8
+		}
+		for y := 8; y+p.h <= 176; y += step {
+			for x := 8; x+p.w <= 176; x += step {
 				matches, colors := 0, 0
 				var used [256]bool
 				var invalid, ink [54]bool
