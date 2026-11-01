@@ -1872,3 +1872,4 @@
 - 外層snapshot括號漏寫，先待原腳本結束再修正，只接續重啟／冷讀階段；初次匯入、demo及另存的已完成畫格未重跑。驗收器原先錯把F12海報當作目前語系，依實際英文像素修正驗收假設，程式行為未改。Go映像缺python別名及rg時沿既有python3與容器工具，不另建映像或回主機分析。
 - 固定證據033、規格012、狀態表、SETUP及README同步；新三包與實際抽樣收據已交付dist-all/v.0.1.1-20261101。沒有tag、Release或原版上傳。日韓、配樂／試聽、FINAL HD及推廣片仍待完成，#12等母項保持。
 - 全工作根find未發現root-owned檔案或`.md`目錄，正式程式與回復副本均1000:1000。本批容器均已隨--rm移除，未留背景工作，沒有prune或rmi。Python與shell語法、交付雜湊及專案文件入口另核對；固定第三方AppImage來源README的BUILD.md引用不當作本專案入口。
+- 主專案7ce48d7／5d2ebf7與引擎661f7dc已推私人main／dosgolem/pod，兩側工作樹乾淨。2852個專案連結通過，README→SETUP正對照有命中。[#75結案收據](https://github.com/wicanr2/pools-of-darkness-cht/issues/75#issuecomment-6559298212)與[#12增量回填](https://github.com/wicanr2/pools-of-darkness-cht/issues/12#issuecomment-6559301271)已回讀；#75 CLOSED，#9／#10／#11／#12／#16 OPEN，repo PRIVATE，本專案容器0。
