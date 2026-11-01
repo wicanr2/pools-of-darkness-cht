@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""從Git素材與自備原版，重建已驗主題和字型；不讀舊workplace。"""
+"""從Git素材與自備原版，重建已驗主題和字型；不讀舊workplace。
+
+日韓候選的字集與素材登錄入口為 tools/jako_runtime_manifest.py，預設只檢查。
+"""
 import argparse
 import hashlib
 import json
@@ -26,6 +29,14 @@ def inside(root, name):
     if not name or Path(name).is_absolute() or root.resolve() not in p.resolve().parents:
         raise ValueError(f'路徑超出根目錄：{name}')
     return p
+
+
+def rounded_sources(root, row):
+    region = 'JP' if row['path'].startswith('pod-ja') else 'TW'
+    weight = 'B' if row['cell'] in (22, 24) else 'M'
+    source = root/'font/source/rounded'/f'GenSenRounded2{region}-{weight}.otf'
+    fallback = root/'font/source/unifont'/('unifont_jp-17.0.05.hex' if region == 'JP' else 'unifont_t-17.0.05.hex')
+    return source, fallback
 
 
 def rebuild(root, original, output):
@@ -115,9 +126,9 @@ def rebuild(root, original, output):
             if not re.fullmatch(r'pod-(?:[a-z0-9-]+|zh-CN(?:-3x|-bar12|-bar22)?)\.golemfnt', row['path']):
                 raise ValueError('字型檔名不合')
             if row['kind'] == 'rounded':
-                source = root/'font/source/rounded'/('GenSenRounded2TW-B.otf' if row['cell'] in (22,24) else 'GenSenRounded2TW-M.otf')
+                source, fallback = rounded_sources(root, row)
                 args = [str(root/'tools/rounded_font.py'), '--otf', str(source), '--cell', str(row['cell']),
-                        '--charset-file', str(inside(root,row['charset'])), '--fallback', str(root/'font/source/unifont/unifont_t-17.0.05.hex')]
+                        '--charset-file', str(inside(root,row['charset'])), '--fallback', str(fallback)]
             elif row['kind'] == 'courier':
                 args = [str(root/'tools/en_font.py'), '--ttf', str(root/'font/source/courier/CourierPrime-Bold.ttf'), '--cell', str(row['cell'])]
             else:

@@ -1,6 +1,8 @@
 # 015 多語系
 
-狀態：英文前端、簡中與英文面板各依下節明列範圍CONFORMED；日文、韓文仍DRAFT。
+狀態：五語依各節明列範圍CONFORMED，正常玩家路線採抽樣。
+
+日韓收尾由[#76](https://github.com/wicanr2/pools-of-darkness-cht/issues/76)接續。[來源計畫](../../tools/jako_prepare.py)與[離線翻譯試驗](../../tools/jako_translate.py)只寫`workplace/multilingual-jako/`；[固定工具與模型清單](../../tools/vendor/jako/manifest.json)保存已淘汰試驗，試譯未納入正式表。正式來源為text下日韓13表、[共用術語](../../text/glossary-jako.tsv)及[語境校正](../../text/jako-fixes.tsv)。原文SHA完整相同才沿用前作譯文，不沿用克萊恩地名與人名。字源與重建見[字型入口](../../font/README.md)。
 Issue：[#11](https://github.com/wicanr2/pools-of-darkness-cht/issues/11)、[#26](https://github.com/wicanr2/pools-of-darkness-cht/issues/26)。
 沿用本作現有`apps/pod/lang.go`、`cmd/pod-play/lang.go`及前作規格015，不新增遊戲規則或語言存檔格式。
 
@@ -9,7 +11,7 @@ Issue：[#11](https://github.com/wicanr2/pools-of-darkness-cht/issues/11)、[#26
 - 英文字型沿前作`tools/en_font.py`與Courier Prime Bold，2倍16×16、3倍24×24，填滿原版方形字格。
   實際來源、授權、SHA及可重現入口掛於研究014。繁中字型與原版點陣字不混用。
 - `-lang-fonts`仍有最高優先。開發模式另可讀主字型旁既有`pod-<語系>.golemfnt`，沒有該字型就不載該語系。
-  發行模式沿既有`font/pod-<語系>.golemfnt`。目前提供繁中、英文及簡中，F8循環，F12原版獨立。
+  發行模式沿既有`font/pod-<語系>.golemfnt`。目前正式資料提供繁中、英文、日文、韓文及簡中，F8循環，F12原版獨立；歷史封包依各自manifest。
 - 第一次依系統語言、之後記住選擇，沿現有偏好檔；不重開遊戲、不送額外DOS按鍵。
   面板沒有該語言資料時停用，不沿用上一語言內容。英文手札與攻略依下方英文面板收尾驗收。
   英文地圖有32鍵，24個已知名稱與八個未知名稱；七個攻略點沿同座標，未知仍顯示未知，不露出繁中名稱。
@@ -32,7 +34,7 @@ Issue：[#11](https://github.com/wicanr2/pools-of-darkness-cht/issues/11)、[#26
 
 開場三張TITLE與海報沿既定版面及已核准無字底圖，只重排簡中TSV文字。新語系圖層逐件檢查尺寸、文字邊界與PNG雜湊，沒有已驗資料時不借用繁中圖層。片頭字幕沿host-text原有字幕key，不改原版播放順序。
 
-驗證採抽樣：全部新TSV欄位／key／ASCII與placeholder不變、字型覆蓋及乾淨重建；正常開場與一條正常讀檔的F8／面板／倍率路線，同初始狀態對照繁中CPU、RAM、索引、色盤及客體檔案，保存原尺寸擷取。缺表或錯字型須拒絕，不能用字型放大代替原生24字模。該批不含英文面板，後續見下節；日／韓仍DRAFT，既有候選九包不改寫。
+驗證採抽樣：全部新TSV欄位／key／ASCII與placeholder不變、字型覆蓋及乾淨重建；正常開場與一條正常讀檔的F8／面板／倍率路線，同初始狀態對照繁中CPU、RAM、索引、色盤及客體檔案，保存原尺寸擷取。缺表或錯字型須拒絕，不能用字型放大代替原生24字模。該批不含英文面板，後續見下節；當時日韓仍DRAFT，現況見[日韓收尾](#日文與韓文收尾)。既有候選九包不改寫。
 
 固定OpenCC wheel、對應來源、授權與SHA入口：[工具來源](../../tools/vendor/opencc/manifest.json)。轉換只在Docker的Python3.11內離線執行；[轉換入口](../../tools/zhcn_text.py)列明顯示欄及不變欄。
 
@@ -40,7 +42,7 @@ Issue：[#11](https://github.com/wicanr2/pools-of-darkness-cht/issues/11)、[#26
 
 驗收引擎2ec2dfa，乾淨重編SHA與受測程式相同。繁中／簡中各4800格、462000000步，原版CPU／RAM、索引／色盤及132個客體檔案相同，沒有改寫存檔。每側19張正常開場、字級、讀檔、地圖、攻略、語系切換與手札空清單擷取；八組字幕另用既有正常來源驗2／3倍，動畫區域不變。兩種語系量尺原始121格皆為4749→4750的明示2→3倍HD切換，11×11個格子與切換前後來源鎖定，非預期0。`-shot-original`會再畫當前語系工具列，RGBA差異1260點只在工具列，原版像素依相同IDX／PAL核對，不把工具列當作原版差異。
 
-全部1536檔及十份字型由最終Git輸入乾淨重建；舊素材與原六份字型SHA未變。缺簡中前端表及錯誤3倍字模均由實際前端拒絕。該批不含英文面板，後續見下節；日韓、配樂、無敵、完整動畫HD及HD patch仍未完成，舊九包候選固定在原來源，不覆寫。
+全部1536檔及十份字型由最終Git輸入乾淨重建；舊素材與原六份字型SHA未變。缺簡中前端表及錯誤3倍字模均由實際前端拒絕。該批不含英文面板，後續見下節。當時未完成的日韓由[本頁末節](#日文與韓文收尾)接續，無敵、片頭HD及HD patch分別由[規格017](017-invincible.md)、[研究031](../re/031-intro-bma.md)及[規格012](012-package.md#hd-patch-conformed)接續；配樂仍待試聽。舊九包固定原來源，不覆寫。
 
 ## 英文面板收尾
 
@@ -54,7 +56,7 @@ Issue：[#11](https://github.com/wicanr2/pools-of-darkness-cht/issues/11)、[#26
 
 手札標題最多38個ASCII字元；攻略標題最多33個，留出Guide前綴後不超過40欄。超長標題改用完整可讀的短標題，原標題全文置於正文第一段，保留來源資訊；正文依原面板動態分頁，不因中文歷史頁數常數截斷英文。
 
-抽驗一條既有正常讀檔與面板路線，保留語系選擇、已讀清單、攻略頁碼及地圖探索狀態，對照繁中原版CPU、RAM、IDX、PAL及客體檔案。正常空清單與已有手札的局部呈現證據分開保存；不新增G6探索、原版亂數或遊戲規則逆向。日韓與其餘原案功能仍未完成，舊候選九包不改寫。
+抽驗一條既有正常讀檔與面板路線，保留語系選擇、已讀清單、攻略頁碼及地圖探索狀態，對照繁中原版CPU、RAM、IDX、PAL及客體檔案。正常空清單與已有手札的局部呈現證據分開保存；不新增G6探索、原版亂數或遊戲規則逆向。當時未完成的日韓由[末節](#日文與韓文收尾)接續，其餘原案現況依[CONTEXT](../../CONTEXT.md)；舊九包不改寫。
 
 原文來源：[G4英文校讀稿](../../reference/journal-en.tsv)；正式英文資料：[手札](../../text/journal.en.tsv)、[攻略](../../text/walkthrough.en.tsv)、[地圖名稱](../../text/map-titles.en.tsv)、[攻略點](../../text/map-guide.en.tsv)。攻略是本專案自寫摘要的英譯，保留來源既有疑義，不當作新規則證據。Ohlo's Mystic Devices、Troll Toss Tavern及Cloister of Tyr拼寫以既有town1／town2正常輸出核對，沒有新增探索。
 
@@ -65,3 +67,23 @@ Issue：[#11](https://github.com/wicanr2/pools-of-darkness-cht/issues/11)、[#26
 正常路線執行`bash /tools/english_panels_gui.sh`，需要合法原版、既有正常建立的槽A及目前程式／主題／字型，實際路徑列於腳本；缺少時不能改用狀態注入冒充。資料及負對照分別執行`python3 -I /tools/english_panels.py --root /project --receipt /out/test/data.json`、`python3 -I /tools/english_panels_negative.py --root /project --out /out`。固定收據核對另需乾淨Git匯出的相同資料檢查結果`/out/test/clean-data.json`及來源樹`/out/main-tree.txt`，最後執行`python3 -I /tools/english_panels_check.py --root /project --out /out --receipt /out/runtime.json`。原始紀錄保留在本機，Git保存固定收據與重生工具。
 
 正常英文路線4800格、462000000步、17張擷取，同027繁中基準的DOS輸入、CPU／RAM、IDX／PAL及132個客體檔案。F6翻頁、F8英→簡→繁→英、F7地圖、F5空清單與2／3倍通過。量尺原始121格仍為4749→4750的明示倍率切換，來源與11×11格座標鎖定，非預期0。新觸發手札未重播；正文樣本是局部排版，不能替代正常新觸發證據。程式2ec2dfa／218b60f、1536檔主題及十份字型未改。
+
+## 日文與韓文收尾
+
+狀態：CONFORMED，2026-11-02完成本節抽樣與正式接入。Issue：[76](https://github.com/wicanr2/pools-of-darkness-cht/issues/76)。沿既有LangPack、TSV格式、偏好、F8與F12，不新增Go引擎機制或DOS規則。日韓為機器翻譯並經語境校讀，尚未經母語者審校。
+
+正式候選每語系13表、7652列，含4634條劇情、99則手札、78段自寫攻略、32個地圖鍵及七個攻略點。原文SHA相同才沿用前作譯文；其餘以英文原文與本作校讀繁中對照。術語集中對齊，明確歧義保留來源限制。英文密碼、答案、數字、事件鍵、座標、比對欄及原版存檔不翻譯。數字寫法與長標題移入正文的差異逐欄保存審查，不以總數豁免。
+
+字型沿既定源泉圓體，日文使用JP字源，韓文使用TW字源內的原生韓文字模；缺字才用相應Unifont。每語系原生16／24及工具列12／22各一份，共新增八份，保留既有十份SHA。三張開場及B版海報只重排正式TSV文字，背景與版面沿已核准版本。
+
+驗證入口：[合併](../../tools/jako_merge.py)、[逐欄資料檢查](../../tools/jako_check.py)、[字模](../../tools/jako_font.py)、[開場與海報](../../tools/jako_assets.py)、[正常玩家路線](../../tools/jako_gui.sh)、[局部分頁](../../tools/jako_panels_test.go)、[偏好與拒絕分支](../../tools/jako_frontend.py)、[收據核對](../../tools/jako_runtime_check.py)。完整資料通過欄位、placeholder、行寬、字型與分頁後，繁中／日文／韓文各跑4800格正常開場、讀槽A、對話、面板、五語循環、F12與兩倍率三級字型。比較原版CPU、RAM、IDX、PAL及132個客體檔案。
+
+韓文Manshoon的32個欄位以[精確校正表](../../text/jako-term-fixes.tsv)統一拼法；合併前核對原欄全文與SHA，失配即停。這只改顯示譯文，不更動英文比對欄。[日韓文字圖層](../../review/hd/jako/README.md)列出已保存的衍生素材。
+
+量尺保留原始紀錄，預先限定腳本4630至4640的明示F12原版顯示及4749至4750的2→3倍HD切換；其餘閃現須為零。另驗偏好重啟與系統語言初次選擇、缺表或錯字型拒絕。局部已讀手札呈現不冒稱正常路線新觸發。正式素材及18份字型由乾淨Git重建並核對SHA；既有12包固定原版本，不覆寫。配樂、FINAL及推廣片不納入本子項。
+
+驗收：[固定收據034](../re/034-jako-runtime.json)。三側各4800格、462000000步、30張正常擷取，原版CPU／RAM、IDX／PAL及132個客體檔案同027。F8按繁中、英文、日文、韓文、簡中循環；F12原版中央畫面三側相同。量尺原始121格僅4749→4750的既有11×11個倍率切換格，非預期0。四個缺表／錯字型拒絕及14個實際前端語言案例通過，九組同格畫面與顯式語系基準一致。
+
+日文手札104頁、攻略86頁；韓文手札109頁、攻略93頁，全文及標題完整，最長2／3頁。四則手札首末頁按單頁去重後共20張元件圖。另以[字幕元件驗證](../../tools/jako_subtitles_test.go)重用八組既有正常來源，兩語、兩倍率共32組，全文、動畫168列與缺字／缺譯回退通過。這些元件圖不當作本輪新劇情或完整片頭播放。
+
+Git樹d738ec2完整重建1888檔主題與18字型，全部SHA同受測候選；既有1866主題檔與十份字型保持。六個新增TITLE辨識索引由原版重生。正式033程式原封使用，另跑7400格繁中DEMO，CPU／RAM、IDX／PAL、127檔及完整B版畫面同既有基準，閃現0。舊十二包SHA全部保持，新日韓尚未另打包。

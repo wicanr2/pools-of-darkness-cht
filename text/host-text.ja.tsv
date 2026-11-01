@@ -1,0 +1,50 @@
+key	translation	note
+quiz.page	英語の手記 {page} ページ	本作查驗題頁碼
+quiz.word	見出しの後の {word} 語目は？	本作字序問句；兩位數最多22格
+quiz.answer	答え：{answer}	原版答案；只改顯示
+journal.title	{title}	面板標題
+journal.page	{page}/{pages} ページ	面板頁碼
+journal.none	手記はまだない（F5で閉じる）	無已讀手札
+guide.title	攻略：{title}	攻略標題
+guide.page	{source} {page}/{pages} ページ	攻略來源與頁碼
+guide.toc	プールズ・オブ・ダークネス攻略	本作題名
+guide.tocline	{n}. {title}	攻略目錄
+guide.tochint	左右で章、PgDn/PgUpでページ。EscかF6で閉じる。ネタバレあり。	攻略操作
+map.unknown	（不明な地図）	未知地圖
+map.nodata	この地図に攻略地点はない。	無攻略點
+map.pos	{x},{y} 向き{dir}	位置
+map.dirs	北東南西	方向順序
+map.hint	V全図 F7閉	地圖操作
+map.all	V探索済 F7閉	全圖操作
+map.more	{page}/{pages} PgDn次	地圖頁碼
+toolbar.scale2	2倍	倍率
+toolbar.scale3	3倍	倍率
+toolbar.scale3hd	3倍HD	HD倍率
+toolbar.nohd	HDなし	無素材
+toolbar.chinese	日本語	英文覆繪
+toolbar.original	原版	原版
+toolbar.journal	手記	手札
+toolbar.guide	攻略	攻略
+toolbar.map	地図	地圖
+toolbar.answers	答	答案
+toolbar.cheat	無敵	無敵
+toolbar.mute	音	靜音
+toolbar.music	曲	配樂
+toolbar.shot	撮影	截圖
+toolbar.fullscreen	全画面	全螢幕
+lang.name	日本語	語系名稱
+toolbar.speed	{speed}	速度倍率
+toolbar.barfont	字{size}	字級
+barfont.small	小	小
+barfont.medium	中	中
+barfont.large	大	大
+journal.ref	%d項%s	原文已含分隔空白
+journal.refdot	。	手札引用句點
+intro.001	ある問題に対処させるため、お前たちをここに呼び寄せた...	本作片頭實際字幕；研究018及規格024
+intro.002	フランは、かつて我がものだった...	本作片頭實際字幕；研究018及規格024
+intro.003	だが、英雄気取りの連中が、この手から奪い去ったのだ！	本作片頭實際字幕；研究018及規格024
+intro.004	罰として奴らを我がしもべに縛りつけ、この地の征服に加担させた。	本作片頭實際字幕；研究018及規格024
+intro.005	しかし、しもべどもは敗れ、英雄どもが勝った。	本作片頭實際字幕；研究018及規格024
+intro.006	次に、奴らをドレッドロードに挑ませた。その力なら奴らを打ち砕けたはずだ...だが、奴もしくじった！	本作片頭實際字幕；研究018及規格024
+intro.007	奴らの無礼の代償は、この地もろとも払わせると決めた。	本作片頭實際字幕；研究018及規格024
+intro.008	お前たちは、我が復讐の道具となるのだ！行け！...我を失望させるでない！	本作片頭實際字幕；研究018及規格024

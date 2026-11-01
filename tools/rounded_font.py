@@ -21,6 +21,7 @@ from eten_font import charset, load_unifont  # noqa: E402
 
 GENSEN = {  # 檔名：SHA-256 前 16 碼（github.com/ButTaiwan/gensen-font v2.100 GenSenRounded2TW-otf.zip）
     'GenSenRounded2TW-M.otf': 'b8286a42c534d31c', 'GenSenRounded2TW-B.otf': '050f9ebf394faab3',
+    'GenSenRounded2JP-M.otf': '9b836915a7da5831', 'GenSenRounded2JP-B.otf': 'e3aa6b8f84f21183',
 }
 # 雙線的『』在 50% 門檻下筆畫斷掉（16 格只剩幾點，主專案 #8 手札第 64 則），改用較低門檻
 THIN = {"『": 80, "』": 80}

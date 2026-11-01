@@ -1,7 +1,7 @@
 {
   "version": 1,
   "issue": 55,
-  "scope": "B版HD海報與既有1866檔主題；私人patch候選，原版辨識資料由自備檔重生",
+  "scope": "日韓開場與海報增補；1888檔主題、18份字型；私人素材與本機重建，歷史執行期預期值不變",
   "engine": {
     "repository": "https://github.com/wicanr2/pools-of-darkness-cht.git",
     "branch": "dosgolem/pod",
@@ -14902,6 +14902,172 @@
       "kind": "repo-file",
       "source": "review/hd/b36-wild-terrain/wildcom-002@9.png",
       "rights": "accepted HD redraw"
+    },
+    {
+      "path": "localized/ja/theme.json",
+      "sha256": "888b0b62ed4ac00f3afd7b115d4957be12fc62282daa0a391dec3f0ab4f592bd",
+      "kind": "repo-file",
+      "source": "review/hd/jako/localized/ja/theme.json",
+      "rights": "project metadata; private review"
+    },
+    {
+      "path": "localized/ja/title-001.idx",
+      "sha256": "f61a14b25fe8e4921b9da854e15f1cc60475ec75ce2147e15b7d1dfc5525db0c",
+      "kind": "original-index",
+      "archive": "TITLE.DAX",
+      "block": 1,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "localized/ja/title-001.png",
+      "sha256": "a77f39edb2da8c51e9661f667b01fad1f1bcedf352a4b3e8a8c00cb63b31b7a0",
+      "kind": "repo-file",
+      "source": "review/hd/jako/localized/ja/title-001.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "localized/ja/title-002.idx",
+      "sha256": "f5aff74e221772af84d2883bb091c0facf82e3995c8096ba5814c81caceb1795",
+      "kind": "original-index",
+      "archive": "TITLE.DAX",
+      "block": 2,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "localized/ja/title-002.png",
+      "sha256": "7baf700a6628f2b4a3a69512a7ce856c9ca8b3d2e16ddae8a6f923791bd4242e",
+      "kind": "repo-file",
+      "source": "review/hd/jako/localized/ja/title-002.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "localized/ja/title-003.idx",
+      "sha256": "2c2f516bb9bd70302ee85b953673eb82f94c3ded401ac1e5968ae65e1e207396",
+      "kind": "original-index",
+      "archive": "TITLE.DAX",
+      "block": 3,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "localized/ja/title-003.png",
+      "sha256": "be70d1840ccd49c1e205ef078a9927e44216864f6072296187dde5569449e7db",
+      "kind": "repo-file",
+      "source": "review/hd/jako/localized/ja/title-003.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "localized/ko/theme.json",
+      "sha256": "4144ae89d47b718c4284f366d52b43f5b30240c489f38d60aa7055c5d72074b1",
+      "kind": "repo-file",
+      "source": "review/hd/jako/localized/ko/theme.json",
+      "rights": "project metadata; private review"
+    },
+    {
+      "path": "localized/ko/title-001.idx",
+      "sha256": "f61a14b25fe8e4921b9da854e15f1cc60475ec75ce2147e15b7d1dfc5525db0c",
+      "kind": "original-index",
+      "archive": "TITLE.DAX",
+      "block": 1,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "localized/ko/title-001.png",
+      "sha256": "8270f00e11164b05c8528929307dc956e7cf8b45cbab78e65af6ca5142ac6aa6",
+      "kind": "repo-file",
+      "source": "review/hd/jako/localized/ko/title-001.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "localized/ko/title-002.idx",
+      "sha256": "f5aff74e221772af84d2883bb091c0facf82e3995c8096ba5814c81caceb1795",
+      "kind": "original-index",
+      "archive": "TITLE.DAX",
+      "block": 2,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "localized/ko/title-002.png",
+      "sha256": "c7a8d381912daca8a84b58c3a302a66eae9b4ec3fc81530141ca74acf59f5a5a",
+      "kind": "repo-file",
+      "source": "review/hd/jako/localized/ko/title-002.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "localized/ko/title-003.idx",
+      "sha256": "2c2f516bb9bd70302ee85b953673eb82f94c3ded401ac1e5968ae65e1e207396",
+      "kind": "original-index",
+      "archive": "TITLE.DAX",
+      "block": 3,
+      "frame": 0,
+      "decoder": "block-vga"
+    },
+    {
+      "path": "localized/ko/title-003.png",
+      "sha256": "fe83e9515697679b90dd171fc1b3a0506b0177c33ecb3675163a806e94704fbf",
+      "kind": "repo-file",
+      "source": "review/hd/jako/localized/ko/title-003.png",
+      "rights": "accepted HD redraw"
+    },
+    {
+      "path": "posters/poster-text-left.ja-2x.png",
+      "sha256": "673bb8deed3d35c6ca5f91d1a15f848ea318364e76a02a90a1b66e7478e9e766",
+      "kind": "repo-file",
+      "source": "review/hd/jako/posters/poster-text-left.ja-2x.png",
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
+    },
+    {
+      "path": "posters/poster-text-left.ja-3x.png",
+      "sha256": "6d967f63e01fbb3d574ad3d8e70029a31905d34f9ad0d28ba291a8a278c42c74",
+      "kind": "repo-file",
+      "source": "review/hd/jako/posters/poster-text-left.ja-3x.png",
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
+    },
+    {
+      "path": "posters/poster-text-left.ko-2x.png",
+      "sha256": "4cad60fbd68a9daaaf3eca61b4ef908c9bc694b021b4e47cffe58a79f602964f",
+      "kind": "repo-file",
+      "source": "review/hd/jako/posters/poster-text-left.ko-2x.png",
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
+    },
+    {
+      "path": "posters/poster-text-left.ko-3x.png",
+      "sha256": "20a61664d7b1ba6311cc31e5d643f77a249517e123b67758930f12dc39db421a",
+      "kind": "repo-file",
+      "source": "review/hd/jako/posters/poster-text-left.ko-3x.png",
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
+    },
+    {
+      "path": "posters/poster-text-right.ja-2x.png",
+      "sha256": "0ad298259134e49cdff22d06a21d415ceb6ca87f2b2861eddb70b68890261201",
+      "kind": "repo-file",
+      "source": "review/hd/jako/posters/poster-text-right.ja-2x.png",
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
+    },
+    {
+      "path": "posters/poster-text-right.ja-3x.png",
+      "sha256": "97436863f17f7146b76ca035b9b972fe78257e875df49824c39c4ec1f9c52831",
+      "kind": "repo-file",
+      "source": "review/hd/jako/posters/poster-text-right.ja-3x.png",
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
+    },
+    {
+      "path": "posters/poster-text-right.ko-2x.png",
+      "sha256": "ffeaba533dbd737e4ab6a720a64e1651db2738564a43e4ecb6675b5638c617d4",
+      "kind": "repo-file",
+      "source": "review/hd/jako/posters/poster-text-right.ko-2x.png",
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
+    },
+    {
+      "path": "posters/poster-text-right.ko-3x.png",
+      "sha256": "8025a09950af7bc4e434e1a546f5e2926343d44515aa973a8cabdd39099f8dd1",
+      "kind": "repo-file",
+      "source": "review/hd/jako/posters/poster-text-right.ko-3x.png",
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
     }
   ],
   "original_archives": {
@@ -14987,6 +15153,62 @@
       "cell": 22,
       "charset": "font/charset-pod-zh-CN-bar.json",
       "sha256": "8346692b157dfa4e5d3e016a24cd7da857bf968c50fb1172541a960b71d2b26d"
+    },
+    {
+      "path": "pod-ja.golemfnt",
+      "kind": "rounded",
+      "cell": 16,
+      "charset": "font/charset-pod-ja.json",
+      "sha256": "e93b12499b74957140e7bdbb4a0e5f394f3375686bfbd27682c7d1a57823e93f"
+    },
+    {
+      "path": "pod-ja-3x.golemfnt",
+      "kind": "rounded",
+      "cell": 24,
+      "charset": "font/charset-pod-ja-3x.json",
+      "sha256": "74d3f0564e71a3534ab3b2f9b90c4c8c320573cdfa78327f82c190a320feefee"
+    },
+    {
+      "path": "pod-ja-bar12.golemfnt",
+      "kind": "rounded",
+      "cell": 12,
+      "charset": "font/charset-pod-ja-bar12.json",
+      "sha256": "55f41a4b156cbd90a55a8f2cb1519cc15409719824c9ff092e2cf6a9dfa25f7d"
+    },
+    {
+      "path": "pod-ja-bar22.golemfnt",
+      "kind": "rounded",
+      "cell": 22,
+      "charset": "font/charset-pod-ja-bar22.json",
+      "sha256": "df913a83201adfca63128a6c6bf57c34181812c2378b421ae6dfb635e8e1f77e"
+    },
+    {
+      "path": "pod-ko.golemfnt",
+      "kind": "rounded",
+      "cell": 16,
+      "charset": "font/charset-pod-ko.json",
+      "sha256": "d5ecfdbcd2aee46c88174467e87cad637f11ce8d7370ece23e581b4d451bc2d0"
+    },
+    {
+      "path": "pod-ko-3x.golemfnt",
+      "kind": "rounded",
+      "cell": 24,
+      "charset": "font/charset-pod-ko-3x.json",
+      "sha256": "584966ab1f8681bb1277cc2153d24ba139bdfba0e7706f1e614c943ac6d7b993"
+    },
+    {
+      "path": "pod-ko-bar12.golemfnt",
+      "kind": "rounded",
+      "cell": 12,
+      "charset": "font/charset-pod-ko-bar12.json",
+      "sha256": "ef7b19eee1e3439a857d5e076b89a43a48be5a5b98b91754fb110573f3131616"
+    },
+    {
+      "path": "pod-ko-bar22.golemfnt",
+      "kind": "rounded",
+      "cell": 22,
+      "charset": "font/charset-pod-ko-bar22.json",
+      "sha256": "f77a0361635e9b790d8d22a2f2f8bc3b6835d0864344bad3f7f48be423f3f916"
     }
   ],
   "source_files": {
@@ -15004,7 +15226,19 @@
     "font/charset-pod-rounded.json": "06b334d5340c6b07b5d1d13f9d128bddd0b4b6c9d309c14e31635a44471f5648",
     "font/charset-pod-zh-CN.json": "15f205975f920d11b8cd3dd1fd20f087494e5e733a3887378ffba340eb17caf7",
     "font/charset-pod-zh-CN-bar.json": "6617480be84c06380e4ad6e4f62eaa5efbff29c0b9b7a68c63ff82250d1a7b9f",
-    "tools/intro_bma.py": "fdc92defef0b065a627347c892212155fbd53e0d38cb03e359866cf1d2ac2e95"
+    "tools/intro_bma.py": "fdc92defef0b065a627347c892212155fbd53e0d38cb03e359866cf1d2ac2e95",
+    "tools/rounded_font.py": "d2eeac2161bf162ed71ffd05a58c8c5199e90ba12372ab465b083538068f5caf",
+    "font/source/rounded/GenSenRounded2JP-M.otf": "9b836915a7da58317fd8002a33d7bb75cb4ae397294850a4ec917527bce0120c",
+    "font/source/unifont/unifont_jp-17.0.05.hex": "3e88e5e98470e7547555202cebb13bcd4c393d417e2296a0f0f8adade7d37f43",
+    "font/charset-pod-ja.json": "27c97a60ad3f198a23b785175a673cb27fc00e97597779d8b76a86bf0514429d",
+    "font/source/rounded/GenSenRounded2JP-B.otf": "e3aa6b8f84f21183f6e081353d04985f55ce0bb135871c183f8b5e1348ca8dbc",
+    "font/charset-pod-ja-3x.json": "27c97a60ad3f198a23b785175a673cb27fc00e97597779d8b76a86bf0514429d",
+    "font/charset-pod-ja-bar12.json": "1a36032ee2ccb02e8997438dbc0dfda1353a9c5f069cf7ea44c1dce5859f5410",
+    "font/charset-pod-ja-bar22.json": "1a36032ee2ccb02e8997438dbc0dfda1353a9c5f069cf7ea44c1dce5859f5410",
+    "font/charset-pod-ko.json": "be44f90dad59c3f6f27e7bb130ea766d5d4961f2706b8844d044a076c497438b",
+    "font/charset-pod-ko-3x.json": "be44f90dad59c3f6f27e7bb130ea766d5d4961f2706b8844d044a076c497438b",
+    "font/charset-pod-ko-bar12.json": "50c38cd5270b636776c28b16e60b8da77a34c0a2d210a729b2c35ffd96e0f47a",
+    "font/charset-pod-ko-bar22.json": "50c38cd5270b636776c28b16e60b8da77a34c0a2d210a729b2c35ffd96e0f47a"
   },
   "runtime_expected": {
     "end": [
@@ -15157,41 +15391,66 @@
       "cmudict/LICENSE": "bd4ce8e44170a5f9f481310ca85c51de3c4f851a65e679b40e603b143bd3542a",
       "cmudict/README": "00c34e7564f1f6a68de02e12c123d801471da92bc3091f7d89b605f238bf8554",
       "cmudict/cmudict.dict": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+      "composed-templates.ja.tsv": "2790393bd3d04d9a5895e7538893300b7d81ed9de44a1387ac53e97e02c4997a",
+      "composed-templates.ko.tsv": "f6d0b89c2e75085983bed81faebcc9eb3203c6f62ca191f9d2af820a7eb94a1f",
       "composed-templates.tsv": "16304e24252a9c90cbe96d36f5c700c2077172ad54fa6e3203d7cb6646da1040",
       "composed-templates.zh-CN.tsv": "5475e8225add2338dc0c2d7e8aa6572082d2d0dd549dd00f0969d6a2a3426b5a",
       "cover.en.tsv": "1dcad1d41608a6cd097be6983fe39d90aeef4e772e1b5530ff35d6faaec78dc9",
+      "cover.ja.tsv": "e494a76ad044e22e48afdba2d06fca6fc67b131f18c53d9d3784c46d1f9f382f",
+      "cover.ko.tsv": "d799598a6123b09e7b2f573e9de109f6f2a0c0fafc8ad50c632deb32ab392b10",
       "cover.zh-CN.tsv": "ce062ef1e1f2d4a39dd3d48d8f0e673174a979da4ad5bbb04463e7607e7b9af8",
       "cover.zh-TW.tsv": "ce062ef1e1f2d4a39dd3d48d8f0e673174a979da4ad5bbb04463e7607e7b9af8",
       "ecl-text-events.tsv": "04895bd7949c8525cf85faa0e38d811406004ed61b15f1c8ec1b62190da0773b",
+      "ecl-text.ja.tsv": "d91ed62bdae8756d9608d0a321878a193a263a6ae7ec58f090a37a0c8398fc5a",
+      "ecl-text.ko.tsv": "40c3c08660358c5df7fa3d0277c1af00b00a471a0096a18c1a2950fc69aa432a",
       "ecl-text.zh-CN.tsv": "491da09096ee04aca9203e93b86e37d6b64db63b233b3a0c48c8901a9c4b26d2",
       "ecl-text.zh-TW.tsv": "53c5cc99fecccf276b308c4f3576efeedd86b20d1ee90cef7adcc5e779a70b11",
       "errata.tsv": "9407b86d9dd167a53d6bad864a112208fc386d0a83e6236d681789af6d47152d",
+      "glossary-jako.tsv": "4e0debc1211524aee5948dfb4cb9d7059f0eca00c793dedeab65d87c3fafda7d",
       "glossary.tsv": "7f4e84374a8e51a0058ea04acb385032feb7d4ebffb1b51bcac4b60db059f831",
       "host-extra.zh-CN.tsv": "49032544d6f3727a9e9067d527ad4ebe6d6a3b9f3511252e39d939f8e331013d",
       "host-text.en.tsv": "7ff009460e67ea7d935637515dff29cfbd81eb1e2f64fa84293e9c9334a2fd93",
+      "host-text.ja.tsv": "870ab3153f254ade6ccc4694f17227153281eb217a8f6a073f71b6f3827718be",
+      "host-text.ko.tsv": "69ac391e90e598892ab8810adf40932c0d024462e78279b22a4f89fd21de37d6",
       "host-text.zh-CN.tsv": "de282e63ddb9cc3bfcc5a8ccc15f6a6782e258394dcd1759fd5b03b978197d1d",
       "host-text.zh-TW.tsv": "7f0d5884376625a5bed7ae9056084a188b7537808422a3709c952d486bd76a6e",
+      "jako-fixes.tsv": "a777b853e77e547ce707651a3386efc593f4f634fed3b0504984a28e126c986e",
+      "jako-term-fixes.tsv": "860cd9daba7d8a0decf75de286cbfea175f09311740e472641e786446ee03444",
       "journal.en.tsv": "e1b644b05988ae688cfd299d796ceeef3c4ae9dba05d101ddb0deb0b86857c77",
+      "journal.ja.tsv": "af5ad02c3661c56f3af1ff1b0c895306d3540cf4b7144f2bd1b66f31fb7f524d",
+      "journal.ko.tsv": "768ccb00f8e6eea5af7b76ecadfb274d347b283e41bd3e3bc565f617cd3545f7",
       "journal.zh-CN.tsv": "beb281e8023fa5fac22043be4dbaa1cf293caa59860480cc090254bb55c1a0db",
       "journal.zh-TW.tsv": "bfaedeeae79e088088575a007a738870de9e5148bb3370cfdbe8d4786decff37",
       "map-geo.tsv": "aec61e88db9546ed6e5d33e789063cd20c261c7a5daf086970be0ede6c8a9e26",
       "map-guide.en.tsv": "9198269342857a804899fde5b32a1acbe55f9ae190b239ce1d2289a3016c415c",
+      "map-guide.ja.tsv": "897b0ddfbd9cab5a0ba25fa01d1d00bb8b6f4739acefc7ed74a2708d7d6c66d6",
+      "map-guide.ko.tsv": "2ce64358e6a9f460dd1ca92992dcbfabcd490284f4645faa5632284c825dffb7",
       "map-guide.zh-CN.tsv": "bea393945b8dac98ceda79908e76a1f707e962c2f10037fef961bd48a73a0ee9",
       "map-guide.zh-TW.tsv": "f51a23e13c0c32024b7a9fa92543f3bcee2459ea2dce388193ac33ad27500818",
       "map-titles.en.tsv": "24394c3822914b018fe8a28a29c7fbfdcdc04202c82317b597f2b0e3cf43a18b",
+      "map-titles.ja.tsv": "1b821c64e3326547541311ff65923003ea850344661db5b33faeaaac8a4f2b72",
+      "map-titles.ko.tsv": "6c26d48703bb9962b609d30e28f900d177ca083da9ca6c0cbfec99de247be331",
       "map-titles.tsv": "9f329b6d0b620c46a618cbfa16811083acc621ba84ad63c05b2d0f11d89100d2",
       "map-titles.zh-CN.tsv": "b910cc7e3955346a513297fa9868d353e798f17e9c654dcf42e38d9521487684",
+      "menu-masters.ja.tsv": "76914981853ab2ea0f41d85e414925549b6cedba070c4baba302f74bd048744b",
+      "menu-masters.ko.tsv": "7fb4b7fa49373117da19b9cb66f68a743541478bf00194aa9ca68878695ec9b4",
       "menu-masters.tsv": "c4e447b70937f0c0b6bc547a0e9068c27c37bd543d4a46abe5dffd72bf40e894",
       "menu-masters.zh-CN.tsv": "60acc4391f9b0ca71a89f2a2ff712ad9bf05b4646702b1e6a6db8e53cf59345e",
       "name-events.tsv": "02aaf8601729008135c0f7310ecf6d5d6561c6fc147555a017c61b8ece524f2c",
+      "name.ja.tsv": "7af58b2a6c52fdaa74959e8031352e2003ed0f771cb367b11ee8d412ed6f432d",
+      "name.ko.tsv": "040bdb203afdbcb8ac2703c3e85a8701a3ef7663e97387cf7fcf4e36e26be9d1",
       "name.zh-CN.tsv": "a9ae7618a846cb7a4d62b3142e5c020f5260d97dc2312b69e3fc0a4bfce3a111",
       "name.zh-TW.tsv": "f2080e54ff39e44234e13d8881f372ac68daf79bc291455d872d6348ecaa9798",
       "poster.en.tsv": "e4f6056403edc62a8cdb8c9c073a0aa4c037926c5fe7d294a127abb01deeebff",
+      "poster.ja.tsv": "b373390e60d3000361e99f7713a8ba69dc1684eb029c75f742deab9a4246b1ac",
+      "poster.ko.tsv": "e006681b008dc9c53e1279f09b857593375ba33777a592519e6465212795ade1",
       "poster.zh-CN.tsv": "5a828b18e5196ff0fad0c05bbe79b74901bfa2df50747e3658527f56224aaf3b",
       "poster.zh-TW.tsv": "f30d556d8aabcc9805f51f5278e626fd5093161a461bfe1a0f4b0d0430d1c7e7",
       "quiz-answers.tsv": "25391384867a1ff19c22be25fa99f5e43db890117fbebb95ec9b5bb78e2c3912",
       "term-avoid.tsv": "831569715cc1207ccace062a3916bad570fa391e99db8c2f0b413868c2c3a891",
       "title.en.tsv": "8cf32af2ae5c8e9659414cc1a4c00a180ddb1a0952d661b61e6b12cca13def62",
+      "title.ja.tsv": "63319228cac44987c2ac6cdbbae8151ab712b3e84a4bf986210c4bcba28652fd",
+      "title.ko.tsv": "bd42d17eba0d88fafa411fe4872f27c488ac01d74cfd329d9b0bb5b20f0fd705",
       "title.zh-CN.tsv": "26fd382a24520bdf60755d1f672f1ef88fe8cedb03e0fea131d743ddaf1e9368",
       "title.zh-TW.tsv": "22bc9e8b1192d75920d6ea0d3d3b1e7acbb5c6cbfee9e58745079969315f9d1d",
       "translit-arpabet.tsv": "8f86686da4bd532c4a5ef154a546e9e2570a88f1fdbfe3496a04f7bb08462dbe",
@@ -15203,9 +15462,13 @@
       "translit-zh-CN/translit-names.tsv": "78e929e8fe78abdddfe7d4475a1880a7b04dc0707ca3a3fc22671ae4385d560f",
       "translit-zh-CN/translit-table.tsv": "104c8bc1b7b24ee1aae09a09649b80a4be4a4ca1819cdfc2a006b18fb70a9c57",
       "ui-text-events.tsv": "b654750ef72c0b8cbbb9be323db0b4dac1068ace5b1c38d3565ab25c7ecadf24",
+      "ui-text.ja.tsv": "72f5f1be4d52920e6ef0f629b84c3d9b9ba05b3dc2fcbf51229739024b70ed2a",
+      "ui-text.ko.tsv": "1a2eacb5d014fb0edc2ef7d2387bb6ee4efc6f1017f9e168a4640c0068e3b8e1",
       "ui-text.zh-CN.tsv": "1bdfd52c21bb89b80b4e51b710188990745e00e7f5d545a04bbc571f6414cdb0",
       "ui-text.zh-TW.tsv": "005c3e6228eac731011d2c2e6d3734815c5f4514fb0184007414d804cccb908e",
       "walkthrough.en.tsv": "2a6a2d3459eb23fb7704b305b8f9521cffca1cd79258f859ba907bd751c0db61",
+      "walkthrough.ja.tsv": "b783d3cc4aac495675a7edebf78d29509974f71d49cc56ad85d52cc27134334c",
+      "walkthrough.ko.tsv": "37d02cd8da077d157c211c198cb7171f04edfd12d623295ec0d5627feb002ce1",
       "walkthrough.zh-CN.tsv": "4e42a13f4567f3d951b32834ac5e6245c1e2c91df2b3a0abda04ece98843cdcf",
       "walkthrough.zh-TW.tsv": "65295ae54f0590e90472e360da6344be95735290b0cc996a3fc13d8974e4ffe8",
       "zh-CN-terms.tsv": "7afa15a60bc6643b0804c3125e608c35ad2f505d6af9bbd119a768273805e3a1",

@@ -1,0 +1,50 @@
+key	translation	note
+quiz.page	영문 수기 {page}쪽	本作查驗題頁碼
+quiz.word	제목 뒤 {word}번째 단어는?	本作字序問句；兩位數最多22格
+quiz.answer	답: {answer}	原版答案；只改顯示
+journal.title	{title}	面板標題
+journal.page	{page}/{pages}쪽	面板頁碼
+journal.none	읽은 수기가 없다 (F5로 닫기)	無已讀手札
+guide.title	공략: {title}	攻略標題
+guide.page	{source} {page}/{pages}쪽	攻略來源與頁碼
+guide.toc	풀즈 오브 다크니스 공략	本作題名
+guide.tocline	{n}. {title}	攻略目錄
+guide.tochint	좌우로 장, PgDn/PgUp으로 쪽 이동. Esc 또는 F6로 닫기. 스포일러 포함.	攻略操作
+map.unknown	(알 수 없는 지도)	未知地圖
+map.nodata	이 지도에는 공략 지점이 없다.	無攻略點
+map.pos	{x},{y} 방향 {dir}	位置
+map.dirs	북동남서	方向順序
+map.hint	V전체 F7닫기	地圖操作
+map.all	V탐색 F7닫기	全圖操作
+map.more	{page}/{pages} PgDn다음	地圖頁碼
+toolbar.scale2	2배	倍率
+toolbar.scale3	3배	倍率
+toolbar.scale3hd	3배HD	HD倍率
+toolbar.nohd	HD없음	無素材
+toolbar.chinese	한국어	英文覆繪
+toolbar.original	원판	原版
+toolbar.journal	수기	手札
+toolbar.guide	공략	攻略
+toolbar.map	지도	地圖
+toolbar.answers	답	答案
+toolbar.cheat	무적	無敵
+toolbar.mute	음	靜音
+toolbar.music	곡	配樂
+toolbar.shot	사진	截圖
+toolbar.fullscreen	전체	全螢幕
+lang.name	한국어	語系名稱
+toolbar.speed	{speed}	速度倍率
+toolbar.barfont	글{size}	字級
+barfont.small	소	小
+barfont.medium	중	中
+barfont.large	대	大
+journal.ref	%d항%s	原文已含分隔空白
+journal.refdot	.	手札引用句點
+intro.001	문제를 처리하게 하려고 너희를 이곳에 불렀다...	本作片頭實際字幕；研究018及規格024
+intro.002	플란은 한때 나의 것이었다...	本作片頭實際字幕；研究018及規格024
+intro.003	하지만 영웅 행세를 하는 놈들이 내 손아귀에서 빼앗아 갔다!	本作片頭實際字幕；研究018及規格024
+intro.004	벌로 그들을 내 추종자들에게 얽매어 이 땅을 정복하는 데 힘을 보태게 했다.	本作片頭實際字幕；研究018及規格024
+intro.005	하지만 내 추종자들은 실패했고, 영웅들이 승리했다.	本作片頭實際字幕；研究018及規格024
+intro.006	다음에는 드레드로드와 맞서게 했다. 그 힘이라면 놈들을 짓밟았어야 했다...그 또한 나를 실망시켰다!	本作片頭實際字幕；研究018及規格024
+intro.007	영웅들의 무례한 짓에 대가를 치르게 하고 이 땅도 함께 고통받게 하기로 했다.	本作片頭實際字幕；研究018及規格024
+intro.008	너희가 내 복수의 도구가 될 것이다! 이제 가라!...실망시키지 마라!	本作片頭實際字幕；研究018及規格024

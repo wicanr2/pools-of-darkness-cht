@@ -33,7 +33,7 @@
 | [012 發行包](012-package.md) | 候選範圍CONFORMED | #12、#69、#75 | 舊九包保持，新增v.0.1.1三平台HD patch與B版海報；Linux正常路徑與Wine抽驗，macOS只驗結構，原案完整交付未完 | docs/re/026-package-runtime.json、033-hd-patch-runtime.json |
 | 013 玩家名音譯 | DRAFT | #7 | 音譯資料沿用前作；隊伍名單的玩家名已音譯（ROLAND → 羅倫德）；建角畫面的名字與性別欄位址未在本作驗證 | `tools/g6-create-receipt.sh` |
 | 014 配樂 | 未開始 | #11 | — | — |
-| [015 多語系](015-multilingual.md) | 簡中及英文面板抽樣CONFORMED | #11、#26、#70、#71 | 簡中介面／物品、手札、攻略、地圖、音譯及原生字模接入；英文99手札、78攻略、已知地圖及七點接入。三語正常4800格同原版狀態及132檔，日韓仍DRAFT | docs/re/028-english-panels-runtime.json、027-zhcn-runtime.json；014-title-runtime.json、014-english-front-runtime.json |
+| [015 多語系](015-multilingual.md) | 五語抽樣CONFORMED | #11、#26、#70、#71、#76 | 日韓各13表7652列、99手札及78攻略，八份原生字型；三側正常4800格同原版狀態及132檔，F8五語／F12／偏好通過。日韓未經母語者審校，舊十二包不改 | [034](../re/034-jako-runtime.json)、028-english-panels-runtime.json、027-zhcn-runtime.json；014-title-runtime.json、014-english-front-runtime.json |
 | 016 推廣影片 | 未開始 | #11 | — | — |
 | [017 作弊：我方無敵](017-invincible.md) | CONFORMED，功能抽樣 | #11、#72 | 本作兩個HP、健康／陣營及五種有害效果；正常讀檔／DEMO、七個原版受控傷害及乾淨Git重編通過。長戰鬥19格已由030更正分類並在既有正常路線修正，其他事件不外推 | [研究029](../re/029-invincible.md)、[執行期收據](../re/029-invincible-runtime.json)、[遮擋030](../re/030-hd-occlusion.md) |
 | [018 開場 demo 控制](018-demo-control.md) | CONFORMED | #13 | 選單不逾時；對話／戰鬥中斷、重播、正常進入、F12與2倍通過。已啟用a83043c | [固定收據](../re/020-demo-control-runtime.json)；`tools/demo-control-receipt.sh` |
@@ -45,3 +45,4 @@
 升到 CONFORMED 的條件：本作正常玩家路徑（建角、存讀檔）的同狀態收據覆蓋該規格的行為。
 
 - [012 HD patch](012-package.md#hd-patch-conformed)：#75，B版海報、首次匯入與三平台本機候選CONFORMED。核心[032](../re/032-hd-patch-core.json)與實際封包[033](../re/033-hd-patch-runtime.json)分別保存；macOS真機未驗，原案其他功能未完。
+- [015 日文與韓文](015-multilingual.md#日文與韓文收尾)：#76，正式接入與正常抽樣CONFORMED；[034收據](../re/034-jako-runtime.json)保存資料、字型、乾淨Git重建及原版同狀態證據。

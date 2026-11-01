@@ -1,6 +1,6 @@
 # 在另一台機器重建
 
-本入口重建目前已驗收的繁中、HD與Linux程式。需要Git、Docker，以及使用者合法持有的DOS原版資料目錄。
+本入口重建目前已驗收的五語文字、HD素材與Linux程式。需要Git、Docker，以及使用者合法持有的DOS原版資料目錄。
 GitHub儲存庫維持私人。原版EXE、DAX、存檔與掃描不在Git內；重建不需要舊機器的`workplace/`、前作目錄、聊天紀錄或憑證。
 
 ## 取得與重建
@@ -19,7 +19,7 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 
 | 步驟 | 輸出與檢查 |
 |---|---|
-| `assets` | 重生850份原版辨識索引與133份BMA有序寫入表，重建1866檔主題及十份字型，每檔核對已驗SHA-256 |
+| `assets` | 重生856份原版辨識索引與133份BMA有序寫入表，共989份；重建1888檔主題及十八份字型，每檔核對已驗SHA-256 |
 | `build` | 從本儲存庫`dosgolem/pod`取得[固定commit](tools/rebuild-engine.commit)，編譯`bin/pod-play`，保存建置資訊與SHA-256 |
 | `smoke` | 正常冷啟動7400格DEMO，產生`smoke/`的截圖、來源、紀錄與獨立可寫客體資料 |
 
@@ -40,7 +40,7 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 | Windows x86_64 | `pod-v.0.1.1-20261101-windows-hd-patch.zip` | 實際ZIP，以Wine驗首次匯入、1250格開場與重啟 |
 | macOS universal | `pod-v.0.1.1-20261101-macos-hd-patch.zip` | amd64／arm64結構及依賴；未簽章、真機未驗 |
 
-兩側採使用者核准的B版HD海報，保留三語文字與中央畫面。這批包含繁中、英文、簡中、F1無敵及97種片頭敘事HD。日韓、配樂試聽、片尾HD及推廣片仍待完成。原版資料、擷取索引及有序表不隨patch附帶；發行目錄與自備原版不被修改。
+兩側採使用者核准的B版HD海報，保留三語文字與中央畫面。這批包含繁中、英文、簡中、F1無敵及97種片頭敘事HD。此候選保留原版號與三語範圍，日韓由目前Git來源重建，範圍見[034收據](docs/re/034-jako-runtime.json)。配樂試聽、片尾HD及推廣片仍待完成。原版資料、擷取索引及有序表不隨patch附帶；發行目錄與自備原版不被修改。
 
 固定驗收見[033收據](docs/re/033-hd-patch-runtime.json)，封包大小及SHA見交付根的`SHA256SUMS.json`。重建這批候選可執行：
 
@@ -56,16 +56,18 @@ bash tools/hd-patch.sh build "$PWD/workplace/package-hd-rebuild"
 |---|---|
 | [主題重建清單](review/hd/runtime/manifest.json) | 固定全部檔案、來源、SHA-256及原版DAX、INTRO.BMA及INTRO.ACF版本 |
 | [HD審閱素材](review/hd/README.md) | 沿用已接受PNG；缺少的開場／海報圖補存於[runtime](review/hd/runtime/README.md) |
-| [字型來源與字集](font/README.md) | 開源字型及授權，逐位元組重生目前十份正式字型 |
+| [字型來源與字集](font/README.md) | 開源字型及授權，逐位元組重生目前十八份正式字型 |
 | `text/`及`reference/` | 正式譯文、手札、攻略摘要與術語 |
 | 本儲存庫`dosgolem/pod`分支 | 遊戲adapter與引擎來源，不依賴前作工作樹 |
 
 目前海報使用已核准B版HD生圖。舊原版封面插畫只留私人歷史審閱，不列入目前patch。生成素材不必再次呼叫生圖服務。
 重建清單只保存原版資料的雜湊及選取方式，原始辨識索引與有序寫入表在本機由DAX及INTRO.BMA重生。原版版本不合、圖片遭改或字型來源不同時，重建會失敗並指出缺項。
 
-目前另含簡中介面、手札、攻略、地圖、姓名音譯與開場文字，F8依繁中、英文、簡中循環。簡中有原生16／24及工具列12／22字模。正式TSV由固定OpenCC1.1.9及詞彙表產生；修改繁中後，可在`dosgolem-go-ebiten:1.24-r1`容器內執行`python3 -I tools/zhcn_text.py --root <repo> --out <repo>/text`重生，或加`--check`檢查。來源與重建範圍見[規格015](docs/spec/015-multilingual.md#簡體中文收尾)，OpenCC不在遊戲執行時轉換。
+目前F8依繁中、英文、日文、韓文、簡中循環。簡中包含介面、手札、攻略、地圖、姓名音譯與開場文字，使用原生16／24及工具列12／22字模。正式TSV由固定OpenCC1.1.9及詞彙表產生；修改繁中後，可在`dosgolem-go-ebiten:1.24-r1`容器內執行`python3 -I tools/zhcn_text.py --root <repo> --out <repo>/text`重生，或加`--check`檢查。來源與重建範圍見[規格015](docs/spec/015-multilingual.md#簡體中文收尾)，OpenCC不在遊戲執行時轉換。
 
 英文99則手札、78段攻略與地圖面板的正式TSV也已保存。英文手札來源為私人儲存庫例外保存的[G4校讀稿](reference/journal-en.tsv)，沒有取得公開散布權。資料檢查在影像工具容器內執行`python3 -I tools/english_panels.py --root <repo>`，只讀Git來源，不需要舊工作區。原稿標點與長標題的處理見[英文面板規格](docs/spec/015-multilingual.md#英文面板收尾)。
+
+日韓各有13份正式TSV，包含介面、劇情、物品、99則手札、78段攻略、地圖與姓名音譯。日韓為機器翻譯，經語境校讀，未經母語者審校。[精確術語修正表](text/jako-term-fixes.tsv)保存修正前完整欄位與UTF-8 SHA-256，由[合併工具](tools/jako_merge.py)核對後套用。上方`assets`入口直接讀Git中的正式譯文與固定字集，無須翻譯模型或舊翻譯工作區；日韓[字模](tools/jako_font.py)、[開場與海報](tools/jako_assets.py)及[資料檢查](tools/jako_check.py)的契約見[規格015](docs/spec/015-multilingual.md#日文與韓文收尾)。
 
 ## 驗證與目前限制
 
@@ -75,7 +77,14 @@ bash tools/hd-patch.sh build "$PWD/workplace/package-hd-rebuild"
 英文面板[固定收據](docs/re/028-english-panels-runtime.json)保存一條4800格正常讀檔路線、17張擷取、三語切換及全表分頁檢查。程式、主題及字型同027，原版狀態與132檔不變；正文樣本不代替新劇情觸發。重建清單另列英文資料增量，不改寫歷史7400格證據。
 030當時引擎0e804ea接入戰鬥透明特效與HD遮擋修正；[030收據](docs/re/030-hd-occlusion-runtime.json)保存乾淨Git重編及同輸入10500格DEMO，閃現19→0，原版CPU／RAM、索引／色盤及127檔同029，主題與字型未改。先前13格鏡頭分類因擷取時點錯一格而失效，勘誤及來源見[研究030](docs/re/030-hd-occlusion.md)。F1仍預設關閉，[029收據](docs/re/029-invincible-runtime.json)的傷害與正常路線抽驗保留；其他事件不外推為零閃現。
 另以現行程式重跑7400格，原版終點、來源、127檔及閃現0通過。新增7470個HD像素全部來自三格已證實地形，獨立像素核對後才更新圖面SHA；既有重建檢查器的完整主題、十份字型及58份文字核對通過。本輪未重做素材解碼，素材的乾淨重建證據沿027。
-這個入口保存目前已完成的素材，不代表尚未驗證的地形、動畫、日韓語系、配樂或平台已完成。
+最新[日韓固定收據](docs/re/034-jako-runtime.json)另保存以下抽驗，不改寫上述歷史收據：
+
+- 繁中、日文與韓文各4,800格、462,000,000步，正常開場、讀槽A、對話、面板、五語循環、F12與倍率字級抽樣通過。原版終點與132個客體檔案一致。
+- 日韓資料欄位、placeholder、字型覆蓋、完整標題及手札／攻略全文分頁通過；局部已讀手札呈現與正常路線新觸發分開計算。
+- 正式前端18案通過，含日韓首次系統選語言、偏好重啟、五語順序、缺表拒絕與錯誤3倍字模拒絕。
+- 乾淨Git來源重建1888檔主題、十八份字型及989份原版索引／有序表，SHA全部相同，原十份字型SHA不變。
+
+這個入口保存目前已完成的素材，不代表尚未驗證的地形、動畫、配樂或平台已完成。日韓未經母語者審校，未走的劇情與新觸發手札仍不在本次正常路線抽樣範圍。
 新增HD素材或正式字型時，須同步更新重建清單，並以乾淨Git檔案重跑`assets`，核對新正式主題及字型雜湊後才提交。
 
 ## 候選封包
