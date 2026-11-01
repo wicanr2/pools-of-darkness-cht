@@ -7,7 +7,7 @@
 
 在其他機器重建請讀[SETUP.md](SETUP.md)。必要HD成品、開源字型來源與重建清單已存於本儲存庫；原版遊戲資料需自備。
 
-已有`v.0.1.0-20261101`三平台可試玩候選：基本patch三包、本機完整版六包。Linux已抽驗demo中止、另存與冷讀；Windows以Wine驗開場，macOS僅驗universal結構。操作與重建見[候選封包入口](SETUP.md#候選封包)，完整結果見[驗收紀錄](docs/re/026-package-runtime.json)。這九包不含後續簡中、英文面板及F1無敵。原案尚未全部完成，配樂、日韓語系、片尾HD與HD patch等仍待交付。
+已有`v.0.1.1-20261101`三平台HD patch候選，含B版HD海報、繁中／英文／簡中、F1無敵及片頭HD。玩家自備原版，首次啟動自動重建辨識資料。Linux已抽驗片頭、demo中止與存讀檔；Windows以Wine驗首次匯入及重啟，macOS僅驗universal結構。操作與交付位置見[HD patch入口](SETUP.md#hd-patch候選)，範圍見[驗收紀錄](docs/re/033-hd-patch-runtime.json)。原案尚未全部完成，配樂、日韓語系、片尾HD與推廣片仍待交付。
 
 ## 重返菲蘭城
 
@@ -89,7 +89,7 @@ HD 採完整藍紫色禮服，保留女王、王冠與寶座構圖。標題文�
 |---|---|
 | ![繁中封面重繪素材預覽](docs/screenshots/game-cover-hd-preview.png) | ![英文封面重繪素材預覽](docs/screenshots/game-cover-hd-preview-en.png) |
 
-這兩張是重繪素材預覽；上方的封面與海報視窗則是實際遊戲截圖。
+這兩張是重繪素材預覽；上方封面與海報視窗是實際遊戲截圖。封面視窗保留早期A版海報，現行B版見下方片頭實際視窗。
 
 三張開場圖與語系切換的原版狀態比較、零閃現範圍見[開場驗收](docs/re/014-vga-hd.md#開場與英文正常路徑驗收)。
 
@@ -104,7 +104,7 @@ HD 採完整藍紫色禮服，保留女王、王冠與寶座構圖。標題文�
 
 ![正常片頭HD與繁中字幕](docs/screenshots/intro-hd-runtime.png)
 
-這是正常開場的實際視窗，來源與驗收見[執行期收據](docs/re/031-intro-hd-runtime.json)。
+這是採B版海報的正常開場實際視窗，逐像素同核准原型；來源與驗收見[執行期收據](docs/re/033-hd-patch-runtime.json)。
 
 ### 原版 BIGPIC 與 HD 重畫
 

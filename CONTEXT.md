@@ -57,7 +57,7 @@
 
 | 項目 | 目前狀態 | 下一個驗收點 |
 |---|---|---|
-| 正式程式與 HD | 引擎`50c93fb`／程式`82b9c9e`，1866檔主題；新增97種片頭敘事HD相位，十份字型不變。舊`7109e14`及1536檔另存before-intro-hd；更早回復副本保留 | [片頭收據031](docs/re/031-intro-hd-runtime.json)，乾淨Git素材與引擎重建相同；Go繪圖核心及舊九包未改 |
+| 正式程式與 HD | 引擎`661f7dc`／程式`aa89fa8`，1866檔主題與十份字型；97種片頭敘事HD及B版海報。舊`82b9c9e`與海報A主題另存before-hd-patch／before-hd-posters，更早副本保留 | [HD patch收據033](docs/re/033-hd-patch-runtime.json)，乾淨Git素材、127檔與7400格原版狀態相同，中央960×600逐像素同舊基準、閃現0；Go核心與舊九包未改 |
 | demo 中斷 #13 | CONFORMED：選單不逾時；對話、戰鬥中斷與重播、正常進入通過；F12／2倍終點同原流程，非預期閃現0 | 固定證據[020](docs/re/020-demo-control-runtime.json)，入口[規格018](docs/spec/018-demo-control.md#demo-conformed) |
 | Go 繪圖 #49 | 已支援VGA繪圖核心收尾CONFORMED；六條正常路線15,073,225 bytes全由Go演算法計畫寫入，固定／原x86像素寫入0；補齊填色區段搜尋及讀點短續行 | [收尾規格](docs/spec/025-direct-render-commands.md#draw-closure-conformed)、[固定收據](docs/re/023-draw-closure-runtime.json)。原版內容／字串／呼叫編排與平台服務保留，未知條件安全回退；不按歷史DRAFT重開 |
 | 高解析字型 | 已認證英數格原生16／24像素呈現通過；圖示不重畫，譯文優先，F12原版保留，README有並列原始像素裁切 | 未識別／搬移後無文字來源的格子保留原版，不猜OCR或當作全遊戲字型覆蓋 |
@@ -67,11 +67,11 @@
 | 工具列字級 #15 | CONFORMED：補齊原生12／22字模，2／3倍三級、英文與偏好重啟通過；16／24遊戲字模未改 | [規格020](docs/spec/020-toolbar-font.md)、[固定收據](docs/re/021-toolbar-runtime.json)，README直接顯示六種字級 |
 | CPU速度 #14 | 功能抽樣CONFORMED，Issue已關閉；正常2／3倍讀檔、六倍率、Draw間隔回饋、1x等價及偏好通過 | 使用者已取消30fps要求，不再列為剩餘工作；歷史量測保留 |
 | 配樂、多語系、作弊、推廣片 #11 | 簡中及英文面板已接入；F1我方無敵完成本作欄位重驗、正常讀檔／DEMO及原版受控抽驗，預設關閉。日韓、配樂／試聽及推廣片仍缺 | [規格015](docs/spec/015-multilingual.md)、[規格017](docs/spec/017-invincible.md)、[無敵029](docs/re/029-invincible-runtime.json)；不將子項完成當作#11結案 |
-| 三平台封包 #12 | `v.0.1.0-20261101`候選九包：基本patch三包、本機基本／HD完整版各三包。候選引擎`4a8ef9f`及來源4bdd711固定，不含後續簡中、英文面板及無敵 | [收據026](docs/re/026-package-runtime.json)、[入口](SETUP.md#候選封包)。Linux實際AppImage、demo中止、另存B／冷讀B通過；Windows實際ZIP以Wine抽驗；macOS結構驗證，真機未驗。HD patch及原案未完功能仍使#12保持開啟 |
-| HD patch #75 | 檔案重建核心f09cf68已驗：850份索引與133份有序表重生，完整1866檔SHA相同；首次快取、唯讀重用與錯值拒絕通過。尚未接正式入口，未建立新封包 | [核心032](docs/re/032-hd-patch-core.json)、[規格012](docs/spec/012-package.md#hd-patch-原版辨識資料匯入)。海報A／B原型待使用者決定，正式程式82b9c9e及舊九包維持 |
-| 跨機重建 #55 | 正式素材與引擎50c93fb已保存；850份索引與133份有序表由自備DAX／INTRO.BMA重生，1866檔主題及十份字型乾淨重建相同，程式重編同82b9c9e | [SETUP](SETUP.md)、[031重建收據](docs/re/031-intro-hd-runtime.json)；目前正式程式仍固定50c93fb，f09cf68只是未啟用的HD patch核心；只驗Linux容器 |
+| 三平台封包 #12 | 新增`v.0.1.1-20261101`三平台HD patch，固定main `7ce48d7`及引擎`661f7dc`，約396MB。舊v.0.1.0九包保持原範圍與SHA | [新收據033](docs/re/033-hd-patch-runtime.json)、[使用入口](SETUP.md#hd-patch候選)。Linux實際AppImage與存讀檔、Windows實際ZIP Wine抽驗通過；macOS結構驗證、真機未驗。原案其他功能未完，#12保持開啟 |
+| HD patch #75 | 本機候選範圍CONFORMED：B版海報已核准，正式入口首次匯入重生983份辨識資料，完整1866檔同SHA；重啟不改快取，缺原版、改快取與改來源拒絕 | [收據033](docs/re/033-hd-patch-runtime.json)、[規格012](docs/spec/012-package.md#hd-patch-conformed)。實際片頭、F2／F8／F12、demo中止、另存B／冷讀B與Wine通過，不將此項當作原案完成 |
+| 跨機重建 #55 | 正式素材與引擎661f7dc已保存；1866檔主題與十份字型從乾淨Git重建，正常7400格CPU／RAM、來源與127檔同舊基準。海報改B，中央畫面不變 | [SETUP](SETUP.md)、[033重建收據](docs/re/033-hd-patch-runtime.json)；目前固定661f7dc，Linux程式aa89fa8；三平台候選與原生平台驗收分開記錄 |
 
-目前工作：#75補HD patch，原版辨識資料匯入核心與快取已完成檔案級驗證，海報A／B原型待使用者決定。正式啟動流程未接新分支，新三平台HD patch尚未建立。#74片頭保持已驗版，日韓、配樂／試聽、推廣片與片尾HD等原案待辦仍保留，不重開Go核心或G6探索。
+目前工作：#75的B版海報、正式首次匯入與三平台HD patch候選已完成，交付在`dist-all/v.0.1.1-20261101/patch/`。#74片頭保持已驗範圍，日韓、配樂／試聽、推廣片與片尾HD等原案待辦仍保留，不重開Go核心或G6探索。
 
 原九包及SHA仍在`dist-all/v.0.1.0-20261101/`，來源固定4bdd711及4a8ef9f，不含後續簡中、英文面板及無敵，不覆寫、不建立tag或公開Release。基本版原始23格的紅色背景／提前題名分類只適用收據026固定事件。
 

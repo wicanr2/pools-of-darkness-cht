@@ -15019,7 +15019,7 @@
     ],
     "source_indexed_sha256": "e77dd084128cf4f20ecce7cd104b1bb0a68f008da864490d926e338386abb7bf",
     "source_palette_sha256": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
-    "frame_sha256": "fd1b395b16360707b7a3461be00ef59e385f9985cc33e34e886b902f51707306",
+    "frame_sha256": "0fe0a808796c24e0e4dee28c2f0274b3d61ae9fe60e6b5b71e4bf0b0f65742b9",
     "guest": {
       "8X8D0.DAX": "84bd2b8015dbb58255dae03f560439f7c5022b4a451c4db865a915d573ccbf12",
       "8X8D1.DAX": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
@@ -15275,6 +15275,13 @@
         "outside_approved_terrain_changes": 0,
         "terrain_tiles": 3
       }
+    },
+    "b47_poster_update": {
+      "previous_frame_sha256": "fd1b395b16360707b7a3461be00ef59e385f9985cc33e34e886b902f51707306",
+      "frame_sha256": "0fe0a808796c24e0e4dee28c2f0274b3d61ae9fe60e6b5b71e4bf0b0f65742b9",
+      "central_960x600_pixel_equal": true,
+      "approved_source": "review/hd/b47-hd-posters/manifest.json",
+      "receipt": "docs/re/033-hd-patch-runtime.json"
     }
   }
 }

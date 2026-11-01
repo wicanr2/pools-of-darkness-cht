@@ -7,7 +7,9 @@ DEST=${2:?本專案workplace內的新輸出目錄}
 ORIGINAL="$ROOT/workplace/input/dos/pod"
 ENGINE="$ROOT/workplace/dosgolem"
 VERSION=v.0.1.1-20261101
+MAIN=7ce48d7ebcec6189ca757cd153a71c5800ae2da5
 read -r COMMIT < "$ROOT/tools/rebuild-engine.commit"
+[[ "$COMMIT" = 661f7dc527d4d719047fcf8dac87f2e2cb3f0cbf ]]
 case "$DEST" in "$ROOT"/workplace/*) ;; *) exit 2;; esac
 case "$DEST/" in *'/../'*|*'/./'*) exit 2;; esac
 for d in "$ENGINE" "$ORIGINAL" "$ENGINE/workplace/gomodcache";do test -d "$d";done
@@ -21,12 +23,12 @@ if [[ "$MODE" = build ]];then
   --mount "type=bind,source=$ENGINE,target=/source,readonly" --mount "type=bind,source=$DEST,target=/out" \
   dosgolem-go-ebiten:1.24-r1 bash -euo pipefail -c '
   mkdir /out/main /out/engine /out/bin /out/test
-  git -C /project rev-parse HEAD > /out/main-commit.txt
-  git -C /project archive HEAD > /out/main-source.tar
+  git -C /project rev-parse "$2" > /out/main-commit.txt
+  git -C /project archive "$2" > /out/main-source.tar
   git -C /source archive "$1" > /out/engine-source.tar
   tar -xf /out/main-source.tar -C /out/main
   tar -xf /out/engine-source.tar -C /out/engine
-  ' -- "$COMMIT"
+  ' -- "$COMMIT" "$MAIN"
  timeout 300 docker run "${opts[@]}" --mount "type=bind,source=$DEST,target=/out" \
   --mount "type=bind,source=$ORIGINAL,target=/original,readonly" sosb-img:r1 \
   python3 -I /out/main/tools/rebuild_assets.py --root /out/main --original /original --out /out/assets > "$DEST/test/assets.log" 2>&1

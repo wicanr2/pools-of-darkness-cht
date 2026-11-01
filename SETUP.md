@@ -30,6 +30,26 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 既有固定程式重建只驗證Linux容器。另有下方三平台候選，Windows與macOS正式驗收仍依[#12](https://github.com/wicanr2/pools-of-darkness-cht/issues/12)追蹤。
 本輪沿用既有專用工具映像驗證乾淨來源，未另建映像；兩份Dockerfile的固定官方基底摘要已查證可取得。
 
+## HD patch候選
+
+三平台HD patch位於本機`dist-all/v.0.1.1-20261101/patch/`。自備DOS英文版1.10的47個遊戲檔，放在程式旁的`original/`，或以`-original`指定原版目錄。程式首次啟動會匯入原版，另在使用者資料目錄的`hd-cache/`重建850份索引及133份有序寫入表；重啟會核對來源與快取，不必另裝Python。
+
+| 平台 | 檔名 | 驗證範圍 |
+|---|---|---|
+| Linux x86_64 | `pod-v.0.1.1-20261101-linux-hd-patch.AppImage` | 實際AppImage、首次匯入、重啟、片頭、demo中止、另存B與冷讀B |
+| Windows x86_64 | `pod-v.0.1.1-20261101-windows-hd-patch.zip` | 實際ZIP，以Wine驗首次匯入、1250格開場與重啟 |
+| macOS universal | `pod-v.0.1.1-20261101-macos-hd-patch.zip` | amd64／arm64結構及依賴；未簽章、真機未驗 |
+
+兩側採使用者核准的B版HD海報，保留三語文字與中央畫面。這批包含繁中、英文、簡中、F1無敵及97種片頭敘事HD。日韓、配樂試聽、片尾HD及推廣片仍待完成。原版資料、擷取索引及有序表不隨patch附帶；發行目錄與自備原版不被修改。
+
+固定驗收見[033收據](docs/re/033-hd-patch-runtime.json)，封包大小及SHA見交付根的`SHA256SUMS.json`。重建這批候選可執行：
+
+```sh
+bash tools/hd-patch.sh build "$PWD/workplace/package-hd-rebuild"
+```
+
+[建置入口](tools/hd-patch.sh)固定main `7ce48d7`及引擎`661f7dc`，使用下方既有三平台工具映像；需要本機合法原版與已準備的Go模組快取。輸出先留workplace，須以[實際Linux驗證](tools/hd_patch_smoke_linux.sh)、[Wine驗證](tools/hd_patch_smoke_windows.py)及[獨立封包驗收器](tools/hd_patch_verify.py)完成驗收，才可進dist-all。舊`v.0.1.0-20261101`九包保持原樣，不含這批新增功能。
+
 ## 素材與權利
 
 | Git中的輸入 | 用途 |
@@ -40,7 +60,7 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 | `text/`及`reference/` | 正式譯文、手札、攻略摘要與術語 |
 | 本儲存庫`dosgolem/pod`分支 | 遊戲adapter與引擎來源，不依賴前作工作樹 |
 
-海報含原版封面插畫，沿既有私人審閱例外保存，不因此取得公開散布權。生成素材不必再次呼叫生圖服務。
+目前海報使用已核准B版HD生圖。舊原版封面插畫只留私人歷史審閱，不列入目前patch。生成素材不必再次呼叫生圖服務。
 重建清單只保存原版資料的雜湊及選取方式，原始辨識索引與有序寫入表在本機由DAX及INTRO.BMA重生。原版版本不合、圖片遭改或字型來源不同時，重建會失敗並指出缺項。
 
 目前另含簡中介面、手札、攻略、地圖、姓名音譯與開場文字，F8依繁中、英文、簡中循環。簡中有原生16／24及工具列12／22字模。正式TSV由固定OpenCC1.1.9及詞彙表產生；修改繁中後，可在`dosgolem-go-ebiten:1.24-r1`容器內執行`python3 -I tools/zhcn_text.py --root <repo> --out <repo>/text`重生，或加`--check`檢查。來源與重建範圍見[規格015](docs/spec/015-multilingual.md#簡體中文收尾)，OpenCC不在遊戲執行時轉換。
@@ -53,14 +73,14 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 初次[跨機重建收據](docs/re/025-rebuild-runtime.json)保存新編譯程式的7400格正常路徑；[遭遇圖收據](docs/re/017-b43-runtime.json)驗證1525檔主題與6份字型由乾淨Git檔案重生，固定引擎56ebba3乾淨重編與受測程式逐位元相同。[正常增量比較](docs/re/017-b43-play.json)的CPU、記憶體、來源、127檔及最終畫面同前批、閃現0。原版終點仍綁[b38正常收據](docs/re/017-b38-play.json)，現行終點圖面的HD遮擋增量改由[030](docs/re/030-hd-occlusion-runtime.json)核對，舊收據不覆寫。既有041近遠景由前批配對截圖驗證；b43十四張既有截圖逐張相同，新正常事件仍未知。
 簡中增量的[固定收據](docs/re/027-zhcn-runtime.json)另外保存正常讀檔／面板路線、既有字幕來源與1536檔／十份字型的乾淨重建。歷史7400格原版狀態與畫面預期未改，新增19份簡中TSV另列於清單，舊文字SHA保持原樣；新語系的抽樣範圍不能外推為全片頭或全部玩家路線。
 英文面板[固定收據](docs/re/028-english-panels-runtime.json)保存一條4800格正常讀檔路線、17張擷取、三語切換及全表分頁檢查。程式、主題及字型同027，原版狀態與132檔不變；正文樣本不代替新劇情觸發。重建清單另列英文資料增量，不改寫歷史7400格證據。
-現行引擎0e804ea接入戰鬥透明特效與HD遮擋修正；[030收據](docs/re/030-hd-occlusion-runtime.json)保存乾淨Git重編及同輸入10500格DEMO，閃現19→0，原版CPU／RAM、索引／色盤及127檔同029，主題與字型未改。先前13格鏡頭分類因擷取時點錯一格而失效，勘誤及來源見[研究030](docs/re/030-hd-occlusion.md)。F1仍預設關閉，[029收據](docs/re/029-invincible-runtime.json)的傷害與正常路線抽驗保留；其他事件不外推為零閃現。
+030當時引擎0e804ea接入戰鬥透明特效與HD遮擋修正；[030收據](docs/re/030-hd-occlusion-runtime.json)保存乾淨Git重編及同輸入10500格DEMO，閃現19→0，原版CPU／RAM、索引／色盤及127檔同029，主題與字型未改。先前13格鏡頭分類因擷取時點錯一格而失效，勘誤及來源見[研究030](docs/re/030-hd-occlusion.md)。F1仍預設關閉，[029收據](docs/re/029-invincible-runtime.json)的傷害與正常路線抽驗保留；其他事件不外推為零閃現。
 另以現行程式重跑7400格，原版終點、來源、127檔及閃現0通過。新增7470個HD像素全部來自三格已證實地形，獨立像素核對後才更新圖面SHA；既有重建檢查器的完整主題、十份字型及58份文字核對通過。本輪未重做素材解碼，素材的乾淨重建證據沿027。
 這個入口保存目前已完成的素材，不代表尚未驗證的地形、動畫、日韓語系、配樂或平台已完成。
 新增HD素材或正式字型時，須同步更新重建清單，並以乾淨Git檔案重跑`assets`，核對新正式主題及字型雜湊後才提交。
 
 ## 候選封包
 
-`v.0.1.0-20261101`是本機可試玩候選，沒有tag或公開Release。九包在`dist-all/v.0.1.0-20261101/`，總大小約314MB；`SHA256SUMS.json`記錄逐包雜湊，`smoke/`保存實際封包驗收。含原版的六包只留`full-local/`，不可上傳。`patch/`的三包為基本中文化，需自備原版；HD patch尚未完成。
+`v.0.1.0-20261101`是本機可試玩候選，沒有tag或公開Release。九包在`dist-all/v.0.1.0-20261101/`，總大小約314MB；`SHA256SUMS.json`記錄逐包雜湊，`smoke/`保存實際封包驗收。含原版的六包只留`full-local/`，不可上傳。`patch/`的三包為基本中文化，需自備原版；新增HD patch見上節。
 
 | 平台 | 候選抽驗 |
 |---|---|
@@ -82,7 +102,7 @@ bash tools/package.sh verify /absolute/path/to/original "$PWD/workplace/package-
 
 候選工具映像須已存在：`sosb-img:r1`、`dosgolem-go-ebiten:1.24-r1`、`cok-osxcross:go1.24.13-sdk15.5-r1`、`kgb-cht-pkg:1.99.1-r2`，Wine抽驗另需`yuan-wine-verify:noble-r2`。前兩者來源見上方Dockerfile。後三者沿用主機既有工具鏈，macOS SDK不放Git；新機器需另備合法SDK及相同工具能力，完整三平台工具映像重建尚非已驗範圍。固定AppImage runtime及對應來源已[存檔](tools/vendor/appimage/manifest.json)，不需浮動下載。
 
-[固定驗收收據](docs/re/026-package-runtime.json)保存九包大小與SHA、原版同狀態、Go繪圖計數、demo、存讀檔及平台限制。基本版量尺原始23格保留為題名與紅色背景轉換，HD原始0；此分類不代替其他畫面抽驗。九包不含後續語系與無敵，配樂、日韓、完整動畫HD與HD patch等仍未完成，不能把候選稱為原案完成版。
+[固定驗收收據](docs/re/026-package-runtime.json)保存九包大小與SHA、原版同狀態、Go繪圖計數、demo、存讀檔及平台限制。基本版量尺原始23格保留為題名與紅色背景轉換，HD原始0；此分類不代替其他畫面抽驗。九包不含後續語系與無敵，不能把候選稱為原案完成版；新增功能及HD patch範圍見上節033收據。
 
 維護重建清單時，先將已驗收PNG加入Git暫存，使用`git ls-files -z`保存檔案清單。
 在Docker內執行`tools/rebuild_theme_snapshot.py --root <repo> --theme <已驗候選> --tracked-list <Git檔案清單> --batch bNN`，

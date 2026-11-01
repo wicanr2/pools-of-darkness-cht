@@ -2,7 +2,7 @@
 
 - [010 片頭BMA動畫接入](010-hd-theme.md#bma片頭動畫接入)：#74，97種敘事相位、原版133次來源呼叫與字幕共存。正常5100回合、切換、原版狀態及127檔通過；原量尺全黑與明示切換保留，非預期可見閃現0。[來源與收據031](../re/031-intro-bma.md)，SSI標誌維持原版，片尾另計。
 
-- [012 三平台候選封包](012-package.md)：#12、#69，本機九包候選範圍CONFORMED；正式原案功能與完整交付尚未完成，不建立公開Release。
+- [012 三平台候選封包](012-package.md)：#12、#69、#75，舊九包及新增三平台HD patch本機候選範圍CONFORMED；原案完整交付尚未完成，不建立公開Release。
 
 - [010 戰鬥透明特效與合成來源](010-hd-theme.md#戰鬥透明特效與合成來源)：#73抽樣CONFORMED；同輸入10500格DEMO閃現19→0，原版狀態及127檔相同。[030勘誤與收據](../re/030-hd-occlusion.md)取代029錯一格的鏡頭分類，未觀測的完整戰鬥動畫及其他事件仍未知。
 
@@ -30,7 +30,7 @@
 | [009 地圖疊層](009-map-overlay.md) | READY | #9 | 本作 GEO 指標 `DS:A9EA`、座標方向 `DS:A9F3–A9F5`；32 塊 GEO、24 個 GEO 名稱、東西菲蘭 5 點共 7 格。兩城 2／3 倍 A/B 通過；已有正常冷開機讀檔、地圖／攻略互斥收據。其餘名稱、點及共用場景未驗 | docs/re/012、013；`tools/g8-map-evidence.sh`、`g8-map-receipt.sh [east\|west]`、`g8-map-play-receipt.sh` |
 | [010 HD 主題](010-hd-theme.md) | 局部 CONFORMED | #10、#18–#20、#23、#24、#26–#44、#48、#50、#51、#52、#53、#54、#56、#57、#58、#59、#60、#61、#62、#63、#64、#65、#66、#67、#68、#74 | 菲蘭起點121格街景、VGA二百三十八張怪物候選／DUNGCOM六組150張非純色圖樣與六個純色保留格、野外三組119個來源去重為116張、七張BIGPIC及三張開場語系圖接入通過；完整244個CPIC來源狀態均有素材。BIGPIC244正常DEMO、其餘六張條件式來源通過；完整四路與後續資料增量通過；b27成對與後續增量正常DEMO通過，COMSPR全44來源對應36候選，六類抽驗與009正常特效通過，歧義回退；另有九張264×264背景完整來源與使用RGB守衛，六類抽驗及正常DEMO通過；遭遇圖29組87張素材齊全，新增60張六類抽驗與既有十四張正常畫面不變通過；現行1866檔，既有主題抽樣維持；片頭量尺分類見031。041近遠景前景／透明區已驗，其他正常事件未知。片頭97種敘事HD相位與133次來源呼叫接入抽樣CONFORMED，正常5100格與切換、原版狀態及127檔通過；原量尺全黑與明示切換保留，見031。SSI標誌維持原版，片尾另計。完整背景正常事件及遮擋未知。未觀測遇怪事件仍未知；PIC81狀態／78項主題局部READY；其他未驗來源仍DRAFT | docs/re/014、017；014-wall-runtime.json、014-title-runtime.json、017-vga-battle-runtime.json、017-b08-runtime.json、017-b09-runtime.json、017-b12-runtime.json、017-b13-runtime.json、017-b14-runtime.json、017-b15-runtime.json、017-b16-runtime.json、017-b17-runtime.json、017-b20-runtime.json、017-b21-runtime.json、[017-b24-runtime.json](../re/017-b24-runtime.json)、[017-b26-runtime.json](../re/017-b26-runtime.json)、[017-b27-runtime.json](../re/017-b27-runtime.json)、[017-b28-runtime.json](../re/017-b28-runtime.json)、[017-b29-runtime.json](../re/017-b29-runtime.json)、[017-b30-runtime.json](../re/017-b30-runtime.json)、[017-b31-runtime.json](../re/017-b31-runtime.json)、[017-b32-runtime.json](../re/017-b32-runtime.json)、[017-b33-runtime.json](../re/017-b33-runtime.json)、[017-b34-runtime.json](../re/017-b34-runtime.json)、[017-b35-runtime.json](../re/017-b35-runtime.json)、[017-b36-runtime.json](../re/017-b36-runtime.json)、[017-b37-runtime.json](../re/017-b37-runtime.json)、[017-b38-runtime.json](../re/017-b38-runtime.json)、[017-b39-runtime.json](../re/017-b39-runtime.json)、[017-b40-runtime.json](../re/017-b40-runtime.json)、[017-b41-runtime.json](../re/017-b41-runtime.json)、[017-b42-runtime.json](../re/017-b42-runtime.json)、[017-b43-runtime.json](../re/017-b43-runtime.json)、[018-b44-materials.json](../re/018-b44-materials.json)、[017-cpic-coverage.json](../re/017-cpic-coverage.json)、[014-bigpic-runtime.json](../re/014-bigpic-runtime.json) |
 | 011 切換列 | 未驗 | #10 | 程式由前作沿用 | — |
-| [012 發行包](012-package.md) | 候選範圍CONFORMED | #12、#69 | 基本patch三包、本機完整版六包；Linux與Wine抽驗，macOS只驗結構，HD patch及原案完整交付未完 | docs/re/026-package-runtime.json |
+| [012 發行包](012-package.md) | 候選範圍CONFORMED | #12、#69、#75 | 舊九包保持，新增v.0.1.1三平台HD patch與B版海報；Linux正常路徑與Wine抽驗，macOS只驗結構，原案完整交付未完 | docs/re/026-package-runtime.json、033-hd-patch-runtime.json |
 | 013 玩家名音譯 | DRAFT | #7 | 音譯資料沿用前作；隊伍名單的玩家名已音譯（ROLAND → 羅倫德）；建角畫面的名字與性別欄位址未在本作驗證 | `tools/g6-create-receipt.sh` |
 | 014 配樂 | 未開始 | #11 | — | — |
 | [015 多語系](015-multilingual.md) | 簡中及英文面板抽樣CONFORMED | #11、#26、#70、#71 | 簡中介面／物品、手札、攻略、地圖、音譯及原生字模接入；英文99手札、78攻略、已知地圖及七點接入。三語正常4800格同原版狀態及132檔，日韓仍DRAFT | docs/re/028-english-panels-runtime.json、027-zhcn-runtime.json；014-title-runtime.json、014-english-front-runtime.json |
@@ -44,4 +44,4 @@
 
 升到 CONFORMED 的條件：本作正常玩家路徑（建角、存讀檔）的同狀態收據覆蓋該規格的行為。
 
-- [012 HD patch匯入核心](012-package.md#hd-patch-原版辨識資料匯入)：#75，檔案重建與快取已驗，海報與候選仍DRAFT。固定[032](../re/032-hd-patch-core.json)；正式程式／主題未變，不能視為三平台HD patch已交付。
+- [012 HD patch](012-package.md#hd-patch-conformed)：#75，B版海報、首次匯入與三平台本機候選CONFORMED。核心[032](../re/032-hd-patch-core.json)與實際封包[033](../re/033-hd-patch-runtime.json)分別保存；macOS真機未驗，原案其他功能未完。

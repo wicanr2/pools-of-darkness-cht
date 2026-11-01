@@ -1,0 +1,203 @@
+{
+  "files": [
+    {
+      "name": "pod-v.0.1.1-20261101-linux-hd-patch.AppImage",
+      "size": 130333176,
+      "sha256": "65dd77137f76d95c61db572d696b5665ede87e77112a29bb0db054ae42524a81",
+      "payload_manifest_sha256": "6d8e3e4ff8d6d8cfa1a6c4f7ec66c5e69682bbe924b3c891b1474b3046f62b33",
+      "platform": "linux"
+    },
+    {
+      "name": "pod-v.0.1.1-20261101-windows-hd-patch.zip",
+      "size": 130947491,
+      "sha256": "0b530e5665ef1822be4760825b98f213f94f6d5f261287da24a97a4f75c287a1",
+      "payload_manifest_sha256": "7679f81eb9d38946a9c5191654d596f5e087442fe64ac97ef86dcd31814dd78f",
+      "platform": "windows"
+    },
+    {
+      "name": "pod-v.0.1.1-20261101-macos-hd-patch.zip",
+      "size": 135096671,
+      "sha256": "89691dd660a48769401f61754bf722ea59b67b659c3534fe4921ae6c1821b569",
+      "payload_manifest_sha256": "1874efaf52ba7ea53e02ff60be32cd21fa4573abbaeff56df3461c751a7227c5",
+      "platform": "macos"
+    }
+  ],
+  "source_commit": "7ce48d7ebcec6189ca757cd153a71c5800ae2da5",
+  "engine_commit": "661f7dc527d4d719047fcf8dac87f2e2cb3f0cbf",
+  "theme_files": 1866,
+  "fonts": 10,
+  "reconstructed_original_files": 983,
+  "original_files_in_patch": 0,
+  "originals": {
+    "8X8D0.DAX": "84bd2b8015dbb58255dae03f560439f7c5022b4a451c4db865a915d573ccbf12",
+    "8X8D1.DAX": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
+    "ADLIB.COM": "7c39949b5c740d92449110e896f08f2d11b16b8602d7d3d6d59a9f250d574286",
+    "BACK1.DAX": "2efc68c5220a3f2c00315accc4b13961727cf87ae941484a8eb77cb78e054c6f",
+    "BIGPIC1.DAX": "bc3565c62c1654ee757d1f98f64bbb78e06bcd551c2e8593c41feb130b9f0f6b",
+    "BORDERS.DAX": "a7e20b0f207ea7ac6379c02cbc8176f685975a40ab6840abd3132f1b31ffcf3b",
+    "CBODY.DAX": "97d8b09d0d9827d69fcb35bc67f36ed8d07d900c77f87f2706bec578a225fbb3",
+    "CHEAD.DAX": "3114b855f63108e3dba33ac2cb3ce43fd844a9dbb5050d3f163677d8f160ae45",
+    "COMSPR.DAX": "f8b111aba66646aee47fbd0c5f20b82456c7b47208701d4f4c8a851c2a855cee",
+    "CONTROL.EXE": "60e53bcf4266fb4e68e4fc22990159d1c1af978e9d10068708cfd11d49935366",
+    "CPIC1.DAX": "4e9a15fb4ba3574fb154a9fbda660a5be9e75e38b2c96ee66a3e16558a55bbec",
+    "CURSOR.DAX": "581189a42a1a3b747824115ef8c27ee6ea3c7480db278cb36bc145f125d372a3",
+    "DUNGCOM.DAX": "90ebb12701dacc0ccc4bca47ae01b6fc9ab7f14fb6657c4f3bf146129534c32f",
+    "ECL1.DAX": "46aab737acb289b1995ae5a8ef495424d2e4e40bae45e33a1e9741f4c50064af",
+    "EGA.DRV": "a81ac708233d497c1beb86666f85c2f1e875c350fadaaba79bf978f0870bbb7b",
+    "FINAL.ACF": "c6f45f23f8ac1ea0d117e40daf0c1bfd5ad03d885227e3b417c4df2b62459b19",
+    "FINAL.BMA": "23c487072f64b7dd9850db885bf55a8713a289e9f5f94703b802de7bcc50f5b1",
+    "GAME.EXE": "35ad635e558852925b7028a921aacafc2df8e84be24a8a1136c6267471948d69",
+    "GAME.OVR": "885d6a07a3658f0688dc9d0630dfa984683a3d1d1e515a8e9909d29f62012485",
+    "GEO1.DAX": "d628bae8349044a1c1c05b821ccfbba6464ed5bfa57cef15ca05ec52cc5afc1f",
+    "IBMSND.COM": "3c3d65098afb94068bebe38d5a6bf8aa31b7b05466770fb1d2626e3f8544c5c2",
+    "INTRO.ACF": "f005e97b9d704bdfee940415d29ed76ce130a4151ffb420abcf38aeb3b6b417f",
+    "INTRO.BMA": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+    "ITEM0.DAX": "f79de98582122db21b36ee5e7d9f9d57dd95d75058f7103d5fc88f8f8d56b4f5",
+    "ITEMS": "f47b1ef3d478f226d86baa3f948c40f40bc48801e7de13d4e84e55b894fa21ed",
+    "MON1CHA.DAX": "dd9394a142899136da8b5466b1e2cae4357c31847abb18745bea75ae8b2e6eef",
+    "MON1ITM.DAX": "f8ec8bed44d928a3c652b52bf7bf0293a941c82da03068962396738449ab2a09",
+    "MON1SPC.DAX": "b8d669cfc41f04f94d35e058731be132e27a5ccd6c49e8054285659814a2855d",
+    "MUSIC.DAX": "21c02f70a902bb587fb0887ed62160365099c84c7ab4bf257412fe3693d337b8",
+    "P1.SMS": "fd6871dd0cf12c2fa3f95f67917f0a3214e690247fd050579935f12a48787435",
+    "P3.SMS": "09cc7df90b251d3c9e3598eb4e9bdcc67cac614df4477f320d6fe59f6d626fc4",
+    "PIC1.DAX": "a3cf36ca3d51ca7960fd73b630489f019c5ad984808ad08bcf91186f67401ab7",
+    "SBLASTER.COM": "24ba474445db209df86fdbb8f6ff733ac2a99a5032f48b29d1e800084252afca",
+    "SKYGRND.DAX": "e592a635c3f91615f61efeaae729bb1aed57243dcb3f9df78412b80505ea17b6",
+    "SOUND.COM": "f6fb0711277e9020596b7482244395a9252d04a9aa7879cf10c9ee06db8bac02",
+    "SPRIT1.DAX": "df356577a5d884222138c486170caf0bb21809f58201ed52827b2cd9dc441c7f",
+    "START.BAT": "87b47a9b093ea8579eed98492da7a59e83d053d8c13110d01527fed2dd869259",
+    "STARTUP.EXE": "c2e89ba5296d4c9464ea5d06d23e53687172d7e071abe07ffb6466f6b6ddf285",
+    "TANEXTX.COM": "f418ac3b73463036a27310e31f1c3c4f87d8077eebd7bb934af6e6af94c6b0ee",
+    "TANSLTL.COM": "86be8aa491e7999c06a42710e7d01e41b2d4f9a7aff7e79116fe86964eb920dc",
+    "TGA.DRV": "dc3515c18f3370bf82741ed4ce18bf32f4b16eb8655fd3bdfb7c4b8150c6282c",
+    "TITLE.DAX": "8a53adf4044527df86d2d983f6c4eeee440c3d09773e7cbd4166279ccafde757",
+    "VACE.EXE": "30fd9c2baf0d38ce9a019fefd410ce5216983763e4a1cb30bd268dd08f6ad683",
+    "VGA.DRV": "eef4e14b54201696e779c4a35fb71582825a5569e921e8196c536672ee9cc19f",
+    "WALLDEF1.DAX": "b483f86268112d74a261c3e1c167164b4924f32ba4e47fd42c3ba5b0027b5ad1",
+    "WILDCOM.DAX": "975ef888397e52efae5abeeb367807265a9755c5cf27afb353094aea50a18421",
+    "ZOUNDS.DAX": "13b9bb09317a522173b423f5fb28bd2b658d3285bab973f4205144efe75d730c"
+  },
+  "old_nine_packages_unchanged": true,
+  "source_archives_scanned": true,
+  "runtime": {
+    "linux_intro": {
+      "first_restart_same": true,
+      "cache_reused_without_write": true,
+      "frames": 5100,
+      "shots": 22,
+      "approved_B_window_pixel_exact": true,
+      "poster_locales_and_scales": true,
+      "F12_original_pixels": true,
+      "raw_flash": 599,
+      "classified": {
+        "explicit_switch": 559,
+        "black_transition": 40
+      },
+      "unexpected_visible_flash": 0,
+      "state": [
+        "5100",
+        "490875000",
+        "f109273703173237ea776006562bc516b07c22740d50685342632a099e1da202",
+        "f61a14b25fe8e4921b9da854e15f1cc60475ec75ce2147e15b7d1dfc5525db0c",
+        "de89e30ec065a49136d70332d61c6dcfd8db37c3e8681311e7dff10062f38c3d",
+        "17dc586aa5241390980763e8b5abf9db044d3ad788a2b2bdd5d6d285325b2acf"
+      ]
+    },
+    "linux_demo": {
+      "frames": 3800,
+      "abort": 1,
+      "returned": 1,
+      "flash": 0
+    },
+    "linux_save": {
+      "saved_B": true,
+      "cold_loaded_B": true,
+      "save_hashes": {
+        "SAVE/CHRDATB1.thg": "9be8f6c153079cb6b95aac100357db98d9464a2a4cf9bee691c060599d311d17",
+        "SAVE/CHRDATB1.sav": "c14ca8bc4b2aa5073feb16090188f10764095544eb394aaddc4891122f83468a",
+        "SAVE/CHRDATB1.efx": "2dc3ea9719de5477dc6311837e0ff1502aacd91d2dd432c69a538ad89f64a5be",
+        "SAVE/savgamB.pty": "a15bebcbea9ef582467f3b291e241b00b2ac89d13a428c3cce655b678bc90a3c",
+        "SAVE/vaultB.dat": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b",
+        "SAVE/CHRDATA1.thg": "4b0c3e3342b9b0519eaf8153f35e8dbdc40a760b65eb0d8e8acae8ddea2ef65e",
+        "SAVE/vaultA.dat": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b",
+        "SAVE/savgamA.pty": "5f105637052beed20dd77cff67f2011b128175bfbfccc4626e4fe8f0e69f2347",
+        "SAVE/CHRDATA1.efx": "2dc3ea9719de5477dc6311837e0ff1502aacd91d2dd432c69a538ad89f64a5be",
+        "SAVE/CHRDATA1.sav": "3578e1dcbae36084956f903b37aaeb835d940038d3ddc08d833072cae238a094"
+      }
+    },
+    "missing": {
+      "missing_original_rejected": true
+    },
+    "corrupt": {
+      "modified_cache_rejected": true,
+      "modified_original_rejected": true
+    },
+    "windows": {
+      "scope": "Wine only; not native Windows",
+      "frames": 1250,
+      "cache_reused": true,
+      "files": 1866
+    },
+    "macos": {
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "dependencies_checked": true,
+      "native_tested": false,
+      "signed": false,
+      "notarized": false
+    },
+    "clean_rebuild": {
+      "status": "PASS",
+      "scope": "clean Git source; 7400-frame normal HD DEMO; Linux amd64 container",
+      "engine_commit": "661f7dc527d4d719047fcf8dac87f2e2cb3f0cbf",
+      "binary_sha256": "aa89fa8274b48561b84fde3e23e12c4ff9c0966a9b156d4f8cd5e8cd2004ba53",
+      "manifest_sha256": "ec7f3e7cf716d358623b18467b958bc2b98155ca2e5d691f69e6f292f1cbfa09",
+      "baseline_receipt_sha256": "f80c81791b3dce00d7c194f25d1474411fe5115f6b7e78493b4a769afdab3930",
+      "cpu_memory_source_equal": true,
+      "guest_files": 127,
+      "guest_equal": true,
+      "frame_sha256": "0fe0a808796c24e0e4dee28c2f0274b3d61ae9fe60e6b5b71e4bf0b0f65742b9",
+      "flash_count": 0,
+      "theme_files": 1866,
+      "fonts": 10
+    },
+    "logs": {
+      "linux-intro/version.log": "87ea822f1587e49daaa38aa15e5b747c8cfbba2c80460aa06779cf2221574c2f",
+      "linux-intro/run.log": "0a6060f656f65e31dae1da5d174cf46cb02b0bd14115402c734b5db963fe97e3",
+      "linux-intro/restart.log": "46a5dd53d9d657cf232b9dba9030e19eed5a10799a46ecdb8f199f5eee93dd19",
+      "linux-demo/version.log": "87ea822f1587e49daaa38aa15e5b747c8cfbba2c80460aa06779cf2221574c2f",
+      "linux-demo/run.log": "9682ed1c1b9f567d31ebb948f3d6e59fc0c7a6e295184cc90980029ae255924e",
+      "linux-missing/version.log": "4ecc135774e830ba5bb611f0890cd0fd29d6bdb48f59f16e33237c36f65d4f65",
+      "linux-missing/missing.log": "fb5efe87eb296fa6d461e2c3eb4d101c97575042720b82f2027a2fc8295e0c87",
+      "linux-corrupt/corrupt-original.log": "8a11de6bef23d4fb7c8317d5e0a15610e014c55fcbb7e8f32efa822edf50ee4d",
+      "linux-corrupt/version.log": "4ecc135774e830ba5bb611f0890cd0fd29d6bdb48f59f16e33237c36f65d4f65",
+      "linux-corrupt/corrupt-cache.log": "7341aadfc9af9909f7c5139b0a9b6104b616b9ec95c9695f708c4608aba1e2be",
+      "linux-corrupt/install.log": "2d20252b43a85e01fac031a8f9bc6ac80d1f27359bfc2530a1822c41020e76f6",
+      "linux-save/load.log": "6a105109dc1e52043a9d6a12239f35c333239cf54c4e91818bbe18303d6fe219",
+      "linux-save/version.log": "87ea822f1587e49daaa38aa15e5b747c8cfbba2c80460aa06779cf2221574c2f",
+      "linux-save/install.log": "bf8087c62682a478169bb46d73626acc87611ff4979020e352bfe3a1505b1cc5",
+      "linux-save/save.log": "8d27c4821e2f623df24cc6f4379d6061ae1cc15b6057de1f7e42807bd16d73dc",
+      "rebuild/run.log": "92d5bb2712cafb60dd187d8a05b925675d12750ee9cb7ab46056308713c8c805",
+      "windows/version.log": "e903e18b81820bfa8e35224d219ba4d446e68d7cb1247feddd42a11fc0ff1407",
+      "windows/restart.log": "28824e3ab0f882b9d27afb772c1322552f3a8e331620604b79530ee7cc0b3cf8",
+      "windows/play.log": "505591a49cae27e9566dfdbea0c6872eb242b15879aa40e40e2093d099ea1a7b"
+    }
+  },
+  "date": "2026-11-01",
+  "issue": 75,
+  "version": "v.0.1.1-20261101",
+  "status": "PASS within HD patch candidate scope",
+  "limits": [
+    "original project incomplete: Japanese/Korean, music/listening approval, FINAL HD and promo pending",
+    "Windows Wine only; macOS structure/dependencies only; no native acceptance",
+    "no tag or public Release; source originals required separately"
+  ],
+  "tools": {
+    "hd-patch.sh": "7e9263cb45baeb9a02fb2e7d3a49961497785dae5c82362d3341bd087383389e",
+    "hd_patch_smoke_linux.sh": "6926b4a147c7d757cbf70614a7ee9ea7d3869aa483d363c23cf606a44816d6c3",
+    "hd_patch_smoke_windows.py": "c8d2ea3100d180aa14faba3fd6d43dbd797969f975cbc90298fc231b7ce6b68e",
+    "hd_patch_verify.py": "56f4c1a0b6f22e36fb58ce5877239b62951987898dfb101208ca25a0e028081c"
+  }
+}

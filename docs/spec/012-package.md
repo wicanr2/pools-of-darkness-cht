@@ -2,7 +2,7 @@
 
 ## HD patch 原版辨識資料匯入
 
-Issue [#75](https://github.com/wicanr2/pools-of-darkness-cht/issues/75)。本節的檔案重建核心與前端接入為READY；使用者2026-11-01確認B版HD海報，最終候選待驗收。既有九包保留原驗收與SHA，不覆寫。
+Issue [#75](https://github.com/wicanr2/pools-of-darkness-cht/issues/75)。本節的檔案重建、前端與本機三平台候選範圍CONFORMED，固定[收據033](../re/033-hd-patch-runtime.json)。使用者2026-11-01確認B版HD海報；既有九包保留原驗收與SHA，不覆寫。
 
 - 沿用`review/hd/runtime/manifest.json`版本1及目前1866檔主題、十份字型。輸入、解碼與輸出SHA來自既有`tools/rebuild_assets.py`及研究014／017／031，沒有新遊戲資料格式或規則。
 - patch附已接受的PNG、JSON與原版SHA／解碼配方。850份原版索引及133份BMA有序寫入表由玩家自備DAX／INTRO.BMA重生，原始輸入逐檔核對既有`original_archives`。INTRO.ACF只核對SHA，不改其內容。
@@ -15,7 +15,7 @@ Issue [#75](https://github.com/wicanr2/pools-of-darkness-cht/issues/75)。本節
 
 重現入口[hd-import-core-receipt.sh](../../tools/hd-import-core-receipt.sh)接受一個新收據名稱，在Docker內從固定main461b274與引擎f09cf68的Git匯出重跑。原版唯讀、輸出在workplace，需已有合法原版與Go模組快取，沿AGENTS資源及權限限制。本次已執行乾淨來源全部命令，編排最後加入相同main固定值與Go版本檢查，語法另驗；不需要第二輪相同輸出。
 
-海報A／B仍待確認，原型在`workplace/package-hd-v1/poster-comparison.png`。`prepareHDSource`目前只供測試，正式main未呼叫；本節不將單元測試等同正常玩家首次匯入。新三平台候選、實際封包、Wine與存讀檔驗收尚未進行。
+核心階段當時海報A／B待確認，原型在`workplace/package-hd-v1/poster-comparison.png`；`prepareHDSource`只供測試。後續由下方B版契約與033收據接續，正式main首次匯入及實際封包驗收已完成；不回寫032當時的檔案級範圍。
 
 ## 原九包候選驗收
 
@@ -62,3 +62,24 @@ Windows的[Wine抽驗入口](../../tools/package_smoke_windows.py)從實際ZIP�
 發行模式先沿原版匯入取得使用者game目錄，再讀`hd-source/manifest.json`及其repo-file素材，於使用者`hd-cache/<清單SHA>/`重建完整主題。現有完整HD優先，明示-hd及開發-save模式不改；無hd-source的基本包沿原路徑。重啟驗完整快取，來源缺件／SHA不符／快取改檔拒絕，不寫入自備原版或發行目錄。
 
 新候選固定v.0.1.1-20261101，只產三平台HD patch；不附原版EXE／DAX／BMA／ACF或idx／ops，後兩者首次匯入重生。PNG、JSON、十份字型、全部三語TSV及音譯資料、授權與原創來源依固定清單保存。封包掃描每個成員及巢狀引擎來源，原版檔雜湊與擷取副檔名不得出現。Linux實際AppImage驗首次、重啟、demo中斷、另存／冷讀；Windows實際ZIP以Wine抽驗。macOS只驗universal架構與依賴，真機未驗保持。舊九包與正式已驗程式在候選通過前保留。
+
+<a id="hd-patch-conformed"></a>
+
+## B版HD patch候選CONFORMED
+
+2026-11-01，固定[033收據](../re/033-hd-patch-runtime.json)。來源main `7ce48d7`與引擎`661f7dc`，從乾淨Git匯出建置三包。交付在`dist-all/v.0.1.1-20261101/patch/`，合計396,377,338 bytes；SHA與實際封包抽樣在同版本`SHA256SUMS.json`及`smoke/`，不建立tag或公開Release。
+
+| 閘門 | 結果 |
+|---|---|
+| 完整素材 | 1866檔主題、十份字型逐SHA相同；983份原版辨識資料首次匯入重生 |
+| 封包內容 | 三包逐檔與manifest相同，ELF／PE／universal及macOS依賴通過；巢狀來源掃描無原版檔案 |
+| B版海報 | 實際1979格完整視窗逐像素同核准原型；三語與2／3倍文字、F12英文原版抽驗通過 |
+| Linux首次／重啟 | 實際AppImage各5100格，22張完整視窗、來源、終點與客體檔案相同，1866檔快取未改內容或mtime |
+| 片頭量尺 | 原始599保留，其中559為明示切換、40為原版及實際畫面全黑轉場；非預期可見0，沒有調量尺 |
+| demo與存讀檔 | 3800格正常demo中止／返回各1，閃現0；4700格另存B及3250格冷讀B，全部SAVE雜湊保持 |
+| 負對照 | 缺原版、快取改檔及原版INTRO.BMA改檔明確拒絕；還原後完整檔案相同 |
+| 乾淨重建 | 7400格CPU／RAM、原版索引／色盤與127檔同既有基準，中央960×600同舊截圖，閃現0 |
+| Windows | 實際ZIP以Wine驗1250格、三張截圖、首次匯入與重啟，快取及封包不變 |
+| 限制 | Windows原生／macOS真機未驗，macOS未簽章。日韓、配樂試聽、FINAL HD及推廣片仍待完成，#12保留 |
+
+重建入口[hd-patch.sh](../../tools/hd-patch.sh)固定以上兩側來源；[Linux腳本](../../tools/hd_patch_smoke_linux.sh)、[Wine腳本](../../tools/hd_patch_smoke_windows.py)與[獨立驗收器](../../tools/hd_patch_verify.py)處理實際封包，使用及工具依賴見[SETUP](../../SETUP.md#hd-patch候選)。
