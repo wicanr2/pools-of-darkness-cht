@@ -2,7 +2,7 @@
 
 ## HD patch 原版辨識資料匯入
 
-Issue [#75](https://github.com/wicanr2/pools-of-darkness-cht/issues/75)。本節的檔案重建核心為READY；海報與最終候選仍DRAFT，待使用者確認並列原型。既有九包保留原驗收與SHA，不覆寫。
+Issue [#75](https://github.com/wicanr2/pools-of-darkness-cht/issues/75)。本節的檔案重建核心與前端接入為READY；使用者2026-11-01確認B版HD海報，最終候選待驗收。既有九包保留原驗收與SHA，不覆寫。
 
 - 沿用`review/hd/runtime/manifest.json`版本1及目前1866檔主題、十份字型。輸入、解碼與輸出SHA來自既有`tools/rebuild_assets.py`及研究014／017／031，沒有新遊戲資料格式或規則。
 - patch附已接受的PNG、JSON與原版SHA／解碼配方。850份原版索引及133份BMA有序寫入表由玩家自備DAX／INTRO.BMA重生，原始輸入逐檔核對既有`original_archives`。INTRO.ACF只核對SHA，不改其內容。
@@ -54,3 +54,11 @@ Linux實際封包入口為[package_smoke_linux.sh](../../tools/package_smoke_lin
 Windows的[Wine抽驗入口](../../tools/package_smoke_windows.py)從實際ZIP解開，驗版本、1250格正常開場與三張截圖、首次匯入至Windows使用者資料目錄。Wine與原生Windows真機分開記錄；不能用此結果稱為macOS真機通過。
 
 [package_verify.py](../../tools/package_verify.py)解開實際九包，核對內含manifest、SHA、字型、主題、原版47檔及patch外洩邊界，再核對Linux同狀態、demo中止、冷存讀檔與Windows Wine收據。基本版量尺原始23格另依固定相鄰畫格分類：2804／2805回合原版索引與色盤仍是同一紅色背景，中文題名提前出現，尚未有後續10／13／15色號字形；保留原計數、來源與原尺寸目視證據，不改量尺。HD原始計數0，兩者非預期0。來源或事件不同就拒絕，不能用此分類排除其他閃現。
+
+## B版海報與HD patch接入READY
+
+使用者以「ok 繼續囉 B」確認[核准原型](../../review/hd/b47-hd-posters/README.md)，三倍兩側合成須逐像素相同；2倍維持既定版面、語系文字與中央畫布。四張背景改用已核准生圖，原版盒繪與比較圖不進patch。
+
+發行模式先沿原版匯入取得使用者game目錄，再讀`hd-source/manifest.json`及其repo-file素材，於使用者`hd-cache/<清單SHA>/`重建完整主題。現有完整HD優先，明示-hd及開發-save模式不改；無hd-source的基本包沿原路徑。重啟驗完整快取，來源缺件／SHA不符／快取改檔拒絕，不寫入自備原版或發行目錄。
+
+新候選固定v.0.1.1-20261101，只產三平台HD patch；不附原版EXE／DAX／BMA／ACF或idx／ops，後兩者首次匯入重生。PNG、JSON、十份字型、全部三語TSV及音譯資料、授權與原創來源依固定清單保存。封包掃描每個成員及巢狀引擎來源，原版檔雜湊與擷取副檔名不得出現。Linux實際AppImage驗首次、重啟、demo中斷、另存／冷讀；Windows實際ZIP以Wine抽驗。macOS只驗universal架構與依賴，真機未驗保持。舊九包與正式已驗程式在候選通過前保留。

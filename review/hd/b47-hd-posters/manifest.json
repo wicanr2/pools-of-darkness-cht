@@ -1,0 +1,53 @@
+{
+  "issue": 75,
+  "decision": "user selected B: ok 繼續囉 B",
+  "approval_comparison_sha256": "17f7f7f2be56da54c46188994847d41dc5b64716c52c68b13d7ecb95d3212883",
+  "approval_window_sha256": "87b48704efa32fbeb3cea120eff81be38a926c7960a8d3c189c0cb3dc46a9f60",
+  "items": [
+    {
+      "path": "posters/poster-left-3x.png",
+      "source": "review/hd/b47-hd-posters/poster-left-3x.png",
+      "sha256": "7c153b88aed4772d356f654a76bb856f86fa78ee4799bc8c861fe7975e86e519",
+      "size": [
+        240,
+        600
+      ],
+      "rights": "accepted Codex generated HD poster B"
+    },
+    {
+      "path": "posters/poster-left-2x.png",
+      "source": "review/hd/b47-hd-posters/poster-left-2x.png",
+      "sha256": "94c01fb684ed717dfc94df7fd63e01d0125d7aa937253290f4baf1339002481b",
+      "size": [
+        160,
+        400
+      ],
+      "rights": "accepted Codex generated HD poster B"
+    },
+    {
+      "path": "posters/poster-right-3x.png",
+      "source": "review/hd/b47-hd-posters/poster-right-3x.png",
+      "sha256": "ab06d714feda340544d27a6cf5f40d4698aa9ec92652b333cf75d6cd5085a1a2",
+      "size": [
+        240,
+        600
+      ],
+      "rights": "accepted Codex generated HD poster B"
+    },
+    {
+      "path": "posters/poster-right-2x.png",
+      "source": "review/hd/b47-hd-posters/poster-right-2x.png",
+      "sha256": "178de5854c3cd4c19ddf81ea1d34613a9f81b6d1b3e04b26ac06bd03ff63d84f",
+      "size": [
+        160,
+        400
+      ],
+      "rights": "accepted Codex generated HD poster B"
+    }
+  ],
+  "source_dreadlord_sha256": "25502d27ae9225398b4e4e592edb718ea2c6590925e140f8dae16cda5874c950",
+  "left_source": "review/hd/runtime/images/localized/base/title-002.png",
+  "left_source_sha256": "51eb3af166c9fd2f2cc6bd3fb2bf6196b577635bf1dc18191a6a1992f8e4fa24",
+  "composition": "exact approved 3x; original game center and text layers unchanged; 2x from generated artwork",
+  "private_review": "approved comparison includes old original poster reference; never included in patch"
+}

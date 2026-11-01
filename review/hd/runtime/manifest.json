@@ -1,11 +1,11 @@
 {
   "version": 1,
   "issue": 55,
-  "scope": "既有主題與片頭97種敘事相位；私人素材與本機重建，不擴張公開權利",
+  "scope": "B版HD海報與既有1866檔主題；私人patch候選，原版辨識資料由自備檔重生",
   "engine": {
     "repository": "https://github.com/wicanr2/pools-of-darkness-cht.git",
     "branch": "dosgolem/pod",
-    "commit": "50c93fb2fd1260572e031787e61e69659cec1d62"
+    "commit": "661f7dc527d4d719047fcf8dac87f2e2cb3f0cbf"
   },
   "theme": [
     {
@@ -11432,129 +11432,129 @@
     },
     {
       "path": "posters/assets-capture.json",
-      "sha256": "621ea6d108fc1eb546e2c3aa0d2b7c06ddd8441ddd0edc72233946b8ab56b92a",
+      "sha256": "c79f0371a60fb9f7db78e43f13daa927556e98ec8b738696c4180db735053f98",
       "kind": "repo-file",
-      "source": "review/hd/runtime/theme/posters/assets-capture.json",
-      "rights": "project metadata; private review"
+      "source": "review/hd/b47-hd-posters/assets-capture.json",
+      "rights": "project generated HD poster metadata"
     },
     {
       "path": "posters/poster-left-2x.png",
-      "sha256": "2a793150d6849b9b2e8ae644d6a25ec9445ca88df19260c5413397881350ce1a",
+      "sha256": "94c01fb684ed717dfc94df7fd63e01d0125d7aa937253290f4baf1339002481b",
       "kind": "repo-file",
-      "source": "review/hd/runtime/images/posters/poster-left-2x.png",
-      "rights": "private original-reference review"
+      "source": "review/hd/b47-hd-posters/poster-left-2x.png",
+      "rights": "accepted Codex generated HD poster B"
     },
     {
       "path": "posters/poster-left-3x.png",
-      "sha256": "bf340f6007132704a7f26fafa62daa64636f064f0c0ce527d41082c630f8f346",
+      "sha256": "7c153b88aed4772d356f654a76bb856f86fa78ee4799bc8c861fe7975e86e519",
       "kind": "repo-file",
-      "source": "review/hd/runtime/images/posters/poster-left-3x.png",
-      "rights": "private original-reference review"
+      "source": "review/hd/b47-hd-posters/poster-left-3x.png",
+      "rights": "accepted Codex generated HD poster B"
     },
     {
       "path": "posters/poster-right-2x.png",
-      "sha256": "82714b24476564d3d9845707f60d070b13e3481dc99e5e07e944bbce18ce8721",
+      "sha256": "178de5854c3cd4c19ddf81ea1d34613a9f81b6d1b3e04b26ac06bd03ff63d84f",
       "kind": "repo-file",
-      "source": "review/hd/runtime/images/posters/poster-right-2x.png",
-      "rights": "private original-reference review"
+      "source": "review/hd/b47-hd-posters/poster-right-2x.png",
+      "rights": "accepted Codex generated HD poster B"
     },
     {
       "path": "posters/poster-right-3x.png",
-      "sha256": "23300db92cd86ab782e9276e8be2b973f322afd1a5f2c4119d5afd790705601f",
+      "sha256": "ab06d714feda340544d27a6cf5f40d4698aa9ec92652b333cf75d6cd5085a1a2",
       "kind": "repo-file",
-      "source": "review/hd/runtime/images/posters/poster-right-3x.png",
-      "rights": "private original-reference review"
+      "source": "review/hd/b47-hd-posters/poster-right-3x.png",
+      "rights": "accepted Codex generated HD poster B"
     },
     {
       "path": "posters/poster-text-left.en-2x.png",
       "sha256": "5468151aa3ee7ad3c09531b943c47a363881bfb64e8a8193d0a167ea11598a81",
       "kind": "repo-file",
       "source": "review/hd/runtime/images/posters/poster-text-left.en-2x.png",
-      "rights": "private original-reference review"
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
     },
     {
       "path": "posters/poster-text-left.en-3x.png",
       "sha256": "cade2fbc73efa2c1e46150e01137c02277e89efdbedaa5bee4582f0c7304164c",
       "kind": "repo-file",
       "source": "review/hd/runtime/images/posters/poster-text-left.en-3x.png",
-      "rights": "private original-reference review"
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
     },
     {
       "path": "posters/poster-text-left.zh-CN-2x.png",
       "sha256": "75b26f2f09edeaff628505a6bc11343d1a4afc86fa5b4f531535b47942bc00f2",
       "kind": "repo-file",
       "source": "review/hd/zh-CN/poster-text-left.zh-CN-2x.png",
-      "rights": "private original-reference review"
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
     },
     {
       "path": "posters/poster-text-left.zh-CN-3x.png",
       "sha256": "8d1f6d8a23a4a0a5f860ca7fd38e03137510b40618d8078f2902dff3edf0bf75",
       "kind": "repo-file",
       "source": "review/hd/zh-CN/poster-text-left.zh-CN-3x.png",
-      "rights": "private original-reference review"
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
     },
     {
       "path": "posters/poster-text-left.zh-TW-2x.png",
       "sha256": "71add1f09bd932cf08d763129d0a24902709c97df6d29bc47b870f2e73706445",
       "kind": "repo-file",
       "source": "review/hd/runtime/images/posters/poster-text-left.zh-TW-2x.png",
-      "rights": "private original-reference review"
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
     },
     {
       "path": "posters/poster-text-left.zh-TW-3x.png",
       "sha256": "a5a24495b27a5f5dd66676ccf28ea0e0b0b48b62a71ea03ca4649fc641784d67",
       "kind": "repo-file",
       "source": "review/hd/runtime/images/posters/poster-text-left.zh-TW-3x.png",
-      "rights": "private original-reference review"
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
     },
     {
       "path": "posters/poster-text-right.en-2x.png",
       "sha256": "05a9f1e03552ad91d6b0196445b461fb7b406ac257b601cd8a180f15ad22a8ce",
       "kind": "repo-file",
       "source": "review/hd/runtime/images/posters/poster-text-right.en-2x.png",
-      "rights": "private original-reference review"
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
     },
     {
       "path": "posters/poster-text-right.en-3x.png",
       "sha256": "a021a33ea8f23e75987065ef037063a9db429a9eee34833f27a90822eede584d",
       "kind": "repo-file",
       "source": "review/hd/runtime/images/posters/poster-text-right.en-3x.png",
-      "rights": "private original-reference review"
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
     },
     {
       "path": "posters/poster-text-right.zh-CN-2x.png",
       "sha256": "01fa40d5c6e6d7313262d007b87d3442b631ed84584f2c62a2d4c159c8a34683",
       "kind": "repo-file",
       "source": "review/hd/zh-CN/poster-text-right.zh-CN-2x.png",
-      "rights": "private original-reference review"
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
     },
     {
       "path": "posters/poster-text-right.zh-CN-3x.png",
       "sha256": "72431b897acc4fbec8865e028956dea2456101e556785512d351420e67bc5d2b",
       "kind": "repo-file",
       "source": "review/hd/zh-CN/poster-text-right.zh-CN-3x.png",
-      "rights": "private original-reference review"
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
     },
     {
       "path": "posters/poster-text-right.zh-TW-2x.png",
       "sha256": "2257e76d265402b1fe7b703580659e42f773cde852301aa38dff5624ea8fcb8a",
       "kind": "repo-file",
       "source": "review/hd/runtime/images/posters/poster-text-right.zh-TW-2x.png",
-      "rights": "private original-reference review"
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
     },
     {
       "path": "posters/poster-text-right.zh-TW-3x.png",
       "sha256": "49effe965b1495ab4fca438ef3d6275aee16830a738d84d606a49f19fc70c2cf",
       "kind": "repo-file",
       "source": "review/hd/runtime/images/posters/poster-text-right.zh-TW-3x.png",
-      "rights": "private original-reference review"
+      "rights": "project poster lettering; approved opaque render delta; no full original artwork"
     },
     {
       "path": "posters/posters.manifest.json",
-      "sha256": "3a2cd7770a6374c2667a534d9e0822441ab46a033f5d503b4c28748a007e8628",
+      "sha256": "972015457e0b6df04e79bde3ecb54582afc3526a4916a844aedd4aa3b08005c9",
       "kind": "repo-file",
-      "source": "review/hd/runtime/theme/posters/posters.manifest.json",
-      "rights": "project metadata; private review"
+      "source": "review/hd/b47-hd-posters/posters.manifest.json",
+      "rights": "project generated HD poster metadata"
     },
     {
       "path": "provenance.json",
