@@ -1,0 +1,365 @@
+{
+  "date": "2026-11-01",
+  "issue": 73,
+  "kind": "normal captured source component verification; not a substitute for continuous GUI",
+  "base_engine": "33094bda183f9656c4be0f821a831b8523319dda",
+  "base_binary_sha256": "139279d04a43467564599c3e7095dda705781498a7c6f3ebff7920ff7dd8075f",
+  "component": {
+    "direct_legacy_F12_2x_repeat": true,
+    "negative_classes": 11,
+    "samples": [
+      {
+        "advanced_frame": 8191,
+        "capture_label": 8192,
+        "effect_matches": 1,
+        "occluded_actors": 0,
+        "source_sha256": "4eaed5a0b5eb81a3111a97dbdde407762cb9c63cb8f70aa97529982882cf7a71",
+        "terrain_matches": 4,
+        "verified_cells": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ]
+        ]
+      },
+      {
+        "advanced_frame": 8192,
+        "capture_label": 8193,
+        "effect_matches": 1,
+        "occluded_actors": 0,
+        "source_sha256": "5be5dd597ee37f897424f02ad2f1b13d18dd8408a24edb5c662484c5ea592249",
+        "terrain_matches": 2,
+        "verified_cells": null
+      },
+      {
+        "advanced_frame": 8195,
+        "capture_label": 8196,
+        "effect_matches": 1,
+        "occluded_actors": 0,
+        "source_sha256": "0f41b34c2931855282d54e465da36c1b2d5ae90cb59a9942cef9363973586d52",
+        "terrain_matches": 4,
+        "verified_cells": [
+          [
+            4,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            5,
+            6
+          ]
+        ]
+      },
+      {
+        "advanced_frame": 8898,
+        "capture_label": 8899,
+        "effect_matches": 1,
+        "occluded_actors": 1,
+        "source_sha256": "d092c1a11a8fe4c7a8199e600670d10feecee7e078ee1732110b032a4558e810",
+        "terrain_matches": 2,
+        "verified_cells": [
+          [
+            10,
+            15
+          ]
+        ]
+      }
+    ],
+    "source_unchanged": true
+  },
+  "independent_pixels": {
+    "issue": 73,
+    "method": "Pillow/numpy independent source and approved PNG pixel comparison",
+    "capture_label_is_advanced_frame_plus_one": true,
+    "samples": [
+      {
+        "capture_label": 8192,
+        "advanced_frame": 8191,
+        "source_sha256": "4eaed5a0b5eb81a3111a97dbdde407762cb9c63cb8f70aa97529982882cf7a71",
+        "component_sha256": "e4dc590dfeb5b31c58f5c944c365fc62b7c6d62fd534e9a3a2d7a9d284d1d807",
+        "baseline_component_sha256": "2d925d6894448add39ac9316cdba339597aca5247c3e53bb6ee10f63ffe5dbe8",
+        "changed_pixels": 19576,
+        "outside_changes": 0,
+        "pixel_mismatches": 0,
+        "layers": [
+          {
+            "kind": "effect",
+            "key": "comspr-019",
+            "x": 16,
+            "y": 24,
+            "flipped": false,
+            "source_points": 177,
+            "png_sha256": "769edc0e4b7ad7833a22c4cd05f79c8021faac269be5ed0a331d0af87928de53"
+          },
+          {
+            "kind": "terrain",
+            "key": "dungcom-005@4",
+            "x": 8,
+            "y": 8,
+            "flipped": false,
+            "source_points": 566,
+            "png_sha256": "9ee7ba2c461f1f37993ebbcdc0b2798500a3c0cdbb69e6da957e5bdf00e3173a"
+          },
+          {
+            "kind": "terrain",
+            "key": "dungcom-005@3",
+            "x": 32,
+            "y": 8,
+            "flipped": false,
+            "source_points": 571,
+            "png_sha256": "b591860cff5c9a5f7b6a97134977a9639c7eb8647bc31cb82774690e0794e6a1"
+          },
+          {
+            "kind": "terrain",
+            "key": "dungcom-005@4",
+            "x": 32,
+            "y": 32,
+            "flipped": false,
+            "source_points": 505,
+            "png_sha256": "9ee7ba2c461f1f37993ebbcdc0b2798500a3c0cdbb69e6da957e5bdf00e3173a"
+          },
+          {
+            "kind": "terrain",
+            "key": "dungcom-005@4",
+            "x": 80,
+            "y": 80,
+            "flipped": false,
+            "source_points": 358,
+            "png_sha256": "9ee7ba2c461f1f37993ebbcdc0b2798500a3c0cdbb69e6da957e5bdf00e3173a"
+          }
+        ]
+      },
+      {
+        "capture_label": 8193,
+        "advanced_frame": 8192,
+        "source_sha256": "5be5dd597ee37f897424f02ad2f1b13d18dd8408a24edb5c662484c5ea592249",
+        "component_sha256": "ebfd188ef87596c7bcbd9e0c910e058745eed6c842f24b374d4c5b8fc3426e83",
+        "baseline_component_sha256": "67b1c0dca8b2c2d26543a2e63d6b64a6a4a6a577422b9f1099a5332c9e4557d3",
+        "changed_pixels": 8629,
+        "outside_changes": 0,
+        "pixel_mismatches": 0,
+        "layers": [
+          {
+            "kind": "effect",
+            "key": "comspr-019",
+            "x": 24,
+            "y": 32,
+            "flipped": false,
+            "source_points": 177,
+            "png_sha256": "769edc0e4b7ad7833a22c4cd05f79c8021faac269be5ed0a331d0af87928de53"
+          },
+          {
+            "kind": "terrain",
+            "key": "dungcom-005@4",
+            "x": 32,
+            "y": 32,
+            "flipped": false,
+            "source_points": 425,
+            "png_sha256": "9ee7ba2c461f1f37993ebbcdc0b2798500a3c0cdbb69e6da957e5bdf00e3173a"
+          },
+          {
+            "kind": "terrain",
+            "key": "dungcom-005@4",
+            "x": 80,
+            "y": 80,
+            "flipped": false,
+            "source_points": 358,
+            "png_sha256": "9ee7ba2c461f1f37993ebbcdc0b2798500a3c0cdbb69e6da957e5bdf00e3173a"
+          }
+        ]
+      },
+      {
+        "capture_label": 8196,
+        "advanced_frame": 8195,
+        "source_sha256": "0f41b34c2931855282d54e465da36c1b2d5ae90cb59a9942cef9363973586d52",
+        "component_sha256": "3fbe64f2a1049e71de408eadbe2e5bfc0119883acc4a3816c0ad666c70af2ec3",
+        "baseline_component_sha256": "c0dd687f1944fc3e771ca1ada1ec8af6160a870f774e69ca9c1779a555249d80",
+        "changed_pixels": 19576,
+        "outside_changes": 0,
+        "pixel_mismatches": 0,
+        "layers": [
+          {
+            "kind": "effect",
+            "key": "comspr-019",
+            "x": 40,
+            "y": 48,
+            "flipped": false,
+            "source_points": 177,
+            "png_sha256": "769edc0e4b7ad7833a22c4cd05f79c8021faac269be5ed0a331d0af87928de53"
+          },
+          {
+            "kind": "terrain",
+            "key": "dungcom-005@4",
+            "x": 32,
+            "y": 32,
+            "flipped": false,
+            "source_points": 566,
+            "png_sha256": "9ee7ba2c461f1f37993ebbcdc0b2798500a3c0cdbb69e6da957e5bdf00e3173a"
+          },
+          {
+            "kind": "terrain",
+            "key": "dungcom-005@3",
+            "x": 56,
+            "y": 32,
+            "flipped": false,
+            "source_points": 571,
+            "png_sha256": "b591860cff5c9a5f7b6a97134977a9639c7eb8647bc31cb82774690e0794e6a1"
+          },
+          {
+            "kind": "terrain",
+            "key": "dungcom-005@4",
+            "x": 56,
+            "y": 56,
+            "flipped": false,
+            "source_points": 505,
+            "png_sha256": "9ee7ba2c461f1f37993ebbcdc0b2798500a3c0cdbb69e6da957e5bdf00e3173a"
+          },
+          {
+            "kind": "terrain",
+            "key": "dungcom-005@4",
+            "x": 80,
+            "y": 80,
+            "flipped": false,
+            "source_points": 358,
+            "png_sha256": "9ee7ba2c461f1f37993ebbcdc0b2798500a3c0cdbb69e6da957e5bdf00e3173a"
+          }
+        ]
+      },
+      {
+        "capture_label": 8899,
+        "advanced_frame": 8898,
+        "source_sha256": "d092c1a11a8fe4c7a8199e600670d10feecee7e078ee1732110b032a4558e810",
+        "component_sha256": "a4f32502b030defedfc1b5c9f5108da31f7e4db7fe3d2628788080b030961646",
+        "baseline_component_sha256": "f3a1bc45e0ce55baf415cd980476afc61242690c4db6afd62f4adcb5ed66aa57",
+        "changed_pixels": 7968,
+        "outside_changes": 0,
+        "pixel_mismatches": 0,
+        "layers": [
+          {
+            "kind": "effect",
+            "key": "comspr-133",
+            "x": 104,
+            "y": 80,
+            "flipped": true,
+            "source_points": 139,
+            "png_sha256": "50194870c1c2160a9a014a4708ea3ddb5b2a75092c5f6fd9063abec118c5a12e"
+          },
+          {
+            "kind": "occluded_actor",
+            "key": "cpic1-102",
+            "x": 104,
+            "y": 80,
+            "flipped": true,
+            "source_points": 172,
+            "png_sha256": "b11e7f6a8ad5d7d5436cac12d88116ac327faad38f8d57e729bca84b938a832d"
+          },
+          {
+            "kind": "terrain",
+            "key": "dungcom-005@16",
+            "x": 32,
+            "y": 32,
+            "flipped": false,
+            "source_points": 313,
+            "png_sha256": "b11056851fc9cb712802db51d206f0ce64cc2a91f18820a71273793e98063885"
+          },
+          {
+            "kind": "terrain",
+            "key": "dungcom-005@4",
+            "x": 104,
+            "y": 80,
+            "flipped": false,
+            "source_points": 265,
+            "png_sha256": "9ee7ba2c461f1f37993ebbcdc0b2798500a3c0cdbb69e6da957e5bdf00e3173a"
+          }
+        ]
+      }
+    ],
+    "small_prefix": {
+      "capture_label": 8751,
+      "advanced_frame": 8750,
+      "source_sha256": "74d58ef3366dd1f0caaeef1c7d89abfb8b872b79a02d07d5cb4c0b71e835f051",
+      "x": 64,
+      "y": 64,
+      "width": 24,
+      "height": 8,
+      "complete_source_points": 192,
+      "colors": 7,
+      "candidates": [
+        {
+          "key": "comspr-005",
+          "flipped": false,
+          "foreground_points": 37
+        }
+      ],
+      "purpose": "eligibility for existing four-frame hold only; no partial HD"
+    }
+  },
+  "prefix_guards_pass": true,
+  "hold_limit_frames": 4,
+  "fifth_frame_returns_original": true,
+  "environment": {
+    "go": "1.24.13",
+    "go_image": "dosgolem-go-ebiten:1.24-r1",
+    "image_tools": "sosb-img:r1"
+  },
+  "component_log_sha256": "6a38e6d9c3d98316e9a571eee08fb5498c387fbb37cd9c584f904d0b0cb9f4e3"
+}

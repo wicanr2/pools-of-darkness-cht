@@ -356,6 +356,10 @@ HD 只覆蓋來源的非零前景，地下城背景仍可從腿部與身體間�
 
 這張英文DEMO截圖的工具列「God」亮起。原版仍顯示傷害訊息，HP寫入由守衛保護。
 
+戰鬥中的HD特效會保留透明背景，依實際可見來源處理地形與怪物的遮擋。既有10,500格正常DEMO抽驗的閃現量尺由19格降為0，原版狀態及127個客體檔案相同；其他事件仍待抽驗。[來源與驗證範圍](docs/re/030-hd-occlusion.md)另列。
+
+![正常DEMO的HD電擊、怪物與牆面遮擋](docs/screenshots/hd-occlusion-battle-window.png)
+
 現況見 [CONTEXT.md](CONTEXT.md)，工作項目見
 [GitHub Issues](https://github.com/wicanr2/pools-of-darkness-cht/issues)，協作規則見 [AGENTS.md](AGENTS.md)。
 規格與來源證據分別見[規格索引](docs/spec/000-index.md)及[研究索引](docs/re/README.md)。

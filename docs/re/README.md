@@ -1,6 +1,8 @@
 # 研究索引
 
-- [本作無敵欄位與收尾證據](029-invincible.md)：#72，[來源](029-invincible-source.json)核對兩個HP、隊伍、健康／陣營及效果；[執行期收據](029-invincible-runtime.json)保存正常讀檔／DEMO、七個原版受控傷害與乾淨Git重編。長戰鬥19格中13格鏡頭變更、6格既有遮擋疑點歸#16；F1功能抽樣CONFORMED，見[規格017](../spec/017-invincible.md)。
+- [長戰鬥遮擋與擷取時點勘誤](030-hd-occlusion.md)：#73。029的13格鏡頭分類已因時點錯一格而勘誤；[來源](030-hd-occlusion-source.json)核對透明特效、地形與CPIC完整合成，[正常收據](030-hd-occlusion-runtime.json)保存10500格DEMO閃現19→0、原版狀態及127檔相同。素材與四格上限不變，抽樣CONFORMED，未外推全遊戲。
+
+- [本作無敵欄位與收尾證據](029-invincible.md)：#72，[來源](029-invincible-source.json)核對兩個HP、隊伍、健康／陣營及效果；[執行期收據](029-invincible-runtime.json)保存正常讀檔／DEMO、七個原版受控傷害與乾淨Git重編。長戰鬥19格的分類已由[030](030-hd-occlusion.md)勘誤並接續處理；F1功能抽樣CONFORMED，見[規格017](../spec/017-invincible.md)。
 
 - [英文手札、攻略與地圖面板抽驗](028-english-panels-runtime.json)：#71，G4原稿99手札、78段自寫攻略英譯、24個已知地圖名稱及七點。全表161／128頁無漏字超欄，正常4800格、17張擷取、三語切換、原版狀態及132檔同027；新手札劇情觸發未重播，元件排版另列。[規格與重生入口](../spec/015-multilingual.md#英文面板收尾)。
 

@@ -5,7 +5,7 @@
   "engine": {
     "repository": "https://github.com/wicanr2/pools-of-darkness-cht.git",
     "branch": "dosgolem/pod",
-    "commit": "33094bda183f9656c4be0f821a831b8523319dda"
+    "commit": "0e804eadf3f7c9d262938d57885f2e2ac0c6e595"
   },
   "theme": [
     {
@@ -12375,7 +12375,7 @@
     ],
     "source_indexed_sha256": "e77dd084128cf4f20ecce7cd104b1bb0a68f008da864490d926e338386abb7bf",
     "source_palette_sha256": "13d421204e614bd0989c2b61ceee2deeefc6f66934bb2e73898dbe4b518f5ac3",
-    "frame_sha256": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d",
+    "frame_sha256": "fd1b395b16360707b7a3461be00ef59e385f9985cc33e34e886b902f51707306",
     "guest": {
       "8X8D0.DAX": "84bd2b8015dbb58255dae03f560439f7c5022b4a451c4db865a915d573ccbf12",
       "8X8D1.DAX": "c7e02d938a2b44edea88a72a7c2f00f33dddc63be46b0cb8afb95b6b4b1155ee",
@@ -12616,7 +12616,21 @@
       "default": false,
       "binary_sha256": "139279d04a43467564599c3e7095dda705781498a7c6f3ebff7920ff7dd8075f",
       "text_theme_fonts_unchanged": true,
-      "scope": "F1 sample only; default-off and city-on4800-frame guest state matches028; controlled original damage separately recorded; long-combat19 raw cells include13 camera changes and6 existing unresolved HD occlusion cells"
+      "scope": "F1 sample only; default-off and city-on4800-frame guest state matches028; controlled original damage separately recorded; long-combat19 raw cells were reclassified and resolved within030 sampled route"
+    },
+    "hd_occlusion_extension": {
+      "issue": 73,
+      "receipt": "docs/re/030-hd-occlusion-runtime.json",
+      "binary_sha256": "7109e1404fc280bea362e9d04c91cc7b8b615ba04819984be387e02cd80e759a",
+      "text_theme_fonts_unchanged": true,
+      "scope": "same10500-frame normal DEMO inputs as029;19 raw flash cells to0; original state and127 guest files unchanged; other events and complete animations remain unknown",
+      "rebuild_endpoint": {
+        "baseline_frame_sha256": "c45bc767b5102c7e27f4503cc6bedc6723de387a79a2a77e3841fd5602b4d30d",
+        "frame_sha256": "fd1b395b16360707b7a3461be00ef59e385f9985cc33e34e886b902f51707306",
+        "changed_pixels": 7470,
+        "outside_approved_terrain_changes": 0,
+        "terrain_tiles": 3
+      }
     }
   }
 }

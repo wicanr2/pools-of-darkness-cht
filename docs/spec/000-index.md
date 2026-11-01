@@ -2,6 +2,8 @@
 
 - [012 三平台候選封包](012-package.md)：#12、#69，本機九包候選範圍CONFORMED；正式原案功能與完整交付尚未完成，不建立公開Release。
 
+- [010 戰鬥透明特效與合成來源](010-hd-theme.md#戰鬥透明特效與合成來源)：#73抽樣CONFORMED；同輸入10500格DEMO閃現19→0，原版狀態及127檔相同。[030勘誤與收據](../re/030-hd-occlusion.md)取代029錯一格的鏡頭分類，完整動畫及其他事件仍未知。
+
 - [025 直接攔截繪圖與前端命令](025-direct-render-commands.md#draw-closure-conformed)：#45–#47及#49已支援VGA核心收尾CONFORMED。[最終收據](../re/023-draw-closure-runtime.json)記錄六條正常路線15,073,225 bytes全由Go演算法計畫寫入，固定／原x86像素寫入0，正常狀態／畫面／存檔相同；補上填色搜尋與讀點短續行，完整回歸通過。原版內容、文字、呼叫編排、BIOS／DOS及未知條件依契約保留。各批歷史DRAFT與計數由最新收尾回鏈統一解釋。
 
 - [024 片頭字幕覆繪](024-intro-subtitles.md)：#10，八組台詞、雙語／倍率／原版切換及正常5100格閃現0，局部CONFORMED。
@@ -31,11 +33,11 @@
 | 014 配樂 | 未開始 | #11 | — | — |
 | [015 多語系](015-multilingual.md) | 簡中及英文面板抽樣CONFORMED | #11、#26、#70、#71 | 簡中介面／物品、手札、攻略、地圖、音譯及原生字模接入；英文99手札、78攻略、已知地圖及七點接入。三語正常4800格同原版狀態及132檔，日韓仍DRAFT | docs/re/028-english-panels-runtime.json、027-zhcn-runtime.json；014-title-runtime.json、014-english-front-runtime.json |
 | 016 推廣影片 | 未開始 | #11 | — | — |
-| [017 作弊：我方無敵](017-invincible.md) | CONFORMED，功能抽樣 | #11、#72 | 本作兩個HP、健康／陣營及五種有害效果；正常讀檔／DEMO、七個原版受控傷害及乾淨Git重編通過。長戰鬥19格量尺中6格既有遮擋疑點歸#16，未外推零閃現 | [研究029](../re/029-invincible.md)、[執行期收據](../re/029-invincible-runtime.json) |
+| [017 作弊：我方無敵](017-invincible.md) | CONFORMED，功能抽樣 | #11、#72 | 本作兩個HP、健康／陣營及五種有害效果；正常讀檔／DEMO、七個原版受控傷害及乾淨Git重編通過。長戰鬥19格已由030更正分類並在既有正常路線修正，其他事件不外推 | [研究029](../re/029-invincible.md)、[執行期收據](../re/029-invincible-runtime.json)、[遮擋030](../re/030-hd-occlusion.md) |
 | [018 開場 demo 控制](018-demo-control.md) | CONFORMED | #13 | 選單不逾時；對話／戰鬥中斷、重播、正常進入、F12與2倍通過。已啟用a83043c | [固定收據](../re/020-demo-control-runtime.json)；`tools/demo-control-receipt.sh` |
 | [019 CPU 模擬速度](019-cpu-speed.md) | CONFORMED，功能抽樣 | #14 | 正常2／3倍讀檔、六倍率、Draw回饋與正常關窗通過；1x狀態及偏好保持；使用者取消30fps要求 | [固定倍率](../re/021-toolbar-runtime.json)、[3倍HD](../re/022-speed-feedback-hd-runtime.json)、[2倍](../re/022-speed-feedback-2x-runtime.json) |
 | [020 切換列字級](020-toolbar-font.md) | CONFORMED，正常前端抽樣 | #15 | 原生12／22像素字模；2／3倍三級、英文抽樣與偏好重啟通過，遊戲狀態不變 | [固定收據](../re/021-toolbar-runtime.json)；`tools/font-dev.sh` |
-| 021 不露原版 | 局部已驗 | #16 | 完整PIC5900格、VGA首批戰鬥7400格及開場三圖1250格正常冷啟動閃現0；不外推其他圖族與未走路徑 | docs/re/014、017 |
+| 021 不露原版 | 局部已驗 | #16、#73 | 完整PIC5900格、VGA首批戰鬥7400格及開場三圖1250格正常冷啟動閃現0；既有長戰鬥10500格19→0，原版狀態及127檔相同。不外推其他圖族與未走路徑 | docs/re/014、017、[030](../re/030-hd-occlusion-runtime.json) |
 | 022 手札地圖頁 | 未開始 | #8 | 地圖則 5、23、45、98，第 36 則附地圖 | docs/re/005 |
 
 升到 CONFORMED 的條件：本作正常玩家路徑（建角、存讀檔）的同狀態收據覆蓋該規格的行為。
