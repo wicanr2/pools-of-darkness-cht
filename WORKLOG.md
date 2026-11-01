@@ -1836,3 +1836,4 @@
 - 固定證據與請求保存docs/re/031-intro-bma-source.json及031-intro-bma-requests.json，五個工具、研究031、README／CONTEXT及規格索引同步。舊018、規格010與CONTEXT的BMA未知以不可變輸入鍵及必要標記回填，盤點器會拒絕缺回鏈。正式動畫仍DRAFT，後續為相位素材與GUI／閃現抽驗；#74及母項保持開啟，FINAL與其他原案功能另計。
 - 最後2789個本機文件連結及README66張圖片入口通過，原始zip／rar、正式7109e14程式、1536檔主題、十份字型與舊九包SHA未改。沿既有Go及影像映像，沒有新建映像或修改其他專案；root-owned與誤建.md目錄0，本批容器0，剩248GiB。
 - 另由乾淨引擎0e804ea匯出重建探針，虛擬Go overlay入口不依賴舊workplace/movieprobe，重編逐位元同受測1a9897a。沒有新增重播，因二進位完全相同而不重複跑已通過的正常路線。
+- 主專案a57c2e5已推私人main，#74附[來源階段結果](https://github.com/wicanr2/pools-of-darkness-cht/issues/74#issuecomment-6556387611)，#10補[目前範圍](https://github.com/wicanr2/pools-of-darkness-cht/issues/10#issuecomment-6556388162)。#74／#9／#10／#11／#12／#16回讀OPEN；來源完成不當作動畫HD完成。主專案與引擎工作樹乾淨，本批容器0。
