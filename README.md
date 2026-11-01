@@ -100,6 +100,7 @@ HD 採完整藍紫色禮服，保留女王、王冠與寶座構圖。標題文�
 六張960×504成品按原尺寸拼列，保留原配色、構圖、石框與黑邊，排除下方字幕。
 這是動畫素材預覽。原版片頭仍照原流程播放，尚未用這六張靜態圖替換淡出、變形或其他畫格。
 原版並列與內建生圖提示詞見[片頭審閱頁](review/hd/b44-intro/README.md)，[預覽來源](docs/screenshots/intro-keyframes-hd-preview.json)及[素材驗收](docs/re/018-b44-materials.json)另列。
+片頭動畫的[來源與相位](docs/re/031-intro-bma.md)已完成對應，後續仍須補齊相位素材及正式HD接入。
 
 ### 原版 BIGPIC 與 HD 重畫
 

@@ -1,0 +1,3692 @@
+{
+  "issue": 74,
+  "status": "source requests only; no production theme",
+  "style": "B",
+  "count": 98,
+  "accepted": 6,
+  "rights": "local original inputs; private evidence; approved HD scope unchanged",
+  "items": [
+    {
+      "key": "intro-b00-f00",
+      "block": 0,
+      "frame": 0,
+      "file_offset": 10,
+      "size": 48025,
+      "spans": 1854,
+      "art_indexed_sha256": "0926fc56e87bf94e24f4ef16934142f2bbe5655cc237a8c88f214c9a602bc2d6",
+      "source_capture": "source-003",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b00-f00-1x.png",
+      "reference_3x": "intro-b00-f00-3x.png",
+      "indexed": "intro-b00-f00.idx",
+      "palette": "intro-b00-f00.pal",
+      "palette_sha256": "f9a6e3d554436237cb4a2ce6be0d56390344b3246eaaf79940737fb46dff1b8b",
+      "observed_palette_variants": [
+        {
+          "source": "source-003",
+          "sha256": "f9a6e3d554436237cb4a2ce6be0d56390344b3246eaaf79940737fb46dff1b8b"
+        },
+        {
+          "source": "source-004",
+          "sha256": "3a5fe6f8086baf6fb8434bd350114a6f54407381d487471fc1ee663f94e41b5b"
+        },
+        {
+          "source": "source-005",
+          "sha256": "da43cc92d6683c64119de875148c30bd1950caa5be2148673eb93cc1dc575cde"
+        },
+        {
+          "source": "source-006",
+          "sha256": "9ec27e5223e2a1aa2f97e60af07c7f0362ee492f129a149eddb2de7400f73993"
+        },
+        {
+          "source": "source-007",
+          "sha256": "b1eb8acebca1aefd9dcb00e884bf15f1ea4dc6a23c830e68ed90bde980f594f8"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "c48e0e6602c8566de61905be11625fec58f575d814e14a93259bca93e598a005",
+      "reference_3x_sha256": "249a74ceb3d2802ccff9cfa8e1bbb8da37001cb7a2246615f265c7f610bafd18"
+    },
+    {
+      "key": "intro-b01-f00",
+      "block": 1,
+      "frame": 0,
+      "file_offset": 48133,
+      "size": 28347,
+      "spans": 400,
+      "art_indexed_sha256": "c117d4fbc6e7eeda8863dfd885943a7c9a5ac1d2f3adca64e815d5cf54f2f645",
+      "source_capture": "source-009",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b01-f00-1x.png",
+      "reference_3x": "intro-b01-f00-3x.png",
+      "indexed": "intro-b01-f00.idx",
+      "palette": "intro-b01-f00.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-009",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "177e106590485afa34c01a71b6f135772770dfcdb813935531f92f8b16e406f3",
+      "reference_3x_sha256": "6cadc86eedc6d70d24b20da6a6c890002d6562a26dac0a80cd4ed38e3bd9f2aa"
+    },
+    {
+      "key": "intro-b01-f01",
+      "block": 1,
+      "frame": 1,
+      "file_offset": 76480,
+      "size": 12,
+      "spans": 1,
+      "art_indexed_sha256": "e1b74d4b236021178d4b482cc21f00205e09079083b44929a380fbcc1c53cf9f",
+      "source_capture": "source-010",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b01-f01-1x.png",
+      "reference_3x": "intro-b01-f01-3x.png",
+      "indexed": "intro-b01-f01.idx",
+      "palette": "intro-b01-f01.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-010",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "a1d5e1c220883ed2262de3f3820aa4fd3f37e575baa1ea037ab5f24e2bd1fc66",
+      "reference_3x_sha256": "67f88ed27f838f543525a7afc241bde47a54937a9b6c474f173d8d7b14302545"
+    },
+    {
+      "key": "intro-b01-f02",
+      "block": 1,
+      "frame": 2,
+      "file_offset": 76492,
+      "size": 19,
+      "spans": 2,
+      "art_indexed_sha256": "6a045cd6657a8b50b5ba3e267ac6cdf10562178a1f6cc48e84120546682cce9a",
+      "source_capture": "source-011",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b01-f02-1x.png",
+      "reference_3x": "intro-b01-f02-3x.png",
+      "indexed": "intro-b01-f02.idx",
+      "palette": "intro-b01-f02.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-011",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        },
+        {
+          "source": "source-158",
+          "sha256": "6ff4f12834ceb2f53622e89161cdc42fb1442cfe8eb13c487cf32e9be0afa148"
+        },
+        {
+          "source": "source-159",
+          "sha256": "83dfb2d8c83ae0fb499a1143c813ad98292d293279b513a335fb9ffcabe0da9b"
+        },
+        {
+          "source": "source-160",
+          "sha256": "8ca4c856d7396dff3e142e7d826bd97a615f22311de34bc386a55fb2306c9c63"
+        },
+        {
+          "source": "source-161",
+          "sha256": "97f02ae5df998b31fda0bee0af980796333d8e08e786d740fc633a061677359c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "ee92abac75ef03d1d72dcf1a0119393f48a3205643c7cb00fe85e4f6e9ea5a46",
+      "reference_3x_sha256": "b7f109fcca62f907e78d88c6b3afd5c21f72fdb668504687739c32442b086804"
+    },
+    {
+      "key": "intro-b01-f10",
+      "block": 1,
+      "frame": 10,
+      "file_offset": 76546,
+      "size": 5088,
+      "spans": 612,
+      "art_indexed_sha256": "0b000647e2417d6539fef689665a75bda14bc66a1a5318bc13ddf623779aec08",
+      "source_capture": "source-012",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b01-f10-1x.png",
+      "reference_3x": "intro-b01-f10-3x.png",
+      "indexed": "intro-b01-f10.idx",
+      "palette": "intro-b01-f10.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-012",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "abfbdebf689f6884f2b16c818f02172ea14f3dba803fe1a38269e312604bffd8",
+      "reference_3x_sha256": "90bfdbff340da8d2c1663316d70f69eab6acde4a4f336b0322d65b146ac3f83b"
+    },
+    {
+      "key": "intro-b01-f11",
+      "block": 1,
+      "frame": 11,
+      "file_offset": 81634,
+      "size": 6251,
+      "spans": 605,
+      "art_indexed_sha256": "1ca72c6bc9e805f51d104185df8fb92836f21fe0793526ab21b7e3f55b604599",
+      "source_capture": "source-013",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b01-f11-1x.png",
+      "reference_3x": "intro-b01-f11-3x.png",
+      "indexed": "intro-b01-f11.idx",
+      "palette": "intro-b01-f11.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-013",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "1a44517939423cc4f5e6db448181237a4ba8eea5cac9952d1dda322ec5857dd1",
+      "reference_3x_sha256": "c0b2df5edf4ccd329a9b3230f43b31ea50be252da15a88fcfb8346ee9309678a"
+    },
+    {
+      "key": "intro-b01-f12",
+      "block": 1,
+      "frame": 12,
+      "file_offset": 87885,
+      "size": 6356,
+      "spans": 662,
+      "art_indexed_sha256": "1d199f68397aa7add6333fe773ddb58c7a7d967b6921cbae3e7f83d47d3f1bfd",
+      "source_capture": "source-015",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b01-f12-1x.png",
+      "reference_3x": "intro-b01-f12-3x.png",
+      "indexed": "intro-b01-f12.idx",
+      "palette": "intro-b01-f12.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-015",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "7f46c98dd007823332eece9dfcf46621be40a6e19d40238402215d690026b46f",
+      "reference_3x_sha256": "25c8575a62503be84ae11810280760b30e059228452a4c6af29bfffdb74ba548"
+    },
+    {
+      "key": "intro-b01-f13",
+      "block": 1,
+      "frame": 13,
+      "file_offset": 94241,
+      "size": 8314,
+      "spans": 959,
+      "art_indexed_sha256": "4c6325f79e0464ba6a13dcc88a02d098f7a651ae095f324bae6e64485ffff3ec",
+      "source_capture": "source-016",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b01-f13-1x.png",
+      "reference_3x": "intro-b01-f13-3x.png",
+      "indexed": "intro-b01-f13.idx",
+      "palette": "intro-b01-f13.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-016",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        },
+        {
+          "source": "source-017",
+          "sha256": "eefa047d115b7800e43ac860678c978b4fb4aec936f2ef28129ce9178fbae2cd"
+        },
+        {
+          "source": "source-018",
+          "sha256": "1942777ecebd3abca2d68d8d6056b46edb8f7d071d1a8bdeb5e197a68a9cc87d"
+        },
+        {
+          "source": "source-019",
+          "sha256": "31192cc8063052b237c190bd440da21a75efe929a326002525d0947fe9939ece"
+        },
+        {
+          "source": "source-020",
+          "sha256": "7900abe669cbf4ce669ea4f1105c78ad0e0391eb40e5788f520ebe76f6b7cf0d"
+        },
+        {
+          "source": "source-021",
+          "sha256": "adab472409ebefbcd7b045ea237bee4a5a76556ca9601c4a0858160afd09864c"
+        },
+        {
+          "source": "source-022",
+          "sha256": "48326c2dcffddc16dba15a64c31f1c54e704daa857fb7ebd5dbcc4a6aae4da09"
+        },
+        {
+          "source": "source-023",
+          "sha256": "29dd7c77f521b14b4af4729f8e68ba413d43f96961c8c2936f06609ac566ad76"
+        }
+      ],
+      "style": "B",
+      "state": "accepted-b44-material",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "approved_key": "intro-council",
+      "approved_png": "review/hd/b44-intro/intro-council.png",
+      "approved_sha256": "060ac36f5ddd02693d30aa0281f318ac4b753cbd2bfd2c4bc4107a8de8021799",
+      "reference_1x_sha256": "de73229df66c91183740bc32834a7092a6d35e26c034c02cd039cb408704353a",
+      "reference_3x_sha256": "2beac7418155c36a8d8e69c371fae62b9b4c58dec0fc10c8d4d587fe95ee2a08"
+    },
+    {
+      "key": "intro-b02-f00",
+      "block": 2,
+      "frame": 0,
+      "file_offset": 102666,
+      "size": 31268,
+      "spans": 400,
+      "art_indexed_sha256": "ba32b75328faefe5e2ffcb1501c0e6007aeb4296e00ee060b55c2b10476cbca2",
+      "source_capture": "source-025",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b02-f00-1x.png",
+      "reference_3x": "intro-b02-f00-3x.png",
+      "indexed": "intro-b02-f00.idx",
+      "palette": "intro-b02-f00.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-025",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "accepted-b44-material",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "approved_key": "intro-phlan",
+      "approved_png": "review/hd/b44-intro/intro-phlan.png",
+      "approved_sha256": "cebbf66ee0e9be7a4a9fb28783006ef01c7aca58cd9ab02362f48edfdc39e87e",
+      "reference_1x_sha256": "12e62b5ca3b0268b1249640c8f4e88368098f0e7f1beb45fe5849e0ebc7d732d",
+      "reference_3x_sha256": "88abb10b51909795f33a241ad231f8b939a992c69f3df4c2a266a0b49ddac904"
+    },
+    {
+      "key": "intro-b02-f01",
+      "block": 2,
+      "frame": 1,
+      "file_offset": 133934,
+      "size": 708,
+      "spans": 99,
+      "art_indexed_sha256": "e97049faf72fb5f0e4d85a62d56920340c928d4198141d402d85d709943076e8",
+      "source_capture": "source-026",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b02-f01-1x.png",
+      "reference_3x": "intro-b02-f01-3x.png",
+      "indexed": "intro-b02-f01.idx",
+      "palette": "intro-b02-f01.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-026",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "9825daf3c81a48b81f7f4899fd6dabbe97d93e70859f41850713e8fb9824d970",
+      "reference_3x_sha256": "4deb0c0f94f503fa597bf9cdb218a4d8160367fde179c0497a63ed13774327f1"
+    },
+    {
+      "key": "intro-b02-f02",
+      "block": 2,
+      "frame": 2,
+      "file_offset": 134642,
+      "size": 640,
+      "spans": 85,
+      "art_indexed_sha256": "968725d9121ba8637bbdeee7f5f7c60ac5df4838a4c48fa82d2cdda7eafe2754",
+      "source_capture": "source-027",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b02-f02-1x.png",
+      "reference_3x": "intro-b02-f02-3x.png",
+      "indexed": "intro-b02-f02.idx",
+      "palette": "intro-b02-f02.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-027",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "bb4827356354297432b2e9138432815c1af13e5787ef1065c76a44a1d5559060",
+      "reference_3x_sha256": "7266786e8d02f1eab1ee20491082ade5b2297b438004e3d243c1273a1828a4ba"
+    },
+    {
+      "key": "intro-b02-f03",
+      "block": 2,
+      "frame": 3,
+      "file_offset": 135282,
+      "size": 715,
+      "spans": 89,
+      "art_indexed_sha256": "10bb910b64a70ff4684252db0bf0f1c170b450b23f895e11fb5b9e2e0ce795c0",
+      "source_capture": "source-028",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b02-f03-1x.png",
+      "reference_3x": "intro-b02-f03-3x.png",
+      "indexed": "intro-b02-f03.idx",
+      "palette": "intro-b02-f03.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-028",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "8723e4e89ce6ee643aeed7cc569583ed39d0bd4fc908564f5559ad1e42304c03",
+      "reference_3x_sha256": "d4099809cdf763e9d12863542249d2f3b70621bc39587c8d85a8d0104ea74563"
+    },
+    {
+      "key": "intro-b02-f04",
+      "block": 2,
+      "frame": 4,
+      "file_offset": 135997,
+      "size": 802,
+      "spans": 104,
+      "art_indexed_sha256": "940a8ec6c4e1468228745cd027de8b43f4e1bbf95dc50e2dedbee94f3e4559f9",
+      "source_capture": "source-029",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b02-f04-1x.png",
+      "reference_3x": "intro-b02-f04-3x.png",
+      "indexed": "intro-b02-f04.idx",
+      "palette": "intro-b02-f04.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-029",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "9cf379803bb517640af312ca51ca5411d938b05d686fe937ffb75abf54ffd6e5",
+      "reference_3x_sha256": "adecba989ce9c1ccc037ccc501576dedc3525e5a977851e58fec46c1bb21382b"
+    },
+    {
+      "key": "intro-b02-f05",
+      "block": 2,
+      "frame": 5,
+      "file_offset": 136799,
+      "size": 749,
+      "spans": 96,
+      "art_indexed_sha256": "ff7b4227c2c1c13052dca33a07b8ca6dbd3024270f24c141d785dc253c6e5907",
+      "source_capture": "source-030",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b02-f05-1x.png",
+      "reference_3x": "intro-b02-f05-3x.png",
+      "indexed": "intro-b02-f05.idx",
+      "palette": "intro-b02-f05.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-030",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "fb5cb796f226ae25a1ec2bf89731b23d84c00a756ddf1035a214e65c4169a4b3",
+      "reference_3x_sha256": "06f2ea17d91413fd7ce29eb6742e90d817aeff7030976f004f2bb3bf7fce9929"
+    },
+    {
+      "key": "intro-b02-f06",
+      "block": 2,
+      "frame": 6,
+      "file_offset": 137548,
+      "size": 1327,
+      "spans": 151,
+      "art_indexed_sha256": "0c4b4f42fcc73fbb0c9abd65ea70a59daac2b489231ed21c7fe37dbb1658f14f",
+      "source_capture": "source-032",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b02-f06-1x.png",
+      "reference_3x": "intro-b02-f06-3x.png",
+      "indexed": "intro-b02-f06.idx",
+      "palette": "intro-b02-f06.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-032",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "29149e10f4af55dc93658d99b2b154f066161493a2227a2cb37685f84d735f20",
+      "reference_3x_sha256": "d71fffd58137fb251f7f3060e87fdf83f2ec9e268821bc186ea88a298178a88f"
+    },
+    {
+      "key": "intro-b02-f07",
+      "block": 2,
+      "frame": 7,
+      "file_offset": 138875,
+      "size": 2555,
+      "spans": 245,
+      "art_indexed_sha256": "6645e85593c942c2ad45b5ba9702d3ddcf5fa7ef796c4e7296c75e1af37e8de3",
+      "source_capture": "source-033",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b02-f07-1x.png",
+      "reference_3x": "intro-b02-f07-3x.png",
+      "indexed": "intro-b02-f07.idx",
+      "palette": "intro-b02-f07.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-033",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "4059218fd138a5ab8c0e049fa32fcdc027aa0f448901195ebde9fdb8cd28ab82",
+      "reference_3x_sha256": "8e0055930bcdc74d89fd345e17025659c73281e9ab62d77e85ac9b115875cd4e"
+    },
+    {
+      "key": "intro-b02-f08",
+      "block": 2,
+      "frame": 8,
+      "file_offset": 141430,
+      "size": 2661,
+      "spans": 213,
+      "art_indexed_sha256": "cb7152dcb89be6e5a634aad6fd5e539fba0bbaa3627c8062b4417975fbe8d1d1",
+      "source_capture": "source-034",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b02-f08-1x.png",
+      "reference_3x": "intro-b02-f08-3x.png",
+      "indexed": "intro-b02-f08.idx",
+      "palette": "intro-b02-f08.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-034",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "91074e2f1d21259b772eb4712c7a39fb590ba7df177ba116ed37b57a96be3d2c",
+      "reference_3x_sha256": "edf4c6037d8054bdd37396203e6467c0a4c4b0d8623b4568039bc33741c9ae62"
+    },
+    {
+      "key": "intro-b02-f09",
+      "block": 2,
+      "frame": 9,
+      "file_offset": 144091,
+      "size": 3099,
+      "spans": 255,
+      "art_indexed_sha256": "3f64cd65b584657c6273e3b86c6790de8920713c94a1a3f43b76fba26668a5d3",
+      "source_capture": "source-035",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b02-f09-1x.png",
+      "reference_3x": "intro-b02-f09-3x.png",
+      "indexed": "intro-b02-f09.idx",
+      "palette": "intro-b02-f09.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-035",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "287852926b9af37fb63178c2e96291684cb2f45981af2c169cbfd10a4809d72f",
+      "reference_3x_sha256": "0ff668017e2b5985f14b6bcbd6f52790f4c63c0a94defc7d57141eb7e6d33c1e"
+    },
+    {
+      "key": "intro-b02-f10",
+      "block": 2,
+      "frame": 10,
+      "file_offset": 147190,
+      "size": 3143,
+      "spans": 227,
+      "art_indexed_sha256": "7fa990f3f181598b70c80fffd54a08e47285c84dfdb289b72140e295b33e0279",
+      "source_capture": "source-036",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b02-f10-1x.png",
+      "reference_3x": "intro-b02-f10-3x.png",
+      "indexed": "intro-b02-f10.idx",
+      "palette": "intro-b02-f10.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-036",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "333e9731b0a55e911c068bf8986c1f0dc66f1152cff3a4c88370811cdea08a63",
+      "reference_3x_sha256": "b22fd226de2410225c71810159e02f325f26ee7ae708345df6396ef787d3dc43"
+    },
+    {
+      "key": "intro-b02-f11",
+      "block": 2,
+      "frame": 11,
+      "file_offset": 150333,
+      "size": 3529,
+      "spans": 271,
+      "art_indexed_sha256": "2157b125c2d793fda7c0fa2893aecbf6640843a54d478d2f69084e65bf589000",
+      "source_capture": "source-037",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b02-f11-1x.png",
+      "reference_3x": "intro-b02-f11-3x.png",
+      "indexed": "intro-b02-f11.idx",
+      "palette": "intro-b02-f11.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-037",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "9014dde846d27cf5248ae5d057e3fe3f4f3e66ee52bf67415e380416053a868e",
+      "reference_3x_sha256": "b88e62a8b70e55c9cb7ef7dcc49215dd89b11f898987e3b046af79e69f559f7a"
+    },
+    {
+      "key": "intro-b02-f12",
+      "block": 2,
+      "frame": 12,
+      "file_offset": 153862,
+      "size": 3696,
+      "spans": 293,
+      "art_indexed_sha256": "d97b622029d420ea1ba87be8891ac8e3c3178cd8c1c858f8f4a2ed4b20e7cbce",
+      "source_capture": "source-038",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b02-f12-1x.png",
+      "reference_3x": "intro-b02-f12-3x.png",
+      "indexed": "intro-b02-f12.idx",
+      "palette": "intro-b02-f12.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-038",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "bd39811acb730783a3c279a62849117a167abd62d4f3b640d39bd4d6969bec39",
+      "reference_3x_sha256": "b0240ef274444a7e7fa28ecfdbc72a30d1775e7fc68141a6ee43a991587be27a"
+    },
+    {
+      "key": "intro-b02-f13",
+      "block": 2,
+      "frame": 13,
+      "file_offset": 157558,
+      "size": 4071,
+      "spans": 297,
+      "art_indexed_sha256": "c45560f85eae4b90c36afeb7ae1eb1ced608328133bb5ec1380355990b80cb10",
+      "source_capture": "source-040",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b02-f13-1x.png",
+      "reference_3x": "intro-b02-f13-3x.png",
+      "indexed": "intro-b02-f13.idx",
+      "palette": "intro-b02-f13.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-040",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "ff81681a36eb72db44398d523b2348021d6319fbb34e7d7d1a5e23ca92400086",
+      "reference_3x_sha256": "c49ae7cad4957b599c750c76d5fc2e7ac2fbf0a941d86269dda61bbf3b024102"
+    },
+    {
+      "key": "intro-b02-f14",
+      "block": 2,
+      "frame": 14,
+      "file_offset": 161629,
+      "size": 3367,
+      "spans": 149,
+      "art_indexed_sha256": "dba4c748bc1cfa762131175aa2723d5945527d9b3501f49d70dff6020ef4a901",
+      "source_capture": "source-041",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b02-f14-1x.png",
+      "reference_3x": "intro-b02-f14-3x.png",
+      "indexed": "intro-b02-f14.idx",
+      "palette": "intro-b02-f14.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-041",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "4fdf4815b28b70e0ac449472026fd19c04c7123954c2968360853ac7d7204247",
+      "reference_3x_sha256": "ebc097fc17aeccb5a8b5db8050d851ed1b045446bc50addfe21760d77de42ac7"
+    },
+    {
+      "key": "intro-b03-f00",
+      "block": 3,
+      "frame": 0,
+      "file_offset": 165022,
+      "size": 3984,
+      "spans": 376,
+      "art_indexed_sha256": "601b7c0c69c15ad60f8f8d0d70a80f4738b8f151a651235219a75181c8338833",
+      "source_capture": "source-042",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b03-f00-1x.png",
+      "reference_3x": "intro-b03-f00-3x.png",
+      "indexed": "intro-b03-f00.idx",
+      "palette": "intro-b03-f00.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-042",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "3b29d44bd707286504c649cbf2a7fad24a73cf5b13be0389c1dbb8cb9efff174",
+      "reference_3x_sha256": "2953282fb8e49c3d525d51ccb3ee7e21bb7585abfb35305fd532eb853714dad3"
+    },
+    {
+      "key": "intro-b03-f01",
+      "block": 3,
+      "frame": 1,
+      "file_offset": 169006,
+      "size": 4001,
+      "spans": 379,
+      "art_indexed_sha256": "0f5cb70f71c24c0696376fa08261001c52ce65be66cf95af6c9852cb455c9bd2",
+      "source_capture": "source-043",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b03-f01-1x.png",
+      "reference_3x": "intro-b03-f01-3x.png",
+      "indexed": "intro-b03-f01.idx",
+      "palette": "intro-b03-f01.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-043",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "a9698b712e1059fca30c19801d84716d5aa40be99eaf6673680c267db7ada2aa",
+      "reference_3x_sha256": "19b63e8a1b304fdfb7f5ead3ff56229dad49d4fd4bf771adcf59b01b678352f9"
+    },
+    {
+      "key": "intro-b03-f02",
+      "block": 3,
+      "frame": 2,
+      "file_offset": 173007,
+      "size": 3888,
+      "spans": 324,
+      "art_indexed_sha256": "9811db539462ee2b552668b93d59061c8695ae5715ad02f408db8041ffd40bf5",
+      "source_capture": "source-044",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b03-f02-1x.png",
+      "reference_3x": "intro-b03-f02-3x.png",
+      "indexed": "intro-b03-f02.idx",
+      "palette": "intro-b03-f02.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-044",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "2092e0c1a60c5c55613f9119a34c2c0929fcef76ef21433a87fa9854c2dcc61f",
+      "reference_3x_sha256": "b2a8361f6a7651de4658bffa2530009f47bc9b43addb6aabe8edebb8e90c446e"
+    },
+    {
+      "key": "intro-b03-f03",
+      "block": 3,
+      "frame": 3,
+      "file_offset": 176895,
+      "size": 4135,
+      "spans": 415,
+      "art_indexed_sha256": "34b7c5efec6e730793dde2dda722672c70a71462f5ca19c23222913433f44800",
+      "source_capture": "source-046",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b03-f03-1x.png",
+      "reference_3x": "intro-b03-f03-3x.png",
+      "indexed": "intro-b03-f03.idx",
+      "palette": "intro-b03-f03.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-046",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "b89b941cd92a737b5f5ddbac920ad7a46d609cc12aa604614485775e2ce22c2b",
+      "reference_3x_sha256": "a7d764d636f297b3b2648c2a2f2f174064a27812950b74cc860406ebdd55869c"
+    },
+    {
+      "key": "intro-b03-f04",
+      "block": 3,
+      "frame": 4,
+      "file_offset": 181030,
+      "size": 3801,
+      "spans": 305,
+      "art_indexed_sha256": "f681894a1d546c78c8d521d16c4aaf483516fa0287053d3084b11fc0989b6e5d",
+      "source_capture": "source-047",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b03-f04-1x.png",
+      "reference_3x": "intro-b03-f04-3x.png",
+      "indexed": "intro-b03-f04.idx",
+      "palette": "intro-b03-f04.pal",
+      "palette_sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c",
+      "observed_palette_variants": [
+        {
+          "source": "source-047",
+          "sha256": "3fe9f3654fb82ba1b61b098fc6d177e70d8c6c5a479f9c826c470ae059feae7c"
+        },
+        {
+          "source": "source-048",
+          "sha256": "38102ab4f1cdfa3f9871842a172cbd92c859168081f53d6a866a533c7f7d4d47"
+        },
+        {
+          "source": "source-049",
+          "sha256": "c814d34626c1843c8de4da86ba91d5d5347d3464075cf250caf446ea51fcabed"
+        },
+        {
+          "source": "source-050",
+          "sha256": "21db475d9091f1808224d2e40c171ae15a56a299e087090974938435c3d23ad8"
+        },
+        {
+          "source": "source-051",
+          "sha256": "9f56244edc781a5b8bacd7833acdce8c8b48cf5a65bca16028a39b363e95ae8e"
+        },
+        {
+          "source": "source-052",
+          "sha256": "7831dac1c594bd74fd80bfaa4e6b0c5063e191cd0f14329a72fe64601612ca68"
+        },
+        {
+          "source": "source-053",
+          "sha256": "c83050064b829d1857053961c81cfab0f0f5406c3d8b05118b6fca115c9276c7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "4bc79646a626139ece71e05967e4ffb3c47dcd540421ee70ee449d741e273b02",
+      "reference_3x_sha256": "0e0962ad5b06e03bb3342f6bb2602bb0fcd1f95b494cf2d8707c20de1ea98fa0"
+    },
+    {
+      "key": "intro-b04-f00",
+      "block": 4,
+      "frame": 0,
+      "file_offset": 184893,
+      "size": 31405,
+      "spans": 400,
+      "art_indexed_sha256": "ca15b4b6f43c433cb4ab8fe55df9edbe8c07f3896961d22bb3aa006a8c4d7a4d",
+      "source_capture": "source-055",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b04-f00-1x.png",
+      "reference_3x": "intro-b04-f00-3x.png",
+      "indexed": "intro-b04-f00.idx",
+      "palette": "intro-b04-f00.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-055",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "accepted-b44-material",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "approved_key": "intro-horned",
+      "approved_png": "review/hd/b44-intro/intro-horned.png",
+      "approved_sha256": "60cd6c6c413cebca4457fa20e3a9f3322c650387181df26a399998992dda43cd",
+      "reference_1x_sha256": "d783af1da4a5db51a30d3bb1301f205ebeb3d57214c16b6be568d2df403fecd5",
+      "reference_3x_sha256": "ef4e4d44b4b31d86d88afe6282a3ca8bc75fd4c9dabe123ed825a9ca8a113223"
+    },
+    {
+      "key": "intro-b04-f01",
+      "block": 4,
+      "frame": 1,
+      "file_offset": 216298,
+      "size": 1594,
+      "spans": 123,
+      "art_indexed_sha256": "a5a645768e8060e282caca19903965127de409fadfc23837f57538ef0f969dea",
+      "source_capture": "source-056",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b04-f01-1x.png",
+      "reference_3x": "intro-b04-f01-3x.png",
+      "indexed": "intro-b04-f01.idx",
+      "palette": "intro-b04-f01.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-056",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "fd90e1f1feac73b21f153d71d51fba8aadaa8713601eaa88678d3025bac278b8",
+      "reference_3x_sha256": "e79d7a47fce8fff5e382284dab64244243cc0db0885b9de7b0d2d58aed7931b2"
+    },
+    {
+      "key": "intro-b04-f03",
+      "block": 4,
+      "frame": 3,
+      "file_offset": 219474,
+      "size": 1181,
+      "spans": 83,
+      "art_indexed_sha256": "58ab08e39ed2ba37e67865aaf4811ef5662eb170e8dc30cd93ad8ac01f90398d",
+      "source_capture": "source-057",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b04-f03-1x.png",
+      "reference_3x": "intro-b04-f03-3x.png",
+      "indexed": "intro-b04-f03.idx",
+      "palette": "intro-b04-f03.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-057",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "49d8ac89f971e3a05fcf887d82aa481afd70f896eb0f3abce13d79c250c5aa4f",
+      "reference_3x_sha256": "21821fc3d0fc76c7186d966f6f1e18d998f802278183b51579b65ad06dc630d0"
+    },
+    {
+      "key": "intro-b04-f06",
+      "block": 4,
+      "frame": 6,
+      "file_offset": 221825,
+      "size": 3721,
+      "spans": 212,
+      "art_indexed_sha256": "3a75d3611ddc4ef483fa041c9ae8eac8592d49a0c6c3c184cc68853fc970ef8f",
+      "source_capture": "source-058",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b04-f06-1x.png",
+      "reference_3x": "intro-b04-f06-3x.png",
+      "indexed": "intro-b04-f06.idx",
+      "palette": "intro-b04-f06.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-058",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "028d70cac66d5633b81c85d2386ceabd6d67dcb9f03bfe7acb9c0a6fc3e7b1b2",
+      "reference_3x_sha256": "c205ba7685568bebfd998b5eb720045e43bee4411eba10b111ed21d6f34ab786"
+    },
+    {
+      "key": "intro-b04-f07",
+      "block": 4,
+      "frame": 7,
+      "file_offset": 225546,
+      "size": 3022,
+      "spans": 105,
+      "art_indexed_sha256": "fbd7c5f6100a80495f58bfacdfe1a96d80a2798694fc85efab7c01719ea23907",
+      "source_capture": "source-059",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b04-f07-1x.png",
+      "reference_3x": "intro-b04-f07-3x.png",
+      "indexed": "intro-b04-f07.idx",
+      "palette": "intro-b04-f07.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-059",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "dd53d87de377dae55ee8ed47365544cfe979473269226c077b4101625d1b9c48",
+      "reference_3x_sha256": "2f6f43583a691201b18990393e5eeb0391ecafccfbd7ca529245848dcf985d94"
+    },
+    {
+      "key": "intro-b04-f08",
+      "block": 4,
+      "frame": 8,
+      "file_offset": 228568,
+      "size": 2782,
+      "spans": 99,
+      "art_indexed_sha256": "d8949523434171836c8489ba928fa598cb65eba0fa817825b9079ce81356bcd5",
+      "source_capture": "source-060",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b04-f08-1x.png",
+      "reference_3x": "intro-b04-f08-3x.png",
+      "indexed": "intro-b04-f08.idx",
+      "palette": "intro-b04-f08.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-060",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "39ddc70c237f391fb6939cab6894176524376c383a9894c1bd34ca9fb6e08996",
+      "reference_3x_sha256": "35eb14d9f083d4dee1b9b10ee6e2f1632c0e3ee03e8bb1bef8bc72f4916092f7"
+    },
+    {
+      "key": "intro-b04-f09",
+      "block": 4,
+      "frame": 9,
+      "file_offset": 231350,
+      "size": 3016,
+      "spans": 127,
+      "art_indexed_sha256": "2a453af2e0a7a2ff543c7c833e95f52f158b18cd3913207eb67def1cdeac37b8",
+      "source_capture": "source-061",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b04-f09-1x.png",
+      "reference_3x": "intro-b04-f09-3x.png",
+      "indexed": "intro-b04-f09.idx",
+      "palette": "intro-b04-f09.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-061",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "022fe388bae50ec809f9d687cabe7f7710936c7795587b0ede2da3aa92ae2a71",
+      "reference_3x_sha256": "415a08d0fe039f66a6637ab87d6a3a663bfdcab8c9eea225bcd089627dec9d3c"
+    },
+    {
+      "key": "intro-b04-f10",
+      "block": 4,
+      "frame": 10,
+      "file_offset": 234366,
+      "size": 3358,
+      "spans": 141,
+      "art_indexed_sha256": "de5126cdfdd000e9028d5a048ce72a5e2e10cd49bbaf9ff8a24223cf88d22630",
+      "source_capture": "source-062",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b04-f10-1x.png",
+      "reference_3x": "intro-b04-f10-3x.png",
+      "indexed": "intro-b04-f10.idx",
+      "palette": "intro-b04-f10.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-062",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "afd999afe16f376af6d82ba7fa688000d004e2dae9335db6705b0302ead8674d",
+      "reference_3x_sha256": "cd8005b3b512a3ecbbb6a7a59d19b270c765c84bcdba50ddb5f4424090f950af"
+    },
+    {
+      "key": "intro-b04-f11",
+      "block": 4,
+      "frame": 11,
+      "file_offset": 237724,
+      "size": 4004,
+      "spans": 274,
+      "art_indexed_sha256": "c32ca9f3e5d6dfa21afda091e2c0f73c18cfc25956122177d991b7298745bcc2",
+      "source_capture": "source-063",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b04-f11-1x.png",
+      "reference_3x": "intro-b04-f11-3x.png",
+      "indexed": "intro-b04-f11.idx",
+      "palette": "intro-b04-f11.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-063",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "65e87c45221f97060008631f3ba3c29b75ce14f504ab185051ac4d1d8b02526a",
+      "reference_3x_sha256": "d05bdee241b2e1355c94977d425b0ee04a814ef6c0a85312087affbff1fb2115"
+    },
+    {
+      "key": "intro-b04-f12",
+      "block": 4,
+      "frame": 12,
+      "file_offset": 241728,
+      "size": 1952,
+      "spans": 166,
+      "art_indexed_sha256": "417668fd8a47676de8a85fa4845affc7176d7207f324f9d126bb3004843c0515",
+      "source_capture": "source-064",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b04-f12-1x.png",
+      "reference_3x": "intro-b04-f12-3x.png",
+      "indexed": "intro-b04-f12.idx",
+      "palette": "intro-b04-f12.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-064",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "63fd91a439f899bf09724ea28bf6f99037edf1724cc6a9865c1b734e7c6051dd",
+      "reference_3x_sha256": "5609bfb58274c9076b5211af09e192ffc52f5146b34085cf7a74250809a500fc"
+    },
+    {
+      "key": "intro-b04-f13",
+      "block": 4,
+      "frame": 13,
+      "file_offset": 243680,
+      "size": 2588,
+      "spans": 200,
+      "art_indexed_sha256": "14f89487afcc03d5ba9624723ec8a8074fe57e7f92a3c9faa35904dfa2bf5a73",
+      "source_capture": "source-065",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b04-f13-1x.png",
+      "reference_3x": "intro-b04-f13-3x.png",
+      "indexed": "intro-b04-f13.idx",
+      "palette": "intro-b04-f13.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-065",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "19c9a8980ce454a15039d04cb1f085c93d5cf83faaeb9c1ef42e16c2e8d7bc55",
+      "reference_3x_sha256": "86e82ad5353f4324ce4f798bc38c4b5e00c93ffe355bd09e795e8ab4f238e70c"
+    },
+    {
+      "key": "intro-b05-f00",
+      "block": 5,
+      "frame": 0,
+      "file_offset": 246306,
+      "size": 4820,
+      "spans": 356,
+      "art_indexed_sha256": "9e52567938b46c4bde79757360261f952f645f41a09c9ba149a5b873ba54d037",
+      "source_capture": "source-066",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b05-f00-1x.png",
+      "reference_3x": "intro-b05-f00-3x.png",
+      "indexed": "intro-b05-f00.idx",
+      "palette": "intro-b05-f00.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-066",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "ff488425e92b8cc1d0f94dc3d82f9cafead197ff6de26a32eb181be0a8978813",
+      "reference_3x_sha256": "42a54866082002d156c4b7d87e616bfa1032ce7640c91e307a1fc71c140a22d2"
+    },
+    {
+      "key": "intro-b05-f01",
+      "block": 5,
+      "frame": 1,
+      "file_offset": 251126,
+      "size": 4410,
+      "spans": 265,
+      "art_indexed_sha256": "416cf866bcbb329a55694a7fa359b594a4c21ce1f8f7ca7252a11353056e55f0",
+      "source_capture": "source-068",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b05-f01-1x.png",
+      "reference_3x": "intro-b05-f01-3x.png",
+      "indexed": "intro-b05-f01.idx",
+      "palette": "intro-b05-f01.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-068",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "8a6b69a0dde264f8623a7e0e17500c33c04fef42944aab50d2531479061bbdc0",
+      "reference_3x_sha256": "6b3bc8ce5edcb9f8ac805038fe4f5ee0e36f1363b7e89c3d7a1ec8115873f825"
+    },
+    {
+      "key": "intro-b05-f02",
+      "block": 5,
+      "frame": 2,
+      "file_offset": 255536,
+      "size": 2584,
+      "spans": 280,
+      "art_indexed_sha256": "6c2cae3521b93a605dbd7899174681c3976ab03a5ee12217f34a3292a8673d71",
+      "source_capture": "source-069",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b05-f02-1x.png",
+      "reference_3x": "intro-b05-f02-3x.png",
+      "indexed": "intro-b05-f02.idx",
+      "palette": "intro-b05-f02.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-069",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "2f3e8abe977e74c4e3a5fd6739b3a790ec784c34367a6df70802b785bc903bd5",
+      "reference_3x_sha256": "8cfedf61c68061afcdea889574ea8e00019b3d60787877698ab8ece49141860d"
+    },
+    {
+      "key": "intro-b05-f03",
+      "block": 5,
+      "frame": 3,
+      "file_offset": 258120,
+      "size": 3141,
+      "spans": 183,
+      "art_indexed_sha256": "9d014af9fc005d1ead90b6382e475b38e6ade0dfe4f991818c187802c66f2dec",
+      "source_capture": "source-071",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b05-f03-1x.png",
+      "reference_3x": "intro-b05-f03-3x.png",
+      "indexed": "intro-b05-f03.idx",
+      "palette": "intro-b05-f03.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-071",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "55e4844fec51a3b39cd477ab06900f2630bd474e4edc047a881daffd86ce684c",
+      "reference_3x_sha256": "2ebf73618328bcefd1edcc9d76b094ebe1148424a18131e71e85ebabc40b2692"
+    },
+    {
+      "key": "intro-b05-f04",
+      "block": 5,
+      "frame": 4,
+      "file_offset": 261261,
+      "size": 2174,
+      "spans": 98,
+      "art_indexed_sha256": "e5deecd8585c8bf1ff19e88fbabf17bdf6bbb9066fa0acf95c1dc1c6f15fdbeb",
+      "source_capture": "source-072",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b05-f04-1x.png",
+      "reference_3x": "intro-b05-f04-3x.png",
+      "indexed": "intro-b05-f04.idx",
+      "palette": "intro-b05-f04.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-072",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "640f55379eebe7ba791a409efc6e681434d844a56f1a23cf137502beb9730544",
+      "reference_3x_sha256": "1e848bed59f1344c83422bcb0e7f0fd8d1009167235e699e07d924f4b68eabc6"
+    },
+    {
+      "key": "intro-b05-f05",
+      "block": 5,
+      "frame": 5,
+      "file_offset": 263435,
+      "size": 1316,
+      "spans": 92,
+      "art_indexed_sha256": "3b5f0b2096c23eb418b50d75e7e7e8fc5dd927ec5532141e737e11f2ded54f37",
+      "source_capture": "source-073",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b05-f05-1x.png",
+      "reference_3x": "intro-b05-f05-3x.png",
+      "indexed": "intro-b05-f05.idx",
+      "palette": "intro-b05-f05.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-073",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "e7358b158dd08182cc4e1d0c7c426b2cb9e3e617771c1fb0e834c6531db7e04b",
+      "reference_3x_sha256": "58bb76a3b27fb26bfa994f3b87ceb48c826fec9dcc5192f5e91a45e3184b89e3"
+    },
+    {
+      "key": "intro-b05-f06",
+      "block": 5,
+      "frame": 6,
+      "file_offset": 264751,
+      "size": 676,
+      "spans": 42,
+      "art_indexed_sha256": "97c624434bf1aac89d9d266521e0d89bead6ea63c30241b180363b44a913aaae",
+      "source_capture": "source-074",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b05-f06-1x.png",
+      "reference_3x": "intro-b05-f06-3x.png",
+      "indexed": "intro-b05-f06.idx",
+      "palette": "intro-b05-f06.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-074",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "b89876513e203da6df56278f3520723fb49a7b9cd7f967453156709c7c8abafb",
+      "reference_3x_sha256": "a78cabbf609530be1bf19a14b15e3516a4537060befb9592c6dc012f41388a2d"
+    },
+    {
+      "key": "intro-b05-f07",
+      "block": 5,
+      "frame": 7,
+      "file_offset": 265427,
+      "size": 8028,
+      "spans": 105,
+      "art_indexed_sha256": "3fa9c1b6221fd0905a662c44b94ac50879626d8e6495973fd7e87abff3beac44",
+      "source_capture": "source-076",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b05-f07-1x.png",
+      "reference_3x": "intro-b05-f07-3x.png",
+      "indexed": "intro-b05-f07.idx",
+      "palette": "intro-b05-f07.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-076",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        },
+        {
+          "source": "source-077",
+          "sha256": "b771aeda0955992ae3dd78212701ae7d9301fd8632fdf2bed70f3cd5d8896ea6"
+        },
+        {
+          "source": "source-078",
+          "sha256": "0d6a30fbbbf47249c7732ad63b9ad2580bef0b6fbbf1cb952c55f018015c263c"
+        },
+        {
+          "source": "source-079",
+          "sha256": "60399bbc10ba57fd2a018562d4ca386f9e00b8b29ac0d3e4354caffc52575516"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "ce60e8e3e3f94ca166d4e24af2620d8dc72d8a4a371408c96000313cb0924b77",
+      "reference_3x_sha256": "5642d0b369ac52fe10e9854e2f13828b58c89f3e1c79f6e039e5514d04d033ba"
+    },
+    {
+      "key": "intro-b06-f00",
+      "block": 6,
+      "frame": 0,
+      "file_offset": 273465,
+      "size": 25399,
+      "spans": 400,
+      "art_indexed_sha256": "ab449383ff11119fdab573e61e5f889e775554b2aa0d976640cb022af18f41bb",
+      "source_capture": "source-080",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b06-f00-1x.png",
+      "reference_3x": "intro-b06-f00-3x.png",
+      "indexed": "intro-b06-f00.idx",
+      "palette": "intro-b06-f00.pal",
+      "palette_sha256": "e4c0a2e3e2c6556481b91f93b1781c17b91b3862b907b53cf59b08333b371da4",
+      "observed_palette_variants": [
+        {
+          "source": "source-080",
+          "sha256": "e4c0a2e3e2c6556481b91f93b1781c17b91b3862b907b53cf59b08333b371da4"
+        },
+        {
+          "source": "source-081",
+          "sha256": "36c6908651442b8dfa79b85ac3de93d99fb64755c2a176b438df516ba0a7b837"
+        },
+        {
+          "source": "source-082",
+          "sha256": "6c171a625df92e39765c01eb66a44fe2f771100c30f54612b476b7bd3154512d"
+        },
+        {
+          "source": "source-083",
+          "sha256": "cb30e1c9b41f7d12fd95178d2fcfe6b797e19c9c917a41c61b8e433f49541a14"
+        },
+        {
+          "source": "source-084",
+          "sha256": "4390818f49773a3ab600c8fe76d83c80a3fc74e277c91ba3a8f20a9bf1517fb5"
+        },
+        {
+          "source": "source-085",
+          "sha256": "9cb908b360752a94ae65f10d0fd6c50c2675a6c07475490a3abd761635fc7431"
+        }
+      ],
+      "style": "B",
+      "state": "accepted-b44-material",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "approved_key": "intro-heroes",
+      "approved_png": "review/hd/b44-intro/intro-heroes.png",
+      "approved_sha256": "69fa6f79bca1b7527464f41649ebc6e4b7eb47c3980788b2fcabccc1e2a32f5d",
+      "reference_1x_sha256": "879bd5d342975491bf6d09c2cdb1946c075f924ef3bd5f58215db10ab80a783a",
+      "reference_3x_sha256": "dd5761463c316a565bb2a2508b10eef188a2b22ca1dbc88aa958cecd6e6c3771"
+    },
+    {
+      "key": "intro-b07-f00",
+      "block": 7,
+      "frame": 0,
+      "file_offset": 298902,
+      "size": 31113,
+      "spans": 400,
+      "art_indexed_sha256": "eeeb72308dc6f2029a4fa73d30ce1c45e951879493344312b60f271582d516cf",
+      "source_capture": "source-086",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b07-f00-1x.png",
+      "reference_3x": "intro-b07-f00-3x.png",
+      "indexed": "intro-b07-f00.idx",
+      "palette": "intro-b07-f00.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-086",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "accepted-b44-material",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "approved_key": "intro-followers",
+      "approved_png": "review/hd/b44-intro/intro-followers.png",
+      "approved_sha256": "508b5af6311ce6854ac3d96c0e288f6a188413ac5f10e2123e2170624befecda",
+      "reference_1x_sha256": "809bebeebfdc0f612aad2906130d25bea873d265cd4444f8a8da29237cdaf1b6",
+      "reference_3x_sha256": "4a14c192ae3d2f512a0cb7ed590ec63aa3e68af133c38aaffaacca4e1b8c69fa"
+    },
+    {
+      "key": "intro-b07-f01",
+      "block": 7,
+      "frame": 1,
+      "file_offset": 330015,
+      "size": 1608,
+      "spans": 123,
+      "art_indexed_sha256": "18649422afd5072ac2c1d4bcc0d890381458fd1f857956c4c4216777583e0cf5",
+      "source_capture": "source-087",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b07-f01-1x.png",
+      "reference_3x": "intro-b07-f01-3x.png",
+      "indexed": "intro-b07-f01.idx",
+      "palette": "intro-b07-f01.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-087",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "f6202b2ef0a1f5927ca7a226eefa4df4d993cab3aab2bebc9a7057050dd6b5c7",
+      "reference_3x_sha256": "b77885b0284aece7ee8d6a144637bbb2d709c8f130125e3e00bf88ef431399c2"
+    },
+    {
+      "key": "intro-b07-f02",
+      "block": 7,
+      "frame": 2,
+      "file_offset": 331623,
+      "size": 1188,
+      "spans": 83,
+      "art_indexed_sha256": "df45026648df052c1c599f1d4837855a9e216e91c22058f33515b7b495c19caf",
+      "source_capture": "source-088",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b07-f02-1x.png",
+      "reference_3x": "intro-b07-f02-3x.png",
+      "indexed": "intro-b07-f02.idx",
+      "palette": "intro-b07-f02.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-088",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "c7e4c41654b1b1af88f3b07f0567cae93c2eedfd3e7643abb1f22b37a6e6e8f4",
+      "reference_3x_sha256": "efdb62857b48430f22af36f5ab53f1468b950df03f8efe848cb24c5ccedb209e"
+    },
+    {
+      "key": "intro-b07-f03",
+      "block": 7,
+      "frame": 3,
+      "file_offset": 332811,
+      "size": 4026,
+      "spans": 160,
+      "art_indexed_sha256": "c6ba7437736b55885888939a662bf138b18abd681e0c929e7e69e36184acd1af",
+      "source_capture": "source-089",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b07-f03-1x.png",
+      "reference_3x": "intro-b07-f03-3x.png",
+      "indexed": "intro-b07-f03.idx",
+      "palette": "intro-b07-f03.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-089",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "7260f6cc4a424e800b6e8b173157938d144c1c936b51c238004504c0def3d4b2",
+      "reference_3x_sha256": "137bbefbea7d96cdf7f792ec30613df66cfae519d1e4980e0cd9ae3168d6b8c6"
+    },
+    {
+      "key": "intro-b07-f04",
+      "block": 7,
+      "frame": 4,
+      "file_offset": 336837,
+      "size": 4497,
+      "spans": 359,
+      "art_indexed_sha256": "2b20358194077f755b248e79aff77b7e739fd410aa5da628b8f41a3b71f1fa0c",
+      "source_capture": "source-090",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b07-f04-1x.png",
+      "reference_3x": "intro-b07-f04-3x.png",
+      "indexed": "intro-b07-f04.idx",
+      "palette": "intro-b07-f04.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-090",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "7c85a0ab80023da81b1ddcb4f4907e292d4bfc50faf51ccd496cb6e57a237212",
+      "reference_3x_sha256": "8b58b3c1de5e827628d306d14f9ea0934534fa4c804743e85abd47e548b32c78"
+    },
+    {
+      "key": "intro-b07-f05",
+      "block": 7,
+      "frame": 5,
+      "file_offset": 341334,
+      "size": 6837,
+      "spans": 786,
+      "art_indexed_sha256": "4c12686cdda11929b733e80360f1be853a3f22a5388998e63ffded3bc8203c99",
+      "source_capture": "source-091",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b07-f05-1x.png",
+      "reference_3x": "intro-b07-f05-3x.png",
+      "indexed": "intro-b07-f05.idx",
+      "palette": "intro-b07-f05.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-091",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "a29b95692861367caf4aa3914c313a2da471622bd55b1722415803b47f1dde50",
+      "reference_3x_sha256": "02784a6292fb21e73033b8223ba53cc537515687ba512fef352d6831b77df743"
+    },
+    {
+      "key": "intro-b07-f06",
+      "block": 7,
+      "frame": 6,
+      "file_offset": 348171,
+      "size": 6180,
+      "spans": 346,
+      "art_indexed_sha256": "6b052a1076841e764796cc4dbd95c2501d43310473f87bba871403e84eda27b3",
+      "source_capture": "source-092",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b07-f06-1x.png",
+      "reference_3x": "intro-b07-f06-3x.png",
+      "indexed": "intro-b07-f06.idx",
+      "palette": "intro-b07-f06.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-092",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "487069fa9f6e54fb916bd28f092d97003c6be26cf9a55fb2133338413e8ce4a8",
+      "reference_3x_sha256": "3aa6e0d2a0f2e7857fc0ef6afcad427c544003574022b4350caaf788c0ad13a1"
+    },
+    {
+      "key": "intro-b07-f07",
+      "block": 7,
+      "frame": 7,
+      "file_offset": 354351,
+      "size": 6512,
+      "spans": 424,
+      "art_indexed_sha256": "3f15db50d9823593540c68ad4626bbb91bd0dee31394cc3bb35e96401684c0be",
+      "source_capture": "source-094",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b07-f07-1x.png",
+      "reference_3x": "intro-b07-f07-3x.png",
+      "indexed": "intro-b07-f07.idx",
+      "palette": "intro-b07-f07.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-094",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "01c7540acc23c2efe05d0425957ff8db10b5e1f11d3ea37bf0820fd153ee38c9",
+      "reference_3x_sha256": "476eb8057c7605e74cb8c3cdf75e02874b437acc9eb9641e675cab2717393d24"
+    },
+    {
+      "key": "intro-b08-f00",
+      "block": 8,
+      "frame": 0,
+      "file_offset": 360917,
+      "size": 5659,
+      "spans": 417,
+      "art_indexed_sha256": "695bc40fa695bdf733f285b6b1ad7d4e78e84aff8149a42a2213b0f3a04aa592",
+      "source_capture": "source-095",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b08-f00-1x.png",
+      "reference_3x": "intro-b08-f00-3x.png",
+      "indexed": "intro-b08-f00.idx",
+      "palette": "intro-b08-f00.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-095",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "b4ac698bf2be5e02591f7392d3af3f049fe53395c3f7db2c3bf182823c3d7107",
+      "reference_3x_sha256": "cdeb23321886f650476f47a55f2a047de9515613f4b3830f8f5c015bcb223d50"
+    },
+    {
+      "key": "intro-b08-f01",
+      "block": 8,
+      "frame": 1,
+      "file_offset": 366576,
+      "size": 4981,
+      "spans": 402,
+      "art_indexed_sha256": "451936876049b09b58747b0530ddd702e6ebc4dccecb163c0043b89226e3588e",
+      "source_capture": "source-097",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b08-f01-1x.png",
+      "reference_3x": "intro-b08-f01-3x.png",
+      "indexed": "intro-b08-f01.idx",
+      "palette": "intro-b08-f01.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-097",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "78fb5087de7a0e0404a23e977eb5890e2f6680d77a65970f522a8226d36c35da",
+      "reference_3x_sha256": "f86b464e0602f0dcb91741ebdab54fbfb038cd2ed48e6a52ec8a53d3cf4071f4"
+    },
+    {
+      "key": "intro-b08-f02",
+      "block": 8,
+      "frame": 2,
+      "file_offset": 371557,
+      "size": 4543,
+      "spans": 291,
+      "art_indexed_sha256": "302486273d70806be7b62c55ccc708d124ee5951282a1a4a7f038151d74c9458",
+      "source_capture": "source-098",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b08-f02-1x.png",
+      "reference_3x": "intro-b08-f02-3x.png",
+      "indexed": "intro-b08-f02.idx",
+      "palette": "intro-b08-f02.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-098",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "1da30a6d30086c59a9f4259fea5492968399585d0ef5fe473071a59c6b7f5fbf",
+      "reference_3x_sha256": "b26fe6397b5f21e649e647c25bceb2221d96b4b56fab757d8ac784839c02feee"
+    },
+    {
+      "key": "intro-b08-f03",
+      "block": 8,
+      "frame": 3,
+      "file_offset": 376100,
+      "size": 4018,
+      "spans": 248,
+      "art_indexed_sha256": "16b956e840c92819a61697b363273d4558db3937ed87279004a79f5cedc733b6",
+      "source_capture": "source-099",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b08-f03-1x.png",
+      "reference_3x": "intro-b08-f03-3x.png",
+      "indexed": "intro-b08-f03.idx",
+      "palette": "intro-b08-f03.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-099",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "7bb2d23465f5ccb9239474b3363a59b9f8bc6abc01401294e02795df9e68e4a9",
+      "reference_3x_sha256": "6327a72f8de9a3ea395d46cfc9d7a734e9961309f9bc056da25b82ab8afde041"
+    },
+    {
+      "key": "intro-b08-f04",
+      "block": 8,
+      "frame": 4,
+      "file_offset": 380118,
+      "size": 3136,
+      "spans": 225,
+      "art_indexed_sha256": "e64524a63e506cdbb639a65dd3e3570a66093e99c5701e68cb4e28b51bc83f59",
+      "source_capture": "source-100",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b08-f04-1x.png",
+      "reference_3x": "intro-b08-f04-3x.png",
+      "indexed": "intro-b08-f04.idx",
+      "palette": "intro-b08-f04.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-100",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "e5bb6d1a74fe0655d3452a017cffdf7247d018a6842852200d89d2209dd4519d",
+      "reference_3x_sha256": "427ab45179b7c6a9fe1a7700b7bfa5bb27a77b1ed7fcd0187de89b083a8166fd"
+    },
+    {
+      "key": "intro-b08-f05",
+      "block": 8,
+      "frame": 5,
+      "file_offset": 383254,
+      "size": 3077,
+      "spans": 222,
+      "art_indexed_sha256": "7accfeb453e3711cd928c554bb9d58ea5e96e2b9674f6dc65fb6a4e0f2a804d9",
+      "source_capture": "source-102",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b08-f05-1x.png",
+      "reference_3x": "intro-b08-f05-3x.png",
+      "indexed": "intro-b08-f05.idx",
+      "palette": "intro-b08-f05.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-102",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "fcda3d7e46ec428db8fce02a84d71b57b311b6dd669c18ce9437660c40f203cf",
+      "reference_3x_sha256": "b6b062e2a75b9c7f70e1dcd9f226da15adf2455769fdc6662db4c9549c0ebb12"
+    },
+    {
+      "key": "intro-b08-f06",
+      "block": 8,
+      "frame": 6,
+      "file_offset": 386331,
+      "size": 3194,
+      "spans": 226,
+      "art_indexed_sha256": "59b9f367444215f69c6855c9f88dbb82c3fa37c095c2b28148003ad86c3cdc75",
+      "source_capture": "source-103",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b08-f06-1x.png",
+      "reference_3x": "intro-b08-f06-3x.png",
+      "indexed": "intro-b08-f06.idx",
+      "palette": "intro-b08-f06.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-103",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "060336711997ea0e97c07018ac3454e1ff4c029d0a6b5d29f0bbf3845c785a53",
+      "reference_3x_sha256": "bec57b7293170c8b98dc8e8868b86f0ee0fda9fc5eddfaf590cb3118c4200d85"
+    },
+    {
+      "key": "intro-b08-f07",
+      "block": 8,
+      "frame": 7,
+      "file_offset": 389525,
+      "size": 2888,
+      "spans": 211,
+      "art_indexed_sha256": "f5f32e1ef3238c4b86f15f3305164384c73f7ba4825b4eaed5641efaebb9a819",
+      "source_capture": "source-105",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b08-f07-1x.png",
+      "reference_3x": "intro-b08-f07-3x.png",
+      "indexed": "intro-b08-f07.idx",
+      "palette": "intro-b08-f07.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-105",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "03487eeb0a81d5c8af991d61415b7d07ffa3daa3c35ae7c6540c97df4f83461a",
+      "reference_3x_sha256": "80e9ecbc7987a12d51c8abbdfd63188a4ba8df9732023ea1f5cd32dcc6a5583e"
+    },
+    {
+      "key": "intro-b08-f08",
+      "block": 8,
+      "frame": 8,
+      "file_offset": 392413,
+      "size": 3676,
+      "spans": 254,
+      "art_indexed_sha256": "6b8cdb146c668e2dfc6d5ec9ef4c1cba819892fb0226c9ab7d2750591428240b",
+      "source_capture": "source-106",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b08-f08-1x.png",
+      "reference_3x": "intro-b08-f08-3x.png",
+      "indexed": "intro-b08-f08.idx",
+      "palette": "intro-b08-f08.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-106",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "004066067311bd631e5ff861092e34ae4c892dd615ff25941bab4e633c64a55f",
+      "reference_3x_sha256": "e7f096674530b1aaede1266945b3ed1567063092d7b1a52a90f0da8cde024e5b"
+    },
+    {
+      "key": "intro-b08-f09",
+      "block": 8,
+      "frame": 9,
+      "file_offset": 396089,
+      "size": 3552,
+      "spans": 281,
+      "art_indexed_sha256": "1f1523003b632b61be2d8e6972f6add5e156fd5c215dbbdd2d65e27789711b78",
+      "source_capture": "source-108",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b08-f09-1x.png",
+      "reference_3x": "intro-b08-f09-3x.png",
+      "indexed": "intro-b08-f09.idx",
+      "palette": "intro-b08-f09.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-108",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "7ea8d75d29411de49d4907f7ffddbba28f27bb616168ac45d4806ec3c4073f48",
+      "reference_3x_sha256": "1bbeb88ea9e2f7c6db829f7b1d1fc51e31978400aa0147ba3bd6d5ec0b4fe47b"
+    },
+    {
+      "key": "intro-b08-f10",
+      "block": 8,
+      "frame": 10,
+      "file_offset": 399641,
+      "size": 3528,
+      "spans": 250,
+      "art_indexed_sha256": "06cfeb9da77c5a65b5b99d9ef52184541965994af449543429029d8a927f021f",
+      "source_capture": "source-109",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b08-f10-1x.png",
+      "reference_3x": "intro-b08-f10-3x.png",
+      "indexed": "intro-b08-f10.idx",
+      "palette": "intro-b08-f10.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-109",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "b68c7283295c795debffb2ba6fb505319a41aa813789ee185ad16e32acba5998",
+      "reference_3x_sha256": "4a99a0a90461e8f072fa8d895ac331bb7857649b475d0b83b9e25c354d4f9851"
+    },
+    {
+      "key": "intro-b08-f11",
+      "block": 8,
+      "frame": 11,
+      "file_offset": 403169,
+      "size": 3368,
+      "spans": 259,
+      "art_indexed_sha256": "347c8d807c9bc091cb273fb8648800ef79ad04711cae992a89ecb1b20a239dd0",
+      "source_capture": "source-111",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b08-f11-1x.png",
+      "reference_3x": "intro-b08-f11-3x.png",
+      "indexed": "intro-b08-f11.idx",
+      "palette": "intro-b08-f11.pal",
+      "palette_sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7",
+      "observed_palette_variants": [
+        {
+          "source": "source-111",
+          "sha256": "bf1ebb81f5d5c10a293f5fa4066a3d956552ec0779d866baf1f3eea78e46b2d7"
+        },
+        {
+          "source": "source-112",
+          "sha256": "23a901ecb3f264e0251223ad890753c09b135b30fe733e8da82432ee9325bfc7"
+        },
+        {
+          "source": "source-113",
+          "sha256": "252d028f61c876ced40c4b00ec1db4d74fe3dab27c2e576dfe39b9efce86a179"
+        },
+        {
+          "source": "source-114",
+          "sha256": "955c2e6182b9a1341a2e3460668392261e323a7a0ce9b7f6e70970438dbadcfc"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "1e761468a06e7849cbd4086c3003982fd8dd26685f2f1553a460552e0e6fa796",
+      "reference_3x_sha256": "4260290eaf9b538f79ecddbd14e8f569ba5406f60ba6969f6f93b154ffed78e3"
+    },
+    {
+      "key": "intro-b09-f00",
+      "block": 9,
+      "frame": 0,
+      "file_offset": 406559,
+      "size": 34358,
+      "spans": 400,
+      "art_indexed_sha256": "96cb281335ea2583be3b1e693d05f2044e4c46f2c9c719ecb830f93869777183",
+      "source_capture": "source-116",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b09-f00-1x.png",
+      "reference_3x": "intro-b09-f00-3x.png",
+      "indexed": "intro-b09-f00.idx",
+      "palette": "intro-b09-f00.pal",
+      "palette_sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241",
+      "observed_palette_variants": [
+        {
+          "source": "source-116",
+          "sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241"
+        }
+      ],
+      "style": "B",
+      "state": "accepted-b44-material",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "approved_key": "intro-dreadlord",
+      "approved_png": "review/hd/b44-intro/intro-dreadlord.png",
+      "approved_sha256": "00d04d8190efa1c5c2f7e06f4e144b44681994eaba2b2c240083e4985669fcb0",
+      "reference_1x_sha256": "cf1ec6d852773766d8b91657645c8c7d702097a44cb3a4bd4d2e9f57611f7c92",
+      "reference_3x_sha256": "5107b9c33ad1e68972c574751ceada74aac9a3a0db092815ca3f0a00c01c7c62"
+    },
+    {
+      "key": "intro-b09-f01",
+      "block": 9,
+      "frame": 1,
+      "file_offset": 440917,
+      "size": 9273,
+      "spans": 988,
+      "art_indexed_sha256": "6ee1d5ffe6a21a1d4303b22ffe981265e64ba5adfb29528d9de819e3683e8a74",
+      "source_capture": "source-118",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b09-f01-1x.png",
+      "reference_3x": "intro-b09-f01-3x.png",
+      "indexed": "intro-b09-f01.idx",
+      "palette": "intro-b09-f01.pal",
+      "palette_sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241",
+      "observed_palette_variants": [
+        {
+          "source": "source-118",
+          "sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "b0a89586c940ebc72e66cff823cc2e1e924af1f1640b0cb1c9184bd8d58ad5e2",
+      "reference_3x_sha256": "4235ea75032ae794c76767441cd993911993e7280bcc21894cbf4075698045a9"
+    },
+    {
+      "key": "intro-b09-f02",
+      "block": 9,
+      "frame": 2,
+      "file_offset": 450190,
+      "size": 9712,
+      "spans": 1010,
+      "art_indexed_sha256": "f664c46d89778a363153d3b5c4897cbe315549f7513e9dce1f3b9885d07aac40",
+      "source_capture": "source-119",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b09-f02-1x.png",
+      "reference_3x": "intro-b09-f02-3x.png",
+      "indexed": "intro-b09-f02.idx",
+      "palette": "intro-b09-f02.pal",
+      "palette_sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241",
+      "observed_palette_variants": [
+        {
+          "source": "source-119",
+          "sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "ee804c4f478dda6ab3deb19543a6d6419f3c8ac2cc66252ae961cec12a45c08c",
+      "reference_3x_sha256": "0a8290aeb017ee56d5d51906e2164ab647743bb8f37f0c1f25ed4b034a50dfa2"
+    },
+    {
+      "key": "intro-b09-f03",
+      "block": 9,
+      "frame": 3,
+      "file_offset": 459902,
+      "size": 7129,
+      "spans": 610,
+      "art_indexed_sha256": "ce0bac8e114ba20e08a0a4d086365b7d7c2fb9d2e9c06d705a59d377b454118d",
+      "source_capture": "source-120",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b09-f03-1x.png",
+      "reference_3x": "intro-b09-f03-3x.png",
+      "indexed": "intro-b09-f03.idx",
+      "palette": "intro-b09-f03.pal",
+      "palette_sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241",
+      "observed_palette_variants": [
+        {
+          "source": "source-120",
+          "sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "92d4e9b683af813fdde86272b8e43f271110c58aa2d72b3c6e0f90627fc70871",
+      "reference_3x_sha256": "a388d6242da64dd40d26eee2b4451b679f0adfae5eb4ae102531f8b243da57b6"
+    },
+    {
+      "key": "intro-b10-f00",
+      "block": 10,
+      "frame": 0,
+      "file_offset": 467065,
+      "size": 7009,
+      "spans": 536,
+      "art_indexed_sha256": "1c2fc6cc09e3674052d1bd88f9110f38e54004f3e8487bcf84d9b9fd400ce8f2",
+      "source_capture": "source-121",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b10-f00-1x.png",
+      "reference_3x": "intro-b10-f00-3x.png",
+      "indexed": "intro-b10-f00.idx",
+      "palette": "intro-b10-f00.pal",
+      "palette_sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241",
+      "observed_palette_variants": [
+        {
+          "source": "source-121",
+          "sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "b1f26647a8c28bce162f5f374e15631cb88ecc1e93987009f917289b79f3698d",
+      "reference_3x_sha256": "019aae5559333e8711a06005fa73c63934be49b8b1cdae9681007aef1acd9c4d"
+    },
+    {
+      "key": "intro-b10-f01",
+      "block": 10,
+      "frame": 1,
+      "file_offset": 474074,
+      "size": 7218,
+      "spans": 598,
+      "art_indexed_sha256": "48db160d4cca45b0523b5e56640803192dffe791b91d86b222fe5c8d0ca86fa3",
+      "source_capture": "source-122",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b10-f01-1x.png",
+      "reference_3x": "intro-b10-f01-3x.png",
+      "indexed": "intro-b10-f01.idx",
+      "palette": "intro-b10-f01.pal",
+      "palette_sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241",
+      "observed_palette_variants": [
+        {
+          "source": "source-122",
+          "sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "e412a655a2bbcd82bd137df4f2908960a43ec5132e3b85ebfcde7579ef6edd4f",
+      "reference_3x_sha256": "23d0cbf0fcbed1908e1752488bfb28de096b253dd083a45d86d4502bc11fff1e"
+    },
+    {
+      "key": "intro-b10-f02",
+      "block": 10,
+      "frame": 2,
+      "file_offset": 481292,
+      "size": 7521,
+      "spans": 604,
+      "art_indexed_sha256": "e7215672234f9977b09bb84e9c9ba33a9e4499bf8893e37115fda0a44c4041c2",
+      "source_capture": "source-124",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b10-f02-1x.png",
+      "reference_3x": "intro-b10-f02-3x.png",
+      "indexed": "intro-b10-f02.idx",
+      "palette": "intro-b10-f02.pal",
+      "palette_sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241",
+      "observed_palette_variants": [
+        {
+          "source": "source-124",
+          "sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "050f1ccb5786fd7573f132230666bbf0556c265551b736564f623d26c5e03858",
+      "reference_3x_sha256": "cdf4c9bc8a11b68a58c0eae719dfcd7c32d9f8127eb0961af55f1fdac1fa5c35"
+    },
+    {
+      "key": "intro-b10-f03",
+      "block": 10,
+      "frame": 3,
+      "file_offset": 488813,
+      "size": 7696,
+      "spans": 623,
+      "art_indexed_sha256": "c28b865e52e3bc03bdd6fe890613f3ad6270d21c6c2688f4372326a1e6d194aa",
+      "source_capture": "source-125",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b10-f03-1x.png",
+      "reference_3x": "intro-b10-f03-3x.png",
+      "indexed": "intro-b10-f03.idx",
+      "palette": "intro-b10-f03.pal",
+      "palette_sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241",
+      "observed_palette_variants": [
+        {
+          "source": "source-125",
+          "sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "d3619909fa59c00374d4aecd9ff47ecba9df46bc25a1aaa76c6c32d27e1e36ff",
+      "reference_3x_sha256": "7c855990fe4abc162e437933a0b722699eefab9c3853a0fb0a902fe86f455ba4"
+    },
+    {
+      "key": "intro-b10-f04",
+      "block": 10,
+      "frame": 4,
+      "file_offset": 496509,
+      "size": 3304,
+      "spans": 237,
+      "art_indexed_sha256": "3e421471efcaac126203c6a6396cc6d1b11c43cf268baf079ae98bd66cb60203",
+      "source_capture": "source-126",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b10-f04-1x.png",
+      "reference_3x": "intro-b10-f04-3x.png",
+      "indexed": "intro-b10-f04.idx",
+      "palette": "intro-b10-f04.pal",
+      "palette_sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241",
+      "observed_palette_variants": [
+        {
+          "source": "source-126",
+          "sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "f3bae5b6a4407e6c5d94f83dd50be88aaa2066792b628d7791d0e16375794add",
+      "reference_3x_sha256": "6f65a8925732054ba6174657d8871b8ea8fa045e6a3cd7674d52104ff2777d9b"
+    },
+    {
+      "key": "intro-b10-f05",
+      "block": 10,
+      "frame": 5,
+      "file_offset": 499813,
+      "size": 7446,
+      "spans": 622,
+      "art_indexed_sha256": "b1e921a458113ec6b5cf1397a8268533bf472d13d85f133bcaccbe2c5ddb492a",
+      "source_capture": "source-127",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b10-f05-1x.png",
+      "reference_3x": "intro-b10-f05-3x.png",
+      "indexed": "intro-b10-f05.idx",
+      "palette": "intro-b10-f05.pal",
+      "palette_sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241",
+      "observed_palette_variants": [
+        {
+          "source": "source-127",
+          "sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "4063f8cf7f2afe39ab19413f9b7ec93b9f88a4ed9081c598d76b6708a0e1c5fe",
+      "reference_3x_sha256": "b71769e1c511522e4aa779bfcfd44d28f73fc6711a865b19397b8296eb7ab4ca"
+    },
+    {
+      "key": "intro-b10-f06",
+      "block": 10,
+      "frame": 6,
+      "file_offset": 507259,
+      "size": 11303,
+      "spans": 213,
+      "art_indexed_sha256": "d12a39269a9a55842f7eafd38241064ef2e01103c8f453a231abcf8169641ad5",
+      "source_capture": "source-128",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b10-f06-1x.png",
+      "reference_3x": "intro-b10-f06-3x.png",
+      "indexed": "intro-b10-f06.idx",
+      "palette": "intro-b10-f06.pal",
+      "palette_sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241",
+      "observed_palette_variants": [
+        {
+          "source": "source-128",
+          "sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "fe35cdce6e00d91704fbc23b1bfb31d837cb8c5bd06484d18569e3670be4f06c",
+      "reference_3x_sha256": "220902612a547b3ff6869e02cae04064f3db3517b5bc55b04a41912725872b94"
+    },
+    {
+      "key": "intro-b11-f00",
+      "block": 11,
+      "frame": 0,
+      "file_offset": 518584,
+      "size": 16756,
+      "spans": 1069,
+      "art_indexed_sha256": "d1cb724f6f8bb5b2ce8a5e3d32ba9f73ea0030941df321933bfabbfdb57cf7a7",
+      "source_capture": "source-130",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b11-f00-1x.png",
+      "reference_3x": "intro-b11-f00-3x.png",
+      "indexed": "intro-b11-f00.idx",
+      "palette": "intro-b11-f00.pal",
+      "palette_sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241",
+      "observed_palette_variants": [
+        {
+          "source": "source-130",
+          "sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "15d2bde26cb6fe0b99f6b65c378b26f4df3413a570f77f7063569b914c7b9a79",
+      "reference_3x_sha256": "50b3500d2ed6cb791d2586961c84a965a2d66b3b656b48cce676aaaf423c240e"
+    },
+    {
+      "key": "intro-b11-f01",
+      "block": 11,
+      "frame": 1,
+      "file_offset": 535340,
+      "size": 14714,
+      "spans": 934,
+      "art_indexed_sha256": "24f82d8b151ed1841cee80928b05c7718dc39cb8fa957a2a535eac25fbad31e6",
+      "source_capture": "source-131",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b11-f01-1x.png",
+      "reference_3x": "intro-b11-f01-3x.png",
+      "indexed": "intro-b11-f01.idx",
+      "palette": "intro-b11-f01.pal",
+      "palette_sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241",
+      "observed_palette_variants": [
+        {
+          "source": "source-131",
+          "sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "f7c21affa54e82a996c563bd76fec925cbbb6509166cf89a4dffb067246e0f44",
+      "reference_3x_sha256": "abb1a939f94ec4041e9c955c86cb5a0d61e32da14ebd9c5c0b5514de8ffcdb67"
+    },
+    {
+      "key": "intro-b11-f02",
+      "block": 11,
+      "frame": 2,
+      "file_offset": 550054,
+      "size": 13565,
+      "spans": 984,
+      "art_indexed_sha256": "cb41ba32613a3c7d78f8cb8e43fbf05b5f6c827285bd2342db0402550db44930",
+      "source_capture": "source-133",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b11-f02-1x.png",
+      "reference_3x": "intro-b11-f02-3x.png",
+      "indexed": "intro-b11-f02.idx",
+      "palette": "intro-b11-f02.pal",
+      "palette_sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241",
+      "observed_palette_variants": [
+        {
+          "source": "source-133",
+          "sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "a087e6b08f8acbafb6d89cdf48ab7dc24fe4403283cf264f0da5542598e0664a",
+      "reference_3x_sha256": "e341e4193b492d7ed907428f8e6d8977c7899f6c55d3c4ac7e950e3f34d889d5"
+    },
+    {
+      "key": "intro-b11-f03",
+      "block": 11,
+      "frame": 3,
+      "file_offset": 563619,
+      "size": 7630,
+      "spans": 572,
+      "art_indexed_sha256": "a2f425390ecb6d5962bcd040c65892f3409916f566b050390ed598a2d8f0f05a",
+      "source_capture": "source-134",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b11-f03-1x.png",
+      "reference_3x": "intro-b11-f03-3x.png",
+      "indexed": "intro-b11-f03.idx",
+      "palette": "intro-b11-f03.pal",
+      "palette_sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241",
+      "observed_palette_variants": [
+        {
+          "source": "source-134",
+          "sha256": "5af7066f22a8cb59077a0a27e480f4ed118ed5a16406aac3dacf2fd4ca4a6241"
+        },
+        {
+          "source": "source-135",
+          "sha256": "f0ad220f8fc3dd8986df5cb575b6b1491d24762585056d9e9c8e2c94e365e026"
+        },
+        {
+          "source": "source-136",
+          "sha256": "60ee5f7a9d1939b1aa6325ff0aa472b1570d8c0bcb2beb2d44293a352011adcb"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "9726de7dc4de88cb6fe2623322b1e2ebbbf8b04a57705e8ae8653ca6d826a615",
+      "reference_3x_sha256": "3ee80917d0844aeeddf93aa2ebd88ef498e221860b29104f45bd0c825daadcc1"
+    },
+    {
+      "key": "intro-b12-f11",
+      "block": 12,
+      "frame": 11,
+      "file_offset": 609812,
+      "size": 2552,
+      "spans": 376,
+      "art_indexed_sha256": "fa65a5e2e6ef2464832c58b6ca9162c3e9cf3c75e6c36c46d0f2390e67e0ce14",
+      "source_capture": "source-139",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b12-f11-1x.png",
+      "reference_3x": "intro-b12-f11-3x.png",
+      "indexed": "intro-b12-f11.idx",
+      "palette": "intro-b12-f11.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-139",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "9ac0171774f0067bdd204c8580a64cd8a3ae054893b82ab7336d5b98db0f862c",
+      "reference_3x_sha256": "a1fe8bd2c7b99124a76207e84b85f3da9bf7d377cca718e8999cdcd4f0d6269e"
+    },
+    {
+      "key": "intro-b12-f12",
+      "block": 12,
+      "frame": 12,
+      "file_offset": 612364,
+      "size": 2213,
+      "spans": 354,
+      "art_indexed_sha256": "64d0c7380340f84987dd125d41a26a0f3ef332db4332675f5149e02378f85f34",
+      "source_capture": "source-140",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b12-f12-1x.png",
+      "reference_3x": "intro-b12-f12-3x.png",
+      "indexed": "intro-b12-f12.idx",
+      "palette": "intro-b12-f12.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-140",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "475d05ba3a4348cd69c8b4fd17999f8a237263b9a1cf71a949122a2bdf93a825",
+      "reference_3x_sha256": "ca4d95ff18e306e2f132d58aaab92e8fcf95cd99d606a7854fcd73c590f9896a"
+    },
+    {
+      "key": "intro-b12-f13",
+      "block": 12,
+      "frame": 13,
+      "file_offset": 614577,
+      "size": 2213,
+      "spans": 354,
+      "art_indexed_sha256": "36965aceede62690e9624e39110144537122236439de43539b020e49ff966853",
+      "source_capture": "source-141",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b12-f13-1x.png",
+      "reference_3x": "intro-b12-f13-3x.png",
+      "indexed": "intro-b12-f13.idx",
+      "palette": "intro-b12-f13.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-141",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "e1cd58820998a5553faff1e3e7fe7ece3e18c1c499c5a175dd14663d288d72e4",
+      "reference_3x_sha256": "8eaa27e314c8407af6ecbe8afcf73239063a6cf2c824faced38c8643c78fe54e"
+    },
+    {
+      "key": "intro-b12-f14",
+      "block": 12,
+      "frame": 14,
+      "file_offset": 616790,
+      "size": 5389,
+      "spans": 820,
+      "art_indexed_sha256": "902ca4283c8e5df2c520386b326a06ecb2036308509e578a061ea27356b97f97",
+      "source_capture": "source-143",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b12-f14-1x.png",
+      "reference_3x": "intro-b12-f14-3x.png",
+      "indexed": "intro-b12-f14.idx",
+      "palette": "intro-b12-f14.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-143",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "6c27fe8190895f9df356c02928c6e741a0c6caf37675b9d96c12240aa97d8a54",
+      "reference_3x_sha256": "db8c0d39cfc90d2e99d9c758dfb14bfc03fbf7af6fe7b19880af2dcaab2cc1b8"
+    },
+    {
+      "key": "intro-b12-f15",
+      "block": 12,
+      "frame": 15,
+      "file_offset": 622179,
+      "size": 5328,
+      "spans": 827,
+      "art_indexed_sha256": "bcbb3b2e59859e0964b672a8ea860eff19943203f657ca10c1f9dab83ea1d797",
+      "source_capture": "source-144",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b12-f15-1x.png",
+      "reference_3x": "intro-b12-f15-3x.png",
+      "indexed": "intro-b12-f15.idx",
+      "palette": "intro-b12-f15.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-144",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "98f8b01e714ad96928a6aa3b9b4ef06fba2d5116222c781e60e5303b5d737706",
+      "reference_3x_sha256": "dcb53d5e314a617057e7d9b9795af24f199a48f2a2dc182da9333d9862b6c4f0"
+    },
+    {
+      "key": "intro-b12-f16",
+      "block": 12,
+      "frame": 16,
+      "file_offset": 627507,
+      "size": 8696,
+      "spans": 1369,
+      "art_indexed_sha256": "ce4210f5755191a629f27e41b46af7ae798ed5c2c6e2fa2dad0a0a0ca0fed9df",
+      "source_capture": "source-146",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b12-f16-1x.png",
+      "reference_3x": "intro-b12-f16-3x.png",
+      "indexed": "intro-b12-f16.idx",
+      "palette": "intro-b12-f16.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-146",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "88f4d96790fa252c29d415e5cfeee593703356cb731a626957cfbf9a5669dd5b",
+      "reference_3x_sha256": "9fdd88f8e7789a23647bd2ad22684d30bc291141a5cd3b29ef9777a87030e371"
+    },
+    {
+      "key": "intro-b13-f00",
+      "block": 13,
+      "frame": 0,
+      "file_offset": 636265,
+      "size": 4121,
+      "spans": 646,
+      "art_indexed_sha256": "6d437170e68c354826ac46e833b87d29b94f6df57562d7c8f39a4f9c63e04a4e",
+      "source_capture": "source-148",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b13-f00-1x.png",
+      "reference_3x": "intro-b13-f00-3x.png",
+      "indexed": "intro-b13-f00.idx",
+      "palette": "intro-b13-f00.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-148",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "c3ff09e2a26a521ce0cbe79c841dc95c6d8c64f1b9eada135c047172be28a975",
+      "reference_3x_sha256": "039ed87db792b9dd505c47bfc3f2f20eccbad238583c0d25803d4a0feb79148d"
+    },
+    {
+      "key": "intro-b13-f01",
+      "block": 13,
+      "frame": 1,
+      "file_offset": 640386,
+      "size": 2685,
+      "spans": 414,
+      "art_indexed_sha256": "302257fdc76217b2ba68ed5ed6d7545a24a5ffec0acc6b5cffdf4e5da4bdc0af",
+      "source_capture": "source-149",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b13-f01-1x.png",
+      "reference_3x": "intro-b13-f01-3x.png",
+      "indexed": "intro-b13-f01.idx",
+      "palette": "intro-b13-f01.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-149",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "a7d54d5a3a3f145cb695b0de8da668ec5a2707907d0226eda84c03462dcfec14",
+      "reference_3x_sha256": "5a3033d3551b860dfdef3b0874221728f6b23267981af2459202ab804360bd56"
+    },
+    {
+      "key": "intro-b13-f02",
+      "block": 13,
+      "frame": 2,
+      "file_offset": 643071,
+      "size": 2144,
+      "spans": 326,
+      "art_indexed_sha256": "62c38dc763fddcfa5a40476af1f01ae400e0e22c9029317003ac139e2342f88c",
+      "source_capture": "source-150",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b13-f02-1x.png",
+      "reference_3x": "intro-b13-f02-3x.png",
+      "indexed": "intro-b13-f02.idx",
+      "palette": "intro-b13-f02.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-150",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "8be1774ac376ac3b70d918cb037c18401f9f8214b4df198fe2dbf2603afb7e02",
+      "reference_3x_sha256": "332a6c6da19918cac359fbf3a27aa0f6828aa095942f4d1add9581907ec7e2ee"
+    },
+    {
+      "key": "intro-b13-f03",
+      "block": 13,
+      "frame": 3,
+      "file_offset": 645215,
+      "size": 1143,
+      "spans": 102,
+      "art_indexed_sha256": "cc021648c09f791495a572e51a0b9995fc48de703693113edce79c548936bfef",
+      "source_capture": "source-151",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b13-f03-1x.png",
+      "reference_3x": "intro-b13-f03-3x.png",
+      "indexed": "intro-b13-f03.idx",
+      "palette": "intro-b13-f03.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-151",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "d8a4a46933ec12cc9d45bcf1002a344144783a1f48735d467e606b29294dd24a",
+      "reference_3x_sha256": "a7a7c41c94d3ad496ad3547f4c76e1fb5059158898b4c5157d89c056bda27605"
+    },
+    {
+      "key": "intro-b13-f04",
+      "block": 13,
+      "frame": 4,
+      "file_offset": 646358,
+      "size": 508,
+      "spans": 35,
+      "art_indexed_sha256": "f5ecf04528552364eb4e3a6bebf79310e2331f422dce2f036c59caddbbbe6893",
+      "source_capture": "source-152",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b13-f04-1x.png",
+      "reference_3x": "intro-b13-f04-3x.png",
+      "indexed": "intro-b13-f04.idx",
+      "palette": "intro-b13-f04.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-152",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "c4a3949f1b56c2b6764fe6bb3eb1736a123833fc07df06a9b766712bc05b8fb3",
+      "reference_3x_sha256": "e89f3f50083d9eca8c96f7bcc5573f6da631a262a92dde58945d66ab53578349"
+    },
+    {
+      "key": "intro-b13-f05",
+      "block": 13,
+      "frame": 5,
+      "file_offset": 646866,
+      "size": 409,
+      "spans": 29,
+      "art_indexed_sha256": "033baeb33d887f824e2b88a97654e4f12b7784d49ffc5b57dac01199cd1b498c",
+      "source_capture": "source-154",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b13-f05-1x.png",
+      "reference_3x": "intro-b13-f05-3x.png",
+      "indexed": "intro-b13-f05.idx",
+      "palette": "intro-b13-f05.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-154",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "9692c6a4be35c090c65fe77719d8e9cf52246cd09202368392f183fda6983424",
+      "reference_3x_sha256": "592f86719a7ee3dd5d52fbbd0aad48653094404b3b298952e6b63af0c45d6a76"
+    },
+    {
+      "key": "intro-b13-f06",
+      "block": 13,
+      "frame": 6,
+      "file_offset": 647275,
+      "size": 322,
+      "spans": 24,
+      "art_indexed_sha256": "f263d88d2a3f680fe0df2aa5b60ff147a98b720f52ac8e0b1b733884b852f54f",
+      "source_capture": "source-155",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b13-f06-1x.png",
+      "reference_3x": "intro-b13-f06-3x.png",
+      "indexed": "intro-b13-f06.idx",
+      "palette": "intro-b13-f06.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-155",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "902d0ec431b02aaa3d26eefdf70a934d15b041973a93ecbfc1babc62b7298103",
+      "reference_3x_sha256": "5fb9e369165a6f68a38f580814cf1da4427cc38e60c5d3cf7a2523ac075cb6a1"
+    },
+    {
+      "key": "intro-b13-f07",
+      "block": 13,
+      "frame": 7,
+      "file_offset": 647597,
+      "size": 325,
+      "spans": 21,
+      "art_indexed_sha256": "318f55053263e9005f69dd7d7758a2275064f2b3914a02f6b636d40342fba987",
+      "source_capture": "source-156",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b13-f07-1x.png",
+      "reference_3x": "intro-b13-f07-3x.png",
+      "indexed": "intro-b13-f07.idx",
+      "palette": "intro-b13-f07.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-156",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "b6a3ffa01508e7f3d67cc2c4249e3d12ee1ee83386fc25606042a76306c189a0",
+      "reference_3x_sha256": "299d7a40f98ad3803949db05defa3e9401d297e4b6aee8293a3ba45374fe9e2e"
+    },
+    {
+      "key": "intro-b13-f08",
+      "block": 13,
+      "frame": 8,
+      "file_offset": 647922,
+      "size": 162,
+      "spans": 13,
+      "art_indexed_sha256": "74278bb6c8862637fbd83d83f8853c4e171e0b4313706383965ee495637cfe4f",
+      "source_capture": "source-157",
+      "source_size": [
+        320,
+        168
+      ],
+      "output_size": [
+        960,
+        504
+      ],
+      "source_file": "INTRO.BMA",
+      "source_file_sha256": "12f3944652b2ae77feb3c0b16435cb2a3d855c26c388e6d6f97c277abedcb94f",
+      "reference_1x": "intro-b13-f08-1x.png",
+      "reference_3x": "intro-b13-f08-3x.png",
+      "indexed": "intro-b13-f08.idx",
+      "palette": "intro-b13-f08.pal",
+      "palette_sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0",
+      "observed_palette_variants": [
+        {
+          "source": "source-157",
+          "sha256": "4de8b4abb1651a3d104da38abcce8e8330e9730b666d47262daa1e961e2457b0"
+        }
+      ],
+      "style": "B",
+      "state": "needs-HD-frame-or-proven-layer-composition",
+      "prompt": "依原版3倍參考及已接受的同場景HD重畫。保留全部構圖、角色姿勢、動畫相位、石框、原配色與黑邊；960×504不透明RGBA。下方字幕由既有系統處理，不畫文字，不用濾鏡放大。",
+      "reference_1x_sha256": "3c7ee72bccab348333563ac74fdb4f39102272077d842fe3821d1aaddc25a307",
+      "reference_3x_sha256": "f7e3596fa12d1abcc5ecf9556897140bbfd3b961bcfd18879ee75c25c7d36972"
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # 研究索引
 
+- [片頭BMA來源與繪製中途狀態](031-intro-bma.md)：#74來源階段完成，動畫接入仍DRAFT。[固定來源](031-intro-bma-source.json)保存14塊133圖、正常原版／Go各5100格及全部分段來源；[98種畫面請求](031-intro-bma-requests.json)有六種已接受HD，其餘相位待補。393檔由乾淨Git工具重生相同，原版圖只留本機。
+
 - [長戰鬥遮擋與擷取時點勘誤](030-hd-occlusion.md)：#73。029的13格鏡頭分類已因時點錯一格而勘誤；[來源](030-hd-occlusion-source.json)核對透明特效、地形與CPIC完整合成，[正常收據](030-hd-occlusion-runtime.json)保存10500格DEMO閃現19→0、原版狀態及127檔相同。素材與四格上限不變，抽樣CONFORMED，未外推全遊戲。
 
 - [本作無敵欄位與收尾證據](029-invincible.md)：#72，[來源](029-invincible-source.json)核對兩個HP、隊伍、健康／陣營及效果；[執行期收據](029-invincible-runtime.json)保存正常讀檔／DEMO、七個原版受控傷害與乾淨Git重編。長戰鬥19格的分類已由[030](030-hd-occlusion.md)勘誤並接續處理；F1功能抽樣CONFORMED，見[規格017](../spec/017-invincible.md)。

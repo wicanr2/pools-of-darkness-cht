@@ -3,6 +3,8 @@
 2026-10-25。Issue：[#10](https://github.com/wicanr2/pools-of-darkness-cht/issues/10)。
 來源與逐幀時序已確認，[字幕規格024](../spec/024-intro-subtitles.md)的八組台詞為CONFORMED。動畫HD仍為DRAFT。前置：[研究003](003-dosgolem-startup.md)、[004](004-output-paths.md)。
 
+2026-11-01補充：BMA來源已由031對應，見[後續研究](031-intro-bma.md)。本頁b44當時的「BMA位移未知」保留歷史；目前已能解碼14塊133圖並核對正常呼叫，不代表其他動畫相位的HD素材或呈現已完成。
+
 ## 正常原版路徑
 
 沿既有G2的常駐`ADLIB.COM`、程式路徑`C:\POD\SND.COM`及`CONTROL.EXE`鏈，不送跳過鍵。
