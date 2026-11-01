@@ -11,6 +11,7 @@ type HDLayers struct {
 	walls       *wallHD
 	exact       *exactHD
 	intro       *introHD
+	final       *introHD
 	composite   *combatComposite
 	classified  bool
 	lastIndex   []byte
@@ -55,6 +56,10 @@ func LoadHDLayers(dir string) (*HDLayers, int, error) {
 	if err != nil {
 		return nil, 0, err
 	}
+	final, err := loadFinalHD(dir)
+	if err != nil {
+		return nil, 0, err
+	}
 	count := 0
 	if combat != nil {
 		count += len(combat.tiles)
@@ -74,7 +79,16 @@ func LoadHDLayers(dir string) (*HDLayers, int, error) {
 	if intro != nil {
 		count += 97
 	}
-	return &HDLayers{combat: combat, actors: actors, encounters: encounters, walls: walls, exact: exact, intro: intro, composite: newCombatComposite(combat, actors)}, count, nil
+	if final != nil {
+		seen := map[string]bool{}
+		for _, frame := range final.meta.Frames {
+			if frame.PNG.Path != "" {
+				seen[frame.PNG.SHA] = true
+			}
+		}
+		count += len(seen)
+	}
+	return &HDLayers{combat: combat, actors: actors, encounters: encounters, walls: walls, exact: exact, intro: intro, final: final, composite: newCombatComposite(combat, actors)}, count, nil
 }
 
 func (h *HDLayers) Frame(indexed []byte, pal [256][3]uint8) {
@@ -82,6 +96,7 @@ func (h *HDLayers) Frame(indexed []byte, pal [256][3]uint8) {
 		return
 	}
 	h.intro.frame(indexed, pal)
+	h.final.frame(indexed, pal)
 	if len(indexed) != 320*200 {
 		h.classified = false
 		h.classify(indexed, pal)

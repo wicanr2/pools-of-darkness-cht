@@ -119,7 +119,7 @@ func Build(raw []byte, bundle, original, output string) (report Report, err erro
 		originalNames[key] = entry.Name()
 	}
 	archives := map[string]map[int][]byte{}
-	var movie map[[2]int]bmaFrame
+	movies := map[string]map[[2]int]bmaFrame{}
 	for name, want := range m.Originals {
 		if !cleanName(name) || path.Base(name) != name || !validHash(want) {
 			return report, fmt.Errorf("原版清單不合法")
@@ -141,12 +141,12 @@ func Build(raw []byte, bundle, original, output string) (report Report, err erro
 			if e != nil {
 				return report, fmt.Errorf("%s：%w", name, e)
 			}
-		case name == "INTRO.BMA":
-			movie, e = bma(data)
+		case name == "INTRO.BMA" || name == "FINAL.BMA":
+			movies[name], e = bma(data)
 			if e != nil {
 				return report, e
 			}
-		case name == "INTRO.ACF":
+		case name == "INTRO.ACF" || name == "FINAL.ACF":
 		default:
 			return report, fmt.Errorf("未知原版來源%s", name)
 		}
@@ -186,7 +186,14 @@ func Build(raw []byte, bundle, original, output string) (report Report, err erro
 			}
 			data = frames[row.Frame]
 		case "original-intro":
-			frame, ok := movie[[2]int{row.Block, row.Frame}]
+			archive := row.Archive
+			if archive == "" {
+				archive = "INTRO.BMA"
+			}
+			if archive != "INTRO.BMA" && archive != "FINAL.BMA" {
+				return report, fmt.Errorf("未知BMA來源")
+			}
+			frame, ok := movies[archive][[2]int{row.Block, row.Frame}]
 			if !ok {
 				return report, fmt.Errorf("BMA來源影格越界")
 			}

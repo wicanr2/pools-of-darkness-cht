@@ -551,6 +551,10 @@ func (g *game) finish() error {
 		b, _ := json.Marshal(s)
 		fmt.Fprintf(os.Stderr, "pod-play: intro_hd=%s\n", b)
 	}
+	if s := g.live.FinalHDStats(); s.Calls > 0 {
+		b, _ := json.Marshal(s)
+		fmt.Fprintf(os.Stderr, "pod-play: final_hd=%s\n", b)
+	}
 	if g.drawReport != "" {
 		b, err := json.MarshalIndent(g.live.Direct.Stats(), "", "  ")
 		if err != nil {

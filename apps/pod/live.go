@@ -256,6 +256,7 @@ func (l *Live) journalEntry(text []byte, mem CPUView) {
 func (l *Live) ModeChange() {
 	if l.HDLayers != nil {
 		l.intro.reset()
+		l.final.reset()
 	}
 	l.glyphText.reset()
 	l.Direct.Reset()

@@ -55,6 +55,7 @@ type IntroHDStats struct {
 	Calls, KnownCalls, Full, Prefix, Clear, Fade, Rejected uint64
 }
 type introHD struct {
+	relocated                        bool
 	meta                             introMeta
 	frames                           []*introFrame
 	byCall                           map[[2]int]*introFrame
@@ -70,18 +71,27 @@ type introHD struct {
 }
 
 func loadIntroHD(dir string) (*introHD, error) {
-	raw, err := os.ReadFile(filepath.Join(dir, "intro.json"))
+	return loadMovieHD(dir, "intro.json", 14, 133, false)
+}
+
+func loadFinalHD(dir string) (*introHD, error) {
+	return loadMovieHD(dir, "final.json", 6, 58, true)
+}
+
+// FINAL共用已驗BMA格式；兩份來源各自載入、觀測和清除，不改片頭條件。
+func loadMovieHD(dir, name string, blockCount, frameCount int, relocated bool) (*introHD, error) {
+	raw, err := os.ReadFile(filepath.Join(dir, name))
 	if os.IsNotExist(err) {
 		return nil, nil
 	}
 	if err != nil {
 		return nil, err
 	}
-	h := &introHD{byCall: map[[2]int]*introFrame{}, blocks: map[string]int{}}
+	h := &introHD{byCall: map[[2]int]*introFrame{}, blocks: map[string]int{}, relocated: relocated}
 	if err = json.Unmarshal(raw, &h.meta); err != nil {
 		return nil, err
 	}
-	if h.meta.Version != 1 || h.meta.Scale != 3 || len(h.meta.Blocks) != 14 || len(h.meta.Frames) != 133 {
+	if h.meta.Version != 1 || h.meta.Scale != 3 || len(h.meta.Blocks) != blockCount || len(h.meta.Frames) != frameCount {
 		return nil, fmt.Errorf("intro.json：片頭格式／數量不符")
 	}
 	checked := func(f introFile) ([]byte, error) {
@@ -109,12 +119,12 @@ func loadIntroHD(dir string) (*introHD, error) {
 			pals[p.SHA] = true
 		}
 	}
-	if counts != 133 {
+	if counts != frameCount {
 		return nil, fmt.Errorf("片頭來源圖數不符")
 	}
 	images := map[string][]byte{}
 	for n, m := range h.meta.Frames {
-		if m.Block < 0 || m.Block >= 14 || m.Frame < 0 || m.Frame >= h.meta.Blocks[m.Block].Count {
+		if m.Block < 0 || m.Block >= blockCount || m.Frame < 0 || m.Frame >= h.meta.Blocks[m.Block].Count {
 			return nil, fmt.Errorf("片頭相位越界")
 		}
 		key := [2]int{m.Block, m.Frame}
@@ -199,7 +209,7 @@ func (h *introHD) reset() {
 	}
 }
 func (h *introHD) observe(v StepCPU) {
-	if h == nil || v.CS() != 0x48a1 || v.IP() != 0x6733 {
+	if h == nil || (!h.relocated && v.CS() != 0x48a1) || v.IP() != 0x6733 {
 		return
 	}
 	if h.seenStep && h.lastStep == v.Steps() {
@@ -217,7 +227,11 @@ func (h *introHD) observe(v StepCPU) {
 		}
 		return b
 	}
-	if fmt.Sprintf("%x", sha256.Sum256(read(0x48a10+0x6733, 255))) != introImageCodeSHA {
+	code := linear(v.CS(), 0x6733)
+	if code < 0x500 || code+255 > 0xa0000 {
+		return
+	}
+	if fmt.Sprintf("%x", sha256.Sum256(read(code, 255))) != introImageCodeSHA {
 		return
 	}
 	stack := linear(v.SS(), v.SP())
@@ -374,11 +388,13 @@ func (h *introHD) draw(out []byte, scale int) {
 func (h *HDLayers) observeIntro(v StepCPU) {
 	if h != nil {
 		h.intro.observe(v)
+		h.final.observe(v)
 	}
 }
 func (h *HDLayers) drawIntroArt(out []byte, scale int) {
 	if h != nil {
 		h.intro.draw(out, scale)
+		h.final.draw(out, scale)
 	}
 }
 func (l *Live) IntroHDStats() IntroHDStats {
@@ -386,4 +402,11 @@ func (l *Live) IntroHDStats() IntroHDStats {
 		return IntroHDStats{}
 	}
 	return l.intro.stats
+}
+
+func (l *Live) FinalHDStats() IntroHDStats {
+	if l.HDLayers == nil || l.final == nil {
+		return IntroHDStats{}
+	}
+	return l.final.stats
 }
