@@ -7,7 +7,7 @@
 
 在其他機器重建請讀[SETUP.md](SETUP.md)。必要HD成品、開源字型來源與重建清單已存於本儲存庫；原版遊戲資料需自備。
 
-已有`v.0.1.0-20261101`三平台可試玩候選：基本patch三包、本機完整版六包。Linux已抽驗demo中止、另存與冷讀；Windows以Wine驗開場，macOS僅驗universal結構。操作與重建見[候選封包入口](SETUP.md#候選封包)，完整結果見[驗收紀錄](docs/re/026-package-runtime.json)。原案尚未全部完成，配樂、多語系、無敵、完整動畫HD與HD patch仍待交付。
+已有`v.0.1.0-20261101`三平台可試玩候選：基本patch三包、本機完整版六包。Linux已抽驗demo中止、另存與冷讀；Windows以Wine驗開場，macOS僅驗universal結構。操作與重建見[候選封包入口](SETUP.md#候選封包)，完整結果見[驗收紀錄](docs/re/026-package-runtime.json)。這九包不含後續簡中、英文面板及F1無敵。原案尚未全部完成，配樂、日韓語系、完整動畫HD與HD patch等仍待交付。
 
 ## 重返菲蘭城
 
@@ -349,6 +349,12 @@ HD 只覆蓋來源的非零前景，地下城背景仍可從腿部與身體間�
 開場選單按 `P` 進入遊戲，按 `D` 播放示範，選單不會自行逾時。
 示範中按一般遊戲鍵可中止並回到選單，包含戰鬥途中；F2、F12 等前端快捷鍵保留呈現操作。
 [中斷與重播驗收](docs/spec/018-demo-control.md#demo-conformed)另列。
+
+目前開發版可按 `F1` 或工具列的「無敵」切換我方無敵，預設關閉。開啟時保護一般與戰鬥HP，阻擋健康惡化，移除已核對的失明、緩慢、麻痺、睡眠與中毒效果。治療與敵方照常；關閉後不補扣已擋下的傷害，玩家存檔會保留受保護後的結果。[抽驗範圍與限制](docs/spec/017-invincible.md)另列。
+
+![正常DEMO開啟無敵與完整工具列](docs/screenshots/invincible-toolbar-window.png)
+
+這張英文DEMO截圖的工具列「God」亮起。原版仍顯示傷害訊息，HP寫入由守衛保護。
 
 現況見 [CONTEXT.md](CONTEXT.md)，工作項目見
 [GitHub Issues](https://github.com/wicanr2/pools-of-darkness-cht/issues)，協作規則見 [AGENTS.md](AGENTS.md)。

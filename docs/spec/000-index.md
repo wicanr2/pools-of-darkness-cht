@@ -31,7 +31,7 @@
 | 014 配樂 | 未開始 | #11 | — | — |
 | [015 多語系](015-multilingual.md) | 簡中及英文面板抽樣CONFORMED | #11、#26、#70、#71 | 簡中介面／物品、手札、攻略、地圖、音譯及原生字模接入；英文99手札、78攻略、已知地圖及七點接入。三語正常4800格同原版狀態及132檔，日韓仍DRAFT | docs/re/028-english-panels-runtime.json、027-zhcn-runtime.json；014-title-runtime.json、014-english-front-runtime.json |
 | 016 推廣影片 | 未開始 | #11 | — | — |
-| 017 作弊：我方無敵 | 停用 | #11 | 位址是前作值，`CheatVerified` 為假 | — |
+| [017 作弊：我方無敵](017-invincible.md) | CONFORMED，功能抽樣 | #11、#72 | 本作兩個HP、健康／陣營及五種有害效果；正常讀檔／DEMO、七個原版受控傷害及乾淨Git重編通過。長戰鬥19格量尺中6格既有遮擋疑點歸#16，未外推零閃現 | [研究029](../re/029-invincible.md)、[執行期收據](../re/029-invincible-runtime.json) |
 | [018 開場 demo 控制](018-demo-control.md) | CONFORMED | #13 | 選單不逾時；對話／戰鬥中斷、重播、正常進入、F12與2倍通過。已啟用a83043c | [固定收據](../re/020-demo-control-runtime.json)；`tools/demo-control-receipt.sh` |
 | [019 CPU 模擬速度](019-cpu-speed.md) | CONFORMED，功能抽樣 | #14 | 正常2／3倍讀檔、六倍率、Draw回饋與正常關窗通過；1x狀態及偏好保持；使用者取消30fps要求 | [固定倍率](../re/021-toolbar-runtime.json)、[3倍HD](../re/022-speed-feedback-hd-runtime.json)、[2倍](../re/022-speed-feedback-2x-runtime.json) |
 | [020 切換列字級](020-toolbar-font.md) | CONFORMED，正常前端抽樣 | #15 | 原生12／22像素字模；2／3倍三級、英文抽樣與偏好重啟通過，遊戲狀態不變 | [固定收據](../re/021-toolbar-runtime.json)；`tools/font-dev.sh` |

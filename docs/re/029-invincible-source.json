@@ -1,0 +1,3309 @@
+{
+  "date": "2026-11-01",
+  "issue": 72,
+  "level": "confirmed field structure and consumers; semantic limits in029 note",
+  "inputs": {
+    "GAME.EXE": "35ad635e558852925b7028a921aacafc2df8e84be24a8a1136c6267471948d69",
+    "GAME.OVR": "885d6a07a3658f0688dc9d0630dfa984683a3d1d1e515a8e9909d29f62012485"
+  },
+  "address_spaces": "runtime segment:offset for DS and RAM; OVR file offsets for instruction evidence; IDA EA plus ida_base retained separately",
+  "ida": [
+    {
+      "path": "ida-final-fields.json",
+      "sha256": "e728082d325b96d80f22ba778b48e3009ac4ddd840436ab989dcd6a75cf9c422",
+      "ida_version": "9.4",
+      "ida_base": 352,
+      "address_space": "GAME.OVR file offset; IDA EA separately retained; no runtime CS claim",
+      "rows": [
+        {
+          "file_offset": 92925,
+          "ida_ea": 93277,
+          "bytes": "c47ebb",
+          "text": "les     di, [bp-45h]",
+          "original_function": null,
+          "xrefs": []
+        },
+        {
+          "file_offset": 92928,
+          "ida_ea": 93280,
+          "bytes": "268a85b200",
+          "text": "mov     al, es:[di+0B2h]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 93277,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 92933,
+          "ida_ea": 93285,
+          "bytes": "c43eee9c",
+          "text": "les     di, dword_9E4E",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 93280,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 92937,
+          "ida_ea": 93289,
+          "bytes": "268885fc01",
+          "text": "mov     es:[di+1FCh], al",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 93285,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 92942,
+          "ida_ea": 93294,
+          "bytes": "ff36f09c",
+          "text": "push    word ptr dword_9E4E+2",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 93289,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 92946,
+          "ida_ea": 93298,
+          "bytes": "ff36ee9c",
+          "text": "push    word ptr dword_9E4E",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 93294,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 92950,
+          "ida_ea": 93302,
+          "bytes": "9a4d00ec00",
+          "text": "call    far ptr sub_F0D",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 93298,
+              "type": 21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "ida-final-health.json",
+      "sha256": "90d43ccbdfbf3ab7365e789533e90091abe9764c0e38009c8729491f52e55a16",
+      "ida_version": "9.4",
+      "ida_base": 352,
+      "address_space": "GAME.OVR file offset; IDA EA separately retained; no runtime CS claim",
+      "rows": [
+        {
+          "file_offset": 19993,
+          "ida_ea": 20345,
+          "bytes": "a1f29c",
+          "text": "mov     ax, word_9E52",
+          "original_function": "sub_4F01",
+          "xrefs": [
+            {
+              "source": 20342,
+              "type": 21
+            },
+            {
+              "source": 20322,
+              "type": 19
+            }
+          ]
+        },
+        {
+          "file_offset": 19996,
+          "ida_ea": 20348,
+          "bytes": "8b16f49c",
+          "text": "mov     dx, word_9E54",
+          "original_function": "sub_4F01",
+          "xrefs": [
+            {
+              "source": 20345,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 20000,
+          "ida_ea": 20352,
+          "bytes": "8946fc",
+          "text": "mov     [bp-4], ax",
+          "original_function": "sub_4F01",
+          "xrefs": [
+            {
+              "source": 20348,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 20003,
+          "ida_ea": 20355,
+          "bytes": "8956fe",
+          "text": "mov     [bp-2], dx",
+          "original_function": "sub_4F01",
+          "xrefs": [
+            {
+              "source": 20352,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 20006,
+          "ida_ea": 20358,
+          "bytes": "803e148800",
+          "text": "cmp     byte_8974, 0",
+          "original_function": "sub_4F01",
+          "xrefs": [
+            {
+              "source": 20355,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 20011,
+          "ida_ea": 20363,
+          "bytes": "7403",
+          "text": "jz      short loc_4F90",
+          "original_function": "sub_4F01",
+          "xrefs": [
+            {
+              "source": 20358,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 20013,
+          "ida_ea": 20365,
+          "bytes": "e93f01",
+          "text": "jmp     loc_50CF",
+          "original_function": "sub_4F01",
+          "xrefs": [
+            {
+              "source": 20363,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 20016,
+          "ida_ea": 20368,
+          "bytes": "8b46fc",
+          "text": "mov     ax, [bp-4]",
+          "original_function": "sub_4F01",
+          "xrefs": [
+            {
+              "source": 20363,
+              "type": 19
+            },
+            {
+              "source": 20682,
+              "type": 19
+            }
+          ]
+        },
+        {
+          "file_offset": 20019,
+          "ida_ea": 20371,
+          "bytes": "0b46fe",
+          "text": "or      ax, [bp-2]",
+          "original_function": "sub_4F01",
+          "xrefs": [
+            {
+              "source": 20368,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 20022,
+          "ida_ea": 20374,
+          "bytes": "7503",
+          "text": "jnz     short loc_4F9B",
+          "original_function": "sub_4F01",
+          "xrefs": [
+            {
+              "source": 20371,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 20024,
+          "ida_ea": 20376,
+          "bytes": "e93201",
+          "text": "jmp     loc_50CD",
+          "original_function": "sub_4F01",
+          "xrefs": [
+            {
+              "source": 20374,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 20216,
+          "ida_ea": 20568,
+          "bytes": "c47efc",
+          "text": "les     di, [bp-4]",
+          "original_function": "sub_4F01",
+          "xrefs": [
+            {
+              "source": 20562,
+              "type": 21
+            },
+            {
+              "source": 20437,
+              "type": 19
+            },
+            {
+              "source": 20493,
+              "type": 19
+            },
+            {
+              "source": 20497,
+              "type": 19
+            },
+            {
+              "source": 20528,
+              "type": 19
+            },
+            {
+              "source": 20539,
+              "type": 19
+            }
+          ]
+        },
+        {
+          "file_offset": 20219,
+          "ida_ea": 20571,
+          "bytes": "268b85e301",
+          "text": "mov     ax, es:[di+1E3h]",
+          "original_function": "sub_4F01",
+          "xrefs": [
+            {
+              "source": 20568,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 20224,
+          "ida_ea": 20576,
+          "bytes": "268b95e501",
+          "text": "mov     dx, es:[di+1E5h]",
+          "original_function": "sub_4F01",
+          "xrefs": [
+            {
+              "source": 20571,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 20229,
+          "ida_ea": 20581,
+          "bytes": "8946fc",
+          "text": "mov     [bp-4], ax",
+          "original_function": "sub_4F01",
+          "xrefs": [
+            {
+              "source": 20576,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 20232,
+          "ida_ea": 20584,
+          "bytes": "8956fe",
+          "text": "mov     [bp-2], dx",
+          "original_function": "sub_4F01",
+          "xrefs": [
+            {
+              "source": 20581,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 27905,
+          "ida_ea": 28257,
+          "bytes": "3ded01",
+          "text": "cmp     ax, 1EDh",
+          "original_function": "sub_6E00",
+          "xrefs": [
+            {
+              "source": 28242,
+              "type": 19
+            }
+          ]
+        },
+        {
+          "file_offset": 27908,
+          "ida_ea": 28260,
+          "bytes": "7523",
+          "text": "jnz     short loc_6E89",
+          "original_function": "sub_6E00",
+          "xrefs": [
+            {
+              "source": 28257,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 27910,
+          "ida_ea": 28262,
+          "bytes": "8a4606",
+          "text": "mov     al, [bp+6]",
+          "original_function": "sub_6E00",
+          "xrefs": [
+            {
+              "source": 28260,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 27913,
+          "ida_ea": 28265,
+          "bytes": "c47efb",
+          "text": "les     di, [bp-5]",
+          "original_function": "sub_6E00",
+          "xrefs": [
+            {
+              "source": 28262,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 27916,
+          "ida_ea": 28268,
+          "bytes": "268885ed01",
+          "text": "mov     es:[di+1EDh], al",
+          "original_function": "sub_6E00",
+          "xrefs": [
+            {
+              "source": 28265,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 27921,
+          "ida_ea": 28273,
+          "bytes": "c47efb",
+          "text": "les     di, [bp-5]",
+          "original_function": "sub_6E00",
+          "xrefs": [
+            {
+              "source": 28268,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 27924,
+          "ida_ea": 28276,
+          "bytes": "2680bded0100",
+          "text": "cmp     byte ptr es:[di+1EDh], 0",
+          "original_function": "sub_6E00",
+          "xrefs": [
+            {
+              "source": 28273,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 27930,
+          "ida_ea": 28282,
+          "bytes": "b000",
+          "text": "mov     al, 0",
+          "original_function": "sub_6E00",
+          "xrefs": [
+            {
+              "source": 28276,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 27932,
+          "ida_ea": 28284,
+          "bytes": "7501",
+          "text": "jnz     short loc_6E7F",
+          "original_function": "sub_6E00",
+          "xrefs": [
+            {
+              "source": 28282,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 27934,
+          "ida_ea": 28286,
+          "bytes": "40",
+          "text": "inc     ax",
+          "original_function": "sub_6E00",
+          "xrefs": [
+            {
+              "source": 28284,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 27935,
+          "ida_ea": 28287,
+          "bytes": "c47efb",
+          "text": "les     di, [bp-5]",
+          "original_function": "sub_6E00",
+          "xrefs": [
+            {
+              "source": 28286,
+              "type": 21
+            },
+            {
+              "source": 28284,
+              "type": 19
+            }
+          ]
+        },
+        {
+          "file_offset": 27938,
+          "ida_ea": 28290,
+          "bytes": "268885ee01",
+          "text": "mov     es:[di+1EEh], al",
+          "original_function": "sub_6E00",
+          "xrefs": [
+            {
+              "source": 28287,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 27943,
+          "ida_ea": 28295,
+          "bytes": "eb22",
+          "text": "jmp     short loc_6EAB",
+          "original_function": "sub_6E00",
+          "xrefs": [
+            {
+              "source": 28290,
+              "type": 21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "ida-final-effects.json",
+      "sha256": "cdcefb44b55e67b5ae19f6bb47b3a6fdbdf3d417300a673890b1bd0a6c27c3f9",
+      "ida_version": "9.4",
+      "ida_base": 352,
+      "address_space": "GAME.OVR file offset; IDA EA separately retained; no runtime CS claim",
+      "rows": [
+        {
+          "file_offset": 222815,
+          "ida_ea": 223167,
+          "bytes": "55",
+          "text": "push    bp",
+          "original_function": null,
+          "xrefs": []
+        },
+        {
+          "file_offset": 222816,
+          "ida_ea": 223168,
+          "bytes": "89e5",
+          "text": "mov     bp, sp",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223167,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222818,
+          "ida_ea": 223170,
+          "bytes": "83ec02",
+          "text": "sub     sp, 2",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223168,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222821,
+          "ida_ea": 223173,
+          "bytes": "c646fe00",
+          "text": "mov     byte ptr [bp-2], 0",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223170,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222825,
+          "ida_ea": 223177,
+          "bytes": "c47e0c",
+          "text": "les     di, [bp+0Ch]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223173,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222828,
+          "ida_ea": 223180,
+          "bytes": "268b854301",
+          "text": "mov     ax, es:[di+143h]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223177,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222833,
+          "ida_ea": 223185,
+          "bytes": "268b954501",
+          "text": "mov     dx, es:[di+145h]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223180,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222838,
+          "ida_ea": 223190,
+          "bytes": "c47e06",
+          "text": "les     di, [bp+6]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223185,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222841,
+          "ida_ea": 223193,
+          "bytes": "268905",
+          "text": "mov     es:[di], ax",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223190,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222844,
+          "ida_ea": 223196,
+          "bytes": "26895502",
+          "text": "mov     es:[di+2], dx",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223193,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222848,
+          "ida_ea": 223200,
+          "bytes": "c47e06",
+          "text": "les     di, [bp+6]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223196,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222851,
+          "ida_ea": 223203,
+          "bytes": "268b05",
+          "text": "mov     ax, es:[di]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223200,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222854,
+          "ida_ea": 223206,
+          "bytes": "260b4502",
+          "text": "or      ax, es:[di+2]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223203,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222858,
+          "ida_ea": 223210,
+          "bytes": "7434",
+          "text": "jz      short loc_6820",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223206,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222860,
+          "ida_ea": 223212,
+          "bytes": "807efe00",
+          "text": "cmp     byte ptr [bp-2], 0",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223210,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222864,
+          "ida_ea": 223216,
+          "bytes": "752e",
+          "text": "jnz     short loc_6820",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223212,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222866,
+          "ida_ea": 223218,
+          "bytes": "c47e06",
+          "text": "les     di, [bp+6]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223216,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222869,
+          "ida_ea": 223221,
+          "bytes": "26c43d",
+          "text": "les     di, es:[di]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223218,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222872,
+          "ida_ea": 223224,
+          "bytes": "268a05",
+          "text": "mov     al, es:[di]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223221,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222875,
+          "ida_ea": 223227,
+          "bytes": "3a460a",
+          "text": "cmp     al, [bp+0Ah]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223224,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222878,
+          "ida_ea": 223230,
+          "bytes": "7506",
+          "text": "jnz     short loc_6806",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223227,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222880,
+          "ida_ea": 223232,
+          "bytes": "c646fe01",
+          "text": "mov     byte ptr [bp-2], 1",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223230,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222884,
+          "ida_ea": 223236,
+          "bytes": "eb18",
+          "text": "jmp     short loc_681E",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223232,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222886,
+          "ida_ea": 223238,
+          "bytes": "c47e06",
+          "text": "les     di, [bp+6]",
+          "original_function": null,
+          "xrefs": []
+        },
+        {
+          "file_offset": 222889,
+          "ida_ea": 223241,
+          "bytes": "26c43d",
+          "text": "les     di, es:[di]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223238,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222892,
+          "ida_ea": 223244,
+          "bytes": "268b4505",
+          "text": "mov     ax, es:[di+5]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223241,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222896,
+          "ida_ea": 223248,
+          "bytes": "268b5507",
+          "text": "mov     dx, es:[di+7]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223244,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222900,
+          "ida_ea": 223252,
+          "bytes": "c47e06",
+          "text": "les     di, [bp+6]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223248,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222903,
+          "ida_ea": 223255,
+          "bytes": "268905",
+          "text": "mov     es:[di], ax",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223252,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222906,
+          "ida_ea": 223258,
+          "bytes": "26895502",
+          "text": "mov     es:[di+2], dx",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223255,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222910,
+          "ida_ea": 223262,
+          "bytes": "ebc0",
+          "text": "jmp     short near ptr loc_67DE+2",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223258,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222912,
+          "ida_ea": 223264,
+          "bytes": "8a46fe",
+          "text": "mov     al, [bp-2]",
+          "original_function": null,
+          "xrefs": []
+        },
+        {
+          "file_offset": 222915,
+          "ida_ea": 223267,
+          "bytes": "8846ff",
+          "text": "mov     [bp-1], al",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223264,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222918,
+          "ida_ea": 223270,
+          "bytes": "8a46ff",
+          "text": "mov     al, [bp-1]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223267,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222921,
+          "ida_ea": 223273,
+          "bytes": "89ec",
+          "text": "mov     sp, bp",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223270,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222923,
+          "ida_ea": 223275,
+          "bytes": "5d",
+          "text": "pop     bp",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223273,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222924,
+          "ida_ea": 223276,
+          "bytes": "ca0a00",
+          "text": "retf    0Ah",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223275,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 145711,
+          "ida_ea": 146063,
+          "bytes": "c43ede82",
+          "text": "les     di, dword ptr loc_843C+2",
+          "original_function": null,
+          "xrefs": []
+        },
+        {
+          "file_offset": 145715,
+          "ida_ea": 146067,
+          "bytes": "268a85ed01",
+          "text": "mov     al, es:[di+1EDh]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 146063,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 145720,
+          "ida_ea": 146072,
+          "bytes": "98",
+          "text": "cbw",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 146067,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 145721,
+          "ida_ea": 146073,
+          "bytes": "ba0d00",
+          "text": "mov     dx, 0Dh",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 146072,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 145724,
+          "ida_ea": 146076,
+          "bytes": "f7e2",
+          "text": "mul     dx",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 146073,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 145726,
+          "ida_ea": 146078,
+          "bytes": "8bf8",
+          "text": "mov     di, ax",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 146076,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 145728,
+          "ida_ea": 146080,
+          "bytes": "81c74411",
+          "text": "add     di, 1144h",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 146078,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 145732,
+          "ida_ea": 146084,
+          "bytes": "1e",
+          "text": "push    ds",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 146080,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 145733,
+          "ida_ea": 146085,
+          "bytes": "57",
+          "text": "push    di",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 146084,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 145734,
+          "ida_ea": 146086,
+          "bytes": "9a54037f04",
+          "text": "call    sub_4B44",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 146085,
+              "type": 21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "ida-final-harmful.json",
+      "sha256": "cd2d88f75e37d430238184c248fd27f6553481ce48422a58807a793b17c02342",
+      "ida_version": "9.4",
+      "ida_base": 352,
+      "address_space": "GAME.OVR file offset; IDA EA separately retained; no runtime CS claim",
+      "rows": [
+        {
+          "file_offset": 222959,
+          "ida_ea": 223311,
+          "bytes": "55",
+          "text": "push    bp",
+          "original_function": null,
+          "xrefs": []
+        },
+        {
+          "file_offset": 222960,
+          "ida_ea": 223312,
+          "bytes": "89e5",
+          "text": "mov     bp, sp",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223311,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222962,
+          "ida_ea": 223314,
+          "bytes": "83ec04",
+          "text": "sub     sp, 4",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223312,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222965,
+          "ida_ea": 223317,
+          "bytes": "31c0",
+          "text": "xor     ax, ax",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223314,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222967,
+          "ida_ea": 223319,
+          "bytes": "8946fd",
+          "text": "mov     [bp-3], ax",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223317,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222970,
+          "ida_ea": 223322,
+          "bytes": "c646ff00",
+          "text": "mov     byte ptr [bp-1], 0",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223319,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222974,
+          "ida_ea": 223326,
+          "bytes": "c47e08",
+          "text": "les     di, [bp+8]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223322,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222977,
+          "ida_ea": 223329,
+          "bytes": "268a85fc01",
+          "text": "mov     al, es:[di+1FCh]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223326,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222982,
+          "ida_ea": 223334,
+          "bytes": "30e4",
+          "text": "xor     ah, ah",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223329,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222984,
+          "ida_ea": 223336,
+          "bytes": "3b4606",
+          "text": "cmp     ax, [bp+6]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223334,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222987,
+          "ida_ea": 223339,
+          "bytes": "7212",
+          "text": "jb      short near ptr locret_687E+1",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223336,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222989,
+          "ida_ea": 223341,
+          "bytes": "c47e08",
+          "text": "les     di, [bp+8]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223339,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222992,
+          "ida_ea": 223344,
+          "bytes": "268a85fc01",
+          "text": "mov     al, es:[di+1FCh]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223341,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222997,
+          "ida_ea": 223349,
+          "bytes": "30e4",
+          "text": "xor     ah, ah",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223344,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 222999,
+          "ida_ea": 223351,
+          "bytes": "2b4606",
+          "text": "sub     ax, [bp+6]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223349,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223002,
+          "ida_ea": 223354,
+          "bytes": "8846ff",
+          "text": "mov     [bp-1], al",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223351,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223005,
+          "ida_ea": 223357,
+          "bytes": "eb14",
+          "text": "jmp     short near ptr loc_6891+2",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223354,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223007,
+          "ida_ea": 223359,
+          "bytes": "c47e08",
+          "text": "les     di, [bp+8]",
+          "original_function": null,
+          "xrefs": []
+        },
+        {
+          "file_offset": 223010,
+          "ida_ea": 223362,
+          "bytes": "268a85fc01",
+          "text": "mov     al, es:[di+1FCh]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223359,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223015,
+          "ida_ea": 223367,
+          "bytes": "30e4",
+          "text": "xor     ah, ah",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223362,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223017,
+          "ida_ea": 223369,
+          "bytes": "8bd0",
+          "text": "mov     dx, ax",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223367,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223019,
+          "ida_ea": 223371,
+          "bytes": "8b4606",
+          "text": "mov     ax, [bp+6]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223369,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223022,
+          "ida_ea": 223374,
+          "bytes": "2bc2",
+          "text": "sub     ax, dx",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223371,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223024,
+          "ida_ea": 223376,
+          "bytes": "8946fd",
+          "text": "mov     [bp-3], ax",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223374,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223027,
+          "ida_ea": 223379,
+          "bytes": "837efd09",
+          "text": "cmp     word ptr [bp-3], 9",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223376,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223031,
+          "ida_ea": 223383,
+          "bytes": "7711",
+          "text": "ja      short near ptr loc_68A7+3",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223379,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223033,
+          "ida_ea": 223385,
+          "bytes": "807eff00",
+          "text": "cmp     byte ptr [bp-1], 0",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223383,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223037,
+          "ida_ea": 223389,
+          "bytes": "7516",
+          "text": "jnz     short near ptr loc_68B4+1",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223385,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223039,
+          "ida_ea": 223391,
+          "bytes": "c47e08",
+          "text": "les     di, [bp+8]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223389,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223042,
+          "ida_ea": 223394,
+          "bytes": "2680bded0101",
+          "text": "cmp     byte ptr es:[di+1EDh], 1",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223391,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223048,
+          "ida_ea": 223400,
+          "bytes": "750b",
+          "text": "jnz     short near ptr loc_68B4+1",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223394,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223050,
+          "ida_ea": 223402,
+          "bytes": "c47e08",
+          "text": "les     di, [bp+8]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223400,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223053,
+          "ida_ea": 223405,
+          "bytes": "26c685ed0106",
+          "text": "mov     byte ptr es:[di+1EDh], 6",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223402,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223059,
+          "ida_ea": 223411,
+          "bytes": "eb36",
+          "text": "jmp     short near ptr loc_68EA+1",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223405,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223061,
+          "ida_ea": 223413,
+          "bytes": "837efd00",
+          "text": "cmp     word ptr [bp-3], 0",
+          "original_function": null,
+          "xrefs": []
+        },
+        {
+          "file_offset": 223065,
+          "ida_ea": 223417,
+          "bytes": "7621",
+          "text": "jbe     short loc_68DC",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223413,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223067,
+          "ida_ea": 223419,
+          "bytes": "c47e08",
+          "text": "les     di, [bp+8]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223417,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223070,
+          "ida_ea": 223422,
+          "bytes": "26c685ed0105",
+          "text": "mov     byte ptr es:[di+1EDh], 5",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223419,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223076,
+          "ida_ea": 223428,
+          "bytes": "803e0c8805",
+          "text": "cmp     byte_896C, 5",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223422,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223081,
+          "ida_ea": 223433,
+          "bytes": "750f",
+          "text": "jnz     short near ptr loc_68D8+2",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223428,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223083,
+          "ida_ea": 223435,
+          "bytes": "8a46fd",
+          "text": "mov     al, [bp-3]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223433,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223086,
+          "ida_ea": 223438,
+          "bytes": "c47e08",
+          "text": "les     di, [bp+8]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223435,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223089,
+          "ida_ea": 223441,
+          "bytes": "26c4bde701",
+          "text": "les     di, es:[di+1E7h]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223438,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223094,
+          "ida_ea": 223446,
+          "bytes": "2688450d",
+          "text": "mov     es:[di+0Dh], al",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223441,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223098,
+          "ida_ea": 223450,
+          "bytes": "eb0f",
+          "text": "jmp     short near ptr loc_68EA+1",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223446,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223100,
+          "ida_ea": 223452,
+          "bytes": "807eff00",
+          "text": "cmp     byte ptr [bp-1], 0",
+          "original_function": null,
+          "xrefs": []
+        },
+        {
+          "file_offset": 223104,
+          "ida_ea": 223456,
+          "bytes": "7509",
+          "text": "jnz     short near ptr loc_68EA+1",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223452,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223106,
+          "ida_ea": 223458,
+          "bytes": "c47e08",
+          "text": "les     di, [bp+8]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223456,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223109,
+          "ida_ea": 223461,
+          "bytes": "26c685ed0104",
+          "text": "mov     byte ptr es:[di+1EDh], 4",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223458,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223115,
+          "ida_ea": 223467,
+          "bytes": "c47e08",
+          "text": "les     di, [bp+8]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223461,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223118,
+          "ida_ea": 223470,
+          "bytes": "268a85ed01",
+          "text": "mov     al, es:[di+1EDh]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223467,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223123,
+          "ida_ea": 223475,
+          "bytes": "50",
+          "text": "push    ax",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223470,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223124,
+          "ida_ea": 223476,
+          "bytes": "bf3128",
+          "text": "mov     di, offset loc_2991",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223475,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223127,
+          "ida_ea": 223479,
+          "bytes": "0e",
+          "text": "push    cs",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223476,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223128,
+          "ida_ea": 223480,
+          "bytes": "57",
+          "text": "push    di",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223479,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223129,
+          "ida_ea": 223481,
+          "bytes": "9a240d2508",
+          "text": "call    loc_8F72+2",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223480,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 223134,
+          "ida_ea": 223486,
+          "bytes": "7537",
+          "text": "jnz     short loc_6937",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 223481,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120912,
+          "ida_ea": 121264,
+          "bytes": "b003",
+          "text": "mov     al, 3",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121263,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120914,
+          "ida_ea": 121266,
+          "bytes": "50",
+          "text": "push    ax",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121264,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120915,
+          "ida_ea": 121267,
+          "bytes": "9a4800e200",
+          "text": "call    far ptr loc_E65+3",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121266,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120920,
+          "ida_ea": 121272,
+          "bytes": "08c0",
+          "text": "or      al, al",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121267,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120922,
+          "ida_ea": 121274,
+          "bytes": "751d",
+          "text": "jnz     short near ptr byte_D88D+14Ch",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121272,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120924,
+          "ida_ea": 121276,
+          "bytes": "ff36e4a7",
+          "text": "push    word_A944",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121274,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120928,
+          "ida_ea": 121280,
+          "bytes": "ff36e2a7",
+          "text": "push    word_A942",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121276,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120932,
+          "ida_ea": 121284,
+          "bytes": "b07e",
+          "text": "mov     al, 7Eh ; '~'",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121280,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120934,
+          "ida_ea": 121286,
+          "bytes": "50",
+          "text": "push    ax",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121284,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120935,
+          "ida_ea": 121287,
+          "bytes": "8d7ef6",
+          "text": "lea     di, [bp-0Ah]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121286,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120938,
+          "ida_ea": 121290,
+          "bytes": "16",
+          "text": "push    ss",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121287,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120939,
+          "ida_ea": 121291,
+          "bytes": "57",
+          "text": "push    di",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121290,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120940,
+          "ida_ea": 121292,
+          "bytes": "9aa700ec00",
+          "text": "call    far ptr sub_F67",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121291,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120945,
+          "ida_ea": 121297,
+          "bytes": "08c0",
+          "text": "or      al, al",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121292,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120947,
+          "ida_ea": 121299,
+          "bytes": "7504",
+          "text": "jnz     short near ptr byte_D88D+14Ch",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121297,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120949,
+          "ida_ea": 121301,
+          "bytes": "b000",
+          "text": "mov     al, 0",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121299,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120951,
+          "ida_ea": 121303,
+          "bytes": "eb02",
+          "text": "jmp     short near ptr byte_D88D+14Eh",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121301,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120953,
+          "ida_ea": 121305,
+          "bytes": "b001",
+          "text": "mov     al, 1",
+          "original_function": null,
+          "xrefs": []
+        },
+        {
+          "file_offset": 120955,
+          "ida_ea": 121307,
+          "bytes": "8846fb",
+          "text": "mov     [bp-5], al",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121305,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120958,
+          "ida_ea": 121310,
+          "bytes": "ff36e4a7",
+          "text": "push    word_A944",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121307,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120962,
+          "ida_ea": 121314,
+          "bytes": "ff36e2a7",
+          "text": "push    word_A942",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121310,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120966,
+          "ida_ea": 121318,
+          "bytes": "b034",
+          "text": "mov     al, 34h ; '4'",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121314,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120968,
+          "ida_ea": 121320,
+          "bytes": "50",
+          "text": "push    ax",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121318,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120969,
+          "ida_ea": 121321,
+          "bytes": "b80a00",
+          "text": "mov     ax, 0Ah",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121320,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120972,
+          "ida_ea": 121324,
+          "bytes": "50",
+          "text": "push    ax",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121321,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120973,
+          "ida_ea": 121325,
+          "bytes": "b00c",
+          "text": "mov     al, 0Ch",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121324,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120975,
+          "ida_ea": 121327,
+          "bytes": "50",
+          "text": "push    ax",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121325,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120976,
+          "ida_ea": 121328,
+          "bytes": "b000",
+          "text": "mov     al, 0",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121327,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120978,
+          "ida_ea": 121330,
+          "bytes": "50",
+          "text": "push    ax",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121328,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120979,
+          "ida_ea": 121331,
+          "bytes": "b001",
+          "text": "mov     al, 1",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121330,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120981,
+          "ida_ea": 121333,
+          "bytes": "50",
+          "text": "push    ax",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121331,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120982,
+          "ida_ea": 121334,
+          "bytes": "8a46fb",
+          "text": "mov     al, [bp-5]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121333,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120985,
+          "ida_ea": 121337,
+          "bytes": "50",
+          "text": "push    ax",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121334,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120986,
+          "ida_ea": 121338,
+          "bytes": "8d7eec",
+          "text": "lea     di, [bp-14h]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121337,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120989,
+          "ida_ea": 121341,
+          "bytes": "16",
+          "text": "push    ss",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121338,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120990,
+          "ida_ea": 121342,
+          "bytes": "57",
+          "text": "push    di",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121341,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120991,
+          "ida_ea": 121343,
+          "bytes": "bf682c",
+          "text": "mov     di, (offset byte_2D07+0C1h)",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121342,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120994,
+          "ida_ea": 121346,
+          "bytes": "0e",
+          "text": "push    cs",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121343,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120995,
+          "ida_ea": 121347,
+          "bytes": "57",
+          "text": "push    di",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121346,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 120996,
+          "ida_ea": 121348,
+          "bytes": "9a6f0a2508",
+          "text": "call    far ptr sub_8CBF",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121347,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 121001,
+          "ida_ea": 121353,
+          "bytes": "9a7a00e200",
+          "text": "call    loc_E98+2",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121348,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 121006,
+          "ida_ea": 121358,
+          "bytes": "89ec",
+          "text": "mov     sp, bp",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121353,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 121008,
+          "ida_ea": 121360,
+          "bytes": "5d",
+          "text": "pop     bp",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121358,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 121009,
+          "ida_ea": 121361,
+          "bytes": "ca0a00",
+          "text": "retf    0Ah",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121360,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 121012,
+          "ida_ea": 121364,
+          "bytes": "0b6973",
+          "text": "or      bp, [bx+di+73h]",
+          "original_function": null,
+          "xrefs": []
+        },
+        {
+          "file_offset": 121015,
+          "ida_ea": 121367,
+          "bytes": "206265",
+          "text": "and     [bp+si+65h], ah",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121364,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 121018,
+          "ida_ea": 121370,
+          "bytes": "686561",
+          "text": "push    6165h",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121367,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 121021,
+          "ida_ea": 121373,
+          "bytes": "64656455",
+          "text": "push    bp",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121370,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 121025,
+          "ida_ea": 121377,
+          "bytes": "89e5",
+          "text": "mov     bp, sp",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121373,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 121027,
+          "ida_ea": 121379,
+          "bytes": "83ec10",
+          "text": "sub     sp, 10h",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121377,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 121030,
+          "ida_ea": 121382,
+          "bytes": "803e0c8805",
+          "text": "cmp     byte_896C, 5",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121379,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 121035,
+          "ida_ea": 121387,
+          "bytes": "7551",
+          "text": "jnz     short near ptr byte_DA7E",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121382,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 121037,
+          "ida_ea": 121389,
+          "bytes": "807e0600",
+          "text": "cmp     byte ptr [bp+6], 0",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121387,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 121041,
+          "ida_ea": 121393,
+          "bytes": "754b",
+          "text": "jnz     short near ptr byte_DA7E",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121389,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 121043,
+          "ida_ea": 121395,
+          "bytes": "803ee9a700",
+          "text": "cmp     byte_A949, 0",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121393,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 121048,
+          "ida_ea": 121400,
+          "bytes": "7444",
+          "text": "jz      short near ptr byte_DA7E",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121395,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 121050,
+          "ida_ea": 121402,
+          "bytes": "c47e0c",
+          "text": "les     di, [bp+0Ch]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121400,
+              "type": 21
+            }
+          ]
+        },
+        {
+          "file_offset": 121053,
+          "ida_ea": 121405,
+          "bytes": "26c43d",
+          "text": "les     di, es:[di]",
+          "original_function": null,
+          "xrefs": [
+            {
+              "source": 121402,
+              "type": 21
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scenes": {
+    "town": {
+      "ram_sha256": "adb86a6e3fee7f85133395edaa2228f56b8c9a52cf192a6c4f1aa1e31138f1fc",
+      "records": [
+        {
+          "linear": 458624,
+          "name": "ROLAND",
+          "HP": 40,
+          "combat_HP": 40,
+          "status": 0,
+          "active": 1,
+          "side": 0,
+          "next": 0,
+          "effects": [
+            {
+              "linear": 459152,
+              "type": 95,
+              "next": 0
+            }
+          ]
+        }
+      ]
+    },
+    "battle": {
+      "ram_sha256": "d5695f3dc646423fe7221490bde4ee6afeee3856dd55f59c5ffc66e43f27d716",
+      "records": [
+        {
+          "linear": 491192,
+          "name": "SIR CYNEHELM",
+          "HP": 162,
+          "combat_HP": 162,
+          "status": 0,
+          "active": 1,
+          "side": 0,
+          "next": 493672,
+          "effects": []
+        },
+        {
+          "linear": 493672,
+          "name": "ALEFRAED",
+          "HP": 124,
+          "combat_HP": 124,
+          "status": 0,
+          "active": 1,
+          "side": 0,
+          "next": 496152,
+          "effects": []
+        },
+        {
+          "linear": 496152,
+          "name": "KRISTKA",
+          "HP": 80,
+          "combat_HP": 80,
+          "status": 0,
+          "active": 1,
+          "side": 0,
+          "next": 498632,
+          "effects": []
+        },
+        {
+          "linear": 498632,
+          "name": "PET OF KALISTES",
+          "HP": 59,
+          "combat_HP": 59,
+          "status": 0,
+          "active": 1,
+          "side": 1,
+          "next": 504672,
+          "effects": [
+            {
+              "linear": 499184,
+              "type": 86,
+              "next": 499200
+            },
+            {
+              "linear": 499200,
+              "type": 24,
+              "next": 499216
+            },
+            {
+              "linear": 499216,
+              "type": 37,
+              "next": 499232
+            },
+            {
+              "linear": 499232,
+              "type": 92,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 504672,
+          "name": "PET OF KALISTES",
+          "HP": 59,
+          "combat_HP": 59,
+          "status": 0,
+          "active": 1,
+          "side": 1,
+          "next": 505216,
+          "effects": [
+            {
+              "linear": 505200,
+              "type": 92,
+              "next": 505184
+            },
+            {
+              "linear": 505184,
+              "type": 37,
+              "next": 499160
+            },
+            {
+              "linear": 499160,
+              "type": 24,
+              "next": 499144
+            },
+            {
+              "linear": 499144,
+              "type": 86,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 505216,
+          "name": "PET OF KALISTES",
+          "HP": 59,
+          "combat_HP": 59,
+          "status": 0,
+          "active": 1,
+          "side": 1,
+          "next": 505792,
+          "effects": [
+            {
+              "linear": 505776,
+              "type": 92,
+              "next": 505760
+            },
+            {
+              "linear": 505760,
+              "type": 37,
+              "next": 505744
+            },
+            {
+              "linear": 505744,
+              "type": 24,
+              "next": 505728
+            },
+            {
+              "linear": 505728,
+              "type": 86,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 505792,
+          "name": "ELECTRIC SPIDER",
+          "HP": 24,
+          "combat_HP": 24,
+          "status": 0,
+          "active": 1,
+          "side": 1,
+          "next": 508328,
+          "effects": [
+            {
+              "linear": 506328,
+              "type": 91,
+              "next": 506344
+            },
+            {
+              "linear": 506344,
+              "type": 6,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 508328,
+          "name": "ELECTRIC SPIDER",
+          "HP": 24,
+          "combat_HP": 24,
+          "status": 0,
+          "active": 1,
+          "side": 1,
+          "next": 508856,
+          "effects": [
+            {
+              "linear": 508840,
+              "type": 6,
+              "next": 506304
+            },
+            {
+              "linear": 506304,
+              "type": 91,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 508856,
+          "name": "ELECTRIC SPIDER",
+          "HP": 24,
+          "combat_HP": 24,
+          "status": 0,
+          "active": 1,
+          "side": 1,
+          "next": 509400,
+          "effects": [
+            {
+              "linear": 509384,
+              "type": 6,
+              "next": 509368
+            },
+            {
+              "linear": 509368,
+              "type": 91,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 509400,
+          "name": "ELECTRIC SPIDER",
+          "HP": 24,
+          "combat_HP": 24,
+          "status": 0,
+          "active": 1,
+          "side": 1,
+          "next": 509944,
+          "effects": [
+            {
+              "linear": 509928,
+              "type": 6,
+              "next": 509912
+            },
+            {
+              "linear": 509912,
+              "type": 91,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 509944,
+          "name": "ELECTRIC SPIDER",
+          "HP": 24,
+          "combat_HP": 24,
+          "status": 0,
+          "active": 1,
+          "side": 1,
+          "next": 510488,
+          "effects": [
+            {
+              "linear": 510472,
+              "type": 6,
+              "next": 510456
+            },
+            {
+              "linear": 510456,
+              "type": 91,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 510488,
+          "name": "ELECTRIC SPIDER",
+          "HP": 24,
+          "combat_HP": 24,
+          "status": 0,
+          "active": 1,
+          "side": 1,
+          "next": 511032,
+          "effects": [
+            {
+              "linear": 511016,
+              "type": 6,
+              "next": 511000
+            },
+            {
+              "linear": 511000,
+              "type": 91,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 511032,
+          "name": "ELECTRIC SPIDER",
+          "HP": 24,
+          "combat_HP": 24,
+          "status": 0,
+          "active": 1,
+          "side": 1,
+          "next": 511576,
+          "effects": [
+            {
+              "linear": 511560,
+              "type": 6,
+              "next": 511544
+            },
+            {
+              "linear": 511544,
+              "type": 91,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 511576,
+          "name": "ELECTRIC SPIDER",
+          "HP": 24,
+          "combat_HP": 0,
+          "status": 6,
+          "active": 0,
+          "side": 1,
+          "next": 512120,
+          "effects": [
+            {
+              "linear": 512088,
+              "type": 91,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 512120,
+          "name": "ELECTRIC SPIDER",
+          "HP": 24,
+          "combat_HP": 24,
+          "status": 0,
+          "active": 1,
+          "side": 1,
+          "next": 512664,
+          "effects": [
+            {
+              "linear": 512648,
+              "type": 6,
+              "next": 512632
+            },
+            {
+              "linear": 512632,
+              "type": 91,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 512664,
+          "name": "DRIDER",
+          "HP": 36,
+          "combat_HP": 0,
+          "status": 6,
+          "active": 0,
+          "side": 1,
+          "next": 516520,
+          "effects": [
+            {
+              "linear": 513200,
+              "type": 95,
+              "next": 513216
+            },
+            {
+              "linear": 513216,
+              "type": 88,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 516520,
+          "name": "DRIDER",
+          "HP": 36,
+          "combat_HP": 36,
+          "status": 0,
+          "active": 1,
+          "side": 1,
+          "next": 517160,
+          "effects": [
+            {
+              "linear": 513232,
+              "type": 88,
+              "next": 513176
+            },
+            {
+              "linear": 513176,
+              "type": 95,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 517160,
+          "name": "DRIDER",
+          "HP": 36,
+          "combat_HP": 36,
+          "status": 0,
+          "active": 1,
+          "side": 1,
+          "next": 517816,
+          "effects": [
+            {
+              "linear": 517800,
+              "type": 88,
+              "next": 513248
+            },
+            {
+              "linear": 513248,
+              "type": 95,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 517816,
+          "name": "DRIDER",
+          "HP": 36,
+          "combat_HP": 0,
+          "status": 6,
+          "active": 0,
+          "side": 1,
+          "next": 541984,
+          "effects": [
+            {
+              "linear": 518472,
+              "type": 88,
+              "next": 518456
+            },
+            {
+              "linear": 518456,
+              "type": 95,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 541984,
+          "name": "DRIDER",
+          "HP": 36,
+          "combat_HP": 0,
+          "status": 6,
+          "active": 0,
+          "side": 1,
+          "next": 542496,
+          "effects": [
+            {
+              "linear": 518632,
+              "type": 88,
+              "next": 518616
+            },
+            {
+              "linear": 518616,
+              "type": 95,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 542496,
+          "name": "DRIDER",
+          "HP": 36,
+          "combat_HP": 36,
+          "status": 0,
+          "active": 1,
+          "side": 1,
+          "next": 543168,
+          "effects": [
+            {
+              "linear": 543152,
+              "type": 88,
+              "next": 543136
+            },
+            {
+              "linear": 543136,
+              "type": 95,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 543168,
+          "name": "DRIDER",
+          "HP": 36,
+          "combat_HP": 36,
+          "status": 0,
+          "active": 1,
+          "side": 1,
+          "next": 543840,
+          "effects": [
+            {
+              "linear": 543824,
+              "type": 88,
+              "next": 543808
+            },
+            {
+              "linear": 543808,
+              "type": 95,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 543840,
+          "name": "DRIDER",
+          "HP": 36,
+          "combat_HP": 36,
+          "status": 0,
+          "active": 1,
+          "side": 1,
+          "next": 544512,
+          "effects": [
+            {
+              "linear": 544496,
+              "type": 88,
+              "next": 544480
+            },
+            {
+              "linear": 544480,
+              "type": 95,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 544512,
+          "name": "VAMPIRE MAGE",
+          "HP": 50,
+          "combat_HP": 0,
+          "status": 6,
+          "active": 0,
+          "side": 1,
+          "next": 547168,
+          "effects": [
+            {
+              "linear": 545088,
+              "type": 98,
+              "next": 545120
+            },
+            {
+              "linear": 545120,
+              "type": 103,
+              "next": 545136
+            },
+            {
+              "linear": 545136,
+              "type": 126,
+              "next": 545152
+            },
+            {
+              "linear": 545152,
+              "type": 124,
+              "next": 545168
+            },
+            {
+              "linear": 545168,
+              "type": 102,
+              "next": 545184
+            },
+            {
+              "linear": 545184,
+              "type": 92,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 547168,
+          "name": "VAMPIRE MAGE",
+          "HP": 50,
+          "combat_HP": 50,
+          "status": 0,
+          "active": 1,
+          "side": 1,
+          "next": 547728,
+          "effects": [
+            {
+              "linear": 547712,
+              "type": 92,
+              "next": 547696
+            },
+            {
+              "linear": 547696,
+              "type": 102,
+              "next": 547680
+            },
+            {
+              "linear": 547680,
+              "type": 124,
+              "next": 545072
+            },
+            {
+              "linear": 545072,
+              "type": 126,
+              "next": 545056
+            },
+            {
+              "linear": 545056,
+              "type": 103,
+              "next": 545040
+            },
+            {
+              "linear": 545040,
+              "type": 6,
+              "next": 545024
+            },
+            {
+              "linear": 545024,
+              "type": 98,
+              "next": 0
+            }
+          ]
+        },
+        {
+          "linear": 547728,
+          "name": "VAMPIRE MAGE",
+          "HP": 50,
+          "combat_HP": 50,
+          "status": 0,
+          "active": 1,
+          "side": 1,
+          "next": 0,
+          "effects": [
+            {
+              "linear": 548336,
+              "type": 92,
+              "next": 548320
+            },
+            {
+              "linear": 548320,
+              "type": 102,
+              "next": 548304
+            },
+            {
+              "linear": 548304,
+              "type": 124,
+              "next": 548288
+            },
+            {
+              "linear": 548288,
+              "type": 126,
+              "next": 548272
+            },
+            {
+              "linear": 548272,
+              "type": 103,
+              "next": 548256
+            },
+            {
+              "linear": 548256,
+              "type": 6,
+              "next": 548240
+            },
+            {
+              "linear": 548240,
+              "type": 98,
+              "next": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "health_labels": [
+    "Okay",
+    "Animated",
+    "tempgone",
+    "Running",
+    "Unconscious",
+    "Dying",
+    "Dead",
+    "Petrified",
+    "Gone"
+  ],
+  "harmful_calls": [
+    {
+      "OVR_offset": 183249,
+      "type": 33,
+      "bytes": "b02150"
+    },
+    {
+      "OVR_offset": 190245,
+      "type": 42,
+      "bytes": "b02a50"
+    },
+    {
+      "OVR_offset": 120966,
+      "type": 52,
+      "bytes": "b03450"
+    },
+    {
+      "OVR_offset": 180590,
+      "type": 53,
+      "bytes": "b03550"
+    },
+    {
+      "OVR_offset": 15458,
+      "type": 55,
+      "bytes": "b03750"
+    }
+  ],
+  "snapshot_inputs": {
+    "workplace/probe/g6-town/town.state": "1a7e46dabc16495ffc09b02f7b1b8caa9c0cc184be48132b2272ed9347920959",
+    "workplace/probe/demo-control-v1/snapshot/shots/battle.state": "68117f264c77fa79fcc65579c6ebf53b9264498bb8da3b76aa81baccee9a29d5"
+  },
+  "limits": [
+    "diagnostic RAM from existing normal snapshots; not fresh normal gameplay acceptance",
+    "old0x1F and0x33 semantic labels unverified and excluded",
+    "no original EXE,OVR,RAM or state embedded in this receipt"
+  ]
+}

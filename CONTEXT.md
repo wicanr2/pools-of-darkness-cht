@@ -56,22 +56,22 @@
 
 | 項目 | 目前狀態 | 下一個驗收點 |
 |---|---|---|
-| 正式程式與 HD | 程式`2ec2dfa`／`218b60f`、1536檔及十份字型已啟用；新增簡中開場／海報與工具列原生字級，Go繪圖演算法未改。56ebba3程式及1525檔主題以before-zhcn副本保留 | [簡中收據027](docs/re/027-zhcn-runtime.json)；b43遭遇圖原證據保留，不重開Go繪圖 |
+| 正式程式與 HD | 程式`33094bd`／`139279d`已啟用F1無敵，1536檔主題及十份字型未改。218b60f程式以pod-play-before-invincible保留，before-zhcn副本也保留 | [無敵收據029](docs/re/029-invincible-runtime.json)、[簡中027](docs/re/027-zhcn-runtime.json)；Go繪圖演算法未改 |
 | demo 中斷 #13 | CONFORMED：選單不逾時；對話、戰鬥中斷與重播、正常進入通過；F12／2倍終點同原流程，非預期閃現0 | 固定證據[020](docs/re/020-demo-control-runtime.json)，入口[規格018](docs/spec/018-demo-control.md#demo-conformed) |
 | Go 繪圖 #49 | 已支援VGA繪圖核心收尾CONFORMED；六條正常路線15,073,225 bytes全由Go演算法計畫寫入，固定／原x86像素寫入0；補齊填色區段搜尋及讀點短續行 | [收尾規格](docs/spec/025-direct-render-commands.md#draw-closure-conformed)、[固定收據](docs/re/023-draw-closure-runtime.json)。原版內容／字串／呼叫編排與平台服務保留，未知條件安全回退；不按歷史DRAFT重開 |
 | 高解析字型 | 已認證英數格原生16／24像素呈現通過；圖示不重畫，譯文優先，F12原版保留，README有並列原始像素裁切 | 未識別／搬移後無文字來源的格子保留原版，不猜OCR或當作全遊戲字型覆蓋 |
-| 不露原版 #16 | 正常HD閃現0；字型樣本有121格明示2→3倍HD切換，逐筆分類後非預期0，舊程式同腳本也121 | 已驗範圍見[字模與字型收據](docs/re/019-native-resident-glyph-runtime.json)及[前批完整收據](docs/re/019-native-bounded-runtime.json)；其他HD來源及玩家路線不外推 |
+| 不露原版 #16 | 既有已驗路線HD閃現0；字型／讀檔121格為明示2→3倍切換。新增10500格長戰鬥原始19格，新舊程式相同，13格為鏡頭變更，6格既有遮擋疑點未解 | [029逐格對照](docs/re/029-invincible-runtime.json)、[定位](docs/re/029-invincible.md#長戰鬥量尺限制)；不把6格疑點宣稱零閃現，不重開已完成Go核心 |
 | 攻略、地圖 #9 | 78段中8段對齊已知物品詞，數量／加值／出處保留；整理前後兩路正常讀檔、地圖、翻章翻頁與回場通過，僅一張攻略正文改變，面板外差異0 | [收據024](docs/re/024-guide-terms-runtime.json)。8個未知GEO名稱、未觀測觸發格及來源歧義保留，#9仍開啟；不追加G6探索 |
 | HD #10 | 正式1536檔含b43既有素材及簡中語系文字增量，遭遇圖29組87張素材齊全；b44六張片頭關鍵畫面尚未接入完整動畫 | [簡中增量](docs/re/027-zhcn-runtime.json)、[b43來源接入](docs/re/017-b43-runtime.json)、[片頭素材](docs/re/018-b44-materials.json)；新事件、位置、背景遮擋、角色改色及動畫仍依#10 |
 | 工具列字級 #15 | CONFORMED：補齊原生12／22字模，2／3倍三級、英文與偏好重啟通過；16／24遊戲字模未改 | [規格020](docs/spec/020-toolbar-font.md)、[固定收據](docs/re/021-toolbar-runtime.json)，README直接顯示六種字級 |
 | CPU速度 #14 | 功能抽樣CONFORMED，Issue已關閉；正常2／3倍讀檔、六倍率、Draw間隔回饋、1x等價及偏好通過 | 使用者已取消30fps要求，不再列為剩餘工作；歷史量測保留 |
-| 配樂、多語系、作弊、推廣片 #11 | 簡中資料與呈現已接入；英文99手札、78攻略、已知地圖與七點接入，正常抽驗及乾淨Git資料檢查通過。日韓、配樂／試聽、無敵及推廣片仍缺 | [規格015](docs/spec/015-multilingual.md)、[簡中027](docs/re/027-zhcn-runtime.json)、[英文028](docs/re/028-english-panels-runtime.json)；不將子項完成當作#11結案 |
-| 三平台封包 #12 | `v.0.1.0-20261101`候選九包：基本patch三包、本機基本／HD完整版各三包。候選引擎`4a8ef9f`及來源4bdd711固定，與目前2ec2dfa簡中版分開 | [收據026](docs/re/026-package-runtime.json)、[入口](SETUP.md#候選封包)。Linux實際AppImage、demo中止、另存B／冷讀B通過；Windows實際ZIP以Wine抽驗；macOS結構驗證，真機未驗。HD patch及原案未完功能仍使#12保持開啟 |
-| 跨機重建 #55 | 767張PNG、18份原樣JSON、固定字集與引擎2ec2dfa已保存；751份索引由自備DAX重生。乾淨Git重建1536檔與十份字型逐檔相同，乾淨引擎重編逐位元相同 | [SETUP.md](SETUP.md)、[簡中重建027](docs/re/027-zhcn-runtime.json)；只驗Linux amd64容器，其他平台及實體機未驗 |
+| 配樂、多語系、作弊、推廣片 #11 | 簡中及英文面板已接入；F1我方無敵完成本作欄位重驗、正常讀檔／DEMO及原版受控抽驗，預設關閉。日韓、配樂／試聽及推廣片仍缺 | [規格015](docs/spec/015-multilingual.md)、[規格017](docs/spec/017-invincible.md)、[無敵029](docs/re/029-invincible-runtime.json)；不將子項完成當作#11結案 |
+| 三平台封包 #12 | `v.0.1.0-20261101`候選九包：基本patch三包、本機基本／HD完整版各三包。候選引擎`4a8ef9f`及來源4bdd711固定，不含後續簡中、英文面板及無敵 | [收據026](docs/re/026-package-runtime.json)、[入口](SETUP.md#候選封包)。Linux實際AppImage、demo中止、另存B／冷讀B通過；Windows實際ZIP以Wine抽驗；macOS結構驗證，真機未驗。HD patch及原案未完功能仍使#12保持開啟 |
+| 跨機重建 #55 | 必要PNG／JSON、字集及引擎33094bd已保存；751份索引由自備DAX重生。主題／十字型沿027乾淨重建，F1候選由乾淨Git重編逐位元相同 | [SETUP.md](SETUP.md)、[無敵029](docs/re/029-invincible-runtime.json)、[素材027](docs/re/027-zhcn-runtime.json)；只驗Linux amd64容器，其他平台及實體機未驗 |
 
-目前工作：英文面板已補齊，99則手札共161頁、78段攻略共128頁，最長各4／5頁。英文正常4800格、17張畫面、三語切換與地圖抽驗通過，原版CPU／RAM、索引／色盤及132檔同027繁中基準，量尺原始121格皆為明示2→3倍HD切換，非預期0。手札正文另以元件抽驗，新劇情觸發未重播。程式、1536檔主題與十份字型未改。日韓、配樂／試聽、無敵、推廣片、完整動畫HD與HD patch仍待完成，不重開Go繪圖或G6探索。
+目前工作：F1無敵已依本作欄位接入並啟用，預設關閉。關閉／開啟各4800格正常讀檔同028原版狀態與132檔；10500格DEMO開關、中斷及返回通過，還原5次，敵方仍可受傷。七個受控原版傷害另列，乾淨Git重編相同。下一個明確HD驗收點是長戰鬥的6格既有遮擋疑點，見029。日韓、配樂／試聽、推廣片、完整動畫HD與HD patch仍待完成，不重開Go核心或G6探索。英文面板028及簡中027已驗範圍保留。
 
-原九包及SHA仍在`dist-all/v.0.1.0-20261101/`，來源固定4bdd711及4a8ef9f，不含後續簡中及英文面板，不覆寫、不建立tag或公開Release。基本版原始23格的紅色背景／提前題名分類只適用收據026固定事件。
+原九包及SHA仍在`dist-all/v.0.1.0-20261101/`，來源固定4bdd711及4a8ef9f，不含後續簡中、英文面板及無敵，不覆寫、不建立tag或公開Release。基本版原始23格的紅色背景／提前題名分類只適用收據026固定事件。
 
 b44完成六張片頭關鍵畫面，皆960×504不透明RGBA，數值及目前PNG原尺寸目視SHA通過。原版並列、完整提示詞與最終成品保存review/hd/b44-intro，README直接顯示原尺寸拼圖。這是素材交付，完整動畫接入仍DRAFT。
 正常來源沿SND／CONTROL、不送按鍵、50%時脈、96250步×5100回合。上方168列觀測163個像素／使用RGB狀態、129種索引，包含SSI標誌、黑場與後續TITLE，不代表129個獨立繪畫場景或全部BMA狀態。原版CPU／RAM、圖面、色盤與127檔同既有018來源，三項失配負對照拒絕。整理探針前後全部轉換與終點相同，乾淨Git引擎重編探針逐位元相同。

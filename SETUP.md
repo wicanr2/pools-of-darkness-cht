@@ -53,6 +53,7 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 初次[跨機重建收據](docs/re/025-rebuild-runtime.json)保存新編譯程式的7400格正常路徑；目前[遭遇圖收據](docs/re/017-b43-runtime.json)驗證1525檔主題與6份字型由乾淨Git檔案重生，固定引擎56ebba3乾淨重編與受測程式逐位元相同。[正常增量比較](docs/re/017-b43-play.json)的CPU、記憶體、來源、127檔及最終畫面同前批、閃現0，因此重建終點畫面基準仍綁[b38正常收據](docs/re/017-b38-play.json)。既有041近遠景由前批配對截圖驗證；本批十四張既有截圖逐張相同，新正常事件仍未知。
 簡中增量的[固定收據](docs/re/027-zhcn-runtime.json)另外保存正常讀檔／面板路線、既有字幕來源與1536檔／十份字型的乾淨重建。歷史7400格原版狀態與畫面預期未改，新增19份簡中TSV另列於清單，舊文字SHA保持原樣；新語系的抽樣範圍不能外推為全片頭或全部玩家路線。
 英文面板[固定收據](docs/re/028-english-panels-runtime.json)保存一條4800格正常讀檔路線、17張擷取、三語切換及全表分頁檢查。程式、主題及字型同027，原版狀態與132檔不變；正文樣本不代替新劇情觸發。重建清單另列英文資料增量，不改寫歷史7400格證據。
+現行引擎33094bd另接入F1無敵，預設關閉；[029收據](docs/re/029-invincible-runtime.json)保存乾淨Git重編、正常載入／DEMO及受控原版傷害抽驗，主題與字型不變。關閉時正常4800格原版狀態及132檔同028。長戰鬥19格原始量尺含13格鏡頭變更與6格既有遮擋疑點，並未宣稱該長路線零閃現。
 這個入口保存目前已完成的素材，不代表尚未驗證的地形、動畫、日韓語系、配樂或平台已完成。
 新增HD素材或正式字型時，須同步更新重建清單，並以乾淨Git檔案重跑`assets`，核對新正式主題及字型雜湊後才提交。
 
@@ -68,7 +69,7 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 
 各包`README.txt`說明操作與存檔位置。Linux需要X11、OpenGL、ALSA與glibc2.36或相容環境；缺FUSE時用`APPIMAGE_EXTRACT_AND_RUN=1`。首次把合法DOS英文版1.10的47個遊戲檔放到程式旁`original/`，或用`-original`指定。歷史玩家SAVE不在包內；新存檔寫入使用者資料目錄。
 
-重建入口為[tools/package.sh](tools/package.sh)，固定候選引擎`4a8ef9f4ff18c82d8c98595faf19fb1ee803c609`及主專案素材來源`4bdd711`，保留這九包的原始範圍。它從乾淨Git匯出素材與程式，只改啟動器的原版版本提示；後續簡中與英文面板資料不會改寫這組既有候選。輸出目錄必須是本專案`workplace/`內的新路徑。
+重建入口為[tools/package.sh](tools/package.sh)，固定候選引擎`4a8ef9f4ff18c82d8c98595faf19fb1ee803c609`及主專案素材來源`4bdd711`，保留這九包的原始範圍。它從乾淨Git匯出素材與程式，只改啟動器的原版版本提示；後續簡中、英文面板及無敵不會改寫這組既有候選。輸出目錄必須是本專案`workplace/`內的新路徑。
 
 ```sh
 bash tools/package.sh build /absolute/path/to/original "$PWD/workplace/package-rebuild"
@@ -80,7 +81,7 @@ bash tools/package.sh verify /absolute/path/to/original "$PWD/workplace/package-
 
 候選工具映像須已存在：`sosb-img:r1`、`dosgolem-go-ebiten:1.24-r1`、`cok-osxcross:go1.24.13-sdk15.5-r1`、`kgb-cht-pkg:1.99.1-r2`，Wine抽驗另需`yuan-wine-verify:noble-r2`。前兩者來源見上方Dockerfile。後三者沿用主機既有工具鏈，macOS SDK不放Git；新機器需另備合法SDK及相同工具能力，完整三平台工具映像重建尚非已驗範圍。固定AppImage runtime及對應來源已[存檔](tools/vendor/appimage/manifest.json)，不需浮動下載。
 
-[固定驗收收據](docs/re/026-package-runtime.json)保存九包大小與SHA、原版同狀態、Go繪圖計數、demo、存讀檔及平台限制。基本版量尺原始23格保留為題名與紅色背景轉換，HD原始0；此分類不代替其他畫面抽驗。配樂、多語系、無敵、完整動畫HD與HD patch仍未完成，不能把候選稱為原案完成版。
+[固定驗收收據](docs/re/026-package-runtime.json)保存九包大小與SHA、原版同狀態、Go繪圖計數、demo、存讀檔及平台限制。基本版量尺原始23格保留為題名與紅色背景轉換，HD原始0；此分類不代替其他畫面抽驗。九包不含後續語系與無敵，配樂、日韓、完整動畫HD與HD patch等仍未完成，不能把候選稱為原案完成版。
 
 維護重建清單時，先將已驗收PNG加入Git暫存，使用`git ls-files -z`保存檔案清單。
 在Docker內執行`tools/rebuild_theme_snapshot.py --root <repo> --theme <已驗候選> --tracked-list <Git檔案清單> --batch bNN`，

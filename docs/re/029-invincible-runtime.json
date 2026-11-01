@@ -1,0 +1,724 @@
+{
+  "date": "2026-11-01",
+  "issue": 72,
+  "status": "PASS within F1 sample scope; long-combat flash audit retained separately",
+  "engine": "33094bda183f9656c4be0f821a831b8523319dda",
+  "binary_sha256": "139279d04a43467564599c3e7095dda705781498a7c6f3ebff7920ff7dd8075f",
+  "engine_tree": "26e10769ab2aeeb7d59258d86bebc9bfb6d80437",
+  "base_engine": "2ec2dfa4616d47795f27c1f6f9eee92999fb4ac9",
+  "source_proof": {
+    "path": "docs/re/029-invincible-source.json",
+    "sha256": "ec3a47ec0e9ec0f10b37ecd60ca2653246932375bcbc881717b6174e550ca4b9"
+  },
+  "normal": {
+    "states": {
+      "off": {
+        "frames": 4800,
+        "steps": 462000000,
+        "memory": "c96661205ccf21862073abc967395d86b0cae0683f087596e2f67159ef8efcea",
+        "indexed": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+        "cpu": "e51ff0161b303165fcb9d5265b133bda27d0ac67a7972cb0e96dd2880cc48c00",
+        "palette": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde"
+      },
+      "city-on": {
+        "frames": 4800,
+        "steps": 462000000,
+        "memory": "c96661205ccf21862073abc967395d86b0cae0683f087596e2f67159ef8efcea",
+        "indexed": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+        "cpu": "e51ff0161b303165fcb9d5265b133bda27d0ac67a7972cb0e96dd2880cc48c00",
+        "palette": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde"
+      },
+      "demo": {
+        "frames": 10500,
+        "steps": 1010625000,
+        "memory": "8dddbba08219cb94d527e7c0b914e41c8b35d943d912fde8531c9b65ef0b9281",
+        "indexed": "912304a614f66cfa5594aee9883549266a2abafe756a20024199c25e72bf9480",
+        "cpu": "7682767f041659ebeaed9cb729c07c9c02d20531421338d6c773ef266e3aef9f",
+        "palette": "d1b501c6d5ade0dcb400c58599838fe787aa5afcf00063029268e574acbe8f6e"
+      },
+      "audit": {
+        "frames": 10500,
+        "steps": 1010625000,
+        "memory": "8dddbba08219cb94d527e7c0b914e41c8b35d943d912fde8531c9b65ef0b9281",
+        "indexed": "912304a614f66cfa5594aee9883549266a2abafe756a20024199c25e72bf9480",
+        "cpu": "7682767f041659ebeaed9cb729c07c9c02d20531421338d6c773ef266e3aef9f",
+        "palette": "d1b501c6d5ade0dcb400c58599838fe787aa5afcf00063029268e574acbe8f6e"
+      },
+      "baseline": {
+        "frames": 10500,
+        "steps": 1010625000,
+        "memory": "deffd816f8c2701d2c9a8cef114e60ba30b9afdfce31ddb38a4f6840883c91d2",
+        "indexed": "912304a614f66cfa5594aee9883549266a2abafe756a20024199c25e72bf9480",
+        "cpu": "c03dbf70b5e5f9f6b8720ef2f857284699b9059d2d345054ee0e3220a71ef3e0",
+        "palette": "d1b501c6d5ade0dcb400c58599838fe787aa5afcf00063029268e574acbe8f6e"
+      }
+    },
+    "counters": {
+      "city-on": [
+        0,
+        0,
+        0
+      ],
+      "demo": [
+        5,
+        0,
+        0
+      ],
+      "audit": [
+        5,
+        0,
+        0
+      ]
+    },
+    "guest_files": {
+      "off": 132,
+      "city-on": 132,
+      "demo": 127,
+      "audit": 127,
+      "baseline": 127
+    },
+    "guest_equal_to028_when_off_or_city_on": true,
+    "DEMO_guest_equal": true,
+    "scripts": {
+      "off": "b66173c1104654892f5433030d313bdf392054a056810a266caa9f19feed9274",
+      "city-on": "b66173c1104654892f5433030d313bdf392054a056810a266caa9f19feed9274",
+      "demo": "3e92ece3fb4a86165e674863c6307e1e47c7263d218cb97ae39f8960418121dc",
+      "audit": "504b2c86c304d649195bdb16cf0ae8384063f12c41d6907d4fb18d687fc178c3",
+      "baseline": "504b2c86c304d649195bdb16cf0ae8384063f12c41d6907d4fb18d687fc178c3"
+    },
+    "screenshots": {
+      "off": {
+        "pod-f003900.png": "d2a7e098fce191e4b79d0d7e537a0f4697efb5a9f1b1a13ffd7c9a2a928e3b27",
+        "pod-f004200.png": "c781a15233d3983a0826c2a46da2a68a13762c94afad9364ffe2c307a4387177",
+        "pod-f004320.png": "8d28651af7358a93d6c8213c1e074036fa8d0cd1f746c873fb4e8c911055cc14",
+        "pod-f004342.png": "5ceee2e86fe50a128f2eb42450d71bfcbe338267acf57b8d12396658fa87e778",
+        "pod-f004346.png": "577e1380dd4b1abb1267e3c5822e369ec21c5ebe3367a6e9d3b1438e283d3271",
+        "pod-f004350.png": "c5e541cc77eda7d9a78c3d4ed48132faebd1d861e6246ab71fee33cde7bcd4b4",
+        "pod-f004354.png": "51eba2720dd8b745441d3bacb373e7da0eec0f1e3a04a469c45c3635aab17e5f",
+        "pod-f004358.png": "0fa018a4b47e87b9864699300be46c8ce68f26be4123fa73d810ff317e0603f9",
+        "pod-f004362.png": "577e1380dd4b1abb1267e3c5822e369ec21c5ebe3367a6e9d3b1438e283d3271",
+        "pod-f004366.png": "b5dd343ac87e6cac3c6c08455e28e9d6d6eb764075900d007b13c10891b8a497",
+        "pod-f004372.png": "577e1380dd4b1abb1267e3c5822e369ec21c5ebe3367a6e9d3b1438e283d3271",
+        "pod-f004382.png": "c5e541cc77eda7d9a78c3d4ed48132faebd1d861e6246ab71fee33cde7bcd4b4",
+        "pod-f004520.png": "8d28651af7358a93d6c8213c1e074036fa8d0cd1f746c873fb4e8c911055cc14",
+        "pod-f004620.png": "c781a15233d3983a0826c2a46da2a68a13762c94afad9364ffe2c307a4387177",
+        "pod-f004680.png": "3f466904c5bc68585d1fe53c95ac888b7d0e37d70cda481962e3827ded987702",
+        "pod-f004740.png": "bd72ada256f357aef41fc0f351c41e490185d1de89f2e798306563338000abde",
+        "pod-f004770.png": "85a66a263548c03405cb960d1d9e696b50935d8ed373d1b91894fef8cd9be193"
+      },
+      "city-on": {
+        "pod-f003900.png": "d2a7e098fce191e4b79d0d7e537a0f4697efb5a9f1b1a13ffd7c9a2a928e3b27",
+        "pod-f004200.png": "c781a15233d3983a0826c2a46da2a68a13762c94afad9364ffe2c307a4387177",
+        "pod-f004320.png": "8d28651af7358a93d6c8213c1e074036fa8d0cd1f746c873fb4e8c911055cc14",
+        "pod-f004342.png": "5ceee2e86fe50a128f2eb42450d71bfcbe338267acf57b8d12396658fa87e778",
+        "pod-f004346.png": "577e1380dd4b1abb1267e3c5822e369ec21c5ebe3367a6e9d3b1438e283d3271",
+        "pod-f004350.png": "c5e541cc77eda7d9a78c3d4ed48132faebd1d861e6246ab71fee33cde7bcd4b4",
+        "pod-f004354.png": "51eba2720dd8b745441d3bacb373e7da0eec0f1e3a04a469c45c3635aab17e5f",
+        "pod-f004358.png": "0fa018a4b47e87b9864699300be46c8ce68f26be4123fa73d810ff317e0603f9",
+        "pod-f004362.png": "577e1380dd4b1abb1267e3c5822e369ec21c5ebe3367a6e9d3b1438e283d3271",
+        "pod-f004366.png": "b5dd343ac87e6cac3c6c08455e28e9d6d6eb764075900d007b13c10891b8a497",
+        "pod-f004372.png": "577e1380dd4b1abb1267e3c5822e369ec21c5ebe3367a6e9d3b1438e283d3271",
+        "pod-f004382.png": "c5e541cc77eda7d9a78c3d4ed48132faebd1d861e6246ab71fee33cde7bcd4b4",
+        "pod-f004520.png": "8d28651af7358a93d6c8213c1e074036fa8d0cd1f746c873fb4e8c911055cc14",
+        "pod-f004620.png": "c781a15233d3983a0826c2a46da2a68a13762c94afad9364ffe2c307a4387177",
+        "pod-f004680.png": "3f466904c5bc68585d1fe53c95ac888b7d0e37d70cda481962e3827ded987702",
+        "pod-f004740.png": "bd72ada256f357aef41fc0f351c41e490185d1de89f2e798306563338000abde",
+        "pod-f004770.png": "0f909473ee770e622143681d4e2d84ac1fce3b09c924e1143a7d56ac4aa13fa3"
+      },
+      "demo": {
+        "pod-f006900.png": "fb3a5ccbb2504363f243630266df5bed8b9a9536945db0ce8653ee932122c2a1",
+        "pod-f007100.png": "7c296eba74e8c6d5ef896d727ae3d7fc5045bd26d45b1268e7142b3299fc2fee",
+        "pod-f007600.png": "6592f7b4dc39e79058dfd2aad4ffc8f25a45cd087d1a4c19f1f66fca92e597ca",
+        "pod-f008100.png": "c595367bc4f54877b860719a3f0e67a2ae55a7d1fefd63ac5435743f7978ede3",
+        "pod-f008520.png": "a16314ba7bcdfd7a93d84111af0e20791661f6782ca2176466365dae7b8b9990",
+        "pod-f008700.png": "33cb413e494ef76c291a38f811abcff97157b1e2531914f38f89a2a1b00927fe",
+        "pod-f009600.png": "6590df3d6de86add599e6268bdc80915e2c0073e4f97e4f92f99ce2028c80125",
+        "pod-f010400.png": "90e734ddfda9796f75cc2be75f8f7404d86f510be74c75dbdebc71d4ef9a01e6"
+      },
+      "audit": {
+        "pod-f006900.png": "fb3a5ccbb2504363f243630266df5bed8b9a9536945db0ce8653ee932122c2a1",
+        "pod-f007100.png": "7c296eba74e8c6d5ef896d727ae3d7fc5045bd26d45b1268e7142b3299fc2fee",
+        "pod-f007600.png": "6592f7b4dc39e79058dfd2aad4ffc8f25a45cd087d1a4c19f1f66fca92e597ca",
+        "pod-f008100.png": "c595367bc4f54877b860719a3f0e67a2ae55a7d1fefd63ac5435743f7978ede3",
+        "pod-f008190.png": "bf761c714a28243af3ad0c35d3cdf5481ec2a0a6ef38c42f177c25a07e55e119",
+        "pod-f008191.png": "bf761c714a28243af3ad0c35d3cdf5481ec2a0a6ef38c42f177c25a07e55e119",
+        "pod-f008192.png": "532967750e1f0aef854357537528fc5c687482324a901ca725276482eb0ff3be",
+        "pod-f008193.png": "b8799c734998bc0f4e83d9f6a6d762b026328c48c6004dba7e32d70702c7b893",
+        "pod-f008195.png": "a8cfd5101c39790d61b03627dfb22e10081d4acccfc47cb697f2b653234fb7b1",
+        "pod-f008196.png": "b3edb66b06e6a9aa0186bae12b6431b99442ec38c8ed8d37433e7777166e061b",
+        "pod-f008520.png": "a16314ba7bcdfd7a93d84111af0e20791661f6782ca2176466365dae7b8b9990",
+        "pod-f008700.png": "33cb413e494ef76c291a38f811abcff97157b1e2531914f38f89a2a1b00927fe",
+        "pod-f008898.png": "3577007c5b6d6ae7c9909e9925decea53b287c7f0a8ced52a8d35d636337284b",
+        "pod-f008899.png": "3577007c5b6d6ae7c9909e9925decea53b287c7f0a8ced52a8d35d636337284b",
+        "pod-f009600.png": "6590df3d6de86add599e6268bdc80915e2c0073e4f97e4f92f99ce2028c80125",
+        "pod-f010400.png": "90e734ddfda9796f75cc2be75f8f7404d86f510be74c75dbdebc71d4ef9a01e6"
+      },
+      "baseline": {
+        "pod-f006900.png": "fb3a5ccbb2504363f243630266df5bed8b9a9536945db0ce8653ee932122c2a1",
+        "pod-f007100.png": "7c296eba74e8c6d5ef896d727ae3d7fc5045bd26d45b1268e7142b3299fc2fee",
+        "pod-f007600.png": "6592f7b4dc39e79058dfd2aad4ffc8f25a45cd087d1a4c19f1f66fca92e597ca",
+        "pod-f008100.png": "c595367bc4f54877b860719a3f0e67a2ae55a7d1fefd63ac5435743f7978ede3",
+        "pod-f008190.png": "bf761c714a28243af3ad0c35d3cdf5481ec2a0a6ef38c42f177c25a07e55e119",
+        "pod-f008191.png": "bf761c714a28243af3ad0c35d3cdf5481ec2a0a6ef38c42f177c25a07e55e119",
+        "pod-f008192.png": "532967750e1f0aef854357537528fc5c687482324a901ca725276482eb0ff3be",
+        "pod-f008193.png": "b8799c734998bc0f4e83d9f6a6d762b026328c48c6004dba7e32d70702c7b893",
+        "pod-f008195.png": "a8cfd5101c39790d61b03627dfb22e10081d4acccfc47cb697f2b653234fb7b1",
+        "pod-f008196.png": "b3edb66b06e6a9aa0186bae12b6431b99442ec38c8ed8d37433e7777166e061b",
+        "pod-f008520.png": "a16314ba7bcdfd7a93d84111af0e20791661f6782ca2176466365dae7b8b9990",
+        "pod-f008700.png": "76199bd5bce30c357b9cc81ce3859be78d54842eb362e253edc26e6c55ea21b5",
+        "pod-f008898.png": "3cef3d10edf5f0fe9f07c92fbd6ed79925c68dc91cd09956075f5a77e1d364a7",
+        "pod-f008899.png": "3cef3d10edf5f0fe9f07c92fbd6ed79925c68dc91cd09956075f5a77e1d364a7",
+        "pod-f009600.png": "0bb38311bdf88a24aa2bddf9d61f40a086968dee86322e16fb92602abd2150e3",
+        "pod-f010400.png": "20c348c5f7b4e0588b556544934b87ceb0e9a8161cc15fd150ba5cfa7df70d33"
+      }
+    },
+    "flashes": {
+      "off": {
+        "raw": 121,
+        "events": [
+          [
+            "4749",
+            "4750",
+            "3",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "4",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "5",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "6",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "7",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "8",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "9",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "10",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "11",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "12",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "13",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ]
+        ]
+      },
+      "city-on": {
+        "raw": 121,
+        "events": [
+          [
+            "4749",
+            "4750",
+            "3",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "4",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "5",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "6",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "7",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "8",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "9",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "10",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "11",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "12",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ],
+          [
+            "4749",
+            "4750",
+            "13",
+            "3 4 5 6 7 8 9 10 11 12 13"
+          ]
+        ]
+      },
+      "demo": {
+        "raw": 19,
+        "events": [
+          [
+            "8191",
+            "8192",
+            "1",
+            "1 2 3 4 5 6"
+          ],
+          [
+            "8191",
+            "8192",
+            "2",
+            "2 3 4 5 6"
+          ],
+          [
+            "8191",
+            "8192",
+            "3",
+            "5 6"
+          ],
+          [
+            "8195",
+            "8196",
+            "4",
+            "4 5 6"
+          ],
+          [
+            "8195",
+            "8196",
+            "5",
+            "5 6"
+          ],
+          [
+            "8898",
+            "8899",
+            "10",
+            "15"
+          ]
+        ]
+      },
+      "audit": {
+        "raw": 19,
+        "events": [
+          [
+            "8191",
+            "8192",
+            "1",
+            "1 2 3 4 5 6"
+          ],
+          [
+            "8191",
+            "8192",
+            "2",
+            "2 3 4 5 6"
+          ],
+          [
+            "8191",
+            "8192",
+            "3",
+            "5 6"
+          ],
+          [
+            "8195",
+            "8196",
+            "4",
+            "4 5 6"
+          ],
+          [
+            "8195",
+            "8196",
+            "5",
+            "5 6"
+          ],
+          [
+            "8898",
+            "8899",
+            "10",
+            "15"
+          ]
+        ]
+      },
+      "baseline": {
+        "raw": 19,
+        "events": [
+          [
+            "8191",
+            "8192",
+            "1",
+            "1 2 3 4 5 6"
+          ],
+          [
+            "8191",
+            "8192",
+            "2",
+            "2 3 4 5 6"
+          ],
+          [
+            "8191",
+            "8192",
+            "3",
+            "5 6"
+          ],
+          [
+            "8195",
+            "8196",
+            "4",
+            "4 5 6"
+          ],
+          [
+            "8195",
+            "8196",
+            "5",
+            "5 6"
+          ],
+          [
+            "8898",
+            "8899",
+            "10",
+            "15"
+          ]
+        ]
+      }
+    },
+    "long_combat_cells": [
+      {
+        "first": 8191,
+        "last": 8192,
+        "row": 1,
+        "col": 1,
+        "classification": "camera change from flat floor index32 to new wall",
+        "source_pixels_changed": 16,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      },
+      {
+        "first": 8191,
+        "last": 8192,
+        "row": 1,
+        "col": 2,
+        "classification": "camera change from flat floor index32 to new wall",
+        "source_pixels_changed": 57,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      },
+      {
+        "first": 8191,
+        "last": 8192,
+        "row": 1,
+        "col": 3,
+        "classification": "camera change from flat floor index32 to new wall",
+        "source_pixels_changed": 64,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      },
+      {
+        "first": 8191,
+        "last": 8192,
+        "row": 1,
+        "col": 4,
+        "classification": "camera change from flat floor index32 to new wall",
+        "source_pixels_changed": 64,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      },
+      {
+        "first": 8191,
+        "last": 8192,
+        "row": 1,
+        "col": 5,
+        "classification": "camera change from flat floor index32 to new wall",
+        "source_pixels_changed": 64,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      },
+      {
+        "first": 8191,
+        "last": 8192,
+        "row": 1,
+        "col": 6,
+        "classification": "camera change from flat floor index32 to new wall",
+        "source_pixels_changed": 64,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      },
+      {
+        "first": 8191,
+        "last": 8192,
+        "row": 2,
+        "col": 2,
+        "classification": "camera change from flat floor index32 to new wall",
+        "source_pixels_changed": 14,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      },
+      {
+        "first": 8191,
+        "last": 8192,
+        "row": 2,
+        "col": 3,
+        "classification": "camera change from flat floor index32 to new wall",
+        "source_pixels_changed": 58,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      },
+      {
+        "first": 8191,
+        "last": 8192,
+        "row": 2,
+        "col": 4,
+        "classification": "camera change from flat floor index32 to new wall",
+        "source_pixels_changed": 64,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      },
+      {
+        "first": 8191,
+        "last": 8192,
+        "row": 2,
+        "col": 5,
+        "classification": "camera change from flat floor index32 to new wall",
+        "source_pixels_changed": 64,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      },
+      {
+        "first": 8191,
+        "last": 8192,
+        "row": 2,
+        "col": 6,
+        "classification": "camera change from flat floor index32 to new wall",
+        "source_pixels_changed": 64,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      },
+      {
+        "first": 8191,
+        "last": 8192,
+        "row": 3,
+        "col": 5,
+        "classification": "camera change from flat floor index32 to new wall",
+        "source_pixels_changed": 64,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      },
+      {
+        "first": 8191,
+        "last": 8192,
+        "row": 3,
+        "col": 6,
+        "classification": "camera change from flat floor index32 to new wall",
+        "source_pixels_changed": 64,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      },
+      {
+        "first": 8195,
+        "last": 8196,
+        "row": 4,
+        "col": 4,
+        "classification": "existing HD occlusion question; unresolved",
+        "source_pixels_changed": 0,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      },
+      {
+        "first": 8195,
+        "last": 8196,
+        "row": 4,
+        "col": 5,
+        "classification": "existing HD occlusion question; unresolved",
+        "source_pixels_changed": 0,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      },
+      {
+        "first": 8195,
+        "last": 8196,
+        "row": 4,
+        "col": 6,
+        "classification": "existing HD occlusion question; unresolved",
+        "source_pixels_changed": 0,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      },
+      {
+        "first": 8195,
+        "last": 8196,
+        "row": 5,
+        "col": 5,
+        "classification": "existing HD occlusion question; unresolved",
+        "source_pixels_changed": 8,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      },
+      {
+        "first": 8195,
+        "last": 8196,
+        "row": 5,
+        "col": 6,
+        "classification": "existing HD occlusion question; unresolved",
+        "source_pixels_changed": 5,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      },
+      {
+        "first": 8898,
+        "last": 8899,
+        "row": 10,
+        "col": 15,
+        "classification": "existing HD occlusion question; unresolved",
+        "source_pixels_changed": 0,
+        "same_indices_palette_and_presented_pixels_as_old_binary": true
+      }
+    ],
+    "camera_change_false_positives": 13,
+    "existing_unresolved_HD_occlusion_cells": 6,
+    "F1_flash_regression_in_these_cells": false
+  },
+  "controlled_original_damage": {
+    "kind": "explicit composition: original resident code from town snapshot plus battle records; not normal gameplay",
+    "results": [
+      {
+        "Target": "player",
+        "On": false,
+        "Damage": 10,
+        "HP": 152,
+        "Health": 0,
+        "Restored": 0,
+        "Removed": 0,
+        "Steps": 52
+      },
+      {
+        "Target": "player",
+        "On": true,
+        "Damage": 10,
+        "HP": 162,
+        "Health": 0,
+        "Restored": 1,
+        "Removed": 0,
+        "Steps": 52
+      },
+      {
+        "Target": "player",
+        "On": false,
+        "Damage": 162,
+        "HP": 0,
+        "Health": 4,
+        "Restored": 0,
+        "Removed": 0,
+        "Steps": 69
+      },
+      {
+        "Target": "player",
+        "On": true,
+        "Damage": 162,
+        "HP": 162,
+        "Health": 0,
+        "Restored": 2,
+        "Removed": 0,
+        "Steps": 57
+      },
+      {
+        "Target": "player",
+        "On": false,
+        "Damage": 999,
+        "HP": 0,
+        "Health": 6,
+        "Restored": 0,
+        "Removed": 0,
+        "Steps": 62
+      },
+      {
+        "Target": "player",
+        "On": true,
+        "Damage": 999,
+        "HP": 162,
+        "Health": 0,
+        "Restored": 2,
+        "Removed": 0,
+        "Steps": 50
+      },
+      {
+        "Target": "enemy",
+        "On": true,
+        "Damage": 999,
+        "HP": 0,
+        "Health": 6,
+        "Restored": 0,
+        "Removed": 0,
+        "Steps": 62
+      }
+    ]
+  },
+  "assets": {
+    "theme_files": 1536,
+    "fonts": 10,
+    "theme_and_fonts_unchanged": true
+  },
+  "clean_git_build_matches": true,
+  "logs": {
+    "unit.log": "f52fa997da80582b60cea6f16ee602328acfae5ccd830158bab7379d6a40498e",
+    "oracle.log": "f698eedfe01b26b34a548a035996bd67274f785650452621c8a078043d2d0d2f",
+    "frontend.log": "eefb3650f33d1b9197a414503916d4a562368e0ebe56b6a31276095d67a8840e",
+    "vet.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "engine_files": {
+    "apps/pod/cheat.go": "d2f6d34651aa1fa62b8bcbe881d3583833f3fd784f5965a4edf672f43d697737",
+    "apps/pod/cheat_test.go": "2489b80e36c9f43db9046e0173d7a9ba6f6c3366dc3c5f27636e1f0ed79c8638",
+    "cmd/pod-play/main.go": "db9ba5195dcb0a0c8960570fd5f9adba7e63357895ecc1e1de3cfc971da7ad8e"
+  },
+  "tools": {
+    "ida_pod_invincible.py": "339f479b602eb5e1bd89ecdb1f0cf18869bd148c11bb7bc0c125beff5cd22d51",
+    "invincible_check.py": "fd6cc2175be7a5b309357ceada88cd72e59af2a18c50cdc5c1084e9da6880020",
+    "invincible_gui.sh": "2a16ee93a48b8135d5e0a1327e40d5466f97a9d6f2a310956334dd8d7ce9cd4a",
+    "invincible_oracle_test.go": "b013aaff5f8d6241aa9ba9c2b84d2f93b82006ac07d6633e25d24848d5e8cb88",
+    "invincible_source.py": "6732476a6d64dff612d74afbb24387d245d3135d5ffbc1e6ac0f2cd0bcd54926"
+  },
+  "limits": [
+    "sampled routes only; harmful effect types outside verified five retained",
+    "effect removal uses existing unlink policy without reclaiming original Pascal nodes",
+    "long-combat raw flash events retained; no blanket zero-flash claim",
+    "no change to old nine packages; remaining original project scope pending"
+  ]
+}

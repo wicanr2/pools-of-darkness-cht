@@ -5,7 +5,7 @@
   "engine": {
     "repository": "https://github.com/wicanr2/pools-of-darkness-cht.git",
     "branch": "dosgolem/pod",
-    "commit": "2ec2dfa4616d47795f27c1f6f9eee92999fb4ac9"
+    "commit": "33094bda183f9656c4be0f821a831b8523319dda"
   },
   "theme": [
     {
@@ -12609,6 +12609,14 @@
         }
       },
       "scope": "English panel data only; historical7400-frame outputs unchanged;4800-frame normal sample compared against027"
+    },
+    "invincible_extension": {
+      "issue": 72,
+      "receipt": "docs/re/029-invincible-runtime.json",
+      "default": false,
+      "binary_sha256": "139279d04a43467564599c3e7095dda705781498a7c6f3ebff7920ff7dd8075f",
+      "text_theme_fonts_unchanged": true,
+      "scope": "F1 sample only; default-off and city-on4800-frame guest state matches028; controlled original damage separately recorded; long-combat19 raw cells include13 camera changes and6 existing unresolved HD occlusion cells"
     }
   }
 }
