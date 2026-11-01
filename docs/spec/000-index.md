@@ -29,7 +29,7 @@
 | [012 發行包](012-package.md) | 候選範圍CONFORMED | #12、#69 | 基本patch三包、本機完整版六包；Linux與Wine抽驗，macOS只驗結構，HD patch及原案完整交付未完 | docs/re/026-package-runtime.json |
 | 013 玩家名音譯 | DRAFT | #7 | 音譯資料沿用前作；隊伍名單的玩家名已音譯（ROLAND → 羅倫德）；建角畫面的名字與性別欄位址未在本作驗證 | `tools/g6-create-receipt.sh` |
 | 014 配樂 | 未開始 | #11 | — | — |
-| [015 多語系](015-multilingual.md) | 簡中抽樣及英文前端局部CONFORMED | #11、#26、#70 | 簡中介面／物品、99手札、78攻略、地圖、姓名音譯、開場／海報／字幕及原生字模接入；繁中／簡中正常4800格同原版狀態及132檔。英文手札、攻略與日韓仍DRAFT | docs/re/027-zhcn-runtime.json；014-title-runtime.json、014-english-front-runtime.json |
+| [015 多語系](015-multilingual.md) | 簡中及英文面板抽樣CONFORMED | #11、#26、#70、#71 | 簡中介面／物品、手札、攻略、地圖、音譯及原生字模接入；英文99手札、78攻略、已知地圖及七點接入。三語正常4800格同原版狀態及132檔，日韓仍DRAFT | docs/re/028-english-panels-runtime.json、027-zhcn-runtime.json；014-title-runtime.json、014-english-front-runtime.json |
 | 016 推廣影片 | 未開始 | #11 | — | — |
 | 017 作弊：我方無敵 | 停用 | #11 | 位址是前作值，`CheatVerified` 為假 | — |
 | [018 開場 demo 控制](018-demo-control.md) | CONFORMED | #13 | 選單不逾時；對話／戰鬥中斷、重播、正常進入、F12與2倍通過。已啟用a83043c | [固定收據](../re/020-demo-control-runtime.json)；`tools/demo-control-receipt.sh` |

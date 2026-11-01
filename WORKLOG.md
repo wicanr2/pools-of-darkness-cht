@@ -1777,3 +1777,15 @@
 - 規格015簡中升CONFORMED抽樣，固定證據docs/re/027-zhcn-runtime.json，README直接新增正常簡中工具列與海報圖。英文手札／攻略、日韓、配樂／試聽、無敵、完整動畫HD、HD patch及正式平台交付仍待完成；#11／#12等母項保持開啟。沿用既有影像、Go與Playwright映像，沒有新增映像，不動其他專案。
 - 最終546個本機文件連結及README 62張內嵌圖入口通過，027收據SHA 7cfedb034b283ec86fcf7f288cd0264febf1b0a5268f9d245335cc89550a2c2e。舊素材、六份字型、原九包及zip／rar原始輸入SHA不變，回復副本完整。全工作樹root-owned與誤建.md目錄0，本專案容器0，剩264GiB。巢狀音譯TSV行尾Tab是必要空欄，依既有資料政策補gitattributes，不裁掉空欄；OpenCC授權保存原始bytes。
 - 主專案3abaa88已推私人main，#70附[簡中驗收](https://github.com/wicanr2/pools-of-darkness-cht/issues/70#issuecomment-6550569429)後關閉並回讀CLOSED；#11補[簡中進度與剩餘範圍](https://github.com/wicanr2/pools-of-darkness-cht/issues/11#issuecomment-6550569692)，與#9／#10／#12／#16回讀OPEN。儲存庫回讀PRIVATE，引擎工作樹乾淨且與私人遠端相同。
+
+## 2026-11-01：英文手札、攻略與地圖面板收尾（#71）
+
+- 沿使用者「抽驗即可」完成既定英文面板切片。先核對知識路由、收尾入口、顯示隔離、文件職責與目前遠端Issue；#71在動工前列明來源、樣本、私人保存與commit／push授權。沒有擴大G6探索或重開已完成的Go繪圖。
+- G4已校讀英文手札99則原稿保存reference/journal-en.tsv，SHA ba09a73d1e95e1eed26415c9eb4c99d90f2b967c3f43e090ba410f9dbc9f70ad。正式journal.en.tsv直接取原文，沒有第13則。彎引號及破折號改為等義ASCII標點，避免既有PackHalfWidth混合字元路徑與Courier方形字格不合。第11則長標題改短，全文留正文。原稿依私人例外保存，不授予公開散布權。
+- 將現行78段自寫攻略摘要完整譯為英文。章節、來源期頁、數量／加值、地圖標號及原有疑義保留，數字多重集合檢查通過。16段長標題縮短並把全標題留在正文。英文地圖名稱由2鍵補至32鍵，其中24個已知、八個仍空；七個攻略點保留原map、n、x、y與證據。商店與神殿名以既有town1／town2正常輸出核對，不另跑探索。
+- 沿既有LangPack及16／24英文字型讀入，不改引擎、原版邏輯或存檔格式。正式程式仍2ec2dfa4616d47795f27c1f6f9eee92999fb4ac9，執行檔SHA 218b60f5cc07340e18c7d020f08f12f4883b160c31d6fde6ae508c95df6675ac。1536檔主題tree SHA e12c98cd544af6f034f3cdbb96627afeb110d029719ce599ca4d01b174d3fdfe與十份字型同027；清單只更新英文文字輸入增量，不假稱重跑歷史7400格。
+- 全部177筆由實際面板分頁檢查，手札161頁、攻略128頁，最長各4／5頁，每個非空白字元均保留，標題／正文／頁腳界內。四則手札及三段攻略的首末頁，以2／3倍原尺寸擷取並抽看長文末頁。Go面板測試、前端定向測試及vet通過；修改Trident加值與攻略座標的兩個負對照均拒絕。
+- 正常沿SND／CONTROL啟動、讀自建槽A，4800格及462000000步，17張擷取涵蓋F6翻頁、F8英→簡→繁→英、F7地圖、F5空清單、2／3倍與工具列。DOS按鍵序列同027，CPU／RAM、IDX／PAL及132個客體檔案相同。NativeBytes等於HostBytes，FallbackBytes／Mismatches／LegacyRGBFrames皆0。量尺原始121格仍為4749→4750明示HD倍率切換的11×11格，來源索引及色盤鎖定，非預期0。新劇情手札觸發未重播，正文擷取明列元件排版，不能替代正常觸發證據。
+- 所有英文TSV、原稿、五個重生工具及兩張README圖片納入Git，來源樹乾淨匯出後資料檢查逐項相同，不依賴舊workplace原稿。首次匯出誤用不含Git的影像工具映像，改用既有Go映像乾淨完成；屬工具環境問題，沒有新增映像。行尾Tab代表未知地圖名稱的必要空欄，以單檔gitattributes保留。
+- 規格015英文面板升CONFORMED抽樣，證據docs/re/028-english-panels-runtime.json，SHA 82e6fba133942f39c9e9c347e702f8a7f33aafaba5b4e72b0c2962543813e962。README直接顯示正常攻略與明確標示的手札元件圖，現況表、重建入口與研究索引同步更新。
+- 2717個專案本機文件連結及README64張內嵌圖片入口通過，不計原樣附帶的上游工具文件。原九包及zip／rar雜湊不變，舊候選不加進新語系。沿用sosb-img:r1與dosgolem-go-ebiten:1.24-r1，沒有新映像；本專案容器0，root-owned與誤建.md目錄0，剩260GiB。日韓、配樂／試聽、無敵、推廣片、完整動畫HD及HD patch仍未完成，母項保持開啟。

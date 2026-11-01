@@ -20,7 +20,7 @@
 | 錯譯表 | `text/errata.tsv`，[`tools/errata_check.py`](../../tools/errata_check.py) | repo |
 | 術語 | `text/glossary.tsv`（194 筆）；舊譯殘留 `text/term-avoid.tsv`（10 筆），[`tools/term_check.py`](../../tools/term_check.py) | repo |
 
-逐字稿（英文校正稿 `workplace/journal/en/journal-en.tsv`、珍157 照原書用字的 `workplace/journal/zh157/journal-zh157.tsv`）只留在 `workplace/`。
+G4當時的逐字稿只留在`workplace/`：英文校正稿`workplace/journal/en/journal-en.tsv`、珍157照原書用字稿`workplace/journal/zh157/journal-zh157.tsv`。英文面板收尾另依私人儲存庫例外保存[英文校讀來源](../../reference/journal-en.tsv)，供[英文面板](../spec/015-multilingual.md#英文面板收尾)核對正文與來源頁碼；珍157逐字稿仍不入Git。
 
 修正原則（同銀色匕首之謎 docs/re/006）：
 - 意思錯、漏譯、主客顛倒、專名誤譯才改；語感上可接受的意譯保留珍157 原文。

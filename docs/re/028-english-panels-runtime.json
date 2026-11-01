@@ -1,0 +1,567 @@
+{
+  "date": "2026-11-01",
+  "issue": 71,
+  "status": "PASS within English panel sample scope",
+  "engine": "2ec2dfa4616d47795f27c1f6f9eee92999fb4ac9",
+  "binary_sha256": "218b60f5cc07340e18c7d020f08f12f4883b160c31d6fde6ae508c95df6675ac",
+  "baseline": {
+    "path": "docs/re/027-zhcn-runtime.json",
+    "sha256": "7cfedb034b283ec86fcf7f288cd0264febf1b0a5268f9d245335cc89550a2c2e",
+    "same_DOS_inputs": true,
+    "state": {
+      "frames": 4800,
+      "steps": 462000000,
+      "memory": "c96661205ccf21862073abc967395d86b0cae0683f087596e2f67159ef8efcea",
+      "indexed": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+      "cpu": "e51ff0161b303165fcb9d5265b133bda27d0ac67a7972cb0e96dd2880cc48c00",
+      "palette": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde"
+    }
+  },
+  "data": {
+    "journals": 99,
+    "guide_chapters": 78,
+    "maps": 32,
+    "unknown_maps": 8,
+    "guide_points": 7,
+    "normalization": "ASCII double quotes and double hyphens; long full titles preserved at start of body",
+    "source_journal_sha256": "ba09a73d1e95e1eed26415c9eb4c99d90f2b967c3f43e090ba410f9dbc9f70ad",
+    "original_source_sha256": {
+      "journal.zh-TW.tsv": "bfaedeeae79e088088575a007a738870de9e5148bb3370cfdbe8d4786decff37",
+      "walkthrough.zh-TW.tsv": "65295ae54f0590e90472e360da6344be95735290b0cc996a3fc13d8974e4ffe8",
+      "map-geo.tsv": "aec61e88db9546ed6e5d33e789063cd20c261c7a5daf086970be0ede6c8a9e26",
+      "map-guide.zh-TW.tsv": "f51a23e13c0c32024b7a9fa92543f3bcee2459ea2dce388193ac33ad27500818"
+    },
+    "english": {
+      "journal.en.tsv": "e1b644b05988ae688cfd299d796ceeef3c4ae9dba05d101ddb0deb0b86857c77",
+      "walkthrough.en.tsv": "2a6a2d3459eb23fb7704b305b8f9521cffca1cd79258f859ba907bd751c0db61",
+      "map-titles.en.tsv": "24394c3822914b018fe8a28a29c7fbfdcdc04202c82317b597f2b0e3cf43a18b",
+      "map-guide.en.tsv": "9198269342857a804899fde5b32a1acbe55f9ae190b239ce1d2289a3016c415c"
+    },
+    "numeric_and_location_checks": "PASS",
+    "display_charset": "printable ASCII; existing Courier16/24 unchanged"
+  },
+  "layout": {
+    "all_lines_bounded": true,
+    "all_text_preserved": true,
+    "bad_header_rejected": true,
+    "guide_chapters": 78,
+    "guide_pages": 128,
+    "journal_pages": 161,
+    "journals": 99,
+    "locale_progress_preserved": true,
+    "max_guide_pages": 5,
+    "max_journal_pages": 4,
+    "samples": [
+      {
+        "entry": 1,
+        "file": "journal-001-p1-2x.png",
+        "kind": "journal",
+        "page": 1,
+        "pages": 1,
+        "scale": 2
+      },
+      {
+        "entry": 1,
+        "file": "journal-001-p1-2x.png",
+        "kind": "journal",
+        "page": 1,
+        "pages": 1,
+        "scale": 2
+      },
+      {
+        "entry": 11,
+        "file": "journal-011-p1-2x.png",
+        "kind": "journal",
+        "page": 1,
+        "pages": 2,
+        "scale": 2
+      },
+      {
+        "entry": 11,
+        "file": "journal-011-p2-2x.png",
+        "kind": "journal",
+        "page": 2,
+        "pages": 2,
+        "scale": 2
+      },
+      {
+        "entry": 57,
+        "file": "journal-057-p1-2x.png",
+        "kind": "journal",
+        "page": 1,
+        "pages": 2,
+        "scale": 2
+      },
+      {
+        "entry": 57,
+        "file": "journal-057-p2-2x.png",
+        "kind": "journal",
+        "page": 2,
+        "pages": 2,
+        "scale": 2
+      },
+      {
+        "entry": 74,
+        "file": "journal-074-p1-2x.png",
+        "kind": "journal",
+        "page": 1,
+        "pages": 4,
+        "scale": 2
+      },
+      {
+        "entry": 74,
+        "file": "journal-074-p4-2x.png",
+        "kind": "journal",
+        "page": 4,
+        "pages": 4,
+        "scale": 2
+      },
+      {
+        "chapter": 1,
+        "file": "guide-001-p1-2x.png",
+        "kind": "guide",
+        "page": 1,
+        "pages": 2,
+        "scale": 2
+      },
+      {
+        "chapter": 1,
+        "file": "guide-001-p2-2x.png",
+        "kind": "guide",
+        "page": 2,
+        "pages": 2,
+        "scale": 2
+      },
+      {
+        "chapter": 16,
+        "file": "guide-016-p1-2x.png",
+        "kind": "guide",
+        "page": 1,
+        "pages": 2,
+        "scale": 2
+      },
+      {
+        "chapter": 16,
+        "file": "guide-016-p2-2x.png",
+        "kind": "guide",
+        "page": 2,
+        "pages": 2,
+        "scale": 2
+      },
+      {
+        "chapter": 55,
+        "file": "guide-055-p1-2x.png",
+        "kind": "guide",
+        "page": 1,
+        "pages": 5,
+        "scale": 2
+      },
+      {
+        "chapter": 55,
+        "file": "guide-055-p5-2x.png",
+        "kind": "guide",
+        "page": 5,
+        "pages": 5,
+        "scale": 2
+      },
+      {
+        "entry": 1,
+        "file": "journal-001-p1-3x.png",
+        "kind": "journal",
+        "page": 1,
+        "pages": 1,
+        "scale": 3
+      },
+      {
+        "entry": 1,
+        "file": "journal-001-p1-3x.png",
+        "kind": "journal",
+        "page": 1,
+        "pages": 1,
+        "scale": 3
+      },
+      {
+        "entry": 11,
+        "file": "journal-011-p1-3x.png",
+        "kind": "journal",
+        "page": 1,
+        "pages": 2,
+        "scale": 3
+      },
+      {
+        "entry": 11,
+        "file": "journal-011-p2-3x.png",
+        "kind": "journal",
+        "page": 2,
+        "pages": 2,
+        "scale": 3
+      },
+      {
+        "entry": 57,
+        "file": "journal-057-p1-3x.png",
+        "kind": "journal",
+        "page": 1,
+        "pages": 2,
+        "scale": 3
+      },
+      {
+        "entry": 57,
+        "file": "journal-057-p2-3x.png",
+        "kind": "journal",
+        "page": 2,
+        "pages": 2,
+        "scale": 3
+      },
+      {
+        "entry": 74,
+        "file": "journal-074-p1-3x.png",
+        "kind": "journal",
+        "page": 1,
+        "pages": 4,
+        "scale": 3
+      },
+      {
+        "entry": 74,
+        "file": "journal-074-p4-3x.png",
+        "kind": "journal",
+        "page": 4,
+        "pages": 4,
+        "scale": 3
+      },
+      {
+        "chapter": 1,
+        "file": "guide-001-p1-3x.png",
+        "kind": "guide",
+        "page": 1,
+        "pages": 2,
+        "scale": 3
+      },
+      {
+        "chapter": 1,
+        "file": "guide-001-p2-3x.png",
+        "kind": "guide",
+        "page": 2,
+        "pages": 2,
+        "scale": 3
+      },
+      {
+        "chapter": 16,
+        "file": "guide-016-p1-3x.png",
+        "kind": "guide",
+        "page": 1,
+        "pages": 2,
+        "scale": 3
+      },
+      {
+        "chapter": 16,
+        "file": "guide-016-p2-3x.png",
+        "kind": "guide",
+        "page": 2,
+        "pages": 2,
+        "scale": 3
+      },
+      {
+        "chapter": 55,
+        "file": "guide-055-p1-3x.png",
+        "kind": "guide",
+        "page": 1,
+        "pages": 5,
+        "scale": 3
+      },
+      {
+        "chapter": 55,
+        "file": "guide-055-p5-3x.png",
+        "kind": "guide",
+        "page": 5,
+        "pages": 5,
+        "scale": 3
+      }
+    ],
+    "scope": "local panel rendering; not fresh journal-trigger player proof"
+  },
+  "negative": [
+    {
+      "case": "altered_item_bonus",
+      "rejected": true
+    },
+    {
+      "case": "altered_map_coordinate",
+      "rejected": true
+    }
+  ],
+  "guest_files": 132,
+  "guest_unchanged": true,
+  "original_state_equal": true,
+  "clean_git_data": {
+    "source_tree": "7bc42c648b540f24d0020ddc317efa249507b9c8",
+    "receipt_sha256": "9716969d1bdc4b72b985f9aa1f34245bfff4012809e6351c11a63cef4ed1304f",
+    "all_English_tables_and_source_match": true
+  },
+  "normal": {
+    "script_sha256": "b66173c1104654892f5433030d313bdf392054a056810a266caa9f19feed9274",
+    "source_sha256": "df3c6a4c0c2247dda3d7872e31be58af78e097c4200f418ecb6fc7dcf681dd5d",
+    "palette_sha256": "505ea7c4b7f9422f517d366fbd60b401b0ee06b1b78b8f2d3e6fbf1fce884bde",
+    "shots": {
+      "pod-f003900.png": "5ddc6fe362bab572b87f9362803c306bc26e4c9860bdc1d3d7952a963bd451f7",
+      "pod-f004200.png": "e3ca5d2a6ebe82d57a153539f0131dd032abdcb8ed05cb8b97147bd1df8a87da",
+      "pod-f004320.png": "559886280e6f40693258c1b97a8a54ab1b690e1f5b7f116721ab252ad186728a",
+      "pod-f004342.png": "5d68b40d915e2c5fdac378555dc69ce34a01ede6729973466212075da806baf5",
+      "pod-f004346.png": "31078fc2a38a7c7bc72fe57c9864fa5e3c16f4f3eaa24ca515282db952b7daca",
+      "pod-f004350.png": "8d6f3f8933bfbdb73f7dbca1745f231bd3befc2949303959c11c74017fa797e6",
+      "pod-f004354.png": "7232da802b352ea315a351d000d2bf9861a247e05c2a4f298552a2fd713f0cc0",
+      "pod-f004358.png": "f2f7bb6b22a67f826f93d4451c27198d87725df9ead028d2140175b1dd5a7c8e",
+      "pod-f004362.png": "31078fc2a38a7c7bc72fe57c9864fa5e3c16f4f3eaa24ca515282db952b7daca",
+      "pod-f004366.png": "3e2c8787033fb3f24d1336c64d0a8d8b01002a3d087b928c20bf609530c04d11",
+      "pod-f004372.png": "31078fc2a38a7c7bc72fe57c9864fa5e3c16f4f3eaa24ca515282db952b7daca",
+      "pod-f004382.png": "8d6f3f8933bfbdb73f7dbca1745f231bd3befc2949303959c11c74017fa797e6",
+      "pod-f004520.png": "559886280e6f40693258c1b97a8a54ab1b690e1f5b7f116721ab252ad186728a",
+      "pod-f004620.png": "e3ca5d2a6ebe82d57a153539f0131dd032abdcb8ed05cb8b97147bd1df8a87da",
+      "pod-f004680.png": "c8071e8e5036179dab6e40be247fdeb4adc148c606bce61cbcf7b7deef16dd5e",
+      "pod-f004740.png": "f3a53936cb8b355c00dd18e9d135242b37cf5e48bafd4f74ae9515d1d97ec1b8",
+      "pod-f004770.png": "e3ca5d2a6ebe82d57a153539f0131dd032abdcb8ed05cb8b97147bd1df8a87da"
+    },
+    "posters": [
+      {
+        "frame": 3900,
+        "scale": 3,
+        "locale": "en",
+        "sha256": "d2a7e098fce191e4b79d0d7e537a0f4697efb5a9f1b1a13ffd7c9a2a928e3b27"
+      },
+      {
+        "frame": 4200,
+        "scale": 3,
+        "locale": "en",
+        "sha256": "c781a15233d3983a0826c2a46da2a68a13762c94afad9364ffe2c307a4387177"
+      },
+      {
+        "frame": 4320,
+        "scale": 3,
+        "locale": "en",
+        "sha256": "8d28651af7358a93d6c8213c1e074036fa8d0cd1f746c873fb4e8c911055cc14"
+      },
+      {
+        "frame": 4342,
+        "scale": 3,
+        "locale": "en",
+        "sha256": "5ceee2e86fe50a128f2eb42450d71bfcbe338267acf57b8d12396658fa87e778"
+      },
+      {
+        "frame": 4346,
+        "scale": 3,
+        "locale": "en",
+        "sha256": "577e1380dd4b1abb1267e3c5822e369ec21c5ebe3367a6e9d3b1438e283d3271"
+      },
+      {
+        "frame": 4350,
+        "scale": 3,
+        "locale": "en",
+        "sha256": "c5e541cc77eda7d9a78c3d4ed48132faebd1d861e6246ab71fee33cde7bcd4b4"
+      },
+      {
+        "frame": 4354,
+        "scale": 3,
+        "locale": "zh-CN",
+        "sha256": "51eba2720dd8b745441d3bacb373e7da0eec0f1e3a04a469c45c3635aab17e5f"
+      },
+      {
+        "frame": 4358,
+        "scale": 3,
+        "locale": "zh-TW",
+        "sha256": "0fa018a4b47e87b9864699300be46c8ce68f26be4123fa73d810ff317e0603f9"
+      },
+      {
+        "frame": 4362,
+        "scale": 3,
+        "locale": "en",
+        "sha256": "577e1380dd4b1abb1267e3c5822e369ec21c5ebe3367a6e9d3b1438e283d3271"
+      },
+      {
+        "frame": 4366,
+        "scale": 3,
+        "locale": "en",
+        "sha256": "b5dd343ac87e6cac3c6c08455e28e9d6d6eb764075900d007b13c10891b8a497"
+      },
+      {
+        "frame": 4372,
+        "scale": 3,
+        "locale": "en",
+        "sha256": "577e1380dd4b1abb1267e3c5822e369ec21c5ebe3367a6e9d3b1438e283d3271"
+      },
+      {
+        "frame": 4382,
+        "scale": 3,
+        "locale": "en",
+        "sha256": "c5e541cc77eda7d9a78c3d4ed48132faebd1d861e6246ab71fee33cde7bcd4b4"
+      },
+      {
+        "frame": 4520,
+        "scale": 3,
+        "locale": "en",
+        "sha256": "8d28651af7358a93d6c8213c1e074036fa8d0cd1f746c873fb4e8c911055cc14"
+      },
+      {
+        "frame": 4620,
+        "scale": 3,
+        "locale": "en",
+        "sha256": "c781a15233d3983a0826c2a46da2a68a13762c94afad9364ffe2c307a4387177"
+      },
+      {
+        "frame": 4680,
+        "scale": 3,
+        "locale": "en",
+        "sha256": "3f466904c5bc68585d1fe53c95ac888b7d0e37d70cda481962e3827ded987702"
+      },
+      {
+        "frame": 4740,
+        "scale": 2,
+        "locale": "en",
+        "sha256": "bd72ada256f357aef41fc0f351c41e490185d1de89f2e798306563338000abde"
+      },
+      {
+        "frame": 4770,
+        "scale": 3,
+        "locale": "en",
+        "sha256": "04d61d6dc94f2c208a1367d0418dba25df69d7cf4c9935dcb8893838610286e1"
+      }
+    ],
+    "draw": {
+      "HostBytes": 4348232,
+      "Commands": 3382844,
+      "NativeBytes": 4348232,
+      "FallbackBytes": 0,
+      "Frames": 5599,
+      "BootstrapFrames": 3,
+      "Mismatches": 0,
+      "RGBFrames": 7649,
+      "OriginalRGBPixels": 2911354176,
+      "SelectedRGBPixels": 1479429824,
+      "LegacyRGBFrames": 0,
+      "HostCalls": 51469,
+      "HostInstructions": 33738862,
+      "HostBlocks": 176174,
+      "BlockInstructions": 2339440,
+      "AlgorithmicPlans": 227641,
+      "AlgorithmicInstructions": 36078288,
+      "Writers": {
+        "1218527905": {
+          "Commands": 200,
+          "NativeBytes": 64000,
+          "FallbackBytes": 0,
+          "HostBytes": 64000
+        },
+        "1218537727": {
+          "Commands": 7823,
+          "NativeBytes": 49494,
+          "FallbackBytes": 0,
+          "HostBytes": 49494
+        },
+        "1218537731": {
+          "Commands": 4715,
+          "NativeBytes": 4715,
+          "FallbackBytes": 0,
+          "HostBytes": 4715
+        },
+        "1218537744": {
+          "Commands": 8431,
+          "NativeBytes": 80046,
+          "FallbackBytes": 0,
+          "HostBytes": 80046
+        },
+        "1218537748": {
+          "Commands": 4313,
+          "NativeBytes": 4313,
+          "FallbackBytes": 0,
+          "HostBytes": 4313
+        },
+        "456004074": {
+          "Commands": 3323372,
+          "NativeBytes": 3323372,
+          "FallbackBytes": 0,
+          "HostBytes": 3323372
+        },
+        "456004081": {
+          "Commands": 24980,
+          "NativeBytes": 24980,
+          "FallbackBytes": 0,
+          "HostBytes": 24980
+        },
+        "488572034": {
+          "Commands": 1274,
+          "NativeBytes": 487936,
+          "FallbackBytes": 0,
+          "HostBytes": 487936
+        },
+        "517216888": {
+          "Commands": 7552,
+          "NativeBytes": 254656,
+          "FallbackBytes": 0,
+          "HostBytes": 254656
+        },
+        "517216910": {
+          "Commands": 184,
+          "NativeBytes": 54720,
+          "FallbackBytes": 0,
+          "HostBytes": 54720
+        }
+      }
+    },
+    "raw_flash": 121,
+    "unexpected_flash": 0,
+    "classification": "explicit2x-to3x HD switch at4750; same121 cells and source indices/palette"
+  },
+  "assets": {
+    "theme_files": 1536,
+    "fonts": 10,
+    "theme_and_fonts_unchanged_from027": true,
+    "manifest_sha256": "e5fd36a1fb94059317b06748eb92e84bcf647db361cd27c7d58cb9c66b07be1a"
+  },
+  "rights": "checked English journal transcript is original SSI text; private repository exception only; no public redistribution rights granted",
+  "local_layout_samples": {
+    "guide-001-p1-2x.png": "2b4456a4ca816927f72c7e0e06cd0997271534de0fa6780b18326632b9a72016",
+    "guide-001-p1-3x.png": "b93a34c9aa832b0eb4f9dd477a1416ee9e0b5b6e764054a0921564fc959e422c",
+    "guide-001-p2-2x.png": "e1adf47b1098f89cec7ec81cd2b0fcd72f8ea1e409d0a98078f6c2f47c43bf9e",
+    "guide-001-p2-3x.png": "6177b8601b57963d873b59667e44f96e8564e2d4f5f6b4a64c13ef27161da538",
+    "guide-016-p1-2x.png": "515eb76c1ce0e17c291415c0703412919f16b55a84e6dee8566e4abd24c73006",
+    "guide-016-p1-3x.png": "4631d103217bae2ebb7c35c8a9586b14e0b1f0927d2939cb0122507309cfb0bb",
+    "guide-016-p2-2x.png": "6e17461dab86af5a5de88f49ecd609528d0f1987e2a7dd2243fa53a90f7a02f8",
+    "guide-016-p2-3x.png": "fab01d9e9848ca765825a38ac7a595bd326c977d7c237a77bc7fad1c3f9ee257",
+    "guide-055-p1-2x.png": "124c36a32bf160d08794f660afa95ba1f49249a0f085a0e4c4fef83f53ac993f",
+    "guide-055-p1-3x.png": "947f7b5f753dcc063795a5b8323fdc3ceaaa2cef1fc20c5768da79794ae15bdc",
+    "guide-055-p5-2x.png": "69dbe7678b61ed1c4a757504492d03089b470b1f5078af8a105eaad22d6f6fdb",
+    "guide-055-p5-3x.png": "6ad0eed115e563bdd2e98dddac3c66693ff9c54ed57457d4e842cbe40f760350",
+    "journal-001-p1-2x.png": "3725a1c7b6b0749e8d9e4b766e34927b6ec3ed271836f49307ff0d2b6362659b",
+    "journal-001-p1-3x.png": "8a9732ca781b0cdcdac1e7c79589bf55631982ba97fb81e108bc5b46042dcb5b",
+    "journal-011-p1-2x.png": "1564aedae5787ffd23f5134b07f1bfc8c74188fe4e51596bfda94111bacbe8d0",
+    "journal-011-p1-3x.png": "689d91b1e5d5e5f46d688fd66612ed80fe3097b2cc73333758ff6bc69fb6fa2d",
+    "journal-011-p2-2x.png": "6ebccbe067c47c6800658f58a71cb17982351d8d44815eda4e8b5f6cd8621fef",
+    "journal-011-p2-3x.png": "9abf87162c5ce9eedaa566c190a1d843c6b38491827c04295c0ed25634ec5cb7",
+    "journal-057-p1-2x.png": "061f2767946884b6ce5bc39b0b34caf59596985a7db9aa553e51318658cc4cfd",
+    "journal-057-p1-3x.png": "a1ba164d5aeee19142a545fcca99e925aba8ba11e9b6a3164195f4f2a302d1c7",
+    "journal-057-p2-2x.png": "5a1f7c89cfcf7cb3365868a0841a4148fb0656d14f657a5467eb54e4dd58862d",
+    "journal-057-p2-3x.png": "68a95a062cbdfe53fd767464163f6588729b00421adcf8b72a771148abb9054e",
+    "journal-074-p1-2x.png": "275e8d2e4a6c739020da791187c94a9015ba6ae7d9c60b7c745843c418aca61c",
+    "journal-074-p1-3x.png": "212238983f0efebe4a43499fe5a52463264f63fee6a2724c215f1ead360b1873",
+    "journal-074-p4-2x.png": "0a56ac4e4e63b66b306ed32f199f6abf28815ec1da88cb87d36da4bd88e373d5",
+    "journal-074-p4-3x.png": "d8a1245f2cd47820ce123c8446556990c5a707f8cce2270aafaaef5048f1fc0d"
+  },
+  "logs": {
+    "data.log": "9716969d1bdc4b72b985f9aa1f34245bfff4012809e6351c11a63cef4ed1304f",
+    "frontend.log": "8a0044c0a6146003791bf7792ae74313b11a8ec5c7cd28182b5f8d4606eeb621",
+    "layout.log": "1cb78044be8bf219671b728cc33188b4e0ad6b87a20ddd3824c246d92a3b57a0",
+    "vet.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "tools": {
+    "english_panels.py": "7ae3ef3d27049c19413fcbfbe5dc18d48e90b2bfc3b3d0c9547cec8cab480ae5",
+    "english_panels_check.py": "757c0d6c6c2bb2641f89b7d3fae626e832132ee2f13a21645217f02a7821de80",
+    "english_panels_gui.sh": "7b700c0d10c844f5eb9649772e9ebd1622789616ab4fda32ce12d6597bdd2bdb",
+    "english_panels_negative.py": "72e41d260b7c9cca4e17b96b8502b84c49a5b36852cd385537bc84e239472362",
+    "english_panels_test.go": "3bde599da4c05496a9846b910f8e61ac7d8be1218baa62f47c46833cc99ad93a"
+  },
+  "limits": [
+    "one normal player route,17 screenshots; no extra exploration",
+    "fresh journal auto-trigger not replayed; journal body samples are component rendering",
+    "English guide translates existing project summaries and retains their uncertainties; no new gameplay oracle claims",
+    "font,HD assets,original rules and save format unchanged",
+    "Japanese,Korean,music approval,invincibility,full animationHD,HD patch and final packages remain pending"
+  ]
+}

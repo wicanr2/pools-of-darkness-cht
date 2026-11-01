@@ -36,7 +36,7 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 |---|---|
 | [主題重建清單](review/hd/runtime/manifest.json) | 固定全部檔案、來源、SHA-256及原版DAX版本 |
 | [HD審閱素材](review/hd/README.md) | 沿用已接受PNG；缺少的開場／海報圖補存於[runtime](review/hd/runtime/README.md) |
-| [字型來源與字集](font/README.md) | 開源字型及授權，逐位元組重生目前6份正式字型 |
+| [字型來源與字集](font/README.md) | 開源字型及授權，逐位元組重生目前十份正式字型 |
 | `text/`及`reference/` | 正式譯文、手札、攻略摘要與術語 |
 | 本儲存庫`dosgolem/pod`分支 | 遊戲adapter與引擎來源，不依賴前作工作樹 |
 
@@ -45,12 +45,15 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 
 目前另含簡中介面、手札、攻略、地圖、姓名音譯與開場文字，F8依繁中、英文、簡中循環。簡中有原生16／24及工具列12／22字模。正式TSV由固定OpenCC1.1.9及詞彙表產生；修改繁中後，可在`dosgolem-go-ebiten:1.24-r1`容器內執行`python3 -I tools/zhcn_text.py --root <repo> --out <repo>/text`重生，或加`--check`檢查。來源與重建範圍見[規格015](docs/spec/015-multilingual.md#簡體中文收尾)，OpenCC不在遊戲執行時轉換。
 
+英文99則手札、78段攻略與地圖面板的正式TSV也已保存。英文手札來源為私人儲存庫例外保存的[G4校讀稿](reference/journal-en.tsv)，沒有取得公開散布權。資料檢查在影像工具容器內執行`python3 -I tools/english_panels.py --root <repo>`，只讀Git來源，不需要舊工作區。原稿標點與長標題的處理見[英文面板規格](docs/spec/015-multilingual.md#英文面板收尾)。
+
 ## 驗證與目前限制
 
 跨機重建的驗證結果由[CONTEXT.md](CONTEXT.md)索引，過程記在[WORKLOG.md](WORKLOG.md)。
 初次[跨機重建收據](docs/re/025-rebuild-runtime.json)保存新編譯程式的7400格正常路徑；目前[遭遇圖收據](docs/re/017-b43-runtime.json)驗證1525檔主題與6份字型由乾淨Git檔案重生，固定引擎56ebba3乾淨重編與受測程式逐位元相同。[正常增量比較](docs/re/017-b43-play.json)的CPU、記憶體、來源、127檔及最終畫面同前批、閃現0，因此重建終點畫面基準仍綁[b38正常收據](docs/re/017-b38-play.json)。既有041近遠景由前批配對截圖驗證；本批十四張既有截圖逐張相同，新正常事件仍未知。
 簡中增量的[固定收據](docs/re/027-zhcn-runtime.json)另外保存正常讀檔／面板路線、既有字幕來源與1536檔／十份字型的乾淨重建。歷史7400格原版狀態與畫面預期未改，新增19份簡中TSV另列於清單，舊文字SHA保持原樣；新語系的抽樣範圍不能外推為全片頭或全部玩家路線。
-這個入口保存目前已完成的素材，不代表尚未驗證的地形、動畫、日韓語系、英文面板、配樂或平台已完成。
+英文面板[固定收據](docs/re/028-english-panels-runtime.json)保存一條4800格正常讀檔路線、17張擷取、三語切換及全表分頁檢查。程式、主題及字型同027，原版狀態與132檔不變；正文樣本不代替新劇情觸發。重建清單另列英文資料增量，不改寫歷史7400格證據。
+這個入口保存目前已完成的素材，不代表尚未驗證的地形、動畫、日韓語系、配樂或平台已完成。
 新增HD素材或正式字型時，須同步更新重建清單，並以乾淨Git檔案重跑`assets`，核對新正式主題及字型雜湊後才提交。
 
 ## 候選封包
@@ -65,7 +68,7 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 
 各包`README.txt`說明操作與存檔位置。Linux需要X11、OpenGL、ALSA與glibc2.36或相容環境；缺FUSE時用`APPIMAGE_EXTRACT_AND_RUN=1`。首次把合法DOS英文版1.10的47個遊戲檔放到程式旁`original/`，或用`-original`指定。歷史玩家SAVE不在包內；新存檔寫入使用者資料目錄。
 
-重建入口為[tools/package.sh](tools/package.sh)，固定候選引擎`4a8ef9f4ff18c82d8c98595faf19fb1ee803c609`及主專案素材來源`4bdd711`，保留這九包的原始範圍。它從乾淨Git匯出素材與程式，只改啟動器的原版版本提示；後續簡中資料不會改寫這組既有候選。輸出目錄必須是本專案`workplace/`內的新路徑。
+重建入口為[tools/package.sh](tools/package.sh)，固定候選引擎`4a8ef9f4ff18c82d8c98595faf19fb1ee803c609`及主專案素材來源`4bdd711`，保留這九包的原始範圍。它從乾淨Git匯出素材與程式，只改啟動器的原版版本提示；後續簡中與英文面板資料不會改寫這組既有候選。輸出目錄必須是本專案`workplace/`內的新路徑。
 
 ```sh
 bash tools/package.sh build /absolute/path/to/original "$PWD/workplace/package-rebuild"

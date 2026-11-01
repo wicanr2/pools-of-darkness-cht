@@ -12527,12 +12527,14 @@
       "host-text.en.tsv": "7ff009460e67ea7d935637515dff29cfbd81eb1e2f64fa84293e9c9334a2fd93",
       "host-text.zh-CN.tsv": "de282e63ddb9cc3bfcc5a8ccc15f6a6782e258394dcd1759fd5b03b978197d1d",
       "host-text.zh-TW.tsv": "7f0d5884376625a5bed7ae9056084a188b7537808422a3709c952d486bd76a6e",
+      "journal.en.tsv": "e1b644b05988ae688cfd299d796ceeef3c4ae9dba05d101ddb0deb0b86857c77",
       "journal.zh-CN.tsv": "beb281e8023fa5fac22043be4dbaa1cf293caa59860480cc090254bb55c1a0db",
       "journal.zh-TW.tsv": "bfaedeeae79e088088575a007a738870de9e5148bb3370cfdbe8d4786decff37",
       "map-geo.tsv": "aec61e88db9546ed6e5d33e789063cd20c261c7a5daf086970be0ede6c8a9e26",
+      "map-guide.en.tsv": "9198269342857a804899fde5b32a1acbe55f9ae190b239ce1d2289a3016c415c",
       "map-guide.zh-CN.tsv": "bea393945b8dac98ceda79908e76a1f707e962c2f10037fef961bd48a73a0ee9",
       "map-guide.zh-TW.tsv": "f51a23e13c0c32024b7a9fa92543f3bcee2459ea2dce388193ac33ad27500818",
-      "map-titles.en.tsv": "5e1c9d2f1941ef12dcf0c404e23aada20727a32dad9b72f2c7b56532d1dcebc8",
+      "map-titles.en.tsv": "24394c3822914b018fe8a28a29c7fbfdcdc04202c82317b597f2b0e3cf43a18b",
       "map-titles.tsv": "9f329b6d0b620c46a618cbfa16811083acc621ba84ad63c05b2d0f11d89100d2",
       "map-titles.zh-CN.tsv": "b910cc7e3955346a513297fa9868d353e798f17e9c654dcf42e38d9521487684",
       "menu-masters.tsv": "c4e447b70937f0c0b6bc547a0e9068c27c37bd543d4a46abe5dffd72bf40e894",
@@ -12559,6 +12561,7 @@
       "ui-text-events.tsv": "b654750ef72c0b8cbbb9be323db0b4dac1068ace5b1c38d3565ab25c7ecadf24",
       "ui-text.zh-CN.tsv": "1bdfd52c21bb89b80b4e51b710188990745e00e7f5d545a04bbc571f6414cdb0",
       "ui-text.zh-TW.tsv": "005c3e6228eac731011d2c2e6d3734815c5f4514fb0184007414d804cccb908e",
+      "walkthrough.en.tsv": "2a6a2d3459eb23fb7704b305b8f9521cffca1cd79258f859ba907bd751c0db61",
       "walkthrough.zh-CN.tsv": "4e42a13f4567f3d951b32834ac5e6245c1e2c91df2b3a0abda04ece98843cdcf",
       "walkthrough.zh-TW.tsv": "65295ae54f0590e90472e360da6344be95735290b0cc996a3fc13d8974e4ffe8",
       "zh-CN-terms.tsv": "7afa15a60bc6643b0804c3125e608c35ad2f505d6af9bbd119a768273805e3a1",
@@ -12590,6 +12593,22 @@
       },
       "existing_text_unchanged": true,
       "scope": "new zh-CN data only; historical7400-frame original-state outputs unchanged; normal4800-frame locale sample separately recorded"
+    },
+    "english_panel_extension": {
+      "issue": 71,
+      "receipt": "docs/re/028-english-panels-runtime.json",
+      "added": {
+        "journal.en.tsv": "e1b644b05988ae688cfd299d796ceeef3c4ae9dba05d101ddb0deb0b86857c77",
+        "map-guide.en.tsv": "9198269342857a804899fde5b32a1acbe55f9ae190b239ce1d2289a3016c415c",
+        "walkthrough.en.tsv": "2a6a2d3459eb23fb7704b305b8f9521cffca1cd79258f859ba907bd751c0db61"
+      },
+      "modified": {
+        "map-titles.en.tsv": {
+          "before": "5e1c9d2f1941ef12dcf0c404e23aada20727a32dad9b72f2c7b56532d1dcebc8",
+          "after": "24394c3822914b018fe8a28a29c7fbfdcdc04202c82317b597f2b0e3cf43a18b"
+        }
+      },
+      "scope": "English panel data only; historical7400-frame outputs unchanged;4800-frame normal sample compared against027"
     }
   }
 }
