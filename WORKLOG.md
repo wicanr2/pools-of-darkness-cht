@@ -1789,3 +1789,4 @@
 - 所有英文TSV、原稿、五個重生工具及兩張README圖片納入Git，來源樹乾淨匯出後資料檢查逐項相同，不依賴舊workplace原稿。首次匯出誤用不含Git的影像工具映像，改用既有Go映像乾淨完成；屬工具環境問題，沒有新增映像。行尾Tab代表未知地圖名稱的必要空欄，以單檔gitattributes保留。
 - 規格015英文面板升CONFORMED抽樣，證據docs/re/028-english-panels-runtime.json，SHA 82e6fba133942f39c9e9c347e702f8a7f33aafaba5b4e72b0c2962543813e962。README直接顯示正常攻略與明確標示的手札元件圖，現況表、重建入口與研究索引同步更新。
 - 2717個專案本機文件連結及README64張內嵌圖片入口通過，不計原樣附帶的上游工具文件。原九包及zip／rar雜湊不變，舊候選不加進新語系。沿用sosb-img:r1與dosgolem-go-ebiten:1.24-r1，沒有新映像；本專案容器0，root-owned與誤建.md目錄0，剩260GiB。日韓、配樂／試聽、無敵、推廣片、完整動畫HD及HD patch仍未完成，母項保持開啟。
+- 主專案3bd8755已推私人main，#71附[英文面板驗收](https://github.com/wicanr2/pools-of-darkness-cht/issues/71#issuecomment-6553877217)後關閉並回讀CLOSED；#11補[進度與剩餘範圍](https://github.com/wicanr2/pools-of-darkness-cht/issues/11#issuecomment-6553878411)。#9／#10／#11／#12／#16回讀OPEN，儲存庫PRIVATE，引擎遠端仍2ec2dfa且工作樹乾淨；最終本專案容器0。
