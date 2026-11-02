@@ -4,6 +4,8 @@
 
 本輪現況：正式版`v.1.0.0-20261102`十二包與同版號63秒1080p影片已交付並驗收，入口為[研究039](docs/re/039-v1-release.md)。引擎c118740，正式Linux程式303de655；名稱、內部版本與manifest均為正式版。舊36包與既有影片保持，功能證據保留[038](docs/re/038-input-and-quiz.md)。
 
+工作區維護：依使用者要求完成[#81](https://github.com/wicanr2/pools-of-darkness-cht/issues/81)，`workplace/`由51.8 GiB降至10.9 GiB，釋放40.9 GiB。48個封包、兩支影片、正式素材、原始輸入及存檔雜湊保持。研究傾印已無損封存，清理清單與還原入口見[WORKLOG](WORKLOG.md#2026-11-02-工作區清理81)。
+
 ## 儲存庫
 
 | 項目 | 值 | 回讀方式 |

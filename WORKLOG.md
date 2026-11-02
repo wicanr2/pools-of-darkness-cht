@@ -1964,3 +1964,24 @@
 - 正式入口更新為Linux版303de6552d2c31af4714c625603f579fcac7f43872ab3438a207296d46064201，回讀程式版本v.1.0.0-20261102與引擎c118740一致。039封包／影片固定收據、研究索引、規格012／016及唯一目前狀態表更新；README與SETUP只保留現行入口與驗收邊界。035作連結檢查正對照，再核對所有039入口與穩定文件目標，均通過。
 - 本輪沿用dosgolem-go-ebiten:1.24-r1（8ed6bdee2bce）、sosb-img:r1（8b9012adb991）、cok-osxcross:go1.24.13-sdk15.5-r1（a2dc911a8709）、kgb-cht-pkg:1.99.1-r2（dfc4fd92efc6）、yuan-wine-verify:noble-r2（31664639bb8c）及kgb-cht-video:1（320fc21d4211）。沒有建立或刪除image、沒有prune或rmi，所有工作在有界、UID1000:1000、無網路的Docker內執行。
 - 最後全工作根無root-owned檔案及誤建.md目錄，正式交付均1000:1000，release-v1工作容器0。儲存庫PRIVATE與owner回讀正確，沒有tag觸發的專案workflow。接續推送正式文件並建立同版號私人Git tag，舊版不移動、不覆寫，不建立公開Release。
+
+## 2026-11-02 工作區清理（#81）
+
+- 使用者要求清除52G工作區。命中文件職責與復古收尾清理路由，沿用`local/project-document-responsibilities.md`及收尾手冊。先建立[#81](https://github.com/wicanr2/pools-of-darkness-cht/issues/81)，盤點後分兩批執行，未擴大到其他專案或正式交付。
+- `workplace/`由55,639,089,152 bytes降至11,717,095,424 bytes，即51.8 GiB降至10.9 GiB，釋放43,921,993,728 bytes，約40.9 GiB。清除270,773份可重建檔案，包含重複封包與展開安裝、編譯快取、舊測試程式、舊HD主題備份、Git來源快照及已淘汰的翻譯模型。測試器放在`save/`裡的原版程式／素材，只有與唯讀原始輸入SHA相同才刪除；實際存檔保留。
+- 3,789份研究記憶體傾印先無損封存、逐檔解壓核對SHA，再移除未壓縮副本。封存檔`workplace/cleanup-20261102-space-v1/draw-memory.tar.gz`為639,110,604 bytes，SHA-256為`4d0156427957ceef16cd23f96b17e783ce862017339666f192472ff3c4904f06`；逐檔索引為同目錄`memory-archive.json`。
+- 第一批清單與結果保存在`workplace/cleanup-20261102-space-v1/{plan,result}.json`，第二批在`workplace/cleanup-20261102-space-v2/{plan,result}.json`。最終`cleanup-20261102-space-v1/verification.json`通過：48個封包、兩支影片、2,034份現行主題、18份字型、943份Git內HD來源、244份原始輸入及43,148份存檔／偏好／來源保護檔的SHA保持。正式程式仍為`303de655`，引擎`c118740`乾淨，正式tag仍指向`cda94afe`。
+- 可重現清理工具為[tools/workspace_cleanup.py](tools/workspace_cleanup.py)，入口登錄於[CLAUDE.md](CLAUDE.md)。此工具限定本專案既知暫存種類，先`plan`並檢閱清單，再`apply`，不直接遞迴刪除工作區。研究傾印還原指令如下；僅原傾印目錄可寫，其餘專案與封存檔唯讀。
+
+```sh
+timeout 180s docker run --rm --network none --memory 1g --cpus 2 \
+  --pids-limit 64 --user 1000:1000 \
+  --log-opt max-size=10m --log-opt max-file=3 \
+  -v "$PWD":/repo:ro \
+  -v "$PWD/workplace/probe/draw-intercept-v1":/repo/workplace/probe/draw-intercept-v1 \
+  --entrypoint python3 dosgolem-go-ebiten:1.24-r1 -I \
+  /repo/tools/workspace_cleanup.py restore-mem --root /repo \
+  --out /repo/workplace/cleanup-20261102-space-v1
+```
+
+- 全程使用既有`dosgolem-go-ebiten:1.24-r1`（`8ed6bdee2bce`），UID/GID為1000:1000，無網路且有資源與逾時限制。沒有新增或刪除image，沒有prune、rmi或操作其他專案容器。收尾無本專案工作容器、root-owned檔案或誤建`.md`目錄。存檔、原始壓縮檔、正式版本與其他平台既有驗收限制保持。

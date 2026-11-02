@@ -53,6 +53,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | pod-play 冷開機冒煙（建 `workplace/dosgolem/workplace/bin/pod-play`） | `tools/play-smoke.sh [畫格] [送鍵腳本]` | `dosgolem-go-ebiten:1.24-r1`（xvfb） |
 | 名稱 catalog、選單母串 | `python3 -I tools/name_catalog.py --glossary text/glossary.tsv --events text/name-events.tsv --out text/name.zh-TW.tsv`；`python3 -I tools/menu_masters.py --source workplace/text-src/ui-source.tsv --translations text/ui-text.zh-TW.tsv --out text/menu-masters.tsv` | `sosb-tools:bookworm-r1` |
 | 字型覆蓋：譯文表要顯示的字是否都在字型裡 | `python3 -I tools/font_coverage.py --font workplace/font/pod-rounded.golemfnt <譯文 TSV …>` | `sosb-tools:bookworm-r1` |
+| 工作區清理與傾印還原（#81） | `python3 -I tools/workspace_cleanup.py plan --root /repo --out /repo/workplace/<本輪清理>`，檢閱清單後以相同參數執行 `apply`；`archive-mem` 無損封存，`restore-mem` 還原。限定本專案既知暫存種類，詳見 WORKLOG「2026-11-02 工作區清理」 | `dosgolem-go-ebiten:1.24-r1`；專案唯讀掛 `/repo`，僅必要的 `workplace/` 子目錄可寫 |
 
 探針註記：`-call-args` 一次只接受一組 `CS:IP`；`-call-length-string` 把前兩個參數當字串遠指標。
 
