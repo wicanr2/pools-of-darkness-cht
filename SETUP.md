@@ -32,18 +32,18 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 
 ## 目前交付
 
-本機候選`v.0.1.3-20261102`在`dist-all/v.0.1.3-20261102/`，含十二個三平台封包。五語、18份字型及2034檔HD保持，包含97種片頭、43種片尾相位與B版海報。遊戲區支援持續滑鼠移動與左右鍵；查驗題預設自動填入英文答案，按Enter確認，F9可關閉輔助。F2切倍率、F8依繁中／英文／日文／韓文／簡中循環，F12切回英文原版。既有63秒1080p影片保留在v.0.1.2目錄。
+正式版`v.1.0.0-20261102`在`dist-all/v.1.0.0-20261102/`，含十二個三平台封包與同版號63秒1080p推廣影片。五語、18份字型及2034檔HD保持，包含97種片頭、43種片尾相位與B版海報。遊戲區支援持續滑鼠移動與左右鍵；查驗題預設自動填入英文答案，按Enter確認，F9可關閉輔助。F2切倍率、F8依繁中／英文／日文／韓文／簡中循環，F12切回英文原版。
 
 | 目錄 | 內容與使用 |
 |---|---|
 | `patch/` | 三平台基本及HD patch，需自備DOS英文版1.10的47個遊戲檔。放在程式旁`original/`或以`-original`指定 |
 | `full-local/` | 三平台基本及HD本機完整版，各附47個原版遊戲檔，沒有歷史玩家SAVE；不可上傳或散布 |
-| `dist-all/v.0.1.2-20261102/promo/` | `pod-v.0.1.2-20261102-promo.mp4`、九張抽樣、contact sheet及音訊／影像驗收。影片未改、未重標版號，僅供本機私人展示 |
+| `promo/` | `pod-v.1.0.0-20261102-promo.mp4`、九張成品抽樣、contact sheet及音訊／影像驗收。影片已重製正式版首尾字卡與擷取來源，僅供本機私人展示 |
 | `smoke/` | Linux實際封包、五語、F12、首次／重啟及存讀檔，另有Windows Wine、2／3倍實際滑鼠及查驗題紀錄；既有DEMO證據保留原收據 |
 
 Linux啟動AppImage；缺FUSE可用`APPIMAGE_EXTRACT_AND_RUN=1`。Windows解開ZIP執行`PODCHT.exe`；macOS解開universal ZIP開啟App，尚未簽章或真機驗收。HD patch首次啟動會在使用者資料目錄重建1091份原版索引／有序表及完整主題，後續核對並重用快取；原版或快取被改會明確拒絕。
 
-固定來源為main `ea1f706c`及引擎`c118740`，三平台從乾淨Git匯出。完整來源、[可重現工具與驗收](docs/re/038-input-and-quiz.md)、[封包固定收據](docs/re/038-input-package.json)及[既有影片固定收據](docs/re/037-promo-runtime.json)已保存；新版`SHA256SUMS.json`列出十二包的大小及SHA。舊24包及影片不覆寫，沒有tag或公開Release。
+固定建置來源為main `9afeac84`及引擎`c118740`，三平台從乾淨Git匯出。完整來源、[可重現工具與驗收](docs/re/039-v1-release.md)、[封包固定收據](docs/re/039-v1-package-runtime.json)及[影片固定收據](docs/re/039-v1-promo-runtime.json)已保存；`SHA256SUMS.json`列出十二包與影片的大小及SHA。安裝包名稱統一為`pod-v.1.0.0-20261102-<平台>-<base或hd>-<patch或full-local>`，副檔名依平台為AppImage或zip；程式版本、內部manifest及說明均為正式版。正式Git標籤使用同一完整版號，儲存庫維持私人，舊36包及既有影片不覆寫。
 
 原生Windows與macOS真機未驗；日韓為機器翻譯並經語境校讀，未經母語者審校。影片以原版實際音訊製作並完成技術檢查，新編配樂試聽仍未完成。使用者指定本批不要求完整通關，片尾畫面仍以原版播放器直接入口驗證。
 
