@@ -30,7 +30,26 @@ bash tools/rebuild.sh smoke /absolute/path/to/original
 既有固定程式重建只驗證Linux容器。另有下方三平台候選，Windows與macOS正式驗收仍依[#12](https://github.com/wicanr2/pools-of-darkness-cht/issues/12)追蹤。
 本輪沿用既有專用工具映像驗證乾淨來源，未另建映像；兩份Dockerfile的固定官方基底摘要已查證可取得。
 
+## 目前交付
+
+本機候選`v.0.1.2-20261102`在`dist-all/v.0.1.2-20261102/`，含十二個三平台封包與63秒1080p推廣影片。五語、18份字型及2034檔HD已進本版本，包含97種片頭、43種片尾相位與B版海報。F2切倍率、F8依繁中／英文／日文／韓文／簡中循環，F12切回英文原版。
+
+| 目錄 | 內容與使用 |
+|---|---|
+| `patch/` | 三平台基本及HD patch，需自備DOS英文版1.10的47個遊戲檔。放在程式旁`original/`或以`-original`指定 |
+| `full-local/` | 三平台基本及HD本機完整版，各附47個原版遊戲檔，沒有歷史玩家SAVE；不可上傳或散布 |
+| `promo/` | `pod-v.0.1.2-20261102-promo.mp4`、九張抽樣、contact sheet及音訊／影像驗收。本機私人展示，未公開上傳 |
+| `smoke/` | Linux實際封包、五語、F12、首次／重啟、DEMO及存讀檔，另有Windows Wine紀錄 |
+
+Linux啟動AppImage；缺FUSE可用`APPIMAGE_EXTRACT_AND_RUN=1`。Windows解開ZIP執行`PODCHT.exe`；macOS解開universal ZIP開啟App，尚未簽章或真機驗收。HD patch首次啟動會在使用者資料目錄重建1091份原版索引／有序表及完整主題，後續核對並重用快取；原版或快取被改會明確拒絕。
+
+固定來源為main `28078ced`及引擎`3fdeeb8`，三平台從乾淨Git匯出。完整來源、[可重現工具與驗收](docs/re/036-package-promo.md)、[封包固定收據](docs/re/036-package-promo-runtime.json)及[影片固定收據](docs/re/037-promo-runtime.json)已保存；本機`SHA256SUMS.json`列出十二包與影片的大小及SHA。舊十二包不覆寫，沒有tag或公開Release。
+
+原生Windows與macOS真機未驗；日韓為機器翻譯並經語境校讀，未經母語者審校。影片以原版實際音訊製作並完成技術檢查，新編配樂試聽仍未完成。使用者指定本批不要求完整通關，片尾畫面仍以原版播放器直接入口驗證。
+
 ## HD patch候選
+
+以下保留上一批`v.0.1.1-20261101`的來源與驗收，範圍不含後續日韓及片尾HD。
 
 三平台HD patch位於本機`dist-all/v.0.1.1-20261101/patch/`。自備DOS英文版1.10的47個遊戲檔，放在程式旁的`original/`，或以`-original`指定原版目錄。程式首次啟動會匯入原版，另在使用者資料目錄的`hd-cache/`重建850份索引及133份有序寫入表；重啟會核對來源與快取，不必另裝Python。
 

@@ -7,7 +7,7 @@
 
 在其他機器重建請讀[SETUP.md](SETUP.md)。必要HD成品、開源字型來源與重建清單已存於本儲存庫；原版遊戲資料需自備。
 
-已有`v.0.1.1-20261101`三平台HD patch候選，含B版HD海報、繁中／英文／簡中、F1無敵及片頭HD。玩家自備原版，首次啟動自動重建辨識資料。Linux已抽驗片頭、demo中止與存讀檔；Windows以Wine驗首次匯入及重啟，macOS僅驗universal結構。操作與交付位置見[HD patch入口](SETUP.md#hd-patch候選)，範圍見[驗收紀錄](docs/re/033-hd-patch-runtime.json)。目前開發版另有[日韓語系](docs/re/034-jako-runtime.json)與[片尾HD](docs/re/035-final-hd.md)，可從Git來源重建；既有12包維持各自原始範圍。配樂與推廣片仍待交付。
+目前本機候選為`v.0.1.2-20261102`，包含五語、B版海報、F1無敵、片頭與片尾HD。三平台各有基本／HD patch及本機完整版，共十二包；另有63秒1080p推廣影片，展示故事、實際遊戲、HD與F12切換。操作與交付位置見[SETUP](SETUP.md#目前交付)，範圍見[封包與影片驗收](docs/re/036-package-promo.md)。Linux實際封包與Windows Wine已抽驗，原生Windows及macOS真機未驗。舊十二包保持，完整通關不列本次門檻；新編配樂試聽仍未完成。
 
 ## 重返菲蘭城
 
