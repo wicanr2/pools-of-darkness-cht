@@ -50,6 +50,7 @@ def readme(version,platform,edition,full):
 繁中、已啟用HD、高解析英數、手札、攻略／地圖、工具列與demo中止沿目前驗收範圍。
 本輪含繁中／英文／日文／韓文／簡中、F1無敵；HD包另含97種片頭及43種片尾相位。
 日韓為機器翻譯並經語境校讀，未經母語者審校。新編配樂試聽仍未完成，原版音效保留。
+遊戲區支援滑鼠移動與左右鍵。查驗題預設自動填入英文答案，按Enter確認；F9關閉輔助後手動作答。
 
 啟動：Windows執行PODCHT.exe；macOS開啟PODCHT.app；Linux執行AppImage。
 patch請把原版47個遊戲檔放在程式旁original目錄，也可用-original指定。

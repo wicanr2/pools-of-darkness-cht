@@ -1,0 +1,596 @@
+{
+  "grade": "confirmed in sampled original executable paths",
+  "ida_version": "9.4",
+  "input": {
+    "binary": "game-1b2e.bin",
+    "sha256": "e6034ebe06f4cf72e81271757378597f6833e6342cea05212e9cec29de7f9f94",
+    "runtime_cs": 6958,
+    "ida_base": 0,
+    "rows": [
+      {
+        "offset": 1809,
+        "ida_ea": 1809,
+        "bytes": "55",
+        "text": "push    bp"
+      },
+      {
+        "offset": 1810,
+        "ida_ea": 1810,
+        "bytes": "89e5",
+        "text": "mov     bp, sp"
+      },
+      {
+        "offset": 1812,
+        "ida_ea": 1812,
+        "bytes": "81ec2c03",
+        "text": "sub     sp, 32Ch"
+      },
+      {
+        "offset": 1816,
+        "ida_ea": 1816,
+        "bytes": "c47e0c",
+        "text": "les     di, [bp+0Ch]"
+      },
+      {
+        "offset": 1819,
+        "ida_ea": 1819,
+        "bytes": "06",
+        "text": "push    es"
+      },
+      {
+        "offset": 1820,
+        "ida_ea": 1820,
+        "bytes": "57",
+        "text": "push    di"
+      },
+      {
+        "offset": 1821,
+        "ida_ea": 1821,
+        "bytes": "8d7ed7",
+        "text": "lea     di, [bp-29h]"
+      },
+      {
+        "offset": 1824,
+        "ida_ea": 1824,
+        "bytes": "16",
+        "text": "push    ss"
+      },
+      {
+        "offset": 1825,
+        "ida_ea": 1825,
+        "bytes": "57",
+        "text": "push    di"
+      },
+      {
+        "offset": 1826,
+        "ida_ea": 1826,
+        "bytes": "b82800",
+        "text": "mov     ax, 28h ; '('"
+      },
+      {
+        "offset": 1829,
+        "ida_ea": 1829,
+        "bytes": "50",
+        "text": "push    ax"
+      },
+      {
+        "offset": 1830,
+        "ida_ea": 1830,
+        "bytes": "9a890ad41e",
+        "text": "call    far ptr 1ED4h:0A89h"
+      },
+      {
+        "offset": 1835,
+        "ida_ea": 1835,
+        "bytes": "b000",
+        "text": "mov     al, 0"
+      },
+      {
+        "offset": 1837,
+        "ida_ea": 1837,
+        "bytes": "50",
+        "text": "push    ax"
+      },
+      {
+        "offset": 1838,
+        "ida_ea": 1838,
+        "bytes": "b018",
+        "text": "mov     al, 18h"
+      },
+      {
+        "offset": 1840,
+        "ida_ea": 1840,
+        "bytes": "50",
+        "text": "push    ax"
+      },
+      {
+        "offset": 1841,
+        "ida_ea": 1841,
+        "bytes": "b000",
+        "text": "mov     al, 0"
+      },
+      {
+        "offset": 1843,
+        "ida_ea": 1843,
+        "bytes": "50",
+        "text": "push    ax"
+      },
+      {
+        "offset": 1844,
+        "ida_ea": 1844,
+        "bytes": "b028",
+        "text": "mov     al, 28h ; '('"
+      },
+      {
+        "offset": 1846,
+        "ida_ea": 1846,
+        "bytes": "50",
+        "text": "push    ax"
+      },
+      {
+        "offset": 1847,
+        "ida_ea": 1847,
+        "bytes": "0e",
+        "text": "push    cs"
+      },
+      {
+        "offset": 1848,
+        "ida_ea": 1848,
+        "bytes": "e8d0fb",
+        "text": "call    near ptr byte_274+97h"
+      },
+      {
+        "offset": 1851,
+        "ida_ea": 1851,
+        "bytes": "b000",
+        "text": "mov     al, 0"
+      },
+      {
+        "offset": 1853,
+        "ida_ea": 1853,
+        "bytes": "50",
+        "text": "push    ax"
+      },
+      {
+        "offset": 1854,
+        "ida_ea": 1854,
+        "bytes": "b018",
+        "text": "mov     al, 18h"
+      },
+      {
+        "offset": 1856,
+        "ida_ea": 1856,
+        "bytes": "50",
+        "text": "push    ax"
+      },
+      {
+        "offset": 1857,
+        "ida_ea": 1857,
+        "bytes": "8a460a",
+        "text": "mov     al, [bp+0Ah]"
+      },
+      {
+        "offset": 1860,
+        "ida_ea": 1860,
+        "bytes": "50",
+        "text": "push    ax"
+      },
+      {
+        "offset": 1861,
+        "ida_ea": 1861,
+        "bytes": "8a4608",
+        "text": "mov     al, [bp+8]"
+      },
+      {
+        "offset": 1864,
+        "ida_ea": 1864,
+        "bytes": "50",
+        "text": "push    ax"
+      },
+      {
+        "offset": 1865,
+        "ida_ea": 1865,
+        "bytes": "8d7ed7",
+        "text": "lea     di, [bp-29h]"
+      },
+      {
+        "offset": 1868,
+        "ida_ea": 1868,
+        "bytes": "16",
+        "text": "push    ss"
+      },
+      {
+        "offset": 1869,
+        "ida_ea": 1869,
+        "bytes": "57",
+        "text": "push    di"
+      },
+      {
+        "offset": 1870,
+        "ida_ea": 1870,
+        "bytes": "0e",
+        "text": "push    cs"
+      },
+      {
+        "offset": 1871,
+        "ida_ea": 1871,
+        "bytes": "e802fc",
+        "text": "call    near ptr byte_274+0E0h"
+      },
+      {
+        "offset": 1874,
+        "ida_ea": 1874,
+        "bytes": "8a46d7",
+        "text": "mov     al, [bp-29h]"
+      },
+      {
+        "offset": 1877,
+        "ida_ea": 1877,
+        "bytes": "8846d6",
+        "text": "mov     [bp-2Ah], al"
+      },
+      {
+        "offset": 1880,
+        "ida_ea": 1880,
+        "bytes": "c686d5fe00",
+        "text": "mov     byte ptr [bp-12Bh], 0"
+      },
+      {
+        "offset": 1885,
+        "ida_ea": 1885,
+        "bytes": "8a46d6",
+        "text": "mov     al, [bp-2Ah]"
+      },
+      {
+        "offset": 1888,
+        "ida_ea": 1888,
+        "bytes": "30e4",
+        "text": "xor     ah, ah"
+      },
+      {
+        "offset": 1890,
+        "ida_ea": 1890,
+        "bytes": "40",
+        "text": "inc     ax"
+      },
+      {
+        "offset": 1891,
+        "ida_ea": 1891,
+        "bytes": "50",
+        "text": "push    ax"
+      },
+      {
+        "offset": 1892,
+        "ida_ea": 1892,
+        "bytes": "b018",
+        "text": "mov     al, 18h"
+      },
+      {
+        "offset": 1894,
+        "ida_ea": 1894,
+        "bytes": "50",
+        "text": "push    ax"
+      },
+      {
+        "offset": 1895,
+        "ida_ea": 1895,
+        "bytes": "b00f",
+        "text": "mov     al, 0Fh"
+      },
+      {
+        "offset": 1897,
+        "ida_ea": 1897,
+        "bytes": "50",
+        "text": "push    ax"
+      },
+      {
+        "offset": 1898,
+        "ida_ea": 1898,
+        "bytes": "b001",
+        "text": "mov     al, 1"
+      },
+      {
+        "offset": 1900,
+        "ida_ea": 1900,
+        "bytes": "50",
+        "text": "push    ax"
+      },
+      {
+        "offset": 1901,
+        "ida_ea": 1901,
+        "bytes": "0e",
+        "text": "push    cs"
+      },
+      {
+        "offset": 1902,
+        "ida_ea": 1902,
+        "bytes": "e89afb",
+        "text": "call    near ptr byte_274+97h"
+      },
+      {
+        "offset": 1905,
+        "ida_ea": 1905,
+        "bytes": "9a0d03f01d",
+        "text": "call    far ptr 1DF0h:30Dh"
+      },
+      {
+        "offset": 1910,
+        "ida_ea": 1910,
+        "bytes": "8886d4fe",
+        "text": "mov     [bp-12Ch], al"
+      },
+      {
+        "offset": 1914,
+        "ida_ea": 1914,
+        "bytes": "80bed4fe00",
+        "text": "cmp     byte ptr [bp-12Ch], 0"
+      },
+      {
+        "offset": 1919,
+        "ida_ea": 1919,
+        "bytes": "7403",
+        "text": "jz      short loc_784"
+      },
+      {
+        "offset": 1921,
+        "ida_ea": 1921,
+        "bytes": "e98000",
+        "text": "jmp     loc_804"
+      },
+      {
+        "offset": 1924,
+        "ida_ea": 1924,
+        "bytes": "9a0d03f01d",
+        "text": "call    far ptr 1DF0h:30Dh"
+      },
+      {
+        "offset": 1929,
+        "ida_ea": 1929,
+        "bytes": "8886d4fe",
+        "text": "mov     [bp-12Ch], al"
+      }
+    ]
+  },
+  "mouse": {
+    "binary": "game-1d1f.bin",
+    "sha256": "65a2991570653c0ed8224d3a99a1e62739c2db6d7bbb13fb31de90869830d033",
+    "runtime_cs": 7455,
+    "ida_base": 0,
+    "runtime_memory_file": "workplace/input-fix-v1/menu.mem",
+    "runtime_memory_sha256": "018eaecbb8c879bd5ed1882b7c5ad0645a0d41e905bbc0d2c1aaa0aa519a3f18",
+    "address_space": "IDA 0..=1D1F offset; IDA 10000..=1D8C offset+10000",
+    "rows": [
+      {
+        "ida_ea": 312,
+        "bytes": "3d0100",
+        "text": "cmp     ax, 1"
+      },
+      {
+        "ida_ea": 315,
+        "bytes": "750a",
+        "text": "jnz     short loc_147"
+      },
+      {
+        "ida_ea": 317,
+        "bytes": "8b7e06",
+        "text": "mov     di, [bp+6]"
+      },
+      {
+        "ida_ea": 320,
+        "bytes": "36c645fe0d",
+        "text": "mov     byte ptr ss:[di-2], 0Dh"
+      },
+      {
+        "ida_ea": 325,
+        "bytes": "eb0d",
+        "text": "jmp     short loc_154"
+      },
+      {
+        "ida_ea": 327,
+        "bytes": "3d0200",
+        "text": "cmp     ax, 2"
+      },
+      {
+        "ida_ea": 330,
+        "bytes": "7508",
+        "text": "jnz     short loc_154"
+      },
+      {
+        "ida_ea": 332,
+        "bytes": "8b7e06",
+        "text": "mov     di, [bp+6]"
+      },
+      {
+        "ida_ea": 335,
+        "bytes": "36c645fe1b",
+        "text": "mov     byte ptr ss:[di-2], 1Bh"
+      },
+      {
+        "ida_ea": 340,
+        "bytes": "c606c5c501",
+        "text": "mov     byte_BFAF+616h, 1"
+      },
+      {
+        "ida_ea": 345,
+        "bytes": "8b7e06",
+        "text": "mov     di, [bp+6]"
+      },
+      {
+        "ida_ea": 348,
+        "bytes": "36c645f601",
+        "text": "mov     byte ptr ss:[di-0Ah], 1"
+      },
+      {
+        "ida_ea": 65650,
+        "bytes": "55",
+        "text": "push    bp"
+      },
+      {
+        "ida_ea": 65651,
+        "bytes": "89e5",
+        "text": "mov     bp, sp"
+      },
+      {
+        "ida_ea": 65653,
+        "bytes": "803ec4c500",
+        "text": "cmp     byte ptr ds:0C5C4h, 0"
+      },
+      {
+        "ida_ea": 65658,
+        "bytes": "7502",
+        "text": "jnz     short loc_1007E"
+      },
+      {
+        "ida_ea": 65660,
+        "bytes": "eb47",
+        "text": "jmp     short loc_100C5"
+      },
+      {
+        "ida_ea": 65662,
+        "bytes": "c70618880300",
+        "text": "mov     word ptr ds:8818h, 3"
+      },
+      {
+        "ida_ea": 65668,
+        "bytes": "b033",
+        "text": "mov     al, 33h ; '3'"
+      },
+      {
+        "ida_ea": 65670,
+        "bytes": "50",
+        "text": "push    ax"
+      },
+      {
+        "ida_ea": 65671,
+        "bytes": "bf1888",
+        "text": "mov     di, 8818h"
+      },
+      {
+        "ida_ea": 65674,
+        "bytes": "1e",
+        "text": "push    ds"
+      },
+      {
+        "ida_ea": 65675,
+        "bytes": "57",
+        "text": "push    di"
+      },
+      {
+        "ida_ea": 65676,
+        "bytes": "9a0b00521e",
+        "text": "call    far ptr 1E52h:0Bh"
+      },
+      {
+        "ida_ea": 65681,
+        "bytes": "a11a88",
+        "text": "mov     ax, ds:881Ah"
+      },
+      {
+        "ida_ea": 65684,
+        "bytes": "c47e0e",
+        "text": "les     di, [bp+0Eh]"
+      },
+      {
+        "ida_ea": 65687,
+        "bytes": "268905",
+        "text": "mov     es:[di], ax"
+      },
+      {
+        "ida_ea": 65690,
+        "bytes": "a11c88",
+        "text": "mov     ax, ds:881Ch"
+      },
+      {
+        "ida_ea": 65693,
+        "bytes": "c47e0a",
+        "text": "les     di, [bp+0Ah]"
+      },
+      {
+        "ida_ea": 65696,
+        "bytes": "268905",
+        "text": "mov     es:[di], ax"
+      },
+      {
+        "ida_ea": 65699,
+        "bytes": "803ec2c500",
+        "text": "cmp     byte ptr ds:0C5C2h, 0"
+      },
+      {
+        "ida_ea": 65704,
+        "bytes": "7512",
+        "text": "jnz     short loc_100BC"
+      },
+      {
+        "ida_ea": 65706,
+        "bytes": "c47e0a",
+        "text": "les     di, [bp+0Ah]"
+      },
+      {
+        "ida_ea": 65709,
+        "bytes": "268b05",
+        "text": "mov     ax, es:[di]"
+      },
+      {
+        "ida_ea": 65712,
+        "bytes": "99",
+        "text": "cwd"
+      },
+      {
+        "ida_ea": 65713,
+        "bytes": "b90200",
+        "text": "mov     cx, 2"
+      },
+      {
+        "ida_ea": 65716,
+        "bytes": "f7f9",
+        "text": "idiv    cx"
+      },
+      {
+        "ida_ea": 65718,
+        "bytes": "c47e0a",
+        "text": "les     di, [bp+0Ah]"
+      },
+      {
+        "ida_ea": 65721,
+        "bytes": "268905",
+        "text": "mov     es:[di], ax"
+      },
+      {
+        "ida_ea": 65724,
+        "bytes": "a11e88",
+        "text": "mov     ax, ds:881Eh"
+      },
+      {
+        "ida_ea": 65727,
+        "bytes": "c47e06",
+        "text": "les     di, [bp+6]"
+      },
+      {
+        "ida_ea": 65730,
+        "bytes": "268905",
+        "text": "mov     es:[di], ax"
+      },
+      {
+        "ida_ea": 65733,
+        "bytes": "5d",
+        "text": "pop     bp"
+      },
+      {
+        "ida_ea": 65734,
+        "bytes": "ca0c00",
+        "text": "retf    0Ch"
+      }
+    ]
+  },
+  "quiz": {
+    "source_memory": "workplace/probe/g7-quiz/mem.bin",
+    "sha256": "1d8650c1024eb739e862a728803711cd7d9e3aafdc99bcf56b01c859c2e4d392",
+    "address_space": "runtime overlay offset; historical overlay CS=5509; relocated resident from bound path A",
+    "call_offset": "02B9",
+    "call_bytes": "9a11072e1b",
+    "return_offset": "02BE",
+    "answer": "DS:7DEE",
+    "input": "SS:BP-12Bh",
+    "committed_input": "DS:7EEE"
+  }
+}

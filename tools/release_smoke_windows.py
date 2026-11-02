@@ -7,7 +7,7 @@ from pathlib import Path
 import subprocess
 import zipfile
 
-VERSION='v.0.1.2-20261102'
+VERSION=os.environ.get('POD_SMOKE_VERSION','v.0.1.2-20261102')
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def tree(p):return {str(q.relative_to(p)):sha(q) for q in sorted(p.rglob('*')) if q.is_file()}
 

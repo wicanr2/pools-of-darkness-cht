@@ -27,8 +27,11 @@ def state(log):
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     for n in ('root','work','receipt'):ap.add_argument('--'+n,type=Path,required=True)
+    ap.add_argument('--content-only',action='store_true')
+    ap.add_argument('--version',default='v.0.1.2-20261102')
     a=ap.parse_args();r,w=a.root,a.work;meta=read(w/'packages/packages.json');lock=read(w/'main/review/hd/runtime/manifest.json');source=read(w/'release-source.json')
-    assert meta['version']==source['version']=='v.0.1.2-20261102' and len(meta['files'])==12
+    assert re.fullmatch(r'v\.\d+\.\d+\.\d+-\d{8}',a.version)
+    assert meta['version']==source['version']==a.version and len(meta['files'])==12
     expected={x['path']:x['sha256'] for x in lock['theme']};fonts={x['path']:x['sha256'] for x in lock['fonts']}
     assert len(expected)==2034 and len(fonts)==18 and meta['engine_commit']==lock['engine']['commit']==source['engine_commit']
     original={p.name:sha(p) for p in (r/'workplace/input/dos/pod').iterdir() if p.is_file()};assert len(original)==47
@@ -88,6 +91,11 @@ def main():
             records.append(dict(row,content_verified=True,embedded_binary_sha256=sha(exe)))
     libs=(w/'bin/macos/libraries.txt').read_text();assert 'architecture x86_64' in libs and 'architecture arm64' in libs
     assert all(s.strip().startswith(('/usr/lib/','/System/Library/')) for s in libs.splitlines() if s.startswith('\t'))
+    if a.content_only:
+        result=dict(status='PASS archive content only',version=meta['version'],source=source,files=records,
+                    theme_files=len(expected),fonts=len(fonts),original_files_in_patch=0,source_archives_scanned=True,
+                    original_game_files=original,macos='universal structure only; native unverified')
+        a.receipt.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print('PASS 12 actual archives; runtime separately recorded');return
     smoke=w/'smoke';cases={n:read(smoke/n/'pass.json') for n in ('linux-intro','linux-base','linux-full','linux-demo','linux-save','linux-missing','windows')}
     assert all(c['status']=='PASS' and c['version']==meta['version'] for c in cases.values())
     assert cases['linux-intro']['first']['cache']==cases['windows']['cache']==expected

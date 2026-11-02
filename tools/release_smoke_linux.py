@@ -12,6 +12,7 @@ import subprocess
 
 VERSION=os.environ.get('POD_SMOKE_VERSION','v.0.1.2-20261102')
 THEME_FILES=int(os.environ.get('POD_SMOKE_THEME_FILES','2034'))
+AUTOFILL=os.environ.get('POD_SMOKE_AUTOFILL','0')=='1'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def tree(p):return {str(q.relative_to(p)):sha(q) for q in sorted(p.rglob('*')) if q.is_file()}
 
@@ -82,9 +83,10 @@ def main():
         game=out/'data/pod-cht/game';shutil.copytree(seed,game/'SAVE',dirs_exist_ok=True)
         for p in game.rglob('*'):
             if p.is_file():os.utime(p,(946684800,946684800))
-        run('save',['-audio=false','-scale','2','-lang','zh-TW','-posters','-','-frames','4700',
-            '-script','900: ,1800:p,2400:Down,2450:Down,2500:Return,2800:P,3000:A,3400:Down,3420:Down,3440:Down,3460:Down,3480:Down,3500:Return,3900:shot,4000:Y,4010:O,4020:U,4030:Return,4200:shot,4300:E,4400:S,4450:shot,4500:B,4550:shot,4650:shot',
+        save_text=run('save',['-audio=false','-scale','2','-lang','zh-TW','-posters','-','-frames','4700',
+            '-script','900: ,1800:p,2400:Down,2450:Down,2500:Return,2800:P,3000:A,3400:Down,3420:Down,3440:Down,3460:Down,3480:Down,3500:Return,3900:shot,'+('' if AUTOFILL else '4000:Y,4010:O,4020:U,')+'4030:Return,4200:shot,4300:E,4400:S,4450:shot,4500:B,4550:shot,4650:shot',
             '-shot-dir','/out/save-shots','-shot-source','/out/save-source'])
+        if AUTOFILL:assert len(re.findall(r'quiz autofill frame=\d+ answer=YOU enter=false',save_text))==1
         assert (game/'SAVE/savgamB.pty').stat().st_size>0;saved=tree(game/'SAVE');snapshot('saved')
         run('load',['-audio=false','-scale','2','-lang','zh-TW','-posters','-','-frames','3250',
             '-script','900: ,1800:p,2400:Down,2450:Down,2500:Return,2800:P,3000:B,3200:shot',

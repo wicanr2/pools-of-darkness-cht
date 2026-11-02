@@ -4,7 +4,7 @@ set -eu
 platform=${1:?linux|windows|macos}
 version=${2:?完整候選版號}
 commit=${3:?固定引擎commit}
-export GOCACHE=/tmp/gocache GOMODCACHE=/gomodcache GOPROXY=off GOTOOLCHAIN=local GOMAXPROCS=2
+export GOCACHE=${POD_BUILD_CACHE:-/tmp/gocache} GOMODCACHE=/gomodcache GOPROXY=off GOTOOLCHAIN=local GOMAXPROCS=2
 test "$(go env GOVERSION)" = go1.24.13
 flags="-s -w -X main.version=$version -X main.dosgolemCommit=$commit"
 mkdir -p "/out/$platform"
