@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import re
 from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont
 import numpy as np
@@ -12,14 +13,17 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 
 
 def main():
-    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--root',type=Path,required=True);ap.add_argument('--work',type=Path,required=True);a=ap.parse_args()
+    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--root',type=Path,required=True);ap.add_argument('--work',type=Path,required=True)
+    ap.add_argument('--version',default='v.0.1.2-20261102');ap.add_argument('--player',type=Path);a=ap.parse_args()
+    assert re.fullmatch(r'v\.\d+\.\d+\.\d+-\d{8}',a.version)
     r,w=a.root,a.work;o=w/'promo/assets';assert not o.exists();o.mkdir()
     W,H=1920,1080;fg='#e9e4d8';dim='#a7c7c6';accent='#55c9c7'
     fontpath=r/'font/source/rounded/GenSenRounded2TW-B.otf'
     font=lambda n:ImageFont.truetype(str(fontpath),n)
     sources={};bounds=[]
     def relative(path):
-        return 'workplace/package-promo-v1/'+str(path.relative_to(w)) if path.is_relative_to(w) else str(path.relative_to(r))
+        if path.is_relative_to(r):return str(path.relative_to(r))
+        return 'workplace/package-promo-v1/'+str(path.relative_to(w))
     def text(im,words,y,size=46,color=fg):
         d=ImageDraw.Draw(im);f=font(size);box=d.textbbox((0,0),words,font=f);width=box[2]-box[0];height=box[3]-box[1]
         x=(W-width)//2;assert 90<=x and x+width<=1830 and 34<=y and y+height<1040,(words,box)
@@ -45,12 +49,16 @@ def main():
     def save(im,name):im.save(o/name,compress_level=2)
     cap=w/'capture/intro/window';final=r/'workplace/probe/final-hd/runtime-v2/hd/window'
     im=bg();cover=src(r/'docs/screenshots/game-cover-hd.png');cover.thumbnail((1100,690),Image.Resampling.NEAREST);im.paste(cover,((W-cover.width)//2,130))
-    text(im,'1991 年的經典，重新呈現。',42,58);text(im,'Pools of Darkness',840,52,accent);text(im,'繁體中文化與 HD',923,44);save(im,'s00.png')
+    text(im,'1991 年的經典，重新呈現。',42,58);text(im,'Pools of Darkness',840,52,accent);text(im,'繁體中文化與 HD',923,44)
+    if not a.version.startswith('v.0.'):text(im,a.version+' 正式版',980,28,dim)
+    save(im,'s00.png')
     save(frame(cap/'pod-f001362.png','重返菲蘭','你們曾經拯救的家園，再度被黑暗籠罩。','背景整理自本作手札導言與原版開場'),'s01.png')
-    player=r/'workplace/multilingual-jako/gui-zh-TW/window'
-    save(frame(player/'pod-f004200.png','再次踏上冒險','組成隊伍，探索城鎮，在回合制戰鬥中迎戰。','已驗正常玩家讀檔路線畫面，來源收據034'),'s02.png')
-    save(frame(r/'docs/screenshots/map-east-phlan.png','線索留在遊戲裡','修正手札、攻略摘要與地圖，減少來回翻書。','地圖介面實際畫面，僅裁出中央遊戲區域',crop=True),'tools-map.png')
-    save(frame(player/'pod-f004346.png','線索留在遊戲裡','在遊戲內查閱攻略，保留已知地點與出處。','已驗正常玩家讀檔路線畫面，來源收據034'),'tools-guide.png')
+    player=a.player or r/'workplace/multilingual-jako/gui-zh-TW/window'
+    player_note='正式版程式的正常讀檔路線畫面' if a.player else '已驗正常玩家讀檔路線畫面，來源收據034'
+    save(frame(player/'pod-f004200.png','再次踏上冒險','組成隊伍，探索城鎮，在回合制戰鬥中迎戰。',player_note),'s02.png')
+    map_source=player/'pod-f004320.png' if a.player else r/'docs/screenshots/map-east-phlan.png'
+    save(frame(map_source,'線索留在遊戲裡','修正手札、攻略摘要與地圖，減少來回翻書。','地圖介面實際畫面，僅裁出中央遊戲區域',crop=True),'tools-map.png')
+    save(frame(player/'pod-f004346.png','線索留在遊戲裡','在遊戲內查閱攻略，保留已知地點與出處。',player_note),'tools-guide.png')
     # 兩段都是正式前端的實際F12／F2事件；抽樣時間依60次更新／秒換算。
     switch=o/'switch';switch.mkdir()
     first=sorted(n for n in range(550,751,4));second=sorted(n for n in range(1250,1421,4))
@@ -66,10 +74,10 @@ def main():
     save(frame(r/'workplace/probe/final-hd/runtime-v2/demo/frame.png','經典戰鬥，重新呈現','保留原版規則，重繪怪物、場景與已辨識特效。'),'s06.png')
     for i,n in enumerate((10,1000,1532)):save(frame(final/f'pod-f{n:06d}.png','從片頭到片尾','沿原版畫格與構圖，呈現 HD 動畫。','片尾播放器直接入口畫面展示'),f'ending{i}.png')
     im=bg();text(im,'黑暗之池',220,112);text(im,'繁體中文化與 HD',390,64,accent);text(im,'Linux   Windows   macOS',535,50)
-    text(im,'自備原版，重返月之海。',670,54);text(im,'v.0.1.2-20261102  私人試玩候選',790,35,dim)
-    text(im,'macOS 僅驗 universal 結構，真機尚未驗證。',906,28,dim);save(im,'s08.png')
+    text(im,'自備原版，重返月之海。',670,54);text(im,a.version+('  私人試玩候選' if a.version.startswith('v.0.') else '  正式版'),790,35,dim)
+    text(im,'Windows 為 Wine 抽驗；macOS 真機尚未驗證。',906,28,dim);save(im,'s08.png')
     scenes=[dict(id=i,duration=d,kind=k) for i,d,k in [(0,6,'title'),(1,8,'story'),(2,7,'game'),(3,8,'panels'),(4,8,'actual controls'),(5,7,'languages'),(6,7,'battle'),(7,6,'final direct player'),(8,6,'closing')]]
-    manifest=dict(version='v.0.1.2-20261102',width=W,height=H,fps=25,duration=sum(s['duration'] for s in scenes),scenes=scenes,
+    manifest=dict(version=a.version,width=W,height=H,fps=25,duration=sum(s['duration'] for s in scenes),scenes=scenes,
         theme=dict(deep='#03070c',pool='#55c9c7',text=fg,motif='original stone frame retained, pool cyan cards'),sources=sources,
         text_safe_bounds=bounds,all_text_contained=True,font=dict(path=str(fontpath.relative_to(r)),sha256=sha(fontpath)),
         capture=dict(metadata=relative(w/'capture/capture-build.json'),script_sha256=sha(w/'capture/intro/script.txt'),

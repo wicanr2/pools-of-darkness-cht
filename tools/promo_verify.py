@@ -17,7 +17,9 @@ def image(p):return np.array(Image.open(p).convert('RGBA'))
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     for key in ('root','work','receipt'):ap.add_argument('--'+key,type=Path,required=True)
-    a=ap.parse_args();r,w=a.root,a.work;p=w/'promo';m=read(p/'storyboard.json');probe=read(p/'ffprobe.json');video=p/'pod-v.0.1.2-20261102-promo.mp4'
+    ap.add_argument('--issue',type=int,default=78)
+    a=ap.parse_args();r,w=a.root,a.work;p=w/'promo';m=read(p/'storyboard.json');probe=read(p/'ffprobe.json')
+    assert re.fullmatch(r'v\.\d+\.\d+\.\d+-\d{8}',m['version']);video=p/f'pod-{m["version"]}-promo.mp4'
     assert m['duration']==63 and float(probe['format']['duration'])==63 and video.stat().st_size>1_000_000
     v,audio=probe['streams'];assert v['codec_type']=='video' and v['codec_name']=='h264' and (v['width'],v['height'])==(1920,1080)
     assert v['r_frame_rate']=='25/1' and v['nb_frames']=='1575' and float(v['duration'])==63
@@ -47,7 +49,8 @@ def main():
         assert np.array_equal(center if full else center[:168*scale],raw if full else raw[:168*scale])
         checked.append(dict(frame=n,scale=scale,F12=full,source_indexed_sha256=sha(prefix.with_suffix('.idx')),palette_sha256=sha(prefix.with_suffix('.pal'))))
     assert len(list((p/'review').glob('f*.png')))==9
-    result=dict(date='2026-11-02',issue=78,status='PASS private promo technical and visual scope',version=m['version'],
+    date=m['version'].rsplit('-',1)[1]
+    result=dict(date=f'{date[:4]}-{date[4:6]}-{date[6:]}',issue=a.issue,status='PASS private promo technical and visual scope',version=m['version'],
         video=dict(path=video.name,sha256=sha(video),size=video.stat().st_size,duration=63,width=1920,height=1080,fps=25,frames=1575),
         audio=dict(codec='aac',sample_rate=48000,channels=2,mean_dB=mean,max_dB=peak,unexpected_silence=False,source=metrics,human_listening=False),
         image_checks=dict(unexpected_black=0,unexpected_freeze=0,black_min_seconds=.2,black_pixel_threshold=.02,black_picture_ratio=.98,

@@ -62,6 +62,10 @@ def main():
             m=read(top/'PACKAGE-MANIFEST.json');actual=tree(top);actual.pop('PACKAGE-MANIFEST.json')
             assert actual==m['files'] and sha(top/'PACKAGE-MANIFEST.json')==row['payload_manifest_sha256']
             for k in ('version','platform','kind','edition','engine_commit'):assert m[k]==row[k]
+            if not meta['version'].startswith('v.0.'):
+                assert m['candidate'] is False
+                readme=(data/'README.txt').read_text(encoding='utf-8-sig')
+                assert '正式版' in readme and '候選' not in readme and '試玩' not in readme
             assert tree(data/'font')==fonts and m['fonts']==18
             assert (data/'README.txt').read_bytes().startswith(b'\xef\xbb\xbf')
             for n in ('ja','ko','zh-CN'):

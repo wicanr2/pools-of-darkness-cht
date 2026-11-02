@@ -42,11 +42,14 @@ def zip_tree(root,out):
 
 def readme(version,platform,edition,full):
     intro='本機自用完整版，內含合法原版資料，請勿上傳或散布。' if full else ('HD中文化patch，不附原版，請自備合法DOS英文版1.10。' if edition=='hd' else '基本中文化patch，不附原版，請自備合法DOS英文版1.10。')
-    return f'''黑暗之池 繁中候選 {version}
+    candidate=version.startswith('v.0.')
+    label='繁中候選' if candidate else '正式版'
+    scope='這是可試玩候選，尚未宣稱原案全部完成。' if candidate else '正式版依已驗收的繁中、五語與HD範圍交付；已知平台與配樂限制列於下方。'
+    return f'''黑暗之池 {label} {version}
 {intro}
 平台：{platform}；呈現：{edition}。
 
-這是可試玩候選，尚未宣稱原案全部完成。
+{scope}
 繁中、已啟用HD、高解析英數、手札、攻略／地圖、工具列與demo中止沿目前驗收範圍。
 本輪含繁中／英文／日文／韓文／簡中、F1無敵；HD包另含97種片頭及43種片尾相位。
 日韓為機器翻譯並經語境校讀，未經母語者審校。新編配樂試聽仍未完成，原版音效保留。
@@ -61,9 +64,9 @@ Linux缺FUSE時可用APPIMAGE_EXTRACT_AND_RUN=1啟動；需要OpenGL、X11與ALS
 存檔位置：Windows %APPDATA%\\PODCHT\\game；macOS ~/Library/Application Support/PODCHT/game；Linux $XDG_DATA_HOME/pod-cht/game或~/.local/share/pod-cht/game。
 不附1995年玩家SAVE資料，新角色與進度由你們建立。
 
-F1無敵（預設關）、F2倍率、F8繁中／英文／日文／韓文／簡中、F12原版、F5手札、F6攻略、F7地圖、F9查驗題答案、F3靜音。
+F1無敵（預設關）、F2倍率、F8繁中／英文／日文／韓文／簡中、F12原版、F5手札、F6攻略、F7地圖、F9查驗題輔助、F3靜音。
 demo中按一般按鍵可中止並回選單；功能鍵優先由前端處理。
-macOS為未簽章候選，僅驗通用二進位結構，尚未在真機啟動驗收。
+macOS尚未簽章，僅驗通用二進位結構；原生Windows與macOS真機啟動尚未驗收。
 授權與第三方說明見LICENSE、THIRD-PARTY.md及licenses目錄。
 來源與已知限制：本專案README、CONTEXT及PACKAGE-MANIFEST.json。
 '''
@@ -151,7 +154,7 @@ def main():
             elif edition=='hd':shutil.copytree(a.assets/'theme',data/'hd')
             body=readme(a.version,platform,edition,full).replace('\n','\r\n');(data/'README.txt').write_bytes(b'\xef\xbb\xbf'+body.encode())
             if data!=top:shutil.copyfile(data/'README.txt',top/'README.txt')
-            manifest=dict(version=a.version,engine_commit=a.commit,candidate=True,platform=platform,arch='amd64+arm64' if platform=='macos' else 'amd64',edition=edition,kind=kind,original_files=47 if full else 0,theme_files=len(lock['theme']) if edition=='hd' else 0,hd_source_files=source_count,fonts=len(lock['fonts']),files=files(top),missing_features=['new music approval','native Windows/macOS verification'],rights='local-only original data; never publish' if full else 'private patch; original game required')
+            manifest=dict(version=a.version,engine_commit=a.commit,candidate=a.version.startswith('v.0.'),platform=platform,arch='amd64+arm64' if platform=='macos' else 'amd64',edition=edition,kind=kind,original_files=47 if full else 0,theme_files=len(lock['theme']) if edition=='hd' else 0,hd_source_files=source_count,fonts=len(lock['fonts']),files=files(top),missing_features=['new music approval','native Windows/macOS verification'],rights='local-only original data; never publish' if full else 'private patch; original game required')
             (top/'PACKAGE-MANIFEST.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
             if not full:
                 protected=set(original.values())

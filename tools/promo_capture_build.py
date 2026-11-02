@@ -4,6 +4,7 @@ import argparse
 import difflib
 import hashlib
 import json
+import re
 from pathlib import Path
 import subprocess
 
@@ -13,7 +14,9 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--engine',type=Path,required=True);ap.add_argument('--out',type=Path,required=True);a=ap.parse_args()
+    ap.add_argument('--engine',type=Path,required=True);ap.add_argument('--out',type=Path,required=True)
+    ap.add_argument('--version');ap.add_argument('--commit');a=ap.parse_args()
+    if a.version:assert re.fullmatch(r'v\.\d+\.\d+\.\d+-\d{8}',a.version) and a.commit and re.fullmatch('[0-9a-f]{40}',a.commit)
     assert Path('/.dockerenv').exists() and a.out.is_dir()
     p=a.engine/'cmd/pod-play/main.go';original=p.read_text();text=original
     marker='\t"crypto/sha256"\n';assert text.count(marker)==1
@@ -58,11 +61,13 @@ func promoOPL(w machine.OPLWrite) {
     overlay=a.out/'overlay.json';overlay.write_text(json.dumps({'Replace':{str(p):str(target)}})+'\n')
     (a.out/'capture.diff').write_text(''.join(difflib.unified_diff(original.splitlines(True),text.splitlines(True),fromfile='production main.go',tofile='capture main.go')))
     binary=a.out/'pod-promo-capture'
-    subprocess.run(['go','build','-trimpath','-buildvcs=false','-overlay',str(overlay),'-o',str(binary),'./cmd/pod-play'],cwd=a.engine,check=True,timeout=180)
+    command=['go','build','-trimpath','-buildvcs=false','-overlay',str(overlay)]
+    if a.version:command+=['-ldflags',f'-s -w -X main.version={a.version} -X main.dosgolemCommit={a.commit}']
+    subprocess.run([*command,'-o',str(binary),'./cmd/pod-play'],cwd=a.engine,check=True,timeout=180)
     info=dict(source_sha256=sha(p),capture_source_sha256=sha(target),binary_sha256=sha(binary),
         scope='same CONTROL frontend with read-only PCM/OPL logging; no queue or guest-state changes',
         pcm='48000 Hz, stereo signed16 little-endian; existing Nuked OPL mixer before added music',
-        go_version=subprocess.check_output(['go','env','GOVERSION'],text=True).strip())
+        go_version=subprocess.check_output(['go','env','GOVERSION'],text=True).strip(),version=a.version,engine_commit=a.commit)
     (a.out/'capture-build.json').write_text(json.dumps(info,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(info,ensure_ascii=False))
 

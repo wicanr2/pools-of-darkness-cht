@@ -28,7 +28,7 @@ def main():
         subprocess.run(['tar','-xf',str(archive),'-C',str(dest)],check=True,timeout=60)
     for name in ('bin','test','capture','promo'): (a.out/name).mkdir()
     info=dict(version=a.version,main_commit=a.main,main_tree=git(a.root,'rev-parse',a.main+'^{tree}'),
-              engine_commit=commit,rights='private candidate; originals only in local full builds; no public release')
+              engine_commit=commit,rights=('private candidate' if a.version.startswith('v.0.') else 'private release')+'; originals only in local full builds; no public release')
     (a.out/'release-source.json').write_text(json.dumps(info,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(info,ensure_ascii=False))
 

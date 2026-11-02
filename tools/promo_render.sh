@@ -2,6 +2,9 @@
 # Docker內FFmpeg合成；固定63秒，來源與分鏡由promo_assets.py保存。
 set -euo pipefail
 test -f /.dockerenv
+version=${1:-v.0.1.2-20261102}
+[[ "$version" =~ ^v\.[0-9]+\.[0-9]+\.[0-9]+-[0-9]{8}$ ]]
+video="/out/pod-${version}-promo.mp4"
 test -f /out/assets/s00.png
 test -f /capture/intro/audio.s16le
 test ! -e /out/segments
@@ -31,15 +34,15 @@ printf "file '/out/segments/s%02d.mp4'\n" 0 1 2 3 4 5 6 7 8 > /out/segments/list
 "${F[@]}" -f concat -safe 0 -i /out/segments/list.txt -c copy /out/silent.mp4
 "${F[@]}" -i /out/silent.mp4 -f s16le -ar 48000 -ac 2 -i /capture/intro/audio.s16le \
  -map 0:v -map 1:a -t 63 -c:v copy -af 'volume=2,atrim=end=63,afade=t=in:st=0:d=2,afade=t=out:st=60:d=3' \
- -c:a aac -b:a 192k -ar 48000 -ac 2 -movflags +faststart /out/pod-v.0.1.2-20261102-promo.mp4
-ffprobe -v error -show_format -show_streams -of json /out/pod-v.0.1.2-20261102-promo.mp4 > /out/ffprobe.json
-ffmpeg -nostdin -hide_banner -threads 1 -i /out/pod-v.0.1.2-20261102-promo.mp4 \
+ -c:a aac -b:a 192k -ar 48000 -ac 2 -movflags +faststart "$video"
+ffprobe -v error -show_format -show_streams -of json "$video" > /out/ffprobe.json
+ffmpeg -nostdin -hide_banner -threads 1 -i "$video" \
  -vn -af 'silencedetect=noise=-50dB:d=0.4,volumedetect' -f null - > /out/audio-check.log 2>&1
-ffmpeg -nostdin -hide_banner -threads 1 -filter_threads 1 -i /out/pod-v.0.1.2-20261102-promo.mp4 \
+ffmpeg -nostdin -hide_banner -threads 1 -filter_threads 1 -i "$video" \
  -an -vf 'blackdetect=d=0.2:pix_th=0.02:pic_th=0.98,freezedetect=n=-60dB:d=2' -f null - > /out/image-check.log 2>&1
 i=0
 for t in 3 10 17.5 27 31 40.5 47.5 56 60;do
- "${F[@]}" -ss "$t" -i /out/pod-v.0.1.2-20261102-promo.mp4 -frames:v 1 "/out/review/f$i.png"
+ "${F[@]}" -ss "$t" -i "$video" -frames:v 1 "/out/review/f$i.png"
  i=$((i+1))
 done
 "${F[@]}" -pattern_type glob -i '/out/review/f*.png' -vf 'scale=640:360,tile=3x3' -frames:v 1 /out/contact.png
