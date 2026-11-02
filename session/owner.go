@@ -90,6 +90,7 @@ type CapturedUpdate struct {
 	PanelEvents      []host.PanelEvent
 	PointerDown      *host.MouseEvent
 	PointerUp        *host.MouseEvent
+	Pointer          *host.PointerCapture // opt-in continuous two-button input (spec 437)
 	FocusLost        bool
 	BIOSKeys         []dos.Key
 }
@@ -110,8 +111,9 @@ type InputReceipt struct {
 // Config contains value-only host construction choices. In particular it does
 // not accept an existing machine, DOS, panel, or bridge.
 type Config struct {
-	InitialScale  host.OutputScale
-	InitialLayout host.MouseLayout
+	PointerSnapshots bool
+	InitialScale     host.OutputScale
+	InitialLayout    host.MouseLayout
 	// Observer is installed privately before the first instruction and
 	// cannot be replaced (docs/spec/238).  nil keeps the bare RunUntil path.
 	Observer StepObserver
@@ -148,12 +150,14 @@ type View struct {
 // Owner privately owns the resources which must share a session lifetime.
 // All methods are for the one frontend goroutine named by spec 019.
 type Owner struct {
-	machine  *machine.Machine
-	dos      *dos.DOS
-	panel    *host.PanelController
-	mouse    *host.MouseBridge
-	keyboard *presentation.KeyboardBridge
-	closer   resourceCloser
+	machine     *machine.Machine
+	dos         *dos.DOS
+	panel       *host.PanelController
+	mouse       *host.MouseBridge
+	pointerMode bool
+	pointer     host.PointerSnapshot
+	keyboard    *presentation.KeyboardBridge
+	closer      resourceCloser
 
 	phase          Phase
 	epoch          uint64
@@ -245,6 +249,7 @@ func New(cfg Config) (*Owner, error) {
 		o.layout, o.layoutSet = cfg.InitialLayout, true
 	}
 	o.observer = cfg.Observer
+	o.pointerMode = cfg.PointerSnapshots
 	o.nativeVideoCommands = cfg.NativeVideoCommands
 	o.nativeHostCalls = cfg.NativeHostCalls
 	o.nativeHostBlocks = cfg.NativeHostBlocks
@@ -307,17 +312,19 @@ func (o *Owner) Deliver(update CapturedUpdate) (InputReceipt, error) {
 }
 
 type deliveredPlan struct {
-	owner       *Owner
-	generation  uint64
-	base, final host.PanelState
-	baseMouse   host.MouseBridgeSnapshot
-	finalMouse  host.MouseBridgeSnapshot
-	layout      host.MouseLayout
-	panelEvents []preparedPanelEvent
-	mouseEvents []preparedMouseEvent
-	biosKeys    []dos.Key
-	hostChanged bool
-	paused      bool
+	basePointer, finalPointer host.PointerSnapshot
+	pointerActions            []host.MouseAction
+	owner                     *Owner
+	generation                uint64
+	base, final               host.PanelState
+	baseMouse                 host.MouseBridgeSnapshot
+	finalMouse                host.MouseBridgeSnapshot
+	layout                    host.MouseLayout
+	panelEvents               []preparedPanelEvent
+	mouseEvents               []preparedMouseEvent
+	biosKeys                  []dos.Key
+	hostChanged               bool
+	paused                    bool
 }
 
 type preparedPanelEvent struct {
@@ -375,6 +382,15 @@ func (o *Owner) prepare(update CapturedUpdate) (deliveredPlan, error) {
 	}
 	plan := deliveredPlan{owner: o, generation: o.generation, base: base, final: base, baseMouse: baseMouse, layout: o.layout}
 	plan.finalMouse = plan.baseMouse
+	plan.basePointer, plan.finalPointer = o.pointer, o.pointer
+	if update.Pointer != nil {
+		if !o.pointerMode || update.PointerDown != nil || update.PointerUp != nil || update.FocusLost {
+			return deliveredPlan{}, errors.New("session: incompatible pointer input")
+		}
+	}
+	if o.pointerMode && (update.PointerDown != nil || update.PointerUp != nil || update.FocusLost) {
+		return deliveredPlan{}, errors.New("session: snapshot pointer cannot mix legacy events")
+	}
 	hasPointer := update.PointerDown != nil || update.PointerUp != nil || update.FocusLost
 	if hasPointer {
 		// MouseBridge deliberately permits FocusLost to release an existing
@@ -441,6 +457,19 @@ func (o *Owner) prepare(update CapturedUpdate) (deliveredPlan, error) {
 		plan.finalMouse.HasCurrent = true
 	}
 	plan.paused = plan.base.Open || plan.final.Open || plan.hostChanged
+	if update.Pointer != nil || (o.pointerMode && plan.paused && o.pointer.Accepted != 0) {
+		capture := host.PointerCapture{Buttons: o.pointer.Held, Target: host.MouseTargetHost}
+		if update.Pointer != nil {
+			capture = *update.Pointer
+		}
+		layout := o.layout
+		layout.PanelOpen = plan.paused || projectedLayout != o.layout
+		next, err := host.PlanPointerCapture(o.pointer, layout, capture)
+		if err != nil {
+			return deliveredPlan{}, err
+		}
+		plan.finalPointer, plan.pointerActions = next.Next, next.Actions
+	}
 	if !plan.paused {
 		plan.biosKeys = append(plan.biosKeys, update.BIOSKeys...)
 	}
@@ -473,7 +502,7 @@ func (o *Owner) commit(plan deliveredPlan) (InputReceipt, error) {
 		return o.frontendFaultInputReceipt(receipt, errors.New("session: stale 或重入的 Deliver plan"))
 	}
 	current, err := o.panel.Snapshot()
-	if err != nil || current != plan.base || o.mouse.Snapshot() != plan.baseMouse || (o.layoutSet && o.layout != plan.layout) {
+	if err != nil || current != plan.base || o.mouse.Snapshot() != plan.baseMouse || o.pointer != plan.basePointer || (o.layoutSet && o.layout != plan.layout) {
 		if err == nil {
 			err = errors.New("session: Deliver plan 的 panel source 已漂移")
 		}
@@ -484,6 +513,17 @@ func (o *Owner) commit(plan deliveredPlan) (InputReceipt, error) {
 	}
 	o.committing = true
 	defer func() { o.committing = false }()
+	for _, action := range plan.pointerActions {
+		switch action.Kind {
+		case host.MouseActionMove:
+			o.dos.MoveMouse(action.X, action.Y)
+		case host.MouseActionPress:
+			o.dos.PressMouse(action.Button)
+		case host.MouseActionRelease:
+			o.dos.ReleaseMouse(action.Button)
+		}
+	}
+	o.pointer = plan.finalPointer
 	for _, prepared := range plan.mouseEvents {
 		route := o.mouse.Handle(plan.layout, prepared.event)
 		if route != prepared.route || o.mouse.Snapshot() != prepared.next {
@@ -525,7 +565,7 @@ func (o *Owner) commit(plan deliveredPlan) (InputReceipt, error) {
 	o.turnPaused = plan.paused
 	keyCalls := uint64(len(plan.biosKeys))
 	return InputReceipt{Epoch: o.epoch, Phase: o.phase, HostChanged: plan.hostChanged,
-		DOSCallsCommitted: keyCalls + mouseActionCount(plan.mouseEvents), Paused: plan.paused}, nil
+		DOSCallsCommitted: keyCalls + mouseActionCount(plan.mouseEvents) + uint64(len(plan.pointerActions)), Paused: plan.paused}, nil
 }
 
 func mouseActionCount(events []preparedMouseEvent) uint64 {

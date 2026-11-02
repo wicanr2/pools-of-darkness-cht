@@ -43,6 +43,7 @@ type Live struct {
 	Answers     map[QuizKey]string
 	QuizFormat  QuizFormat
 	hideAnswers bool
+	quizInput   quizInput
 	// Journal 是手札面板（規格 007）；nil 時不啟用。
 	Journal *JournalPanel
 	// Guide 是攻略面板（規格 008）；nil 時不啟用。
@@ -191,6 +192,7 @@ func (l *Live) BeforeStep(v StepCPU) error {
 		l.Inv.before(v.Steps(), cs, ip, ss, sp, v)
 	}
 	l.A.Before(v.Steps(), cs, ip, ss, sp, v)
+	l.observeQuizInput(v)
 	l.C.Before(cs, ip, ss, sp, v)
 	if l.B != nil {
 		nb = len(l.B.Hits)

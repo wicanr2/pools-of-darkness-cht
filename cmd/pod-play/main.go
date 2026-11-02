@@ -2,7 +2,7 @@
 //
 // 以 session 從原版目錄開機（bootroot 複製到可寫存檔目錄，原版唯讀），每個主機畫格推進
 // 原版節奏的指令數，以 apps/pod.Live 疊上路徑 A、B、C 的中文，2× 或 3× 輸出（F2 切換）。
-// F12 即時切換中文／原版（原版看不到這個鍵），F2 切換 2×／3×，F11 全螢幕，F3 靜音，F10 截圖，F9 查驗題答案顯示，
+// F12 即時切換中文／原版（原版看不到這個鍵），F2 切換 2×／3×，F11 全螢幕，F3 靜音，F10 截圖，F9 查驗題輔助，
 // F5 翻閱已讀手札（PgUp／PgDn 翻頁，←／→ 換則，Esc 關閉）。
 // 滑鼠移到視窗頂端時出現切換列（主專案規格 011），點項目等同按對應的功能鍵。
 //
@@ -33,6 +33,7 @@ import (
 	"github.com/wicanr2/dosgolem/audio/mixer"
 	"github.com/wicanr2/dosgolem/bootroot"
 	"github.com/wicanr2/dosgolem/host"
+	"github.com/wicanr2/dosgolem/internal/dos"
 	"github.com/wicanr2/dosgolem/internal/machine"
 	"github.com/wicanr2/dosgolem/session"
 	"github.com/wicanr2/dosgolem/xlate"
@@ -138,8 +139,6 @@ type game struct {
 	ring       *mixer.Ring
 	player     *audio.Player
 	muted      bool
-	pressing   bool
-	focused    bool
 	samples    []float32
 	missing    map[rune]bool
 	bar        toolbar           // 視窗頂端切換列（主專案規格 011）
@@ -172,6 +171,7 @@ type game struct {
 	sourceShotDir string
 	shotFrame     string
 	shotSource    string
+	lastPointer   *host.PointerCapture
 }
 
 func (g *game) hostInput(u *session.CapturedUpdate) []hostAction {
@@ -195,32 +195,29 @@ func (g *game) hostInput(u *session.CapturedUpdate) []hostAction {
 	dx, dy := g.canvasPoint(cx, cy)
 	g.cursorX, g.cursorY = dx, dy
 	g.bar.track(dx, dy)
-	if inpututil.IsMouseButtonJustPressed(ebiten.MouseButtonLeft) && !g.pressing && menuWasOpen {
+	if inpututil.IsMouseButtonJustPressed(ebiten.MouseButtonLeft) && menuWasOpen {
 		if g.bar.speeds {
 			g.clickSpeed(dx, dy)
 		}
 		if g.bar.sizes {
 			g.clickBarFont(dx, dy)
 		}
-	} else if inpututil.IsMouseButtonJustPressed(ebiten.MouseButtonLeft) && !g.pressing && g.bar.takesPointer(dx, dy) {
+	} else if inpututil.IsMouseButtonJustPressed(ebiten.MouseButtonLeft) && g.bar.takesPointer(dx, dy) {
 		// 切換列範圍內的點擊由前端處理，不送進遊戲（規格 011 §2.3）
 		if a := toolbarClick(g.toolbarItems(), dx, dy); a != 0 {
 			acts = append(acts, a)
 		}
-	} else if inpututil.IsMouseButtonJustPressed(ebiten.MouseButtonLeft) && !g.pressing {
-		if ev := mouseEvent(host.MouseEventDown, dx, dy); ev.Target == host.MouseTargetCanvas {
-			u.PointerDown, g.pressing = &ev, true
-		}
 	}
-	if inpututil.IsMouseButtonJustReleased(ebiten.MouseButtonLeft) && g.pressing {
-		ev := mouseEvent(host.MouseEventUp, dx, dy)
-		u.PointerUp, g.pressing = &ev, false
+	// 雙鍵與移動以同一快照送出。工具列按下只處理前端動作。
+	var buttons uint8
+	if ebiten.IsMouseButtonPressed(ebiten.MouseButtonLeft) {
+		buttons |= 1
 	}
-	focused := ebiten.IsFocused()
-	if g.focused && !focused && g.pressing {
-		u.FocusLost, g.pressing = true, false
+	if ebiten.IsMouseButtonPressed(ebiten.MouseButtonRight) {
+		buttons |= 2
 	}
-	g.focused = focused
+	capture := pointerCapture(dx, dy, buttons, ebiten.IsFocused(), menuWasOpen || g.bar.takesPointer(dx, dy) || g.panelMode() != panelNone)
+	u.Pointer = &capture
 	return acts
 }
 
@@ -388,10 +385,13 @@ func (g *game) Update() error {
 			u.BIOSKeys = append(u.BIOSKeys, *a.key)
 		}
 	}
-	if g.frames == 0 {
+	if g.frames == 0 || *receiptHostInput {
 		acts = append(acts, g.hostInput(&u)...)
 	}
 	g.apply(acts)
+	if u.Pointer != nil && g.panelMode() != panelNone {
+		u.Pointer.Target = host.MouseTargetHost
+	}
 	if len(u.BIOSKeys) > 0 && g.live.Demo.Running() {
 		// demo 中的按鍵不送進遊戲，改為中止 demo 回選單（主專案規格 018 §3.2）
 		g.live.Demo.RequestAbort()
@@ -409,10 +409,20 @@ func (g *game) Update() error {
 		if err != nil {
 			return err
 		}
+		if answer := g.live.TakeQuizAnswer(len(u.BIOSKeys) > 0); answer != "" {
+			for _, r := range answer {
+				if key, ok := dos.KeyForRune(r); ok {
+					u.BIOSKeys = append(u.BIOSKeys, key)
+				}
+			}
+			fmt.Fprintf(os.Stderr, "pod-play: quiz autofill frame=%d answer=%s enter=false\n", g.frame, answer)
+		}
 		u.StartedPanel, u.Layout, u.SourceGeneration = view.Panel, view.Layout, view.SourceGeneration
-		if _, err := g.owner.Deliver(u); err != nil {
+		receipt, err := g.owner.Deliver(u)
+		if err != nil {
 			return err
 		}
+		g.auditPointer(u.Pointer, receipt.DOSCallsCommitted)
 		u = session.CapturedUpdate{}
 		tick, err := g.owner.Advance(session.InstructionBudget(n))
 		if err != nil {
@@ -641,7 +651,7 @@ func main() {
 	barFontFlag := flag.Int("barfont", 0, "切換列字級 1 小、2 中、3 大（主專案規格 020）；0 表示讀取前端偏好，自動模式為中")
 	adlib := flag.Bool("adlib", true, "模擬 AdLib")
 	audioOn := flag.Bool("audio", true, "互動模式播放聲音（容器內沒有音訊裝置時關閉）")
-	hideAnswers := flag.Bool("hide-answers", false, "開機時隱藏查驗題答案（F9 切換）")
+	hideAnswers := flag.Bool("hide-answers", false, "關閉查驗題答案顯示與自動填入（F9切換）")
 	original0 := flag.Bool("original-view", false, "開機時顯示原版（F12 切換）")
 	invPath := flag.String("inventory", "", "結束時把印字路徑盤點（issue #11）寫成這個 TSV；含原文，只放工作區")
 	scaleFlag := flag.Int("scale", 2, "起始倍率（2 或 3；F2 切換）")
@@ -877,7 +887,7 @@ func main() {
 	}
 	mix := mixer.New(budget * 60)
 	cheat := &pod.Invincible{On: *cheatOn}
-	owner, err := session.New(session.Config{InitialScale: s, InitialLayout: layout, AdLib: *adlib, ClockPercent: *clock,
+	owner, err := session.New(session.Config{PointerSnapshots: true, InitialScale: s, InitialLayout: layout, AdLib: *adlib, ClockPercent: *clock,
 		NativeVideoCommands: *directFlag,
 		NativeHostCalls:     *directFlag && *wholeCallFlag,
 		NativeHostBlocks:    *directFlag && *wholeCallFlag && *drawBlocksFlag,
@@ -897,7 +907,7 @@ func main() {
 	}
 	g := &game{owner: owner, live: live, scale: *scaleFlag, chinese: !*original0, frames: *frames, script: keys, shot: *shot, shotOrig: *shotOrig,
 		drawReport: *drawReport,
-		shotDir:    dir, budget: budget, mix: mix, focused: true, missing: map[rune]bool{}, barText: barText,
+		shotDir:    dir, budget: budget, mix: mix, missing: map[rune]bool{}, barText: barText,
 		langs: langs, lang: langIdx, langDir: stateDir, mainFont: font, cheat: cheat,
 		chunk: budget, delayAccel: *delayAccel, speedPath: filepath.Join(stateDir, "pod-speed.txt"),
 		barSizePath: filepath.Join(stateDir, "pod-barfont.txt"), barSize: barMedium}

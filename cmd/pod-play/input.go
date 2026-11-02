@@ -69,6 +69,14 @@ type frameInput struct {
 	Ctrl, Alt bool
 }
 
+func pointerCapture(dx, dy int, buttons uint8, focused, blocked bool) host.PointerCapture {
+	ev := mouseEvent(host.MouseEventDown, dx, dy)
+	if blocked {
+		ev.Target = host.MouseTargetHost
+	}
+	return host.PointerCapture{X: ev.X, Y: ev.Y, Buttons: buttons, Target: ev.Target, Focused: focused}
+}
+
 func fires(d int) bool {
 	if d == 1 {
 		return true
@@ -186,8 +194,9 @@ var scriptHostActs = map[string]hostAction{
 	"journal": actJournal, "guide": actGuide, "map": actMap,
 	"pgup": actPageUp, "pgdn": actPageDown, "prev": actPrevEntry, "next": actNextEntry, "shot": actShot,
 	"speeds": actSpeed, "barfonts": actBarFont,
-	"scale":  actScale,  // 收據走與 F2 相同的前端動作，不將 F2 注入 DOS。
-	"mapall": actReveal, // 地圖開啟後等同 V，不改腳本 V 原本送 DOS 的語意。
+	"answers": actAnswers,
+	"scale":   actScale,  // 收據走與 F2 相同的前端動作，不將 F2 注入 DOS。
+	"mapall":  actReveal, // 地圖開啟後等同 V，不改腳本 V 原本送 DOS 的語意。
 }
 
 // parseScript 解析 `畫格:動作[,…]`。動作是鍵名（dos.KeyNamed，例 Enter、Down）、

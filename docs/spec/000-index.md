@@ -1,5 +1,7 @@
 # 規格索引
 
+- [437 雙鍵指標快照](437-pointer-snapshot.md)：功能抽樣CONFORMED，可選session連續移動與兩鍵生命週期，既有單左鍵介面維持。
+
 - [436 CALL與區塊的有界主機效果](436-host-call-effects.md)：既有子集CONFORMED；唯讀計畫、緊湊搬移、完整CPU／RAM效果及事件／回合／predicate配額，預設關閉。分段DAC命令延伸與消費端正常回歸已驗CONFORMED，證據見規格436末節。
   同檔有界RGB調色盤命令擴充CONFORMED，包含核心拒絕／擁有權／事件及正常消費端完整驗收，限定mode13h。
 
