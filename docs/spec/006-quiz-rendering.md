@@ -1,5 +1,7 @@
 # 006 手冊查驗題覆繪時序
 
+查驗題操作於#79新增自動填入，玩家仍按Enter確認；F9同時控制答案顯示與自動填入。最新契約及收據見[規格026](026-input-and-quiz.md)與[038](../re/038-input-and-quiz.md)。本檔下方保留原列替換時序的驗證範圍。
+
 原有題目、答案與六段辨識範圍沿[研究008](../re/008-quiz-table.md)及規格索引的CONFORMED結論。
 本次列替換時序修正：CONFORMED（2026-10-25；以下抽樣範圍）。Issue：[#16](https://github.com/wicanr2/pools-of-darkness-cht/issues/16)、[#30](https://github.com/wicanr2/pools-of-darkness-cht/issues/30)。
 

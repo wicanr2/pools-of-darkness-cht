@@ -1,6 +1,6 @@
 # 026 遊戲滑鼠與查驗題輔助
 
-日期：2026-11-02。狀態：CONFORMED，功能抽樣，更新封包另驗。Issue：[#79](https://github.com/wicanr2/pools-of-darkness-cht/issues/79)。
+日期：2026-11-02。狀態：CONFORMED，功能及新版封包抽樣通過。Issue：[#79](https://github.com/wicanr2/pools-of-darkness-cht/issues/79)。
 
 使用者同意參考黑暗之后補齊操作。前作只提供方法，本作座標、游標與輸入時機重新驗證。
 

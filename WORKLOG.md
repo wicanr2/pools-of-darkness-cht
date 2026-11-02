@@ -1934,3 +1934,14 @@
 - 本作54題原文表與DS:7DEE解碼答案交叉核對，確認原版輸入程序後才送BIOS字母，不送Enter。F9關閉輔助，F12與五語沿用。最初誤把008的範圍末端02C7當返回點，守衛拒絕；原始bytes證明遠呼叫02B9、返回02BE，已修正並保留勘誤。
 - 首輪中文逐格HD量尺在600秒逾時，原版顯示模式完成但未填答。依驗證路由重新分類，本次沒有改美術，改以輸入範圍重跑。修正後三路正常冷開機及2／3倍Xvfb實際滑鼠全部通過，自動／手動4300格CPU、RAM、畫面、色盤及存檔完全相同，答錯換題填SURVIVE亦通過。
 - host、session、apps/pod的Quiz／Input與cmd/pod-play測試通過。c118740已推到本專案dosgolem/pod，主題2034檔／字型18份維持，舊24包SHA已保護。功能收據及原始位址證據保存038，接續以乾淨來源建v.0.1.3-20261102十二包。
+
+### #79 封包完成與收尾
+
+- 封包固定main ea1f706c0b5013ef850d112a7fcf0e1a4914d62a、引擎c118740dc3cbee42881abf45a609f63375c474e7，乾淨匯出至workplace/input-fix-v1/package。全部2034主題、18份字型及1091份原版辨識資料重建，與正式清單SHA相同。乾淨Go重編與待提交候選逐位元相同，開發入口更新為bfdbeb6b99db923f18a14c2dffa748c89154044aa68cb9f387a601c164f25ed2。
+- 初次payload把引擎掛成/engine，工具找不到相鄰engine-source.tar。保留stage-first-layout，改用/out/engine及相鄰archive後，從空stage重跑成功。此為驗證掛載問題，未修改產品程式或放寬閘門。
+- 三平台十二包內容、manifest、SHA、ELF／PE／macOS universal架構、系統依賴、字型、授權與巢狀來源排除通過。Linux實際AppImage驗五語／F12與兩倍率、首次／重啟、基本／完整包、缺原版拒絕；Windows實際ZIP於Wine驗日文1250格及韓文重啟，快取及封包未改。
+- 新版自動填答於3505格填YOU，4030格由腳本模擬玩家按Enter；4700格另存B及3250格冷讀B的CPU、RAM、原版索引、色盤及全部SAVE均與036的v.0.1.2手動輸入完全相同。125個原版輸入與既有63秒影片SHA另驗保持。未要求完整通關，未把Windows Wine或macOS結構驗證寫成原生實機通過。
+- 全部閘門通過後建立dist-all/v.0.1.3-20261102，patch六包、full-local六包，共1,186,618,838 bytes；SHA256SUMS.json逐包回讀通過。smoke保存實際封包、五語、自動／手動、換題及2／3倍真實滑鼠收據。舊24包不覆寫，影片保留v.0.1.2原版號與位置，不建立tag或公開Release。
+- 038來源、功能及新版封包固定收據均有研究索引入口。以035固定收據作正對照驗證連結檢查器，再檢查全部038入口及README、SETUP、CONTEXT與規格026的實際目標；均通過。目前狀態表、規格006／012／026及穩定交付入口同步。
+- 本輪沿用dosgolem-go-ebiten:1.24-r1（8ed6bdee2bce，Go1.24.13）、sosb-img:r1（8b9012adb991）、cok-osxcross:go1.24.13-sdk15.5-r1（a2dc911a8709）、kgb-cht-pkg:1.99.1-r2（dfc4fd92efc6）、yuan-wine-verify:noble-r2（31664639bb8c）與ida-pro-9.4-idapython:py312-v1（4ac62de83339，IDA9.4）。沒有新建或刪除image，沒有prune或rmi。
+- 最後全工作根find檢查無root-owned檔案及誤建.md目錄，正式交付及來源為1000:1000。本輪有界Xvfb及Docker工作全部結束，pod.task=input-fix執行中與已停止容器均為0。參考專案、dosgolem上游及原版資料保持只讀；後續只推本專案文件並更新#79及封包母項。

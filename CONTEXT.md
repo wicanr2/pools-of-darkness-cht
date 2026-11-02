@@ -2,7 +2,7 @@
 
 更新：2026-11-02（Asia/Taipei）。規則見 [AGENTS.md](AGENTS.md)，歷程見 [WORKLOG.md](WORKLOG.md)。
 
-本輪現況：#79輸入功能抽樣已通過，引擎c118740已推送；v.0.1.3封包準備中，現行已交付仍為v.0.1.2。唯一狀態與證據入口為[研究038](docs/re/038-input-and-quiz.md)。
+本輪現況：#79輸入功能與十二包已驗收，現行交付為`v.0.1.3-20261102`，引擎c118740、開發程式bfdbeb6；舊24包及v.0.1.2推廣影片不變。唯一狀態與證據入口為[研究038](docs/re/038-input-and-quiz.md)。
 
 ## 儲存庫
 
@@ -62,7 +62,7 @@
 
 | 項目 | 目前狀態 | 下一個驗收點 |
 |---|---|---|
-| 正式程式與 HD | 引擎`3fdeeb8`／程式`152c7c5`，2034檔主題與18份字型；五語、97種片頭及43種片尾相位、B版海報 | [片尾收據035](docs/re/035-final-runtime.json)，完整素材由乾淨Git重建；7400格繁中DEMO同原版基準、127檔與完整B版畫面，閃現0。前版及1888主題留`workplace/probe/final-hd/formal-before` |
+| 正式程式與 HD | 引擎`c118740`／開發程式`bfdbeb6`，2034檔主題與18份字型；持續滑鼠移動、雙鍵及查驗題自動填入，五語與HD範圍保持 | [038](docs/re/038-input-and-quiz.md)，乾淨Git重編逐位元相同，2／3倍實際滑鼠與正常查驗題通過。既有7400格DEMO及片尾證據保留[035](docs/re/035-final-runtime.json)，本輪不外推新路線 |
 | demo 中斷 #13 | CONFORMED：選單不逾時；對話、戰鬥中斷與重播、正常進入通過；F12／2倍終點同原流程，非預期閃現0 | 固定證據[020](docs/re/020-demo-control-runtime.json)，入口[規格018](docs/spec/018-demo-control.md#demo-conformed) |
 | Go 繪圖 #49 | 已支援VGA繪圖核心收尾CONFORMED；六條正常路線15,073,225 bytes全由Go演算法計畫寫入，固定／原x86像素寫入0；補齊填色區段搜尋及讀點短續行 | [收尾規格](docs/spec/025-direct-render-commands.md#draw-closure-conformed)、[固定收據](docs/re/023-draw-closure-runtime.json)。原版內容／字串／呼叫編排與平台服務保留，未知條件安全回退；不按歷史DRAFT重開 |
 | 高解析字型 | 已認證英數格原生16／24像素呈現通過；圖示不重畫，譯文優先，F12原版保留，README有並列原始像素裁切 | 未識別／搬移後無文字來源的格子保留原版，不猜OCR或當作全遊戲字型覆蓋 |
@@ -72,11 +72,11 @@
 | 工具列字級 #15 | CONFORMED：補齊原生12／22字模，2／3倍三級、英文與偏好重啟通過；16／24遊戲字模未改 | [規格020](docs/spec/020-toolbar-font.md)、[固定收據](docs/re/021-toolbar-runtime.json)，README直接顯示六種字級 |
 | CPU速度 #14 | 功能抽樣CONFORMED，Issue已關閉；正常2／3倍讀檔、六倍率、Draw間隔回饋、1x等價及偏好通過 | 使用者已取消30fps要求，不再列為剩餘工作；歷史量測保留 |
 | 配樂、多語系、作弊、推廣片 #11 | 五語與F1沿既有驗收；63秒1080p推廣片完成，故事、實際遊戲、F2／F12、五語與片尾展示，原版開場音訊 | [規格016](docs/spec/016-promo-video.md)、[037影片收據](docs/re/037-promo-runtime.json)。聲音完成技術檢查，未另作人耳試聽；新編配樂／試聽仍未完成，#11保持開啟 |
-| 三平台封包 #12 | `v.0.1.2-20261102`十二包，含五語、基本／HD patch與本機完整版；固定main28078ced／引擎3fdeeb8，2034主題／18字型。舊十二包不變 | [036交付與驗收](docs/re/036-package-promo.md)、[固定收據](docs/re/036-package-promo-runtime.json)、[使用入口](SETUP.md#目前交付)。Linux首次／重啟／存讀檔與Wine通過；macOS結構／依賴驗證，原生Windows與macOS未驗 |
+| 三平台封包 #12 | `v.0.1.3-20261102`十二包，含五語、基本／HD patch與本機完整版；固定main `ea1f706c`／引擎`c118740`，2034主題／18字型。舊24包不變 | [038交付與驗收](docs/re/038-input-and-quiz.md)、[固定收據](docs/re/038-input-package.json)、[使用入口](SETUP.md#目前交付)。Linux首次／重啟／存讀檔與Wine通過；存讀檔原版狀態及SAVE同舊版手動輸入。原生Windows與macOS未驗 |
 | HD patch #75 | 本機候選範圍CONFORMED：B版海報已核准，正式入口首次匯入重生983份辨識資料，完整1866檔同SHA；重啟不改快取，缺原版、改快取與改來源拒絕 | [收據033](docs/re/033-hd-patch-runtime.json)、[規格012](docs/spec/012-package.md#hd-patch-conformed)。實際片頭、F2／F8／F12、demo中止、另存B／冷讀B與Wine通過，不將此項當作原案完成 |
-| 跨機重建 #55 | 2034檔主題、18份字型及正式五語TSV已保存；Git樹`4dbb787`完整重建，1091份原版索引／有序表由自備資料重生，全部SHA同受測候選 | [SETUP](SETUP.md)、[035收據](docs/re/035-final-runtime.json)；固定引擎3fdeeb8乾淨重編與正式Linux程式152c7c5逐位元相同。既有1888檔及全部字型保持，舊十二包不改 |
+| 跨機重建 #55 | 2034檔主題、18份字型及正式五語TSV已保存；Git樹`40a565d`完整重建，1091份原版索引／有序表由自備資料重生，全部SHA同受測候選 | [SETUP](SETUP.md)、[038收據](docs/re/038-input-package.json)；固定引擎c118740乾淨重編與開發程式bfdbeb6逐位元相同。主題與字型不變，舊24包不改 |
 
-[#78本批交付](https://github.com/wicanr2/pools-of-darkness-cht/issues/78)在`dist-all/v.0.1.2-20261102/`，含十二包及63秒推廣片。使用者已指定不要求完整通關；片尾仍保留直接播放器的證據界線。F8順序為繁中、英文、日文、韓文、簡中，日韓及片尾均已進新HD包。舊十二包保持原範圍及SHA。新編配樂／試聽與原生平台驗收未完成，不重開Go核心或G6探索。
+[#79輸入修正版](https://github.com/wicanr2/pools-of-darkness-cht/issues/79)在`dist-all/v.0.1.3-20261102/`，含十二包；#78的63秒推廣片保留在v.0.1.2目錄。使用者已指定不要求完整通關；片尾仍保留直接播放器的證據界線。F8順序為繁中、英文、日文、韓文、簡中，日韓及片尾均在HD包。舊24包與影片保持SHA。新編配樂／試聽與原生平台驗收未完成，不重開Go核心或G6探索。
 
 原九包及SHA仍在`dist-all/v.0.1.0-20261101/`，來源固定4bdd711及4a8ef9f，不含後續簡中、英文面板及無敵，不覆寫、不建立tag或公開Release。基本版原始23格的紅色背景／提前題名分類只適用收據026固定事件。
 
