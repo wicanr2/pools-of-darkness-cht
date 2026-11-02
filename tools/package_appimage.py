@@ -37,7 +37,7 @@ def main():
             target=a.out/Path(row['archive']).name;shutil.copyfile(row['archive'],target)
             assert sha(target)==row['sha256']
         rows.append(dict(name=target.name,kind=row['kind'],platform=row['platform'],edition=row['edition'],version=recipes['version'],engine_commit=recipes['engine_commit'],size=target.stat().st_size,sha256=sha(target),source_tree=row['tree'],payload_manifest_sha256=row['manifest_sha256']))
-    assert len(rows)==len(recipes['items']) and len(rows) in (3,9)
+    assert len(rows)==len(recipes['items']) and len(rows) in (3,9,12)
     (a.out/'packages.json').write_text(json.dumps(dict(version=recipes['version'],engine_commit=recipes['engine_commit'],candidate=True,files=rows),ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(dict(packages=len(rows),bytes=sum(r['size'] for r in rows)),indent=2))
 

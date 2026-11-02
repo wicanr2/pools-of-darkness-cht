@@ -34,7 +34,7 @@
 | 013 玩家名音譯 | DRAFT | #7 | 音譯資料沿用前作；隊伍名單的玩家名已音譯（ROLAND → 羅倫德）；建角畫面的名字與性別欄位址未在本作驗證 | `tools/g6-create-receipt.sh` |
 | 014 配樂 | 未開始 | #11 | — | — |
 | [015 多語系](015-multilingual.md) | 五語抽樣CONFORMED | #11、#26、#70、#71、#76 | 日韓各13表7652列、99手札及78攻略，八份原生字型；三側正常4800格同原版狀態及132檔，F8五語／F12／偏好通過。日韓未經母語者審校，舊十二包不改 | [034](../re/034-jako-runtime.json)、028-english-panels-runtime.json、027-zhcn-runtime.json；014-title-runtime.json、014-english-front-runtime.json |
-| 016 推廣影片 | 未開始 | #11 | — | — |
+| [016 推廣影片](016-promo-video.md) | READY | #11、#78 | 故事背景、實際畫面、HD／F12與五語；原版實際音源，本機私人影片 | 規格016；交付與固定收據待本批驗收 |
 | [017 作弊：我方無敵](017-invincible.md) | CONFORMED，功能抽樣 | #11、#72 | 本作兩個HP、健康／陣營及五種有害效果；正常讀檔／DEMO、七個原版受控傷害及乾淨Git重編通過。長戰鬥19格已由030更正分類並在既有正常路線修正，其他事件不外推 | [研究029](../re/029-invincible.md)、[執行期收據](../re/029-invincible-runtime.json)、[遮擋030](../re/030-hd-occlusion.md) |
 | [018 開場 demo 控制](018-demo-control.md) | CONFORMED | #13 | 選單不逾時；對話／戰鬥中斷、重播、正常進入、F12與2倍通過。已啟用a83043c | [固定收據](../re/020-demo-control-runtime.json)；`tools/demo-control-receipt.sh` |
 | [019 CPU 模擬速度](019-cpu-speed.md) | CONFORMED，功能抽樣 | #14 | 正常2／3倍讀檔、六倍率、Draw回饋與正常關窗通過；1x狀態及偏好保持；使用者取消30fps要求 | [固定倍率](../re/021-toolbar-runtime.json)、[3倍HD](../re/022-speed-feedback-hd-runtime.json)、[2倍](../re/022-speed-feedback-2x-runtime.json) |

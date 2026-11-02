@@ -1,5 +1,15 @@
 # 012 三平台候選封包
 
+## 五語與片尾HD候選READY
+
+Issue：[78](https://github.com/wicanr2/pools-of-darkness-cht/issues/78)。使用者2026-11-02指定不要求完整通關，已完成HD先打包與製作推廣影片。新候選固定`v.0.1.2-20261102`，來源沿目前已驗五語、2034檔主題、18字型及引擎`3fdeeb8`；不建立tag或公開Release，不覆寫舊十二包。
+
+沿既有格式及三平台工具鏈，基本／HD patch各三包，基本／HD本機完整版各三包，共十二包。patch不附原版或1091份辨識索引／有序表，HD patch首次匯入自備DAX、INTRO／FINAL的BMA與ACF，重生全部2034檔。完整版只附47個原版遊戲檔，不附歷史SAVE，只放本機full-local。
+
+版本、架構、manifest、逐檔SHA、五語與18字型、HD全量重建及原版權利檢查沿既有契約。實際Linux封包抽驗首次／重啟、五語／倍率、正常demo及存讀檔，Windows以Wine抽驗實際ZIP，macOS驗universal兩架構及依賴，原生Windows與macOS未驗仍明列。來源、原版與舊包SHA保持，封包通過後才移入dist-all。推廣片依[規格016](016-promo-video.md)分開驗證。
+
+以下保留舊候選的來源與驗收，不能作為本版本已通過證據。
+
 ## HD patch 原版辨識資料匯入
 
 Issue [#75](https://github.com/wicanr2/pools-of-darkness-cht/issues/75)。本節的檔案重建、前端與本機三平台候選範圍CONFORMED，固定[收據033](../re/033-hd-patch-runtime.json)。使用者2026-11-01確認B版HD海報；既有九包保留原驗收與SHA，不覆寫。
