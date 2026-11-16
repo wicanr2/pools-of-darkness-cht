@@ -1,10 +1,12 @@
 # 目前真相
 
+2026-11-11 空間維護：清除可重建的快取、編譯執行檔、舊版封包，移除 4,421 個檔案，合計約 2.990 GiB。原始輸入、程式來源、正式素材、存檔、研究紀錄、影片與現行封包保留。舊版封包的 manifest 與驗收紀錄保留；歷史封包路徑不代表實體檔案仍存在。詳見 [WORKLOG.md](WORKLOG.md)。
+
 更新：2026-11-02（Asia/Taipei）。規則見 [AGENTS.md](AGENTS.md)，歷程見 [WORKLOG.md](WORKLOG.md)。
 
-本輪現況：正式版`v.1.0.0-20261102`十二包與同版號63秒1080p影片已交付並驗收，入口為[研究039](docs/re/039-v1-release.md)。引擎c118740，正式Linux程式303de655；名稱、內部版本與manifest均為正式版。舊36包與既有影片保持，功能證據保留[038](docs/re/038-input-and-quiz.md)。
+本輪現況：正式版`v.1.0.0-20261102`十二包與同版號63秒1080p影片已交付並驗收，入口為[研究039](docs/re/039-v1-release.md)。引擎c118740，正式Linux程式303de655；名稱、內部版本與manifest均為正式版。舊36包的實體檔案已於2026-11-11清除，manifest、驗收紀錄與既有影片保留；功能證據保留[038](docs/re/038-input-and-quiz.md)。
 
-工作區維護：依使用者要求完成[#81](https://github.com/wicanr2/pools-of-darkness-cht/issues/81)，`workplace/`由51.8 GiB降至10.9 GiB，釋放40.9 GiB。48個封包、兩支影片、正式素材、原始輸入及存檔雜湊保持。研究傾印已無損封存，清理清單與還原入口見[WORKLOG](WORKLOG.md#2026-11-02-工作區清理81)。
+工作區維護：依使用者要求完成[#81](https://github.com/wicanr2/pools-of-darkness-cht/issues/81)，`workplace/`由51.8 GiB降至10.9 GiB，釋放40.9 GiB。當時48個封包、兩支影片、正式素材、原始輸入及存檔雜湊保持；2026-11-11的舊封包清理另見上方維護紀錄。研究傾印已無損封存，清理清單與還原入口見[WORKLOG](WORKLOG.md#2026-11-02-工作區清理81)。
 
 ## 儲存庫
 
